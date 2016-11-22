@@ -28,6 +28,7 @@
     * 2.17 Camera
     * 2.18 AudioSource
     * 2.19 AudioMixer
+    * 2.20 AssetBundle
 * [第1天](第1天/1.0 第1天.md)
     * [1.1 向量](第1天/11-向量.md)
     * 1.2 坐标系
