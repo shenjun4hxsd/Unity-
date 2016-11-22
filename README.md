@@ -5,7 +5,7 @@
 
 >&emsp;&emsp;
 
->&emsp;&emsp;本教材将增加对 常用API 的中文翻译。
+>&emsp;&emsp;同时，本教材将增加对 常用API 的中文翻译。
 
 
 
