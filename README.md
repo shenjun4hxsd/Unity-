@@ -4,7 +4,8 @@
 >&emsp;&emsp;本书针对具有 C# 语言基础的学员，内容涵盖 Unity4.7X 版本及 Unity5.X 的内容，并结合实战开发，详尽介绍 Unity 的各部分功能，并跟随 Unity 的版本功能同步更新...
 
 >&emsp;&emsp;
->本书增加对 常用API 的中文翻译。
+
+>&emsp;&emsp;本书增加对 常用API 的中文翻译。
 
 
 
