@@ -16,6 +16,10 @@ MonoBehaviour 是每个脚本派生自的基类。
 
 
 继承的成员
+
 |变量|说明|
 |:--|:--|
-|||
+|name|游戏对象的名字|
+|enabled|为 true 表示激活当前脚本，为 false 表示当前脚本失活。|
+|gameObject|当前游戏对象。|
+|transform|当前游戏对象的 Transform 组件。|
