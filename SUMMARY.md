@@ -32,7 +32,7 @@
 * [第1天](第1天/1.0 第1天.md)
     * [1.1 向量](第1天/11-向量.md)
     * 1.2 坐标系
-    * 1.3 MonoBehaviour
+    * [1.3 MonoBehaviour](第1天/13-monobehaviour.md)
     * 1.4 控制台输出
     * 1.5 挂载脚本
     * 1.6 Transform 与 transform
