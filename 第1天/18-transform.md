@@ -41,7 +41,7 @@
 |TransformDirection|变换方向从局部坐标转换到世界坐标。|
 |TransformPoint|变换位置从局部坐标到世界坐标。|
 |TransformVector|变换一个向量从局部坐标空间到世界坐标空间。|
-|Translate|移动transform在translation的方向和距离。|
+|**Translate**|移动transform在translation的方向和距离。|
 
 
 🔚
