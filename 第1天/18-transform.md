@@ -5,29 +5,12 @@
 |childCount|该变换的子对象数量。|
 |eulerAngles|此旋转作为欧拉角度。|
 |forward|在世界空间坐标，变换的蓝色轴。也就是z轴。|
+|hasChanged|此变换自从上次标识是否被设置为false了？|
+|localEulerAngles|旋转作为欧拉角度，相对于父级的变换旋转。|
+|localPosition|相对于父级的变换的位置。|
 
 
 
-
-
-
-hasChanged
-
-Has the transform changed since the last time the flag was set to 'false'?
-
-此变换自从上次标识是否被设置为false了？
-
-localEulerAngles
-
-The rotation as Euler angles in degrees relative to the parent transform's rotation.
-
-旋转作为欧拉角度，相对于父级的变换旋转。
-
-localPosition
-
-Position of the transform relative to the parent transform.
-
-相对于父级的变换的位置。
 
 localRotation
 
