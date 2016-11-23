@@ -47,6 +47,7 @@
 |ProjectOnPlane|投影向量到一个平面上（由垂直到该平面的法线定义）。|
 |Reflect|沿着法线反射向量。|
 |SmoothDamp|随着时间的推移，逐渐改变一个向量朝向预期的目标。|
+|RotateTowards|当前的向量转向目标。|
 |Slerp|在两个向量之间球形插值。|
 |SlerpUnclamped|在两个向量之间球形插值。该插值t在小于0或大于1时的返回值不会被限制。|
 
