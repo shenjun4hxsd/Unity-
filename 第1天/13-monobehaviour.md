@@ -8,4 +8,6 @@ MonoBehaviour 是每个脚本派生自的基类。
 |:--|:--|
 |Awake|当该脚本实例被载入时 Awake 被调用。|
 |Start|仅在当第一次脚本启用Update方法被调用之前调用。|
+|FixedUpdate|当MonoBehaviour启用时，其 FixedUpdate 在每一帧被调用。|
 |Update|当MonoBehaviour启用时，其Update在每一帧被调用。|
+|LateUpdate|当Behaviour启用时，其LateUpdate在每一帧被调用。|
