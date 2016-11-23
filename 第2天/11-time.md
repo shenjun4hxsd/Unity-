@@ -9,7 +9,7 @@
 |**deltaTime**|以秒计算，完成最后一帧的时间（只读）。|
 |fixedDeltaTime|以秒计间隔，在物理和其他固定帧速率进行更新（像MonoBehaviour的FixedUpdate）。|
 |fixedTime|最近的FixedUpdate已开始的时间（只读）。这是以秒计自游戏开始的时间。|
-|frameCount|已经传递帧的总数（只读）。|
+|**frameCount**|已经传递帧的总数（只读）。|
 |maximumDeltaTime|一帧能获得的最大时间。物理和其他固定帧速率更新（像FixedUpdate）。|
 |realtimeSinceStartup|以秒计，自游戏开始的真实时间（只读）。|
 |smoothDeltaTime|经平滑的Time.deltaTime时间（只读）。|
