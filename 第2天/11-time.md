@@ -13,8 +13,8 @@
 |maximumDeltaTime|一帧能获得的最大时间。物理和其他固定帧速率更新（像FixedUpdate）。|
 |realtimeSinceStartup|以秒计，自游戏开始的真实时间（只读）。|
 |smoothDeltaTime|经平滑的Time.deltaTime时间（只读）。|
-|time|以秒计算，从游戏开始的时间（只读）。也就是说，从游戏开始到到现在所用的时间。|
-|timeScale|时间的缩放。这可以用于减慢运动效果。|
+|**time**|以秒计算，从游戏开始的时间（只读）。也就是说，从游戏开始到到现在所用的时间。|
+|**timeScale**|时间的缩放。这可以用于减慢运动效果。|
 |timeSinceLevelLoad|以秒计算，从最后的关卡已经加载完的时间（只读）。|
 |unscaledDeltaTime|无关timeScale，以秒计算，要完成最后一帧的时间（只读）。|
 |unscaledTime|无关timeScale，以秒计算，从游戏开始的时间（只读）。|
