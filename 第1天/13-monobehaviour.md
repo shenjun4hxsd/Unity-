@@ -23,3 +23,4 @@ MonoBehaviour 是每个脚本派生自的基类。
 |enabled|为 true 表示激活当前脚本，为 false 表示当前脚本失活。|
 |gameObject|当前游戏对象。|
 |transform|当前游戏对象的 Transform 组件。|
+|tag|当前游戏对象的标签。|
