@@ -36,7 +36,7 @@
     * [1.4 控制台输出](第1天/14-控制台输出.md)
     * [1.5 挂载脚本](第1天/15-挂载脚本.md)
     * [1.6 Transform 与 transform](第1天/16-transform-与-transform.md)
-    * 1.7 Vector3
+    * [1.7 Vector3](第1天/17-vector3.md)
     * 1.8 transform
 * [第2天](第2天/2.0 第2天.md)
     * [2.1 Time](第2天/11-time.md)
