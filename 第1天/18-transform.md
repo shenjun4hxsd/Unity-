@@ -21,6 +21,30 @@
 |worldToLocalMatrix|变换点的矩阵从世界坐标到局部坐标（只读）。|
 
 
+|函数|说明|
+|:--|:--|
+|DetachChildren|所有子对象解除父子关系。|
+|Find|通过名字查找子对象并返回它。|
+|GetChild|通过索引返回一个变换的子对象。|
+|GetSiblingIndex|获取该对象的同级索引。|
+|InverseTransformDirection|变换的方向从世界坐标转换到局部坐标。和Transform.TransformDirection相反。|
+|InverseTransformPoint|变换位置从世界坐标到局部坐标。和Transform.TransformPoint相反。|
+|InverseTransformVector|变换一个向量从世界坐标空间到局部坐标空间。这个操作与Transform.TransformVector相反。|
+|IsChildOf|这个变换是parent的子对象？|
+|LookAt|旋转此变换，让向前向量指向target的当前位置。(照相机的视口对准目标)|
+|Rotate|应用一个欧拉角的旋转角度，eulerAngles.z度围绕z轴，eulerAngles.x度围绕x轴，eulerAngles.y度围绕y轴（这样的顺序）。|
+|RotateAround|围绕世界坐标的point点的axis旋转该变换angle度。|
+|SetAsFirstSibling|移动该变换到此局部变换列表的开始。|
+|SetAsLastSibling|移动该变换到此局部变换列表的末尾。|
+|SetParent|设置该变换的父级。|
+|SetSiblingIndex|设置同级对象的索引。|
+|TransformDirection|变换方向从局部坐标转换到世界坐标。|
+|TransformPoint|变换位置从局部坐标到世界坐标。|
+|TransformVector|变换一个向量从局部坐标空间到世界坐标空间。|
+|Translate|移动transform在translation的方向和距离。|
+
+
+
 
 
 
