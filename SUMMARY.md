@@ -34,7 +34,7 @@
     * 1.2 坐标系
     * [1.3 MonoBehaviour](第1天/13-monobehaviour.md)
     * 1.4 控制台输出
-    * 1.5 挂载脚本
+    * [1.5 挂载脚本](第1天/15-挂载脚本.md)
     * 1.6 Transform 与 transform
     * 1.7 Vector3
     * 1.8 transform
