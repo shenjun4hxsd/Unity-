@@ -12,3 +12,4 @@ MonoBehaviour 是每个脚本派生自的基类。
 |Update|当MonoBehaviour启用时，其Update在每一帧被调用。|
 |LateUpdate|当Behaviour启用时，其LateUpdate在每一帧被调用。|
 |OnDisable|当对象变为不可用或非激活状态时此函数被调用。|
+|OnDestroy|当MonoBehaviour将被销毁时，这个函数被调用。|
