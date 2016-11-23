@@ -5,7 +5,7 @@
 ### Transform 变换
 描述：对象的位置、旋转和缩放
 
-场景中的每一个对象都有一个Transform。用于储存并操控物体的位置、旋转和缩放。每一个Transform可以有一个父级，允许你分层次应用位置、旋转和缩放。可以在Hierarchy面板查看层次关系。他们也支持计数器（enumerator），因此你可以使用循环遍历子对象。
+场景中的每一个对象都有一个Transform。用于储存并操控物体的位置、旋转和缩放。每一个 Transform 可以有一个父级，允许你分层次应用位置、旋转和缩放。可以在Hierarchy 面板查看层次关系。他们也支持计数器（enumerator），因此你可以使用循环遍历子对象。
 
 ```javascript
     using UnityEngine;
