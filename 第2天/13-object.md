@@ -50,25 +50,14 @@ UnityEngine.Object
     // Kills the game object in 5 seconds after loading the object
     Destroy (gameObject, 5);
 
-
-
-// When the user presses Ctrl, it will remove the script
-
-// named FooScript from the game object
-
-void Update () {
-
- if (Input.GetButton("Fire1") && GetComponent<FooScript>())
-
- {
-
- Destroy (GetComponent<FooScript>());
-
- }
-
-}
-
-
+    // When the user presses Ctrl, it will remove the script
+    // named FooScript from the game object
+    void Update () {
+        if (Input.GetButton("Fire1") && GetComponent<FooScript>())
+        {
+            Destroy (GetComponent<FooScript>());
+        }
+    }
 ```
 
 
