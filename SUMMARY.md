@@ -46,7 +46,7 @@
     * [2.5 GameObject 与 gameObject](第2天/25-gameobject-与-gameobject.md)
 * [第3天](第3天/3.0 第3天.md)
     * [3.1 矩阵](第3天/31-矩阵.md)
-    * 3.2 Quaternion
+    * [3.2 Quaternion](第3天/32-quaternion.md)
     * 3.3 灯光与摄像机
     * 3.4 声音组件
     * 3.5 GUI
