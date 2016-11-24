@@ -68,7 +68,7 @@ original：需要被克隆的原始物体
 position：位置
 rotation：旋转
 parent：父物体
-worldPositionStays：当指定父物体仍保持原始的世界坐标。
+worldPositionStays：当指定父物体仍保持原始的世界坐标
 
 ```
 
