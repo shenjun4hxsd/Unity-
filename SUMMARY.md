@@ -45,7 +45,7 @@
     * [2.4 预制体](第2天/14-预制体.md)
     * [2.5 GameObject 与 gameObject](第2天/25-gameobject-与-gameobject.md)
 * [第3天](第3天/3.0 第3天.md)
-    * 3.1 矩阵
+    * [3.1 矩阵](第3天/31-矩阵.md)
     * 3.2 Quaternion
     * 3.3 灯光与摄像机
     * 3.4 声音组件
