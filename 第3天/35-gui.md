@@ -61,5 +61,35 @@
 |WindowFunction|Callback to draw GUI within a window (used with GUI.Window).
 在窗口内回调绘制GUI(和GUI.Window一起使用)。|
 
+###示例：
+```javascript
+using UnityEngine;
+
+using System.Collections;
+
+
+
+public class ExampleClass : MonoBehaviour {
+
+ public Texture aTexture;
+
+ void OnGUI() {
+
+ if (!aTexture) {
+
+ Debug.LogError("Assign a Texture in the inspector.");
+
+ return;
+
+ }
+
+ GUI.DrawTexture(new Rect(10, 10, 60, 60), aTexture, ScaleMode.ScaleToFit, true, 10.0F);
+
+ }
+
+}
+
+```
+
 🔚
 
