@@ -12,3 +12,6 @@ UnityEngine.Object
 |:--|:--|
 |GetInstanceID|返回对象的实例ID。|
 |ToString|返回对象的名称。|
+
+|静态方法|说明|
+
