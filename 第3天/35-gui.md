@@ -22,6 +22,105 @@
 |tooltip|控制鼠标当前通过对象的提升信息，或具有键盘焦点。|
 
 
+|静态方法|说明|
+|:--|:--|
+|BeginGroup|开始组，必须配套以EndGroup结束关闭容器。|
+|BeginScrollView|在你的GUI里，开始一个滚动视图， 注意BeginScrollView和EndScrollView它们是成对出现的。|
+|Box|在界面布局创建盒子。盒子包含文本，图像或者带有工具提示的这些的组合，通过使用GUIContent参数。你也可以使用GUIStyle去调整盒子中所有的物体的布局，文本颜色和其他属性。|
+|BringWindowToBack|使一个特定的窗口到浮动窗口的后面。|
+|BringWindowToFront|使一个特定的窗口到浮动窗口的前面。|
+|Button|创建一个单次按下按钮。用户点击按钮事件立即触发。|
+|DragWindow|创建一个可拖动窗口。|
+|DrawTexture|在矩形内绘制一个纹理。|
+|DrawTextureWithTexCoords|在给定的纹理坐标矩形范围内绘制纹理。使用该函数为了裁剪或者铺盖图像到指定的矩形内部。|
+|EndGroup|结束组，和开数组BeginGroup成对使用。|
+|EndScrollView|结束被开始的滚动视图，注意BeginScrollView和EndScrollView它们是成对出现的。|
+|FocusControl|移动键盘焦点到被命名的控件。|
+|FocusWindow|使一个窗口成为活动窗口。|
+|GetNameOfFocusedControl|获取有焦点被命名控件的名字。|
+|HorizontalScrollbar|创建水平滚动条。滚动条是能通过滚动来浏览文档，大多数情况下，你可以使用scrollView代替。|
+|HorizontalSlider|水平滑动条，用户能拖动改变最小和最大值之间。|
+|Label|在屏幕上创建一个文本或者纹理标签。|
+|ModalWindow|显示模式窗口。|
+|||
 
 
+
+PasswordField
+
+Make a text field where the user can enter a password.
+
+创建文本字段，用户可以编辑密码。
+
+RepeatButton
+
+Make a button that is active as long as the user holds it down.
+
+创建一个按钮，只要用户按着不放，将一直被激活。
+
+ScrollTo
+
+Scrolls all enclosing scrollviews so they try to make position visible.
+
+滚动scrollviews到position指定的位置，通俗来说就是把内容滚动到指定的坐标。
+
+SelectionGrid
+
+Make a grid of buttons.
+
+创建一个网格按钮。
+
+SetNextControlName
+
+Set the name of the next control.
+
+设置下一个控件的名字。
+
+TextArea
+
+Make a Multi-line text area where the user can edit a string.
+
+创建多行文本区域，用户可以编辑字符串。
+
+TextField
+
+Make a single-line text field where the user can edit a string.
+
+创建单行文本字段，用户可以编辑字符串。
+
+Toggle
+
+Make an on/off toggle button.
+
+创建on/off开关按钮，也就是类似通常说的单选按钮。
+
+Toolbar
+
+Make a toolbar.
+
+创建工具栏。
+
+UnfocusWindow
+
+Remove focus from all windows.
+
+从所有窗口移除焦点。就是说是所有窗口处于不激活状态。
+
+VerticalScrollbar
+
+Make a vertical scrollbar. Scrollbars are what you use to scroll through a document. Most likely, you want to use scrollViews instead.
+
+创建垂直滚动条。滚动条是能通过滚动来浏览文档，大多数情况下，你可以使用scrollView代替。
+
+VerticalSlider
+
+A vertical slider the user can drag to change a value between a min and a max.
+
+垂直滑条指用户可以在最小和最大值之间拖动或者改变。
+
+Window
+
+Make a popup window.
+
+创建一个弹出窗口。
 
