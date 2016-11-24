@@ -50,27 +50,9 @@
 |Sign|返回 f 的数字符号。|
 |Sin|返回弧度角 f 的正弦值。|
 |SmoothDamp|随着时间的推移逐渐改变一个值到目标值。|
+|SmoothDampAngle|随着时间的推移逐渐改变一个给定的角度到期望的角度。|
+|SmoothStep|min和max之间平滑插值。|
+|Sqrt|计算并返回 f 的平方根。|
+|Tan|返回互动f角的正切值。|
 
-
-
-SmoothDampAngle
-
-Gradually changes an angle given in degrees towards a desired goal angle over time.
-
-随着时间的推移逐渐改变一个给定的角度到期望的角度。
-
-SmoothStep
-
-Interpolates between min and max with smoothing at the limits在min和max之间平滑插值。
-
-Sqrt
-
-Returns square root of f.
-
-计算并返回 f 的平方根。
-
-Tan
-
-Returns the tangent of angle f in radians.
-
-返回互动f角的正切值。
+🔚
