@@ -20,4 +20,5 @@ UnityEngine.Object
 |DontDestroyOnLoad|加载新场景的时候使目标对象不被自动销毁。|
 |FindObjectOfType|返回Type类型第一个激活的加载的对象。|
 |FindObjectsOfType|返回Type类型的所有激活的加载的物体列表。|
+|Instantiate|克隆原始物体并返回克隆物体。|
 
