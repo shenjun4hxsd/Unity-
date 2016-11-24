@@ -56,7 +56,10 @@
 |VerticalSlider|垂直滑条指用户可以在最小和最大值之间拖动或者改变。|
 |Window|创建一个弹出窗口。|
 
-
+|Delegates 委托|说明|
+|:--|:--|
+|WindowFunction|Callback to draw GUI within a window (used with GUI.Window).
+在窗口内回调绘制GUI(和GUI.Window一起使用)。|
 
 
 
