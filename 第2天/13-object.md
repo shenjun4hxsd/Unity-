@@ -55,5 +55,39 @@ UnityEngine.Object
 ```
 
 **Object.Instance**
+```javascript
+public static Object Instantiate(Object original);
+
+public static Object Instantiate(Object original, Transform parent);
+
+public static Object Instantiate(Object original, Transform parent, bool worldPositionStays);
+
+public static Object Instantiate(Object original, Vector3 position, Quaternion rotation);
+
+public static Object Instantiate(Object original, Vector3 position, Quaternion rotation, Transform parent);
+
+Parameters
+
+original
+
+An existing object that you want to make a copy of.
+
+position
+
+Position for the new object (default Vector3.zero).
+
+rotation
+
+Orientation of the new object (default Quaternion.identity).
+
+parent
+
+The transform the object will be parented to.
+
+worldPositionStays
+
+If when assigning the parent the original world position should be maintained.
+
+```
 
 
