@@ -30,7 +30,7 @@ UnityEngine.Object
 |operator ==|比较如果两个物体相同。|
 
 ---
-示例：
+###示例：
 
 **Object.Destroy**
 
