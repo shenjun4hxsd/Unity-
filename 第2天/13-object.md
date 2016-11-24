@@ -56,15 +56,11 @@ UnityEngine.Object
 
 **Object.Instance**
 ```javascript
-public static Object Instantiate(Object original);
-
-public static Object Instantiate(Object original, Transform parent);
-
-public static Object Instantiate(Object original, Transform parent, bool worldPositionStays);
-
-public static Object Instantiate(Object original, Vector3 position, Quaternion rotation);
-
-public static Object Instantiate(Object original, Vector3 position, Quaternion rotation, Transform parent);
+    public static Object Instantiate(Object original);
+    public static Object Instantiate(Object original, Transform parent);
+    public static Object Instantiate(Object original, Transform parent, bool worldPositionStays);
+    public static Object Instantiate(Object original, Vector3 position, Quaternion rotation);
+    public static Object Instantiate(Object original, Vector3 position, Quaternion rotation, Transform parent);
 
 Parameters
 
