@@ -36,29 +36,19 @@ UnityEngine.Object
 
 ```javascript
     public static void Destroy(Object obj, float t = 0.0f);
-```
-
-// Kills the game object
-
-Destroy (gameObject);
 
 
+    // Kills the game object
+    Destroy (gameObject);
 
-// Removes this script instance from the game object
+    // Removes this script instance from the game object
+    Destroy (this);
 
-Destroy (this);
+    // Removes the rigidbody from the game object
+    Destroy (rigidbody);
 
-
-
-// Removes the rigidbody from the game object
-
-Destroy (rigidbody);
-
-
-
-// Kills the game object in 5 seconds after loading the object
-
-Destroy (gameObject, 5);
+    // Kills the game object in 5 seconds after loading the object
+    Destroy (gameObject, 5);
 
 
 
@@ -79,5 +69,6 @@ void Update () {
 }
 
 
+```
 
 
