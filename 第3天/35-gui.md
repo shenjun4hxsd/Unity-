@@ -63,32 +63,24 @@
 
 ###示例：
 ```javascript
-using UnityEngine;
+    using UnityEngine;
+    using System.Collections;
 
-using System.Collections;
+    public class ExampleClass : MonoBehaviour {
 
+        public Texture aTexture;
 
+        void OnGUI() {
 
-public class ExampleClass : MonoBehaviour {
+            if (!aTexture) {
+                Debug.LogError("Assign a Texture in the inspector.");
+                return;
+            }
 
- public Texture aTexture;
+            GUI.DrawTexture(new Rect(10, 10, 60, 60), aTexture, ScaleMode.ScaleToFit, true, 10.0F);
 
- void OnGUI() {
-
- if (!aTexture) {
-
- Debug.LogError("Assign a Texture in the inspector.");
-
- return;
-
- }
-
- GUI.DrawTexture(new Rect(10, 10, 60, 60), aTexture, ScaleMode.ScaleToFit, true, 10.0F);
-
- }
-
-}
-
+        }
+    }
 ```
 
 🔚
