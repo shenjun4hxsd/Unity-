@@ -34,30 +34,24 @@ UnityEngine.Object
 
 **Object.Destroy**
 
+会在Update之后，渲染之前执行销毁操作。
+
 ```javascript
     public static void Destroy(Object obj, float t = 0.0f);
 
 
-    // Kills the game object
+    // 删除当前游戏对象
     Destroy (gameObject);
 
-    // Removes this script instance from the game object
+    // 删除当前这个脚本
     Destroy (this);
 
-    // Removes the rigidbody from the game object
+    // 删除当前游戏对象上的刚体组件
     Destroy (rigidbody);
 
-    // Kills the game object in 5 seconds after loading the object
+    // 5秒后删除这个游戏对象
     Destroy (gameObject, 5);
 
-    // When the user presses Ctrl, it will remove the script
-    // named FooScript from the game object
-    void Update () {
-        if (Input.GetButton("Fire1") && GetComponent<FooScript>())
-        {
-            Destroy (GetComponent<FooScript>());
-        }
-    }
 ```
 
 
