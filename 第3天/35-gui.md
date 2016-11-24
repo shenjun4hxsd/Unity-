@@ -42,85 +42,21 @@
 |HorizontalSlider|水平滑动条，用户能拖动改变最小和最大值之间。|
 |Label|在屏幕上创建一个文本或者纹理标签。|
 |ModalWindow|显示模式窗口。|
-|||
+|PasswordField|创建文本字段，用户可以编辑密码。|
+|RepeatButton|创建一个按钮，只要用户按着不放，将一直被激活。|
+|ScrollTo|滚动scrollviews到position指定的位置，通俗来说就是把内容滚动到指定的坐标。|
+|SelectionGrid|创建一个网格按钮。|
+|SetNextControlName|设置下一个控件的名字。|
+|TextArea|创建多行文本区域，用户可以编辑字符串。|
+|TextField|创建单行文本字段，用户可以编辑字符串。|
+|Toggle|创建on/off开关按钮，也就是类似通常说的单选按钮。|
+|Toolbar|创建工具栏。|
+|UnfocusWindow|从所有窗口移除焦点。就是说是所有窗口处于不激活状态。|
+|VerticalScrollbar|创建垂直滚动条。滚动条是能通过滚动来浏览文档，大多数情况下，你可以使用scrollView代替。|
+|VerticalSlider|垂直滑条指用户可以在最小和最大值之间拖动或者改变。|
+|Window|创建一个弹出窗口。|
 
 
 
-PasswordField
 
-Make a text field where the user can enter a password.
-
-创建文本字段，用户可以编辑密码。
-
-RepeatButton
-
-Make a button that is active as long as the user holds it down.
-
-创建一个按钮，只要用户按着不放，将一直被激活。
-
-ScrollTo
-
-Scrolls all enclosing scrollviews so they try to make position visible.
-
-滚动scrollviews到position指定的位置，通俗来说就是把内容滚动到指定的坐标。
-
-SelectionGrid
-
-Make a grid of buttons.
-
-创建一个网格按钮。
-
-SetNextControlName
-
-Set the name of the next control.
-
-设置下一个控件的名字。
-
-TextArea
-
-Make a Multi-line text area where the user can edit a string.
-
-创建多行文本区域，用户可以编辑字符串。
-
-TextField
-
-Make a single-line text field where the user can edit a string.
-
-创建单行文本字段，用户可以编辑字符串。
-
-Toggle
-
-Make an on/off toggle button.
-
-创建on/off开关按钮，也就是类似通常说的单选按钮。
-
-Toolbar
-
-Make a toolbar.
-
-创建工具栏。
-
-UnfocusWindow
-
-Remove focus from all windows.
-
-从所有窗口移除焦点。就是说是所有窗口处于不激活状态。
-
-VerticalScrollbar
-
-Make a vertical scrollbar. Scrollbars are what you use to scroll through a document. Most likely, you want to use scrollViews instead.
-
-创建垂直滚动条。滚动条是能通过滚动来浏览文档，大多数情况下，你可以使用scrollView代替。
-
-VerticalSlider
-
-A vertical slider the user can drag to change a value between a min and a max.
-
-垂直滑条指用户可以在最小和最大值之间拖动或者改变。
-
-Window
-
-Make a popup window.
-
-创建一个弹出窗口。
 
