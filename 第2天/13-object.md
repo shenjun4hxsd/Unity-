@@ -34,7 +34,7 @@ UnityEngine.Object
 
 **Object.Destroy**
 
-会在Update之后，渲染之前执行销毁操作。
+会在 Update 之后，渲染之前执行销毁操作。
 
 ```javascript
     public static void Destroy(Object obj, float t = 0.0f);
