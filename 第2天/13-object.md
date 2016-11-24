@@ -29,3 +29,16 @@ UnityEngine.Object
 |operator !=|比较如果两个对象不相同。|
 |operator ==|比较如果两个物体相同。|
 
+---
+示例：
+
+**Object.Destroy**
+
+```javascript
+    public static void Destroy(Object obj, float t = 0.0f);
+```
+
+
+
+
+
