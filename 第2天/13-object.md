@@ -54,6 +54,8 @@ UnityEngine.Object
 
 ```
 
+---
+
 **Object.Instance**
 ```javascript
     public static Object Instantiate(Object original);
@@ -65,10 +67,10 @@ UnityEngine.Object
 参数：
 
 original：需要被克隆的原始物体
-position：位置
-rotation：旋转
-parent：父物体
-worldPositionStays：当指定父物体仍保持原始的世界坐标
+position：新物体的位置
+rotation：新物体的旋转
+parent：指定新物体的父物体
+worldPositionStays：当指定父物体以后仍保持原始的世界坐标
 
 ```
 
@@ -83,7 +85,6 @@ worldPositionStays：当指定父物体仍保持原始的世界坐标
         {
             for (int i = 0; i < 10; i++)
             Instantiate(prefab, new Vector3(i * 2.0f, 0, 0), Quaternion.identity);
-
         }
     }
 ```
