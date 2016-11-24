@@ -1,8 +1,8 @@
 ##Mathf 数学函数
 常见的数学函数集合。
 
-C#中也有Math类提供数学的操作，但是C#的Math是double类型为主。对于Unity引擎来说没有必要。
-因为Unity引擎里所有的浮点都是float。Unity自己就改装了一个Mathf类，用来处理我们的单精度浮点的数学操作
+C#中也有Math类提供数学的操作，但是 C# 的 Math 是 double 类型为主。对于Unity 引擎来说没有必要。
+因为 Unity 引擎里所有的浮点都是 float。Unity 自己就改装了一个 Mathf 结构，用来处理我们的单精度浮点的数学操作
 
 
 |静态变量|说明|
