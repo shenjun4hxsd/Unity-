@@ -91,27 +91,16 @@ worldPositionStays：当指定父物体以后仍保持原始的世界坐标
 使用泛型的方式：
 
 ```javascript
-     using UnityEngine; 
+    using UnityEngine; 
 
+    public class InstantiateGenericsExample : MonoBehaviour
+    {
+        public Missile missile;
 
-
-public class InstantiateGenericsExample : MonoBehaviour
-
-{
-
- public Missile missile;
-
-
-
- void Start ()
-
- {
-
- Missile missileCopy = Instantiate<Missile>(missile);
-
- }
-
-}
-
+        void Start ()
+        {
+            Missile missileCopy = Instantiate<Missile>(missile);
+        }
+    }
 ```
 
