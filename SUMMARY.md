@@ -43,7 +43,7 @@
     * [2.2 输入控制](第2天/12-输入控制.md)
     * [2.3 Object](第2天/13-object.md)
     * [2.4 预制体](第2天/14-预制体.md)
-    * 2.5 GameObject 与 gameObject
+    * [2.5 GameObject 与 gameObject](第2天/25-gameobject-与-gameobject.md)
 * [第3天](第3天/3.0 第3天.md)
     * 3.1 矩阵
     * 3.2 Quaternion
