@@ -22,3 +22,9 @@ UnityEngine.Object
 |FindObjectsOfType|返回Type类型的所有激活的加载的物体列表。|
 |Instantiate|克隆原始物体并返回克隆物体。|
 
+
+|Operators 操作符|说明|
+|bool|对象是否存在？|
+|operator !=|比较如果两个对象不相同。|
+|operator ==|比较如果两个物体相同。|
+
