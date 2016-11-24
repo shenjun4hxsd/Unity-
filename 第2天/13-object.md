@@ -84,7 +84,7 @@ worldPositionStays：当指定父物体以后仍保持原始的世界坐标
         void Start()
         {
             for (int i = 0; i < 10; i++)
-            Instantiate(prefab, new Vector3(i * 2.0f, 0, 0), Quaternion.identity);
+                Instantiate(prefab, new Vector3(i * 2.0f, 0, 0), Quaternion.identity);
         }
     }
 ```
