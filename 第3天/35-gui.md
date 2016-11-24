@@ -105,7 +105,6 @@
                 Debug.Log("Clicked the button with text");
         }
     }
-
 ```
 
 
