@@ -11,7 +11,7 @@
 * [第2章 Unity 常用 API](第2章 Unity 常用 API/2.0 Unity 常用 API.md)
     * 2.1 MonoBehaviour
     * 2.2 GameObject
-    * 2.3 Tranform
+    * [2.3 Tranform](第2章 Unity 常用 API/23-tranform.md)
     * 2.4 Vector3
     * 2.5 Random
     * 2.6 Mathf
