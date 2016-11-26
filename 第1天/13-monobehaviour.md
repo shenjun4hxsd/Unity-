@@ -24,3 +24,5 @@ MonoBehaviour 是默认创建出来的每个脚本派生自的基类。
 |gameObject|当前游戏对象。|
 |transform|当前游戏对象的 Transform 组件。|
 |tag|当前游戏对象的标签。|
+
+🔚
