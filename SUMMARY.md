@@ -17,7 +17,7 @@
     * 2.6 Mathf
     * [2.7 Time](第2章 Unity 常用 API/27-time.md)
     * 2.8 Input
-    * 2.9 GUI
+    * [2.9 GUI](第2章 Unity 常用 API/29-gui.md)
     * 2.10 Physics
     * 2.11 Animation
     * 2.12 Animator
