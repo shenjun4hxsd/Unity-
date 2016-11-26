@@ -15,7 +15,7 @@
     * [2.4 Vector3](第2章 Unity 常用 API/24-vector3.md)
     * 2.5 Random
     * 2.6 Mathf
-    * 2.7 Time
+    * [2.7 Time](第2章 Unity 常用 API/27-time.md)
     * 2.8 Input
     * 2.9 GUI
     * 2.10 Physics
