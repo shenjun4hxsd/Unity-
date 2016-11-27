@@ -44,6 +44,252 @@
 |TransformVector|变换一个向量从局部坐标空间到世界坐标空间。|
 |**Translate**|移动transform在translation的方向和距离。|
 
+---
 
+###Transform.Translate
+
+**示例1：**
+
+```javascript
+
+    using UnityEngine;
+
+    using System.Collections;
+
+    public class ExampleClass : MonoBehaviour {
+
+        void Update() {
+
+            transform.Translate(Vector3.forward * Time.deltaTime);
+
+            transform.Translate(Vector3.up * Time.deltaTime, Space.World);
+
+        }
+
+    }
+
+```
+
+**示例2：**
+
+```javascript
+
+    using UnityEngine;
+
+    using System.Collections;
+
+    public class ExampleClass : MonoBehaviour {
+
+        void Update() {
+
+            transform.Translate(0, 0, Time.deltaTime);
+
+            transform.Translate(0, Time.deltaTime, 0, Space.World);
+
+        }
+
+    }
+
+```
+
+**示例3：**
+
+```javascript
+
+    using UnityEngine;
+
+    using System.Collections;
+
+    public class ExampleClass : MonoBehaviour {
+
+        void Update() {
+
+            transform.Translate(Vector3.right * Time.deltaTime, Camera.main.transform);
+
+        }
+
+    }
+
+```
+
+**示例4：**
+
+```javascript
+
+    using UnityEngine;
+
+    using System.Collections;
+
+    public class ExampleClass : MonoBehaviour {
+
+        void Update() {
+
+            transform.Translate(Time.deltaTime, 0, 0, Camera.main.transform);
+
+        }
+
+    }
+
+```
+
+---
+
+###Transform.Rotate
+
+**示例1：**
+
+```javascript
+
+using UnityEngine;
+
+public class ExampleClass : MonoBehaviour 
+
+{
+
+    void Update() 
+
+    {
+
+        // Rotate the object around its local Y axis at 1 degree per second
+
+        transform.Rotate(Vector3.right * Time.deltaTime);
+
+        // ...also rotate around the World's Y axis
+
+        transform.Rotate(Vector3.up * Time.deltaTime, Space.World);
+
+    }
+
+}
+
+```
+
+**示例2：**
+
+```javascript
+
+using UnityEngine;
+
+public class ExampleClass : MonoBehaviour 
+
+{
+
+    void Update() 
+
+    {
+
+        // Rotate the object around its local Y axis at 1 degree per second
+
+        transform.Rotate(Time.deltaTime, 0, 0);
+
+        // ...also rotate around the World's Y axis
+
+        transform.Rotate(0, Time.deltaTime, 0, Space.World);
+
+    }
+
+}
+
+```
+
+**示例3：**
+
+```javascript
+
+using UnityEngine;
+
+public class ExampleClass : MonoBehaviour 
+
+{
+
+    void Update() 
+
+    {
+
+        // Rotate the object around its local Y axis at 1 degree per second
+
+        transform.Rotate(Vector3.right, Time.deltaTime);
+
+        // ...also rotate around the World's Y axis
+
+        transform.Rotate(Vector3.up, Time.deltaTime, Space.World);
+
+    }
+
+}
+
+```
+
+---
+
+###Transform.RotateAround
+
+```javascript
+
+using UnityEngine;
+
+using System.Collections;
+
+public class ExampleClass : MonoBehaviour {
+
+    void Update() {
+
+        transform.RotateAround(Vector3.zero, Vector3.up, 20 * Time.deltaTime);
+
+    }
+
+}
+
+```
+
+---
+
+###Transform.LookAt
+
+**实例1：**
+
+```javascript
+
+	// This complete script can be attached to a camera to make it 
+
+	// continuously point at another object.
+
+	
+
+	// The target variable shows up as a property in the inspector. 
+
+	// Drag another object onto it to make the camera look at it.
+
+using UnityEngine;
+
+using System.Collections;
+
+public class ExampleClass : MonoBehaviour {
+
+    public Transform target;
+
+    
+
+    void Update() {
+
+    	// Rotate the camera every frame so it keeps looking at the target 
+
+        transform.LookAt(target);
+
+    }
+
+}
+
+```
+
+**实例2：**
+
+```javascript
+
+// Point the object at the world origin
+
+	transform.LookAt(Vector3.zero);
+
+```
 
 🔚
