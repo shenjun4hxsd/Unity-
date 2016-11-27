@@ -13,3 +13,19 @@ Resources类允许你从指定的路径查找或访问资源。
 然而，有些情况下按照名称比在检视面板中取回一个资源更方便，尤其是当在检视面板中指定引用是不方便的时候。例如你或许想从脚本创建一个游戏物体，为程序生成的网格赋值一个纹理。
 
 有些已加载的资源，最明显的是纹理，即使在场景没有实例，也最占内存。当资源不再需要时，你可以使用Resources.UnloadUnusedAssets回收内存。
+
+
+示例：
+
+```javascript
+    using UnityEngine;
+    using System.Collections;
+ 
+    public class ExampleClass : MonoBehaviour {
+        void Start() {
+            var go = GameObject.CreatePrimitive(PrimitiveType.Plane);
+            var rend = go.GetComponent<Renderer>();
+            rend.material.mainTexture = Resources.Load("glass") as Texture;
+        }
+    }
+```
