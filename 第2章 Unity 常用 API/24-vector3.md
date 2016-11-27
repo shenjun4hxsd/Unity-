@@ -118,7 +118,7 @@
 
 ---
 
-###Vector3.Lerp
+###Vector3.Lerp 线性差值
 **示例：**
 ```javascript
     using UnityEngine;
