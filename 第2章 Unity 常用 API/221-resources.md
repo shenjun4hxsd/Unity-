@@ -82,7 +82,20 @@ Resources类允许你从指定的路径查找或访问资源。
 ---
 
 ###Resources.LoadAsync 异步加载
+异步加载Resources文件夹中的资源。
 
+public static ResourceRequest LoadAsync(string path);
+
+---
+
+###Resources.UnloadAsset 卸载资源
+这个函数仅用于储存在硬盘上的资源。
+
+如果场景有任何对象引用该资源，该资源被使用时，Unity会从硬盘重新加载该资源。
+
+---
+
+###Resources.UnloadUnusedAssets 卸载未使用的资源
 
 ---
 
