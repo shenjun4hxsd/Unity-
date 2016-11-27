@@ -46,7 +46,7 @@
 
 ---
 
-###Transform.Translate
+###Transform.Translate 移动
 
 **示例1：**
 
