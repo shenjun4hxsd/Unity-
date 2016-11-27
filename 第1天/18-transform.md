@@ -163,7 +163,7 @@
 
 ---
 
-###Transform.RotateAround
+###Transform.RotateAround 绕着任意轴旋转
 ```javascript
     using UnityEngine;
     using System.Collections;
