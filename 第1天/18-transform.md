@@ -57,6 +57,19 @@
     }
 ```
 
+**示例2:**
+```
+    using UnityEngine;
+    using System.Collections;
+
+    public class ExampleClass : MonoBehaviour {
+
+        void Update() {
+            transform.Translate(0, 0, Time.deltaTime);
+            transform.Translate(0, Time.deltaTime, 0, Space.World);
+        }
+    }
+```
 
 🔚
 
