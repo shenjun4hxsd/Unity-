@@ -81,6 +81,11 @@ Resources类允许你从指定的路径查找或访问资源。
 ```
 ---
 
+###Resources.LoadAsync 异步加载
+
+
+---
+
 ###Resources.FindObjectsOfTypeAll 查找该类型的所有对象
 
 返回一个对象的类型或从type派生的数组。
