@@ -197,6 +197,5 @@ public class ExampleClass : MonoBehaviour {
 
 **实例2：**
 ```javascript
-// Point the object at the world origin
 	transform.LookAt(Vector3.zero);
 ```
