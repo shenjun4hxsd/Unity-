@@ -57,8 +57,23 @@
 |SlerpUnclamped|在两个向量之间球形插值。该插值t在小于0或大于1时的返回值不会被限制。|
 
 
+###Vector3.ClampMagnitude
+**示例：**
+```javascript
+    using UnityEngine;
+    using System.Collections;
 
-
+    public class ExampleClass : MonoBehaviour {
+        public Vector3 centerPt;
+        public float radius;
+        void Update() {
+            Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            Vector3 newPos = transform.position + movement;
+            Vector3 offset = newPos - centerPt;
+            transform.position = centerPt + Vector3.ClampMagnitude(offset, radius);
+        }
+    }
+```
 
 🔚
 
