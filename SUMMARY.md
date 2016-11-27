@@ -10,11 +10,11 @@
     * [1.4 四元数](第1章 3D 数学基础/14-四元数.md)
 * [第2章 Unity 常用 API](第2章 Unity 常用 API/2.0 Unity 常用 API.md)
     * [2.1 MonoBehaviour](第2章 Unity 常用 API/21-monobehaviour.md)
-    * 2.2 GameObject
+    * [2.2 GameObject](第2章 Unity 常用 API/22-gameobject.md)
     * [2.3 Tranform](第2章 Unity 常用 API/23-tranform.md)
     * [2.4 Vector3](第2章 Unity 常用 API/24-vector3.md)
-    * 2.5 Random
-    * 2.6 Mathf
+    * [2.5 Random](第2章 Unity 常用 API/25-random.md)
+    * [2.6 Mathf](第2章 Unity 常用 API/26-mathf.md)
     * [2.7 Time](第2章 Unity 常用 API/27-time.md)
     * 2.8 Input
     * [2.9 GUI](第2章 Unity 常用 API/29-gui.md)
