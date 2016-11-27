@@ -36,7 +36,7 @@
 |静态方法|说明|
 |:--|:--|
 |**Angle**| 返回两个向量之间的夹角。 |
-|ClampMagnitude|返回向量的长度，最大不超过 maxLength 所指示的长度。|
+|ClampMagnitude|返回的向量的长度，最大不超过 maxLength 所指示的长度。|
 |**Distance**|返回两个点之间的距离。|
 |**Cross**|计算两个向量的叉乘。|
 |**Dot**|计算两个向量的点乘。|
