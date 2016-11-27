@@ -115,18 +115,18 @@
 
 **示例1：**
 ```javascript
-using UnityEngine;
+    using UnityEngine;
 
-public class ExampleClass : MonoBehaviour 
-{
-    float rotSpeed = 0.1f;
-
-    void Update() 
+    public class ExampleClass : MonoBehaviour 
     {
-        transform.Rotate(Vector3.right * rotSpeed);
-        transform.Rotate(Vector3.up * rotSpeed, Space.World);
+        float rotSpeed = 0.1f;
+
+        void Update() 
+        {
+            transform.Rotate(Vector3.right * rotSpeed);
+            transform.Rotate(Vector3.up * rotSpeed, Space.World);
+        }
     }
-}
 ```
 
 **示例2：**
