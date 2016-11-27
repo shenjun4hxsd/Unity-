@@ -61,6 +61,21 @@ Resources类允许你从指定的路径查找或访问资源。
     }
 ```
 
+**示例2：**
+```javascript
+    using UnityEngine;
+    using System.Collections;
+ 
+    public class ExampleClass : MonoBehaviour {
+ 
+        void Start() {
+ 
+            // Instantiates a prefab named "enemy" located in any Resources
+            // folder in your project's Assets folder.
+            GameObject instance = Instantiate(Resources.Load("enemy", typeof(GameObject))) as GameObject;
+        }
+    }
+```
 ---
 
 ###Resources.FindObjectsOfTypeAll 查找该类型的所有对象
