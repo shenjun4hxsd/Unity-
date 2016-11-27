@@ -45,7 +45,7 @@
 
 ---
 
-###Transform.Translate
+###Transform.Translate 移动
 
 **示例1：**
 ```javascript
@@ -111,7 +111,7 @@
 
 ---
 
-###Transform.Rotate
+###Transform.Rotate 绕着通过物体中心点的某个轴旋转
 
 **示例1：**
 ```javascript
