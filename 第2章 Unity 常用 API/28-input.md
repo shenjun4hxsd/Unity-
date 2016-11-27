@@ -145,37 +145,21 @@ Input 这个类给我们提供的属性和方法全是静态的。
 |GetButtonUp|在用户释放根据 `buttonName` 名称的虚拟按钮时返回 true。|
 
 **示例：**
-
 ```javascript
 
- using UnityEngine;
+    using UnityEngine;
+    using System.Collections;
 
- using System.Collections;
+    public class ExampleClass : MonoBehaviour
+    {
+        public GameObject projectile;
 
-
-
- public class ExampleClass : MonoBehaviour
-
- {
-
- public GameObject projectile;
-
-
-
- void Update()
-
- {
-
- if (Input.GetButtonDown("Fire1"))
-
- Instantiate(projectile, transform.position, transform.rotation);
-
-
-
- }
-
- }
-
+        void Update()
+        {
+            if (Input.GetButtonDown("Fire1"))
+                Instantiate(projectile, transform.position, transform.rotation);
+        }
+    }
 ```
 
 
