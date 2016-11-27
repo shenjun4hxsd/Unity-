@@ -170,8 +170,11 @@ using UnityEngine;
 using System.Collections;
 
 public class ExampleClass : MonoBehaviour {
+
+    float rotSpeed = 0.1f;
+
     void Update() {
-        transform.RotateAround(Vector3.zero, Vector3.up, 20 * Time.deltaTime);
+        transform.RotateAround(Vector3.zero, Vector3.up, 20 * rotSpeed);
     }
 }
 ```
