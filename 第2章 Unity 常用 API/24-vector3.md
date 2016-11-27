@@ -79,6 +79,7 @@
 ---
 
 ###Vector3.Dot
+**示例：**
 ```javascript
     using UnityEngine;
     using System.Collections;
@@ -100,6 +101,7 @@
 ---
 
 ###Vector3.Cross
+**示例：**
 ```javascript
     using UnityEngine;
     using System.Collections;
