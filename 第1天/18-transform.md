@@ -131,34 +131,34 @@ public class ExampleClass : MonoBehaviour
 
 **示例2：**
 ```javascript
-using UnityEngine;
+    using UnityEngine;
 
-public class ExampleClass : MonoBehaviour 
-{
-    float rotSpeed = 0.1f;
-
-    void Update() 
+    public class ExampleClass : MonoBehaviour 
     {
-        transform.Rotate(rotSpeed, 0, 0);
-        transform.Rotate(0, rotSpeed, 0, Space.World);
+        float rotSpeed = 0.1f;
+
+        void Update() 
+        {
+            transform.Rotate(rotSpeed, 0, 0);
+            transform.Rotate(0, rotSpeed, 0, Space.World);
+        }
     }
-}
 ```
 
 **示例3：**
 ```javascript
-using UnityEngine;
+    using UnityEngine;
 
-public class ExampleClass : MonoBehaviour 
-{
-    float rotSpeed = 0.1f;
-
-    void Update() 
+    public class ExampleClass : MonoBehaviour 
     {
-        transform.Rotate(Vector3.right, rotSpeed);
-        transform.Rotate(Vector3.up, rotSpeed, Space.World);
+        float rotSpeed = 0.1f;
+
+        void Update() 
+        {
+            transform.Rotate(Vector3.right, rotSpeed);
+            transform.Rotate(Vector3.up, rotSpeed, Space.World);
+        }
     }
-}
 ```
 
 ---
