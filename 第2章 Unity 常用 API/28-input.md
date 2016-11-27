@@ -182,21 +182,13 @@ Input 这个类给我们提供的属性和方法全是静态的。
 |compositionCursorPos|当前文本输入位置，使用于IME来打开窗口。|
 |compositionString|当前用户正在输入的IME组合字符串。|
 |deviceOrientation|由操作系统所报告的设备的物理方向（只读）。|
-
 |gyro|返回默认的陀螺仪。|
-
 |imeCompositionMode|控制IME输入组合的启用和禁用。|
-
 |imeIsSelected|用户是否已选择IME键盘输入源?|
-
 |inputString|返回在这一帧的键盘输入（只读）|
-
 |location|用于访问设备位置信息（仅手持设备）（只读）。|
-
 |**mousePosition**|在屏幕坐标空间当前鼠标的位置（只读）。|
-
 |mouseScrollDelta|当前鼠标滚动增量（只读）。|
-
 |multiTouchEnabled|指示系统是否启用多点触控。|
 
 |simulateMouseWithTouches|启用/禁用鼠标模拟触摸。默认情况下启用此项。|
