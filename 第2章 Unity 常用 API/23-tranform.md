@@ -107,7 +107,7 @@
 
 ---
 
-###Transform.Rotate
+###Transform.Rotate 绕着通过物体中心点的某个轴旋转
 
 **示例1：**
 
@@ -165,7 +165,7 @@
 
 ---
 
-###Transform.RotateAround
+###Transform.RotateAround 绕着任意轴旋转
 
 ```javascript
     using UnityEngine;
