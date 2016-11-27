@@ -55,6 +55,7 @@
     public class ExampleClass : MonoBehaviour {
         
         float moveSpeed = 0.1f;
+
         void Update() {
             transform.Translate(Vector3.forward * moveSpeed);
             transform.Translate(Vector3.up * moveSpeed, Space.World);
@@ -69,9 +70,11 @@
 
     public class ExampleClass : MonoBehaviour {
 
+        float moveSpeed = 0.1f;
+
         void Update() {
-            transform.Translate(0, 0, Time.deltaTime);
-            transform.Translate(0, Time.deltaTime, 0, Space.World);
+            transform.Translate(0, 0, moveSpeed);
+            transform.Translate(0, moveSpeed, 0, Space.World);
         }
     }
 ```
@@ -83,9 +86,10 @@
 
     public class ExampleClass : MonoBehaviour {
 
-        void Update() {
+        float moveSpeed = 0.1f;
 
-            transform.Translate(Vector3.right * Time.deltaTime, Camera.main.transform);
+        void Update() {
+            transform.Translate(Vector3.right * moveSpeed, Camera.main.transform);
         }
     }
 ```
@@ -97,8 +101,10 @@
 
     public class ExampleClass : MonoBehaviour {
 
+        float moveSpeed = 0.1f;
+
         void Update() {
-            transform.Translate(Time.deltaTime, 0, 0, Camera.main.transform);
+            transform.Translate(moveSpeed, 0, 0, Camera.main.transform);
         }
     }
 ```
@@ -113,13 +119,12 @@ using UnityEngine;
 
 public class ExampleClass : MonoBehaviour 
 {
+    float rotSpeed = 0.1f;
+
     void Update() 
     {
-        // Rotate the object around its local Y axis at 1 degree per second
-        transform.Rotate(Vector3.right * Time.deltaTime);
-
-        // ...also rotate around the World's Y axis
-        transform.Rotate(Vector3.up * Time.deltaTime, Space.World);
+        transform.Rotate(Vector3.right * rotSpeed);
+        transform.Rotate(Vector3.up * rotSpeed, Space.World);
     }
 }
 ```
