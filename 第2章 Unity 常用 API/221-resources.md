@@ -45,6 +45,9 @@ Resources类允许你从指定的路径查找或访问资源。
 ###Resources.Load 加载
 加载储存在Resources文件夹中path处的资源。
 
+注意：路径名使用正斜杠“/”，如果使用反斜杠“\”会不正常运行。
+
+
 如果发现，返回所在path处的资源，否则返回null。如果有type参数，只有type类型的物体将被返回。 Path相对于Resources文件夹，忽略扩展名。Resouces文件夹可以在Assets文件夹中的任何位置。
 
 **示例1：**
