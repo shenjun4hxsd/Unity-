@@ -79,7 +79,9 @@ Resources类允许你从指定的路径查找或访问资源。
 
             // Instantiates a prefab named "enemy" located in any Resources
             // folder in your project's Assets folder.
-            GameObject instance = Instantiate(Resources.Load("enemy", typeof(GameObject))) as GameObject;
+            // GameObject instance = Instantiate(Resources.Load("enemy", typeof(GameObject))) as GameObject;
+            GameObject instance = Instantiate(Resources.Load<GameObject>("enemy")) as GameObject;
+
         }
     }
 ```
