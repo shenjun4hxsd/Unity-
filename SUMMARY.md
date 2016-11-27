@@ -7,7 +7,7 @@
     * [1.2 矩阵](第1章 3D 数学基础/12-矩阵.md)
         * [1.2.1 矩阵和线性变换](第1章 3D 数学基础/121-矩阵和线性变换.md)
     * [1.3 欧拉角](第1章 3D 数学基础/13-欧拉角.md)
-    * 1.4 四元数
+    * [1.4 四元数](第1章 3D 数学基础/14-四元数.md)
 * [第2章 Unity 常用 API](第2章 Unity 常用 API/2.0 Unity 常用 API.md)
     * [2.1 MonoBehaviour](第2章 Unity 常用 API/21-monobehaviour.md)
     * 2.2 GameObject
