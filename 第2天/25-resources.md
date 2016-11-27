@@ -70,5 +70,30 @@ Resources类允许你从指定的路径查找或访问资源。
     }
 ```
 
-
+**示例2：**
+```javascript
+    using UnityEngine;
+    using System.Collections;
+    using System.Collections.Generic;
+    using UnityEditor;
+ 
+    public class ExampleClass  : MonoBehaviour {
+ 
+        List<GameObject> GetAllObjectsInScene()  {
+            List<GameObject> objectsInScene = new List<GameObject>();
+ 
+            foreach (GameObject go in Resources.FindObjectsOfTypeAll<GameObject>()) {
+                if (go.hideFlags == HideFlags.NotEditable || go.hideFlags == HideFlags.HideAndDontSave)
+                    continue;
+ 
+                if (!EditorUtility.IsPersistent(go.transform.root.gameObject))
+                    continue;
+ 
+                objectsInScene.Add(go);
+            }
+ 
+            return objectsInScene;
+        }
+    }
+```
 
