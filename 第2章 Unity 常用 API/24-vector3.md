@@ -101,6 +101,7 @@
 ---
 
 ###Vector3.Cross
+![](/assets/屏幕快照 2016-11-27 下午9.07.24.png)
 **示例：**
 ```javascript
     using UnityEngine;
