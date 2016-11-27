@@ -43,6 +43,20 @@
 |TransformVector|变换一个向量从局部坐标空间到世界坐标空间。|
 |**Translate**|移动transform在translation的方向和距离。|
 
+示例：
+```javascript
+    using UnityEngine;
+    using System.Collections;
+
+    public class ExampleClass : MonoBehaviour {
+
+        void Update() {
+            transform.Translate(Vector3.forward * Time.deltaTime);
+            transform.Translate(Vector3.up * Time.deltaTime, Space.World);
+        }
+    }
+```
+
 
 🔚
 
