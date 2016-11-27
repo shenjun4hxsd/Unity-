@@ -49,7 +49,6 @@
 ###Transform.Translate 移动
 
 **示例1：**
-
 ```javascript
     using UnityEngine;
     using System.Collections;
@@ -64,7 +63,6 @@
 ```
 
 **示例2：**
-
 ```javascript
     using UnityEngine;
     using System.Collections;
@@ -79,7 +77,6 @@
 ```
 
 **示例3：**
-
 ```javascript
     using UnityEngine;
     using System.Collections;
@@ -92,7 +89,6 @@
 ```
 
 **示例4：**
-
 ```javascript
     using UnityEngine;
     using System.Collections;
@@ -110,7 +106,6 @@
 ###Transform.Rotate 绕着通过物体中心点的某个轴旋转
 
 **示例1：**
-
 ```javascript
     using UnityEngine;
 
@@ -128,7 +123,6 @@
 ```
 
 **示例2：**
-
 ```javascript
     using UnityEngine;
 
@@ -146,7 +140,6 @@
 ```
 
 **示例3：**
-
 ```javascript
     using UnityEngine;
 
@@ -166,7 +159,6 @@
 ---
 
 ###Transform.RotateAround 绕着任意轴旋转
-
 ```javascript
     using UnityEngine;
     using System.Collections;
@@ -184,7 +176,6 @@
 ###Transform.LookAt 使物体的Z轴指向目标
 
 **实例1：**
-
 ```javascript
     using UnityEngine;
     using System.Collections;
@@ -201,7 +192,6 @@
 ```
 
 **实例2：**
-
 ```javascript
 	transform.LookAt(Vector3.zero);
 ```
@@ -210,6 +200,18 @@
 
 ###Transform.TransformPoint
 ```javascript
+    using UnityEngine;
+    using System.Collections;
 
+    public class ExampleClass : MonoBehaviour {
+        public GameObject someObject;
+        public Vector3 thePosition;
+    
+        void Start() {
+    	    // Instantiate an object to the right of the current object
+	    thePosition = transform.TransformPoint(Vector3.right * 2);
+	    Instantiate(someObject, thePosition, someObject.transform.rotation);
+        }
+    }
 ```
 🔚
