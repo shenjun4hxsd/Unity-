@@ -168,21 +168,15 @@
 ###Transform.RotateAround
 
 ```javascript
+    using UnityEngine;
+    using System.Collections;
 
-using UnityEngine;
+    public class ExampleClass : MonoBehaviour {
 
-using System.Collections;
-
-public class ExampleClass : MonoBehaviour {
-
-    void Update() {
-
-        transform.RotateAround(Vector3.zero, Vector3.up, 20 * Time.deltaTime);
-
+        void Update() {
+            transform.RotateAround(Vector3.zero, Vector3.up, 20 * Time.deltaTime);
+        }
     }
-
-}
-
 ```
 
 ---
@@ -192,47 +186,24 @@ public class ExampleClass : MonoBehaviour {
 **实例1：**
 
 ```javascript
+    using UnityEngine;
+    using System.Collections;
 
-	// This complete script can be attached to a camera to make it 
+    public class ExampleClass : MonoBehaviour {
 
-	// continuously point at another object.
+        public Transform target;
 
-	
-
-	// The target variable shows up as a property in the inspector. 
-
-	// Drag another object onto it to make the camera look at it.
-
-using UnityEngine;
-
-using System.Collections;
-
-public class ExampleClass : MonoBehaviour {
-
-    public Transform target;
-
-    
-
-    void Update() {
-
-    	// Rotate the camera every frame so it keeps looking at the target 
-
-        transform.LookAt(target);
-
+        void Update() {
+    	    // Rotate the camera every frame so it keeps looking at the target 
+            transform.LookAt(target);
+        }
     }
-
-}
-
 ```
 
 **实例2：**
 
 ```javascript
-
-// Point the object at the world origin
-
 	transform.LookAt(Vector3.zero);
-
 ```
 
 🔚
