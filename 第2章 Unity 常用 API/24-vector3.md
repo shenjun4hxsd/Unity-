@@ -237,6 +237,7 @@
     public class ExampleClass : MonoBehaviour {
         public Transform target;
         public float speed;
+
         void Update() {
             Vector3 targetDir = target.position - transform.position;
             float step = speed * Time.deltaTime;
