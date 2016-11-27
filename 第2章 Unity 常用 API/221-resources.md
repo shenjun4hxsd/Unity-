@@ -96,6 +96,9 @@ public static ResourceRequest LoadAsync(string path);
 ---
 
 ###Resources.UnloadUnusedAssets 卸载未使用的资源
+如果对象没有进入到游戏场景，资源被认为没有使用，包括脚本组件，静态变量也被检查。
+
+这个脚本执行堆栈，然而并不检查，所以只从脚本栈中卸载引用的资源。如果需要的话下次再重新加载，这需要注意资源已经在内存中被修改。在资源垃圾回收被触发之前，确保调用EditorUtility.SetDirty。
 
 ---
 
