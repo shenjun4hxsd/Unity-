@@ -53,10 +53,11 @@
     using System.Collections;
 
     public class ExampleClass : MonoBehaviour {
-
+        
+        float moveSpeed = 0.1f;
         void Update() {
-            transform.Translate(Vector3.forward * Time.deltaTime);
-            transform.Translate(Vector3.up * Time.deltaTime, Space.World);
+            transform.Translate(Vector3.forward * moveSpeed);
+            transform.Translate(Vector3.up * moveSpeed, Space.World);
         }
     }
 ```
