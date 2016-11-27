@@ -42,6 +42,15 @@ Resources类允许你从指定的路径查找或访问资源。
 
 ---
 
+###Resources.Load 加载
+加载储存在Resources文件夹中path处的资源。
+
+如果发现，返回所在path处的资源，否则返回null。如果有type参数，只有type类型的物体将被返回。 Path相对于Resources文件夹，忽略扩展名。Resouces文件夹可以在Assets文件夹中的任何位置。
+
+**示例：**
+
+---
+
 ###Resources.FindObjectsOfTypeAll 查找该类型的所有对象
 
 返回一个对象的类型或从type派生的数组。
