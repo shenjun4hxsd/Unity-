@@ -56,6 +56,7 @@
 |Slerp|在两个向量之间球形插值。|
 |SlerpUnclamped|在两个向量之间球形插值。该插值t在小于0或大于1时的返回值不会被限制。|
 
+---
 
 ###Vector3.ClampMagnitude
 **示例：**
