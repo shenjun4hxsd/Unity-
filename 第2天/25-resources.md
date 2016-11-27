@@ -39,3 +39,14 @@ Resources类允许你从指定的路径查找或访问资源。
 |LoadAsync|异步加载Resources文件夹中的资源。|
 |UnloadAsset|从内存卸载指定的资源。|
 |UnloadUnusedAssets|卸载未使用的资源。|
+
+
+---
+
+###Resources.FindObjectsOfTypeAll 查找该类型的所有对象
+
+返回一个对象的类型或从type派生的数组。
+
+这个函数可以返回加载的Unity物体的任意类型，包含游戏对象、预制体、材质、网格、纹理等等。它也会列出内部的东西，因此，请格外小心处理返回的对象的方式。相反Object.FindObjectsOfType这个函数也会列出禁用的对象。
+
+请注意这个函数非常慢，不推荐在每帧中使用。
