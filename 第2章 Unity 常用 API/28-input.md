@@ -190,17 +190,10 @@ Input 这个类给我们提供的属性和方法全是静态的。
 |**mousePosition**|在屏幕坐标空间当前鼠标的位置（只读）。|
 |mouseScrollDelta|当前鼠标滚动增量（只读）。|
 |multiTouchEnabled|指示系统是否启用多点触控。|
-
 |simulateMouseWithTouches|启用/禁用鼠标模拟触摸。默认情况下启用此项。|
-
 |touchCount|触摸的数量。每一帧之内都一定不会改变（只读）|
-
 |touches|返回代表上一帧所有的触摸状态的对象列表（只读）（分配临时变量）|
-
 |touchSupported|返回设备是否在当前运行的应用程序支持触摸输入。|
-
-
-
 
 
 🔚
