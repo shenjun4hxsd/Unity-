@@ -179,7 +179,7 @@
 ```
 ---
 
-###Transform.LookAt
+###Transform.LookAt 使物体的Z轴指向目标
 **实例1：**
 ```javascript
     using UnityEngine;
