@@ -28,6 +28,7 @@
     * 2.18 AudioSource
     * 2.19 AudioMixer
     * 2.20 AssetBundle
+    * [2.21 Resources](第2章 Unity 常用 API/221-resources.md)
 * [第1天](第1天/1.0 第1天.md)
     * [1.1 向量](第1天/11-向量.md)
         * [1.11 向量的数学运算](第1天/111-向量的数学运算.md)
