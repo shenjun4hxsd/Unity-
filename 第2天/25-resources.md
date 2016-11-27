@@ -2,8 +2,6 @@
 
 Resources类允许你从指定的路径查找或访问资源。
 
-在编辑器，Resources.FindObjectsOfTypeAll能用来定位资源和场景对象。
-
 所有资源必须在项目Assets文件内的任意Resources文件夹中，可以通过Resources.Load访问。允许有多个Resources文件夹，每次加载对象是会自动检查。
 
 在Unity中通常不需要使用路径名来访问资源，相反你可以通过声明一个成员变量来暴露一个资源的引用，然后在检视面板中指定它。使用这个技巧的时候Unity可以在构建的时候自动计算哪个资源被使用。这从根本上最大限度地减少了实际用于游戏的资源的尺寸。当你放资源在“Resources”文件夹中时，所有在“Resources”文件夹中的资源都将被打包编译包含在游戏中。
@@ -77,8 +75,6 @@ Resources类允许你从指定的路径查找或访问资源。
 
         void Start() {
 
-            // Instantiates a prefab named "enemy" located in any Resources
-            // folder in your project's Assets folder.
             // GameObject instance = Instantiate(Resources.Load("enemy", typeof(GameObject))) as GameObject;
             GameObject instance = Instantiate(Resources.Load<GameObject>("enemy")) as GameObject;
 
