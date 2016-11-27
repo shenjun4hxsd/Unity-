@@ -171,27 +171,16 @@ Input 这个类给我们提供的属性和方法全是静态的。
 |IsJoystickPreconfigured|确定Unity是否一个特定的操纵杆模型已预先配置。（仅Linux）。|
 
 |静态变量|说明|
-
 |:--|:--|
-
 |acceleration|上一次测量的设备在三维空间中的线性加速度（只读）。|
-
 |accelerationEventCount|上一帧发生的所测量的的加速度次数。|
-
 |accelerationEvents|返回上一帧测量的加速度数据列表（只读）（分配临时变量）|
-
 |anyKey|当前是否有任意键或鼠标键被按下（只读）？|
-
 |anyKeyDown|在用户按下任意按键或鼠标按键首帧返回true（只读）。|
-
 |compass|访问指南针的属性（仅手持设备）。|
-
 |compensateSensors|该属性控制输入传感器在屏幕方向的补偿。|
-
 |compositionCursorPos|当前文本输入位置，使用于IME来打开窗口。|
-
 |compositionString|当前用户正在输入的IME组合字符串。|
-
 |deviceOrientation|由操作系统所报告的设备的物理方向（只读）。|
 
 |gyro|返回默认的陀螺仪。|
