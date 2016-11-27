@@ -179,6 +179,9 @@
 ---
 
 ###Vector3.MoveTowards
+当前的地点移向目标。
+这个函数的返回值是一个点maxdistancedelta单位更接近于目标/点沿着当前的和目标之间的线。如果目标是比maxdistancedelta /然后返回值将等于目标接近（即移动不会超过目标）。maxdistancedelta负值可以用来从目标推开该向量。
+
 **示例：**
 
 ```javascript
