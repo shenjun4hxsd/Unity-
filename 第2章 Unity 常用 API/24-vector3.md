@@ -100,7 +100,7 @@
 
 ---
 
-###Vector3.Cross
+###Vector3.Cross 叉乘
 ![](/assets/屏幕快照 2016-11-27 下午9.07.24.png)
 **示例：**
 ```javascript
