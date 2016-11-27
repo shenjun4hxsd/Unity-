@@ -128,27 +128,15 @@ Input 这个类给我们提供的属性和方法全是静态的。
 
         void Update() {
 
+            float h = horizontalSpeed * Input.GetAxis("Mouse X");
+            float v = verticalSpeed * Input.GetAxis("Mouse Y");
 
-
- float h = horizontalSpeed * Input.GetAxis("Mouse X");
-
- float v = verticalSpeed * Input.GetAxis("Mouse Y");
-
- transform.Rotate(v, h, 0);
-
- }
-
- }
-
-
-
+            transform.Rotate(v, h, 0);
+        }
+    }
 ```
 
-
-
 ---
-
-
 
 |功能键|说明|
 
