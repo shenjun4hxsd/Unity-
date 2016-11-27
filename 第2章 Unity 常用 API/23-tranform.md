@@ -206,4 +206,10 @@
 	transform.LookAt(Vector3.zero);
 ```
 
+---
+
+###Transform.TransformPoint
+```javascript
+
+```
 🔚
