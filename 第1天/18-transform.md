@@ -160,6 +160,7 @@ public class ExampleClass : MonoBehaviour
 ---
 
 ###Transform.LookAt
+**实例1：**
 ```javascript
 	// This complete script can be attached to a camera to make it 
 	// continuously point at another object.
@@ -177,4 +178,10 @@ public class ExampleClass : MonoBehaviour {
         transform.LookAt(target);
     }
 }
+```
+
+**实例2：**
+```javascript
+// Point the object at the world origin
+	transform.LookAt(Vector3.zero);
 ```
