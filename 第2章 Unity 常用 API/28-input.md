@@ -1,256 +1,132 @@
 ##输入控制（Input）
 
-
-
 输入系统的接口，用来监视我们所有的硬件输入设备（麦克风除外）。
-
-
 
 Input 这个类能够读取输入管理器设置的按键，以及访问移动设备的多点触控或加速感应数据。
 
-
-
 Input 这个类给我们提供的属性和方法全是静态的。
 
-
-
 ---
-
-
 
 |键盘控制|说明|
-
 |:--|:--|
-
 |GetKey|当用户按下由name名称确定的按键时，返回 true。|
-
 |GetKeyDown|当用户按下指定名称的按键时的那一帧返回 true。|
-
 |GetKeyUp|在用户释放给定名字的按键的那一帧返回 true。|
 
-
-
 **示例1:**
-
 ```javascript
+    using UnityEngine;
+    using System.Collections;
 
- using UnityEngine;
-
- using System.Collections;
-
-
-
- public class ExampleClass : MonoBehaviour
-
- {
-
- public void Update()
-
- {
-
- // 当按下 数字键1 的那一帧，在控制台输出鼠标在屏幕上的位置。
-
- if(Input.GetKeyDown(KeyCode.Alpha1))
-
- {
-
- Debug.Log(Input.mousePosition);
-
- }
-
- }
-
- }
-
+    public class ExampleClass : MonoBehaviour
+    {
+        public void Update()
+        {
+            // 当按下 数字键1 的那一帧，在控制台输出鼠标在屏幕上的位置。
+            if(Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                Debug.Log(Input.mousePosition);
+            }
+        }
+    }
 ```
-
-
 
 **示例2:**
-
 ```javascript
 
- using UnityEngine;
+    using UnityEngine;
+    using System.Collections;
 
- using System.Collections;
-
-
-
- public class ExampleClass : MonoBehaviour
-
- {
-
- public void Update()
-
- {
-
- // 当按下a键的那一帧，在控制台输出鼠标在屏幕上的位置。
-
- if(Input.GetKeyDown("a"))
-
- {
-
- Debug.Log(Input.mousePosition);
-
- }
-
- }
-
- }
-
+    public class ExampleClass : MonoBehaviour
+    {
+        public void Update()
+        {
+            // 当按下a键的那一帧，在控制台输出鼠标在屏幕上的位置。
+            if(Input.GetKeyDown("a"))
+            {
+                Debug.Log(Input.mousePosition);
+            }
+        }
+    }
 ```
-
-
 
 ---
 
-
-
 |鼠标的控制|说明|
-
 |:--|:--|
-
 |GetMouseButton|当指定的鼠标按钮被按下时返回 true。|
-
 |GetMouseButtonDown|在用户按下指定鼠标按键的那一帧返回 true。|
-
 |GetMouseButtonUp|在用户释放指定鼠标按键的那一帧返回 true。|
-
-
 
 >数字键 0 表示鼠标左键；数字键 1 表示鼠标右键；数字键 2 表示鼠标中键。
 
-
-
 示例：
-
 ```javascript
 
- using UnityEngine;
+    using UnityEngine;
+    using System.Collections;
 
- using System.Collections;
-
-
-
- public class ExampleClass : MonoBehaviour
-
- {
-
- public void Update()
-
- {
-
- // 当按下鼠标左键的那一帧，在控制台输出鼠标在屏幕上的位置。
-
- if(Input.GetMouseButtonDown(0))
-
- {
-
- Debug.Log(Input.mousePosition);
-
- }
-
- }
-
- }
-
+    public class ExampleClass : MonoBehaviour
+    {
+        public void Update()
+        {
+            // 当按下鼠标左键的那一帧，在控制台输出鼠标在屏幕上的位置。
+            if(Input.GetMouseButtonDown(0))
+            {
+                Debug.Log(Input.mousePosition);
+            }
+        }
+    }
 ```
-
-
 
 ---
 
-
-
 |轴值的判断|说明|
-
 |:--|:--|
-
 |GetAxis| 根据 `axisName` 名称返回虚拟输入轴中的值。|
-
 |GetAxisRaw|通过 `axisName` 名称返回一个不使用平滑滤波器的虚拟轴值。|
-
-
 
 >默认轴：
 
-
-
 >`Horizontal` 和 `Vertical` 映射于控制杆、A、W、S、D 和箭头键（方向键）。
-
-
 
 >`Mouse X` 和 `Mouse Y` 映射于鼠标。
 
-
-
 **示例1:**
-
 ```javascript
 
- using UnityEngine;
+    using UnityEngine;
+    using System.Collections;
 
- using System.Collections;
+    public class ExampleClass : MonoBehaviour {
 
+        public float speed = 10.0F;
+        public float rotationSpeed = 100.0F;
 
-
- public class ExampleClass : MonoBehaviour {
-
-
-
- public float speed = 10.0F;
-
- public float rotationSpeed = 100.0F;
-
-
-
- void Update() {
-
-
-
- float translation = Input.GetAxis("Vertical") * speed;
-
- float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
-
-
-
- translation *= Time.deltaTime;
-
- rotation *= Time.deltaTime;
-
- transform.Translate(0, 0, translation);
-
- transform.Rotate(0, rotation, 0);
-
- }
-
- }
-
+        void Update() {
+            float translation = Input.GetAxis("Vertical") * speed;
+            float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
+            translation *= Time.deltaTime;
+            rotation *= Time.deltaTime;
+            transform.Translate(0, 0, translation);
+            transform.Rotate(0, rotation, 0);
+        }
+    }
 ```
 
-
-
 **示例2:**
-
 ```javascript
 
- using UnityEngine;
+    using UnityEngine;
+    using System.Collections;
 
- using System.Collections;
+    public class ExampleClass : MonoBehaviour
+    {
+        public float horizontalSpeed = 2.0F;
+        public float verticalSpeed = 2.0F;
 
-
-
- public class ExampleClass : MonoBehaviour
-
- {
-
- public float horizontalSpeed = 2.0F;
-
- public float verticalSpeed = 2.0F;
-
-
-
- void Update() {
+        void Update() {
 
 
 
