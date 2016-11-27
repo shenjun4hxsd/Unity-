@@ -51,85 +51,58 @@
 **示例1：**
 
 ```javascript
-
     using UnityEngine;
-
     using System.Collections;
 
     public class ExampleClass : MonoBehaviour {
 
         void Update() {
-
             transform.Translate(Vector3.forward * Time.deltaTime);
-
             transform.Translate(Vector3.up * Time.deltaTime, Space.World);
-
         }
-
     }
-
 ```
 
 **示例2：**
 
 ```javascript
-
     using UnityEngine;
-
     using System.Collections;
 
     public class ExampleClass : MonoBehaviour {
 
         void Update() {
-
             transform.Translate(0, 0, Time.deltaTime);
-
             transform.Translate(0, Time.deltaTime, 0, Space.World);
-
         }
-
     }
-
 ```
 
 **示例3：**
 
 ```javascript
-
     using UnityEngine;
-
     using System.Collections;
 
     public class ExampleClass : MonoBehaviour {
-
         void Update() {
-
             transform.Translate(Vector3.right * Time.deltaTime, Camera.main.transform);
-
         }
-
     }
-
 ```
 
 **示例4：**
 
 ```javascript
-
     using UnityEngine;
-
     using System.Collections;
 
     public class ExampleClass : MonoBehaviour {
 
         void Update() {
-
             transform.Translate(Time.deltaTime, 0, 0, Camera.main.transform);
-
         }
-
     }
-
 ```
 
 ---
@@ -139,85 +112,55 @@
 **示例1：**
 
 ```javascript
+    using UnityEngine;
 
-using UnityEngine;
-
-public class ExampleClass : MonoBehaviour 
-
-{
-
-    void Update() 
-
+    public class ExampleClass : MonoBehaviour 
     {
+        void Update() 
+        {
+            // Rotate the object around its local Y axis at 1 degree per second
+            transform.Rotate(Vector3.right * Time.deltaTime);
 
-        // Rotate the object around its local Y axis at 1 degree per second
-
-        transform.Rotate(Vector3.right * Time.deltaTime);
-
-        // ...also rotate around the World's Y axis
-
-        transform.Rotate(Vector3.up * Time.deltaTime, Space.World);
-
+            // ...also rotate around the World's Y axis
+            transform.Rotate(Vector3.up * Time.deltaTime, Space.World);
+        }
     }
-
-}
-
 ```
 
 **示例2：**
 
 ```javascript
+    using UnityEngine;
 
-using UnityEngine;
-
-public class ExampleClass : MonoBehaviour 
-
-{
-
-    void Update() 
-
+    public class ExampleClass : MonoBehaviour 
     {
+        void Update() 
+        {
+            // Rotate the object around its local Y axis at 1 degree per second
+            transform.Rotate(Time.deltaTime, 0, 0);
 
-        // Rotate the object around its local Y axis at 1 degree per second
-
-        transform.Rotate(Time.deltaTime, 0, 0);
-
-        // ...also rotate around the World's Y axis
-
-        transform.Rotate(0, Time.deltaTime, 0, Space.World);
-
+            // ...also rotate around the World's Y axis
+            transform.Rotate(0, Time.deltaTime, 0, Space.World);
+        }
     }
-
-}
-
 ```
 
 **示例3：**
 
 ```javascript
+    using UnityEngine;
 
-using UnityEngine;
-
-public class ExampleClass : MonoBehaviour 
-
-{
-
-    void Update() 
-
+    public class ExampleClass : MonoBehaviour 
     {
+        void Update() 
+        {
+            // Rotate the object around its local Y axis at 1 degree per second
+            transform.Rotate(Vector3.right, Time.deltaTime);
 
-        // Rotate the object around its local Y axis at 1 degree per second
-
-        transform.Rotate(Vector3.right, Time.deltaTime);
-
-        // ...also rotate around the World's Y axis
-
-        transform.Rotate(Vector3.up, Time.deltaTime, Space.World);
-
+            // ...also rotate around the World's Y axis
+            transform.Rotate(Vector3.up, Time.deltaTime, Space.World);
+        }
     }
-
-}
-
 ```
 
 ---
