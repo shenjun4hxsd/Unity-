@@ -59,6 +59,9 @@
 ---
 
 ###Vector3.ClampMagnitude
+返回原向量的拷贝，并且它的模最大不超过maxLength所指示的长度。
+也就是说，限制向量长度到一个特定的长度。
+
 **示例：**
 ```javascript
     using UnityEngine;
