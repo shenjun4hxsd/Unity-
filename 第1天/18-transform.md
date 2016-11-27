@@ -165,34 +165,33 @@ public class ExampleClass : MonoBehaviour
 
 ###Transform.RotateAround
 ```javascript
+    using UnityEngine;
+    using System.Collections;
 
-using UnityEngine;
-using System.Collections;
+    public class ExampleClass : MonoBehaviour {
 
-public class ExampleClass : MonoBehaviour {
+        float rotSpeed = 0.1f;
 
-    float rotSpeed = 0.1f;
-
-    void Update() {
-        transform.RotateAround(Vector3.zero, Vector3.up, 20 * rotSpeed);
+        void Update() {
+            transform.RotateAround(Vector3.zero, Vector3.up, 20 * rotSpeed);
+        }
     }
-}
 ```
 ---
 
 ###Transform.LookAt
 **实例1：**
 ```javascript
-using UnityEngine;
-using System.Collections;
+    using UnityEngine;
+    using System.Collections;
 
-public class ExampleClass : MonoBehaviour {
-    public Transform target;
+    public class ExampleClass : MonoBehaviour {
+        public Transform target;
 
-    void Update() {
-        transform.LookAt(target);
+        void Update() {
+            transform.LookAt(target);
+        }
     }
-}
 ```
 
 **实例2：**
