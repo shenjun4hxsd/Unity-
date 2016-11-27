@@ -90,7 +90,17 @@
 ```
 
 **示例4：**
+```javascript
+    using UnityEngine;
+    using System.Collections;
 
+    public class ExampleClass : MonoBehaviour {
+
+        void Update() {
+            transform.Translate(Time.deltaTime, 0, 0, Camera.main.transform);
+        }
+    }
+```
 🔚
 
 
