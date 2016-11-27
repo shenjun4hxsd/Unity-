@@ -139,16 +139,10 @@ Input 这个类给我们提供的属性和方法全是静态的。
 ---
 
 |功能键|说明|
-
 |:--|:--|
-
 |GetButton|当由 `buttonname` 确定的虚拟按键被按下时，返回 true。|
-
 |GetButtonDown|在用户按下由 `buttonName` 名称确定的虚拟按钮的那一帧返回true。|
-
 |GetButtonUp|在用户释放根据 `buttonName` 名称的虚拟按钮时返回 true。|
-
-
 
 **示例：**
 
