@@ -151,13 +151,12 @@ using UnityEngine;
 
 public class ExampleClass : MonoBehaviour 
 {
+    float rotSpeed = 0.1f;
+
     void Update() 
     {
-        // Rotate the object around its local Y axis at 1 degree per second
-        transform.Rotate(Vector3.right, Time.deltaTime);
-
-        // ...also rotate around the World's Y axis
-        transform.Rotate(Vector3.up, Time.deltaTime, Space.World);
+        transform.Rotate(Vector3.right, rotSpeed);
+        transform.Rotate(Vector3.up, rotSpeed, Space.World);
     }
 }
 ```
