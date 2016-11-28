@@ -32,7 +32,7 @@ Resources类允许你从指定的路径查找或访问资源。
 |静态方法|说明|
 |:--|:--|
 |FindObjectsOfTypeAll|返回所有type类型对象的一个列表。|
-|Load|加载储存在Resources文件夹中path处的资源。|
+|**Load**|加载储存在Resources文件夹中path处的资源。|
 |LoadAll|加载Resources文件夹中的path文件夹或者文件中的所有资源。|
 |LoadAsync|异步加载Resources文件夹中的资源。|
 |UnloadAsset|从内存卸载指定的资源。|
