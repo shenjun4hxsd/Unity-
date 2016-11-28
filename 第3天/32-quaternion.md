@@ -1,5 +1,23 @@
 ##Quaternion
 
+
+###Quaternion.Slerp 球形插值
+**实例：**
+```javascript
+    using UnityEngine;
+    using System.Collections;
+ 
+    public class ExampleClass : MonoBehaviour {
+        public Transform from;
+        public Transform to;
+        public float speed = 0.1F;
+
+        void Update() {
+            transform.rotation = Quaternion.Slerp(from.rotation, to.rotation, Time.time * speed);
+        }
+    }
+```
+
 ---
 ###四元数
 
