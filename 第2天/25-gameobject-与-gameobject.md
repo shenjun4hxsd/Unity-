@@ -19,7 +19,7 @@ Unity 场景里面所有实体的基类。
 |AddComponent|添加一个名称为className的组件到游戏对象。|
 |BroadcastMessage|对此游戏对象及其子对象的所有MonoBehaviour中调用名称为methodName的方法。|
 |CompareTag|此游戏对象是否被标记为tag标签？|
-|GetComponent|如果这个游戏对象附件了一个类型为type的组件，则返回该组件，否则为空。|
+|**GetComponent**|如果这个游戏对象附件了一个类型为type的组件，则返回该组件，否则为空。|
 |GetComponentInChildren|返回此游戏对象或者它的所有子对象上(深度优先)的类型为type的组件。|
 |GetComponentInParent|从父对象查找组件。|
 |GetComponents|返回该游戏对象所有type类型的组件列表。|
