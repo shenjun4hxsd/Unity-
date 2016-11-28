@@ -18,6 +18,26 @@
     }
 ```
 
+
+---
+###Quaternion.LookRotation 注视旋转
+创建一个旋转，沿着forward（z轴）并且头部沿着upwards（y轴）的约束注视。也就是建立一个旋转，使z轴朝向view y轴朝向up。
+返回计算四元数。如果用于定向的变换，Z轴将会被对准前方并且如果这些向量正交，Y轴向前。如果forward方向是0，记录一个错误。
+
+```javascript
+    using UnityEngine;
+    using System.Collections;
+ 
+    public class ExampleClass : MonoBehaviour {
+        public Transform target;
+        void Update() {
+            Vector3 relativePos = target.position - transform.position;
+            Quaternion rotation = Quaternion.LookRotation(relativePos);
+            transform.rotation = rotation;
+        }
+    }
+```
+
 ---
 ###四元数
 
