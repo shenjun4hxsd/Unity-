@@ -28,7 +28,7 @@ Unity 场景里面所有实体的基类。
 |SampleAnimation|用于任何动画剪辑在给定的时间采样动画。|
 |SendMessage|在这个游戏物体上的所有MonoBehaviour上调用名称为methodName的方法。|
 |SendMessageUpwards|在这个游戏物体及其祖先物体的所有MonoBehaviour中调用名称为methodName的方法。|
-|SetActive|激活/停用此游戏对象。|
+|**SetActive**|激活/停用此游戏对象。|
 
 |静态方法|说明|
 |:--|:--|
