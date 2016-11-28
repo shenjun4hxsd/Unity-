@@ -18,7 +18,7 @@
 |**time**|以秒计算，从游戏开始的时间（只读）。也就是说，从游戏开始到到现在所用的时间。|
 |**timeScale**|时间的缩放。这可以用于减慢运动效果。|
 |timeSinceLevelLoad|以秒计算，从最后的关卡已经加载完的时间（只读）。|
-|unscaledDeltaTime|无关timeScale，以秒计算，要完成最后一帧的时间（只读）。|
+|unscaledDeltaTime|无关timeScale，以秒计算，完成一帧的时间（只读）。|
 |unscaledTime|无关timeScale，以秒计算，从游戏开始的时间（只读）。|
 
 ###Time.deltaTime 增量时间
