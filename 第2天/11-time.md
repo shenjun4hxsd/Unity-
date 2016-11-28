@@ -8,7 +8,7 @@
 |静态变量||
 |:--|:--|
 |captureFramerate|减慢游戏播放时间以允许在帧之间保存屏幕图像。|
-|**deltaTime**|以秒计算，完成最后一帧的时间（只读）。|
+|**deltaTime**|以秒计算，完成一帧的时间（只读）。|
 |fixedDeltaTime|以秒计间隔，在物理和其他固定帧速率进行更新（像MonoBehaviour的FixedUpdate）。|
 |fixedTime|最近的FixedUpdate已开始的时间（只读）。这是以秒计自游戏开始的时间。|
 |**frameCount**|已经传递帧的总数（只读）。|
