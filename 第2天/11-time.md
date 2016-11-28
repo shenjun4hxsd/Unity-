@@ -37,7 +37,7 @@
         }
     }
 ```
->请注意在OnGUI里你不应该依赖于Time.deltaTime，因为OnGUI可以在每帧被多次调用并且每此调用deltaTime将持有相同的值，直到下一帧再次更新。
+>请注意在OnGUI里你不应该依赖于Time.deltaTime，因为OnGUI可以在每帧被多次调用并且每次调用deltaTime将持有相同的值，直到下一帧再次更新。
 
 🔚
 
