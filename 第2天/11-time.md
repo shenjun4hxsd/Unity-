@@ -21,5 +21,20 @@
 |unscaledDeltaTime|无关timeScale，以秒计算，要完成最后一帧的时间（只读）。|
 |unscaledTime|无关timeScale，以秒计算，从游戏开始的时间（只读）。|
 
+###Time.deltaTime 增量时间
+
+示例：
+```javascript
+    using UnityEngine;
+    using System.Collections;
+ 
+    public class ExampleClass : MonoBehaviour {
+        void Update() {
+            float translation = Time.deltaTime * 10;
+            transform.Translate(0, 0, translation);
+        }
+    }
+```
+
 🔚
 
