@@ -15,12 +15,12 @@ UnityEngine.Object
 
 |静态方法|说明|
 |:--|:--|
-|Destroy|删除一个游戏对象、组件或资源|
+|**Destroy**|删除一个游戏对象、组件或资源|
 |DestroyImmediate|立即销毁物体对象，强烈建议使用 Destroy 代替。因为它可以永久性地销毁资源，此函数只应在编写编辑器代码时使用|
 |DontDestroyOnLoad|加载新场景的时候使目标对象不被自动销毁。|
 |FindObjectOfType|返回Type类型第一个激活的加载的对象。（效率非常低，不建议使用）|
 |FindObjectsOfType|返回Type类型的所有激活的加载的物体列表。（效率非常低，不建议使用）|
-|Instantiate|克隆原始物体并返回克隆物体。|
+|**Instantiate**|克隆原始物体并返回克隆物体。|
 
 
 |Operators 操作符|说明|
