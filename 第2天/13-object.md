@@ -91,7 +91,7 @@ worldPositionStays：当指定父物体以后仍保持原始的世界坐标
 实例化也能直接克隆脚本实例，整个游戏物体层次将被克隆，并且返回被克隆脚本的实例
 
 
-使用泛型的方式：
+**使用泛型的方式：**
 
 ```javascript
     using UnityEngine; 
