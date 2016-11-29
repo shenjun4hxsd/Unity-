@@ -121,3 +121,9 @@
 |RotateTowards|旋转一个角度从from向to。|
 |Slerp|球形插值，通过t值from向to之间插值。参数取值范围[0,1]。|
 |SlerpUnclamped|球形插值，通过t值from向to之间插值。该参数t是不在区间内。|
+
+|Operators 运算符|说明|
+|:--|:--|
+|operator !=|判断两个四元数是否不同？|
+|operator *|获取lhs 的旋转状态并应用rhs的旋转。|
+|operator ==|判断两个四元数是否相等？|
