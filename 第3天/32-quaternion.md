@@ -117,9 +117,9 @@
 |FromToRotation|从fromDirection到toDirection创建一个旋转。|
 |Inverse|返回反向的旋转。|
 |Lerp|通过t值from向to之间插值，并且规范化结果。|
-|LookRotation|创建一个旋转，沿着forward（z轴）并且头部沿着upwards（y轴）的约束注视。也就是建立一个旋转，使z轴朝向view y轴朝向up。|
+|**LookRotation**|创建一个旋转，沿着forward（z轴）并且头部沿着upwards（y轴）的约束注视。也就是建立一个旋转，使z轴朝向view y轴朝向up。|
 |RotateTowards|旋转一个角度从from向to。|
-|Slerp|球形插值，通过t值from向to之间插值。参数取值范围[0,1]。|
+|**Slerp**|球形插值，通过t值from向to之间插值。参数取值范围[0,1]。|
 |SlerpUnclamped|球形插值，通过t值from向to之间插值。该参数t是不在区间内。|
 
 |Operators 运算符|说明|
