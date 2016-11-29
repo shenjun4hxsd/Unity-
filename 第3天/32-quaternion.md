@@ -109,3 +109,15 @@
 |ToAngleAxis|转换一个旋转用“角-轴”表示。|
 
 |静态方法|说明|
+|:--|:--|
+|Angle|返回a和b两者之间的角度。|
+|AngleAxis|绕axis轴旋转angle，创建一个旋转。|
+|Dot|两个旋转之间的点乘。|
+|Euler|返回一个旋转角度，绕z轴旋转z度，绕x轴旋转x度，绕y轴旋转y度（像这样的顺序）。|
+|FromToRotation|从fromDirection到toDirection创建一个旋转。|
+|Inverse|返回反向的旋转。|
+|Lerp|通过t值from向to之间插值，并且规范化结果。|
+|LookRotation|创建一个旋转，沿着forward（z轴）并且头部沿着upwards（y轴）的约束注视。也就是建立一个旋转，使z轴朝向view y轴朝向up。|
+|RotateTowards|旋转一个角度从from向to。|
+|Slerp|球形插值，通过t值from向to之间插值。参数取值范围[0,1]。|
+|SlerpUnclamped|球形插值，通过t值from向to之间插值。该参数t是不在区间内。|
