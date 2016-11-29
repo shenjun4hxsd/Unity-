@@ -125,7 +125,7 @@
 |Operators 运算符|说明|
 |:--|:--|
 |operator !=|判断两个四元数是否不同？|
-|**operator** *|获取lhs 的旋转状态并应用rhs的旋转。|
+|**operator* **|获取lhs 的旋转状态并应用rhs的旋转。|
 |operator ==|判断两个四元数是否相等？|
 
 
