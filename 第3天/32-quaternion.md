@@ -113,7 +113,7 @@
 |Angle|返回a和b两者之间的角度。|
 |AngleAxis|绕axis轴旋转angle，创建一个旋转。|
 |Dot|两个旋转之间的点乘。|
-|Euler|返回一个旋转角度，绕z轴旋转z度，绕x轴旋转x度，绕y轴旋转y度（像这样的顺序）。|
+|**Euler**|返回一个旋转角度，绕z轴旋转z度，绕x轴旋转x度，绕y轴旋转y度（像这样的顺序）。|
 |FromToRotation|从fromDirection到toDirection创建一个旋转。|
 |Inverse|返回反向的旋转。|
 |Lerp|通过t值from向to之间插值，并且规范化结果。|
