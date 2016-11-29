@@ -101,9 +101,11 @@
 |y|四元数的Y组件。不要直接修改这个，除非你很了解四元数。|
 |z|四元数的Z组件。不要直接修改这个，除非你很了解四元数。|
 
-|公有函数|说明|
+|公有方法|说明|
 |:--|:--|
 |Set|设置存在的四元素的x, y, z 和w 组件。|
 |SetFromToRotation|创建一个从fromDirection到toDirection的旋转。|
 |SetLookRotation|创建一个旋转，沿着forward（z轴）并且头部沿着up（y轴）的约束注视。也就是建立一个旋转，使z轴朝向view y轴朝向up。|
 |ToAngleAxis|转换一个旋转用“角-轴”表示。|
+
+|静态方法|说明|
