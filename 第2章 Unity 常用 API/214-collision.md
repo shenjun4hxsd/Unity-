@@ -4,3 +4,12 @@
 
 碰撞信息被传递给Collider.OnCollisionEnter, Collider.OnCollisionStay和Collider.OnCollisionExit这些事件。
 
+|变量|说明|
+|:--|:--|
+|collider|被碰撞的那个碰撞器(只读)。|
+|contacts|物理引擎生成的碰撞点集。|
+|gameObject|被碰撞的碰撞器所在的游戏对象(只读)。|
+|impulse|应用在接触解决的碰撞的总的推动力。|
+|relativeVelocity|两个碰撞的对象之间的相对线性速度(只读)。|
+|rigidbody|被碰撞的刚体组件(只读)。当这个对象碰撞到一个没有被附加刚体组件的碰撞器时返回null。|
+|transform|我们碰撞的对象的变换(只读)。|
