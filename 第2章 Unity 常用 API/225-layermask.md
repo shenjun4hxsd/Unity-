@@ -71,7 +71,7 @@ public static int **GetMask**(**params** **string[]** layerNames);
 
 ---
 
-####隐式转换
+####LayerMask 隐式转换
 
 隐式转换整数为层蒙版。
 
