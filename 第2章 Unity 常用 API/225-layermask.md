@@ -68,3 +68,23 @@ public static int **GetMask**(**params** **string[]** layerNames);
         }
     }
 ```
+
+---
+
+####隐式转换
+
+隐式转换整数为层蒙版。
+
+```javascript
+    using UnityEngine;
+    using System.Collections;
+ 
+    public class ExampleClass : MonoBehaviour {
+        public int i = 0;
+        public LayerMask la;
+        void Example() {
+            la = i;
+            Debug.Log(LayerMask.LayerToName(la));
+        }
+    }
+```
