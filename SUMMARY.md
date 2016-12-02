@@ -30,6 +30,7 @@
     * 2.20 AssetBundle
     * [2.21 Resources](第2章 Unity 常用 API/221-resources.md)
     * [2.22 Quaternion](第2章 Unity 常用 API/222-quaternion.md)
+    * [2.23 Ray](第2章 Unity 常用 API/223-ray.md)
 * [第1天](第1天/1.0 第1天.md)
     * [1.1 向量](第1天/11-向量.md)
         * [1.11 向量的数学运算](第1天/111-向量的数学运算.md)
