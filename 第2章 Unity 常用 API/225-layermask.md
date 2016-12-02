@@ -36,3 +36,19 @@ layermask允许你在检视面板中显示layermask弹出菜单。
 ####LayerMask.GetMask 获取蒙版
 
 public static int **GetMask**(**params** **string[]** layerNames);
+
+转换为层蒙版的层名称列表。返回从层名称创建的层蒙版的int值。
+
+无论是内置的层名称集或是由用户在“标签和层管理器”中定义的层，返回与它们相等的层蒙版。
+
+```javascript
+    using UnityEngine;
+    using System.Collections;
+ 
+    public class ExampleClass : MonoBehaviour {
+        void Example() {
+            Debug.Log(LayerMask.GetMask("UserLayerA", "UserLayerB"));
+        }
+    }
+```
+
