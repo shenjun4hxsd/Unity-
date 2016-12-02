@@ -29,3 +29,5 @@
 |OnTriggerEnter|当碰撞器进入触发器时OnTriggerEnter被调用。|
 |OnTriggerExit|当该碰撞器停止接触触发器时，OnTriggerExit被调用。也就是说，当碰撞器离开触发器时，调用OnTriggerExit。|
 |OnTriggerStay|每当碰撞器从进入触发器，几乎每帧调用OnTriggerStay。|
+
+###示例：
