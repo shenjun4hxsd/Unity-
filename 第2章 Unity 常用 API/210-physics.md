@@ -54,6 +54,7 @@ public static bool CapsuleCast(Vector3 point1, Vector3 point2, float radius, Vec
 |radius|胶囊的半径。|
 |direction|胶囊扫描的方向。|
 |maxDistance|扫描的最大长度。|
+|hitInfo|hitInfo包含更多的碰到碰撞器的信息。|
 |layerMask|选择投射的层蒙版。|
 |queryTriggerInteraction|指定是否查询碰到触发器。|
 
