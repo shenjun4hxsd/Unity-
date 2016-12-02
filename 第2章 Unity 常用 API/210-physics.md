@@ -45,6 +45,7 @@
 
 ####Physics.Raycast 射线投射
 
+public static bool **Raycast**(**Vector3** origin, **Vector3** direction, **float** maxDistance = Mathf.Infinity, **int** layerMask = DefaultRaycastLayers, **QueryTriggerInteraction** queryTriggerInteraction = QueryTriggerInteraction.UseGlobal);
 
 
 ---
