@@ -13,7 +13,7 @@
 |enabled|启用碰撞器将会碰撞其他碰撞器，禁用碰撞器就不会碰撞其他碰撞器。|
 |isTrigger|碰撞器是一个触发器？|
 |material|用于碰撞器的物理材质。|
-|sharedMaterial|该碰撞器的共享的物理材质。|
+|sharedMaterial|该碰撞器的共享的物理材质。修改材质将改变所有碰撞器使用该材质的表面属性，大多数情况下你可以修改Collider.material替代。|
 
 
 |公共方法|说明|
