@@ -31,6 +31,38 @@
 |OnTriggerStay|每当碰撞器从进入触发器，几乎每帧调用OnTriggerStay。|
 
 ###示例：
+**Collider.ClosestPointOnBounds 在框上最近的点**
+
+到碰撞器的框最近的点。
+
+当应用于爆炸伤害，这能用于计算伤害点数。
+
+```javascript
+    using UnityEngine;
+    using System.Collections;
+ 
+    public class ExampleClass : MonoBehaviour {
+        public float hitPoints = 100.0F;
+        public Collider coll;
+
+        void Start() {
+            coll = GetComponent<Collider>();
+        }
+
+        void ApplyHitPoints(Vector3 explosionPos, float radius) {
+            // The distance from the explosion position to the surface of the collider.
+            Vector3 closestPoint = coll.ClosestPointOnBounds(explosionPos);
+            float distance = Vector3.Distance(closestPoint, explosionPos);
+ 
+            // The damage should decrease with distance from the explosion.
+            float damage = 1.0F - Mathf.Clamp01(distance / radius);
+            hitPoints -= damage * 10.0F;
+        }
+    }
+```
+
+---
+
 **Collider.Raycast 射线投射**
 
 public bool Raycast(Ray ray, out RaycastHit hitInfo, float maxDistance);
