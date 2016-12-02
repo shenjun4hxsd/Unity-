@@ -61,4 +61,7 @@ public static bool CapsuleCast(Vector3 point1, Vector3 point2, float radius, Vec
 
 胶囊是由radius半径与point1和point2位置的两个球形成胶囊的两端定义。返回胶囊沿direction方向碰到的第一个碰撞器。这通常用于投射不需足够的精度，因为你要找出一个特定大小的物体，如人物，能移动到某处而不在途中碰撞到任何东西。
 
+注意，胶囊投射不检测胶囊重叠的碰撞器。如果从脚本或动画移动碰撞器，需要有至少一个在FixedUpdate中执行，使得物理库可以更新它的数据结构，在CapsuleCast碰到碰撞器之前是在它的新位置。
+
+
 
