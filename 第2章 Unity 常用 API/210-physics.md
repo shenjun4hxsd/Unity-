@@ -43,6 +43,12 @@
 
 ###示例：
 
+####Physics.Raycast 射线投射
+
+
+
+---
+
 ####Physics.CapsuleCast 胶囊投射
 
 public static bool **CapsuleCast**(**Vector3** point1, **Vector3** point2, **float** radius, **Vector3** direction, out **RaycastHit** hitInfo, **float** maxDistance = Mathf.Infinity, **int** layerMask = DefaultRaycastLayers, **QueryTriggerInteraction** queryTriggerInteraction = QueryTriggerInteraction.UseGlobal);
