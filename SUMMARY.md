@@ -18,12 +18,12 @@
     * [2.8 Input](第2章 Unity 常用 API/28-input.md)
     * [2.9 GUI](第2章 Unity 常用 API/29-gui.md)
     * [2.10 Physics](第2章 Unity 常用 API/210-physics.md)
-    * 2.11 Animation
-    * 2.12 Animator
-    * 2.13 RigidBody
-    * 2.14 Collision
-    * 2.15 Collider
-    * 2.16 CharacterController
+    * [2.11 Animation](第2章 Unity 常用 API/211-animation.md)
+    * [2.12 Animator](第2章 Unity 常用 API/212-animator.md)
+    * [2.13 RigidBody](第2章 Unity 常用 API/213-rigidbody.md)
+    * [2.14 Collision](第2章 Unity 常用 API/214-collision.md)
+    * [2.15 Collider](第2章 Unity 常用 API/215-collider.md)
+    * [2.16 CharacterController](第2章 Unity 常用 API/216-charactercontroller.md)
     * [2.17 Camera](第2章 Unity 常用 API/217-camera.md)
     * [2.18 AudioSource](第2章 Unity 常用 API/218-audiosource.md)
     * 2.19 AudioMixer
@@ -72,12 +72,12 @@
     * 7.4 阴影投射器
     * [7.5 多线程与协同](第7天/75-多线程与协同.md)
 * [第8天](第8天/8.0 第8天.md)
-    * 8.1 协同
-    * 8.2 向量的点乘与叉乘
-    * 8.3 组件间的消息传递
+    * [8.1 协同](第8天/81-协同.md)
+    * [8.2 向量的点乘与叉乘](第8天/82-向量的点乘与叉乘.md)
+    * [8.3 组件间的消息传递](第8天/83-组件间的消息传递.md)
     * [8.4 项目实战 -- 塔防游戏](第8天/84-项目实战----塔防游戏.md)
 * [第9天](第9天/9.0 第9天.md)
-    * 9.1 场景的切换
+    * [9.1 场景的切换](第9天/91-场景的切换.md)
     * [9.2 项目实战 -- 塔防游戏](第9天/92-项目实战----塔防游戏.md)
 * [第10天](第10天/10.0 第10天.md)
     * 10.1 动画概念
