@@ -49,3 +49,5 @@
 |SweepTestAll|就像Rigidbody.SweepTest，当返回的是所有碰撞信息。|
 |WakeUp|强制一个刚体唤醒。|
 
+🔚
+
