@@ -56,3 +56,9 @@ public static bool CapsuleCast(Vector3 point1, Vector3 point2, float radius, Vec
 |maxDistance|扫描的最大长度。|
 |layerMask|选择投射的层蒙版。|
 |queryTriggerInteraction|指定是否查询碰到触发器。|
+
+返回值：胶囊扫描到任意交叉碰撞器返回true，否则返回false。
+
+胶囊是由radius半径与point1和point2位置的两个球形成胶囊的两端定义。返回胶囊沿direction方向碰到的第一个碰撞器。这通常用于投射不需足够的精度，因为你要找出一个特定大小的物体，如人物，能移动到某处而不在途中碰撞到任何东西。
+
+
