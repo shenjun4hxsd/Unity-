@@ -35,6 +35,13 @@
 
 public bool Raycast(Ray ray, out RaycastHit hitInfo, float maxDistance);
 
+|Parameters|参数|
+|:--|:--|
+|ray|The starting point and direction of the ray.射线的开始点和方向。|
+|hitInfo|If true is returned, hitInfo will contain more information about where the collider was hit (See Also: RaycastHit).\\如果返回真，hitInfo将包含更多关于碰撞器碰到哪里的信息（参见RaycastHit）|
+|distance|The length of the ray.\\射线的长度。|
+
+
 返回布尔(bool)值，当射线和任何碰撞器相交时，返回true，否则为false。也就是说，当射线碰触到任何碰撞器时返回真，否则返回假。
 
 ```javascript
