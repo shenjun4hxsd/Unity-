@@ -24,11 +24,12 @@
     * 2.14 Collision
     * 2.15 Collider
     * 2.16 CharacterController
-    * 2.17 Camera
+    * [2.17 Camera](第2章 Unity 常用 API/217-camera.md)
     * [2.18 AudioSource](第2章 Unity 常用 API/218-audiosource.md)
     * 2.19 AudioMixer
     * 2.20 AssetBundle
     * [2.21 Resources](第2章 Unity 常用 API/221-resources.md)
+    * [2.22 Quaternion](第2章 Unity 常用 API/222-quaternion.md)
 * [第1天](第1天/1.0 第1天.md)
     * [1.1 向量](第1天/11-向量.md)
         * [1.11 向量的数学运算](第1天/111-向量的数学运算.md)
