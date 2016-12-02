@@ -22,3 +22,8 @@
 |CapsuleCast|在场景中针对所有碰撞器投射一个胶囊，并返回碰到的细节信息。|
 |CapsuleCastAll|像Physics.CapsuleCast，但这个函数将返回所有胶囊扫描交叉碰到的对象。|
 |CapsuleCastNonAlloc|针对场景中所有的碰撞器投射一个胶囊，并返回缓冲器中碰到什么的信息。|
+|CheckBox|检测给定盒是否与其他碰撞器重叠。|
+|CheckCapsule|在世界坐标空间，检查胶囊体是否与任意碰撞器重叠。|
+|CheckSphere|在世界坐标空间，由位置和半径定义的球与任意碰撞器重叠，如果返回true。|
+|GetIgnoreLayerCollision|layer1和layer2的层的碰撞时否忽略？|
+|||
