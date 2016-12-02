@@ -10,7 +10,7 @@
 |lightmapCoord|在触碰点的UV光照贴图的坐标。|
 |normal|射线触碰表面的法线。|
 |**point**|在世界坐标空间，射线碰到碰撞器的接触点。|
-|rigidbody|碰到的该碰撞器上的刚体。如果碰撞器上没有附加刚体，那么返回null。|
+|**rigidbody**|碰到的该碰撞器上的刚体。如果碰撞器上没有附加刚体，那么返回null。|
 |textureCoord|在触碰点的UV纹理坐标。|
 |textureCoord2|在接触点处的第二套UV纹理坐标。|
 |transform|碰到的该刚体或碰撞器的变换。|
