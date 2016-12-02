@@ -12,7 +12,7 @@
 |IgnoreRaycastLayer|选择忽略层的层蒙版常量。|
 |queriesHitTriggers|指定查询(raycasts, spherecasts, overlap tests, etc.)是否碰到触发器。|
 |sleepThreshold|质量归一化的能量阈值，低于这个阈值的对象开始休眠。|
-|solverIterationCount|默认的求解迭代次数允许使用任意刚体（默认为7）。必须为正数。|
+|solverIterationCount|任意刚体默认允许使用的求解迭代次数（默认为7）。必须为正数。|
 
 |静态方法|说明|
 |:--|:--|
