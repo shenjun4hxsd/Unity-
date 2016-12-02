@@ -26,4 +26,5 @@
 |CheckCapsule|在世界坐标空间，检查胶囊体是否与任意碰撞器重叠。|
 |CheckSphere|在世界坐标空间，由位置和半径定义的球与任意碰撞器重叠，如果返回true。|
 |GetIgnoreLayerCollision|layer1和layer2的层的碰撞时否忽略？|
-|||
+|IgnoreCollision|使碰撞检测系统忽略所有collider1和collider2碰撞。|
+|IgnoreLayerCollision|使碰撞检测系统忽略layer1和layer2中的任意碰撞器的所有碰撞。|
