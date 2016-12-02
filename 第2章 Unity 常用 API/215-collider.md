@@ -7,7 +7,7 @@
 
 |变量|说明|
 |:--|:--|
-|attachedRigidbody|碰撞器附加的刚体。|
+|attachedRigidbody|碰撞器附加的刚体。碰撞器会自动连接到这个刚体或它的任意父对象刚体。|
 |bounds|碰撞器框的对象。|
 |contactOffset|该碰撞器的触点偏移值。|
 |enabled|启用碰撞器将会碰撞其他碰撞器，禁用碰撞器就不会碰撞其他碰撞器。|
