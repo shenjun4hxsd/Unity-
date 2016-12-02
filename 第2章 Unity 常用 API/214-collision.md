@@ -18,3 +18,19 @@
 ###示例：
 
 **Collision.contacts 接触点**
+
+物理引擎生成的碰撞点集。
+
+```javascript
+    using UnityEngine;
+    using System.Collections;
+ 
+    public class ExampleClass : MonoBehaviour {
+        void OnCollisionStay(Collision collision) {
+            foreach (ContactPoint contact in collision.contacts) {
+                print(contact.thisCollider.name + " hit " + contact.otherCollider.name);
+                Debug.DrawRay(contact.point, contact.normal, Color.white);
+            }
+        }
+    }
+```
