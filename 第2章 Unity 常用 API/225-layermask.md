@@ -27,7 +27,6 @@ layermask允许你在检视面板中显示layermask弹出菜单。
         void Update() {
             if (Physics.Raycast(transform.position, transform.forward, 100, mask.value))
                 Debug.Log("Hit something");
- 
         }
     }
 ```
