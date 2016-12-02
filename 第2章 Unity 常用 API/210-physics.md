@@ -90,6 +90,20 @@ public static bool **Raycast**(**Vector3** origin, **Vector3** direction, **floa
     }
 ```
 
+```javascript
+    using UnityEngine;
+    using System.Collections;
+ 
+    public class ExampleClass : MonoBehaviour {
+        void Update() {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, 100))
+                print("Hit something");
+ 
+        }
+    }
+```
+
 
 ---
 
