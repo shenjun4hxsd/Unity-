@@ -52,3 +52,19 @@ public static int **GetMask**(**params** **string[]** layerNames);
     }
 ```
 
+---
+
+####LayerMask.NameToLayer 名称转层
+
+给定一个层名称，返回内置的或在Tags and Layers manager中定义的层索引。
+
+```javascript
+    using UnityEngine;
+    using System.Collections;
+ 
+    public class ExampleClass : MonoBehaviour {
+        void Example() {
+            Debug.Log(LayerMask.NameToLayer("TransparentFX"));
+        }
+    }
+```
