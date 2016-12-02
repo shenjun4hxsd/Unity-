@@ -18,7 +18,7 @@
 |:--|:--|
 |BoxCast|沿射线投射立方体，并返回碰到的信息。|
 |BoxCastAll|就像Physics.BoxCast，但返回的是所有碰到的对象信息。|
-|BoxCastNonAlloc|沿方向投射立方体，并储存到提供的缓冲器。|
+|BoxCastNonAlloc|沿方向投射立方体，并储存到提供的缓冲器（RaycastHit）。返回碰到的储存在results缓冲器中的数量。|
 |CapsuleCast|在场景中针对所有碰撞器投射一个胶囊，并返回碰到的细节信息。|
 |CapsuleCastAll|像Physics.CapsuleCast，但这个函数将返回所有胶囊扫描交叉碰到的对象。|
 |CapsuleCastNonAlloc|针对场景中所有的碰撞器投射一个胶囊，并返回缓冲器中碰到什么的信息。|
