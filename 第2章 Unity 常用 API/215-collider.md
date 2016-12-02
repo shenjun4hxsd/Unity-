@@ -21,3 +21,11 @@
 |ClosestPointOnBounds|到碰撞器的框最近的点。|
 |Raycast|投射一条射线（Ray），它忽略所有碰撞器，除了这个。|
 
+|Messsage 消息|说明|
+|:--|:--|
+|OnCollisionEnter|当该collider/rigidbody开始碰到另一个rigidbody/collider时OnCollisionEnter被调用。|
+|OnCollisionExit|当 collider/rigidbody停止碰撞另一个 rigidbody/collider时，OnCollisionExit被调用。|
+|OnCollisionStay|每当该collider/rigidbody碰到其他rigidbody/collider，将在每帧调用OnCollisionStay。|
+|OnTriggerEnter|当碰撞器进入触发器时OnTriggerEnter被调用。|
+|OnTriggerExit|当该碰撞器停止接触触发器时，OnTriggerExit被调用。也就是说，当碰撞器离开触发器时，调用OnTriggerExit。|
+|OnTriggerStay|每当碰撞器从进入触发器，几乎每帧调用OnTriggerStay。|
