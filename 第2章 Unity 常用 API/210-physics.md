@@ -62,6 +62,20 @@ public static bool **Raycast**(**Vector3** origin, **Vector3** direction, **floa
 ```
 注意：如果射线从碰撞体的内部或者背面打，Raycast不检测碰撞。如果你用脚本或动画移动碰撞器，需要至少一个在FixedUpdate执行，因为物理库能更新它的数据结构，因此一条射线在它的新位置之前打到碰撞器。
 
+```javascript
+    using UnityEngine;
+    using System.Collections;
+ 
+    public class ExampleClass : MonoBehaviour {
+        void Update() {
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, -Vector3.up, out hit))
+                float distanceToGround = hit.distance;
+ 
+        }
+    }
+```
+
 
 ---
 
