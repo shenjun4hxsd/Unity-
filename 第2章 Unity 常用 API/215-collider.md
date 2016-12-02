@@ -32,6 +32,11 @@
 
 ###示例：
 **Collider.Raycast 射线投射**
+
+public bool Raycast(Ray ray, out RaycastHit hitInfo, float maxDistance);
+
+返回布尔(bool)值，当射线和任何碰撞器相交时，返回true，否则为false。也就是说，当射线碰触到任何碰撞器时返回真，否则返回假。
+
 ```javascript
     using UnityEngine;
     using System.Collections;
