@@ -39,3 +39,20 @@
 |SphereCast|沿着射线方向投射一个球形，并返回更多的碰到的信息。|
 |SphereCastAll|类似Physics.SphereCast，但是这个函数返回所有球形扫描到的碰撞信息。|
 |SphereCastNonAlloc|沿direction方向投射球体，并储存在results缓冲器中。|
+
+
+###示例：
+
+**Physics.CapsuleCast 胶囊投射**
+
+public static bool CapsuleCast(Vector3 point1, Vector3 point2, float radius, Vector3 direction, float maxDistance = Mathf.Infinity, int layerMask = DefaultRaycastLayers, QueryTriggerInteraction queryTriggerInteraction = QueryTriggerInteraction.UseGlobal);
+
+|参数|说明|
+|:--|:--|
+|point1|球体开始中心点。|
+|point2|球体结束的中心点。|
+|radius|胶囊的半径。|
+|direction|胶囊扫描的方向。|
+|maxDistance|扫描的最大长度。|
+|layerMask|选择投射的层蒙版。|
+|queryTriggerInteraction|指定是否查询碰到触发器。|
