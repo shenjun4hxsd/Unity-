@@ -31,7 +31,7 @@
 |OnTriggerStay|每当碰撞器从进入触发器，几乎每帧调用OnTriggerStay。|
 
 ###示例：
-
+**Collider.Raycast 射线投射**
 ```javascript
     using UnityEngine;
     using System.Collections;
