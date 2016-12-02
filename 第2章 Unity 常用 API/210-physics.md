@@ -28,12 +28,12 @@
 |GetIgnoreLayerCollision|layer1和layer2的层的碰撞时否忽略？|
 |IgnoreCollision|使碰撞检测系统忽略所有collider1和collider2碰撞。|
 |IgnoreLayerCollision|使碰撞检测系统忽略layer1和layer2中的任意碰撞器的所有碰撞。|
-|Linecast|在线的开始和结束位置之间，如果与任何碰撞器相交返回真。|
+|**Linecast**|在线的开始和结束位置之间，如果与任何碰撞器相交返回真。|
 |OverlapBox|查找给定立方体内或与之接触的所有碰撞器。|
 |OverlapBoxNonAlloc|查找给定立方体内或与之接触的所有碰撞器，并储存在缓冲器中。|
 |OverlapSphere|返回球内或与之接触的所有碰撞器。|
 |OverlapSphereNonAlloc|计算并储存该球内或与之接触的所有碰撞器到提供的缓冲器中。|
-|Raycast|在场景中投下可与所有碰撞器碰撞的一条光线。|
+|**Raycast**|在场景中投下可与所有碰撞器碰撞的一条光线。|
 |RaycastAll|在场景投射一条射线并返回所有碰撞。注意不保证顺序。|
 |RaycastNonAlloc|在场景投射射线并储存碰到的对象到缓冲器中。|
 |SphereCast|沿着射线方向投射一个球形，并返回更多的碰到的信息。|
