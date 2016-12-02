@@ -13,3 +13,8 @@
 |relativeVelocity|两个碰撞的对象之间的相对线性速度(只读)。|
 |rigidbody|被碰撞的刚体组件(只读)。当这个对象碰撞到一个没有被附加刚体组件的碰撞器时返回null。|
 |transform|我们碰撞的对象的变换(只读)。|
+
+
+###示例：
+
+**Collision.contacts 接触点**
