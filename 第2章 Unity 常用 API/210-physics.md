@@ -34,7 +34,7 @@
 |**OverlapSphere**|返回球内或与之接触的所有碰撞器。|
 |OverlapSphereNonAlloc|计算并储存该球内或与之接触的所有碰撞器到提供的缓冲器中。|
 |**Raycast**|在场景中投下可与所有碰撞器碰撞的一条光线。|
-|RaycastAll|在场景投射一条射线并返回所有碰撞。注意不保证顺序。|
+|**RaycastAll**|在场景投射一条射线并返回所有碰撞。注意不保证顺序。|
 |RaycastNonAlloc|在场景投射射线并储存碰到的对象到缓冲器中。|
 |SphereCast|沿着射线方向投射一个球形，并返回更多的碰到的信息。|
 |SphereCastAll|类似Physics.SphereCast，但是这个函数返回所有球形扫描到的碰撞信息。|
