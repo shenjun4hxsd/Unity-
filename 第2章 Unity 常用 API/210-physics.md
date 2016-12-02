@@ -9,3 +9,6 @@
 |defaultContactOffset|新创建碰撞器的默认接触偏移值。|
 |DefaultRaycastLayers|选择默认投射层的层蒙版常数。|
 |gravity|场景中应用到所有刚体的重力。|
+|IgnoreRaycastLayer|选择忽略层的层蒙版常量。|
+|queriesHitTriggers|指定查询(raycasts, spherecasts, overlap tests, etc.)是否碰到触发器。|
+|sleepThreshold|质量归一化的能量阈值，低于这个阈值的对象开始休眠。|
