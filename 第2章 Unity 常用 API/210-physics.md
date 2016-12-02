@@ -76,6 +76,20 @@ public static bool **Raycast**(**Vector3** origin, **Vector3** direction, **floa
     }
 ```
 
+```javascript
+    using UnityEngine;
+    using System.Collections;
+ 
+    public class ExampleClass : MonoBehaviour {
+        void Update() {
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, -Vector3.up, out hit, 100.0F))
+                float distanceToGround = hit.distance;
+ 
+        }
+    }
+```
+
 
 ---
 
