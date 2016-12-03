@@ -68,9 +68,29 @@ public **CollisionFlags** **Move**(**Vector3** motion);
 
 ####CharacterController.SimpleMove 简单移动
 
+public bool SimpleMove(Vector3 speed);
+
 根据速度speed移动角色。
 
+Y 轴上速度被忽略。速度以米/秒为单位。重力被自动应用。返回如果角色着地。建议你每帧只调用一次Move或者SimpleMove。
 
+```javascript
+    using UnityEngine;
+    using System.Collections;
+ 
+    [RequireComponent(typeof(CharacterController))]
+    public class ExampleClass : MonoBehaviour {
+        public float speed = 3.0F;
+        public float rotateSpeed = 3.0F;
+        void Update() {
+            CharacterController controller = GetComponent<CharacterController>();
+            transform.Rotate(0, Input.GetAxis("Horizontal") * rotateSpeed, 0);
+            Vector3 forward = transform.TransformDirection(Vector3.forward);
+            float curSpeed = speed * Input.GetAxis("Vertical");
+            controller.SimpleMove(forward * curSpeed);
+        }
+    }
+```
 
 
 
