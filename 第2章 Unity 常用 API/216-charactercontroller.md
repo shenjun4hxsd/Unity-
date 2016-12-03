@@ -9,7 +9,7 @@
 |:--|:--|
 |center|相对于变换位置的角色胶囊体的中心。|
 |collisionFlags|在最后的CharacterController.Move调用期间，胶囊体的哪个部分与周围环境相碰撞。|
-|detectCollisions|是否检测其他的刚体和角色控制器是否与本角色控制器相碰撞（默认值始终启用）。|
+|detectCollisions|是否检测其他的刚体和角色控制器与本角色控制器相碰撞（默认值始终启用）。|
 |height|角色胶囊体的高度。|
 |isGrounded|在最后一次移动角色控制器是否触碰地面？|
 |radius|角色胶囊体的半径。|
