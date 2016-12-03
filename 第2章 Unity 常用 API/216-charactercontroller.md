@@ -23,3 +23,7 @@
 |Move|一个更加复杂的运动函数，采取绝对的运动增量。|
 |SimpleMove|根据速度speed移动角色。|
 
+
+|Message 消息|说明|
+|:--|:--|
+|OnControllerColliderHit|当角色控制器碰到一个可执行移动的碰撞器时，OnControllerColliderHit被调用。|
