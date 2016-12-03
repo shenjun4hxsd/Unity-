@@ -64,6 +64,12 @@ public **CollisionFlags** **Move**(**Vector3** motion);
     }
 ```
 
+---
+
+####CharacterController.SimpleMove 简单移动
+
+根据速度speed移动角色。
+
 
 
 
