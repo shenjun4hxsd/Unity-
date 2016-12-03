@@ -105,3 +105,18 @@ CollisionFlags是CharacterController.Move返回的位掩码。
 |Above|角色控制器的上部与其他碰撞框发生碰撞|
 |Below|角色控制器的下部与其他碰撞框发生碰撞|
 
+```javascript
+    using UnityEngine;
+    using System.Collections;
+ 
+    public class ExampleClass : MonoBehaviour {
+        void Update() {
+            CharacterController controller = GetComponent<CharacterController>();
+            if ((controller.collisionFlags & CollisionFlags.Above) != 0)
+                print("touched the ceiling");
+ 
+        }
+    }
+```
+
+
