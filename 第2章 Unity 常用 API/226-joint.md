@@ -13,3 +13,8 @@ Joint是所有关节的基类。
 |connectedBody|参考该关节连接的其他刚体。|
 |enableCollision|启用连接的身体和关节之间的碰撞。|
 |enablePreprocessing|切换该关节的预处理。|
+
+
+|Message 消息|说明|
+|:--|:--|
+|OnJointBreak|当附加到相同游戏物体上的关节被断开时调用。|
