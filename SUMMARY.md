@@ -33,6 +33,7 @@
     * [2.23 Ray](第2章 Unity 常用 API/223-ray.md)
     * [2.24 RaycastHit](第2章 Unity 常用 API/224-raycasthit.md)
     * [2.25 LayerMask](第2章 Unity 常用 API/225-layermask.md)
+    * [2.26 Joint](第2章 Unity 常用 API/226-joint.md)
 * [第1天](第1天/1.0 第1天.md)
     * [1.1 向量](第1天/11-向量.md)
         * [1.11 向量的数学运算](第1天/111-向量的数学运算.md)
