@@ -1,0 +1,5 @@
+##Gizmos 可视化辅助工具
+
+Gizmos是用于在场景视图可视化调试或辅助设置。
+
+所有gizmo绘制需要在脚本的OnDrawGizmos或OnDrawGizmosSelected里函数完成。
