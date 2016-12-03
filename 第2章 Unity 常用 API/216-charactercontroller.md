@@ -37,3 +37,33 @@ public **CollisionFlags** **Move**(**Vector3** motion);
 一个更加复杂的运动函数，采取绝对的运动增量。
 
 尝试着通过motion移动控制器，motion只受限制于碰撞。它将沿着碰撞器滑动。CollisionFlags 是发生于Move的碰撞的概要。这个函数不应用任何重力。
+
+```javascript
+using UnityEngine;
+    using System.Collections;
+ 
+    public class ExampleClass : MonoBehaviour {
+        public float speed = 6.0F;
+        public float jumpSpeed = 8.0F;
+        public float gravity = 20.0F;
+        private Vector3 moveDirection = Vector3.zero;
+        void Update() {
+            CharacterController controller = GetComponent<CharacterController>();
+            if (controller.isGrounded) {
+                moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+                moveDirection = transform.TransformDirection(moveDirection);
+                moveDirection *= speed;
+                if (Input.GetButton("Jump"))
+                    moveDirection.y = jumpSpeed;
+ 
+            }
+            moveDirection.y -= gravity * Time.deltaTime;
+            controller.Move(moveDirection * Time.deltaTime);
+        }
+    }
+```
+
+
+
+
+
