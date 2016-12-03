@@ -72,7 +72,7 @@ public bool SimpleMove(Vector3 speed);
 
 根据速度speed移动角色。
 
-Y 轴上速度被忽略。速度以米/秒为单位。重力被自动应用。如果角色着地返回 true。建议每帧只调用一次Move或者SimpleMove。
+Y 轴上速度被忽略。速度以米/秒为单位。重力被自动应用。如果角色着地返回 true。建议每帧只调用一次 Move 或者 SimpleMove。
 
 ```javascript
     using UnityEngine;
