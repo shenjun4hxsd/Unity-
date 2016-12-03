@@ -32,4 +32,4 @@
 
 ####CharacterController.Move 移动
 
-public CollisionFlags **Move**(Vector3 motion);
+public **CollisionFlags** **Move**(Vector3 motion);
