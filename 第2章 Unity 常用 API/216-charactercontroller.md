@@ -92,5 +92,9 @@ Y 轴上速度被忽略。速度以米/秒为单位。重力被自动应用。�
     }
 ```
 
+---
 
+####CollisionFlags 碰撞标识
+
+CollisionFlags是CharacterController.Move返回的位掩码。
 
