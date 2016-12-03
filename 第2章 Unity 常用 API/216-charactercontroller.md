@@ -39,7 +39,7 @@ public **CollisionFlags** **Move**(**Vector3** motion);
 尝试着通过motion移动控制器，motion只受限制于碰撞。它将沿着碰撞器滑动。CollisionFlags 是发生于Move的碰撞的概要。这个函数不应用任何重力。
 
 ```javascript
-using UnityEngine;
+    using UnityEngine;
     using System.Collections;
  
     public class ExampleClass : MonoBehaviour {
