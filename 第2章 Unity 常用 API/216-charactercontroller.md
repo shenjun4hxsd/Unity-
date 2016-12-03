@@ -27,3 +27,9 @@
 |Message 消息|说明|
 |:--|:--|
 |OnControllerColliderHit|当角色控制器碰到一个可执行移动的碰撞器时，OnControllerColliderHit被调用。|
+
+###示例：
+
+####CharacterController.Move 移动
+
+public CollisionFlags **Move**(Vector3 motion);
