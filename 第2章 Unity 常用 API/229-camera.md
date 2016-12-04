@@ -61,7 +61,7 @@ Camera是一个设备，玩家通过它看世界。
 |ResetProjectionMatrix|让投影反映正常的相机参数。|
 |ResetReplacementShader|从相机上移除shader替换。|
 |ResetWorldToCameraMatrix|在场景中让渲染位置反映相机的位置|
-|ScreenPointToRay|返回一条射线从摄像机通过一个屏幕点。|
+|**ScreenPointToRay**|返回一条射线从摄像机通过一个屏幕点。|
 |ScreenToViewportPoint|从屏幕空间到视窗空间的变换位置。|
 |ScreenToWorldPoint|从屏幕空间到世界空间的变化位置。|
 |SetReplacementShader|使相机渲染用shader替换。|
