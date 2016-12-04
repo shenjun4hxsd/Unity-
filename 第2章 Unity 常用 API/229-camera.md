@@ -78,6 +78,15 @@ Camera是一个设备，玩家通过它看世界。
 |GetAllCameras|用当前场景中的摄像机填补相机的数组，而不需要分配一个新的数组。|
 
 
+|Message 消息|说明|
+|:--|:--|
+|OnPostRender|OnPostRender在相机渲染场景之后调用。|
+|OnPreCull|OnPreCull在相机开始裁剪场景之前调用。|
+|OnRenderImage|OnRenderImage在所有渲染完成后被调用，来渲染图片的后期处理效果（仅限UnityPro）。|
+|OnRenderObject|OnRenderObject 在相机渲染完场景以后被调用。|
+|OnWillRenderObject|如果物体可见，每个相机都会调用OnWillRenderObject。|
+
+
 
 
 
