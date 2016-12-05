@@ -78,6 +78,7 @@
     * [7.1 角色控制器](第7天/71-角色控制器.md)
         * [7.11 CharacterMotor 脚本](第7天/711-charactermotor-脚本.md)
         * [7.12 FPSInputController 脚本](第7天/712-fpsinputcontroller-脚本.md)
+        * [7.13 PlatformInputController 脚本](第7天/713-platforminputcontroller-脚本.md)
     * [7.2 拖尾效果](第7天/72-拖尾效果.md)
     * [7.3 绘制线的方法](第7天/73-绘制线的方法.md)
     * [7.4 阴影投射器](第7天/74-阴影投射器.md)
