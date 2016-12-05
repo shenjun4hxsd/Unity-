@@ -80,6 +80,7 @@
         * [7.12 FPSInputController 脚本](第7天/712-fpsinputcontroller-脚本.md)
         * [7.13 PlatformInputController 脚本](第7天/713-platforminputcontroller-脚本.md)
         * [7.14 ThirdPersonCamera 脚本](第7天/714-thirdpersoncamera-脚本.md)
+        * [7.15 ThirdPersonController 脚本](第7天/715-thirdpersoncontroller-脚本.md)
     * [7.2 拖尾效果](第7天/72-拖尾效果.md)
     * [7.3 绘制线的方法](第7天/73-绘制线的方法.md)
     * [7.4 阴影投射器](第7天/74-阴影投射器.md)
