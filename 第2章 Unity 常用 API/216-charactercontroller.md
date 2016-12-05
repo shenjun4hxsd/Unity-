@@ -119,5 +119,31 @@ CollisionFlags是CharacterController.Move返回的位掩码。
     }
 ```
 
+
+
+```javascript
+    using UnityEngine;
+    using System.Collections;
+ 
+    public class Test : MonoBehaviour {
+ 
+        //角色控制器组件在与具有Collider组件对象之间的碰撞
+        void OnControllerColliderHit(ControllerColliderHit hit)
+        {
+ 
+            //判断碰撞的对象是否具备刚体组件
+            GameObject hitObject = hit.collider.gameObject;
+            Rigidbody rigidbody = hitObject.rigidbody;
+            if(rigidbody != null && !rigidbody.isKinematic)
+            {
+                //地面也具备刚体组件，这里判断一下
+                if(!hitObject.name.Equals("Terrain") )
+                {
+                    rigidbody.AddForce(new Vector3(hit.moveDirection.x, 0, hit.moveDirection.z) * 10);
+                }
+            }
+         }
+    }
+```
 🔚
 
