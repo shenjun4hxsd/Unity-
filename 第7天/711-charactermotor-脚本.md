@@ -2,9 +2,6 @@
 using UnityEngine;
 using System.Collections;
  
-/**
- *  @Author : www.xuanyusong.com 
- */
  
 [RequireComponent(typeof(CharacterController))]
 [AddComponentMenu("Character/Character Motor")]
