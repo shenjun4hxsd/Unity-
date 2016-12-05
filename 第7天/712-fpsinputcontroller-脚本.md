@@ -2,10 +2,7 @@
 using UnityEngine;
 using System.Collections;
  
-/**
- *  @Author : www.xuanyusong.com 
- */
- 
+
 [RequireComponent(typeof(CharacterMotor))]
 [AddComponentMenu("Character/FPS Input Controller")]
  
