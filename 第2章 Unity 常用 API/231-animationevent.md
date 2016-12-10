@@ -39,8 +39,7 @@ public class Example : MonoBehaviour {
 		Animator anim;
 		
 		// new event created
-		AnimationEvent evt;
-		evt = new AnimationEvent();
+		AnimationEvent evt = new AnimationEvent();
 
 		// put some parameters on the AnimationEvent
 		//  - call the function called PrintEvent()
