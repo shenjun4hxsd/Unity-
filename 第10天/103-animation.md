@@ -26,9 +26,9 @@
 
 |变量|说明|
 |:--|:--|
-|animatePhysics|如果打开这个选项，动画会在物理循环过程中被执行。这个选项只有在结合运动学刚体的时候才有用。|
+|**animatePhysics**|如果打开这个选项，动画会在物理循环过程中被执行。这个选项只有在结合运动学刚体的时候才有用。|
 |**clip**|默认的动画。|
-|cullingType|控制动画组件的剔除类型。|
+|**cullingType**|控制动画组件的剔除类型。设置类型见面板参数 Cull Type。|
 |isPlaying|有任意动画正播放？|
 |localBounds|在本地坐标空间这个动画的动画组件的AABB。|
 |playAutomatically|在启动的时候是否自动播放默认动画剪辑（Animation.clip）。|
