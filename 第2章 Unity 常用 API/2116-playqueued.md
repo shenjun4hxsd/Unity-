@@ -15,3 +15,5 @@
  
 如果queue是QueueMode.CompleteOthers，当所有其他动画停止播放，这个动画才会开始。 
 如果queue是QueueMode.PlayNow，这个动画将在一个重复的动画状态下立即开始播放。
+
+当动画完成播放之后，它会自动清理。在一个动画状态结束之后使用它，将会导致一个异常。
