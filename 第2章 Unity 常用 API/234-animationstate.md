@@ -28,6 +28,28 @@ AnimationState 接口允许您在的任何动画播放时修改速度、 权值�
 |RemoveMixingTransform|移除一个动画的Transform。|
 
 
+
+示例：
+
+```javascript
+using UnityEngine;
+using System.Collections;
+ 
+public class ExampleScript : MonoBehaviour
+{
+    public Animation anim;
+ 
+    void Start()
+    {
+        // Adds a mixing transform using a path instead
+        Transform mixTransform = transform.Find("root/upper_body/left_shoulder");
+ 
+        // Add mixing transform
+        anim["wave_hand"].AddMixingTransform(mixTransform);
+    }
+}
+```
+
 🔚
 
 
