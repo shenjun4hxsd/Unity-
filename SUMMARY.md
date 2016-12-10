@@ -31,6 +31,7 @@
         * [2.122 CrossFade](第2章 Unity 常用 API/2122-crossfade.md)
         * [2.123 GetBehaviour](第2章 Unity 常用 API/2123-getbehaviour.md)
         * [2.124 GetBehaviours](第2章 Unity 常用 API/2124-getbehaviours.md)
+        * [2.125 GetBoneTransform](第2章 Unity 常用 API/2125-getbonetransform.md)
     * [2.13 RigidBody](第2章 Unity 常用 API/213-rigidbody.md)
     * [2.14 Collision](第2章 Unity 常用 API/214-collision.md)
     * [2.15 Collider](第2章 Unity 常用 API/215-collider.md)
