@@ -17,7 +17,7 @@ AnimationEvent类似于SendMessage让你调用一个脚本函数，这个脚本�
 |intParameter|整数型参数，储存在事件中并发送给函数。|
 |isFiredByAnimator|如果该动画事件已经由Animator组件触发，返回true。|
 |isFiredByLegacy|如果该动画事件已经由Animation组件触发，返回true。|
-|messageOptions|函数调用选项。|
+|messageOptions|函数调用选项。如果选项设置为 SendMessageOptions.RequireReceiver (默认),当消息没有被任何组件接收时打印一个错误信息.|
 |objectReferenceParameter|储存在事件中的引用对象参数，并发送给函数。|
 |stringParameter|储存在该事件中的字符串参数，并发送给函数。|
 |time|引发该事件的时间点。|
