@@ -5,3 +5,9 @@
 储存基于关键帧的动画。
 
 AnimationClip是用于Animation来播放动画。
+
+|变量|说明|
+|:--|:--|
+|events|用于该剪辑的动画事件。|
+|frameRate|被取样关键帧的帧速率。（只读）|
+|humanMotion|如果该动画包含的曲线是人类骨骼，返回true。|
