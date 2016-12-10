@@ -6,7 +6,7 @@
 |变量|说明|
 |:--|:--|
 |angularVelocity|获得上一帧计算的Avatar角速度。|
-|applyRootMotion|是否应用根运动？|
+|**applyRootMotion**|是否应用根运动？|
 |avatar|获取或设置当前的Avatar。|
 |bodyPosition|身体质量中心的位置。|
 |bodyRotation|该身体质量中心的旋转。|
@@ -18,10 +18,10 @@
 |hasRootMotion|如果当前绑定已经是根运动，返回真。|
 |hasTransformHierarchy|如果该对象已经是变换层级，返回真。|
 |humanScale|返回当前人形绑定Avatar的缩放，（如果绑定是generic，默认为1）|
-|isHuman|如果当前的绑定是人形的，返回真；如果是generic（普通）的则返回假。|
+|**isHuman**|如果当前的绑定是人形的，返回真；如果是generic（普通）的则返回假。|
 |isMatchingTarget|如果自动匹配是激活的。|
 |isOptimizable|如果当前的绑定是AnimatorUtility.OptimizeTransformHierarchy优化的。|
-|layerCount|该动画器控制器的层数。|
+|**layerCount**|该动画器控制器的层数。|
 |leftFeetBottomHeight|获得左脚底的高度。|
 |linearVelocityBlending|当linearVelocityBlending 设置为true，根运动速度和角速度将线性混合。|
 |parameters|用于动画器只读访问动画器控制器参数。|
@@ -34,8 +34,8 @@
 |rightFeetBottomHeight|获取右脚底的高度。|
 |rootPosition|根位置，该游戏对象的位置。|
 |rootRotation|根旋转，该游戏对象的旋转角度。|
-|runtimeAnimatorController|AnimatorController的运行时代表，用来控制Animator。|
-|speed|动画器的播放速度。1表示正常播放速度。|
+|**runtimeAnimatorController**|AnimatorController的运行时代表，用来控制Animator。|
+|**speed**|动画器的播放速度。1表示正常播放速度。|
 |stabilizeFeet|过渡和混合时，脚自动稳定。|
 |targetPosition|返回由SetTarget(AvatarTarget targetIndex, float targetNormalizedTime))指定的目标的位置。|
 |targetRotation|返回由SetTarget(AvatarTarget targetIndex, float targetNormalizedTime))指定的目标的旋转角度。|
