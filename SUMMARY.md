@@ -21,6 +21,7 @@
     * [2.11 Animation](第2章 Unity 常用 API/211-animation.md)
         * [2.111 AddClip](第2章 Unity 常用 API/2111-addclip.md)
         * [2.112 Blend](第2章 Unity 常用 API/2112-blend.md)
+        * [2.113 CrossFade](第2章 Unity 常用 API/2113-crossfade.md)
     * [2.12 Animator](第2章 Unity 常用 API/212-animator.md)
     * [2.13 RigidBody](第2章 Unity 常用 API/213-rigidbody.md)
     * [2.14 Collision](第2章 Unity 常用 API/214-collision.md)
