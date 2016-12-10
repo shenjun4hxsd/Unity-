@@ -29,7 +29,25 @@ AnimationState 接口允许您在的任何动画播放时修改速度、 权值�
 
 
 
-示例：
+####示例：
+
+**AnimationState.AddMixingTransform 添加混合Transform**
+
+**public void AddMixingTransform(Transform mix, bool recursive = true);**
+
+|参数|说明|
+|:--|:--|
+|mix|动画变换。|
+|recursive|是否动画所有子物体指定变换。|
+
+**描述：**
+
+添加应该动画的变换。这允许你减少创建的动画的数量。
+
+例如你可能挥手动画。你可能想在闲置角色或者走动角色上去播放挥手动画。你需要创建2个挥手动画一个给闲置的，一个给走动的。通过混合挥手动画将会完全控制肩膀。但是他可能影响不到更低的身体，并继续包房走动或者闲置的动画。因此你仅需要一个挥手动画。
+
+如果recursive 是true 所有子物体的混合transform将会被逼真。如果你调用AddMixingTransform，所有动画曲线被使用。
+
 
 ```javascript
 using UnityEngine;
