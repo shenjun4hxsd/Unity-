@@ -22,6 +22,34 @@
 |&emsp;&emsp;Allways|总是渲染|
 |&emsp;&emsp;Based On Renderers|摄像机能看到的时候渲染|
 
+####&emsp;&emsp;&emsp;&emsp;3）、API
+
+|变量|说明|
+|:--|:--|
+|animatePhysics|如果打开这个选项，动画会在物理循环过程中被执行。这个选项只有在结合运动学刚体的时候才有用。|
+|**clip**|默认的动画。|
+|cullingType|控制动画组件的剔除类型。|
+|isPlaying|有任意动画正播放？|
+|localBounds|在本地坐标空间这个动画的动画组件的AABB。|
+|playAutomatically|在启动的时候是否自动播放默认动画剪辑（Animation.clip）。|
+|this[string]|返回指定名称的动画状态。|
+|wrapMode|动画剪辑播放完成之后，应该如何操作？|
+
+
+|公共函数|说明|
+|:--|:--|
+|AddClip|添加一个指定名称的动画剪辑。|
+|Blend|在接下来的几秒内混合命名为animation的动画到targetWeight。|
+|CrossFade|在一定时间内淡入名称为name的动画并且淡出其他动画。|
+|CrossFadeQueued|在前一个动画播放完成之后淡入淡出下一个动画。|
+|GetClipCount|取得该动画的动画剪辑数量。|
+|IsPlaying|名为name的动画正在播放吗？|
+|Play|不带有任何混合的播放动画。|
+|PlayQueued|在前一个动画播放完成之后直接播放下一个动画。|
+|RemoveClip|从动画列表移除剪辑。这将去掉剪辑和所有基于这个剪辑的动画状态。|
+|Rewind|倒回名称为name的动画。|
+|Sample|在当前状态对动画进行采样。|
+|Stop|停止所有当前Animation正在播放的动画。停止一个动画会让动画重回开始位置。|
 
 ####&emsp;&emsp;&emsp;&emsp;属性
 ```
