@@ -30,3 +30,26 @@ RuntimeAnimationController
 
     继承自UnityEngine.Object，所以他需要使用数据装载函数来实现创建
     注意：它其实就是一个文件的载体，什么功能都没有
+
+
+面板属性
+
+|属性|说明|
+|:--|:--|
+|Controller|需要AnimatorControll文件。|
+|Avatar|和AnimatiorController文件有关的Avatar文件|
+|Apply Root Motion|如果选择表示支持Humanoid的物理动画，对于Generic需要关闭它。|
+|Update Mode|设定动画播放时代更新状态，如果没有特殊需要的我们使用Normal。|
+|&emsp;&emsp;Normal|和引擎渲染保持同步帧。|
+|&emsp;&emsp;Animate Physic|使用物理动画的播放帧。|
+|&emsp;&emsp;Unscaled Time|使用原始帧率播放。|
+|Culling Mode|动画在什么状态下播放。|
+|Based On Renderer|当摄像机看见时才播放|
+|Always Animate|不管什么状态都播放动画。|
+
+
+
+
+
+
+
