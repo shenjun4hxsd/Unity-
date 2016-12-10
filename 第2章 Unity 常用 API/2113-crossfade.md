@@ -9,3 +9,21 @@
 ● 如果模式是PlayMode.StopSameLayer，在同一层的动画将在动画淡入的时候淡出。如果模式是PlayMode.StopAll，所有动画将在淡入的时候淡出。
 
 ● 如果动画没有被设置成循环，它将停止并且在播放完成之后倒带至开始。
+
+```javascript
+using UnityEngine;
+using System.Collections;
+ 
+public class ExampleClass : MonoBehaviour {
+    public Animation anim;
+    void Start() {
+        anim = GetComponent<Animation>();
+    }
+    void Update() {
+        if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.1F)
+            anim.CrossFade("Run");
+        else
+            anim.CrossFade("Idle");
+    }
+}
+```
