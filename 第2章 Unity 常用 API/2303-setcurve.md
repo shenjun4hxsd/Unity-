@@ -36,3 +36,13 @@ public class ExampleClass : MonoBehaviour {
     }
 }
 ```
+
+---
+
+Material材质属性可以使用shader输出的属性名称制作动画。通常使用的名称是： “_MainTex”, “_BumpMap”, “_Color”, “_SpecColor”, “_Emission”。如何动画化不同材质属性类型：
+
+Float属性： “PropertyName” 
+Vector4 属性： “PropertyName.x”, “PropertyName.y”, “PropertyName.z”, “PropertyName.w” 
+Color 属性： “PropertyName.r”, “PropertyName.g”, “PropertyName.b”, “PropertyName.a” 
+UV 旋转属性：“PropertyName.rotation” UV 偏移和缩放： “PropertyName.offset.x”, “PropertyName.offset.y”, “PropertyName.scale.x”, “PropertyName.scale.y” 
+对于在同一renderer的多个索引材质，你能想这样添加前缀：“[1]._MainTex.offset.y”
