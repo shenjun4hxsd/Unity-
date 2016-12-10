@@ -2,7 +2,7 @@
 
 **public AnimationState CrossFadeQueued(string animation, float fadeLength = 0.3F, QueueMode queue = QueueMode.CompleteOthers, PlayMode mode = PlayMode.StopSameLayer);**
 
-描述 ：
+**描述 ：**
 
 在前一个动画播放完成之后淡入淡出下一个动画。
 
