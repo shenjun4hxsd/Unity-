@@ -1,6 +1,6 @@
 ##Animation
 
-####&emsp;&emsp;1）、简介
+####1）、简介
 ```
     主要是操作帧序列的动画系统
     Animation控制的是旧动画系统
@@ -10,7 +10,7 @@
         Rig标签下选择Legacy
 ```
 
-####&emsp;&emsp;2）、面板参数
+####2）、面板参数
 
 |参数|说明|
 |:--|:--|
@@ -22,7 +22,7 @@
 |&emsp;&emsp;Allways|总是渲染|
 |&emsp;&emsp;Based On Renderers|摄像机能看到的时候渲染|
 
-####&emsp;&emsp;&emsp;&emsp;3）、API
+####3）、API
 
 |变量|说明|
 |:--|:--|
