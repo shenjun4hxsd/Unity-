@@ -49,7 +49,7 @@ using UnityEngine;
 |RemoveClip|从动画列表移除剪辑。这将去掉剪辑和所有基于这个剪辑的动画状态。|
 |Rewind|倒回名称为name的动画。|
 |Sample|在当前状态对动画进行采样。|
-|Stop|停止所有当前Animation正在播放的动画。|
+|Stop|停止所有当前Animation正在播放的动画。停止一个动画会让动画重回开始位置。|
 
 
 
