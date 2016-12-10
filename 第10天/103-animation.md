@@ -24,7 +24,7 @@
 
 
 ####辅助类
-
+```
     AnimationClip
         提供Aniamtion组件动画的基础类
         他也有自己辅助函数
@@ -60,6 +60,7 @@
                     Loop（循环播放）
                     PingPang
                     ClampForver（播放到最后一帧的时候，会循环播放最后一帧）
+```
 
 ####属性
 
