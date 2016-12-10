@@ -13,3 +13,5 @@
 |cullingMode|控制动画器组件的剔除模式。|
 |deltaPosition|获取上一帧Avatar的增量位置。|
 |deltaRotation|获取上一帧Avatar的增量旋转。|
+|feetPivotActive|混合身体质量中心与脚质量中心的轴心点。0%表示混合轴心点在身体的质量中心；100%表示混合轴心点在脚的轴心点；|
+|gravityWeight|基于当前播放的动画的当前重力。|
