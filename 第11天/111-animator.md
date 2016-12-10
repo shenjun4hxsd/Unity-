@@ -18,6 +18,15 @@
     可以通过参数传递切换动画状态
 
 
-他必须拥有 RuntimeAnimationController 文件
+RuntimeAnimationController
 
+    用来记录状态机。
+    在记录状态机时他也记录了状态机切换使用的参数
 
+    float
+    int
+    bool
+    Trigger(会自动复位的bool)
+
+    继承自UnityEngine.Object，所以他需要使用数据装载函数来实现创建
+    注意：它其实就是一个文件的载体，什么功能都没有
