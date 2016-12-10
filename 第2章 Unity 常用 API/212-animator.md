@@ -48,7 +48,7 @@
 |ApplyBuiltinRootMotion|应用默认的根运动。|
 |CrossFade|在当前状态和目标状态之间创建一个动态过渡。|
 |CrossFadeInFixedTime|与animator.crossfade相同，但在目标状态的持续时间和偏移是在固定的时间。|
-|GetAnimatorTransitionInfo|获取指定AnimatorController层的过渡信息。|
+|GetAnimatorTransitionInfo|获取指定AnimatorController层的过渡信息。仅在过渡持续期间有效。|
 |GetBehaviour|返回匹配类型T或派生自T的首个状态机行为，如果没有找到返回null。|
 |GetBehaviours|返回匹配类型T或派生自T的所有状态机行为，如果没有找到返回null。|
 |GetBoneTransform|返回人形骨骼ID映射的变换。|
