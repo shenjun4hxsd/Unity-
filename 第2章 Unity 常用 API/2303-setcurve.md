@@ -16,3 +16,23 @@
 如果曲线为null，曲线将被移除，如果曲线属性已经存在，曲线将被替换。
 
 通常的名称是: “localPosition.x”, “localPosition.y”, “localPosition.z”, “localRotation.x”, “localRotation.y”, “localRotation.z”, “localRotation.w” “localScale.x”, “localScale.y”, “localScale.z”.
+
+
+```javascript
+using UnityEngine;
+using System.Collections;
+ 
+[RequireComponent(typeof(Animation))]
+public class ExampleClass : MonoBehaviour {
+    public Animation anim;
+    void Start() {
+        anim = GetComponent<Animation>();
+        AnimationCurve curve = AnimationCurve.Linear(0, 1, 2, 3);
+        AnimationClip clip = new AnimationClip();
+        clip.legacy = true;
+        clip.SetCurve("", typeof(Transform), "localPosition.x", curve);
+        anim.AddClip(clip, "test");
+        anim.Play("test");
+    }
+}
+```
