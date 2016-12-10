@@ -46,3 +46,22 @@ Vector4 属性： “PropertyName.x”, “PropertyName.y”, “PropertyName.z�
 Color 属性： “PropertyName.r”, “PropertyName.g”, “PropertyName.b”, “PropertyName.a” 
 UV 旋转属性：“PropertyName.rotation” UV 偏移和缩放： “PropertyName.offset.x”, “PropertyName.offset.y”, “PropertyName.scale.x”, “PropertyName.scale.y” 
 对于在同一renderer的多个索引材质，你能想这样添加前缀：“[1]._MainTex.offset.y”
+
+```javascript
+using UnityEngine;
+using System.Collections;
+ 
+[RequireComponent(typeof(Animation))]
+public class ExampleClass : MonoBehaviour {
+    public Animation anim;
+    void Start() {
+        anim = GetComponent<Animation>();
+        AnimationClip clip = new AnimationClip();
+        clip.legacy = true;
+        clip.SetCurve("", typeof(Material), "_Color.a", new AnimationCurve(new Keyframe(0, 0, 0, 0), new Keyframe(1, 1, 0, 0)));
+        clip.SetCurve("", typeof(Material), "_MainTex.offset.x", AnimationCurve.Linear(0, 1, 2, 3));
+        anim.AddClip(clip, clip.name);
+        anim.Play(clip.name);
+    }
+}
+```
