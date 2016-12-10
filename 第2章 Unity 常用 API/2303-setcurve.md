@@ -2,3 +2,7 @@
 
 **public void SetCurve(string relativePath, Type type, string propertyName, AnimationCurve curve);**
 
+|参数|说明|
+|:--|:--|
+|relativePath|应用给该曲线的游戏物体的路径。relativePath被格式化类似路径，如“root/spine/leftArm”。如果relativePath为空，表示动画剪辑附加的游戏物体。|
+|type|被动画的组件的类类型|
