@@ -2,7 +2,7 @@
 
 **public void CrossFade(string animation, float fadeLength = 0.3F, PlayMode mode = PlayMode.StopSameLayer);**
 
-描述 : 
+描述 ： 
 
 ● 在一定时间内淡入名称为name的动画并且淡出其他动画。
 
