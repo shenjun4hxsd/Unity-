@@ -44,8 +44,8 @@ RuntimeAnimationController
 |&emsp;&emsp;Animate Physic|使用物理动画的播放帧。|
 |&emsp;&emsp;Unscaled Time|使用原始帧率播放。|
 |Culling Mode|动画在什么状态下播放。|
-|Based On Renderer|当摄像机看见时才播放|
-|Always Animate|不管什么状态都播放动画。|
+|&emsp;&emsp;Based On Renderer|当摄像机看见时才播放|
+|&emsp;&emsp;Always Animate|不管什么状态都播放动画。|
 
 
 
