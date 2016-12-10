@@ -93,3 +93,5 @@
 |StartPlayback|在播放模式设置动画。|
 |StartRecording|设置动画器的记录模式并分配frameCount大小的圆形缓冲区。|
 |StopPlayback|停止动画器播放模式。当播放停止时，Avatar恢复从游戏逻辑获得控制权。|
+|StopRecording|停止动画器记录模式。|
+|Update|基于deltaTime计算动画器。|
