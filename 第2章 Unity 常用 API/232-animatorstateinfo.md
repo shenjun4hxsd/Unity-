@@ -12,3 +12,9 @@
 |normalizedTime|该状态的归一化时间。|
 |shortNameHash|使用Animator.StringToHash生成的哈希值。传递的字符串不包含父层的名字。|
 |tagHash|该状态的标签。|
+
+
+|函数|说明|
+|:--|:--|
+|IsName|在状态机激活的状态的名字是否匹配name。|
+|IsTag|在状态机的激活状态的标签是否匹配tag。|
