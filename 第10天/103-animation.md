@@ -89,24 +89,31 @@
 
         功能
             name（动画片段的名字）
+
             clip
                 动画片段
                 AnimationEvent pEvent = new AnimationEvent();
                 pEvent.name = "Fun";
                 pEvent.time = 0.5f;
+
             time（返回当前动作切片被播放了多久，单位是秒）
                 time/length（计算出动画片段播放了几遍）
+
             normalizedTime
                 返回当前动作切片被播放了多久
                 单位是总时间的百分比
+
             length
                 返回当前切片的总时间长度，单位是秒
+
             speed
                 可以获取或者设置当前切片的播放速度
                 > 1（加速播放）
                 0～1（减速播放）
+
             normalizedSpeed
                 可以获取或者设置当前切片的播放速度（百分比制）
+
             wrapMode
                 获取或设置当前切片的循环状态
                     Default
