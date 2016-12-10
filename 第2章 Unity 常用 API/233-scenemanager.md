@@ -12,7 +12,7 @@
 |:--|:--|
 |CreateScene|创建一个空的新场景并指定名称。名称不能为空或者与已存在的场景名称一样。|
 |GetActiveScene|获取激活的场景。|
-|GetSceneAt|获取在场景管理列表添加场景的索引。|
+|GetSceneAt|获取在场景管理列表添加场景的索引。索引必须大于或等于0并且小于SceneManager.sceneCount。|
 |GetSceneByName|通过场景添加到场景管理器的指定名称查找该场景。|
 |GetSceneByPath|查找所有给定资源路径并添加到SceneManager中的场景。|
 |LoadScene|通过在Build Settings中它们的名称或索引加载场景。|
