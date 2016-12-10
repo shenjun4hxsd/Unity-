@@ -1,6 +1,6 @@
 ##Animation
 
-####&emsp;&emsp;简介
+####&emsp;&emsp;1）、简介
 ```
     主要是操作帧序列的动画系统
     Animation控制的是旧动画系统
@@ -10,7 +10,7 @@
         Rig标签下选择Legacy
 ```
 
-####&emsp;&emsp;面板参数
+####&emsp;&emsp;2）、面板参数
 
 |参数|说明|
 |:--|:--|
@@ -22,49 +22,6 @@
 |&emsp;&emsp;Allways|总是渲染|
 |&emsp;&emsp;Based On Renderers|摄像机能看到的时候渲染|
 
-
-####&emsp;&emsp;辅助类
-
-&emsp;&emsp;&emsp;&emsp;**AnimationClip**
-```
-        提供Aniamtion组件动画的基础类
-        他也有自己辅助函数
-             AnimationEvent（就是当前动画切片提供我们的动画事件）
-
-```
-
-&emsp;&emsp;&emsp;&emsp;**AnimationState**
-```
-        用于监视当前Animation播放的动画切片的状态
-
-        功能
-            name（动画片段的名字）
-            clip
-                动画片段
-                AnimationEvent pEvent = new AnimationEvent();
-                pEvent.name = "Fun";
-                pEvent.time = 0.5f;
-            time（返回当前动作切片被播放了多久，单位是秒）
-                time/length（计算出动画片段播放了几遍）
-            normalizedTime
-                返回当前动作切片被播放了多久
-                单位是总时间的百分比
-            length
-                返回当前切片的总时间长度，单位是秒
-            speed
-                可以获取或者设置当前切片的播放速度
-                > 1（加速播放）
-                0～1（减速播放）
-            normalizedSpeed
-                可以获取或者设置当前切片的播放速度（百分比制）
-            wrapMode
-                获取或设置当前切片的循环状态
-                    Default
-                    Once（只播放一次）
-                    Loop（循环播放）
-                    PingPang
-                    ClampForver（播放到最后一帧的时候，会循环播放最后一帧）
-```
 
 ####&emsp;&emsp;&emsp;&emsp;属性
 ```
@@ -135,6 +92,51 @@
 
     AnimationState this[string name];
 ```
+
+####&emsp;&emsp;辅助类
+
+&emsp;&emsp;&emsp;&emsp;**AnimationClip**
+```
+        提供Aniamtion组件动画的基础类
+        他也有自己辅助函数
+             AnimationEvent（就是当前动画切片提供我们的动画事件）
+
+```
+
+&emsp;&emsp;&emsp;&emsp;**AnimationState**
+```
+        用于监视当前Animation播放的动画切片的状态
+
+        功能
+            name（动画片段的名字）
+            clip
+                动画片段
+                AnimationEvent pEvent = new AnimationEvent();
+                pEvent.name = "Fun";
+                pEvent.time = 0.5f;
+            time（返回当前动作切片被播放了多久，单位是秒）
+                time/length（计算出动画片段播放了几遍）
+            normalizedTime
+                返回当前动作切片被播放了多久
+                单位是总时间的百分比
+            length
+                返回当前切片的总时间长度，单位是秒
+            speed
+                可以获取或者设置当前切片的播放速度
+                > 1（加速播放）
+                0～1（减速播放）
+            normalizedSpeed
+                可以获取或者设置当前切片的播放速度（百分比制）
+            wrapMode
+                获取或设置当前切片的循环状态
+                    Default
+                    Once（只播放一次）
+                    Loop（循环播放）
+                    PingPang
+                    ClampForver（播放到最后一帧的时候，会循环播放最后一帧）
+```
+
+
 
 ####&emsp;&emsp;切片的装载
 ```
