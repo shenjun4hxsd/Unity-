@@ -70,7 +70,7 @@
 |GetNextAnimatorStateInfo|获取指定的AnimatorController层上的下个状态信息。仅在过渡期间有效。|
 |HasState|如果在动画器控制器是当前动画状态返回true 。|
 |InterruptMatchTarget|中断目标自动匹配。|
-|IsInTransition|指定的AnimatorController层是否在过渡。|
+|**IsInTransition**|指定的AnimatorController层是否在过渡。|
 |IsParameterControlledByCurve|如果参数是由动画的附加曲线控制，返回真。|
 |MatchTarget|自动调节该对象的位置和旋转，因此，在当前状态是在指定的进度时，AvatarTarget达到matchPosition。|
 |Play|播放一个状态。|
