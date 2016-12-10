@@ -1,6 +1,6 @@
 ##Animation
 
-####简介
+####&emsp;&emsp;简介
 ```
     主要是操作帧序列的动画系统
     Animation控制的是旧动画系统
@@ -10,7 +10,7 @@
         Rig标签下选择Legacy
 ```
 
-####面板参数
+####&emsp;&emsp;面板参数
 
 |参数|说明|
 |:--|:--|
@@ -23,14 +23,18 @@
 |&emsp;&emsp;Based On Renderers|摄像机能看到的时候渲染|
 
 
-####辅助类
+####&emsp;&emsp;辅助类
+
+&emsp;&emsp;&emsp;&emsp;**AnimationClip**
 ```
-    AnimationClip
         提供Aniamtion组件动画的基础类
         他也有自己辅助函数
              AnimationEvent（就是当前动画切片提供我们的动画事件）
 
-    AnimationState
+```
+
+&emsp;&emsp;&emsp;&emsp;**AnimationState**
+```
         用于监视当前Animation播放的动画切片的状态
 
         功能
