@@ -53,7 +53,7 @@
 |GetBehaviour|返回匹配类型T或派生自T的首个状态机行为，如果没有找到返回null。|
 |GetBehaviours|返回匹配类型T或派生自T的所有状态机行为，如果没有找到返回null。|
 |GetBoneTransform|返回人形骨骼ID映射的变换。|
-|**GetBool**|获取布尔参数的值。|
+|**GetBool**|获取布尔参数的值。对于Trigger类型参数他也可以获取回来|
 |GetCurrentAnimationClipState|获取当前状态播放的当前动画信息列表。|
 |GetCurrentAnimatorStateInfo|获取指定的AnimatorController层的当前状态信息。|
 |GetFloat|获取一个浮点数参数的值。|
