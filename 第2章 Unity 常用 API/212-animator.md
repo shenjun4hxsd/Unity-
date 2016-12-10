@@ -67,7 +67,7 @@
 |GetLayerName|获取该层的名称。|
 |GetLayerWeight|获取该层的当前权重。|
 |GetNextAnimationClipState|获取当前播放动画信息列表的下个状态。仅在过渡期间有效。|
-|GetNextAnimatorStateInfo|获取指定的AnimatorController层上的下个状态信息。|
+|GetNextAnimatorStateInfo|获取指定的AnimatorController层上的下个状态信息。仅在过渡期间有效。|
 |HasState|如果在动画器控制器是当前动画状态返回true 。|
 |InterruptMatchTarget|中断目标自动匹配。|
 |IsInTransition|指定的AnimatorController层是否在过渡。|
