@@ -72,3 +72,10 @@
 |IsInTransition|指定的AnimatorController层是否在过渡。|
 |IsParameterControlledByCurve|如果参数是由动画的附加曲线控制，返回真。|
 |MatchTarget|自动调节该对象的位置和旋转，因此，在当前状态是在指定的进度时，AvatarTarget达到matchPosition。|
+|Play|播放一个状态。|
+|PlayInFixedTime|与animator.crossfade相同，但在目标状态的持续时间和偏移是在固定的时间。|
+|Rebind|重新绑定动画器的所有动画的属性和网格数据。|
+|ResetTrigger|重设该触发参数为假。|
+|SetBool|设置一个布尔参数的值。|
+|SetFloat|设置一个浮点数的值。|
+|SetIKHintPosition|设置一个IK hint的位置。|
