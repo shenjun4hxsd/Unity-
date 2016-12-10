@@ -21,3 +21,5 @@ AnimationClip是用于Animation来播放动画。
 |:--|:--|
 |AddEvent|给剪辑添加动画事件。|
 |ClearCurves|从该剪辑清除所有曲线。|
+|EnsureQuaternionContinuity|为了保证更好的四元数插值，你设置完成动画曲线后调用这个函数。|
+|SampleAnimation|在给定的时间采样动画，为任意动画的属性。|
