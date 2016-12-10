@@ -11,3 +11,9 @@ public bool HasState(int layerIndex, int stateID);
 **描述：**
 
 如果在动画器控制器是当前动画状态返回true 。
+
+
+🔚
+
+
+
