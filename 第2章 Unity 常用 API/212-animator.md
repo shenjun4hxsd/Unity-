@@ -55,7 +55,7 @@
 |GetBoneTransform|返回人形骨骼ID映射的变换。|
 |**GetBool**|获取布尔参数的值。对于Trigger类型参数他也可以获取回来|
 |GetCurrentAnimationClipState|获取当前状态播放的当前动画信息列表。|
-|GetCurrentAnimatorStateInfo|获取指定的AnimatorController层的当前状态信息。|
+|**GetCurrentAnimatorStateInfo**|获取指定的AnimatorController层的当前状态信息。|
 |**GetFloat**|获取一个浮点数参数的值。|
 |GetIKHintPosition|获取世界坐标当前IK hint的位置。|
 |GetIKHintPositionWeight|获取IK Hint的过渡的权重。 (0表示IK之前的原始动画，1表示在Hint)。|
@@ -64,8 +64,8 @@
 |GetIKRotation|获取IK goal的旋转。|
 |GetIKRotationWeight|获取IK goal的旋转权重(0表示IK之前的旋转，1表示IK goal的旋转)。|
 |**GetInteger**|获取整数参数的值。|
-|GetLayerName|获取该层的名称。|
-|GetLayerWeight|获取该层的当前权重。|
+|**GetLayerName**|获取该层的名称。|
+|**GetLayerWeight**|获取该层的当前权重。|
 |GetNextAnimationClipState|获取当前播放动画信息列表的下个状态。仅在过渡期间有效。|
 |GetNextAnimatorStateInfo|获取指定的AnimatorController层上的下个状态信息。仅在过渡期间有效。|
 |HasState|如果在动画器控制器是当前动画状态返回true 。|
@@ -86,7 +86,7 @@
 |SetIKRotation|设置IK goal的旋转。|
 |SetIKRotationWeight|设置IK goal的旋转权重（0表示IK之前的旋转，1表示IKgoal旋转）。|
 |**SetInteger**|设置一个整数参数的值。|
-|SetLayerWeight|设置该层的当前权重。|
+|**SetLayerWeight**|设置该层的当前权重。|
 |SetLookAtPosition|设置注视的位置。|
 |SetLookAtWeight|设置注视的权重。|
 |SetTarget|设置AvatarTarget和targetNormalizedTime 用于当前状态。|
