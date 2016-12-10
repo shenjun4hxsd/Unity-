@@ -2,7 +2,7 @@
 
 **public void AddClip(AnimationClip clip, string newName);**
 
-描述 : 添加一个指定名称的动画剪辑。
+描述 ： 添加一个指定名称的动画剪辑。
 
 ```javascript
 using UnityEngine;
@@ -21,7 +21,7 @@ public class ExampleClass : MonoBehaviour {
 
 **public void AddClip(AnimationClip clip, string newName, int firstFrame, int lastFrame, bool addLoopFrame = false);**
 
-**参数: addLoopFrame**
+**参数 ： addLoopFrame**
 
 是否应该在最后插入一个额外的帧匹配第一帧？如果你在制作一个循环的动画，那么可以打开这个选项。
 
