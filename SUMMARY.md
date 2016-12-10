@@ -45,6 +45,7 @@
     * [2.28 ResourceRequest](第2章 Unity 常用 API/228-resourcerequest.md)
     * [2.29 Camera](第2章 Unity 常用 API/229-camera.md)
     * [2.30 AnimationClip](第2章 Unity 常用 API/230-animationclip.md)
+        * [2.301 AddEvent](第2章 Unity 常用 API/2301-addevent.md)
 * [第1天](第1天/1.0 第1天.md)
     * [1.1 向量](第1天/11-向量.md)
         * [1.11 向量的数学运算](第1天/111-向量的数学运算.md)
