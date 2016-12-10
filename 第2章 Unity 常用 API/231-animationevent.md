@@ -13,7 +13,7 @@ AnimationEvent类似于SendMessage让你调用一个脚本函数，这个脚本�
 |animatorClipInfo|与此事件有关的动画器剪辑信息（只读）。|
 |animatorStateInfo|有关该事件的动画器状态信息（只读）。|
 |floatParameter|浮点型参数，储存在该事件中并发送给函数。|
-|functionName|被调用的函数的名称。|
+|functionName|被调用的函数的名称。这与调用gameObject.SendMessage(animationEvent.functionName, animationEvent)相同|
 |intParameter|整数型参数，储存在事件中并发送给函数。|
 |isFiredByAnimator|如果该动画事件已经由Animator组件触发，返回true。|
 |isFiredByLegacy|如果该动画事件已经由Animation组件触发，返回true。|
