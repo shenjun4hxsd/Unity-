@@ -15,3 +15,9 @@ AnimationClip是用于Animation来播放动画。
 |length|动画长度，单位秒。（只读）|
 |localBounds|动画组件在本地坐标空间这个动画剪辑的AABB也被附加。|
 |wrapMode|在动画状态设置使用的默认循环模式。|
+
+
+|公共函数|说明|
+|:--|:--|
+|AddEvent|给剪辑添加动画事件。|
+|ClearCurves|从该剪辑清除所有曲线。|
