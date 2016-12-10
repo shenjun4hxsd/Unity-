@@ -39,6 +39,7 @@
         * [2.1210 InterruptMatchTarget](第2章 Unity 常用 API/21210-interruptmatchtarget.md)
         * [2.1211 MatchTarget](第2章 Unity 常用 API/21211-matchtarget.md)
         * [2.1212 Play](第2章 Unity 常用 API/21212-play.md)
+        * [2.1213 StringToHash](第2章 Unity 常用 API/21213-stringtohash.md)
     * [2.13 RigidBody](第2章 Unity 常用 API/213-rigidbody.md)
     * [2.14 Collision](第2章 Unity 常用 API/214-collision.md)
     * [2.15 Collider](第2章 Unity 常用 API/215-collider.md)
