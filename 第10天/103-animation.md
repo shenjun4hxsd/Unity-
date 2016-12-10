@@ -52,7 +52,6 @@
 |Sample|在当前状态对动画进行采样。|
 |Stop|停止所有当前Animation正在播放的动画。停止一个动画会让动画重回开始位置。|
 
----
 
 ####举例：
 ```
@@ -71,6 +70,8 @@
 
     AnimationState this[string name];
 ```
+
+---
 
 ####&emsp;&emsp;辅助类
 
