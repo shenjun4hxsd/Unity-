@@ -19,8 +19,8 @@
 |Play Automaticlly|勾选以后，游戏开始会自动播放Animation中指定的动画片段|
 |Animate Physics|是有参与物理运动|
 |Cull Type|什么时候渲染|
-|Allways|总是渲染|
-|Based On Renderers|摄像机能看到的时候渲染|
+|&emsp;&emsp;Allways|总是渲染|
+|&emsp;&emsp;Based On Renderers|摄像机能看到的时候渲染|
 
 
 ####辅助类
