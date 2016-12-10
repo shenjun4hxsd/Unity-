@@ -15,3 +15,22 @@
 
 如果queue为QueueMode.CompleteOthers这个动画只在所有其他动画都停止播放时才开始。
 如果queue为QueueMode.PlayNow这个动画将以一个复制的动画状态立即开始播放。
+
+动画播放完成后它将自动清除它自己。在它播放完成后使用赋值的动画将导致一个异常。
+
+```javascript
+using UnityEngine;
+using System.Collections;
+ 
+public class ExampleClass : MonoBehaviour {
+    public Animation anim;
+    void Start() {
+        anim = GetComponent<Animation>();
+    }
+    void Update() {
+        if (Input.GetButtonDown("Fire1"))
+            anim.CrossFadeQueued("shoot", 0.3F, QueueMode.PlayNow);
+ 
+    }
+}
+```
