@@ -21,3 +21,5 @@ AnimationEvent类似于SendMessage让你调用一个脚本函数，这个脚本�
 |objectReferenceParameter|储存在事件中的引用对象参数，并发送给函数。|
 |stringParameter|储存在该事件中的字符串参数，并发送给函数。|
 |time|引发该事件的时间点。|
+
+🔚
