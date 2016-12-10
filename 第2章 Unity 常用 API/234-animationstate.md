@@ -19,3 +19,15 @@ AnimationState 接口允许您在的任何动画播放时修改速度、 权值�
 |normalizedTime|规范化动画时间。|
 |speed|加快动画的播放速度，1 为正常播放速度。|
 |time|当前动画时间。|
+|weight|动画权重。|
+|wrapMode|动画的循环模式。|
+
+|公有方法|说明|
+|:--|:--|
+|AddMixingTransform|添加一个动画的Transform。这使你减少创建动画必须的数量。|
+|RemoveMixingTransform|移除一个动画的Transform。|
+
+
+🔚
+
+
