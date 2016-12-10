@@ -22,4 +22,48 @@ AnimationEvent类似于SendMessage让你调用一个脚本函数，这个脚本�
 |stringParameter|储存在该事件中的字符串参数，并发送给函数。|
 |time|引发该事件的时间点。|
 
+
+示例：
+
+```javascript
+// Add an Animation Event to a GameObject that has an Animator
+using UnityEngine;
+using System.Collections;
+
+public class Example : MonoBehaviour {
+
+	public void Start()
+	{
+		// existing components on the GameObject
+		AnimationClip clip;
+		Animator anim;
+		
+		// new event created
+		AnimationEvent evt;
+		evt = new AnimationEvent();
+
+		// put some parameters on the AnimationEvent
+		//  - call the function called PrintEvent()
+		//  - the animation on this object lasts 2 seconds
+		//    and the new animation created here is
+		//    set up to happens 1.3s into the animation		
+		evt.intParameter = 12345;
+		evt.time = 1.3f;
+		evt.functionName = "PrintEvent";
+
+		// get the animation clip and add the AnimationEvent
+		anim = GetComponent<Animator>();
+		clip = anim.runtimeAnimatorController.animationClips[0];
+		clip.AddEvent(evt);
+
+	}
+
+	// the function to be called as an event
+	public void PrintEvent(int i) {
+		print("PrintEvent: " + i + " called at: " + Time.time);
+	}
+}
+```
+
+
 🔚
