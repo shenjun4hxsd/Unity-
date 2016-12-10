@@ -63,10 +63,10 @@
 |GetIKPositionWeight|获取IK goal的过渡权重(0表示IK之前的原始动画，1表示在goal)。|
 |GetIKRotation|获取IK goal的旋转。|
 |GetIKRotationWeight|获取IK goal的旋转权重(0表示IK之前的旋转，1表示IK goal的旋转)。|
-|GetInteger|获取整数参数的值。|
+|**GetInteger**|获取整数参数的值。|
 |GetLayerName|获取该层的名称。|
 |GetLayerWeight|获取该层的当前权重。|
-|GetNextAnimationClipState|获取当前播放动画信息列表的下个状态。|
+|GetNextAnimationClipState|获取当前播放动画信息列表的下个状态。仅在过渡期间有效。|
 |GetNextAnimatorStateInfo|获取指定的AnimatorController层上的下个状态信息。|
 |HasState|如果在动画器控制器是当前动画状态返回true 。|
 |InterruptMatchTarget|中断目标自动匹配。|
