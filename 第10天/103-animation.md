@@ -41,12 +41,12 @@
 |:--|:--|
 |**AddClip**|添加一个指定名称的动画剪辑。注意：这些切片一定要来自于统一的FBX文件，除非是你自己做的动画可以不统一。|
 |**Blend**|在接下来的几秒内混合命名为animation的动画到targetWeight。|
-|CrossFade|在一定时间内淡入名称为name的动画并且淡出其他动画。|
-|CrossFadeQueued|在前一个动画播放完成之后淡入淡出下一个动画。|
+|**CrossFade**|在一定时间内淡入名称为name的动画并且淡出其他动画。|
+|**CrossFadeQueued**|在前一个动画播放完成之后淡入淡出下一个动画。|
 |GetClipCount|取得该动画的动画剪辑数量。|
-|IsPlaying|名为name的动画正在播放吗？|
-|Play|不带有任何混合的播放动画。|
-|PlayQueued|在前一个动画播放完成之后直接播放下一个动画。|
+|**IsPlaying**|名为name的动画正在播放吗？|
+|**Play**|不带有任何混合的播放动画。|
+|**PlayQueued**|在前一个动画播放完成之后直接播放下一个动画。|
 |RemoveClip|从动画列表移除剪辑。这将去掉剪辑和所有基于这个剪辑的动画状态。|
 |Rewind|倒回名称为name的动画。|
 |Sample|在当前状态对动画进行采样。|
