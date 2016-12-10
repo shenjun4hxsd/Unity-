@@ -65,3 +65,25 @@ public class ExampleClass : MonoBehaviour {
     }
 }
 ```
+
+---
+
+属性名可以通过设置资源序列化，可以在编辑器中设置强制文本模式进行查找。该文本文件由编辑器写入，将包含属性名。例如，yaml文件写入的场景对象将包含相机设置。看下面的yaml文件。
+
+```javascript
+m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+m_NormalizedViewPortRect:
+serializedVersion: 2
+x: 0
+y: 0
+width: 1
+height: 1
+near clip plane: .300000012
+far clip plane: 1000
+field of view: 60
+orthographic: 0
+orthographic size: 5
+m_Depth: -1
+```
+
+这个显示FOV参数的名为field of view。如果你想要创建一个动画剪辑来动画相机的field of view，你应该传递field of view作为参数。
