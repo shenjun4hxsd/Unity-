@@ -56,7 +56,7 @@
 |GetCurrentAnimationClipState|获取当前状态播放的当前动画信息列表。|
 |GetCurrentAnimatorStateInfo|获取指定的AnimatorController层的当前状态信息。|
 |GetFloat|获取一个浮点数参数的值。|
-|GetIKHintPosition|获取IK hint的位置。|
+|GetIKHintPosition|获取IK hint的位置。返回世界坐标当前IK hint的位置。|
 |GetIKHintPositionWeight|获取IK Hint的过渡的权重。 (0表示IK之前的原始动画，1表示在Hint)。|
 |GetIKPosition|获取IK goal的位置。|
 |GetIKPositionWeight|获取IK goal的过渡权重(0表示IK之前的原始动画，1表示在goal)。|
