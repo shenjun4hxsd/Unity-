@@ -27,3 +27,10 @@
         AudioMixer
             AudioSource
         AudioSource
+
+####Effect
+    Receive
+    Send
+        发送声音信号
+        多个Send可以发送给同一个Receive
+    DuckVolume
