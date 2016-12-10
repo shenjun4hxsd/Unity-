@@ -9,7 +9,7 @@ AnimationEvent类似于SendMessage让你调用一个脚本函数，这个脚本�
 
 |变量|说明|
 |:--|:--|
-|animationState|该事件引发的动画状态（只读）。|
+|animationState|该事件引发的动画状态（只读）。当该方法在动画事件回调之外被调用时，返回null。注意，该成员从动画组件（旧版）调用时，仅能设置。|
 |animatorClipInfo|与此事件有关的动画器剪辑信息（只读）。|
 |animatorStateInfo|有关该事件的动画器状态信息（只读）。|
 |floatParameter|浮点型参数，储存在该事件中并发送给函数。|
