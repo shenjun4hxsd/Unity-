@@ -46,7 +46,7 @@ using UnityEngine;
 |IsPlaying|名为name的动画正在播放吗？|
 |Play|不带有任何混合的播放动画。|
 |PlayQueued|在前一个动画播放完成之后直接播放下一个动画。|
-|RemoveClip|从动画列表移除剪辑。|
+|RemoveClip|从动画列表移除剪辑。这将去掉剪辑和所有基于这个剪辑的动画状态。|
 |Rewind|倒回名称为name的动画。|
 |Sample|在当前状态对动画进行采样。|
 |Stop|停止所有当前Animation正在播放的动画。|
