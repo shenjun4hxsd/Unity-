@@ -30,3 +30,14 @@
 |playbackTime|在记录缓冲区设置播放位置。|
 |recorderMode|获取动画器录制的模式。|
 |recorderStartTime|缓冲区第一帧的开始时间，相对于StartRecording被调用时的帧。|
+|recorderStopTime|记录剪辑的结束时间，相对于StartRecording被调用的帧。|
+|rightFeetBottomHeight|获取右脚底的高度。|
+|rootPosition|根位置，该游戏对象的位置。|
+|rootRotation|根旋转，该游戏对象的旋转角度。|
+|runtimeAnimatorController|AnimatorController的运行时代表，用来控制Animator。|
+|speed|动画器的播放速度。1表示正常播放速度。|
+|stabilizeFeet|过渡和混合时，脚自动稳定。|
+|targetPosition|返回由SetTarget(AvatarTarget targetIndex, float targetNormalizedTime))指定的目标的位置。|
+|targetRotation|返回由SetTarget(AvatarTarget targetIndex, float targetNormalizedTime))指定的目标的旋转角度。|
+|updateMode|该动画器的指定更新模式。|
+|velocity|获得上帧计算的Avatar速度。|
