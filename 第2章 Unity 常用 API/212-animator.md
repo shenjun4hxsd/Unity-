@@ -95,3 +95,7 @@
 |StopPlayback|停止动画器播放模式。当播放停止时，Avatar恢复从游戏逻辑获得控制权。|
 |StopRecording|停止动画器记录模式。|
 |Update|基于deltaTime计算动画器。|
+
+|静态函数|说明|
+|:--|:--|
+|StringToHash|从字符串生成一个参数ID。|
