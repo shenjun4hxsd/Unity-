@@ -79,3 +79,17 @@
 |SetBool|设置一个布尔参数的值。|
 |SetFloat|设置一个浮点数的值。|
 |SetIKHintPosition|设置一个IK hint的位置。|
+|SetIKHintPositionWeight|设置IK hint过渡权重（0表示IK之前的原始动画，1表示在hint）|
+|SetIKPosition|设置一个IK goal的位置。|
+|SetIKPositionWeight|设置IK goal的过渡权重（0表示IK之前的原始动画，1表示在goal）。|
+|SetIKRotation|设置IK goal的旋转。|
+|SetIKRotationWeight|设置IK goal的旋转权重（0表示IK之前的旋转，1表示IKgoal旋转）。|
+|SetInteger|设置一个整数参数的值。|
+|SetLayerWeight|设置该层的当前权重。|
+|SetLookAtPosition|设置注视的位置。|
+|SetLookAtWeight|设置注视的权重。|
+|SetTarget|设置AvatarTarget和targetNormalizedTime 用于当前状态。|
+|SetTrigger|设置一个要激活的触发器参数。|
+|StartPlayback|在播放模式设置动画。|
+|StartRecording|设置动画器的记录模式并分配frameCount大小的圆形缓冲区。|
+|StopPlayback|停止动画器播放模式。当播放停止时，Avatar恢复从游戏逻辑获得控制权。|
