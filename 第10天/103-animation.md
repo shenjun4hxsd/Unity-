@@ -8,6 +8,8 @@
         旧动画系统的组件
         属于新动画系统的子集
         Rig标签下选择Legacy
+
+    Unity引擎没有为Animation组件提供可视化状态机，你必须用代码来驱动所有AnimationClip的变化。
 ```
 
 ####2）、面板参数
