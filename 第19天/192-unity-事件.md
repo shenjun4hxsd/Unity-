@@ -47,4 +47,4 @@
     对于带参动作，我们使用委托的时候需要定义成范型函数。
         对于带参动作累加订阅的时候需要注意，你必须在委托实参外侧构建一个UnityAction<T>将其包裹，然后重新AddListener到事件中去。
     lambda
-        对于UnityEvent系列类，我在AddListener时可以使用lambda写法，当然是针对我们的函数内容比较少的时候，你可以这么做
+        对于UnityEvent系列类，我在AddListener时可以使用lambda写法，当然是针对我们的函数内容比较少的时候，你可以这么做。
