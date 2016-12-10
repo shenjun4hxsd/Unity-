@@ -24,3 +24,9 @@
 |layerCount|该动画器控制器的层数。|
 |leftFeetBottomHeight|获得左脚底的高度。|
 |linearVelocityBlending|当linearVelocityBlending 设置为true，根运动速度和角速度将线性混合。|
+|parameters|用于动画器只读访问动画器控制器参数。|
+|pivotPosition|获得当前轴心点的位置 。|
+|pivotWeight|获得轴心点的权重。|
+|playbackTime|在记录缓冲区设置播放位置。|
+|recorderMode|获取动画器录制的模式。|
+|recorderStartTime|缓冲区第一帧的开始时间，相对于StartRecording被调用时的帧。|
