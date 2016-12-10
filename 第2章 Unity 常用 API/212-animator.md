@@ -42,6 +42,7 @@
 |updateMode|该动画器的指定更新模式。|
 |velocity|获得上帧计算的Avatar速度。|
 
+&emsp;
 
 |函数|说明|
 |:--|:--|
