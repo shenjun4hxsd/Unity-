@@ -31,9 +31,9 @@
 |**cullingType**|控制动画组件的剔除类型。设置类型见面板参数 Cull Type。|
 |isPlaying|有任意动画正播放？|
 |localBounds|在本地坐标空间这个动画的动画组件的AABB。|
-|playAutomatically|在启动的时候是否自动播放默认动画剪辑（Animation.clip）。|
+|**playAutomatically**|在启动的时候是否自动播放默认动画剪辑（Animation.clip）。|
 |this[string]|返回指定名称的动画状态。|
-|wrapMode|动画剪辑播放完成之后，应该如何操作？|
+|wrapMode|全局设定所有动画切片播放的循环特性，动画剪辑播放完成之后，应该如何操作？|
 
 
 |公共函数|说明|
@@ -51,28 +51,7 @@
 |Sample|在当前状态对动画进行采样。|
 |Stop|停止所有当前Animation正在播放的动画。停止一个动画会让动画重回开始位置。|
 
-####&emsp;&emsp;&emsp;&emsp;属性
-```
-    clip
-        用于确定默认的播放动作切片
-        注意：这个切片必须存在于Animation组件的动画切片列表中
-    animatePhysics
-        如果为真表示可以支持当前动画切片的物理动作
-        注意：美术必须能做到利用根骨骼驱动模型才有用
-    cullingType
-        用于确定动画的播放特性
-            可以在任何状态下都播放动画
-            可以在摄像机看见他的时候才播放动画
-    playAutomatically
-        如果为真表示Awake执行后就会自动开发播放clip属性的动画
-    wrapMode
-        全局设定所有动画切片播放的循环特性
-        在代码中他返回的是当前正在播放的动画切片的循环特性
-    localBounds
-        返回本地每个骨骼的大小
-    isPlaying
-        返回当前是否在播放我们的动画
-```
+
 
 ####&emsp;&emsp;&emsp;&emsp;方法
 ```
