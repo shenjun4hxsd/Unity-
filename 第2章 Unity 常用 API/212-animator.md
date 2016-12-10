@@ -47,7 +47,7 @@
 |函数|说明|
 |:--|:--|
 |ApplyBuiltinRootMotion|应用默认的根运动。|
-|CrossFade|在当前状态和目标状态之间创建一个动态过渡。|
+|**CrossFade**|在当前状态和目标状态之间创建一个动态过渡。|
 |CrossFadeInFixedTime|与animator.crossfade相同，但在目标状态的持续时间和偏移是在固定的时间。|
 |GetAnimatorTransitionInfo|获取指定AnimatorController层的过渡信息。仅在过渡持续期间有效。|
 |GetBehaviour|返回匹配类型T或派生自T的首个状态机行为，如果没有找到返回null。|
@@ -56,7 +56,7 @@
 |**GetBool**|获取布尔参数的值。对于Trigger类型参数他也可以获取回来|
 |GetCurrentAnimationClipState|获取当前状态播放的当前动画信息列表。|
 |GetCurrentAnimatorStateInfo|获取指定的AnimatorController层的当前状态信息。|
-|GetFloat|获取一个浮点数参数的值。|
+|**GetFloat**|获取一个浮点数参数的值。|
 |GetIKHintPosition|获取世界坐标当前IK hint的位置。|
 |GetIKHintPositionWeight|获取IK Hint的过渡的权重。 (0表示IK之前的原始动画，1表示在Hint)。|
 |GetIKPosition|获取IK goal的位置。|
@@ -73,24 +73,24 @@
 |**IsInTransition**|指定的AnimatorController层是否在过渡。|
 |IsParameterControlledByCurve|如果参数是由动画的附加曲线控制，返回真。|
 |MatchTarget|自动调节该对象的位置和旋转，因此，在当前状态是在指定的进度时，AvatarTarget达到matchPosition。|
-|Play|播放一个状态。|
+|**Play**|播放一个状态。|
 |PlayInFixedTime|与animator.crossfade相同，但在目标状态的持续时间和偏移是在固定的时间。|
 |Rebind|重新绑定动画器的所有动画的属性和网格数据。这个函数用于当你手动通过脚本修改对象的层级时使用，像合并网格或交换一个完整的变换层级。|
 |ResetTrigger|重设该触发参数为假。|
-|SetBool|设置一个布尔参数的值。|
-|SetFloat|设置一个浮点数的值。|
+|**SetBool**|设置一个布尔参数的值。|
+|**SetFloat**|设置一个浮点数的值。|
 |SetIKHintPosition|设置一个IK hint的位置。|
 |SetIKHintPositionWeight|设置IK hint过渡权重（0表示IK之前的原始动画，1表示在hint）|
 |SetIKPosition|设置一个IK goal的位置。|
 |SetIKPositionWeight|设置IK goal的过渡权重（0表示IK之前的原始动画，1表示在goal）。|
 |SetIKRotation|设置IK goal的旋转。|
 |SetIKRotationWeight|设置IK goal的旋转权重（0表示IK之前的旋转，1表示IKgoal旋转）。|
-|SetInteger|设置一个整数参数的值。|
+|**SetInteger**|设置一个整数参数的值。|
 |SetLayerWeight|设置该层的当前权重。|
 |SetLookAtPosition|设置注视的位置。|
 |SetLookAtWeight|设置注视的权重。|
 |SetTarget|设置AvatarTarget和targetNormalizedTime 用于当前状态。|
-|SetTrigger|设置一个要激活的触发器参数。|
+|**SetTrigger**|设置一个要激活的触发器参数。|
 |StartPlayback|在播放模式设置动画。|
 |StartRecording|设置动画器的记录模式并分配frameCount大小的圆形缓冲区。|
 |StopPlayback|停止动画器播放模式。当播放停止时，Avatar恢复从游戏逻辑获得控制权。|
@@ -99,4 +99,4 @@
 
 |静态函数|说明|
 |:--|:--|
-|StringToHash|从字符串生成一个参数ID。|
+|**StringToHash**|从字符串生成一个参数ID。|
