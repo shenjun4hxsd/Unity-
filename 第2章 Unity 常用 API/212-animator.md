@@ -41,3 +41,34 @@
 |targetRotation|返回由SetTarget(AvatarTarget targetIndex, float targetNormalizedTime))指定的目标的旋转角度。|
 |updateMode|该动画器的指定更新模式。|
 |velocity|获得上帧计算的Avatar速度。|
+
+
+|函数|说明|
+|:--|:--|
+|ApplyBuiltinRootMotion|应用默认的根运动。|
+|CrossFade|在当前状态和目标状态之间创建一个动态过渡。|
+|CrossFadeInFixedTime|与animator.crossfade相同，但在目标状态的持续时间和偏移是在固定的时间。|
+|GetAnimatorTransitionInfo|获取指定AnimatorController层的过渡信息。|
+|GetBehaviour|返回匹配类型T或派生自T的首个状态机行为，如果没有找到返回null。|
+|GetBehaviours|返回匹配类型T或派生自T的所有状态机行为，如果没有找到返回null。|
+|GetBoneTransform|返回人形骨骼ID映射的变换。|
+|GetBool|获取布尔参数的值。|
+|GetCurrentAnimationClipState|获取当前状态播放的当前动画信息列表。|
+|GetCurrentAnimatorStateInfo|获取指定的AnimatorController层的当前状态信息。|
+|GetFloat|获取一个浮点数参数的值。|
+|GetIKHintPosition|获取IK hint的位置。|
+|GetIKHintPositionWeight|获取IK Hint的过渡的权重。 (0表示IK之前的原始动画，1表示在Hint)。|
+|GetIKPosition|获取IK goal的位置。|
+|GetIKPositionWeight|获取IK goal的过渡权重(0表示IK之前的原始动画，1表示在goal)。|
+|GetIKRotation|获取IK goal的旋转。|
+|GetIKRotationWeight|获取IK goal的旋转权重(0表示IK之前的旋转，1表示IK goal的旋转)。|
+|GetInteger|获取整数参数的值。|
+|GetLayerName|获取该层的名称。|
+|GetLayerWeight|获取该层的当前权重。|
+|GetNextAnimationClipState|获取当前播放动画信息列表的下个状态。|
+|GetNextAnimatorStateInfo|获取指定的AnimatorController层上的下个状态信息。|
+|HasState|如果在动画器控制器是当前动画状态返回true 。|
+|InterruptMatchTarget|中断目标自动匹配。|
+|IsInTransition|指定的AnimatorController层是否在过渡。|
+|IsParameterControlledByCurve|如果参数是由动画的附加曲线控制，返回真。|
+|MatchTarget|自动调节该对象的位置和旋转，因此，在当前状态是在指定的进度时，AvatarTarget达到matchPosition。|
