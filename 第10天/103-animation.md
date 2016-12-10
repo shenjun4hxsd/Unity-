@@ -47,45 +47,16 @@
 |**IsPlaying**|名为name的动画正在播放吗？|
 |**Play**|不带有任何混合的播放动画。|
 |**PlayQueued**|在前一个动画播放完成之后直接播放下一个动画。|
-|RemoveClip|从动画列表移除剪辑。这将去掉剪辑和所有基于这个剪辑的动画状态。|
+|**RemoveClip**|从动画列表移除剪辑。这将去掉剪辑和所有基于这个剪辑的动画状态。|
 |Rewind|倒回名称为name的动画。|
 |Sample|在当前状态对动画进行采样。|
 |Stop|停止所有当前Animation正在播放的动画。停止一个动画会让动画重回开始位置。|
 
 
 
-####&emsp;&emsp;&emsp;&emsp;方法
+####&emsp;&emsp;&emsp;&emsp;举例：
 ```
-    索引
-        通过动画切片的名字返回这个动画切片的AnimationState
-        可以使用这个方法来监视我们的动画播放情况
-    AddClip
-        用于向Animation组件添加动画切片
-        注意：这些切片一定要来自于统一的FBX文件，除非是你自己做的动画可以不统一
-    Blend
-        用于制定一个动画切片名字后设定这个动画切片的显示权重
-        显示权重：权重值越高越会覆盖别的动画
-    GetClip
-        通过切片名返回动画切片对象
-    GetClipCount
-        返回Animation组件中有多少个动画切片
-    RemoveClip
-        制定动画切片名，删除对应的动画切片
-    Play
-        指定动画切片名播放动画，如果没有动画名他会自动播放clip属性中的动画
-        举例：
-             bool Play("动画片段的名称");
-             bool Play("动画片段的名称", PlayMode.StopAll);
-             // PlayMode 枚举(StopAll、StopSameLayer)
-
-    PlayQueued
-        设定播放序列，你可以在正在播放的时候调用指定当前动画播放完后再继续播放你指定的动画
-        注意：他适用于warpMode是Once的动画，循环动画就废了
-    Rewind
-        将指定的动画反过来放
-        注意：他和warpMode的PingPong模式类似，但是PingPong会一直播放下去，而Rwind他是来回走一次结束播放
-    Stop
-        终止指定的动画
+   
     CrossFade
         混合播放，预留之前动画的一部分和将要播放的动画混合后再播放，有播放过渡的意思
         举例：
@@ -93,7 +64,7 @@
             // fadeLength （与之前的动画片段融合的百分比）
 
     CrossFadeQueued
-        动画过渡播放，的序列设定
+        动画过渡播放的序列设定
         举例：
              AnimationState CrossFadeQueued( "动画片段的名称"， int fadeLength, QueuedMode.CompleteOthers );
              // QueueMode(CompleteOthers、PlayNow)
