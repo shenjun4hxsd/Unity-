@@ -9,6 +9,7 @@
         属于新动画系统的子集
         Rig标签下选择Legacy
 
+    Unity默认创建的是Animator组件，我们需要手动添加Animation组件。
     Unity引擎没有为Animation组件提供可视化状态机，你必须用代码来驱动所有AnimationClip的变化。
 ```
 

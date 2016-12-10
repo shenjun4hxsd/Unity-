@@ -1,14 +1,15 @@
 ##Animator
 
-新动画系统
+**新动画系统**
 
     Rig标签：
-
         Generic
         Humanoid
 
+    必须给它传递Avatar才可以工作。
 
-支持 Avatar 
+
+**支持 Avatar **
 
     Avatar : Unity提供的简化的基本骨骼信息，与模型的骨骼信息匹配，匹配成功后，会生成一个Avatar文件。
 
