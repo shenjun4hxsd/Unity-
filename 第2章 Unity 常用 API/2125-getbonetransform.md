@@ -48,37 +48,20 @@
 |LeftRingDistal|这是左手无名指第三指骨。|
 |LeftLittleProximal|这是左手小拇指第一指骨。|
 |LeftLittleIntermediate|这是左手小拇指第二指骨。|
-LeftLittleDistal	This is the left little 3rd phalange.
-这是左手小拇指第三指骨。
-RightThumbProximal	This is the right thumb 1st phalange.
-这是右手拇指第一指骨。
-RightThumbIntermediate	This is the right thumb 2nd phalange.
-这是右手拇指第二指骨。
-RightThumbDistal	This is the right thumb 3rd phalange.
-这是右手拇指第三指骨。
-RightIndexProximal	This is the right index 1st phalange.
-这是右手食指第一指骨。
-RightIndexIntermediate	This is the right index 2nd phalange.
-这是右手食指第二指骨。
-RightIndexDistal	This is the right index 3rd phalange.
-这是右手食指第三指骨。
-RightMiddleProximal	This is the right middle 1st phalange.
-这是右手中指第一指骨。
-RightMiddleIntermediate	This is the right middle 2nd phalange.
-这是右手中指第二指骨。
-RightMiddleDistal	This is the right middle 3rd phalange.
-这是右手中指第三指骨。
-RightRingProximal	This is the right ring 1st phalange.
-这是右手无名指第一指骨。
-RightRingIntermediate	This is the right ring 2nd phalange.
-这是右手无名指第二指骨。
-RightRingDistal	This is the right ring 3rd phalange.
-这是右手无名指第三指骨。
-RightLittleProximal	This is the right little 1st phalange.
-这是右手小拇指第一指骨。
-RightLittleIntermediate	This is the right little 2nd phalange.
-这是右手小拇指第二指骨。
-RightLittleDistal	This is the right little 3rd phalange.
-这是右手小拇指第三指骨。
-LastBone	This is the Last bone index delimiter.
-这是尾骨索引分隔符。
+|LeftLittleDistal|这是左手小拇指第三指骨。|
+|RightThumbProximal|这是右手拇指第一指骨。|
+|RightThumbIntermediate|这是右手拇指第二指骨。|
+|RightThumbDistal|这是右手拇指第三指骨。|
+|RightIndexProximal|这是右手食指第一指骨。|
+|RightIndexIntermediate	|这是右手食指第二指骨。|
+|RightIndexDistal|这是右手食指第三指骨。|
+|RightMiddleProximal|这是右手中指第一指骨。|
+|RightMiddleIntermediate|这是右手中指第二指骨。|
+|RightMiddleDistal|这是右手中指第三指骨。|
+|RightRingProximal|这是右手无名指第一指骨。|
+|RightRingIntermediate|	这是右手无名指第二指骨。|
+|RightRingDistal|这是右手无名指第三指骨。|
+|RightLittleProximal|这是右手小拇指第一指骨。|
+|RightLittleIntermediate|这是右手小拇指第二指骨。|
+|RightLittleDistal|这是右手小拇指第三指骨。|
+|LastBone|这是尾骨索引分隔符。|
