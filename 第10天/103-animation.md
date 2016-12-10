@@ -32,7 +32,7 @@
 |isPlaying|有任意动画正播放？|
 |localBounds|在本地坐标空间这个动画的动画组件的AABB。|
 |**playAutomatically**|在启动的时候是否自动播放默认动画剪辑（Animation.clip）。|
-|this[string]|返回指定名称的动画状态。|
+|this[string]|返回指定名称的动画状态(AnimationState)。|
 |wrapMode|全局设定所有动画切片播放的循环特性，动画剪辑播放完成之后，应该如何操作？|
 
 &emsp;
