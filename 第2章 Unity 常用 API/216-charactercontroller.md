@@ -127,7 +127,7 @@ CollisionFlags是CharacterController.Move返回的位掩码。
  
     public class Test : MonoBehaviour {
  
-        //角色控制器组件在与具有Collider组件对象之间的碰撞
+        //角色控制器组件在与具有Collider组件对象之间的碰撞 无法检测与触发器的Collider碰撞
         void OnControllerColliderHit(ControllerColliderHit hit)
         {
  
