@@ -67,7 +67,18 @@
 
  Animation Import Settings 中『Animations』Tab 页中各项设置的作用。
 
-
+|选项|说明|
+|:--|:--|
+|Import Animation|勾选这个才可以导入动画到 Unity 工程中。|
+|Bake Animations|这个选项只在使用 Humanoid 动画并且使用到了 IK 特性的时候才可用。|
+|Anim.Compression|这个是关于动画压缩选项的，默认会选择 Keyframe Reduction 这个是『压缩关键帧』，就是 Unity 会自行重采样动画的关键帧，还有两个选项『Off 和 Optimal』，一个是关闭动画压缩，一个是最优化压缩（应该是压缩效率最高，动画效果失真度可能也较高）。|
+||选择了 Keyframe Reduction 或者 Optimal 压缩选项，就会有三个用于控制压缩选项的系数配置， Rotation Error，Position Error 和 Scale Error，这个三个参数默认都是 0.5，越小呢精度就越高也就是说动画的失真度越小。|
+|Clips|这个下面列出了这个 FBX 文件下包含的所有动画，我们在默认的动画文件基础上新建和删除动画片段 (Animation Clip)，当然每个动画片段都是可以指定起始帧和结束帧的； 以下的设置都是针对单个动画片段|
+|Loop Time|勾选这个选项之后，如果 Animator 处于播放这个动画状态时，在播放完第一遍这个动画片段之后，会自动循环从起始帧再次开始播放动画，如此循环往复。如果我们不勾选这个选项，例如 Animator 一直处于播放这个动画的状态，那么动画会定格在动画的结束帧，直到我们通过 Animator 切换这个 Animator 状态机的状态，切换到其他的动画|
+|&emsp;&emsp;Loop Pose|用于控制动画循环播放时，从结束帧切换到起始帧时，动画的动作可以无缝的衔接上。|
+|&emsp;&emsp;Cycle Offset|用于控制循环的时候起始帧偏移。|
+|Root Transform Rotation|根节点的旋转信息。|
+|&emsp;&emsp;Bake Into Pose|勾选后会将根节点每一帧的旋转方向信息烘焙到动画的骨骼运动中，在整个动画播放的过程中，根节点的旋转信息就不会在通过 Root Motion 作用到播放该动画的 GameObject 上了，这就意味着这个动画播放的过程中，该物体的 Transform 中的 Rotation 值不会因为动画中物体做了任何旋转而发生改变，而是会保持一个恒定的值，和该动画播放之前的旋转值保持一致。|
 
 
 
