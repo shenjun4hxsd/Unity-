@@ -74,18 +74,18 @@
 |Anim.Compression|这个是关于动画压缩选项的，默认会选择 Keyframe Reduction 这个是『压缩关键帧』，就是 Unity 会自行重采样动画的关键帧，还有两个选项『Off 和 Optimal』，一个是关闭动画压缩，一个是最优化压缩（应该是压缩效率最高，动画效果失真度可能也较高）。|
 ||选择了 Keyframe Reduction 或者 Optimal 压缩选项，就会有三个用于控制压缩选项的系数配置， Rotation Error，Position Error 和 Scale Error，这个三个参数默认都是 0.5，越小呢精度就越高也就是说动画的失真度越小。|
 |Clips|这个下面列出了这个 FBX 文件下包含的所有动画，我们在默认的动画文件基础上新建和删除动画片段 (Animation Clip)，当然每个动画片段都是可以指定起始帧和结束帧的； 以下的设置都是针对单个动画片段|
-|Loop Time|勾选这个选项之后，如果 Animator 处于播放这个动画状态时，在播放完第一遍这个动画片段之后，会自动循环从起始帧再次开始播放动画，如此循环往复。如果我们不勾选这个选项，例如 Animator 一直处于播放这个动画的状态，那么动画会定格在动画的结束帧，直到我们通过 Animator 切换这个 Animator 状态机的状态，切换到其他的动画|
+|**Loop Time**|勾选这个选项之后，如果 Animator 处于播放这个动画状态时，在播放完第一遍这个动画片段之后，会自动循环从起始帧再次开始播放动画，如此循环往复。如果我们不勾选这个选项，例如 Animator 一直处于播放这个动画的状态，那么动画会定格在动画的结束帧，直到我们通过 Animator 切换这个 Animator 状态机的状态，切换到其他的动画|
 |&emsp;&emsp;Loop Pose|用于控制动画循环播放时，从结束帧切换到起始帧时，动画的动作可以无缝的衔接上。|
 |&emsp;&emsp;Cycle Offset|用于控制循环的时候起始帧偏移。|
-|Root Transform Rotation|根节点的旋转信息。|
+|**Root Transform Rotation**|根节点的旋转信息。|
 |&emsp;&emsp;Bake Into Pose|勾选后会将根节点每一帧的旋转方向信息烘焙到动画的骨骼运动中，在整个动画播放的过程中，根节点的旋转信息就不会在通过 Root Motion 作用到播放该动画的 GameObject 上了，这就意味着这个动画播放的过程中，该物体的 Transform 中的 Rotation 值不会因为动画中物体做了任何旋转而发生改变，而是会保持一个恒定的值，和该动画播放之前的旋转值保持一致。|
 |&emsp;&emsp;Based Upon (at Start) 或者 Based Upon|根节点旋转的参考基准，有两个选项『Original 和 Root Node Rotation』这两个分别指的是动画文件中指定的旋转值和根节点旋转信息，其实我更愿意将 Original 理解为动画中原点的旋转值，因为在整个动画播放的过程中，所有骨骼肯定都会有旋转和位移的变换，但是动画的原点其实一定都是确定的，这样理解感觉更简单也更形象一些，勾选了 Bake Into Pose 之后，就会变成 Based Upon 而不勾选 Bake Into Pose 就会保持为 Based Upon (at Start)。|
 |&emsp;&emsp;Offset|旋转角度与参考基准的偏移（以度为单位）。|
-|Root Transform Position(Y)|根节点位移信息（Y 轴）。|
+|**Root Transform Position(Y)**|根节点位移信息（Y 轴）。|
 |&emsp;&emsp;Bake Into Pose|勾选后会将根节点每一帧在垂直 Y 轴方向上的运动信息烘焙到动画的骨骼运动中，在整个动画播放的过程中，根节点在 Y 轴方向的所有位移信息不会通过 Root Motion 作用到播放该动画的 GameObject 上，这就意味着我们在场景中看到物体在 Y 轴上有位移，例如向上或者向下移动，但是该物体的 Transform 中的 Position 信息不会发生改变，会跟动画播放之前的 Position 信息保持一致。|
 |&emsp;&emsp;Based Upon 或者 Based Upon (at Start)|这个貌似有点不一样哦，在选中 Bake Into Pose 之后会变成 Based Upon (at Start)，不勾选的时候是 Based Upon，不过这个就能理解了。不烘焙的话，那么 Root Motion 中 Y 轴的变化就依赖于选择的『Original 或者 Root Node Position』的 Y 轴位移变化，如果选择烘焙的话，那么就以这个动画的起始帧的 Y 轴作为整个动画 Root Motion 的 Y 轴位移，在整个动画播放的过程中，Y 轴的位移都是恒定不变的。|
 |&emsp;&emsp;Offset|垂直方向上的偏移。|
-|Root Transform Position(XZ)|根节点位移信息（水平面，XZ 轴）|
+|**Root Transform Position(XZ)**|根节点位移信息（水平面，XZ 轴）|
 |&emsp;&emsp;Bake Into Pose|勾选后会将根节点每一帧在水平面（X 和 Z 轴）方向上的运动信息烘焙到动画的骨骼运动中，在整个动画播放的过程中，根节点在 X 和 Z 轴方向的所有位移信息不会通过 Root Motion 作用到播放该动画的 GameObject 上，这就意味着我们在场景中看到物体在水平面上移动，但是该物体的 Transform 中的 Position 信息不会发生改变，会跟动画播放之前的 Position 信息保持一致，假如动画中物体会向前移动 3 米，我们会看到物体在整个动画播放过程中确实在向前移动，播放到最后一帧时确实向前移动了 3 米，但是当这个动画播放完毕之后，切换到任何其他的动画时，物体会直接闪回这个动画播放前物体所在的位置，所以通常我们需要保留动作位移的动画都不会勾选这个选项。那这个选项有神马用捏？例如某些待机动画，我们其实希望物体只是做一个待机动作，但是实际上不想让物体在水平方向上有位移，这个时候就可以勾选这个选项了，到时候看起来物体就像是钉在水平面上了。|
 |Mask|这个掩码主要是用于控制动画播放过程中，各个骨骼之间的运动变换的。|
 |&emsp;&emsp;Definition|可以选择从动画文件创建也可以选择使用其他动画文件中已经创建好的配置。|
