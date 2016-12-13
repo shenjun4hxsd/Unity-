@@ -1,4 +1,4 @@
-##Animator
+****##Animator
 
 **新动画系统**
 
@@ -63,9 +63,9 @@
 |&emsp;&emsp;Based On Renderer|当摄像机看见时才播放|
 |&emsp;&emsp;Always Animate|不管什么状态都播放动画。|
 
+---
 
-
- Animation Import Settings 中『Animations』Tab 页中各项设置的作用。
+ ####Animation Import Settings 中『Animations』Tab 页中各项设置的作用。
 
 |选项|说明|
 |:--|:--|
