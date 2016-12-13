@@ -54,7 +54,7 @@
 |:--|:--|
 |Controller|需要AnimatorControll文件。|
 |Avatar|和AnimatiorController文件有关的Avatar文件|
-|Apply Root Motion|如果选择表示支持Humanoid的物理动画，对于Generic需要关闭它。|
+|Apply Root Motion|根节点的运动变换其实就是整个物体运动变换通过 Y 轴垂直在水平面上的一个投影。根节点的运动变换在动画的每一帧中都会进行计算。计算出来的根节点变换结果都会应用在播放动画的对象上，让该对象按照根节点的运动变换进行移动。|
 |Update Mode|设定动画播放时代更新状态，如果没有特殊需要的我们使用Normal。|
 |&emsp;&emsp;Normal|和引擎渲染保持同步帧。|
 |&emsp;&emsp;Animate Physic|使用物理动画的播放帧。|
