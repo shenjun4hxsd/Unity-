@@ -123,28 +123,28 @@
 
 **比如说我们有一个人物行走的动画，我们来考虑一下几种情况（这里以“Root transform position(XZ)为例）**
 
-1、勾选”Bake into Pose",不勾选“Apply Root Motion"
+**1、勾选”Bake into Pose"，不勾选“Apply Root Motion"**
 
 
 勾选”Bake into Pose"后，变换属于Body Transform，所以即使这里未勾选”Apply Root Motion“，但是动画依然会在场景中体现，人物会按照动画的路径行走（但是如果我们观察Inspector中模型的position参数，值一直不变）。但是因为没有勾选Apply Root Motion，所以动画结束后，变换不会应用到模型，所以如果这时候，如果开始一个新的动画的话，模型会瞬间回到起始位置（新的动画开始时候，模型处于行走动画开始时的位置）。
 
 
 
-2、勾选”Bake into Pose",并勾选“Apply Root Motion"
+**2、勾选”Bake into Pose"，并勾选“Apply Root Motion"**
 
 
 这里跟上面的情况唯一不同的就是，动画结束后，开始新的动画之前，变换会应用到模型。（模型的position在新的动画开始之前会发生变化，新的动画开始时候，模型处于动画结束时的位置）。
 
 
 
-3、不勾选”Bake into Pose",勾选“Apply Root Motion"
+**3、不勾选”Bake into Pose"，勾选“Apply Root Motion"**
 
 
 这时候，变换是作为Root Transform，所以因为这里勾选了Apply Root Motion，变换会应用到模型（模型的position跟着动画不停的变化），自然，新的动画开始时候，模型处于动画结束时的位置。
 
 
 
-4、不勾选”Bake into Pose",并且不勾选“Apply Root Motion"
+**4、不勾选”Bake into Pose"，并且不勾选“Apply Root Motion"**
 
 
 这里变化还是作为Root Transform，但是因为没有勾选Apply Root Motion，所以变换将不被应用，所以模型将一直在本地不动，自然，新的动画开始时候，模型处于行走动画开始时的位置。
