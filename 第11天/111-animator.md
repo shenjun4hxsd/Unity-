@@ -79,6 +79,11 @@
 |&emsp;&emsp;Cycle Offset|用于控制循环的时候起始帧偏移。|
 |Root Transform Rotation|根节点的旋转信息。|
 |&emsp;&emsp;Bake Into Pose|勾选后会将根节点每一帧的旋转方向信息烘焙到动画的骨骼运动中，在整个动画播放的过程中，根节点的旋转信息就不会在通过 Root Motion 作用到播放该动画的 GameObject 上了，这就意味着这个动画播放的过程中，该物体的 Transform 中的 Rotation 值不会因为动画中物体做了任何旋转而发生改变，而是会保持一个恒定的值，和该动画播放之前的旋转值保持一致。|
+|&emsp;&emsp;Based Upon (at Start) 或者 Based Upon|根节点旋转的参考基准，有两个选项『Original 和 Root Node Rotation』这两个分别指的是动画文件中指定的旋转值和根节点旋转信息，其实我更愿意将 Original 理解为动画中原点的旋转值，因为在整个动画播放的过程中，所有骨骼肯定都会有旋转和位移的变换，但是动画的原点其实一定都是确定的，这样理解感觉更简单也更形象一些，勾选了 Bake Into Pose 之后，就会变成 Based Upon 而不勾选 Bake Into Pose 就会保持为 Based Upon (at Start)。|
+|&emsp;&emsp;Offset|旋转角度与参考基准的偏移（以度为单位）。|
+|Root Transform Position(Y)|根节点位移信息（Y 轴）。|
+|&emsp;&emsp;Bake Into Pose|勾选后会将根节点每一帧在垂直 Y 轴方向上的运动信息烘焙到动画的骨骼运动中，在整个动画播放的过程中，根节点在 Y 轴方向的所有位移信息不会通过 Root Motion 作用到播放该动画的 GameObject 上，这就意味着我们在场景中看到物体在 Y 轴上有位移，例如向上或者向下移动，但是该物体的 Transform 中的 Position 信息不会发生改变，会跟动画播放之前的 Position 信息保持一致。|
+|&emsp;&emsp;Based Upon 或者 Based Upon (at Start)|这个貌似有点不一样哦，在选中 Bake Into Pose 之后会变成 Based Upon (at Start)，不勾选的时候是 Based Upon，不过这个就能理解了。不烘焙的话，那么 Root Motion 中 Y 轴的变化就依赖于选择的『Original 或者 Root Node Position』的 Y 轴位移变化，如果选择烘焙的话，那么就以这个动画的起始帧的 Y 轴作为整个动画 Root Motion 的 Y 轴位移，在整个动画播放的过程中，Y 轴的位移都是恒定不变的。|
 
 
 
