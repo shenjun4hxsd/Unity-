@@ -107,6 +107,16 @@
 3、注意 Root Motion 与 Rigidbody.Velocity 属性的关系，如果有两个动画 A 和 B，播放 A 动画的时候，希望 A 动画应用 Root Motion，而在播放 B 动画的时候不想应用 Root Motion，那么就直接在切换到动画 B 的时候，将 Animator 的 applyRootMotion 设置为 False 就 OK 了。但是如果播放动画的 GameObject 带有 Rigidbody 组件，那么需要注意一点，在播放 A 动画时 Rigidbody 的 Velocity 并不会在切换到 B 动画时清零，也就是说如果 A 动画的运动速度较快，那么切换到 B 动画的时候，如果希望 B 动画播放的时候 GameObject 按照自己的设定轨迹运动，就需要自行手动在切换到 B 动画之前将 Rigidbody 的 Velocity 属性清零，防止 GameObject 按照 A 动画的运动惯性继续运动。这个问题在没有 Rigidbody 组件的 GameObject 上不会存在；
 
 
+####动画跟 Rigidbody 之间的关系：
+
+1、如果我们没有将 Root Transform Position 的 Y 和 XZ 轴进行烘焙的话，那么在动画播放的过程中，Rigidbody 将会自动获得动画中物体运动的速度信息，直接通过 Rigidbody.Velocity 属性就可以获得；
+
+2、如果我们将 Y 轴进行烘焙，那么 Rigidbody.Velocity 在 Y 轴上的值将会一直为 0，对于 XZ 轴也是一样的，如果烘焙了 XZ 轴的位移，那么整个动画播放过程中，Rigidbody.Velocity 在 X 和 Z 轴上的值都会为 0；
+
+3、如果播放动画的物体没有 Rigidbody 组件，那么动画的运动都会仅仅按照动画实际的位移来进行逐帧播放，不会出现上文中提到的动画播放切换之后还存在的运动惯性问题，因为物理引擎依赖于 Rigidbody 组件，如果没有该组件，所有动画的播放都只是逐帧播放动画，不会存在速度的概念只有移动位移。
+
+4、Rigidbody 使用使用重力对于动画在 Y 轴上的位移没有任何影响，不论是否对 Root Transform Position 的 Y 轴进行了烘焙。
+
 🔚
 
 
