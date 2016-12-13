@@ -95,6 +95,18 @@
 
 
 
+---
+
+####Generic 动画应用 Root Motion 有以下几个特点：
+
+1、Root Motion 仅仅作用于 GameObject 在 X 和 Z 轴上的位移变换，不影响 Y 轴上的位移。例如现在播放一个从地上向前空翻之后落地的动画，设置 Animator 的 applyRootMotion 为 True，也就是应用 Root Motion，那么动画在播放过程中，物体会在水平方向和垂直方向上都按照实际动画的运动轨迹进行运动，如果将 applyRootMotion 设置为 False，那么我们就只能看到动画在原地起跳然后再落地，动画中原本应有的在水平方向的位移就没有了；
+
+
+2、Root Motion 与导入动画时设置 Root Transform Position(XZ) 是直接相关的，如果我们选择了将 X 和 Z 轴方向上根节点的位移烘焙到动画骨骼运动中的话，那么动画播放过程中不论我们是否将 Animator 的 applyRootMotion 设置为 True 还是 False，动画播放过程中物体在 X 和 Z 上的移动是一定的，因为这个已经被烘焙到骨骼动画中，只要动画播放，物体就会移动，但是在动画播放的过程中 GameObject 的 Position 值不会改变，在动画结束后我们切换到其他动画的时候，其他动画开始播放时的 GameObject 的位置会回到这个动画播放前的位置，所以如果我们需要对某个动画应用 Root Motion 的话，那么这个动画在导入的时候就不要烘焙其在 X 和 Z 轴方向上的 Root Transform Position，让 Unity 自行根据动画中根节点的位移进行位移计算 GameObject 的位置信息；
+
+3、注意 Root Motion 与 Rigidbody.Velocity 属性的关系，如果有两个动画 A 和 B，播放 A 动画的时候，希望 A 动画应用 Root Motion，而在播放 B 动画的时候不想应用 Root Motion，那么就直接在切换到动画 B 的时候，将 Animator 的 applyRootMotion 设置为 False 就 OK 了。但是如果播放动画的 GameObject 带有 Rigidbody 组件，那么需要注意一点，在播放 A 动画时 Rigidbody 的 Velocity 并不会在切换到 B 动画时清零，也就是说如果 A 动画的运动速度较快，那么切换到 B 动画的时候，如果希望 B 动画播放的时候 GameObject 按照自己的设定轨迹运动，就需要自行手动在切换到 B 动画之前将 Rigidbody 的 Velocity 属性清零，防止 GameObject 按照 A 动画的运动惯性继续运动。这个问题在没有 Rigidbody 组件的 GameObject 上不会存在；
+
+
 🔚
 
 
