@@ -64,6 +64,13 @@
 ```javascript
         NavMeshPath path = new NavMeshPath ();
 		bool havePath = m_pNavAgent.CalculatePath (m_pTarget.position, path);
+
+        float fGrassCost = m_pNavAgent.GetLayerCost (4);
+		if (fGrassCost == 3) {
+
+		}
+
+		m_pNavAgent.SetLayerCost(3, 10);
 ```
 ```javascript
         if (m_pNavAgent.isOnOffMeshLink) { // 判断是否到达起点
