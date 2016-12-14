@@ -21,7 +21,7 @@
 |hasPath|当前代理是否有路径(只读)？|
 |height|代理经过障碍物下方目的高度，等等。|
 |isOnNavMesh|当前代理束缚到导航网格？(只读)|
-|isOnOffMeshLink|当前代理位置是否在OffMeshLink上?(只读)|
+|**isOnOffMeshLink**|当前代理位置是否在OffMeshLink上?(只读)|
 |isPathStale|当前路径是否是旧路径。(只读)|
 |nextOffMeshLinkData|在当前路径上的下一个OffMeshLinkData。|
 |nextPosition|获取或者设置导航网格的模拟仿真位置。|
