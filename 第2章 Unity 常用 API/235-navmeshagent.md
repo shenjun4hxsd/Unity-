@@ -65,7 +65,21 @@
         NavMeshPath path = new NavMeshPath ();
 		bool havePath = m_pNavAgent.CalculatePath (m_pTarget.position, path);
 ```
+```javascript
+        if (m_pNavAgent.isOnOffMeshLink) { // 判断是否到达起点
+			m_fTimeCount += Time.deltaTime;
 
+			Vector3 currtPos = Vector3.Lerp(m_pNavAgent.currentOffMeshLinkData.startPos, m_pNavAgent.currentOffMeshLinkData.endPos, m_fTimeCount);
+			currtPos.y += Mathf.Sin(Mathf.Clamp01(m_fTimeCount) * Mathf.PI)*4;
+
+			transform.position = currtPos;
+
+			if(Vector3.Distance(transform.position, m_pNavAgent.currentOffMeshLinkData.endPos) < 0.5f)
+			{
+				m_pNavAgent.CompleteOffMeshLink(); // 完成移动后结束移动过程。
+			}
+		}
+```
 
 
 
