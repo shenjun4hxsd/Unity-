@@ -1,4 +1,4 @@
-****##Animator
+##Animator
 
 **新动画系统**
 
