@@ -62,7 +62,7 @@
 
 
 ```javascript
-NavMeshPath path = new NavMeshPath ();
+        NavMeshPath path = new NavMeshPath ();
 		bool havePath = m_pNavAgent.CalculatePath (m_pTarget.position, path);
 ```
 
