@@ -43,16 +43,16 @@
 |方法|说明|
 |:--|:--|
 |ActivateCurrentOffMeshLink|启用或者禁用当前分离网格链接。|
-|CalculatePath|	计算出路径指定点并存储结果路径。|
+|**CalculatePath**|	计算出路径指定点并存储结果路径。|
 |CompleteOffMeshLink|在当前分离网格链接上完成运动。|
 |FindClosestEdge|查找导航网格最近的边缘。|
-|GetAreaCost|当穿过特别类型的区域时获取路径计算成本。|
+|**GetAreaCost**|当穿过特别类型的区域时获取路径计算成本。|
 |Move|应用相对运动到当前位置。|
 |Raycast|在导航网格中朝着目标方向追踪直线路径而不移动代理。|
 |ResetPath|清除当前路径。|
 |Resume|暂停之后沿着当前路径重新恢复运动。|
 |SamplePathPosition|沿着当前路径的样本位置。|
-|SetAreaCost|设置穿越区域的区域类型的成本。|
+|**SetAreaCost**|设置穿越区域的区域类型的成本。|
 |SetDestination|设置或者更新目的地因此触发计算新的路径。|
 |SetPath|分配新路径给该代理。|
 |Stop|该代理沿着它的当前路径的刹车运动。|
