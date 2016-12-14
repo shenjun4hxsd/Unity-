@@ -38,7 +38,7 @@
 |updateRotation|代理是否应该更新方向？|
 |velocity|使用NavMeshAgent 组件的当前速度，或者手动设置速度去控制代理。|
 
-
+---
 
 |方法|说明|
 |:--|:--|
