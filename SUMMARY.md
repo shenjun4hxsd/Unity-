@@ -65,6 +65,7 @@
     * [2.32 AnimatorStateInfo](第2章 Unity 常用 API/232-animatorstateinfo.md)
     * [2.33 SceneManager](第2章 Unity 常用 API/233-scenemanager.md)
     * [2.34 AnimationState](第2章 Unity 常用 API/234-animationstate.md)
+    * [2.35 NavMeshAgent](第2章 Unity 常用 API/235-navmeshagent.md)
 * [第1天](第1天/1.0 第1天.md)
     * [1.1 向量](第1天/11-向量.md)
         * [1.11 向量的数学运算](第1天/111-向量的数学运算.md)
