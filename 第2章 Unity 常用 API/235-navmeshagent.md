@@ -53,7 +53,7 @@
 |Resume|暂停之后沿着当前路径重新恢复运动。|
 |SamplePathPosition|沿着当前路径的样本位置。|
 |**SetAreaCost**|设置穿越区域的区域类型的成本。|
-|SetDestination|设置或者更新目的地因此触发计算新的路径。|
+|**SetDestination**|设置或者更新目的地因此触发计算新的路径。|
 |SetPath|分配新路径给该代理。|
 |Stop|该代理沿着它的当前路径的刹车运动。|
 |Warp|弯曲代理提供位置。|
