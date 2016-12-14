@@ -58,6 +58,15 @@
 |Stop|该代理沿着它的当前路径的刹车运动。|
 |Warp|弯曲代理提供位置。|
 
+---
+
+
+```javascript
+NavMeshPath path = new NavMeshPath ();
+		bool havePath = m_pNavAgent.CalculatePath (m_pTarget.position, path);
+```
+
+
 
 
 🔚
