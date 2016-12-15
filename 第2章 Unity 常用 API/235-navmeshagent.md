@@ -15,7 +15,7 @@
 |autoTraverseOffMeshLink|该代理是否自动穿过OffMeshLinks？|
 |avoidancePriority|逃避优先级。|
 |baseOffset|对象自身的相对垂直位移。|
-|currentOffMeshLinkData|当前分离网格连接数据。|
+|**currentOffMeshLinkData**|当前分离网格连接数据。|
 |desiredVelocity|该代理的需求速度包括任何逃避时潜在的贡献(只读)。|
 |destination|获取或者尝试去在世界空间单位中设置代理的目的地。|
 |hasPath|当前代理是否有路径(只读)？|
@@ -30,7 +30,7 @@
 |pathPending|该路径在被计算的过程中但是还没准备？(只读)|
 |pathStatus|当前路况的状态(完整，局部或者无效)。|
 |radius|代理的逃避半径。|
-|remainingDistance|在当前路径上代理的位置与目的地之间的距离。(只读)|
+|**remainingDistance**|在当前路径上代理的位置与目的地之间的距离。(只读)|
 |speed|当跟随路径时的最大移动速度。|
 |steeringTarget|获取当前沿着路径转向的目标(只读)。|
 |stoppingDistance|从目标位置开始，在该距离之内刹车。|
@@ -44,7 +44,7 @@
 |:--|:--|
 |ActivateCurrentOffMeshLink|启用或者禁用当前分离网格链接。|
 |**CalculatePath**|	计算出路径指定点并存储结果路径。|
-|CompleteOffMeshLink|在当前分离网格链接上完成运动。|
+|**CompleteOffMeshLink**|在当前分离网格链接上完成运动。|
 |FindClosestEdge|查找导航网格最近的边缘。|
 |**GetAreaCost**|当穿过特别类型的区域时获取路径计算成本。|
 |Move|应用相对运动到当前位置。|
