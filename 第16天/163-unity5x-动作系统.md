@@ -85,6 +85,20 @@ public class Attack3 : StateMachineBehaviour {
 }  
 ```
 
+```javascript
+using UnityEngine;  
+using System.Collections;  
+  
+public class Run : StateMachineBehaviour {  
+  
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)  
+    {  
+        if ((Input.GetAxisRaw("Horizontal") == 0) && (Input.GetAxisRaw("Vertical") == 0))  
+            animator.SetInteger("state", (int)CharacterState.Idle);  
+    }  
+  
+}  
+```
 
 
 
