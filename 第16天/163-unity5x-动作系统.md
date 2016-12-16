@@ -36,6 +36,23 @@ public class Idle : StateMachineBehaviour {
 }  
 ```
 
+```javascript
+using UnityEngine;  
+using System.Collections;  
+  
+public class Attack1 : StateMachineBehaviour {  
+  
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)  
+    {  
+        if (Input.GetKeyDown(KeyCode.H) && (stateInfo.normalizedTime > 0.5f))  
+            animator.SetInteger("state", (int)CharacterState.Attack2);  
+        if(stateInfo.normalizedTime > 0.9f)  
+            animator.SetInteger("state", (int)CharacterState.Idle);  
+    }  
+  
+}  
+```
+
 
 
 
