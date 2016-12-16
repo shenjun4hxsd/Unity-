@@ -18,3 +18,15 @@ Cloth只能必须和Skinned Mesh Renderer搭配使用, 但是这不代表使用�
 
 打开编辑Constraint模式
 
+![](/assets/newCloth03.png)
+
+Max Distance可以设置每个顶点最大可移动距离. 最常用的用法是将不能动的顶点的Max Distance设置为0.
+Surface Penetration控制的是顶点最大可以嵌入到Mesh里面的程度. 在布料网格顶点比较稀疏的情况下可以明显对比出差别. 将顶点的Surface Penetration设置得很低会看起来很不正常, 默认, 也就是Unconstrained应该是一个较高的值, 没有任何问题. 
+
+
+![](/assets/newCloth04.png)
+
+
+Visualization这里能够选择当前在Scene视图中预览Max Distance还是Surface Penetration. (这两者二选一), 还能选择是否让操作影响视口背面的顶点.
+
+Select编辑模式要先通过框选, 或者Shift+点击来多选, 来选中顶点, 然后勾选Max Distance或者Surface Penetration前面的复选框, 代表我现在要改变选中的顶点的值了! 然后再在后面的数值里面输入想要的数值就OK了, 要想将当前有数值的顶点设置为Unconstrained, 只需要选中那些带有数值的顶点然后将对应复选框取消勾选即可.
