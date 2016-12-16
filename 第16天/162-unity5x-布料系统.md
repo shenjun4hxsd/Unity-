@@ -68,13 +68,13 @@ World Acceleration Scale---与World Velocity Scale共同组成布料的GameObjec
 
 Friction---当布料碰到在这个列表中存在的Collider时所产生的摩擦力, 这只会影响布料的模拟. 上面说过了布料的物理模拟是单向的.
 
-Collision Mass Scale---How much to increase mass of colliding particles. 这个参数我不懂, 求补充.
+Collision Mass Scale---How much to increase mass of colliding particles. 
 
 Use Continuous Collision---使用Continuous Collision, 增加消耗, 减少直接穿透碰撞的几率.
 
 Use Virtual Particles---Add one virtual particle per triangle to improve collision stability.
 
-Solver Frequency---Number of solver iterations per second. 显然是一个优化参数, 默认120很高了, 我可以试着调低一些.
+Solver Frequency---Number of solver iterations per second. 显然是一个优化参数, 默认120很高了, 可以试着调低一些.
 
 Sleep Threshold---静止阈值.
 
