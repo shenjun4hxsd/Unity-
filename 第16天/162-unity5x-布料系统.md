@@ -14,3 +14,7 @@ Cloth只能必须和Skinned Mesh Renderer搭配使用, 但是这不代表使用�
 出于性能的考虑, 可以对Cloth产生影响的Collider只有两种, SphereCollider以及CapsuleCollider, 但是SphereCollider可以赋予两个为一组(当然了还可以只赋予一个, 第二个保持null), 那么通过组合这两个SphereCollider可以出现第三种, Unity会将这组的两个SphereCollider进行相连, 那么就可以有圆锥形的Collider
 
 ![](/assets/newCloth02.png)
+
+
+打开编辑Constraint模式
+
