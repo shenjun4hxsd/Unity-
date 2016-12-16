@@ -12,12 +12,13 @@ Any State：表示任意的状态，其作用是其指向的状态是在任意�
 Exit：表示退出当前的状态机，如果有任意状态指向该出口，表示可以从指定状态退出当前的状态机；
 ```
 
+```
 新的BlendTree
     Direct
         多个动作可以同时播放
             适用于做面部表情
         可以通过参数控制不同动作片段的权重
-        
+```       
 
 常用API(需要继承StateMachineBehaviour)：
 ![](/assets/newAnimator02.png)
