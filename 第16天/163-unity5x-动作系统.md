@@ -21,6 +21,7 @@ Exit：表示退出当前的状态机，如果有任意状态指向该出口，�
 ```       
 
 **常用API(需要继承StateMachineBehaviour)：**
+
 ![](/assets/newAnimator02.png)
 
 ![](/assets/newAnimator03.png)
