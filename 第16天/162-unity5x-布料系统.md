@@ -35,4 +35,51 @@ Select编辑模式要先通过框选, 或者Shift+点击来多选, 来选中顶�
 
 在Paint模式中, 这个按钮代表要绘制
 ![](/assets/newCloth05.png)
+
 这里设置的值了!
+![](/assets/newCloth06.png)
+
+而这个复选框代表的意思是是否想为现在已经有值的顶点Paint成为Unconstrained的顶点.
+
+![](/assets/newCloth07.png)
+
+
+![](/assets/newCloth08.png)
+
+Stretching Stiffness---拉扯硬度.
+
+Bending Stiffness---弯曲硬度.
+
+Use Tethers---默认开启, 用于方式过度拉伸
+
+Use Gravity---是否使用世界重力.
+
+Damping---阻尼会应用于每个布料顶点. 要想打造看上去抖动更小的布料, 可以试试这个.
+
+External Acceleration---常量外力.
+
+Random Acceleration---随机外力.
+
+World Velocity Scale---与World Acceleration Scale共同组成布料的GameObject.transfrom的运动会对物理模拟造成的影响比例.
+
+World Acceleration Scale---与World Velocity Scale共同组成布料的GameObject.transfrom的运动会对物理模拟造成的影响比例.
+
+![](/assets/newCloth09.png)
+
+Friction---当布料碰到在这个列表中存在的Collider时所产生的摩擦力, 这只会影响布料的模拟. 上面说过了布料的物理模拟是单向的.
+
+Collision Mass Scale---How much to increase mass of colliding particles. 这个参数我不懂, 求补充.
+
+Use Continuous Collision---使用Continuous Collision, 增加消耗, 减少直接穿透碰撞的几率.
+
+Use Virtual Particles---Add one virtual particle per triangle to improve collision stability.
+
+Solver Frequency---Number of solver iterations per second. 显然是一个优化参数, 默认120很高了, 我可以试着调低一些.
+
+Sleep Threshold---静止阈值.
+
+Capsule Colliders---要对布料产生交互的胶囊碰撞体.
+
+Sphere Colliders---要对布料产生交互的ClothSphereColliderPairs. 可以理解为他是按照一组来的, 一组中可以只有一个SphereCollider, 也可以有两个, 当有两个的时候, 那么这两个
+
+SphereCollider会在布料的碰撞系统中被”焊接”起来. 这样就允许通过两个大小不同的SphereCollider来组合成一个圆锥形状的碰撞体了.
