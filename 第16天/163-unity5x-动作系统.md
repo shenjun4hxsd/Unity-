@@ -121,7 +121,8 @@ public class Run : StateMachineBehaviour {
 ```
 
 
-另外，可以用代码来创建AnimatorController，不过这种方法创建的AC，里面的动画状态排列得不是很美观，后期维护就蛋疼了，慎用啊。。
+###● 自定义编辑器
+另外，可以用代码来创建AnimatorController。
 
 ```javascript
 using UnityEngine;  
