@@ -95,3 +95,43 @@ public class UnityActionAndEvent : MonoBehaviour {
 
 }
 ```
+
+
+```javascript
+// 使用带参数的UnityEvent
+using UnityEngine;
+using System.Collections;
+using UnityEngine.Events;
+
+//因为UnityEvent<T0>是抽象类，所以需要声明一个类来继承它
+public class MyEvent:UnityEvent<int>{}
+
+public class UnityActionWithParameter : MonoBehaviour {
+
+    public MyEvent myEvent = new MyEvent();
+    public UnityAction<int> action;
+
+    void Start () {
+        action= new UnityAction<int>(MyFunction);
+        action += MyFunction2;
+        myEvent.AddListener(action);
+    }   
+
+    void Update () {
+        if(Input.GetKeyDown(KeyCode.A))
+        {
+            myEvent.Invoke(10);
+        }
+    }
+
+    public void MyFunction(int i)
+    {
+        print (i);
+    }
+    public void MyFunction2(int i)
+    {
+        print(i*2);
+    }
+}
+
+```
