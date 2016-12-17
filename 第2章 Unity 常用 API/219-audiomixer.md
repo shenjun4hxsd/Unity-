@@ -14,7 +14,7 @@ This is a singleton representing a specific audio mixer asset in the project.
 
 |函数|说明|
 |:--|:--|
-|ClearFloat|Resets an exposed parameter to its initial value.|
+|ClearFloat|重设一个暴露的参数为初始值。|
 |FindMatchingGroups|Connected groups in the mixer form a path from the mixer's master group to the leaves. This path has the format "Master Group/Child of Master Group/Grandchild of Master Group", so to find the grandchild group in this example, a valid search string would be for instance "randchi" which would return exactly one group while "hild" or "oup/" would return 2 different groups.|
 |**FindSnapshot**|The name must be an exact match.|
 |**GetFloat**|Returns the value of the exposed parameter specified. If the parameter doesn't exist the function returns false. Prior to calling SetFloat and after ClearFloat has been called on this parameter the value returned will be that of the current snapshot or snapshot transition.|
