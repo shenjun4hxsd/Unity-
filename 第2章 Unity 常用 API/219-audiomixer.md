@@ -29,3 +29,7 @@ public bool GetFloat(string name, out float value);
 ```
 public Audio.AudioMixerSnapshot FindSnapshot(string name);
 ```
+
+```
+public void TransitionToSnapshots(AudioMixerSnapshot[] snapshots, float[] weights, float timeToReach);
+```
