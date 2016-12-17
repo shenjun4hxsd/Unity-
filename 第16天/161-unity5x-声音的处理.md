@@ -67,6 +67,25 @@ rms 使用上比较接近耳朵的感受, peak 就实实在在的电子数值.
 ![](/assets/AudioMixer04.png)
 就是降低高频并且提升低频的效果。
 
+
+（11）Pitch Shifter听上去很有意思。这个更改Pitch的操作与更改Group总体的Pitch的操作的原理不同，因为更改Group总体的Pitch直接等于修改播放速度了，通过加快速度来提升音高或者通过降低速度来减低音高。而Pitch Shifter可以在播放速度不变的情况下改变音高，也不愧需要消耗这么多CPU资源了(选中Group在Inspector视图点击齿轮图标可以看到显示CPU消耗的选项)。一个男声变成女声，或者一个女声变成男声。很好玩。
+
+
+（12）Chorus虽说是合唱效果器，但是当前版本中完全没有达到正常音序器的合唱效果器的水准。怎么说呢，希望加强吧。
+
+
+（13）Compressor降低信号中音量最大的部分。
+
+
+（14）SFX Reverb混响效果，还不错。
+
+
+
+
+Low Pass Simple低通滤波器简化版.
+
+High Pass Simple高通滤波器简化版.
+
 下面大概说一下每种效果器的用途：其实大家完全可以自己尝试每种效果器听起来的感觉。
 比较特别的有三个，一个是Send，二是Receive，三是Duck Volume，
 Send会将这个Group的信号传递出去，而Receive配合接收，因此Receive和Send是一对多的关系。而Duck Volume需要Send进来一些信号，在信号音量超过一定程度的时候会降低这个Group本身的音量。比如NPC正在说话，此时你想让背景音乐小点声，这个Duck Volume就发挥作用了。
