@@ -54,3 +54,44 @@
 UnityAction本质上是delegate，且有数个泛型版本（参数最多是4个）,一个UnityAction可以添加多个函数（多播委托）
 
 UnityEvent本质上是继承自UnityEventBase的类，它的AddListener()方法能够注册UnityAction，RemoveListener能够取消注册UnityAction，还有Invoke()方法能够一次性调用所有注册了的UnityAction。UnityEvent也有数个泛型版本（参数最多也是4个），但要注意的一点是，UnityAction的所有带参数的泛型版本都是抽象类（abstract），所以如果要使用的话，需要自己声明一个类继承之，然后再实例化该类才可以使用。
+
+
+
+```
+//使用UnityEvent 和 UnityAction：
+using UnityEngine;
+using System.Collections;
+using UnityEngine.Events;
+
+public class UnityActionAndEvent : MonoBehaviour {
+
+    public UnityAction action;
+    public UnityEvent myEvent = new UnityEvent();
+
+    void Start()
+    {       
+        action = new UnityAction(MyFunction);
+        action+=MyFunction2;
+        myEvent.AddListener(action);
+    }
+
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            myEvent.Invoke();
+        }
+    }
+
+    public void MyFunction()
+    {
+        print ("Hello: ");
+    }
+
+    public void MyFunction2()
+    {
+        print ("Hello2: ");
+    }
+
+}
+```
