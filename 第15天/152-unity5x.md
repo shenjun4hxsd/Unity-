@@ -47,4 +47,7 @@ RenderPath
 ```
 
 
+![](/assets/lightingWindow.png)
+
+
 
