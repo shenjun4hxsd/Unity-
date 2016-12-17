@@ -57,7 +57,7 @@ UnityEvent本质上是继承自UnityEventBase的类，它的AddListener()方法�
 
 
 
-```
+```javascript
 //使用UnityEvent 和 UnityAction：
 using UnityEngine;
 using System.Collections;
