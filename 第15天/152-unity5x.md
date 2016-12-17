@@ -19,7 +19,7 @@ PBR
     镜面反射光
     
     GI分为两种：
-    一种是Precomputed Reatime GI，这种GI需要预先计算，计算场景中所有的Static物体的信息，并且允许在运行时任意修改光源的Bounce Intensity或者移动光源的位置。所有的变化都是实时的。
+    第一种是Precomputed Reatime GI，这种GI需要预先计算，计算场景中所有的Static物体的信息，并且允许在运行时任意修改光源的Bounce Intensity或者移动光源的位置。所有的变化都是实时的。
     第二种是Baked GI，这种GI不会预先计算但会进行预先烘焙，无法像Precomputed Realtime GI那样在运行时更改光源。
 
     GI的重点在于Bounce，可以将Static物体上的光反弹到其他Static物体上，无法将非Static物体上的光反弹到Static物体上。也无法将Static物体上的光反弹到非Static物体上，但是Unity5引入了新的概念，那就是Realtime的LightProbe，Unity4中的LightProbe只能静态烘焙，而Unity5的LightProbe会实时捕捉包括Precomputed Realtime GI的Bounce光在内的任何光线信息并且将其赋予非Static物体上。
