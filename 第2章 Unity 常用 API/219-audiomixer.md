@@ -23,5 +23,5 @@ This is a singleton representing a specific audio mixer asset in the project.
 
 ```
 public bool GetFloat(string name, out float value);
-bool Returns false if the exposed parameter specified doesn't exist.
+如果暴露的参数不存在，则返回false。
 ```
