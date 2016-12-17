@@ -79,3 +79,7 @@ Sleep Threshold---静止阈值。
 Capsule Colliders---要对布料产生交互的胶囊碰撞体。
 
 Sphere Colliders---要对布料产生交互的ClothSphereColliderPairs. 可以理解为他是按照一组来的，一组中可以只有一个SphereCollider，也可以有两个，当有两个的时候，那么这两个SphereCollider会在布料的碰撞系统中被“焊接”起来。这样就允许通过两个大小不同的SphereCollider来组合成一个圆锥形状的碰撞体了。
+
+
+🔚
+
