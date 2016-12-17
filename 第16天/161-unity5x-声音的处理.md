@@ -34,7 +34,7 @@ B：不播放当前组的效果
 
 ####Effect
 
-（1）Send 会将这个Group 的信号传递出去 
+（1）Send 会将这个Group 的信号传递出去，多个Send可以发送给同一个Recevier。 
 
 （2）Receive 接收其他 Group 发出的信号
 
