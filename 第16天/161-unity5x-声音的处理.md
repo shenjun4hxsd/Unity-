@@ -35,7 +35,7 @@ rms 使用上比较接近耳朵的感受, peak 就实实在在的电子数值.
 
 运行后，AudioMixer面板将出现 `Edit in Play Mode` 按钮，点击 AudioMixer 面板的 `Editor in Play Mode` 这样我们在运行状态下编辑的 Group，在停止运行时将保存。
 
-在播放时, 开启Edit in Play Mode之后, 任何做过的改变都会被保留。并且此时无法通过脚本修改参数。(比如通过AudioMixer.SetFloat来进行参数修改，或者通过AudioMixerSnapshot.TransitionTo()来转换SnapShot都会无效, 这也是必然的)。
+在播放时，开启Edit in Play Mode之后, 任何做过的改变都会被保留。并且此时无法通过脚本修改参数。(比如通过AudioMixer.SetFloat来进行参数修改，或者通过AudioMixerSnapshot.TransitionTo()来转换SnapShot都会无效, 这也是必然的)。
 
 ---
 
