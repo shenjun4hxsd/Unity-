@@ -31,6 +31,18 @@ B：不播放当前组的效果
 
 ---
 
+####Effect
+
+（1）Send 会将这个Group 的信号传递出去 
+
+（2）Receive 接收其他 Group 发出的信号
+
+（3）Duck Volume ，接收其他Group发送的信号，改变自己的一些属性，比如音量大小。
+
+
+
+---
+
 ####AudioSource
         output
             指定哪个AudioMixerGroup来处理这个AudioSource中播放的音效。
