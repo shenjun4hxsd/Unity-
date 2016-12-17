@@ -5,6 +5,9 @@
 ```
 PBS
     基于物理的Shader
+    
+    Standard以及Standard(Specular setup)两者的区别是，Standard使用了金属模拟的外观，而Standard(Specular Setup)使用了镜面模拟的外观。
+使用中， 对于任何不是金属的材质，都应该选择Standard(Specular Setup)。
 
 PBR
     基于物理的渲染
