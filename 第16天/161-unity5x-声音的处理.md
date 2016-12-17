@@ -79,12 +79,9 @@ rms 使用上比较接近耳朵的感受, peak 就实实在在的电子数值.
 
 （14）SFX Reverb混响效果，还不错。
 
+（15）Low Pass Simple低通滤波器简化版.
 
-
-
-Low Pass Simple低通滤波器简化版.
-
-High Pass Simple高通滤波器简化版.
+（16）High Pass Simple高通滤波器简化版.
 
 下面大概说一下每种效果器的用途：其实大家完全可以自己尝试每种效果器听起来的感觉。
 比较特别的有三个，一个是Send，二是Receive，三是Duck Volume，
