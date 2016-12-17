@@ -141,3 +141,31 @@ public class UnityActionWithParameter : MonoBehaviour {
 >1、在脚本中通过AddListener()添加的是一个0个参数的delegate(UnityAction)回调。是不可序列化的，在Inspector中是无法看到的。这种Listener是常规Listener。
 
 >2、在Inspector中添加的则是永久性的Listener（persistent listener)。他们需要指定GameObject、方法以及方法需要的参数。他们是序列化的，用脚本是无法访问到的。
+
+
+```javascript
+// 另外在脚本中使用lamda表达式来添加listener是非常方便的，可以添加任意多个参数的函数。
+using UnityEngine;
+using System.Collections;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+
+public class EventAndLamda : MonoBehaviour {
+
+
+    void Start () { 
+        //lamda方式可以添加包含任意参数的函数，非常方便
+        GetComponent<Button>().onClick.AddListener(()=>{
+            //此处其实可以直接写Myfuction(.....)，因为是同一个脚本里的函数
+            //这样写是为了说明调用其他组件中的函数也是可以的。如果有其他组件的引用，可以直接写：
+            //someReference.theMethod(arguments);
+            this.GetComponent<EventAndLamda>().MyFunction(10,20.0f,new Vector3(1,1,1));
+        });
+    }
+
+    public void MyFunction(int i, float f, Vector3 v)
+    {
+        print (i.ToString()+"\n" + f.ToString() + "\n" + v.ToString());
+    }
+} 
+```
