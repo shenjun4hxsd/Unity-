@@ -27,7 +27,7 @@ M：将当前组静音
 B：不播放当前组的效果
 ```
 
-运行后，AudioMixer面板将出现 `Edit in play mode` 按钮，点击 AudioMixer 面板的 Editor in Play Mode 这样我们在运行状态下编辑的 Group，在停止运行时将保存。
+运行后，AudioMixer面板将出现 `Edit in Play Mode` 按钮，点击 AudioMixer 面板的 `Editor in Play Mode` 这样我们在运行状态下编辑的 Group，在停止运行时将保存。
 
 ---
 
