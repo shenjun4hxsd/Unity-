@@ -27,6 +27,11 @@ S：添加当前组到一个独奏的组集合中
 M：将当前组静音
 B：不播放当前组的效果
 ```
+```
+peak = 实时的峰值
+rms = 方均根, 一定时限内的平均值
+rms 使用上比较接近耳朵的感受, peak 就实实在在的电子数值.
+```
 
 运行后，AudioMixer面板将出现 `Edit in Play Mode` 按钮，点击 AudioMixer 面板的 `Editor in Play Mode` 这样我们在运行状态下编辑的 Group，在停止运行时将保存。
 
