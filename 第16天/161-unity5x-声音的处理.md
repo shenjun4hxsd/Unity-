@@ -96,10 +96,3 @@ Send会将这个Group的信号传递出去，而Receive配合接收，因此Rece
         AudioMixer
             AudioSource
         AudioSource
-
-####Effect
-    Receive
-    Send
-        发送声音信号
-        多个Send可以发送给同一个Receive
-    DuckVolume
