@@ -36,3 +36,11 @@ public void TransitionToSnapshots(AudioMixerSnapshot[] snapshots, float[] weight
 Transitions to a weighted mixture of the snapshots specified. This can be used for games that specify the game state as a continuum between states or for interpolating snapshots from a triangulated map location.
 转换为指定快照的加权混合。这可以用于游戏，指定游戏状态之间的状态或快照从三角插值地图位置连续。
 ```
+
+---
+
+##AudioMixerSnapshot
+
+|方法|说明|
+|:--|:--|
+|TransitionTo|Performs an interpolated transition towards this snapshot over the time interval specified.|
