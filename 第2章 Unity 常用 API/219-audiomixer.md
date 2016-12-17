@@ -32,4 +32,5 @@ public Audio.AudioMixerSnapshot FindSnapshot(string name);
 
 ```
 public void TransitionToSnapshots(AudioMixerSnapshot[] snapshots, float[] weights, float timeToReach);
+转换为指定快照的加权混合。这可以用于游戏，指定游戏状态之间的状态或快照从三角插值地图位置连续。
 ```
