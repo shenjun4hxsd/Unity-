@@ -60,7 +60,6 @@ rms 使用上比较接近耳朵的感受, peak 就实实在在的电子数值.
 
 （9）Normalize 用了之后音质会变得非常恶心。
 
-
 （10）ParamEQ，也称Parametric Equalizer。参数均衡器, 是Sonar里面的
 ![](/assets/AudioMixer03.png)
 这种Equalizer的弱化版，一个效果器只允许调节一条曲线。当然可以存在多个这样的效果器来实现Sonar里的Equalizer的效果。比如这样
