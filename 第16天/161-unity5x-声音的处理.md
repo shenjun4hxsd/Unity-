@@ -6,6 +6,7 @@
         把AudioSource中的声音通过AudioMixerGroup来处理一下
 
     AudioMixerSnapShot
+        快照会捕获AudioMixer内所有参数的状态。
         保存的是所有可以使用的AudioMixerGroup的状态
         根据不同的场景对于音效的控制做单独的处理
 
