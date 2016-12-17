@@ -13,7 +13,8 @@
 >___联系邮箱___：_380921128@qq.com_ 。
 
 
-
+Unity破解方法：
+http://www.ceeger.com/forum/read.php?tid=23396&page=1
 
 
 &emsp;
