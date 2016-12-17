@@ -135,3 +135,9 @@ public class UnityActionWithParameter : MonoBehaviour {
 }
 
 ```
+
+>Unity中通过面板中添加的Listener和通过脚本添加的Listener实际上是两种不同类型的Listener：
+
+>1、在脚本中通过AddListener()添加的是一个0个参数的delegate(UnityAction)回调。是不可序列化的，在Inspector中是无法看到的。这种Listener是常规Listener。
+
+>2、在Inspector中添加的则是永久性的Listener（persistent listener)。他们需要指定GameObject、方法以及方法需要的参数。他们是序列化的，用脚本是无法访问到的。
