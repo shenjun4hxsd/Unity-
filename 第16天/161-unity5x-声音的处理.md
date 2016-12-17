@@ -65,6 +65,7 @@ rms 使用上比较接近耳朵的感受, peak 就实实在在的电子数值.
 ![](/assets/AudioMixer03.png)
 这种Equalizer的弱化版，一个效果器只允许调节一条曲线。当然可以存在多个这样的效果器来实现Sonar里的Equalizer的效果。比如这样
 ![](/assets/AudioMixer04.png)
+就是降低高频并且提升低频的效果。
 
 下面大概说一下每种效果器的用途：其实大家完全可以自己尝试每种效果器听起来的感觉。
 比较特别的有三个，一个是Send，二是Receive，三是Duck Volume，
