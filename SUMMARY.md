@@ -46,7 +46,7 @@
     * [2.16 CharacterController](第2章 Unity 常用 API/216-charactercontroller.md)
     * [2.17 Camera](第2章 Unity 常用 API/217-camera.md)
     * [2.18 AudioSource](第2章 Unity 常用 API/218-audiosource.md)
-    * 2.19 AudioMixer
+    * [2.19 AudioMixer](第2章 Unity 常用 API/219-audiomixer.md)
     * 2.20 AssetBundle
     * [2.21 Resources](第2章 Unity 常用 API/221-resources.md)
     * [2.22 Quaternion](第2章 Unity 常用 API/222-quaternion.md)
