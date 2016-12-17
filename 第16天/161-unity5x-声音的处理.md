@@ -19,6 +19,9 @@
 ![](/assets/AudioMixer01.png)
 
 
+![](/assets/AudioMixer02.png)
+
+
 ####AudioSource
         output
             指定哪个AudioMixerGroup来处理这个AudioSource中播放的音效。
