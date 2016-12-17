@@ -57,9 +57,9 @@ rms 使用上比较接近耳朵的感受, peak 就实实在在的电子数值.
 （7）Flang镶边效果，用来产生奇怪的音效 
 
 
-下面大概说一下每种效果器的用途：其实大家完全可以自己尝试每种效果器听起来的感觉.
-比较特别的有三个, 一个是Send, 二是Receive, 三是Duck Volume,
-Send会将这个Group的信号传递出去, 而Receive配合接收, 因此Receive和Send是一对多的关系. 而Duck Volume需要Send进来一些信号, 在信号音量超过一定程度的时候会降低这个Group本身的音量. 比如NPC正在说话,此时你想让背景音乐小点声, 这个Duck Volume就发挥作用了.
+下面大概说一下每种效果器的用途：其实大家完全可以自己尝试每种效果器听起来的感觉。
+比较特别的有三个，一个是Send，二是Receive，三是Duck Volume，
+Send会将这个Group的信号传递出去，而Receive配合接收，因此Receive和Send是一对多的关系。而Duck Volume需要Send进来一些信号，在信号音量超过一定程度的时候会降低这个Group本身的音量。比如NPC正在说话，此时你想让背景音乐小点声，这个Duck Volume就发挥作用了。
 
 ---
 
