@@ -1,6 +1,6 @@
 ##Unity5.x 声音的处理
 
-####AudioMixer
+####AudioMixer 音效混合器
 
     AudioMixerGroup
         把AudioSource中的声音通过AudioMixerGroup来处理一下
