@@ -70,7 +70,7 @@ Collision Mass Scale---增加碰撞粒子的质量。。
 
 Use Continuous Collision---使用Continuous Collision, 增加消耗，减少直接穿透碰撞的几率。
 
-Use Virtual Particles---Add one virtual particle per triangle to improve collision stability。
+Use Virtual Particles---每三角形增加一个虚拟粒子以提高碰撞稳定性。
 
 Solver Frequency---Number of solver iterations per second。显然是一个优化参数，默认120很高了，可以试着调低一些。
 
