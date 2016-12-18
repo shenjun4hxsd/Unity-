@@ -48,7 +48,7 @@ Stretching Stiffness---拉扯硬度。
 
 Bending Stiffness---弯曲硬度。
 
-Use Tethers---默认开启，用于方式过度拉伸
+Use Tethers---用绳或链拴住，默认开启，用于方式过度拉伸
 
 Use Gravity---是否使用世界重力。
 
