@@ -72,7 +72,7 @@ Use Continuous Collision---使用Continuous Collision, 增加消耗，减少直�
 
 Use Virtual Particles---每三角形增加一个虚拟粒子以提高碰撞稳定性。
 
-Solver Frequency---Number of solver iterations per second。显然是一个优化参数，默认120很高了，可以试着调低一些。
+Solver Frequency---每秒钟迭代的频率。显然是一个优化参数，默认120很高了，可以试着调低一些。
 
 Sleep Threshold---静止阈值。
 
