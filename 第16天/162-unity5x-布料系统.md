@@ -66,7 +66,7 @@ World Acceleration Scale---与World Velocity Scale共同组成布料的GameObjec
 
 Friction---当布料碰到在这个列表中存在的Collider时所产生的摩擦力，这只会影响布料的模拟。上面说过了布料的物理模拟是单向的。
 
-Collision Mass Scale---How much to increase mass of colliding particles。
+Collision Mass Scale---增加碰撞粒子的质量。。
 
 Use Continuous Collision---使用Continuous Collision, 增加消耗，减少直接穿透碰撞的几率。
 
