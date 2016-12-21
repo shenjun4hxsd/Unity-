@@ -1,5 +1,7 @@
 ##Unity5.x 声音的处理
 
+using UnityEngine.Audio;
+
 ####AudioMixer 音效混合器
 
     AudioMixerGroup
