@@ -83,13 +83,13 @@ Content Size Fitter（内容尺寸适配器）和Aspect Ratio Fitter（宽高比
 • ILayoutSelfController：实现此接口，表明组件需要驱动自身的RectTransform。目前有：ContentSizeFitter、AspectRatioFitter。
 
 
+#####（二）、LayoutGroup实现
 
+• 实现CalculateLayoutInputHorizontal方法，将没有忽略布局的子布局元素添加到列表。
 
+• GetStartOffset方法，根据childAlignment计算子元素开始排布的起始位置。
 
-
-
-
-
+• SetChildAlongAxis方法，按指定起始位置和尺寸添加子元素，未开源。
 
 
 
