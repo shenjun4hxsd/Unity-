@@ -112,6 +112,12 @@ Anchros是一个矩形时，锚点（anchor reference point）的位置就稍显
 
 得到：anchorReferencePoint ＝ (0,250)
 
+![](/assets/rect_anchoredpostion2.png)
+
+图中黄点即为计算出来的anchorReferencePoint，anchorReferencePoint到pivot之间的向量，即为anchoredPosition！
+
+
+anchoredPosition＝pivot(100,250)-anchorReferencePoint(0,250)=(100,0)；
 
 
 
