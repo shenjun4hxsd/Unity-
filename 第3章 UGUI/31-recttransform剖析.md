@@ -110,7 +110,7 @@ Anchros是一个矩形时，锚点（anchor reference point）的位置就稍显
 
 • anchorReferencePointY = (1 − 0.5)x0 + 0.5x500 = 250;
 
-
+得到：anchorReferencePoint ＝ (0,250)
 
 
 
