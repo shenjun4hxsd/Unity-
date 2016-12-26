@@ -21,3 +21,16 @@ RectTransform继承于Transform，在 Transform 基础上，RectTransform 增加
 • Pos (X, Y, Z) ，矩形轴心点（pivot）与锚点（anchors）之间的距离。
 
 • Left, Top, Right, Bottom，矩形的四条边与锚框（anchors）之间的间距。
+
+
+#####（一）Anchors是一个点时
+
+![](/assets/20151031-0.png)
+
+• 在数值上表示为：achorMin.x==achorMax.x && achorMin.y==achorMax.y
+
+• Width/Height可以设置，不受Anchors影响。
+
+• PosX/PosY可以设置。设置此值后，矩形轴心点与锚点之间的距离就恒定了，不管如何改变父UI的尺寸。
+
+• 子UI不会随父UI进行拉伸，位置和大小是固定的。
