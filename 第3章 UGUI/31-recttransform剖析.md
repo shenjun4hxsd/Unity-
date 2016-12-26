@@ -166,9 +166,9 @@ sizeDelta是锚点定义的子矩形与锚点区域大小偏移量，也可以�
     sizeDelta = offsetMax-offsetMin
 ``` 
     
+#####（一）如何动态RectTransform的大小 
     
-    
-    
+**1、Anchors汇聚一个点时**
     
     
     
