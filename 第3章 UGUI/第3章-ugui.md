@@ -54,19 +54,19 @@ Content Size Fitter（内容尺寸适配器）和Aspect Ratio Fitter（宽高比
 
 布局元素是一个含有RectTransform组件的GameObject，作为布局元素并不能直接更改RectTransform中的尺寸信息，只能通过挂载“layout elements component”这个组件来设置布局信息，以供布局控制器计算。
 
+![](/assets/20151121110215.png)
 
+• Minimun width（最小宽度）
 
+• Minimum height（最小高度）
 
+• Preferred width（期望宽度，相当于最大宽度）
 
+• Preferred height（期望高度，相当于最大高度）
 
+• Flexible width（灵活宽度，一般是相对父元素的比例）
 
-
-
-
-
-
-
-
+• Flexible height（灵活高度，一般是相对父元素的比例）
 
 
 
