@@ -162,4 +162,5 @@
     * [20.1 项目实战 -- 土豆人大战外星人](第20天/20.1 项目实战 -- 土豆人大战外星人.md)
 * [第3章 UGUI](第3章 UGUI/第3章-ugui.md)
     * [3.1 RectTransform剖析](第3章 UGUI/31-recttransform剖析.md)
+    * 3.2 AutoLayout剖析
 
