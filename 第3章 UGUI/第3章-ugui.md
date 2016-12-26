@@ -44,6 +44,27 @@ Content Size Fitter（内容尺寸适配器）和Aspect Ratio Fitter（宽高比
 
 通过子元素设定的布局元素minimum,preferred尺寸或内容本身的显示尺寸来调整本身的尺寸信息。最常用于文本内容的父元素，父元素通过文本内容的长度动态设置自身的尺寸。
 
+#####Aspect Ratio Fitter（宽高比适配器）
+
+![](/assets/20151121150020.png)
+
+通过调整自身的宽或高来对应调整另一边的尺寸，也可以选择填满父元素。和网格布局组一样，子布局元素设定的尺寸信息无效。
+
+###三、布局元素
+
+布局元素是一个含有RectTransform组件的GameObject，作为布局元素并不能直接更改RectTransform中的尺寸信息，只能通过挂载“layout elements component”这个组件来设置布局信息，以供布局控制器计算。
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
