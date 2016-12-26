@@ -26,11 +26,11 @@ RectTransform作为单个UI元素布局是十分灵活的，但是当一组UI元
 
 勾选Child Force Expand，如果父元素有额外可用空间时，会促使子元素强制扩充。一般配合布局元素组件的minimum,preferred和flexible尺寸使用。
 
+#####2、网格布局组
 
+• Start Corner和Child Alignment的区别：Start Corner是决定子元素排放顺序的开始位置，Child Alignment是决定所有子元素作为一个整体在父元素中的排放位置。
 
-
-
-
+• 网格布局组，子布局元素设定的尺寸信息无效。在网格布局组下，其子布局元素设置的minimum,preferred和flexible尺寸无法生效，只会生效网格设定的尺寸。在网格布局组下，子布局元素只能通过Ignore Layout跳出布局控制器，其它属性设置无效。
 
 
 
