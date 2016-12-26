@@ -123,6 +123,6 @@ anchoredPosition＝pivot(100,250)-anchorReferencePoint(0,250)=(100,0)；
 ###四、offsetMin与offsetMax
 
 
+• offsetMax为当前矩形右上角相对于锚点右上角的偏移。
 
-
-
+• offsetMin为当前矩形左下角相对于锚点左下角的偏移。
