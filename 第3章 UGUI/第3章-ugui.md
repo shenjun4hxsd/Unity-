@@ -174,8 +174,43 @@ protected void SetChildrenAlongAxis(int axis, bool isVertical)
 
 • `LayoutRebuilder` 类是真正实现UI重建的类，通过 `Rebuild` 方法，会先调用`CalcAlongAxis` 计算所有子布局元素的 `totalMin、totalPreferred、totalFlexible`。再调用 `SetChildrenAlongAxis` 给子元素设置最终的起始位置和子元素尺寸。
 
+###五、弹性布局（也有叫：灵活布局）
 
+弹性布局是在有限的空间内按需分配置空间，一个子元素分配多了，剩下的子元素就少了，子元素之间按一定比例分配。在uGUI中表现为，一个父元素，使用了水平布局组或垂直布局组（网格布局组无效）。子元素设置Flexibl width或Flexibl height。
 
+#####一个疑惑的实例
 
+按以前类似的弹性布局UI（比如：CSS3的box-flex属性）实例，可以有如下推断。以弹性宽度为例：所有子元素的FlexiblWidth标记为totalFlexibleWidth，单个子元素的实际宽度=父元素宽 (FlexiblWidth / totalFlexibleWidth)。*（注意：此段待商议）
 
+我们来一段实例：
+
+• 一个Panel(垂直布局组)下面有两Button（ButtonA和ButtonB）
+
+• Panel高度为100
+
+• ButtonA的FlexiblHeight为：2
+
+• ButtonB的FlexiblHeight为：3
+
+按以上推断结果:
+
+• ButtonA.height = 100 * (2 / (2+3)) = 40
+
+• ButtonB.height = 100 * (3 / (2+3)) = 60
+
+伤神的，实际的结果并非如此，实际结果为：
+
+• ButtonA.height = 42
+
+• ButtonB.height = 58
+
+这是为什么呢，uGUI的官方文档又不说清楚，真是无比坑。好在现在uGUI的源码了，回到上文的HorizontalOrVerticalLayoutGroup.SetChildrenAlongAxis方法。
+
+```javascript
+    //axis是一个标志位，0表示宽度，1表示高度；size是实际的尺寸
+    float minMaxLerp = Mathf.Clamp01((size - GetTotalMinSize(axis)) / (GetTotalPreferredSize(axis) - GetTotalMinSize(axis)));
+    float itemFlexibleMultiplier = (size - GetTotalPreferredSize(axis)) / GetTotalFlexibleSize(axis);
+    float childSize = Mathf.Lerp(min, preferred, minMaxLerp);
+    childSize += flexible * itemFlexibleMultiplier;
+```
 
