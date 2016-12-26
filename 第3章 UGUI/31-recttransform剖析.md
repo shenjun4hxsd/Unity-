@@ -34,3 +34,24 @@ RectTransform继承于Transform，在 Transform 基础上，RectTransform 增加
 • PosX/PosY可以设置。设置此值后，矩形轴心点与锚点之间的距离就恒定了，不管如何改变父UI的尺寸。
 
 • 子UI不会随父UI进行拉伸，位置和大小是固定的。
+
+#####（二）Anchors是一条线时
+
+![](/assets/20151031-1.png)
+
+• 一条横线：achorMin.y==achorMax.y，如上图。子UI宽度会随父UI进行拉伸，高度和Y方向的距离是固定的。此时，Left,Right,PosY,Height可以设置。
+
+
+• 一条竖线：achorMin.x==achorMax.x。子UI高度会随父UI进行拉伸，宽度和X方向的距离是固定的。此时，Top,Bottom,PosX,Width可以设置。
+
+
+
+
+
+
+
+
+
+
+
+
