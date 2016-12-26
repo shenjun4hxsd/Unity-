@@ -50,7 +50,9 @@ RectTransform继承于Transform，在 Transform 基础上，RectTransform 增加
 
 • achorMin.x!=achorMax.x && achorMin.y!=achorMax.y
 
+• 子UI宽高都是拉伸状态。
 
+• 宽高不可以设置。
 
 
 
