@@ -48,7 +48,7 @@ RectTransform继承于Transform，在 Transform 基础上，RectTransform 增加
 
 ![](/assets/20151031-2.png)
 
-• achorMin.y!=achorMax.y && achorMin.y!=achorMax.y
+• achorMin.x!=achorMax.x && achorMin.y!=achorMax.y
 
 
 
