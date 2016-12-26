@@ -172,7 +172,7 @@ protected void SetChildrenAlongAxis(int axis, bool isVertical)
 
 • `CanvasUpdateRegistry` 类主要负责队例管理，排序，并注册`Canvas.willRenderCanvases` 事件，以接受事件触发队列中的重建方法。
 
-
+• `LayoutRebuilder` 类是真正实现UI重建的类，通过 `Rebuild` 方法，会先调用`CalcAlongAxis` 计算所有子布局元素的 `totalMin、totalPreferred、totalFlexible`。再调用 `SetChildrenAlongAxis` 给子元素设置最终的起始位置和子元素尺寸。
 
 
 
