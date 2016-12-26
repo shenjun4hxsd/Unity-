@@ -91,9 +91,9 @@ Content Size Fitter（内容尺寸适配器）和Aspect Ratio Fitter（宽高比
 
 • SetChildAlongAxis方法，按指定起始位置和尺寸添加子元素，未开源。
 
+#####（三）、HorizontalOrVerticalLayoutGroup实现
 
-
-
+HorizontalOrVerticalLayoutGroup是布局组控制器的具体实现类，包含两个方法CalcAlongAxis和SetChildrenAlongAxis。
 
 
 
