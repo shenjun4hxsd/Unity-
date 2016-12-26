@@ -170,7 +170,7 @@ sizeDelta是锚点定义的子矩形与锚点区域大小偏移量，也可以�
     
 **1、Anchors汇聚一个点时**
     
-    
+sizeDelta（x,y）与Rect的宽高是一致的。RectTransform与锚点偏移量就是本身的大小。
     
     
     
