@@ -44,11 +44,11 @@ RectTransform继承于Transform，在 Transform 基础上，RectTransform 增加
 
 • 一条竖线：achorMin.x==achorMax.x。子UI高度会随父UI进行拉伸，宽度和X方向的距离是固定的。此时，Top,Bottom,PosX,Width可以设置。
 
+#####（三）Anchors是一个矩形时
 
+![](/assets/20151031-2.png)
 
-
-
-
+• achorMin.y!=achorMax.y && achorMin.y!=achorMax.y
 
 
 
