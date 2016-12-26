@@ -103,6 +103,18 @@ Anchros是一个矩形时，锚点（anchor reference point）的位置就稍显
 
 • 已知右上角锚点坐标(x1,y1)=(600,500)
 
+以上值，通过Rect的Width,Height及Rect与锚的间距，以锚左下角为原点的坐标系获得。
+
+
+• anchorReferencePointX = (1 − 0)x0 + 0x600 = 0;
+
+• anchorReferencePointY = (1 − 0.5)x0 + 0.5x500 = 250;
+
+
+
+
+
+
 
 
 
