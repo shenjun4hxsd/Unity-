@@ -165,8 +165,10 @@ protected void SetChildrenAlongAxis(int axis, bool isVertical)
 
 根据上面的类和接口示意图，当UI元素RectTransform发生变化时，并不会立即触发UI重建。为了提高性能，节省开销，uGUI也是在帧的末尾（渲染发生之前）才会进行重新进入UI重建。主要是通过 `Canvas.willRenderCanvases` 事件进行触发。
 
+在uGUI布局系统中，主要是通过LayoutRebuilder类和CanvasUpdateRegistry类实现的。
 
 
+• 继承UIBehaviour的类，在UI重建事件触发时，调用 `SetDirty` 方法，再调用`LayoutRebuilder.MarkLayoutForRebuild`。
 
 
 
