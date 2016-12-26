@@ -59,7 +59,9 @@ RectTransform继承于Transform，在 Transform 基础上，RectTransform 增加
 
 ####三、anchoredPosition
 
+anchoredPosition官方描述为：The position of the pivot of this RectTransform relative to the anchor reference point.
 
+即：RectTransform的pivot与锚点（anchor reference point）的向量。
 
 
 
