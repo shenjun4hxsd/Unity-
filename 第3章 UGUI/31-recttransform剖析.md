@@ -175,6 +175,28 @@ sizeDelta（x,y）与Rect的宽高是一致的。RectTransform与锚点偏移量
 RectTransform的Rect是只读的，当需要动态设置RectTransform的尺寸时，在Anchors汇聚一个点时，就可以直接通过sizeDelta的x,y来动态设置RectTransform的对应的宽和高。
     
     
+**2、Anchors是一个矩形时**
+
+sizeDelta同样可以设置Rect大小，但理解上不太好转换。可以直接通过offsetMax和offsetMin的偏移量来动态调整Rect的大小。具体实例，后续会添加本知识点的实例。
+    
+    
+    
+#####（二）sizeDelta的计算实例  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
