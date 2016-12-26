@@ -72,6 +72,33 @@ Anchros汇聚一个点时，锚点（anchor reference point）比较好理解，
 
 #####（二）Anchros是一个矩形时
 
+Anchros是一个矩形时，锚点（anchor reference point）的位置就稍显复杂，此时锚点（anchor reference point）的位置是根据pivot计算出来的线性插值。
+
+----在此插入线性插值相关知识，复习一下基础知识。----
+
+线性插值法是指使用连接两个已知量的直线来确定在这两个已知量之间的一个未知量的值的方法。
+
+![](/assets/linear_interpolation_0.jpg)
+
+假设我们已知坐标(x0,y0)与(x1,y1),要得到[x0,x1]区间内某一位置x在直线上的值。根据图中所示，我们得到:
+
+![](/assets/linear_interpolation_1.png)
+
+
+• y = (1 − α)y0 + αy1 或者 y = y0 + α(y1 − y0)
+
+• x = (1 − α)x0 + αx1 或者 x = x0 + α(x1 − x0)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
