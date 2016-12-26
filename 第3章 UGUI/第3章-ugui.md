@@ -170,7 +170,7 @@ protected void SetChildrenAlongAxis(int axis, bool isVertical)
 
 • 继承UIBehaviour的类，在UI重建事件触发时，调用 `SetDirty` 方法，再调用`LayoutRebuilder.MarkLayoutForRebuild`。
 
-
+• `CanvasUpdateRegistry` 类主要负责队例管理，排序，并注册`Canvas.willRenderCanvases` 事件，以接受事件触发队列中的重建方法。
 
 
 
