@@ -142,13 +142,22 @@ Anchors汇聚一个点时，即以锚点为坐标原点（0,0），offsetMax和o
 
 offsetMax/offsetMin的计算如下图：
 
+![](/assets/rect_offsetMin_offsetMax2.png)
+
+Anchors是一个矩形，则需要以左下角锚点和右上角锚点分别作为坐标原点画两个坐标系，以计算offsetMin和offsetMax.
 
 
+###五、sizeDelta
+
+官方文档只用了一句英文进行了描述：The size of this RectTransform relative to the distances between the anchors.
+
+是不是很费解？官方文档很多类似这种，描述不详细，造成理解上的困难和学习成本增加。
+
+sizeDelta是锚点定义的子矩形与锚点区域大小偏移量，也可以称之为尺寸变化量。
 
 
+![](/assets/rect_sizeDelta.png)
 
-
-
-
+如上图所示，红色区域为锚点定义的子矩形，矩形相对锚点的偏移就可以通过右上角与锚点右上角的offsetMax到左下角与锚点左下角的offsetMin之间的向量（绿色箭头）来表示。
 
 
