@@ -14,3 +14,10 @@ RectTransform继承于Transform，在 Transform 基础上，RectTransform 增加
 ###二、Anchors（锚点或锚框）
 
 锚点功能的引入，使UI相对布局和绝对布局，自适应，等比缩放等完美融合一起。在uGUI中Anchors并不一定是锚点，也可能是一个矩形。当Anchors汇聚成一个点时，我们通常称之为锚点；当Anchors是一个矩形状时，我们通常称之为锚框。Anchors是子UI在父UI中的映射位置，但并不代表子UI的实际大小，子UI的实际大小，还会通过这些属性(width,height,posX,posY,left,top,right,bottom)相对Anchors进行调整。
+
+
+####基本概念：
+
+• Pos (X, Y, Z) ，矩形轴心点（pivot）与锚点（anchors）之间的距离。
+
+• Left, Top, Right, Bottom，矩形的四条边与锚框（anchors）之间的间距。
