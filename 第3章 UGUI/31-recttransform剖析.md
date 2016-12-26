@@ -126,3 +126,25 @@ anchoredPosition＝pivot(100,250)-anchorReferencePoint(0,250)=(100,0)；
 • offsetMax为当前矩形右上角相对于锚点右上角的偏移。
 
 • offsetMin为当前矩形左下角相对于锚点左下角的偏移。
+
+
+#####1、Anchors汇聚一个点时
+
+offsetMax/offsetMin的计算如下图：
+
+![](/assets/rect_offsetmax_min.png)
+
+
+Anchors汇聚一个点时，即以锚点为坐标原点（0,0），offsetMax和offsetMin就可以直接用坐标系的方式，快速得出右上角和左下角在此坐标系中的（x,y）。
+
+
+
+
+
+
+
+
+
+
+
+
