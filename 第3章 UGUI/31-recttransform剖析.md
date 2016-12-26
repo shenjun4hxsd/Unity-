@@ -57,7 +57,7 @@ RectTransform继承于Transform，在 Transform 基础上，RectTransform 增加
 • Left, Top, Right, Bottom可设置，矩形的四条边与锚框的边间距是固定的。
 
 
-####三、anchoredPosition
+###三、anchoredPosition
 
 anchoredPosition官方描述为：The position of the pivot of this RectTransform relative to the anchor reference point.
 
@@ -120,7 +120,7 @@ Anchros是一个矩形时，锚点（anchor reference point）的位置就稍显
 anchoredPosition＝pivot(100,250)-anchorReferencePoint(0,250)=(100,0)；
 
 
-
+###四、offsetMin与offsetMax
 
 
 
