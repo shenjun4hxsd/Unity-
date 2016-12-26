@@ -54,6 +54,20 @@ RectTransform继承于Transform，在 Transform 基础上，RectTransform 增加
 
 • 宽高不可以设置。
 
+• Left, Top, Right, Bottom可设置，矩形的四条边与锚框的边间距是固定的。
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
