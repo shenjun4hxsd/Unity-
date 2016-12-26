@@ -64,9 +64,13 @@ anchoredPosition官方描述为：The position of the pivot of this RectTransfor
 即：RectTransform的pivot与锚点（anchor reference point）的向量。
 
 
+#####（一）Anchros汇聚一个点时
 
+Anchros汇聚一个点时，锚点（anchor reference point）比较好理解，就是Anchros汇聚的这个点。
 
+![](/assets/rect_anchoredpostion.png)
 
+#####（二）Anchros是一个矩形时
 
 
 
