@@ -16,11 +16,15 @@ RectTransform作为单个UI元素布局是十分灵活的，但是当一组UI元
 
 #####（一）、Layout Group（布局组）
 
+布局组提供Horizontal Layout Group（水平布局组）和Vertical Layout Group（垂直布局组），以及Grid Layout Group（网格布局组）三种功能。
 
+这三个布局组参数基本一致，详细说明可以参考官网文档：官网文档。但也有一些差别。
 
+#####1、水平和垂直布局组特有的属性：Child Force Expand
 
+![](/assets/20151121141320.png)
 
-
+勾选Child Force Expand，如果父元素有额外可用空间时，会促使子元素强制扩充。一般配合布局元素组件的minimum,preferred和flexible尺寸使用。
 
 
 
