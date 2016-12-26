@@ -70,6 +70,26 @@ Content Size Fitter（内容尺寸适配器）和Aspect Ratio Fitter（宽高比
 
 ###四、布局接口（自定义布局功能）
 
+可参考官方uGUI开源代码:https://bitbucket.org/Unity-Technologies/ui
+
+![](/assets/20151123204627.png)
+
+#####（一）、布局主要接口
+
+• ILayoutController：布局控制器
+
+• ILayoutElement：布局元素（布局控制器本身也是布局元素，LayoutGroup也实现它）
+
+• ILayoutSelfController：实现此接口，表明组件需要驱动自身的RectTransform。目前有：ContentSizeFitter、AspectRatioFitter。
+
+
+
+
+
+
+
+
+
 
 
 
