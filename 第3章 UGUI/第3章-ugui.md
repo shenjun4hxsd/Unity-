@@ -95,5 +95,26 @@ Content Size Fitter（内容尺寸适配器）和Aspect Ratio Fitter（宽高比
 
 HorizontalOrVerticalLayoutGroup是布局组控制器的具体实现类，包含两个方法CalcAlongAxis和SetChildrenAlongAxis。
 
+• CalcAlongAxis：计算所有子布局元素的totalMin、totalPreferred、totalFlexible
+
+• SetChildrenAlongAxis：通过CalcAlongAxis计算的值，进行子元素起始位置和子元素尺寸的最终计算，并调用LayoutGroup.SetChildAlongAxis添加子元素。
+
+
+**此段代码比较关键，故直接贴出来：**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
