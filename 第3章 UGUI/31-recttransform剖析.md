@@ -138,6 +138,10 @@ offsetMax/offsetMin的计算如下图：
 Anchors汇聚一个点时，即以锚点为坐标原点（0,0），offsetMax和offsetMin就可以直接用坐标系的方式，快速得出右上角和左下角在此坐标系中的（x,y）。
 
 
+#####2､Anchors是一个矩形时
+
+offsetMax/offsetMin的计算如下图：
+
 
 
 
