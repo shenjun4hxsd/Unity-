@@ -14,7 +14,7 @@ RectTransform作为单个UI元素布局是十分灵活的，但是当一组UI元
 
 ###二、布局控制器
 
-#####（一）、Layout Group（布局组）
+####（一）、Layout Group（布局组）
 
 布局组提供Horizontal Layout Group（水平布局组）和Vertical Layout Group（垂直布局组），以及Grid Layout Group（网格布局组）三种功能。
 
@@ -34,7 +34,24 @@ RectTransform作为单个UI元素布局是十分灵活的，但是当一组UI元
 
 ![](/assets/20151121151229.png)
 
-#####（二）、控制自身的布局控制器
+####（二）、控制自身的布局控制器
+
+Content Size Fitter（内容尺寸适配器）和Aspect Ratio Fitter（宽高比适配器）是控制自身尺寸的布局控制器。
+
+#####Content Size Fitter（内容尺寸适配器）
+
+![](/assets/20151121145440.png)
+
+通过子元素设定的布局元素minimum,preferred尺寸或内容本身的显示尺寸来调整本身的尺寸信息。最常用于文本内容的父元素，父元素通过文本内容的长度动态设置自身的尺寸。
+
+
+
+
+
+
+
+
+
 
 
 
