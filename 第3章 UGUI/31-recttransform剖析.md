@@ -184,13 +184,18 @@ sizeDelta同样可以设置Rect大小，但理解上不太好转换。可以直�
 #####（二）sizeDelta的计算实例  
     
     
+如下图，红色区域的Anchors是一个anchorMin(0,0)到anchorMax(1,1)的全拉伸锚框，left,right,top,bottom全为50。    
     
+![](/assets/20151029200000.png)
     
+![](/assets/20151029195918.png)
     
-    
-    
-    
-    
+红线内数据，sizeDelta = offsetMax-offsetMin得到的向量。
+即：sizeDelta ＝ (-50-50,-50-50) = (-100,-100)
+
+
+
+🔚
     
     
     
