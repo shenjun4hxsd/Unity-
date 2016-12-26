@@ -214,3 +214,4 @@ protected void SetChildrenAlongAxis(int axis, bool isVertical)
     childSize += flexible * itemFlexibleMultiplier;
 ```
 
+根据以上代码，关键信息终于暴露了，不考虑flexible时，childSize是min和preferred的一个插值，而插值系数minMaxLerp的值，见以上公式。也就是如果min和preferred都不为0时，childSize是取两者之间的一个插值，可以理解为百分比。
