@@ -215,3 +215,56 @@ protected void SetChildrenAlongAxis(int axis, bool isVertical)
 ```
 
 根据以上代码，关键信息终于暴露了，不考虑flexible时，childSize是min和preferred的一个插值，而插值系数minMaxLerp的值，见以上公式。也就是如果min和preferred都不为0时，childSize是取两者之间的一个插值，可以理解为百分比。
+
+
+**重要**：只有当size>totalPreferredSize时，itemFlexibleMultiplier才不会为0，设置了flexible值才会有效。也就是说弹性布局只有在所有子元素PreferredSize之和小于父元素实际尺寸，才会有效。
+
+
+    弹性尺寸计算公式
+    flexible / totalFlexibleSize * (size - totalPreferredSize)
+    解读为，弹性比例乘以未分配的空间尺寸。
+    
+
+最终的childSize是min和preferred之间的一个插值，再叠加弹性尺寸所得。
+
+再回到上文这个疑惑的例子，根据上面的公式，弹性尺寸和Preferred的设置是有关的，那么Button是不是有默认的PreferredSize呢？Button上默认会挂载一个Image，通过脚本获取，Button.Image默认的Preferred为10。
+
+根据以上弹性尺寸的全新理解，我们再来推断以上例子的结果。
+
+    • size=100
+    • ButtonA.Image.minHeight=0
+    • ButtonA.Image.preferredHeight=10
+    • ButtonAHeight=10f（min和preferred之间的插值）
+    • ButtonAHeight+=2/(2+3) * (100-(10+10))（弹性尺寸）
+    • ButtonAHeight=42（与实际结果一致）
+
+“案子破了”，如果uGUI文档能说详细一点，就不用大费周章才能了解一个简单的属性值。
+
+#####一个通俗的例子
+
+说一个隔壁老王家分房的案例，以加深对弹性布局的理解。
+
+老王家三个孩子，分别叫：王一、王二、王三。老王有一套面积200平米的房子，需要给他们分房。
+
+**1、按比例分配**
+
+老王偏心，特别喜欢老幺王三，故给王三分配了比例为2。王一，王二分别分配比例为1。大家都知道弹性布局是受min和preferred影响，也就是老王的儿子们有最小分配和期望分配。为了完全按比例分配，老王对儿子们的期望都不管不顾，将min和preferred设为了0.
+
+
+![](/assets/laowang_01.png)
+
+
+**2、部份按比例**
+
+王三和老王，他必须要80平米，剩下的120平，王一和王二一人一半，这种情况下怎么分呢？
+
+理论上只要给王三分80，给王一和王二flexible设为1，即可。但实际结果又不并不是所期望的样子，为什么呢？其实这种情况下需要老王把childForceExpandWidth设为false，因为在uGUI处理中，如果childForceExpandWidth设为了true，即使王三没有设置flexible，也会被强制设为1。
+
+
+
+
+
+
+
+
+
