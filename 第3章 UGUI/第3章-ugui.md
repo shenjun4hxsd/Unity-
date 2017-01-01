@@ -10,7 +10,7 @@
     音量大小（Slider）
     故事简介（Image）
         Title（Image）
-        TextList（Image、Scroll Rect、Mask）
+        TextList（Image、ScrollRect、Mask）
         Scrollbar（Image、Scrollbar）
 
 ###按钮的点击事件、滑动条的事件
