@@ -53,5 +53,5 @@
     
 ##界面之间的切换
 
-    对界面添加Tween Position脚本
+    对界面添加TweenPosition脚本
 
