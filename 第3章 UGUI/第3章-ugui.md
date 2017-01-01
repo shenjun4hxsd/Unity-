@@ -74,7 +74,13 @@
             任务项
 
 
-##设置界面（背景、声音滑动条）
+##设置界面
+
+    声音（Slider）
+    难度（ToggleGroup）
+    音效（ToggleGroup，OnValueChange事件触发脚本控制）
+    音乐（ToggleGroup，OnValueChange事件触发脚本控制）
+
 
 ##游戏难度的单选按钮
 
