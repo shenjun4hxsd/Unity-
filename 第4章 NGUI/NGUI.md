@@ -5,7 +5,8 @@
 ##Lable
 
 ##Sprite
-    Slice
+    Slice 九宫格
+    Fill  技能冷却动画
 
 ##Button
 
