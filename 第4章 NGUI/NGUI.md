@@ -64,3 +64,5 @@
     Widget/Pivot会影响文字的开始位置
 
 ##注册界面
+
+    Input
