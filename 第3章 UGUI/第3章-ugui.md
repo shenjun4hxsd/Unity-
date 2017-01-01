@@ -13,7 +13,7 @@
         TextList（Image、Scroll Rect、Mask）
         Scrollbar（Image、Scrollbar）
 
-##按钮的点击事件
+##按钮的点击事件、滑动条的事件
 
     Slider 改变模型的旋转速度
     通过Slider的OnValueChange事件改变模型物体上的脚本中的值（Dynamic float，把改变后的值传递给事件回调函数）
