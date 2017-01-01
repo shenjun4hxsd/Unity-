@@ -65,4 +65,4 @@
 
 ##注册界面
 
-    UIInput
+    UIInput（使用value的值改变显示的文本）
