@@ -27,3 +27,5 @@
 
 ##Play Sound脚本
 
+##Typewriter Effect脚本 （打字机效果）
+
