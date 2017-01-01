@@ -38,7 +38,11 @@
 
 ![](/assets/39576101751325.png)
 
+## 
+
 ## EventSystem 事件系统详细说明
+
+
 
 **一、EventSystem对象的说明**
 
@@ -58,6 +62,8 @@ BaseInputModule是一个基类模块，负责发送输入事件（点击、拖�
 
 [http://docs.unity3d.com/ScriptReference/EventSystems.EventSystem.html](http://docs.unity3d.com/ScriptReference/EventSystems.EventSystem.html)
 
+
+
 **二、UGUI中的事件系统**
 
 根据第一节中的说明，EventSystem和BaseInputModule是粘在一个对象上的，这两个模块在EventSystem对象上可以直接看到。那么，BaseRaycaster模块呢。。。
@@ -67,6 +73,8 @@ BaseInputModule是一个基类模块，负责发送输入事件（点击、拖�
 对于UI模块，在Canvas对象下我们可以看到GraphicRaycaster组件。如果Canvas的渲染模式是SceenSpace-Overlay，那么我们是看不到Camera组件的。所以应该是GraphicRaycaster会对UI不同的渲染模式做特殊处理。
 
 因为有GraphicRaycaster组件的原因，Canvas上的所有UI对象，都可以接受输入模块发出的事件，具体事件的处理在第四节说明。
+
+
 
 **三、场景对象中使用事件系统**
 
@@ -79,6 +87,8 @@ BaseInputModule是一个基类模块，负责发送输入事件（点击、拖�
 如果场景中只有一个射线检测源：When a Raycaster is present and enabled in the scene it will be used by the EventSystem whenever a query is issued from an InputModule.
 
 如果场景中有多个射线检测源：If multiple Raycasters are used then they will all have casting happen against them and **the results will be sorted based on distance to the elements.**
+
+
 
 **四、响应事件**
 
@@ -117,10 +127,6 @@ StandaloneInputModule和TouchInputModule两个组件会检测一些输入操作�
 ```
 
 在mono脚本中继承输入模块提供的事件接口，如下图。接口的定义方式也可以查下官方手册，[http://docs.unity3d.com/ScriptReference/EventSystems.IBeginDragHandler.html](http://docs.unity3d.com/ScriptReference/EventSystems.IBeginDragHandler.html)这边有每一个接口的定义方式，放心大胆地点进去。另外，添加ObjChooseEvent组件的对象，一定要有Collider哦。
-
-
-
-
 
 2）、通过EventTrigger组件监听事件
 
