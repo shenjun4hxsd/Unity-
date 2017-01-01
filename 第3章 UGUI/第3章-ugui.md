@@ -135,7 +135,8 @@
                 }
                 else  // 没有放到格子上
                 {
-                    
+                    this.transform.parent = lastTrans;
+                    this.transform.localScale = Vector3.one;
                 }
             }
         }
