@@ -5,8 +5,8 @@
 ##Lable
 
 ##Sprite
-    Slice 九宫格
-    Fill  技能冷却动画
+    Slice   九宫格
+    Filled  技能冷却动画
 
 ##Button
 
@@ -56,5 +56,7 @@
 
     对界面添加TweenPosition脚本（脚本可以通过PlayForward、playReverse方法播放）
     
-##实现节能的CD效果
+##实现技能的CD效果
+
+##输入框（单行文本、多行文本）
 
