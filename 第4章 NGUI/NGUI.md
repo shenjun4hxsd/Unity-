@@ -88,4 +88,4 @@
 
 ##背包
 
-   拖拽物体添加 UIDRag Drop Item脚本组件
+   拖拽物体添加 UIDRagDropItem脚本组件
