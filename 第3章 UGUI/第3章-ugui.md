@@ -41,6 +41,7 @@
     
     分栏（ToggleGroup）
         装备栏（Toggle）
+            设置OnValueChanged事件，控制装备栏面板显示(GameObject.SetActive)
         消耗品栏(Toggle)
         材料栏(Toggle)
         装备栏面板
