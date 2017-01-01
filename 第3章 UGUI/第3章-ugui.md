@@ -73,7 +73,6 @@
         VerticalLayoutGroup （控制所有子项的排列，可以设置Height为所有子项的高度和）
             任务项
 
-##任务列表（使用VerticalLayout和ScrollRect控制任务列表的滑动）
 
 ##设置界面（背景、声音滑动条）
 
