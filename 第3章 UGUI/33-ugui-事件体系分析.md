@@ -1,0 +1,15 @@
+##UGUI 事件体系分析
+
+###事件体系
+
+事件体系总体上说由四部分组成，分别是：监测器，派发器，采集器，响应器。
+
+监测器指的是Eventsystem类，它重写了MonoBehavior的update方法，会在每一帧更新挂载在同一个GameObject上的BaseInputModule组件状态，并判断是否应该激活Module，如果是，则去调用各个Module的Process。
+
+派发器指的就是BaseInputModule，最常用的是它的子类StandaloneInputMoudle。它完成了实际的事件生成。包括且不限于：事件类型的确定，事件数据的收集，派发对象的过滤。其中对派发对象的获取需要借助采集器，但需要通过监测器来获取，这种设计可以带来效率上的优势，虽然实现时并没有相关的代码。
+
+采集器是指BaseRaycaster,在UGUI中使用的是其子类GraphicRaycaster。当事件发生时，会由Module请求一个射线点触，返回所有能点到的物体并返回，交由派发器进行过滤。它有一个内部的管理类RaycasterManager，用来做链接采集器和监测器的单向桥梁。
+
+响应器是指IEventSystemHandler及其子类，例如最常用的IPointerClickHandler，它处理的是点击事件。通过ExecuteEvents类，可以将发生事件的对象上所有的响应器都获取到并调用其响应逻辑。以点击为例，事件最终会被派发到OnClick的代理上。完成逻辑的执行。
+
+这四个模块大致的依赖关系如下： 
