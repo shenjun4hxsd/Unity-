@@ -19,5 +19,7 @@
 
 ##tween
 
+##slider
+
 
 
