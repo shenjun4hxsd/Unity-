@@ -89,3 +89,14 @@
 ##背包
 
    拖拽物体添加 UIDRagDropItem脚本组件
+   
+```javascript
+    public class MyDragDropItem : UIDragDropItem
+    {
+        protected override void OnDragDropRelease(GameObject surface)
+        {
+            base.OnDragDropRelease(surface);
+            Debug.Log(surface);
+        }
+    }
+```
