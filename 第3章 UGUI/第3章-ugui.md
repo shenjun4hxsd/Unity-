@@ -94,6 +94,43 @@
         
 ###背包系统的物体拖拽
 
+```javascript
+    using UnityEngine.EventSystem;
+    public class Item : MonoBehaviour , IPointDownHandler, IPointUpHandler, IDragHandler
+    {
+        public void OnPointDown(PointEventData eventData)
+        {
+            // 保存原来格子的引用
+            // 当前物体放大些
+            // 改变父物体到最后的位置
+        }
+        
+        public void OnPointUp(PointEventData eventData)
+        {
+            RaycastHit2D hit = Physics2D.Raycast(Input.mousePosition, -Vector2.up)
+            {
+                if(hit.collider!= null && hit.collider.tag == "item")
+                {
+                    hit.collider.transform.localScale = Vector3.one;
+                    if(hit.transform.childCount != 0)
+                    {
+                        // 放到新的格子下面
+                        // 改变父物体
+                        // 位置归0
+
+                    }
+                    else
+                    {
+                        // 放回原处
+                        // 位置归0
+                    }
+                    
+                }
+            }
+        }
+    }
+```
+
 🔚
 
 
