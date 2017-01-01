@@ -5,7 +5,7 @@
 ##Lable
 
 ##Sprite
-    Slice   九宫格
+    Slice   九宫格 修改Border属性
     Filled  技能冷却动画
 
 ##Button
