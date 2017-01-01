@@ -167,11 +167,11 @@ StandaloneInputModule和TouchInputModule两个组件会检测一些输入操作�
 Ex：
 
 ```
-     public void OnPointerClick\(PointerEventData eventData\)
+     public void OnPointerClick (PointerEventData eventData )
     {
 
-         print \("OnPointerClick..."\);
-         currEvent.SetSelectedGameObject\(gameObject\); 
+         print ("OnPointerClick..." );
+         currEvent.SetSelectedGameObject (gameObject ); 
 
      }
 ```
