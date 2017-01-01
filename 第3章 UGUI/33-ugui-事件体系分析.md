@@ -118,5 +118,20 @@ StandaloneInputModule和TouchInputModule两个组件会检测一些输入操作�
 
 在mono脚本中继承输入模块提供的事件接口，如下图。接口的定义方式也可以查下官方手册，[http://docs.unity3d.com/ScriptReference/EventSystems.IBeginDragHandler.html](http://docs.unity3d.com/ScriptReference/EventSystems.IBeginDragHandler.html)这边有每一个接口的定义方式，放心大胆地点进去。另外，添加ObjChooseEvent组件的对象，一定要有Collider哦。
 
+
+
+  
+p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px Times; color: \#888888; -webkit-text-stroke: \#888888}  
+p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px 'Songti SC'; color: \#888888; -webkit-text-stroke: \#888888; background-color: \#ffffff}  
+span.s1 {font-kerning: none; background-color: \#ffffff}  
+span.s2 {font: 15.0px 'Songti SC'; font-kerning: none; background-color: \#ffffff}  
+span.s3 {font: 15.0px Times; font-kerning: none}  
+span.s4 {font-kerning: none}  
+
+
+2）、通过EventTrigger组件监听事件
+
+这是一个官方组件。在需要监听事件的对象上，挂上这个组件，然后在Inspector面板展开配置，你会看到这个组件提供了所有输入模块支持的事件类型的监听，如下图。
+
 🔚
 
