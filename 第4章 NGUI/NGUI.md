@@ -65,4 +65,4 @@
 
 ##注册界面
 
-    Input
+    UIInput
