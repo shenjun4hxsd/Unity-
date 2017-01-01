@@ -33,7 +33,7 @@
 
 ##Poput List
 
-    需要添加Label，用Label显示当前的选项，把Lable拖入事件OnValueChange选择SetCurrentSelection。
+    需要添加子物体Label，用Label显示当前的选项，把Lable拖入事件OnValueChange，然后选择事件类型为SetCurrentSelection。
 
 
 
