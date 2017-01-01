@@ -33,6 +33,7 @@
     技能按钮
     ...
     Image类型
+    Label类型（Shadow、Outline）
 
 
 ##设置和对话框按钮
