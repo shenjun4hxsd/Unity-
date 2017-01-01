@@ -60,7 +60,7 @@
     背景
     滚动面板
         ScrollRect、Mask、脚本控制滚动的位置（scrollRect.horizontalNormalizedPosition）
-    Toggle组
+    Toggle组（控制滚动面板当前显示的页）
 
 ##设计关卡按钮和锁定关卡的按钮
 
