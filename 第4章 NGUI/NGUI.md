@@ -73,5 +73,5 @@
     
 ##ScrollBar 滚动条
 
-    UIScrollBar组件（Size设置拖动条的大小）
+    UIScrollBar组件（Size属性设置拖动条的大小）
     
