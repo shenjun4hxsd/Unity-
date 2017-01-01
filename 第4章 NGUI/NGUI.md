@@ -19,9 +19,9 @@
 
 ##DynamicFont
 
-##tween
+##Tween
 
-##slider
+##Slider
 
    需要使用sprite组件
 
