@@ -85,3 +85,7 @@
     Style : Chat 从下往上添加
     
 ##聊天系统的背景、滚动条（ScrollBar）、输入列表框(TextList)、输入框（UIInput、去掉输入后失去焦点的事件）
+
+##背包
+
+   拖拽物体添加 UIDRag Drop Item脚本组件
