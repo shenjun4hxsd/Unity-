@@ -99,6 +99,7 @@
     public class Item : MonoBehaviour , IPointDownHandler, IPointUpHandler, IDragHandler
     {
         private Transform lastTrans; // 保存上一次格子的引用
+        private Transform currentTrans;
         private Transform dragable;  // 悬停的格子
     
         public void OnPointDown(PointEventData eventData)
@@ -106,8 +107,8 @@
             // 保存原来格子的引用
             lastTrans = this.transform.parent;
             
-            this.
             // 改变父物体到最后的位置
+            this.transform.parent = dragable;
             
             // 当前物体放大些
 
@@ -117,7 +118,7 @@
         {
             RaycastHit2D hit = Physics2D.Raycast(Input.mousePosition, -Vector2.up)
             {
-                if(hit.collider!= null && hit.collider.tag == "item")
+                if(hit.collider!= null && hit.collider.tag == "Item")
                 {
                     hit.collider.transform.localScale = Vector3.one;
                     if(hit.transform.childCount != 0)
