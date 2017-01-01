@@ -1,6 +1,7 @@
 ##UGUI
 
-##游戏菜单
+
+###游戏菜单
 
     开始游戏（Button）
     游戏设置（Button）
@@ -25,9 +26,10 @@
     ...
     自适应设置
 
-##头像面板
+##战斗界面
 
-##体力进度条（Slider、Filled Image）
+    头像状态（头像、血条、等级）
+    体力进度条（Slider、Filled Image）
 
 ##Image 类型
 
