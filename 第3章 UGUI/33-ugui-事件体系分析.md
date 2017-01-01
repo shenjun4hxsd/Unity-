@@ -40,7 +40,7 @@
 
 ## EventSystem 事件系统详细说明
 
-一、EventSystem对象的说明
+**一、EventSystem对象的说明**
 
 当我们在场景中创建任一UI对象后，Hierarchy面板中都可以看到系统自动创建了对象EventSystem，可以看到该对象下有三个组件：EventSystem、StandaloneInputModule、TouchInputModule，后面两个组件都继承自BaseInputModule。
 
@@ -54,15 +54,11 @@ BaseInputModule是一个基类模块，负责发送输入事件（点击、拖�
 
 另外，其实这些说明官方都有提供，这里也就是把英文译成了中文，并整理下。
 
-
-
 官方文档在这里：
 
 [http://docs.unity3d.com/ScriptReference/EventSystems.EventSystem.html](http://docs.unity3d.com/ScriptReference/EventSystems.EventSystem.html)
 
-
-
-\[if !supportLists\]二、\[endif\]UGUI中的事件系统
+**二、UGUI中的事件系统**
 
 根据第一节中的说明，EventSystem和BaseInputModule是粘在一个对象上的，这两个模块在EventSystem对象上可以直接看到。那么，BaseRaycaster模块呢。。。
 
@@ -72,7 +68,7 @@ BaseInputModule是一个基类模块，负责发送输入事件（点击、拖�
 
 因为有GraphicRaycaster组件的原因，Canvas上的所有UI对象，都可以接受输入模块发出的事件，具体事件的处理在第四节说明。
 
-\[if !supportLists\]三、\[endif\]场景对象中使用事件系统
+**三、场景对象中使用事件系统**
 
 场景中的非UI对象，如果想要接收输入模块的事件，一样的道理，也需要给摄像机挂上一个射线检测组件。PhysicsRaycaster, Physics2Draycaster这两个组件分别是用于3D和2D的场景。当然，还需要场景的对象挂了collider射线才检测的到。
 
@@ -84,7 +80,7 @@ BaseInputModule是一个基类模块，负责发送输入事件（点击、拖�
 
 如果场景中有多个射线检测源：If multiple Raycasters are used then they will all have casting happen against them and **the results will be sorted based on distance to the elements.**
 
-四、响应事件
+**四、响应事件**
 
 1、输入模块可以检测到的事件
 
