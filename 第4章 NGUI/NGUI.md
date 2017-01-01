@@ -70,3 +70,7 @@
 ##可拖拽功能和可调节大小
 
     添加UIDrag Object组件、添加右下角拖拽手柄（BoxCollider、UIDrag Resize脚本、设置锚点）
+    
+##ScrollBar 滚动条
+
+    
