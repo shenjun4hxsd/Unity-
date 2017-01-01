@@ -35,7 +35,6 @@
     Image类型
     Label类型（Shadow、Outline）
 
-
 ##设置和对话框按钮
 
 ##技能和技能冷却
