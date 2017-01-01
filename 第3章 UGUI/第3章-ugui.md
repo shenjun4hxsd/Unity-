@@ -153,6 +153,8 @@
             if(currentTrans != lastTrans)
             {
                 lastTrans.localScale = Vector3.one;
+                lastTrans = currentTrans;
+                currentTrans = hit.transform;
             }
             // 悬停的格子变大些
             if(hit.transform != null && hit.transform.tag == "Item")
