@@ -144,44 +144,39 @@ StandaloneInputModule和TouchInputModule两个组件会检测一些输入操作�
 
 
 
-  
-p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px 'Songti SC'; color: \#888888; -webkit-text-stroke: \#888888}  
-p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px Times; color: \#888888; -webkit-text-stroke: \#888888}  
-p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px Times; color: \#888888; -webkit-text-stroke: \#888888; background-color: \#ffffff}  
-span.s1 {font-kerning: none; background-color: \#ffffff}  
-span.s2 {font: 15.0px Times; font-kerning: none; background-color: \#ffffff}  
-span.s3 {font: 15.0px 'Songti SC'; font-kerning: none; background-color: \#ffffff}  
-span.s4 {font-kerning: none}  
-span.s5 {font: 15.0px 'Songti SC'; font-kerning: none}  
 
 
 变量：
 
-         firstSelectedGameObject：这个值可以在面板设置，如果你需要游戏在启动的时候自动选中某个对象，需要鼠标的那一下点击。
+```
+     firstSelectedGameObject：这个值可以在面板设置，如果你需要游戏在启动的时候自动选中某个对象，需要鼠标的那一下点击。
+```
 
 **currentSelectedGameObject**：当前选中的对象，你可以通过这个值判断当前是否鼠标点击在对象上，因为也许你有拖动摄像机的功能，但是你又不喜欢点击某些对象的时候这个功能又被响应，所以通过这个变量判断是一个很好的办法。
 
-
-
 接口：
 
-         IsPointerOverGameObject：当前鼠标是否在事件系统可以检测的对象上。
+```
+     IsPointerOverGameObject：当前鼠标是否在事件系统可以检测的对象上。
+```
 
 **SetSelectedGameObject**：这个接口也许你会忽略，但是它很棒。因为你点击场景对象的时候，如果不调用这个接口，你的对象是收不到OnSelect事件的，currentSelectedGameObject的值也不会被设置的，必须在点击事件里调用这个接口设置选中对象！
 
 Ex：
 
-         public void OnPointerClick\(PointerEventData eventData\)
+```
+     public void OnPointerClick\(PointerEventData eventData\)
 
-         {
+     {
 
-                  print \("OnPointerClick..."\);
+              print \("OnPointerClick..."\);
+```
 
 **currEvent.SetSelectedGameObject\(gameObject\);**
 
-         }
-
-
+```
+     }
+```
 
 不用在场景里找EventSystem对象，EventSystem组件有一个**current**静态变量，它就是你要的对象，直接EventSystem.current即可使用。
 
