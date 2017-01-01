@@ -162,7 +162,7 @@ StandaloneInputModule和TouchInputModule两个组件会检测一些输入操作�
 
 
 
-**SetSelectedGameObject**：这个接口也许你会忽略，但是它很棒。因为你点击场景对象的时候，如果不调用这个接口，你的对象是收不到OnSelect事件的，currentSelectedGameObject的值也不会被设置的，必须在点击事件里调用这个接口设置选中对象！
+&emsp;&emsp;**SetSelectedGameObject**：这个接口也许你会忽略，但是它很棒。因为你点击场景对象的时候，如果不调用这个接口，你的对象是收不到OnSelect事件的，currentSelectedGameObject的值也不会被设置的，必须在点击事件里调用这个接口设置选中对象！
 
 Ex：
 
