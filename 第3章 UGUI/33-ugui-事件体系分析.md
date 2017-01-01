@@ -130,26 +130,23 @@ StandaloneInputModule和TouchInputModule两个组件会检测一些输入操作�
 
 但是这种通过配置的方式，一旦项目多人协作，项目的复杂度起来，这种拖来拽去的配置终究是会有很多问题的，比如某个组件删除，比如响应接口改了个名字~~都会导致配置丢失，而问题又不能及时发现。又或者程序的监听接口因为某些条件而不同。所以也许你会需要第三种方式。
 
-  
-
-
-
-
 3）、动态添加EventTrigger组件或者修改组件
 
-  
-p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px Times; color: \#464646; -webkit-text-stroke: \#464646}  
-p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px 'Songti SC'; color: \#888888; -webkit-text-stroke: \#888888; background-color: \#ffffff}  
-span.s1 {font: 15.0px 'Songti SC'; font-kerning: none; color: \#888888; background-color: \#ffffff; -webkit-text-stroke: 0px \#888888}  
-span.s2 {font: 15.0px Times; font-kerning: none; color: \#464646; -webkit-text-stroke: 0px \#464646}  
-span.s3 {font-kerning: none; color: \#888888; background-color: \#ffffff; -webkit-text-stroke: 0px \#888888}  
-span.s4 {font: 15.0px Times; font-kerning: none}  
-span.s5 {font-kerning: none}  
+
+
 
 
 其实[http://www.cnblogs.com/zou90512/p/3995932.html](http://www.cnblogs.com/zou90512/p/3995932.html)这位同学的博客对这三种方法都做了很详细的说明。
 
 只不过EventTrigger对外提供的接口不是很友好，导致我们需要添加一个监听，仿佛绕了N了山路弯弯，看着就心情不愉快……反而是这位博主后面说的Button的Click事件的实现方式有点意思……如果项目有需要，也许我们也可以这么做……
+
+
+
+
+
+
+
+五、\[endif\]EventSystem组件提供的一些有意思的接口
 
 🔚
 
