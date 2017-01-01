@@ -137,6 +137,7 @@
                 {
                     this.transform.parent = lastTrans;
                     this.transform.localScale = Vector3.one;
+                    this.transform.localPosition = Vector3.one;
                 }
             }
         }
