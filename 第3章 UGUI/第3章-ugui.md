@@ -98,6 +98,9 @@
     using UnityEngine.EventSystem;
     public class Item : MonoBehaviour , IPointDownHandler, IPointUpHandler, IDragHandler
     {
+        private Transform lastTrans; // 保存上一次格子的引用
+        private Transform dragAble;  // 悬停的格子
+    
         public void OnPointDown(PointEventData eventData)
         {
             // 保存原来格子的引用
@@ -124,6 +127,26 @@
                         // 位置归0
                     }
                 }
+                else  // 没有放到格子上
+                {
+                    
+                }
+            }
+        }
+        
+        public void OnDrag(PointEventData eventData)
+        {
+            if(m_pDragable != null)
+            {
+                m_pDragable.transform.localScale = Vector3.one;
+            }
+            
+            transform.position = Input.mousePosition;
+            RaycastHit2D hit = Physics2D.Raycast(Input.mousePosition, -Vector2.up);
+            if(hit.transform != null && hit.transform.tag == "item")
+            {
+                m_pDragable = hit.tranform;
+                
             }
         }
     }
