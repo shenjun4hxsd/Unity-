@@ -149,6 +149,11 @@
             
             transform.position = Input.mousePosition;
             RaycastHit2D hit = Physics2D.Raycast(Input.mousePosition, -Vector2.up);
+            
+            if(currentTrans != lastTrans)
+            {
+                lastTrans.localScale = Vector3.one;
+            }
             // 悬停的格子变大些
             if(hit.transform != null && hit.transform.tag == "Item")
             {
