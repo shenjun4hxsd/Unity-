@@ -54,4 +54,6 @@
 ##界面之间的切换
 
     对界面添加TweenPosition脚本（脚本可以通过PlayForward、playReverse方法播放）
+    
+##实现节能的CD效果
 
