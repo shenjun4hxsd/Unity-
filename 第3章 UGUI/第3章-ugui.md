@@ -9,7 +9,7 @@
     音量大小（Slider）
     故事简介（Image）
         Title（Image）
-        TextList
+        TextList（Image、Scroll Rect、Mask）
         Scrollbar
 
 ##公告的文本列表
