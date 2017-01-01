@@ -105,8 +105,12 @@
         {
             // 保存原来格子的引用
             lastTrans = this.transform.parent;
-            // 当前物体放大些
+            
+            this.
             // 改变父物体到最后的位置
+            
+            // 当前物体放大些
+
         }
         
         public void OnPointUp(PointEventData eventData)
@@ -144,7 +148,8 @@
             
             transform.position = Input.mousePosition;
             RaycastHit2D hit = Physics2D.Raycast(Input.mousePosition, -Vector2.up);
-            if(hit.transform != null && hit.transform.tag == "item")
+            // 悬停的格子变大些
+            if(hit.transform != null && hit.transform.tag == "Item")
             {
                 hit.transform.localScale = Vector3.one * 1.2f;
             }
