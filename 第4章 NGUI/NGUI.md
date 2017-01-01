@@ -78,6 +78,6 @@
 
 ##TextList文本列表
 
-    使用Label，然后添加UITextList脚本组件（运行后会清空文本，需要通过代码Add方法添加文本）
+    使用Label，然后添加UITextList脚本组件（运行后会清空文本，需要通过代码Add方法添加文本，可拖拽）
     
     
