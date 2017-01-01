@@ -82,4 +82,6 @@
     
     Paragraph Histroy 设置保留最大的纪录数量
     
+    Style : Chat 从下往上添加
+    
     
