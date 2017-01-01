@@ -2,6 +2,16 @@
 
 ##游戏菜单
 
+    开始游戏（Button）
+    游戏设置（Button）
+    结束游戏（Button）
+    声音开关（Toggle）
+    音量大小（Slider）
+    故事简介（Image）
+        Title（Image）
+        TextList
+        Scrollbar
+
 ##公告的文本列表
 
 ##按钮的点击事件
