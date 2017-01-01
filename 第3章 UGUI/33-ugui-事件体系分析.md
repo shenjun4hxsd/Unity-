@@ -132,21 +132,21 @@ StandaloneInputModule和TouchInputModule两个组件会检测一些输入操作�
 
 3）、动态添加EventTrigger组件或者修改组件
 
-
-
-
-
 其实[http://www.cnblogs.com/zou90512/p/3995932.html](http://www.cnblogs.com/zou90512/p/3995932.html)这位同学的博客对这三种方法都做了很详细的说明。
 
 只不过EventTrigger对外提供的接口不是很友好，导致我们需要添加一个监听，仿佛绕了N了山路弯弯，看着就心情不愉快……反而是这位博主后面说的Button的Click事件的实现方式有点意思……如果项目有需要，也许我们也可以这么做……
 
+五、 EventSystem组件提供的一些有意思的接口
 
 
 
 
 
 
-五、\[endif\]EventSystem组件提供的一些有意思的接口
+
+其实文档都有[http://docs.unity3d.com/ScriptReference/EventSystems.EventSystem.html](http://docs.unity3d.com/ScriptReference/EventSystems.EventSystem.html)只是也许你没有注意。
+
+点击EventSystem对象，你可以看到运行时候的一些详细数据：
 
 🔚
 
