@@ -40,10 +40,6 @@
 
 ## EventSystem 事件系统详细说明
 
-
-
-
-
 一、EventSystem对象的说明
 
 当我们在场景中创建任一UI对象后，Hierarchy面板中都可以看到系统自动创建了对象EventSystem，可以看到该对象下有三个组件：EventSystem、StandaloneInputModule、TouchInputModule，后面两个组件都继承自BaseInputModule。
@@ -56,11 +52,15 @@ BaseInputModule是一个基类模块，负责发送输入事件（点击、拖�
 
 **总的来说，EventSystem负责管理，BaseInputModule负责输入，BaseRaycaster负责确定目标对象，目标对象负责接收事件并处理，然后一个完整的事件系统就有了。**
 
-另外，其实这些说明官方都有提供，这里也就是把英文译成了中文，并整理下，加上自己的理解，有[问题](http://www.manew.com/forum-ask-1.html)的地方请各路神仙多多指教。
+另外，其实这些说明官方都有提供，这里也就是把英文译成了中文，并整理下。
+
+
 
 官方文档在这里：
 
 [http://docs.unity3d.com/ScriptReference/EventSystems.EventSystem.html](http://docs.unity3d.com/ScriptReference/EventSystems.EventSystem.html)
+
+
 
 \[if !supportLists\]二、\[endif\]UGUI中的事件系统
 
@@ -89,7 +89,7 @@ BaseInputModule是一个基类模块，负责发送输入事件（点击、拖�
 1、输入模块可以检测到的事件
 
 ```
-     StandaloneInputModule和TouchInputModule两个组件会检测一些输入操作，以事件的方式（message系统）通知目标对象，那么这两个组件支持的事件主要有以下：
+StandaloneInputModule和TouchInputModule两个组件会检测一些输入操作，以事件的方式（message系统）通知目标对象，那么这两个组件支持的事件主要有以下：
 ```
 
 * IPointerEnterHandler - OnPointerEnter - Called when a pointer enters the object
@@ -117,7 +117,7 @@ BaseInputModule是一个基类模块，负责发送输入事件（点击、拖�
 2、接收输入事件的方式
 
 ```
-     1）、自行继承接口实现监听
+1）、自行继承接口实现监听
 ```
 
 在mono脚本中继承输入模块提供的事件接口，如下图。接口的定义方式也可以查下官方手册，[http://docs.unity3d.com/ScriptReference/EventSystems.IBeginDragHandler.html](http://docs.unity3d.com/ScriptReference/EventSystems.IBeginDragHandler.html)这边有每一个接口的定义方式，放心大胆地点进去。另外，添加ObjChooseEvent组件的对象，一定要有Collider哦。
