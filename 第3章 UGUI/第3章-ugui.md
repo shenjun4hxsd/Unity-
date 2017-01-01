@@ -62,16 +62,9 @@
         ScrollRect（Content设置为GridLayouGroup的物体）、添加Mask、脚本控制滚动的位置（scrollRect.horizontalNormalizedPosition）
             GridLayoutGroup 控制所有的关卡排列
     Toggle组（控制滚动面板当前显示的页）
+        滑动列表自动设置Toggle的选项
+        设置Toggle的选项设置滚动面板的内容
 
-##设计关卡按钮和锁定关卡的按钮
-
-##添加所有关卡、并利用Grid Layout进行排序
-
-##关卡的滚动列表
-
-##滑动列表按照页数滑动的单选按钮
-
-##利用单选按钮控制列表的滑动
 
 ##任务列表（背景、人物项、）
 
