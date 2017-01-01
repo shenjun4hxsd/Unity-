@@ -38,34 +38,13 @@
 
 ![](/assets/39576101751325.png)
 
-
-
 ## EventSystem 事件系统详细说明
 
-  
-p.p1 {margin: 0.0px 0.0px 0.0px 28.8px; text-indent: -28.8px; font: 15.0px Times; color: \#888888; -webkit-text-stroke: \#888888}  
-p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; text-indent: 28.0px; font: 15.0px Times; color: \#888888; -webkit-text-stroke: \#888888}  
-p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px Times; color: \#888888; -webkit-text-stroke: \#888888}  
-p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px 'Songti SC'; color: \#888888; -webkit-text-stroke: \#888888}  
-p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px Times; color: \#464646; -webkit-text-stroke: \#464646}  
-p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; text-indent: 28.0px; font: 15.0px 'Songti SC'; color: \#888888; -webkit-text-stroke: \#888888}  
-p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; text-indent: 23.9px; font: 15.0px Times; color: \#888888; -webkit-text-stroke: \#888888}  
-p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px Times; color: \#888888; -webkit-text-stroke: \#888888; background-color: \#ffffff}  
-li.li3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px Times; color: \#888888; -webkit-text-stroke: \#888888}  
-span.s1 {font-kerning: none; background-color: \#ffffff}  
-span.s2 {font: 15.0px 'Songti SC'; font-kerning: none; background-color: \#ffffff}  
-span.s3 {font: 15.0px Times; font-kerning: none; background-color: \#ffffff}  
-span.s4 {font: 15.0px 'Songti SC'; font-kerning: none; color: \#555555; -webkit-text-stroke: 0px \#555555}  
-span.s5 {font-kerning: none; color: \#888888; background-color: \#ffffff; -webkit-text-stroke: 0px \#888888}  
-span.s6 {font-kerning: none; color: \#464646; -webkit-text-stroke: 0px \#464646}  
-span.s7 {background-color: \#ffffff}  
-span.s8 {font: 15.0px Times; font-kerning: none; color: \#464646; -webkit-text-stroke: 0px \#464646}  
-span.s9 {font-kerning: none}  
-span.s10 {font: 15.0px 'Songti SC'; font-kerning: none}  
-ul.ul1 {list-style-type: disc}  
 
 
-一、\[endif\]EventSystem对象的说明
+
+
+一、EventSystem对象的说明
 
 当我们在场景中创建任一UI对象后，Hierarchy面板中都可以看到系统自动创建了对象EventSystem，可以看到该对象下有三个组件：EventSystem、StandaloneInputModule、TouchInputModule，后面两个组件都继承自BaseInputModule。
 
@@ -83,8 +62,6 @@ BaseInputModule是一个基类模块，负责发送输入事件（点击、拖�
 
 [http://docs.unity3d.com/ScriptReference/EventSystems.EventSystem.html](http://docs.unity3d.com/ScriptReference/EventSystems.EventSystem.html)
 
-
-
 \[if !supportLists\]二、\[endif\]UGUI中的事件系统
 
 根据第一节中的说明，EventSystem和BaseInputModule是粘在一个对象上的，这两个模块在EventSystem对象上可以直接看到。那么，BaseRaycaster模块呢。。。
@@ -94,8 +71,6 @@ BaseInputModule是一个基类模块，负责发送输入事件（点击、拖�
 对于UI模块，在Canvas对象下我们可以看到GraphicRaycaster组件。如果Canvas的渲染模式是SceenSpace-Overlay，那么我们是看不到Camera组件的。所以应该是GraphicRaycaster会对UI不同的渲染模式做特殊处理。
 
 因为有GraphicRaycaster组件的原因，Canvas上的所有UI对象，都可以接受输入模块发出的事件，具体事件的处理在第四节说明。
-
-
 
 \[if !supportLists\]三、\[endif\]场景对象中使用事件系统
 
@@ -109,13 +84,13 @@ BaseInputModule是一个基类模块，负责发送输入事件（点击、拖�
 
 如果场景中有多个射线检测源：If multiple Raycasters are used then they will all have casting happen against them and **the results will be sorted based on distance to the elements.**
 
-
-
- 四、响应事件
+四、响应事件
 
 1、输入模块可以检测到的事件
 
-         StandaloneInputModule和TouchInputModule两个组件会检测一些输入操作，以事件的方式（message系统）通知目标对象，那么这两个组件支持的事件主要有以下：
+```
+     StandaloneInputModule和TouchInputModule两个组件会检测一些输入操作，以事件的方式（message系统）通知目标对象，那么这两个组件支持的事件主要有以下：
+```
 
 * IPointerEnterHandler - OnPointerEnter - Called when a pointer enters the object
 * IPointerExitHandler - OnPointerExit - Called when a pointer exits the object
@@ -139,11 +114,11 @@ BaseInputModule是一个基类模块，负责发送输入事件（点击、拖�
 
 如果你自定义了自己的输入模块，那么以上这些事件肯定是不能用的了。
 
-
-
 2、接收输入事件的方式
 
-         1）、自行继承接口实现监听
+```
+     1）、自行继承接口实现监听
+```
 
 在mono脚本中继承输入模块提供的事件接口，如下图。接口的定义方式也可以查下官方手册，[http://docs.unity3d.com/ScriptReference/EventSystems.IBeginDragHandler.html](http://docs.unity3d.com/ScriptReference/EventSystems.IBeginDragHandler.html)这边有每一个接口的定义方式，放心大胆地点进去。另外，添加ObjChooseEvent组件的对象，一定要有Collider哦。
 
