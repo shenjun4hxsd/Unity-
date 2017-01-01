@@ -42,8 +42,6 @@
 
 ## EventSystem 事件系统详细说明
 
-
-
 **一、EventSystem对象的说明**
 
 当我们在场景中创建任一UI对象后，Hierarchy面板中都可以看到系统自动创建了对象EventSystem，可以看到该对象下有三个组件：EventSystem、StandaloneInputModule、TouchInputModule，后面两个组件都继承自BaseInputModule。
@@ -62,8 +60,6 @@ BaseInputModule是一个基类模块，负责发送输入事件（点击、拖�
 
 [http://docs.unity3d.com/ScriptReference/EventSystems.EventSystem.html](http://docs.unity3d.com/ScriptReference/EventSystems.EventSystem.html)
 
-
-
 **二、UGUI中的事件系统**
 
 根据第一节中的说明，EventSystem和BaseInputModule是粘在一个对象上的，这两个模块在EventSystem对象上可以直接看到。那么，BaseRaycaster模块呢。。。
@@ -73,8 +69,6 @@ BaseInputModule是一个基类模块，负责发送输入事件（点击、拖�
 对于UI模块，在Canvas对象下我们可以看到GraphicRaycaster组件。如果Canvas的渲染模式是SceenSpace-Overlay，那么我们是看不到Camera组件的。所以应该是GraphicRaycaster会对UI不同的渲染模式做特殊处理。
 
 因为有GraphicRaycaster组件的原因，Canvas上的所有UI对象，都可以接受输入模块发出的事件，具体事件的处理在第四节说明。
-
-
 
 **三、场景对象中使用事件系统**
 
@@ -87,8 +81,6 @@ BaseInputModule是一个基类模块，负责发送输入事件（点击、拖�
 如果场景中只有一个射线检测源：When a Raycaster is present and enabled in the scene it will be used by the EventSystem whenever a query is issued from an InputModule.
 
 如果场景中有多个射线检测源：If multiple Raycasters are used then they will all have casting happen against them and **the results will be sorted based on distance to the elements.**
-
-
 
 **四、响应事件**
 
@@ -137,6 +129,27 @@ StandaloneInputModule和TouchInputModule两个组件会检测一些输入操作�
 这种方式的优点是，当你选中一个你要监听的类型，你可以为这个事件类型添加多个监听接口，统一管理，可以清楚的知道到底哪些地方响应了这个事件呢。如果是继承Interface的方式，它将会分散在N个脚本里，一旦出现问题，那查起来一定会很酸爽。
 
 但是这种通过配置的方式，一旦项目多人协作，项目的复杂度起来，这种拖来拽去的配置终究是会有很多问题的，比如某个组件删除，比如响应接口改了个名字~~都会导致配置丢失，而问题又不能及时发现。又或者程序的监听接口因为某些条件而不同。所以也许你会需要第三种方式。
+
+  
+
+
+
+
+3）、动态添加EventTrigger组件或者修改组件
+
+  
+p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px Times; color: \#464646; -webkit-text-stroke: \#464646}  
+p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px 'Songti SC'; color: \#888888; -webkit-text-stroke: \#888888; background-color: \#ffffff}  
+span.s1 {font: 15.0px 'Songti SC'; font-kerning: none; color: \#888888; background-color: \#ffffff; -webkit-text-stroke: 0px \#888888}  
+span.s2 {font: 15.0px Times; font-kerning: none; color: \#464646; -webkit-text-stroke: 0px \#464646}  
+span.s3 {font-kerning: none; color: \#888888; background-color: \#ffffff; -webkit-text-stroke: 0px \#888888}  
+span.s4 {font: 15.0px Times; font-kerning: none}  
+span.s5 {font-kerning: none}  
+
+
+其实[http://www.cnblogs.com/zou90512/p/3995932.html](http://www.cnblogs.com/zou90512/p/3995932.html)这位同学的博客对这三种方法都做了很详细的说明。
+
+只不过EventTrigger对外提供的接口不是很友好，导致我们需要添加一个监听，仿佛绕了N了山路弯弯，看着就心情不愉快……反而是这位博主后面说的Button的Click事件的实现方式有点意思……如果项目有需要，也许我们也可以这么做……
 
 🔚
 
