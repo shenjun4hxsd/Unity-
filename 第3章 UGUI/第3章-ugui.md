@@ -162,6 +162,15 @@
                 hit.transform.localScale = Vector3.one * 1.2f;
             }
         }
+        
+        void Update()
+        {
+            if(currentTrans != null)
+            {
+                currentTrans.localScale = Vector3.one * 1.2f;
+                lastTrans.localScale = Vector3.one;
+            }
+        }
     }
 ```
 
