@@ -57,6 +57,11 @@
 
 ##关卡选择界面
 
+    背景
+    滚动面板
+        ScrollRect、Mask、脚本控制滚动的位置（scrollRect.horizontalNormalizedPosition）
+    Toggle组
+
 ##设计关卡按钮和锁定关卡的按钮
 
 ##添加所有关卡、并利用Grid Layout进行排序
