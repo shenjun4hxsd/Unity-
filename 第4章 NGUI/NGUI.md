@@ -47,7 +47,7 @@
 
 ##监听控件的事件
 
-    声音大小  UIProgressBar.current 用来获取当前滑动条的值
-    游戏难度  UIPopupList.current 获取当前PopupList的值
-    是否全屏
+    声音大小  UIProgressBar.current.value 用来获取当前滑动条的值
+    游戏难度  UIPopupList.current.value 获取当前PopupList的值
+    是否全屏  UIToggle.current.value 
 
