@@ -59,7 +59,7 @@
 
     背景
     滚动面板
-        ScrollRect、Mask、脚本控制滚动的位置（scrollRect.horizontalNormalizedPosition）
+        ScrollRect（Content设置为GridLayouGroup的物体）、添加Mask、脚本控制滚动的位置（scrollRect.horizontalNormalizedPosition）
             GridLayoutGroup 控制所有的关卡排列
     Toggle组（控制滚动面板当前显示的页）
 
