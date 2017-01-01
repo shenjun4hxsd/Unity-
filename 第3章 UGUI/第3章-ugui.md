@@ -131,6 +131,10 @@
                     {
                         // 放回原处
                         // 位置归0
+                        
+                        this.transform.parent = lastTrans;
+                        this.transform.localScale = Vector3.one;
+                        this.transform.localPosition = Vector3.one;
                     }
                 }
                 else  // 没有放到格子上
