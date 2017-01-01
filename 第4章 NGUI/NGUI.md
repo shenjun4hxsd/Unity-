@@ -31,6 +31,8 @@
 
 ##Slider Colors脚本
 
+    滑动条根据不同的位置，颜色会有变化。
+
 ##Poput List
 
     需要添加子物体Label，用Label显示当前的选项，把Lable拖入事件OnValueChange，然后选择事件类型为SetCurrentSelection。
