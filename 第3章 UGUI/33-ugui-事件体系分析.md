@@ -170,11 +170,8 @@ Ex：
      public void OnPointerClick\(PointerEventData eventData\)
     {
 
-              print \("OnPointerClick..."\);
-
-            currEvent.SetSelectedGameObject\(gameObject\); 
-
-
+         print \("OnPointerClick..."\);
+         currEvent.SetSelectedGameObject\(gameObject\); 
 
      }
 ```
