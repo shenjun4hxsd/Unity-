@@ -104,6 +104,7 @@
         public void OnPointDown(PointEventData eventData)
         {
             // 保存原来格子的引用
+            lastTrans = this.transform.parent;
             // 当前物体放大些
             // 改变父物体到最后的位置
         }
