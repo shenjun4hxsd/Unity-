@@ -13,12 +13,12 @@
         TextList（Image、Scroll Rect、Mask）
         Scrollbar（Image、Scrollbar）
 
-##按钮的点击事件、滑动条的事件
+###按钮的点击事件、滑动条的事件
 
     Slider 改变模型的旋转速度
     通过Slider的OnValueChange事件改变模型物体上的脚本中的值（Dynamic float，把改变后的值传递给事件回调函数）
 
-##开始界面
+###开始界面
 
     开始按钮（Image、Button）
     音量按钮
@@ -26,10 +26,11 @@
     ...
     自适应设置
 
-##战斗界面
+###战斗界面
 
     头像状态（头像、血条、等级）
     体力进度条（Slider、Filled Image）
+    技能按钮
 
 ##Image 类型
 
