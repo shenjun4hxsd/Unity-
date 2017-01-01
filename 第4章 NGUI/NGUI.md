@@ -60,5 +60,5 @@
 
 ##输入框（单行文本、多行文本）
 
-    InputField脚本组件
+    InputField脚本组件（指定Label属性）
 
