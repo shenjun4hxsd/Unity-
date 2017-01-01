@@ -17,7 +17,9 @@
     Slider 改变模型的旋转速度
     通过Slider的OnValueChange事件改变模型物体上的脚本中的值（Dynamic float，把改变后的值传递给事件回调函数）
 
-##开始界面和背景
+##开始界面
+
+    开始按钮（Image、Button）
 
 ##声音按钮
 
