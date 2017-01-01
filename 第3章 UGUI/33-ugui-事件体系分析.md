@@ -146,18 +146,21 @@ StandaloneInputModule和TouchInputModule两个组件会检测一些输入操作�
 
 
 
-变量：
+**变量：**
 
-```
+
+
      firstSelectedGameObject：这个值可以在面板设置，如果你需要游戏在启动的时候自动选中某个对象，需要鼠标的那一下点击。
-```
+
+
 
 **currentSelectedGameObject**：当前选中的对象，你可以通过这个值判断当前是否鼠标点击在对象上，因为也许你有拖动摄像机的功能，但是你又不喜欢点击某些对象的时候这个功能又被响应，所以通过这个变量判断是一个很好的办法。
 
-接口：
+**接口：**
 
 &emsp;&emsp;IsPointerOverGameObject：当前鼠标是否在事件系统可以检测的对象上。
-```
+
+
 
 **SetSelectedGameObject**：这个接口也许你会忽略，但是它很棒。因为你点击场景对象的时候，如果不调用这个接口，你的对象是收不到OnSelect事件的，currentSelectedGameObject的值也不会被设置的，必须在点击事件里调用这个接口设置选中对象！
 
