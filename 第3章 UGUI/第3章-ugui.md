@@ -145,10 +145,7 @@
             RaycastHit2D hit = Physics2D.Raycast(Input.mousePosition, -Vector2.up);
             if(hit.transform != null && hit.transform.tag == "item")
             {
-                dragable = hit.tranform;
-                
                 hit.transform.localScale = Vector3.one * 1.2f;
-                
             }
         }
     }
