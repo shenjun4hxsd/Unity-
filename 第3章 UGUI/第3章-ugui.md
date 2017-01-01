@@ -99,7 +99,7 @@
     public class Item : MonoBehaviour , IPointDownHandler, IPointUpHandler, IDragHandler
     {
         private Transform lastTrans; // 保存上一次格子的引用
-        private Transform dragAble;  // 悬停的格子
+        private Transform dragable;  // 悬停的格子
     
         public void OnPointDown(PointEventData eventData)
         {
