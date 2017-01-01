@@ -78,5 +78,5 @@
 
 ##TextList文本列表
 
-    UITextList脚本组件
+    UITextList脚本组件（运行后会清空文本，需要通过代码控制文本的内容）
     
