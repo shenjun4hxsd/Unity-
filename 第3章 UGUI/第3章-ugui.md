@@ -12,13 +12,10 @@
         TextList（Image、Scroll Rect、Mask）
         Scrollbar（Image、Scrollbar）
 
-##公告的文本列表
-
 ##按钮的点击事件
 
-##模型旋转
-
-##使用Slider控制模型旋转
+    Slider 改变模型的旋转速度
+    通过Slider的OnValueChange事件改变模型物体上的脚本中的值（Dynamic float，把改变后的值传递给事件回调函数）
 
 ##开始界面和背景
 
