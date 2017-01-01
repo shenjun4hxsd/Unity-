@@ -40,6 +40,8 @@
 ##CheckBox
 
     添加BoxCollider、Toggle Script脚本
+    
+    指定UIToggle中State Transition中的Sprite，用于切换状态时显示的图片。
 
 
 
