@@ -44,6 +44,9 @@
         消耗品栏(Toggle)
         材料栏(Toggle)
         装备栏面板
+            背景(Image)
+            格子（GridLayoutGroup）
+                子物体最好使用空物体套壳，避免被改变尺寸
         消耗品面板
         材料栏面板
 
