@@ -63,3 +63,4 @@
     InputField脚本组件（指定Label属性）
     Widget/Pivot会影响文字的开始位置
 
+##注册界面
