@@ -146,7 +146,7 @@ StandaloneInputModule和TouchInputModule两个组件会检测一些输入操作�
 
 
 
-**变量：**
+####变量： 
 
 
 
@@ -156,7 +156,7 @@ StandaloneInputModule和TouchInputModule两个组件会检测一些输入操作�
 
 **currentSelectedGameObject**：当前选中的对象，你可以通过这个值判断当前是否鼠标点击在对象上，因为也许你有拖动摄像机的功能，但是你又不喜欢点击某些对象的时候这个功能又被响应，所以通过这个变量判断是一个很好的办法。
 
-**接口：**
+####接口： 
 
 &emsp;&emsp;IsPointerOverGameObject：当前鼠标是否在事件系统可以检测的对象上。
 
