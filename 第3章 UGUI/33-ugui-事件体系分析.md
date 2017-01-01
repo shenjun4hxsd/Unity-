@@ -170,11 +170,13 @@ Ex：
      {
 
               print \("OnPointerClick..."\);
-```
 
-**currEvent.SetSelectedGameObject\(gameObject\);**
 
-```
+
+              currEvent.SetSelectedGameObject\(gameObject\); 
+
+
+
      }
 ```
 
