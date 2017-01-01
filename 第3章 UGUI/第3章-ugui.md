@@ -136,16 +136,18 @@
         
         public void OnDrag(PointEventData eventData)
         {
-            if(m_pDragable != null)
+            if(dragable != null)
             {
-                m_pDragable.transform.localScale = Vector3.one;
+                dragable.transform.localScale = Vector3.one;
             }
             
             transform.position = Input.mousePosition;
             RaycastHit2D hit = Physics2D.Raycast(Input.mousePosition, -Vector2.up);
             if(hit.transform != null && hit.transform.tag == "item")
             {
-                m_pDragable = hit.tranform;
+                dragable = hit.tranform;
+                
+                hit.transform.localScale = Vector3.one * 1.2f;
                 
             }
         }
