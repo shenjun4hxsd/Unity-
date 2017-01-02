@@ -165,5 +165,6 @@
     * [3.2 AutoLayout剖析](第3章 UGUI/32-autolayout剖析.md)
     * [3.3 UGUI 事件体系分析](第3章 UGUI/33-ugui-事件体系分析.md)
     * [3.4 UGUI 射线检测](第3章 UGUI/34-ugui-射线检测.md)
+    * [3.5 UGUI中的Canvas、Camera和Canvas Scaler](第3章 UGUI/35-ugui中的canvas、camera和canvas-scaler.md)
 * [第4章 NGUI](第4章 NGUI/NGUI.md)
 
