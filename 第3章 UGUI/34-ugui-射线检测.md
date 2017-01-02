@@ -98,7 +98,7 @@ Selectable的意思是可选择的，它是UGUI中很多交互控件(Button/ Sli
             Vector2 pos;  
             RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform,  
                 gameCamera.WorldToScreenPoint(worldGo.transform.position), canvas.worldCamera, out pos);  
-            RectTransform rect = transform.transform as RectTransform;  
+            RectTransform rect = transform as RectTransform;  
             return pos;  
     }  
 ```
