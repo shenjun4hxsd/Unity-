@@ -91,6 +91,8 @@ Selectable的意思是可选择的，它是UGUI中很多交互控件(Button/ Sli
       
             return uiPos;  
     }  
+    
+    
     public static Vector2 WorldToUIPoint(Transform worldGo)  
         {  
             Vector2 pos;  
