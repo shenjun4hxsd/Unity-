@@ -164,5 +164,6 @@
     * [3.1 RectTransform剖析](第3章 UGUI/31-recttransform剖析.md)
     * [3.2 AutoLayout剖析](第3章 UGUI/32-autolayout剖析.md)
     * [3.3 UGUI 事件体系分析](第3章 UGUI/33-ugui-事件体系分析.md)
+    * [3.4 UGUI 射线检测](第3章 UGUI/34-ugui-射线检测.md)
 * [第4章 NGUI](第4章 NGUI/NGUI.md)
 
