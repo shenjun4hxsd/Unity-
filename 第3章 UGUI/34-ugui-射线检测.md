@@ -44,29 +44,29 @@ Selectable的意思是可选择的，它是UGUI中很多交互控件(Button/ Sli
 对于EventSystem.current.IsPointerOverGameObject这个函数，因为EventSystem是UI的事件系统，所以IsPointerOverGameObject中的GameObject是针对UI的，而不是普遍意义上的GameObject
 
 ```javascript
-using UnityEngine;  
-using UnityEngine.UI;  
-using UnityEngine.EventSystems;  
-  
-public class TestTouch : MonoBehaviour {  
-  
-    public Text text;  
-  
-    void Update()   
-    {  
-        if (Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began))  
+    using UnityEngine;  
+    using UnityEngine.UI;  
+    using UnityEngine.EventSystems;  
+      
+    public class TestTouch : MonoBehaviour {  
+      
+        public Text text;  
+      
+        void Update()   
         {  
-#if UNITY_ANDROID || UNITY_IPHONE  
-            if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))  
-#else  
-            if (EventSystem.current.IsPointerOverGameObject())  
-#endif  
-                  
-                text.text = "当前触摸在UI上";  
-            else  
-                text.text = "当前没有触摸在UI上";  
+            if (Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began))  
+            {  
+    #if UNITY_ANDROID || UNITY_IPHONE  
+                if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))  
+    #else  
+                if (EventSystem.current.IsPointerOverGameObject())  
+    #endif  
+                      
+                    text.text = "当前触摸在UI上";  
+                else  
+                    text.text = "当前没有触摸在UI上";  
+            }  
         }  
-    }  
-  
-}
+      
+    }
 ```
