@@ -70,3 +70,33 @@ Selectable的意思是可选择的，它是UGUI中很多交互控件(Button/ Sli
       
     }
 ```
+
+
+---
+
+
+##世界坐标转UGUI坐标
+
+```javascript
+    public static Vector3 WorldToUI(Camera camera,Vector3 pos){  
+            CanvasScaler scaler = GameObject.Find("UIRoot").GetComponent<CanvasScaler>();  
+      
+            float resolutionX = scaler.referenceResolution.x;  
+            float resolutionY = scaler.referenceResolution.y;  
+      
+            Vector3 viewportPos = camera.WorldToViewportPoint(pos);  
+      
+            Vector3 uiPos = new Vector3(viewportPos.x * resolutionX - resolutionX * 0.5f,  
+                viewportPos.y * resolutionY - resolutionY * 0.5f,0);  
+      
+            return uiPos;  
+    }  
+    public static Vector2 WorldToUIPoint(Transform worldGo)  
+        {  
+            Vector2 pos;  
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform,  
+                gameCamera.WorldToScreenPoint(worldGo.transform.position), canvas.worldCamera, out pos);  
+            RectTransform rect = transform.transform as RectTransform;  
+            return pos;  
+    }  
+```
