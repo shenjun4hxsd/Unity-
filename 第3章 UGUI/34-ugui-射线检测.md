@@ -102,3 +102,6 @@ Selectable的意思是可选择的，它是UGUI中很多交互控件(Button/ Sli
             return pos;  
     }  
 ```
+
+>判断当前是否点到了UI物体了
+>EventSystem.current.IsPointerOverGameObject ()
