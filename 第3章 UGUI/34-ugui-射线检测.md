@@ -107,4 +107,4 @@ Selectable的意思是可选择的，它是UGUI中很多交互控件(Button/ Sli
 >EventSystem.current.IsPointerOverGameObject ()
 
 >UGUI射线检测
->eventData.pointerCurrentRaycast.gameObject.name
+>eventData.pointerCurrentRaycast.gameObject
