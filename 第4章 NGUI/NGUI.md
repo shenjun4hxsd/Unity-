@@ -7,7 +7,8 @@
     设置字体：Unity字体（动态字体）、NGUI字体
 
 ##Sprite
-
+    
+    功能类似UGUI中的Image
     Slice   九宫格 修改Border属性
     Filled  技能冷却动画
 
