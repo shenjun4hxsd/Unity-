@@ -74,7 +74,7 @@
 
 ###9、Slider
 
-       需要使用sprite组件
+       需要使用slider组件
        
        Slider Colors脚本
             滑动条根据不同的位置，颜色会有变化。
