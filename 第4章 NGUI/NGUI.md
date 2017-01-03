@@ -117,12 +117,12 @@
 
     添加UIDrag Object组件、添加右下角拖拽手柄（BoxCollider、UIDrag Resize脚本、设置锚点）
     
-###ScrollBar 滚动条
+###14、ScrollBar 滚动条
 
     UIScrollBar组件（Size属性设置拖动条的大小）
     
 
-##TextList文本列表
+###15、TextList文本列表
 
     使用Label，然后添加UITextList脚本组件（运行后会清空文本，需要通过代码Add方法添加文本，可拖拽）
     
