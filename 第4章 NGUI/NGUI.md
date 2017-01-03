@@ -38,6 +38,8 @@
 
 ###AtlasMaker（图集制作）
 
+    把碎图整合到一张大图中
+    
 ###DynamicFont（动态字体）
 
     UIFont组件
