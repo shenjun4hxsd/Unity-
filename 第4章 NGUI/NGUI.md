@@ -40,7 +40,7 @@
 
     把碎图整合到一张大图中
     
->DynamicFont（动态字体）
+>DynamicFont（动态字体制作）
 
 >&emsp;&emsp;UIFont组件
 
