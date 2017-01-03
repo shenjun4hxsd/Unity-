@@ -88,8 +88,10 @@
         添加BoxCollider、Toggle Script脚本
         
         指定UIToggle中State Transition中的Sprite，用于切换状态时显示的图片。
+        
+---
 
-##设计选项（声音大小、难度选项）
+##练习一：设计选项（声音大小、难度选项）
 
 ##监听控件的事件
 
