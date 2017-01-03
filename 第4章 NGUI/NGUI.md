@@ -48,7 +48,7 @@
 
     可以播放声音的脚本，Button的预设上自带
 
-##Typewriter Effect脚本 （打字机效果）
+###Typewriter Effect脚本 （打字机效果）
 
 ##Slider Colors脚本
 
