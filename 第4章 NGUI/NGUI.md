@@ -13,7 +13,7 @@
     
         功能类似UGUI中的Image
         Slice   九宫格 修改Border属性
-        Filled  技能冷却动画
+        Filled  技能冷却动画 实现技能的CD效果
 
 ###4、Button
     
@@ -103,7 +103,7 @@
 
     对界面添加TweenPosition脚本（脚本可以通过PlayForward、playReverse方法播放）
     
-##实现技能的CD效果
+###
 
 ##输入框（单行文本、多行文本）
 
