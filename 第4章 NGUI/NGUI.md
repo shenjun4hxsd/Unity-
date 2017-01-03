@@ -1,19 +1,19 @@
 ###1、UIRoot
 
-    注意：需要打开Panel组件，否则看不到框，无法用鼠标菜单。
+        注意：需要打开Panel组件，否则看不到框，无法用鼠标菜单。
 
 ###2、Lable
 
-    设置字体：Unity字体（动态字体）、NGUI字体
-    
-    Typewriter Effect脚本 （打字机效果）
+        设置字体：Unity字体（动态字体）、NGUI字体
+        
+        Typewriter Effect脚本 （打字机效果）
 
 
 ###3、Sprite
     
-    功能类似UGUI中的Image
-    Slice   九宫格 修改Border属性
-    Filled  技能冷却动画
+        功能类似UGUI中的Image
+        Slice   九宫格 修改Border属性
+        Filled  技能冷却动画
 
 ###4、Button
     
@@ -49,6 +49,10 @@
 >&emsp;&emsp;UIFont组件
 
 ###8、Tween （补间动画）
+
+        Tween Alpha --- PlayStyle : Once/Loop/PingPang
+        Tween Color
+        Tween 
 
 ###9、Slider
 
