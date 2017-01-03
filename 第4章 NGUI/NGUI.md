@@ -81,13 +81,13 @@
 
 ###10、Poput List
 
-    需要添加子物体Label，用Label显示当前的选项，把Lable拖入事件OnValueChange，然后选择事件类型为SetCurrentSelection。
+        需要添加子物体Label，用Label显示当前的选项，把Lable拖入事件OnValueChange，然后选择事件类型为SetCurrentSelection。
     
-###CheckBox
+###11、CheckBox
 
-    添加BoxCollider、Toggle Script脚本
-    
-    指定UIToggle中State Transition中的Sprite，用于切换状态时显示的图片。
+        添加BoxCollider、Toggle Script脚本
+        
+        指定UIToggle中State Transition中的Sprite，用于切换状态时显示的图片。
 
 ##设计选项（声音大小、难度选项）
 
