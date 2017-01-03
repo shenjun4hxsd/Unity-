@@ -74,14 +74,10 @@
 
 ###9、Slider
 
-   需要使用sprite组件
-
-
-###11、Typewriter Effect脚本 （打字机效果）
-
-###12、Slider Colors脚本
-
-    滑动条根据不同的位置，颜色会有变化。
+       需要使用sprite组件
+       
+       Slider Colors脚本
+            滑动条根据不同的位置，颜色会有变化。
 
 ###Poput List
 
