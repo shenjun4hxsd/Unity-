@@ -53,4 +53,27 @@ Include Children ：是否让该对象的所有子对象也发送这个点击事
 	}
 ```
 
+3.使用UIListener
 
+这个也是推荐大家使用的一种方法，选择按钮后在Unity导航菜单栏中选择Component->NGUI->Internal ->Event Listener 。 挂在按钮上就可以，它没有任何参数。。
+
+![](/assets/屏幕快照-2013-06-24-下午5.38.30.png)
+
+在任何一个脚本或者类中即可得到按钮的点击事件、把如下代码放在任意类中或者脚本中。
+
+```javascript
+	void Awake () 
+	{	
+                //获取需要监听的按钮对象
+		GameObject button = GameObject.Find("UI Root (2D)/Camera/Anchor/Panel/LoadUI/MainCommon/Button");
+                //设置这个按钮的监听，指向本类的ButtonClick方法中。
+		UIEventListener.Get(button).onClick = ButtonClick;
+	}
+ 
+        //计算按钮的点击事件
+	void ButtonClick(GameObject button)
+	{
+		Debug.Log("GameObject " + button.name);
+ 
+	}
+```
