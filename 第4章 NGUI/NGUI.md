@@ -9,8 +9,12 @@
     Filled  技能冷却动画
 
 ##Button
+    
+    Sprite、BoxCollider、Button
 
 ##Panel
+
+    可以通过Clipping 设置剪裁区域
 
 ##Widiget
 
