@@ -36,6 +36,8 @@
 
 ##DynamicFont
 
+    UIFont组件
+
 ##Tween
 
 ##Slider
