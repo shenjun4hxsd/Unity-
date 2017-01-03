@@ -2,17 +2,17 @@
 
     注意：需要打开Panel组件，否则看不到框，无法用鼠标菜单。
 
-##Lable
+###Lable
 
     设置字体：Unity字体（动态字体）、NGUI字体
 
-##Sprite
+###Sprite
     
     功能类似UGUI中的Image
     Slice   九宫格 修改Border属性
     Filled  技能冷却动画
 
-##Button
+###Button
     
     Sprite、BoxCollider、Button
     
@@ -23,18 +23,18 @@
          2）、使用Sprite创建按钮、添加子物体Label
                 可以添加2个UIButton组件来分别控制Sprite和Label的颜色变化
 
-##Panel
+###Panel
 
         用于分组管理子元素的容器、可以在Scene窗口中使用右键菜单功能
         可以通过Clipping 设置剪裁区域
 
-##Widiget
+###Widiget
 
-##Anchor
+###Anchor（锚点）
 
-##AtlasMaker
+###AtlasMaker（图集制作）
 
-##DynamicFont
+###DynamicFont（动态字体）
 
     UIFont组件
 
