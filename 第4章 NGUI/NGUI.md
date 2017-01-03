@@ -50,7 +50,10 @@
 
 ###8、Tween （补间动画）
 
-        Tween Alpha --- PlayStyle : Once/Loop/PingPang
+        Tween Alpha
+            From/To
+            PlayStyle : Once/Loop/PingPang
+            
         Tween Color
         Tween Width
         Tween Height
