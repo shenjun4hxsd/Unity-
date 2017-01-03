@@ -19,7 +19,8 @@
                 添加BoxCollider : 用于射线检测
                 添加Button组件
     
-         2）、使用Sprite创建按钮
+         2）、使用Sprite创建按钮、添加子物体Label
+                可以添加2个UIButton组件来分别控制Sprite和Label的颜色变化
 
 ##Panel
 
