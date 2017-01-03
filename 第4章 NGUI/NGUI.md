@@ -12,11 +12,17 @@
 ##Button
     
     Sprite、BoxCollider、Button
+    
+    举例：1）、使用Label创建按钮
+                添加BoxCollider : 用于射线检测
+                添加Button组件
+    
+         2）、使用Sprite创建按钮
 
 ##Panel
 
-    用于分组管理子元素的容器、可以使用右键菜单
-    可以通过Clipping 设置剪裁区域
+        用于分组管理子元素的容器、可以使用右键菜单
+        可以通过Clipping 设置剪裁区域
 
 ##Widiget
 
