@@ -5,6 +5,9 @@
 ###2、Lable
 
     设置字体：Unity字体（动态字体）、NGUI字体
+    
+    Typewriter Effect脚本 （打字机效果）
+
 
 ###3、Sprite
     
@@ -51,9 +54,6 @@
 
    需要使用sprite组件
 
-###10、Play Sound脚本
-
-    可以播放声音的脚本，Button的预设上自带
 
 ###11、Typewriter Effect脚本 （打字机效果）
 
