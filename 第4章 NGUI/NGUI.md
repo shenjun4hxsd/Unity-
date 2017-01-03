@@ -93,7 +93,7 @@
 
 ####练习一：设计选项（声音大小、难度选项）
 
-##12、监听控件的事件
+###12、监听控件的事件
 
     声音大小  UIProgressBar.current.value 用来获取当前滑动条的值（最好对字符串Trim()处理下）
     游戏难度  UIPopupList.current.value 获取当前PopupList的值
