@@ -38,13 +38,15 @@
 
     UIFont组件
 
-##Tween （动画）
+###Tween （动画）
 
-##Slider
+###Slider
 
    需要使用sprite组件
 
-##Play Sound脚本
+###Play Sound脚本
+
+    可以播放声音的脚本，Button的预设上自带
 
 ##Typewriter Effect脚本 （打字机效果）
 
