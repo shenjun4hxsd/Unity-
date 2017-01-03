@@ -44,7 +44,7 @@
 
 >&emsp;&emsp;UIFont组件
 
-###Tween （动画）
+###Tween （补间动画）
 
 ###Slider
 
