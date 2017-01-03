@@ -4,6 +4,8 @@
 
 ##Lable
 
+    设置字体
+
 ##Sprite
 
     Slice   九宫格 修改Border属性
