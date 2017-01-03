@@ -34,7 +34,7 @@
     Depth 深度，用来控制绘制循序，数值小的先绘制
     Size 图片尺寸
     Aspect 比例 Free/BasedOnWidth/BasedOnHeight
-    Anchors 锚点设置
+    Anchors 锚点设置**
 
 ###7、AtlasMaker（图集制作）
 
