@@ -109,11 +109,11 @@
     InputField脚本组件（指定Label属性）
     Widget/Pivot会影响文字的开始位置
 
-###练习三、注册界面
+####练习三、注册界面
 
     UIInput（使用value的值改变显示的文本）
     
-###练习四、可拖拽功能和可调节大小
+####练习四、可拖拽功能和可调节大小
 
     添加UIDrag Object组件、添加右下角拖拽手柄（BoxCollider、UIDrag Resize脚本、设置锚点）
     
@@ -132,7 +132,7 @@
     
 ##聊天系统的背景、滚动条（ScrollBar）、输入列表框(TextList)、输入框（UIInput、去掉输入后失去焦点的事件）
 
-##背包
+####练习五：背包
 
    拖拽物体添加 UIDRagDropItem脚本组件
    
