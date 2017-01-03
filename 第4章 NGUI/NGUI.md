@@ -59,11 +59,17 @@
             Ignore TimeScale
             
         Tween Color
+            
         Tween Width
+        
         Tween Height
+        
         Tween Position
+        
         Tween Rotation
+        
         Tween Scale
+        
         Tween Transform
 
 ###9、Slider
