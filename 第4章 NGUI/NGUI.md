@@ -53,6 +53,7 @@
         Tween Alpha
             From/To
             PlayStyle : Once/Loop/PingPang
+            Ignore TimeScale
             
         Tween Color
         Tween Width
