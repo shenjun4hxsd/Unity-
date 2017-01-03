@@ -52,7 +52,12 @@
 
         Tween Alpha --- PlayStyle : Once/Loop/PingPang
         Tween Color
-        Tween 
+        Tween Width
+        Tween Height
+        Tween Position
+        Tween Rotation
+        Tween Scale
+        Tween Transform
 
 ###9、Slider
 
