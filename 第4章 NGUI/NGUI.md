@@ -113,11 +113,11 @@
 
     UIInput（使用value的值改变显示的文本）
     
-##可拖拽功能和可调节大小
+###练习四、可拖拽功能和可调节大小
 
     添加UIDrag Object组件、添加右下角拖拽手柄（BoxCollider、UIDrag Resize脚本、设置锚点）
     
-##ScrollBar 滚动条
+###ScrollBar 滚动条
 
     UIScrollBar组件（Size属性设置拖动条的大小）
     
