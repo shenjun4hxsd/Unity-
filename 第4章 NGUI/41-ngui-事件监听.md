@@ -62,13 +62,13 @@ Include Children ：是否让该对象的所有子对象也发送这个点击事
 ```javascript
 	void Awake () 
 	{	
-                //获取需要监听的按钮对象
+                // 获取需要监听的按钮对象
 		GameObject button = GameObject.Find("UI Root/Control - Colored Button");
-                //设置这个按钮的监听，指向本类的ButtonClick方法中。
+                // 设置这个按钮的监听，指向本类的ButtonClick方法
 		UIEventListener.Get(button).onClick = ButtonClick;
 	}
  
-        //计算按钮的点击事件
+        // 按钮的点击事件
 	void ButtonClick(GameObject button)
 	{
 		Debug.Log("GameObject " + button.name);
