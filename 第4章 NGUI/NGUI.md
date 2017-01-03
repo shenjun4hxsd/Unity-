@@ -53,7 +53,7 @@
         Tween Alpha
             From/To
             PlayStyle : Once/Loop/PingPang
-            Duration : 持续事件
+            Duration : 持续时间
             StartDelay : 多少事件后开始
             TweenGroup
             Ignore TimeScale
