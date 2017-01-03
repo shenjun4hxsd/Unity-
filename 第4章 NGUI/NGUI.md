@@ -38,7 +38,7 @@
 
     UIFont组件
 
-##Tween
+##Tween （动画）
 
 ##Slider
 
