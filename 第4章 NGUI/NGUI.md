@@ -103,14 +103,13 @@
 
     对界面添加TweenPosition脚本（脚本可以通过PlayForward、playReverse方法播放）
     
-###
 
-##输入框（单行文本、多行文本）
+###13、输入框（单行文本、多行文本）
 
     InputField脚本组件（指定Label属性）
     Widget/Pivot会影响文字的开始位置
 
-##注册界面
+###练习三、注册界面
 
     UIInput（使用value的值改变显示的文本）
     
