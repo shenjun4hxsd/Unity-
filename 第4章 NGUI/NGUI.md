@@ -44,23 +44,23 @@
 
 >&emsp;&emsp;UIFont组件
 
-###Tween （补间动画）
+###8、Tween （补间动画）
 
-###Slider
+###9、Slider
 
    需要使用sprite组件
 
-###Play Sound脚本
+###10、Play Sound脚本
 
     可以播放声音的脚本，Button的预设上自带
 
-###Typewriter Effect脚本 （打字机效果）
+###11、Typewriter Effect脚本 （打字机效果）
 
-##Slider Colors脚本
+###12、Slider Colors脚本
 
     滑动条根据不同的位置，颜色会有变化。
 
-##Poput List
+###Poput List
 
     需要添加子物体Label，用Label显示当前的选项，把Lable拖入事件OnValueChange，然后选择事件类型为SetCurrentSelection。
     
