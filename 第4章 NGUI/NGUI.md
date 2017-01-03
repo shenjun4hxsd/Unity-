@@ -4,7 +4,7 @@
 
 ##Lable
 
-    设置字体
+    设置字体：Unity字体、NGUI字体
 
 ##Sprite
 
