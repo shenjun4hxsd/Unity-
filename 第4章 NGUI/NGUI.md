@@ -76,6 +76,8 @@
 
        需要使用slider组件
        
+       可以在OnValueChanged事件中添加UILabel对象，使用SetCurrentPrecent或SetCurrentProgress事件对UILabel中的Text属性进行赋值。
+       
        Slider Colors脚本
             滑动条根据不同的位置，颜色会有变化。
 
