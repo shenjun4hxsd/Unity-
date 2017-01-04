@@ -160,4 +160,6 @@
         
 ###17、Grid
 
-###血条跟随可以使用 UIFollowTarget 脚本
+###18、血条跟随
+        可以使用 UIFollowTarget 脚本
+        添加到UI物体上
