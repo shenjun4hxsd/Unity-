@@ -78,7 +78,7 @@
        
        可以在OnValueChanged事件中添加UILabel对象，使用SetCurrentPrecent或SetCurrentProgress事件对UILabel中的Text属性进行赋值。
        
-       Slider Colors脚本
+       UISlider Colors脚本
             滑动条根据不同的位置，颜色会有变化。
             
        也可以添加UIButton组件，使鼠标悬停或点按时有颜色变化的效果。
