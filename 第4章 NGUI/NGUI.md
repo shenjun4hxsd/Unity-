@@ -155,4 +155,4 @@
 
         设置可滚动的区域
         可以使用Slider作为Scroll Bar
-        可滚动的子物体添加UIDrag Scroll View组件
+        可滚动的子物体添加UIDrag Scroll View组件（例如：Label）
