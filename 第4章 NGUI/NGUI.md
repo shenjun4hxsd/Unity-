@@ -138,7 +138,7 @@
 
 ####练习六：背包
 
-   拖拽物体添加 UIDRagDropItem 脚本组件
+   拖拽物体添加 UIDRagDropItem 脚本组件，即可以进行拖拽，也可以继承 UIDragDropItem 类，重写 OnDragDropStart()、OnDragDropRelease(GameObject surface)、OnDragDropMove(Vector3 delta) 这三个方法。
    
 ```javascript
     public class MyDragDropItem : UIDragDropItem
