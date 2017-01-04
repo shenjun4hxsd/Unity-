@@ -6,7 +6,7 @@
 
         设置字体：Unity字体（动态字体）、NGUI字体
         
-        Typewriter Effect脚本 （打字机效果）
+        Typewriter Effect脚本 （打字机效果，可配合Scroll View使用）
 
 
 ###3、Sprite
