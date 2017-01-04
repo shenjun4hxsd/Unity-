@@ -138,7 +138,7 @@
 
 ####练习六：背包
 
-   拖拽物体添加 UIDRagDropItem脚本组件
+   拖拽物体添加 UIDRagDropItem 脚本组件
    
 ```javascript
     public class MyDragDropItem : UIDragDropItem
