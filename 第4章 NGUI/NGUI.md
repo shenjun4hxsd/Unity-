@@ -74,7 +74,7 @@
 
 ###9、Slider
 
-       需要使用Slider组件
+       需要使用UISlider组件
        
        可以在OnValueChanged事件中添加UILabel对象，使用SetCurrentPrecent或SetCurrentProgress事件对UILabel中的Text属性进行赋值。
        
