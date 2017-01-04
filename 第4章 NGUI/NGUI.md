@@ -160,4 +160,4 @@
         
 ###17、Grid
 
-###血条跟随 UIFollowTarget脚本
+###血条跟随可以使用 UIFollowTarget 脚本
