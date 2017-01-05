@@ -28,6 +28,7 @@
                 可以添加2个UIButton组件来分别控制Sprite和Label的颜色变化
                 
     按键事件绑定
+        NGUIEventListener.Get(obj).onClick = xxx;
     
         using UnityEngine;
         using System.Collections;
