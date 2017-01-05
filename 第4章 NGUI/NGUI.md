@@ -52,8 +52,8 @@
         UICamera.hoveredObject
         
         通过射线来检测
-            private RaycastHit _hit=new RaycastHit();.
-            if (UICamera.Raycast (Input.mousePosition, out _hit) == false) 
+            private RaycastHit hit=new RaycastHit();.
+            if (UICamera.Raycast (Input.mousePosition, out hit) == false) 
             {
                 // 判断在UI界面层操作
             } 
