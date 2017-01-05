@@ -48,6 +48,9 @@
             }
         }
 
+    按键点击穿透
+        UICamera.hoveredObject
+
 ###5、Panel
 
         用于分组管理子元素的容器、可以在Scene窗口中使用右键菜单功能
