@@ -55,7 +55,7 @@
             private RaycastHit _hit=new RaycastHit();.
             if (UICamera.Raycast (Input.mousePosition, out _hit) == false) 
             {
-                。。。
+                // 判断在UI界面层操作
             } 
 
 ###5、Panel
