@@ -50,6 +50,13 @@
 
     按键点击穿透
         UICamera.hoveredObject
+        
+        通过射线来检测
+            private RaycastHit _hit=new RaycastHit();.
+            if (UICamera.Raycast (Input.mousePosition, out _hit) == false) 
+            {
+                。。。
+            } 
 
 ###5、Panel
 
