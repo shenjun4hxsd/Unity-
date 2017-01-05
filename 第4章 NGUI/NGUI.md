@@ -26,6 +26,27 @@
     
          2）、使用Sprite创建按钮、添加子物体Label
                 可以添加2个UIButton组件来分别控制Sprite和Label的颜色变化
+                
+    按键事件绑定
+    
+        using UnityEngine;
+        using System.Collections;
+        
+        public class EventUITest : MonoBehaviour {
+        
+            public UIButton _btn; 
+            
+            private void Awake()
+            {
+                //必须为 UIButton  类型
+                EventDelegate.Add (this._btn.onClick, this.BtnClicked);
+            }
+                 
+            private void BtnClicked()
+            {
+                Debug.Log("你通过EventDelegate点击了我！");
+            }
+        }
 
 ###5、Panel
 
