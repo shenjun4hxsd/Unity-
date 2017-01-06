@@ -92,6 +92,9 @@ public static AssetBundleManifest BuildAssetBundles(string outputPath, AssetBund
 	}
 ```
 
+
+---
+
 ####分开打包
 
 ```javascript
