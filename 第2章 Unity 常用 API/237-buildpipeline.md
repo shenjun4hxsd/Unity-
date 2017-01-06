@@ -14,3 +14,17 @@
 |BuildPlayer|编译一个项目。|
 |GetCRCForAssetBundle|提取给定资源包的CRC校验。|
 |GetHashForAssetBundle|提取指定资源包的哈希值。|
+
+---
+
+####BuildPipeline.BuildAssetBundles 编译资源包
+
+
+
+
+
+
+
+
+
+🔚
