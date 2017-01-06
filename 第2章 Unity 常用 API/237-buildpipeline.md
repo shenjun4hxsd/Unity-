@@ -123,6 +123,27 @@ public static AssetBundleManifest BuildAssetBundles(string outputPath, AssetBund
 	}
 ```
 
+最核心的方法其实就它：
+
+BuildPipeline.BuildAssetBundle (obj, null, targetPath, BuildAssetBundleOptions.CollectDependencies)
+
+参数1：它只能放一个对象，因为我们这里是分别打包，所以通过循环将每个对象分别放在了这里。
+
+参数2：可以放入一个数组对象。
+
+默认情况下打的包只能在电脑上用，如果要在手机上用就要添加一个参数。
+
+Android上：
+
+BuildPipeline.BuildAssetBundle (obj, null, targetPath, BuildAssetBundleOptions.CollectDependencies,BuildTarget.Android)
+
+IOS上:
+
+BuildPipeline.BuildAssetBundle (obj, null, targetPath, BuildAssetBundleOptions.CollectDependencies,BuildTarget.iPhone)
+
+另外，电脑上和手机上打出来的Assetbundle不能混用，不同平台只能用自己的。
+
+
 
 
 🔚
