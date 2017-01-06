@@ -67,6 +67,7 @@
     * [2.34 AnimationState](第2章 Unity 常用 API/234-animationstate.md)
     * [2.35 NavMeshAgent](第2章 Unity 常用 API/235-navmeshagent.md)
     * [2.36 WWW](第2章 Unity 常用 API/236-www.md)
+    * [2.37 BuildPipeline](第2章 Unity 常用 API/237-buildpipeline.md)
 * [第1天](第1天/1.0 第1天.md)
     * [1.1 向量](第1天/11-向量.md)
         * [1.11 向量的数学运算](第1天/111-向量的数学运算.md)
