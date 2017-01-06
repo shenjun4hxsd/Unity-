@@ -38,7 +38,20 @@ outputPath是资源要保存的路径，资源将被编译保存到那里（例�
 
 可选项assetBundleOptions是修改资源包的构建方式，targetPlatform是部署资源要使用的目标平台（如果pc，手机等）。注意，编译为pc平台的资源包，不兼容手机等其他平台，你需要为不同的平台编译不同版本的资源包。
 
-
+```javascript
+	using UnityEditor;
+	 
+	public class SimpleBundleBuilder
+	{
+		[MenuItem("Simple Bundles/Build")]
+		[MenuItem("Test/Build Asset Bundles")]
+		static void BuildABs() {
+			// Put the bundles in a folder called "ABs" within the
+			// Assets folder.
+			BuildPipeline.BuildAssetBundles("Assets/ABs");
+		}
+	}
+```
 
 
 
