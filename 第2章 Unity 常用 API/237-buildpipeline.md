@@ -65,7 +65,32 @@ public static AssetBundleManifest BuildAssetBundles(string outputPath, AssetBund
 |targetPlatform	Target|目标编译平台。|
 |builds|资源包编译地图。|
 
-
+```javascript
+	using UnityEditor;
+	 
+	public class SimpleBundleBuilder
+	{
+		[MenuItem("Test/Build Asset Bundles")]
+	 
+		static void BuildABs() {
+			// Create the array of bundle build details.
+			AssetBundleBuild[] buildMap = new AssetBundleBuild[2];
+	 
+			buildMap[0].assetBundleName = "enemybundle";
+			string[] enemyAssets = new string[2];
+			enemyAssets[0] = "char_enemy_alienShip";
+			enemyAssets[1] = "char_enemy_alienShip-damaged";
+			buildMap[0].assetNames = enemyAssets;
+	 
+			buildMap[1].assetBundleName = "herobundle";
+			string[] heroAssets = new string[1];
+			heroAssets[0] = "char_hero_beanMan";
+			buildMap[1].assetNames = heroAssets;
+	 
+			BuildPipeline.BuildAssetBundles("Assets/ABs", buildMap);
+		}
+	}
+```
 
 
 
