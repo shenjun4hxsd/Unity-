@@ -175,6 +175,8 @@ BuildPipeline.BuildAssetBundle (obj, null, targetPath, BuildAssetBundleOptions.C
 	}
 ```
 
+---
 
+####读取Assetbundle
 
 🔚
