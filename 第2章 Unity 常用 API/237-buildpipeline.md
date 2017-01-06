@@ -19,7 +19,7 @@
 
 ####BuildPipeline.BuildAssetBundles 编译资源包
 
-
+public static AssetBundleManifest BuildAssetBundles(string outputPath, BuildAssetBundleOptions assetBundleOptions = BuildAssetBundleOptions.None, BuildTarget targetPlatform = BuildTarget.WebPlayer);
 
 
 
