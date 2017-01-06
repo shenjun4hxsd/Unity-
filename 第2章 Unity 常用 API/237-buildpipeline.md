@@ -95,7 +95,7 @@ public static AssetBundleManifest BuildAssetBundles(string outputPath, AssetBund
 ####分开打包
 
 ```javascript
-[MenuItem("Custom Editor/Create AssetBunldes Main")]
+	[MenuItem("Custom Editor/Create AssetBunldes Main")]
 	static void CreateAssetBunldesMain ()
 	{
         //获取在Project视图中选择的所有游戏对象
