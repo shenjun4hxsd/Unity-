@@ -28,6 +28,21 @@ public static AssetBundleManifest BuildAssetBundles(string outputPath, BuildAsse
 |assetBundleOptions|资源包编译选项。|
 |targetPlatform|目标编译平台|
 
+**Description 描述**
+
+在编辑编译所有指定的资源。
+
+在Unity5.0，在编辑器中让你在包含被命名的资源包中标记资源。这个函数实际上是在编辑器中编译你指定的资源，如果编译成功返回true，否则返回false。此外，错误消息显示说明最常见的编译失败，如不正确的目标文件夹路径。
+
+outputPath是资源要保存的路径，资源将被编译保存到那里（例如，Assets/MyBundleFolder）。该文件夹不会自动创建，如果不存在该函数会简单返回错误。
+
+可选项assetBundleOptions是修改资源包的构建方式，targetPlatform是部署资源要使用的目标平台（如果pc，手机等）。注意，编译为pc平台的资源包，不兼容手机等其他平台，你需要为不同的平台编译不同版本的资源包。
+
+
+
+
+
+
 
 
 
