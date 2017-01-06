@@ -148,7 +148,7 @@ BuildPipeline.BuildAssetBundle (obj, null, targetPath, BuildAssetBundleOptions.C
 
 
 ```javascript
-[MenuItem("Custom Editor/Create AssetBunldes ALL")]
+	[MenuItem("Custom Editor/Create AssetBunldes ALL")]
 	static void CreateAssetBunldesALL ()
 	{
  
