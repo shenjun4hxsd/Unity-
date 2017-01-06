@@ -22,6 +22,13 @@
 public static AssetBundleManifest BuildAssetBundles(string outputPath, BuildAssetBundleOptions assetBundleOptions = BuildAssetBundleOptions.None, BuildTarget targetPlatform = BuildTarget.WebPlayer);
 
 
+|参数|说明|
+|:--|:--|
+|outputPath|资源包的输出路径。|
+|assetBundleOptions|资源包编译选项。|
+|targetPlatform|目标编译平台|
+
+
 
 
 
