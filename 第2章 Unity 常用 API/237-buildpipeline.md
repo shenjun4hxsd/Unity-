@@ -179,4 +179,20 @@ BuildPipeline.BuildAssetBundle (obj, null, targetPath, BuildAssetBundleOptions.C
 
 ####读取Assetbundle
 
+Assetbundle是可以同时放在服务器或者本地的，无论放在哪里两种下载读取的方式是完全一样的。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 🔚
