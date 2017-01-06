@@ -54,7 +54,16 @@ outputPath是资源要保存的路径，资源将被编译保存到那里（例�
 ```
 
 
+---
 
+public static AssetBundleManifest BuildAssetBundles(string outputPath, AssetBundleBuild[] builds, BuildAssetBundleOptions assetBundleOptions = BuildAssetBundleOptions.None, BuildTarget targetPlatform = BuildTarget.WebPlayer);
+
+|参数|说明|
+|:--|:--|
+|outputPath|资源包的输出路径。|
+|assetBundleOptions|资源包编译选项。|
+|targetPlatform	Target|目标编译平台。|
+|builds|资源包编译地图。|
 
 
 
