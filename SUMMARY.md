@@ -168,4 +168,5 @@
     * [3.5 UGUI中的Canvas、Camera和Canvas Scaler](第3章 UGUI/35-ugui中的canvas、camera和canvas-scaler.md)
 * [第4章 NGUI](第4章 NGUI/NGUI.md)
     * [4.1 NGUI 事件监听](第4章 NGUI/41-ngui-事件监听.md)
+* [第5章 其他](第5章 其他/第5章 其他.md)
 
