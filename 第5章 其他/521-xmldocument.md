@@ -104,7 +104,7 @@ XmlDocument xmlDoc = new XmlDocument();
 
 ```javascript
 // 查找ID为2的子节点，增加name节点(使用Xpath)
-        XmlNode idnode = xmlDoc.SelectSingleNode("root/newChild[id=2]");
+        XmlNode idnode = xmlDoc.SelectSingleNode("/root/newChild[id=2]");
         XmlNode id2Name = xmlDoc.CreateNode(XmlNodeType.Element, "name", null);
         id2Name.InnerText = "新元素二";
         idnode.AppendChild(id2Name);
