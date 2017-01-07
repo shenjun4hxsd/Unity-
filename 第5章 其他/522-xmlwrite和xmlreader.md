@@ -21,7 +21,7 @@ XMLWrite 创建 XML 声明
 ```javascritp
     //引入命名空间
     using System.Xml;
-    
-            XmlTextWriter textWriter = new XmlTextWriter(@"d:\xmlRead.xml",Encoding.UTF8);
+            
+    XmlTextWriter textWriter = new XmlTextWriter(@"d:\xmlRead.xml",Encoding.UTF8);
     textWriter.WriteStartDocument();
 ```
