@@ -35,5 +35,6 @@ JSON 语法是JavaScript对象表示法语法的子集。
         
 值的类型可以是
 ```javascript
-    public enum JsonType    {        None,        Object,        Array,        String,        Int,        Long,        Double,        Boolean    }
+            
+                            public enum JsonType                     {                                                  None,                                            Object,                                          Array,                                    String,                                         Int,                                             Long,                                     Double,                                 Boolean                                        }
 ```
