@@ -58,6 +58,8 @@ XMLDocument 在C#中用于表示 XML 文档。可使用此类在文档中加载
         CreateAttribute方法创建属性，通过AppendAttribute附加Attribute到节点的属性集合。
 
 
-##三、写入
+##三、修改
+
+
 
 
