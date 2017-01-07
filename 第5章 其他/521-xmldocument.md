@@ -1,6 +1,6 @@
 ##XMLDocument
 
-####定义
+####一、定义
 
 XMLDocument 在C#中用于表示 XML 文档。可使用此类在文档中加载、验证、编辑、添加和放置 XML。
 
@@ -8,7 +8,7 @@ XMLDocument 在C#中用于表示 XML 文档。可使用此类在文档中加载
         程序集:  System.Xml（System.Xml.dll 中）
 
 
-####写入
+####二、写入
 
 **XmlDocument 创建 XML 声明**
 
@@ -56,3 +56,8 @@ XMLDocument 在C#中用于表示 XML 文档。可使用此类在文档中加载
 
         CreateElement创建 xml元素对象，并通过AppendChild方法附加xml元素 为节点。
         CreateAttribute方法创建属性，通过AppendAttribute附加Attribute到节点的属性集合。
+
+
+##三、写入
+
+
