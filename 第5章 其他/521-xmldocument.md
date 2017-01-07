@@ -104,11 +104,11 @@ XMLDocument 在C#中用于表示 XML 文档。可使用此类在文档中加载
 
 **XPath**
 ```javascript
-// path为 root，子节点为id元素内容为2，名为newChild的节点；
-(“root/newChild[id=2]”)
-
-// path为 root，属性为id属性值为2，名为newChild的节点；
-(“root/newChild[@id=2]”);
+        // path为 root，子节点为id元素内容为2，名为newChild的节点；
+        (“root/newChild[id=2]”)
+        
+        // path为 root，属性为id属性值为2，名为newChild的节点；
+        (“root/newChild[@id=2]”);
 ```
 
 
