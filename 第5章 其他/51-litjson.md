@@ -109,7 +109,9 @@ JSON 数组
 
 例如，可以创建一个新的字符串变量，然后将 JSON 格式的数据字符串直接赋值给它：
 
-
+```javascript
+string str = @"            {                ""Name""     : ""yusong"",                ""Age""      : 26,                ""Birthday"" : ""1986-11-21"",                ""Thumbnail"":[	{           		""Url"":    ""http://xuanyusong.com"",           		""Height"": 256,           		""Width"":  ""200"" 	},	{           		""Url"":    ""http://baidu.com"",           		""Height"": 1024,           		""Width"":  ""500"" 	}	]            }";
+```
 
 
 
