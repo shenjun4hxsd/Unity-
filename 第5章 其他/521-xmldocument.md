@@ -69,18 +69,18 @@ XMLDocument 在C\#中用于表示 XML 文档。
 **XmlDocument 读取XML**
 
 ```javascript
-xmlDoc.Load(@“d:\xml.xml”); 
-//读取一个外部XML
+        xmlDoc.Load(@“d:\xml.xml”); 
+        //读取一个外部XML
         XmlNode node = xmlDoc.SelectSingleNode(“root”);
- //查找单一的XML节点
+         //查找单一的XML节点
         XmlNodeList nodeList = xmlDoc.SelectNodes("root/newChild");
-//将多个XML节点载入节点列表：
+        //将多个XML节点载入节点列表：
 ```
 
 **XmlDocument 使用XmlReader忽略文档里面的注释**
 
 ```javascript
-XmlDocument xmlDoc = new XmlDocument();
+        XmlDocument xmlDoc = new XmlDocument();
         XmlReaderSettings settings = new XmlReaderSettings();
         settings.IgnoreComments = true;//忽略文档里面的注释
         XmlReader reader = XmlReader.Create(@“xml.xml", settings);
