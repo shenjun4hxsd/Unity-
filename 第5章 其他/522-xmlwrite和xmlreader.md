@@ -39,5 +39,8 @@ XMLReader表示提供对 XML 数据进行快速、非缓存、只进访问的读
 **XMLWrite为元素加入属性**
 
 ```javascript
-textWriter.WriteStartElement("Child");textWriter.WriteAttributeString("属性A","A");textWriter.WriteAttributeString("属性B","B");textWriter.WriteEndElement();
+    textWriter.WriteStartElement("Child");
+    textWriter.WriteAttributeString("属性A","A");
+    textWriter.WriteAttributeString("属性B","B");
+    textWriter.WriteEndElement();
 ```
