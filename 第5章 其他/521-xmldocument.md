@@ -81,3 +81,7 @@ XMLDocument 在C#中用于表示 XML 文档。可使用此类在文档中加载
 ```
 
 **XmlDocument 为NodeList增加元素**
+
+```javascript
+为列表中所有节点加入ID子节点： for (int i = 0; i < nodeList.Count; i++)            {                XmlNode id = xmlDoc.CreateNode(XmlNodeType.Element, "id", null);                id.InnerText = i.ToString();                nodeList[i].AppendChild(id);            }
+```
