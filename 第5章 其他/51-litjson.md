@@ -136,7 +136,6 @@ JSON 数组
 使用JsonData，JsonMapper来处理Json的编码和解析
 
 ```javascript
-        
         JsonData jd = JsonMapper.ToObject(str);
                 Debug.Log("name = " + (string)jd["Name"]);
         Debug.Log("Age = " + (int)jd["Age"]);
