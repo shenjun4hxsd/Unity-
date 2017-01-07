@@ -68,3 +68,13 @@ XMLDocument 在C#中用于表示 XML 文档。可使用此类在文档中加载
         XmlNodeList nodeList = xmlDoc.SelectNodes("root/newChild");//将多个XML节点载入节点列表：
 ```
 
+
+**XmlDocument 使用XmlReader忽略文档里面的注释**
+
+```javascript
+XmlDocument xmlDoc = new XmlDocument();
+XmlReaderSettings settings = new XmlReaderSettings();
+settings.IgnoreComments = true;//忽略文档里面的注释    XmlReader reader = XmlReader.Create(@“xml.xml", settings);
+xmlDoc.Load(reader);
+reader.Close();
+```
