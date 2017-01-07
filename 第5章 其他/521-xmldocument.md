@@ -138,3 +138,11 @@ idnode.Attributes["修改"].InnerText = "完成";
                 tempE.RemoveAttribute("属性A");
         }
 ```
+
+**XmlDocument 删除节点**
+
+```javascript
+        node.RemoveChild(idnode);
+        id2node.ParentNode.RemoveChild(id2node);
+        //父节点删除子节点
+```
