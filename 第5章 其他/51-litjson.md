@@ -53,7 +53,7 @@ JSON 语法是JavaScript对象表示法语法的子集。
 
 JSON 对象在花括号中书写，对象可以包含多个名称／值对：
 
-        ｛”firstName”：”Shen”, ”lastName”：”Jun”｝
+        ｛ "firstName":"Shen", "lastName":”Jun” ｝
 
 
         • 名称和值之间用冒号分隔
