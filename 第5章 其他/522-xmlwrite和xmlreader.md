@@ -86,7 +86,7 @@ XMLReader表示提供对 XML 数据进行快速、非缓存、只进访问的读
 
 ```javascript
     //方式一：取得当前Reader元素的指定名称的属性值；
-    textReader.GetAttribute(“属性A”));
+    textReader.GetAttribute(“属性A”);
         
     //方式二，获取当前Reader元素的属性，将Reader移动到当前属性；    
     for (int i = 0; i < textReader.AttributeCount; i++)
