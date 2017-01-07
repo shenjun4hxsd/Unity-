@@ -65,9 +65,9 @@ JSON 对象
 ```javascript
         {
                 "china": {
-                        “hangzhou”：{"item":"1"},
-                        “shanghai”：{"item":"2"},
-                        “chengdu”：{"item":"3"}
+                        "hangzhou":{"item":"1"},
+                        "shanghai":{"item":"2"},
+                        "chengdu":{"item":"3"}
                 },
                 "America": {
                         "aa":{"item":"1"},
