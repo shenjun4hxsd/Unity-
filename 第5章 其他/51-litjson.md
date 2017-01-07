@@ -21,7 +21,7 @@ Json：是来源于JavaScript中的序列化方式，他可以很好的将我们
 
 LitJSON is a small and fast library for handling data in the JSON format. It is written in C# and is compatible with all .Net languages.
 
-JSON是一个简单的，但功能强大的序列化数据格式。它定义了简单的类型，如布尔，数（int和float）和字符串，和几个数据结构：list和dictionnary。
+JSON是一个简单的，但功能强大的序列化数据格式。它定义了简单的类型，如布尔，数（int和float）和字符串，和几个数据结构：List和Dictionnary。
 
 litjson是用C #编写的，它的目的是要小，快速，易用。它使用了Mono框架。
 
