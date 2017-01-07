@@ -152,14 +152,14 @@ JSON 数组
 **使用JsonWriter原始方式生成Json**
 
 ```javascript
-将数组转换成json:["one","two","three","four"]
-JsonWriter writer = new JsonWriter();
-writer.WriteArrayStart();
-writer.Write("one");
-writer.Write("two");
-writer.Write("three");
-writer.Write("four");
-writer.WriteArrayEnd();
+        将数组转换成json:["one","two","three","four"]
+        JsonWriter writer = new JsonWriter();
+        writer.WriteArrayStart();
+        writer.Write("one");
+        writer.Write("two");
+        writer.Write("three");
+        writer.Write("four");
+        writer.WriteArrayEnd();
 ```
 
 
