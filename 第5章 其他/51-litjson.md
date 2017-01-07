@@ -24,3 +24,11 @@ LitJSON is a small and fast library for handling data in the JSON format. It is 
 JSON是一个简单的，但功能强大的序列化数据格式。它定义了简单的类型，如布尔，数（int和float）和字符串，和几个数据结构：list和dictionnary。
 
 litjson是用C #编写的，它的目的是要小，快速，易用。它使用了Mono框架。
+
+####语法
+JSON 语法是JavaScript对象表示法语法的子集。
+
+        数据在 名称／值（键-值） 对中
+        数据由逗号分隔
+        花括号保存对象
+        方括号保存数据
