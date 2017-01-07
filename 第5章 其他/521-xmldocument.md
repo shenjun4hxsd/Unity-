@@ -114,13 +114,14 @@ XMLDocument 在C#中用于表示 XML 文档。可使用此类在文档中加载
 **XmlDocument 为节点增加属性**
 
 ```javascript
-//定义一个名为“修改”的XML属性对象
+//定义一个名为“修改”的XML属性对象modify
 XmlAttribute modify = xmlDoc.CreateAttribute("修改");
 
-//为idnode节点增加modifyidnode.Attributes["修改"].InnerText = "完成";
+//为idnode节点增加modify
+idnode.Attributes["修改"].InnerText = "完成";
 
 //将idnode节点下名为“修改”的值修改为"完成";
-modifyidnode.Attributes.Append(modify);
+idnode.Attributes.Append(modify);
 ```
 
 
