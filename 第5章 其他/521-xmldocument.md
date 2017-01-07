@@ -47,3 +47,6 @@ XMLDocument 在C#中用于表示 XML 文档。可使用此类在文档中加载
 ```
 
 **XmlDocument 为元素加入属性**
+
+        subChild.SetAttribute("属性B", "子元素B");
+        subChild.SetAttribute("属性A", "子元素A");//后添加的属性将显示在前面
