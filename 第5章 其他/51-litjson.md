@@ -173,7 +173,7 @@ JSON 数组
 ####文件的读写路径
 
         Resources.Load	在移动平台只读
-        Application.dataPath	在移动平台没有读写权限
+                Application.dataPath	在移动平台没有读写权限
         Application.streamingAssetsPath	移动平台只读
         Application.temporaryCachePath	可读写
         Application.persistentDataPath	可读写
