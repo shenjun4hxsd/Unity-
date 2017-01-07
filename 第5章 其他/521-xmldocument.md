@@ -13,7 +13,7 @@ XMLDocument 在C#中用于表示 XML 文档。可使用此类在文档中加载
 **XmlDocument 创建 XML 声明**
 
 ```javascript
-using System.Xml;//引入命名空间
+        using System.Xml;//引入命名空间
 
         XmlDocument xmldoc ;//声明 XML文档 对象
         XmlDeclaration xmldecl;//声明 XML声明 对象
