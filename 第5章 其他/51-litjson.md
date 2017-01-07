@@ -60,8 +60,21 @@ JSON 对象在花括号中书写，对象可以包含多个名称／值对：
         • 多个变量之间用逗号分隔
         • 结尾不需要添加分号
 
+JSON 对象
 
-
+```javascript
+        {
+                “china”：{
+                        “hangzhou”：{"item":"1"},
+                        “shanghai”：{"item":"2"},
+                        “chengdu”：{"item":"3"}
+                },
+                “America”：{
+                        "aa":{"item":"1"},
+                        "bb":{"item":"2"}
+                }
+        }
+```
 
 
 
