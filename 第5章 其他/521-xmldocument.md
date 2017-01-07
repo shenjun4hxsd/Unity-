@@ -38,5 +38,10 @@ XMLDocument 在C#中用于表示 XML 文档。可使用此类在文档中加载
 ```javascript
         for (int i = 0; i < 3; i++)
         {
-                XmlElement child = xmldoc.CreateElement("child");                XmlElement subChild = xmldoc.CreateElement("subChild");                subChild.InnerText = "这是元素内容";                child.AppendChild(subChild);                xmlelem.AppendChild(child);            }
+                XmlElement child = xmldoc.CreateElement("child");
+                XmlElement subChild = xmldoc.CreateElement("subChild");
+                subChild.InnerText = "这是元素内容";
+                child.AppendChild(subChild);
+                xmlelem.AppendChild(child);
+        }
 ```
