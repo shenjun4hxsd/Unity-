@@ -114,10 +114,10 @@ XmlDocument xmlDoc = new XmlDocument();
 
 ```javascript
 // path为 root，子节点为id元素内容为2，名为newChild的节点；
-        (“root/newChild[id=2]”)
+        (“/root/newChild[id=2]”)
 
         // path为 root，属性为id属性值为2，名为newChild的节点；
-        (“root/newChild[@id=2]”);
+        (“/root/newChild[@id=2]”);
 ```
 
 **XmlDocument 为节点增加属性**
