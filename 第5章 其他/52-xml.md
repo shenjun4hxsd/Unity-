@@ -32,3 +32,6 @@ XML 声明通常在 XML 文档的第一行出现。XML 声明不是必选项，�
     版本号，<?xml version="1.0"?>
     编码声明，<?xml version="1.0" encoding="UTF-8"?>
 
+
+由根元素开始 扩展到叶 的结构
+
