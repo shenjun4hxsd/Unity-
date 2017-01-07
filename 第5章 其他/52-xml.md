@@ -75,7 +75,19 @@ XML 元素指的是从（且包括）开始标签直到（且包括）结束标�
 
 **属性到元素的转换**
 
+```javascript
+<note date="08/08/2008">
 
+<note><date>08/08/2008</date> </note>
+
+<note>
+    <date>
+        <day>08</day>
+        <month>08</month>
+        <year>2008</year>
+    </date>
+</note>
+```
 
 
 
