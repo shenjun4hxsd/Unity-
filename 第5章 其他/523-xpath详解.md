@@ -12,7 +12,7 @@ XPath的开头是一个斜线（/）代表这是绝对路径，这可以选出�
 4)"/bookstore/book/*/age”
 上面的语法会选出所有bookstore根节点下的book节点的隔一个层次的age节点。
 
-5)"/*/*/age”
+5)"/\*/*/age”
 选取有两个层级的age元素
 
 6)"bookstore/book[1]/title”
