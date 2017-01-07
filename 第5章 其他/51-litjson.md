@@ -139,7 +139,13 @@ JSON 数组
         JsonData jd = JsonMapper.ToObject(str);
                 Debug.Log("name = " + (string)jd["Name"]);
         Debug.Log("Age = " + (int)jd["Age"]);
-        Debug.Log("Birthday = " + (string)jd["Birthday"]);JsonData jdItems = jd["Thumbnail"]; 		for (int i = 0; i < jdItems.Count; i++){	Debug.Log("URL = " + jdItems[i]["Url"]);	Debug.Log("Height = " + (int)jdItems[i]["Height"]);     	Debug.Log("Width = " + jdItems[i]["Width"]);   }
+        Debug.Log("Birthday = " + (string)jd["Birthday"]);
+        JsonData jdItems = jd["Thumbnail"]; 	
+        for (int i = 0; i < jdItems.Count; i++){	
+                Debug.Log("URL = " + jdItems[i]["Url"]);
+                Debug.Log("Height = " + (int)jdItems[i]["Height"]);
+                Debug.Log("Width = " + jdItems[i]["Width"]);
+}
 ```
 
 
