@@ -122,6 +122,9 @@ idnode.Attributes.Append(modify);
 
 //将idnode节点下名为“修改”的值修改为"完成";
 idnode.Attributes["修改"].InnerText = "完成";
+
+//将XMLNode 转换为 XMlElement 后操作；
+((XmlElement)id1node).SetAttribute("Type", "1");
 ```
 
 
