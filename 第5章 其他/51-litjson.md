@@ -181,3 +181,6 @@ JSON 数组
         Application.temporaryCachePath	可读写
         
         Application.persistentDataPath	可读写
+        
+        
+        
