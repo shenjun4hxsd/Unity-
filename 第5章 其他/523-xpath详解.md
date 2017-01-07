@@ -6,7 +6,7 @@ XPath的开头是一个斜线（/）代表这是绝对路径，这可以选出�
 2)"//title”
 开头是两个斜线（//）表示文件中所有符合模式的元素都会被选出来，即使是处于树中不同的层级也会被选出来。这代表选出所有title元素。
 
-3)"/bookstore/book/author/*”
+3)"/bookstore/book/author/\*”
 使用星号（*）可以选择未知的元素。这代表选出bookstore根节点下的book节点下的anthor节点下的所有可能的节点。
 
 4)"/bookstore/book/*/age”
