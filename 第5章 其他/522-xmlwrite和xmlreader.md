@@ -68,3 +68,9 @@ XMLReader表示提供对 XML 数据进行快速、非缓存、只进访问的读
     //读取一个外部XML
     XmlTextReader textReader = new XmlTextReader(@"d:\xmlRead.xml");
 ```
+
+**XmlReader读取节点信息**
+
+```javascript
+while (textReader.Read())            {	    if (textReader.NodeType == XmlNodeType.Element)                {	        Console.WriteLine("Name:" + textReader.Name);                    Console.WriteLine("Value:" + textReader.ReadString());}                 }	}
+```
