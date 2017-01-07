@@ -27,7 +27,8 @@ XMLDocument 在C#中用于表示 XML 文档。可使用此类在文档中加载
 
 ```javascript
         XmlElement xmlelem;//声明 XML元素对象
-        xmlelem = xmldoc.CreateElement ( "" , “root" , "" ) ;
+        
+        xmlelem = xmldoc.CreateElement ( "" , “root" , "" ) ;
         xmldoc.AppendChild (xmlelem) ;
         xmldoc.Save ("xml.xml") ;
 ```
