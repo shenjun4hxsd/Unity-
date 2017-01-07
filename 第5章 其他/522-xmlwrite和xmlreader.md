@@ -45,3 +45,6 @@ XMLReader表示提供对 XML 数据进行快速、非缓存、只进访问的读
     textWriter.WriteAttributeString("属性B","B");
     textWriter.WriteEndElement();
 ```
+
+**XMLWrite写入注释**
+
