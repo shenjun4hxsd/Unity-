@@ -118,10 +118,10 @@ XMLDocument 在C#中用于表示 XML 文档。可使用此类在文档中加载
 XmlAttribute modify = xmlDoc.CreateAttribute("修改");
 
 //为idnode节点增加modify
-idnode.Attributes["修改"].InnerText = "完成";
+idnode.Attributes.Append(modify);
 
 //将idnode节点下名为“修改”的值修改为"完成";
-idnode.Attributes.Append(modify);
+idnode.Attributes["修改"].InnerText = "完成";
 ```
 
 
