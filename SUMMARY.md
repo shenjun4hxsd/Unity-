@@ -171,4 +171,5 @@
 * [第4章 NGUI](第4章 NGUI/NGUI.md)
     * [4.1 NGUI 事件监听](第4章 NGUI/41-ngui-事件监听.md)
 * [第5章 其他](第5章 其他/第5章 其他.md)
+    * [5.1 LitJson](第5章 其他/51-litjson.md)
 
