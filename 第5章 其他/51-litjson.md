@@ -115,15 +115,19 @@ JSON 数组
         ""Name"":""shenjun"",
         ""Age"": 40,
         ""Birthday"" : ""1986-11-21"",
-        ""Thumbnail"":[{
+        ""Thumbnail"":
+        [
+                {
                 ""Url"": ""http://xuanyusong.com"",
                 ""Height"": 256,
-                ""Width"":  ""200""},
+                ""Width"":  ""200""
+                },
                 {
                 ""Url"": ""http://baidu.com"",
                 ""Height"": 1024,
                 ""Width"": ""500""
-                }]
+                }
+        ]
         }";
 ```
 
