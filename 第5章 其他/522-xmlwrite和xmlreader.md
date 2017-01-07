@@ -59,3 +59,5 @@ XMLReader表示提供对 XML 数据进行快速、非缓存、只进访问的读
     开始写入，调用WriteStartDocument方法。
     写入结束，调用WriteEndDocument方法，和Close方法，关闭流。
 ```
+
+##三、XMLReader
