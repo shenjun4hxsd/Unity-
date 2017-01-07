@@ -84,7 +84,7 @@ JSON 数组
 {
     "people": [
              { "firstName" : "Brett", "lastName" : "McLaughlin" },
-             { "firstName” : "Jason", "lastName" : "Hunter" },
+             { "firstName" : "Jason", "lastName" : "Hunter" },
              { "firstName" : "Elliotte", "lastName" : "Harold" }
      ]
 }
