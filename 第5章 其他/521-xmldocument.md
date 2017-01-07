@@ -94,7 +94,9 @@ XMLDocument 在C#中用于表示 XML 文档。可使用此类在文档中加载
 
 **XmlDocument 使用Xpath查找节点**
 
-
+```javascript
+查找ID为2的子节点，增加name节点(使用Xpath)XmlNode idnode = xmlDoc.SelectSingleNode("root/newChild[id=2]");XmlNode id2Name = xmlDoc.CreateNode(XmlNodeType.Element, "name", null);id2Name.InnerText = "新元素二";idnode.AppendChild(id2Name);
+```
 
 
 
