@@ -76,9 +76,14 @@ JSON 对象
         }
 ```
 
+JSON 数组
 
+        JSON数组在方括号中书写，数组可包含多个对象：
 
-
+```javascript
+{
+    "people": [         { “firstName”: “Brett”, “lastName”:“McLaughlin”},         { “firstName”: “Jason”, “lastName”:“Hunter” },         { “firstName”: “Elliotte”， "lastName":"Harold” }    ]}
+```
 
 
 
