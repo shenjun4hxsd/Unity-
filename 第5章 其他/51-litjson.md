@@ -183,4 +183,13 @@ JSON 数组
         Application.persistentDataPath	可读写
         
         
-        
+
+####JSON与XML
+
+类似XML，比XML更小、更快、更易解析。
+
+没有结束标签
+更短
+读写速度更快
+使用数组
+不使用保留字
