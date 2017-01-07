@@ -64,7 +64,7 @@ XMLDocument 在C#中用于表示 XML 文档。可使用此类在文档中加载
 
 ```javascript
         xmlDoc.Load(@“d:\xml.xml”); //读取一个外部XML
-        XmlNode node = xmlDoc.SelectSingleNode(“root”);//查找单一的XML节点
+        XmlNode node = xmlDoc.SelectSingleNode(“root”); //查找单一的XML节点
         XmlNodeList nodeList = xmlDoc.SelectNodes("root/newChild");//将多个XML节点载入节点列表：
 ```
 
