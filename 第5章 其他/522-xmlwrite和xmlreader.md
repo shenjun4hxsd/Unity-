@@ -14,4 +14,12 @@ XMLReader表示提供对 XML 数据进行快速、非缓存、只进访问的读
 ```     
         
 
+####XMLWrite
 
+XMLWrite 创建 XML 声明
+
+```javascritp
+    using System.Xml;//引入命名空间
+    XmlTextWriter textWriter = new XmlTextWriter(@"d:\xmlRead.xml",Encoding.UTF8);
+    textWriter.WriteStartDocument();
+```
