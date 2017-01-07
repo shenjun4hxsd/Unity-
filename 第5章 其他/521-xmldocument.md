@@ -127,4 +127,14 @@ idnode.Attributes["修改"].InnerText = "完成";
 ((XmlElement)id1node).SetAttribute("Type", "1");
 ```
 
+**XmlDocument 为节点删除属性**
 
+```javascript
+XmlNode id1node = xmlDoc.SelectSingleNode("root/newChild[id=1]");
+XmlNodeList id1NodeChildNodes = id1node.ChildNodes;
+for (int i = 0; i < id1NodeChildNodes.Count; i++)
+{
+        XmlElement tempE = (XmlElement)id1NodeChildNodes[i];
+        tempE.RemoveAttribute("属性A");
+}
+```
