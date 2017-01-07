@@ -60,6 +60,8 @@ XMLDocument 在C#中用于表示 XML 文档。可使用此类在文档中加载
 
 ##三、修改
 
+**XmlDocument 读取XML**
+
 
 
 
