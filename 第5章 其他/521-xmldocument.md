@@ -53,3 +53,7 @@ XMLDocument 在C#中用于表示 XML 文档。可使用此类在文档中加载
         //后添加的属性将显示在前面
 
 **XmlDocument 创建XML 节点**
+
+CreateElement创建 xml元素对象，并通过AppendChild方法附加xml元素 为节点。
+
+CreateAttribute方法创建属性，通过AppendAttribute附加Attribute到节点的属性集合。
