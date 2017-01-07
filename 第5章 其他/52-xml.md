@@ -36,12 +36,12 @@ XML 声明通常在 XML 文档的第一行出现。XML 声明不是必选项，�
 由根元素开始 扩展到叶 的结构
 
 ```javascript
-<root   property = “属性”>
-    <child>
-        <subchild>    这里是元素内容 </subchild>
-    </child>
-    <child>
-        <subchild>    这里是元素内容 </subchild>
-    </child>
-</root>
+    <root   property = “属性”>
+        <child>
+            <subchild>    这里是元素内容 </subchild>
+        </child>
+        <child>
+            <subchild>    这里是元素内容 </subchild>
+        </child>
+    </root>
 ```
