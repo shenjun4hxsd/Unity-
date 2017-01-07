@@ -83,12 +83,32 @@ JSON 数组
 ```javascript
 {
     "people": [
-             { “firstName”: “Brett”, “lastName”:“McLaughlin” },
-             { “firstName”: “Jason”, “lastName”:“Hunter” },
-             { “firstName”: “Elliotte”, "lastName":"Harold” }
+             { “firstName”: “Brett”, “lastName”: “McLaughlin” },
+             { “firstName”: “Jason”, “lastName”: “Hunter” },
+             { “firstName”: “Elliotte”, "lastName": "Harold” }
      ]
 }
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
