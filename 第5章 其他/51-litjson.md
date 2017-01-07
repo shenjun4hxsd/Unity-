@@ -33,7 +33,7 @@ JSON 语法是JavaScript对象表示法语法的子集。
         花括号保存对象
         方括号保存数据
         
-值的类型可以是
+值的类型可以是:
 
 ```javascript
         public enum JsonType
