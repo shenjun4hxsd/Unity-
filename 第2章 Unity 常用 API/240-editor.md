@@ -29,10 +29,8 @@
 
 | 静态方法 | 说明 |
 | :--- | :--- |
-
-
-\|CreateCachedEditor\|On return previousEditor is an editor for targetObject or targetObjects. The function either returns if the editor is already tracking the objects, or Destroys the previous editor and creates a new one.\|  
-\|CreateEditor\|    Make a custom editor for targetObject or targetObjects.\|
+|CreateCachedEditor|On return previousEditor is an editor for targetObject or targetObjects. The function either returns if the editor is already tracking the objects, or Destroys the previous editor and creates a new one.|  
+|CreateEditor|Make a custom editor for targetObject or targetObjects.|
 
  
 
