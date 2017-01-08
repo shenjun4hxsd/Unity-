@@ -2,7 +2,7 @@
 
 
 
-|变量|	解释|
+|变量|解释|
 |:--|:--|
 |serializedObject|这个属性属于SerializedObject（只读）。|
 |name|属性的名称（只读）。|
