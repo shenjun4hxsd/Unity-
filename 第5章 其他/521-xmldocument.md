@@ -241,7 +241,7 @@ Implementation 　　 获取当前文档的 XmlImplementation 对象。
 InnerText 　　　　　 获取或设置节点及其所有子节点的串联值。 （继承自 XmlNode。） 
 InnerXml 　　　　　　获取或设置表示当前节点子级的标记。 （重写 XmlNode..::.InnerXml。） 
 IsReadOnly 　　　　　获取一个值，该值指示当前节点是否是只读的。 （重写 XmlNode..::.IsReadOnly。） 
-Item 　　　　　　　　已重载。 
+Item 　　　　　　　　 已重载。 
 LastChild 　　　　　 获取节点的最后一个子级。 （继承自 XmlNode。） 
 LocalName 　　　　　 获取节点的本地名称。 （重写 XmlNode..::.LocalName。） 
 Name 　　　　　　　　 获取节点的限定名。 （重写 XmlNode..::.Name。） 
