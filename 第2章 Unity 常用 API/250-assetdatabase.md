@@ -8,9 +8,8 @@
 |GenerateUniqueAssetPath|string|生成唯一资源路径|所有的路径都是相对于工程文件夹的，例如”Assets/MyTextures/hello.png”||  
 |StartAssetEditing|void|开始资源编辑|开始资源导入。它可以让你把多个资源导入组合成一个更大的导入。||  
 |StopAssetEditing|void|停止资源编辑|停止资源导入。这可以让你把多个资源导入组合成一个更大的导入。||  
-|ValidateMoveAsset \|    string\|    验证移动资源\|    检查一个资源文件是否可以从一个文件夹移动到另外一个。\(并不是真的移动这个文件\)\|    返回String类型 - 如果资源可以移动返回一个空的字符串，否者返回错误字符串。所有的路径都是相对于工程目录文件。例如” Assets/MyTextures/hello.png”。\|  
-\|  
-MoveAsset \|    string\|    移动资源\|    将一个资源文件从一个文件夹移动到另外一个文件夹。\|    返回String类型 - 如果资源成功共移动返回一个空的字符串,否者返回错误字符串。所有的路径都是相对于工程目录文件。例如” Assets/MyTextures/hello.png”。\|  
+|ValidateMoveAsset|string|验证移动资源|检查一个资源文件是否可以从一个文件夹移动到另外一个。(并不是真的移动这个文件\)|返回String类型 - 如果资源可以移动返回一个空的字符串，否者返回错误字符串。所有的路径都是相对于工程目录文件。例如” Assets/MyTextures/hello.png”。|  
+|MoveAsset \|    string\|    移动资源\|    将一个资源文件从一个文件夹移动到另外一个文件夹。\|    返回String类型 - 如果资源成功共移动返回一个空的字符串,否者返回错误字符串。所有的路径都是相对于工程目录文件。例如” Assets/MyTextures/hello.png”。\|  
 \|  
 RenameAsset\|    string\|    重命名资源\|    重命名资源文件。\|    返回String类型 - 如果资源成功重命名返回一个空的字符串,否者返回错误字符串。所有的路径都是相对于工程目录文件。例如” Assets/MyTextures/hello.png”。\|  
 \|  
