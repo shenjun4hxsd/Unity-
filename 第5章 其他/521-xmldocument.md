@@ -80,7 +80,7 @@ XMLDocument 在C\#中用于表示 XML 文档。
 **XmlDocument 使用XmlReader忽略文档里面的注释**
 
 ```javascript
-XmlDocument xmlDoc = new XmlDocument();
+        XmlDocument xmlDoc = new XmlDocument();
         XmlReaderSettings settings = new XmlReaderSettings();
         settings.IgnoreComments = true;//忽略文档里面的注释
         XmlReader reader = XmlReader.Create(@“xml.xml", settings);
@@ -91,7 +91,7 @@ XmlDocument xmlDoc = new XmlDocument();
 **XmlDocument 为NodeList增加元素**
 
 ```javascript
-// 为列表中所有节点加入ID子节点： 
+        // 为列表中所有节点加入ID子节点： 
         for (int i = 0; i < nodeList.Count; i++)
         {
                 XmlNode id = xmlDoc.CreateNode(XmlNodeType.Element, "id", null);
@@ -103,7 +103,7 @@ XmlDocument xmlDoc = new XmlDocument();
 **XmlDocument 使用Xpath查找节点**
 
 ```javascript
-// 查找ID为2的子节点，增加name节点(使用Xpath)
+        // 查找ID为2的子节点，增加name节点(使用Xpath)
         XmlNode idnode = xmlDoc.SelectSingleNode("/root/newChild[id=2]");
         XmlNode id2Name = xmlDoc.CreateNode(XmlNodeType.Element, "name", null);
         id2Name.InnerText = "新元素二";
