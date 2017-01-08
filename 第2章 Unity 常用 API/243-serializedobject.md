@@ -5,7 +5,6 @@
 |:--|:--|:--|:--|
 |targetObject|Object|目标物体|被检查的物体（只读）。|
 |targetObjects|Object[]|检查对象(只读)。| |
-
 |isEditingMultipleObjects|bool|多个对象的序列化对象表示由于多目标编辑吗?(只读)| |
 
 	
