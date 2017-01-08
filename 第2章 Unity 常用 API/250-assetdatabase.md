@@ -11,12 +11,9 @@
 |ValidateMoveAsset|string|验证移动资源|检查一个资源文件是否可以从一个文件夹移动到另外一个。(并不是真的移动这个文件\)|返回String类型 - 如果资源可以移动返回一个空的字符串，否者返回错误字符串。所有的路径都是相对于工程目录文件。例如” Assets/MyTextures/hello.png”。|  
 |MoveAsset|string|移动资源|将一个资源文件从一个文件夹移动到另外一个文件夹。|返回String类型 - 如果资源成功共移动返回一个空的字符串,否者返回错误字符串。所有的路径都是相对于工程目录文件。例如”Assets/MyTextures/hello.png”。|  
 |RenameAsset|string|重命名资源|重命名资源文件。|返回String类型 - 如果资源成功重命名返回一个空的字符串,否者返回错误字符串。所有的路径都是相对于工程目录文件。例如” Assets/MyTextures/hello.png”。|  
-|MoveAssetToTrash|    bool\|    移动资源到回收站\|    将指定路径的资源移动到回收站。\|    如果资源已经被成功移动则返回true,如果资源文件不存在或者不能成功移动到回收站返回false。所有的路径都是相对于工程目录文件。例如” Assets/MyTextures/hello.png”。\|  
-\|  
-DeleteAsset \|    bool\|    删除资源\|    删除指定路径的资源文件。\|    如果资源已经被成功删除返回true,如果资源文件不存在或者不能成功移动到回收站返回false。所有的路径都是相对于工程目录文件。例如” Assets/MyTextures/hello.png”。\|
-
-\|  
-ImportAsset\|    void\|    导入资源\|    导入指定路径的资源。    所有的路径都是相对于工程目录文件。 例如” Assets/MyTextures/hello.png”。  
+|MoveAssetToTrash|bool|移动资源到回收站|将指定路径的资源移动到回收站。|如果资源已经被成功移动则返回true,如果资源文件不存在或者不能成功移动到回收站返回false。所有的路径都是相对于工程目录文件。例如”Assets/MyTextures/hello.png”。|  
+|DeleteAsset |bool|删除资源|删除指定路径的资源文件。|如果资源已经被成功删除返回true,如果资源文件不存在或者不能成功移动到回收站返回false。所有的路径都是相对于工程目录文件。例如”Assets/MyTextures/hello.png”。|
+|ImportAsset|void|导入资源|导入指定路径的资源。所有的路径都是相对于工程目录文件。 例如”Assets/MyTextures/hello.png”。| 
 CopyAsset     bool    复制资源    复制指定路径的资源文件到一个新的路径。    所有的路径都是相对于工程目录文件。 例如” Assets/MyTextures/hello.png”。  
 CreateAsset     void    新建资源    在指定的路径新建资源。    "你必须保证使用的路径是一个被支持的扩展\('.mat' 代表 materials， '.cubemap' 代表 cubemaps， '.GUISkin' 代表 skins， '.anim' 代表 animations and '.asset' 代表任意其他的资源文件。\)  
 当资源被创建后，你可以使用AssetDatabase.AddObjectToAsset把更多的资源添加到文件。如果资源已经存在于指定路径，那么这将会删除原有的资源并新建。"  
