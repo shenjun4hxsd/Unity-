@@ -22,13 +22,13 @@
 |floatValue|浮点数属性值。|
 |stringValue|字符串属性值。|
 |colorValue|颜色属性值。|
-|animationCurveValue|动画曲线属性值。|
+|animationCurveValue|动画曲线属性值。|
 |objectReferenceValue|物体引用属性值。|
 |enumValueIndex|一个枚举属性的枚举索引。|
 |enumNames|一个枚举属性的枚举名称数组。|
 |vector2Value|一个2D向量属性的值。|
 |vector3Value|一个3D向量属性的值。|
 |rectValue|一个矩形属性值。|
-|boundsValue|边界盒属性的值。|
+|boundsValue|边界盒属性的值。|
 |arraySize|数组中元素的数量。如果SerializedObject包含多个对象,它将返回元素的最小数量。所以它总是可以遍历SerializedObject和只有属性在所有对象。|
 
