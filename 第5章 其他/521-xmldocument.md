@@ -38,7 +38,7 @@ XMLDocument 在C\#中用于表示 XML 文档。
 **XmlDocument 加入XML元素**
 
 ```javascript
-for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 3; i++)
         {
                 XmlElement child = xmldoc.CreateElement("child");
                 XmlElement subChild = xmldoc.CreateElement("subChild");
