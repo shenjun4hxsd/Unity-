@@ -21,26 +21,26 @@
 |EndHorizontal|与BeginHorizontal一组开始密切。|
 |EndScrollView|结束了与调用BeginScrollView scrollview开始。|
 |EndToggleGroup|与BeginToggleGroup一组开始密切。|
-EndVertical	与BeginVertical一组开始密切。
-EnumMaskField	做一个领域基于enum的面具。
-EnumMaskPopup	使enum弹出选择字段的位掩码。
-EnumPopup	做一个枚举弹出选择字段。
-FloatField	文本框输入浮点值。
-Foldout	让一个标签折页左边的箭头。
-GetControlRect	得到一个编辑器控件的矩形。
-HelpBox	做一个帮助框信息给用户。
-InspectorTitlebar	做一个inspector-window-like titlebar。
-IntField	做一个文本字段用于输入整数。
-IntPopup	让一个整数弹出选择字段。
-IntSlider	做一个滑动条,用户可以拖动改变一个整数之间的最小和最大价值。
-LabelField	做一个标签。 (用于显示只读信息。)
-LayerField	做一层选择字段。
-LongField	做一个文本框,用于输入长整数。
-MaskField	让面具一个字段。
-MinMaxSlider	做一个特殊滑动条,用户可以使用它来指定一个范围之间的最小和最大。
-PasswordField	做一个文本字段,用户可以输入一个密码。
-Popup	做一个通用弹出选择字段。
-PrefixLabel	标签的一些控制。
+|EndVertical|与BeginVertical一组开始密切。|
+|EnumMaskField|做一个领域基于enum的面具。|
+|EnumMaskPopup|使enum弹出选择字段的位掩码。|
+|EnumPopup|做一个枚举弹出选择字段。|
+|FloatField|文本框输入浮点值。|
+|Foldout|让一个标签折页左边的箭头。|
+|GetControlRect|得到一个编辑器控件的矩形。|
+|HelpBox|做一个帮助框信息给用户。|
+|InspectorTitlebar|做一个inspector-window-like titlebar。|
+|IntField|做一个文本字段用于输入整数。|
+|IntPopup|让一个整数弹出选择字段。|
+|IntSlider|做一个滑动条,用户可以拖动改变一个整数之间的最小和最大价值。|
+|LabelField|做一个标签。 (用于显示只读信息。)|
+|LayerField|做一层选择字段。|
+|LongField|做一个文本框,用于输入长整数。|
+|MaskField|让面具一个字段。|
+|MinMaxSlider|做一个特殊滑动条,用户可以使用它来指定一个范围之间的最小和最大。|
+|PasswordField|做一个文本字段,用户可以输入一个密码。|
+|Popup|做一个通用弹出选择字段。|
+|PrefixLabel|标签的一些控制。|
 PropertyField	属性字段。
 RectField	做一个X,Y,W & H字段输入一个矩形。
 SelectableLabel	做一个可选择的标签字段。 (用于显示只读信息,可以充满。)
