@@ -51,6 +51,6 @@
 |TextField|制作一个文本字段。|
 |Toggle|切换。|
 |ToggleLeft|做一个切换开关领域是左边和右边的标签立即。|
-Vector2Field	做一个X和Y字段输入一个Vector2。
-Vector3Field	让一个X,Y和Z字段输入一个Vector3。
-Vector4Field	使X,Y,Z和W字段输入一个Vector4。
+|Vector2Field|做一个X和Y字段输入一个Vector2。|
+|Vector3Field|让一个X,Y和Z字段输入一个Vector3。|
+|Vector4Field|使X,Y,Z和W字段输入一个Vector4。|
