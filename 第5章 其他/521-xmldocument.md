@@ -151,7 +151,7 @@ idnode.Attributes["修改"].InnerText = "完成";
 **XmlDocument 删除节点**
 
 ```javascript
-//父节点删除子节点
+        //父节点删除子节点
         node.RemoveChild(idnode);
         id2node.ParentNode.RemoveChild(id2node);
 ```
@@ -159,7 +159,7 @@ idnode.Attributes["修改"].InnerText = "完成";
 **XmlDocument 通过名字查找节点**
 
 ```javascript
-//查找某一节点下所有名为 (“newSubChild”)的节点，返回为XMLNODELIST;
+        //查找某一节点下所有名为 (“newSubChild”)的节点，返回为XMLNODELIST;
         GetElementsByTagName("newSubChild")
 ```
 
