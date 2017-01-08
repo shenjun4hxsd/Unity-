@@ -12,3 +12,5 @@
 |ReplaceFile|void|替换文件|用src指定的文件替换Dst 指定的文件，如果dst指定的文件不存在这个方法会拷贝src指定的文件到dst，如果存在这个方法会下删除dst 指定的文件然后从scr指定的文件拷贝到dst。|
 |ReplaceDirectory |void|替换文件夹|用src指定的文件夹替换Dst 指定的文件夹，如果dst指定的文件夹不存在这个方法会拷贝src指定的文件夹到dst文件夹，如果存在这个方法会下删除dst 指定的文件夹然后从scr指定的文件夹拷贝到dst指定的文件夹。|
 
+🔚
+
