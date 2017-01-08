@@ -26,11 +26,17 @@
 |RequiresConstantRepaint|Does this edit require to be repainted constantly in its current state?|
 |UseDefaultMargins|Override this method in subclasses to return false if you don't want default margins.|
 
+&emsp;
 
-Static Functions
+|静态方法|说明|
+|:--|:--|
 
-CreateCachedEditor	On return previousEditor is an editor for targetObject or targetObjects. The function either returns if the editor is already tracking the objects, or Destroys the previous editor and creates a new one.
-CreateEditor	Make a custom editor for targetObject or targetObjects.
-Messages
 
-OnSceneGUI	Enables the Editor to handle an event in the scene view.
+|CreateCachedEditor|On return previousEditor is an editor for targetObject or targetObjects. The function either returns if the editor is already tracking the objects, or Destroys the previous editor and creates a new one.|
+|CreateEditor|	Make a custom editor for targetObject or targetObjects.|
+
+&emsp;
+
+|Messages|说明|
+|:--|:--|
+|OnSceneGUI|Enables the Editor to handle an event in the scene view.|
