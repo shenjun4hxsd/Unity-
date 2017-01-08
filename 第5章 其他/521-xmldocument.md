@@ -230,9 +230,9 @@ XmlDocument类是.NET框架的DOC解析器。XmlDocument将XML视为树状结构
 一、属性：
 
 ```
-Attributes　　　　　 获取一个 XmlAttributeCollection，它包含该节点的属性。 （继承自 XmlNode。） 
-BaseURI 　　  　  　 获取当前节点的基 URI。 （重写 XmlNode..::.BaseURI。） 
-ChildNodes 　　　　　获取节点的所有子节点。 （继承自 XmlNode。） 
+Attributes        获取一个 XmlAttributeCollection，它包含该节点的属性。 （继承自 XmlNode。） 
+BaseURI           获取当前节点的基 URI。 （重写 XmlNode..::.BaseURI。） 
+ChildNodes 　　　　 获取节点的所有子节点。 （继承自 XmlNode。） 
 DocumentElement 　   获取文档的根 XmlElement。 
 DocumentType 　　　  获取包含 DOCTYPE 声明的节点。 
 FirstChild 　　　　　获取节点的第一个子级。 （继承自 XmlNode。） 
