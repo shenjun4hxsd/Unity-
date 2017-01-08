@@ -113,7 +113,7 @@ XMLDocument 在C\#中用于表示 XML 文档。
 **XPath**
 
 ```javascript
-// path为 root，子节点为id元素内容为2，名为newChild的节点；
+        // path为 root，子节点为id元素内容为2，名为newChild的节点；
         (“/root/newChild[id=2]”)
 
         // path为 root，属性为id属性值为2，名为newChild的节点；
@@ -139,7 +139,7 @@ idnode.Attributes["修改"].InnerText = "完成";
 **XmlDocument 为节点删除属性**
 
 ```javascript
-XmlNode id1node = xmlDoc.SelectSingleNode("root/newChild[id=1]");
+        XmlNode id1node = xmlDoc.SelectSingleNode("root/newChild[id=1]");
         XmlNodeList id1NodeChildNodes = id1node.ChildNodes;
         for (int i = 0; i < id1NodeChildNodes.Count; i++)
         {
