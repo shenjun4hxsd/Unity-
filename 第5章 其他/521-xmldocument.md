@@ -328,5 +328,5 @@ NextSibling　　　　 下一个兄弟节点
 FirstChild　　　　  第一个子节点
 LastChild　　　　　 最后一个子节点
 ChildNodes　　　 　 子节点集合
-ParentNode　　　   父节点
+ParentNode　　　    父节点
 ```
