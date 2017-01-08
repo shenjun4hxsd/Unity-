@@ -28,7 +28,7 @@ using System.Xml;//引入命名空间
 **XmlDocument 创建根节点**
 
 ```javascript
-XmlElement xmlelem;//声明 XML元素对象
+        XmlElement xmlelem;//声明 XML元素对象
 
         xmlelem = xmldoc.CreateElement ( "" , “root" , "" ) ;
         xmldoc.AppendChild (xmlelem) ;
