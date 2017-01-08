@@ -22,5 +22,5 @@
 |GetTransforms|	Transform[]|获取变换列表|	允许对选择类型进行精细的控制，使用SelectionMode枚举类型。|
 |GetFiltered|Object[]|获取过滤后物体|返回通过类型和选择模式过滤的当前选择的物体。|
 
-
+🔚
 
