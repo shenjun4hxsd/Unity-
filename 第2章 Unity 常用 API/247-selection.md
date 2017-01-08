@@ -14,7 +14,13 @@
 |assetGUIDs|string[]||Returns the guids of the selected assets.||
 
 
+&emsp;
 
+|函数|返回类型|解释|描述|
+|:--|:--|:--|:--|
+|Contains|bool|是否包含|返回一个物体是否被包含在当前的选择中。|
+|GetTransforms|	Transform[]|获取变换列表|	允许对选择类型进行精细的控制，使用SelectionMode枚举类型。|
+|GetFiltered|Object[]|获取过滤后物体|返回通过类型和选择模式过滤的当前选择的物体。|
 
 
 
