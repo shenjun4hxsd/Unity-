@@ -4,18 +4,22 @@
 |:--|:--|
 |serializedObject|A SerializedObject representing the object or objects being inspected.|
 |target|The object being inspected.|
-|targets|An array of all the object being inspected.
-Public Functions|
+|targets|An array of all the object being inspected.|
 
-DrawDefaultInspector	Draw the built-in inspector.
-DrawHeader	Call this function to draw the header of the editor.
-DrawPreview	The first entry point for Preview Drawing.
-GetInfoString	Implement this method to show asset information on top of the asset preview.
-GetPreviewTitle	Override this method if you want to change the label of the Preview area.
-HasPreviewGUI	Override this method in subclasses if you implement OnPreviewGUI.
-OnInspectorGUI	Implement this function to make a custom inspector.
-OnInteractivePreviewGUI	Implement to create your own interactive custom preview. Interactive custom previews are used in the preview area of the inspector and the object selector.
-OnPreviewGUI	Implement to create your own custom preview for the preview area of the inspector, primary editor headers and the object selector.
+
+&emsp;
+
+|公有函数|说明|
+|:--|:--|
+|DrawDefaultInspector|	Draw the built-in inspector.|
+|DrawHeader|Call this function to draw the header of the editor.|
+|DrawPreview|The first entry point for Preview Drawing.|
+|GetInfoString|	Implement this method to show asset information on top of the asset preview.|
+|GetPreviewTitle|Override this method if you want to change the label of the Preview area.|
+|HasPreviewGUI|	Override this method in subclasses if you implement OnPreviewGUI.|
+|OnInspectorGUI|Implement this function to make a custom inspector.|
+|OnInteractivePreviewGUI|Implement to create your own interactive custom preview. Interactive custom previews are used in the preview area of the inspector and the object selector.|
+|OnPreviewGUI|Implement to create your own custom preview for the preview area of the inspector, primary editor headers and the object selector.|
 OnPreviewSettings	Override this method if you want to show custom controls in the preview header.
 RenderStaticPreview	Override this method if you want to render a static preview that shows.
 Repaint	Repaint any inspectors that shows this editor.
