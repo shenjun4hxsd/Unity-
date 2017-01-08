@@ -15,14 +15,13 @@
 |DeleteAsset |bool|删除资源|删除指定路径的资源文件。|如果资源已经被成功删除返回true,如果资源文件不存在或者不能成功移动到回收站返回false。所有的路径都是相对于工程目录文件。例如”Assets/MyTextures/hello.png”。|
 |ImportAsset|void|导入资源|导入指定路径的资源。所有的路径都是相对于工程目录文件。 例如”Assets/MyTextures/hello.png”。| 
 |CopyAsset|bool|复制资源|复制指定路径的资源文件到一个新的路径。|所有的路径都是相对于工程目录文件。例如” Assets/MyTextures/hello.png”| 
-CreateAsset     void    新建资源    在指定的路径新建资源。    "你必须保证使用的路径是一个被支持的扩展\('.mat' 代表 materials， '.cubemap' 代表 cubemaps， '.GUISkin' 代表 skins， '.anim' 代表 animations and '.asset' 代表任意其他的资源文件。\)  
-当资源被创建后，你可以使用AssetDatabase.AddObjectToAsset把更多的资源添加到文件。如果资源已经存在于指定路径，那么这将会删除原有的资源并新建。"  
-AddObjectToAsset     void    添加对象到资源    将objectToAdd这个对象添加到指定路径上的现有资源。    请注意，你应该添加资源到”.assets”目录下的资源中，例如导入的模型或纹理将会丢失它们地数据。  
-GetAssetPath     string    获取资源路径    返回相对于工程资源位置的路径名。  
-GetTextMetaDataPathFromAssetPath     string    从资源路径获取文本Meta数据路径    获取资源有关文本.meta文件的路径。    返回字符串类型，.meta文本文件的路径或空字符串，如果文件不存在。  
-LoadAssetAtPath     Object    指定路径加载资源    返回在指定位置assetPath下第一个类型是type的资源对象。    参数assetPaht不需要区分大小写。在Unity中所有的资源名称和路径都需要斜杠/。  
-LoadMainAssetAtPath     Object    指定路径加载主资源    返回指定路径assetPath下的主资源。  
-LoadAllAssetRepresentationsAtPath     Object\[\]    加载所在路径所有资源说明    返回assetPath所在路径的所有资源说明。    资源说明是资源在项目视图可见的物体。  
+|CreateAsset| void|新建资源|在指定的路径新建资源。|"你必须保证使用的路径是一个被支持的扩展('.mat' 代表 materials， '.cubemap' 代表 cubemaps， '.GUISkin' 代表 skins， '.anim' 代表 animations and '.asset' 代表任意其他的资源文件。) 当资源被创建后，你可以使用AssetDatabase.AddObjectToAsset把更多的资源添加到文件。如果资源已经存在于指定路径，那么这将会删除原有的资源并新建。" | 
+|AddObjectToAsset|void|添加对象到资源|将objectToAdd这个对象添加到指定路径上的现有资源。|请注意，你应该添加资源到”.assets”目录下的资源中，例如导入的模型或纹理将会丢失它们地数据。| 
+|GetAssetPath|string|获取资源路径|返回相对于工程资源位置的路径名。|| 
+|GetTextMetaDataPathFromAssetPath|string|从资源路径获取文本Meta数据路径|获取资源有关文本.meta文件的路径。|返回字符串类型，.meta文本文件的路径或空字符串，如果文件不存在。| 
+|LoadAssetAtPath|Object |指定路径加载资源|返回在指定位置assetPath下第一个类型是type的资源对象。|参数assetPaht不需要区分大小写。在Unity中所有的资源名称和路径都需要斜杠/。|  
+|LoadMainAssetAtPath|Object|指定路径加载主资源|返回指定路径assetPath下的主资源。| |
+|LoadAllAssetRepresentationsAtPath|Object[]|加载所在路径所有资源说明|返回assetPath所在路径的所有资源说明。|资源说明是资源在项目视图可见的物体。|
 LoadAllAssetsAtPath     Object\[\]    指定路径加载所有资源    返回指定路径assetPath下的所有资源对象数组。    有些资源文件可能包含许多对象。\(例如一个maya文件可能包含许多个网格和游戏物体\)。  
 Refresh     void    刷新    重新导入有更新的资源。  
 OpenAsset     bool    打开资源    用关联的程序打开资源文件。    使用外部编辑器。纹理引用程序或者模型工具来打开不同资源类型的资源，如果是文本文件，行编号会指引文本编辑器找到对应行。  
