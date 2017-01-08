@@ -42,3 +42,4 @@
 |IsSubAsset|bool||Does the asset form part of another asset?||
 |WriteImportSettingsIfDirty|bool||Writes the import settings to disk.||
 
+🔚
