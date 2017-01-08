@@ -39,7 +39,7 @@
 |MaskField|让面具一个字段。|
 |MinMaxSlider|做一个特殊滑动条,用户可以使用它来指定一个范围之间的最小和最大。|
 |PasswordField|做一个文本字段,用户可以输入一个密码。|
-|Popup|做一个通用弹出选择字段。|
+|**Popup**|做一个通用弹出选择字段。|
 |PrefixLabel|标签的一些控制。|
 |PropertyField|属性字段。|
 |RectField|做一个X,Y,W & H字段输入一个矩形。|
