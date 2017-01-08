@@ -77,6 +77,7 @@
     * [2.44 SerializedProperty](第2章 Unity 常用 API/244-serializedproperty.md)
     * [2.45 GUILayout](第2章 Unity 常用 API/245-guilayout.md)
     * [2.46 EditorWindow](第2章 Unity 常用 API/246-editorwindow.md)
+    * [2.47 Selection](第2章 Unity 常用 API/247-selection.md)
 * [第1天](第1天/1.0 第1天.md)
     * [1.1 向量](第1天/11-向量.md)
         * [1.11 向量的数学运算](第1天/111-向量的数学运算.md)
