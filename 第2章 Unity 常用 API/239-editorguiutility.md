@@ -24,6 +24,7 @@ EditorGUI的其他辅助的东西。
 
 
 |静态函数|描述|
+|:--|:--|
 |AddCursorRect|添加一个自定义鼠标指针来控制。|
 |CommandEvent|创建一个事件。|
 |DrawColorSwatch|画一个色卡。|
