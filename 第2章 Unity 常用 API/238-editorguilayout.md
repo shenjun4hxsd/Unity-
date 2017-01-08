@@ -7,20 +7,20 @@
 |:--|:--|
 |BeginFadeGroup|开始一组可以被隐藏/显示将动画和过渡。|
 |BeginHorizontal|开始一个水平组和矩形回来。|
-BeginScrollView	开始一个自动布局滚动视图。
-BeginToggleGroup	开始一个垂直组切换到启用或禁用所有的内部控制。
-BeginVertical	开始一个垂直组和矩形回来。
-BoundsField	使中心&区段字段输入一个界限。
-ColorField	让一个字段选择一个颜色。
-CurveField	让一个AnimationCurve字段进行编辑。
-DelayedFloatField	延迟文本字段用于输入浮点数。
-DelayedIntField	做一个延迟文本字段用于输入整数。
-DelayedTextField	让一个延迟的文本字段。
-DoubleField	做一个文本框,用于输入值的两倍。
-EndFadeGroup	关闭一组从BeginFadeGroup开始。
-EndHorizontal	与BeginHorizontal一组开始密切。
-EndScrollView	结束了与调用BeginScrollView scrollview开始。
-EndToggleGroup	与BeginToggleGroup一组开始密切。
+|BeginScrollView|开始一个自动布局滚动视图。|
+|BeginToggleGroup|开始一个垂直组切换到启用或禁用所有的内部控制。|
+|BeginVertical|	开始一个垂直组和矩形回来。|
+|BoundsField|使中心&区段字段输入一个界限。|
+|ColorField|让一个字段选择一个颜色。|
+|CurveField|让一个AnimationCurve字段进行编辑。|
+|DelayedFloatField|延迟文本字段用于输入浮点数。|
+|DelayedIntField|做一个延迟文本字段用于输入整数。|
+|DelayedTextField|让一个延迟的文本字段。|
+|DoubleField|做一个文本框,用于输入值的两倍。|
+|EndFadeGroup|关闭一组从BeginFadeGroup开始。|
+|EndHorizontal|与BeginHorizontal一组开始密切。|
+|EndScrollView|结束了与调用BeginScrollView scrollview开始。|
+|EndToggleGroup|与BeginToggleGroup一组开始密切。|
 EndVertical	与BeginVertical一组开始密切。
 EnumMaskField	做一个领域基于enum的面具。
 EnumMaskPopup	使enum弹出选择字段的位掩码。
