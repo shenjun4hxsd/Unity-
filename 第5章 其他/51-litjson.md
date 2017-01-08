@@ -149,6 +149,33 @@ JSON 数组
         }
 ```
 
+```javascript
+	void StreamWriteJson<T>(string path, T o)
+	{
+		using (FileStream fsWrite = File.Open (path, FileMode.OpenOrCreate)) {
+			string json = JsonMapper.ToJson (o);
+			byte[] buffer = System.Text.Encoding.UTF8.GetBytes (json);
+			fsWrite.Write (buffer, 0, buffer.Length);
+		}
+	}
+
+	T StreamReadJson<T>(string path)
+	{
+		using (FileStream fsReader = File.Open (path, FileMode.Open, FileAccess.Read)) {
+			byte[] buffer = new byte[1024];
+			int length;
+			System.Text.StringBuilder sb = new System.Text.StringBuilder ();
+			while ((length = fsReader.Read (buffer, 0, buffer.Length)) > 0) {
+				string result = System.Text.Encoding.UTF8.GetString (buffer, 0, length);
+				sb.Append (result);
+			}
+			string s = sb.ToString();
+			T o = JsonMapper.ToObject<T> (s);
+			return o;
+		}
+	}
+```
+
 **使用JsonWriter原始方式生成Json**
 
 ```javascript
