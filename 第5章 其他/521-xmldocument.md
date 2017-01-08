@@ -193,4 +193,29 @@ idnode.Attributes["修改"].InnerText = "完成";
 
 		pDoc.Save (filepath);
 	}
+	
+	bool AppendXml(XmlDocument pDoc, XmlElement pElement, ref Dictionary<string, string> pContent)
+	{
+		XmlElement pNode = pDoc.CreateElement ("book");
+
+		if (pDoc == null || pElement == null)
+			return false;
+
+		if (pContent.Count <= 0)
+			return false;
+
+		string[] keys = new string[pContent.Count];
+
+		pContent.Keys.CopyTo (keys, 0);
+
+		for (int i = 0; i < keys.Length; i++) {
+			XmlElement pTmp = pDoc.CreateElement(keys[i]);
+			pTmp.InnerText = pContent[keys[i]];
+			pNode.AppendChild(pTmp);
+		}
+
+		pElement.AppendChild (pNode);
+
+		return true;
+	}
 ```
