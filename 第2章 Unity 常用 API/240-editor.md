@@ -25,8 +25,7 @@
 | RequiresConstantRepaint | Does this edit require to be repainted constantly in its current state? |
 | UseDefaultMargins | Override this method in subclasses to return false if you don't want default margins. |
 
- &emsp;
-
+&emsp;
 
 
 | 静态方法 | 说明 |
