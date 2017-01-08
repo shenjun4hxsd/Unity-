@@ -48,4 +48,29 @@ EditorGUI的其他辅助的东西。
 |ShowObjectPicker|显示的对象选择器代码。|
 
 
+
+
+###继承的成员
+	
+|静态变量	|描述|
+|:--|:--|
+|hasModalWindow|全球房地产,这是真实的如果一个ModalWindow被显示出来,否则假。|
+|hotControl|控制电流的controlID热。|
+|keyboardControl|的controlID控制键盘焦点。|
+|systemCopyBuffer|获得系统范围的纸板。|
+
+&emsp;
+
+|静态函数|描述|
+|:--|:--|
+|GetControlID|获得一个控制一个惟一的ID。|
+|GetStateObject|得到一个从controlID状态对象。|
+|GUIToScreenPoint|把一个点从GUI屏幕空间。|
+|QueryStateObject|从controlID得到现有的状态对象。|
+|RotateAroundPivot|Helper函数旋转一个点周围的GUI。|
+|ScaleAroundPivot|Helper函数扩展点周围的GUI。|
+|ScreenToGUIPoint|从屏幕空间到GUI位置转换为一个点。|
+
+
+
 🔚
