@@ -25,20 +25,20 @@
 |LoadAllAssetsAtPath|Object[]|指定路径加载所有资源|返回指定路径assetPath下的所有资源对象数组。|有些资源文件可能包含许多对象。(例如一个maya文件可能包含许多个网格和游戏物体)。|  
 |Refresh|void|刷新|重新导入有更新的资源。|| 
 |OpenAsset|bool|打开资源|用关联的程序打开资源文件。|使用外部编辑器。纹理引用程序或者模型工具来打开不同资源类型的资源，如果是文本文件，行编号会指引文本编辑器找到对应行。| 
-AssetPathToGUID    string    资源路径转GUID    返回指定路径path下资源的GUID\(全局唯一标识符\)。  
-SaveAssets     void    保存资源    将所有未保存的资源更改写入磁盘。  
-GetCachedIcon     Texture    获取缓存的图标    为指定路径的资源检索一个图标。  
-CompleteLabel     string\[\]    完成的标签    返回符合给定前缀的所有标签。  
-SetLabels     void    设置标签列表    替换资源的标签列表。  
-GetLabels     void    获取标签列表    返回给定资源拥有的所有标签。  
-ClearLabels     void    清除标签    移除资源上所有的标签。  
-GetDependencies     string\[\]    获取相关资源列表    已知资源pathName，返回与它有依赖关系的所有资源列表。  
-ExportPackage     void    导出包    导出assetPahtNames定义的资源到一个unitypackage里，并命名filename。  
-ImportPackage     void    导入包    将packagePath下的资源包导入到当前工程。  
-FindAssets    string\[\]        Search the assetdatabase using a searchfilter string.  
-GetAssetOrScenePath    string        Returns the path name relative to the project folder where the asset is stored.  
-GUIDToAssetPath    string        Translate a GUID to its current asset path.  
-IsOpenForEdit    bool        Use IsOpenForEdit to determine if the asset is open for edit by the version control.  
-IsSubAsset    bool        Does the asset form part of another asset?  
-WriteImportSettingsIfDirty    bool        Writes the import settings to disk.
+|AssetPathToGUID|string|资源路径转GUID|返回指定路径path下资源的GUID(全局唯一标识符)。||  
+|SaveAssets|void|保存资源|将所有未保存的资源更改写入磁盘。||  
+|GetCachedIcon|Texture|获取缓存的图标|为指定路径的资源检索一个图标。||  
+|CompleteLabel|string[]|完成的标签|返回符合给定前缀的所有标签。|| 
+|SetLabels|void|设置标签列表|替换资源的标签列表。||
+|GetLabels|void|获取标签列表|返回给定资源拥有的所有标签。||  
+|ClearLabels|void|清除标签|移除资源上所有的标签。||  
+|GetDependencies|string[]|获取相关资源列表|已知资源pathName，返回与它有依赖关系的所有资源列表。||  
+|ExportPackage|void|导出包|导出assetPahtNames定义的资源到一个unitypackage里，并命名filename。||
+|ImportPackage|void|导入包|将packagePath下的资源包导入到当前工程。|| 
+|FindAssets|string[]||Search the assetdatabase using a searchfilter string.  ||
+|GetAssetOrScenePath|string||Returns the path name relative to the project folder where the asset is stored. || 
+|GUIDToAssetPath|string||Translate a GUID to its current asset path.||
+|IsOpenForEdit|bool||Use IsOpenForEdit to determine if the asset is open for edit by the version control. || 
+|IsSubAsset|bool||Does the asset form part of another asset?||
+|WriteImportSettingsIfDirty|bool||Writes the import settings to disk.||
 
