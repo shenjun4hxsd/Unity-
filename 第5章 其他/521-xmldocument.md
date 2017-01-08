@@ -324,9 +324,9 @@ NodeRemoving 　　　　　　当属于该文档的节点将被从文档中移�
 
 ```
 PreviousSibling　　上一个兄弟节点
-NextSibling　　　　下一个兄弟节点
-FirstChild　　　　 第一个子节点
-LastChild　　　　　最后一个子节点
-ChildNodes　　　 　子节点集合
+NextSibling　　　　 下一个兄弟节点
+FirstChild　　　　  第一个子节点
+LastChild　　　　　 最后一个子节点
+ChildNodes　　　 　 子节点集合
 ParentNode　　　   父节点
 ```
