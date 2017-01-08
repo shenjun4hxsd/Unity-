@@ -164,4 +164,33 @@ idnode.Attributes["修改"].InnerText = "完成";
 ```
 
 
+---
 
+###示例：
+
+```javascript
+	void OperateXml()
+	{
+		XmlDocument pDoc = new XmlDocument ();
+		pDoc.Load (filepath);
+
+		XmlElement pRoot = pDoc.DocumentElement;
+
+		XmlElement pNode = pRoot.SelectSingleNode ("/books/book[name='水浒']") as XmlElement;
+
+		XmlElement pPriceNode = pNode.GetElementsByTagName("price")[0] as XmlElement;
+		Debug.Log (pPriceNode.InnerText);
+		pPriceNode.InnerText = "100";
+
+
+		XmlNodeList pList = pRoot.SelectNodes("/books/book[price>10]");
+		Debug.Log ("count = " + pList.Count);
+		if (pList != null && pList.Count > 0) {
+			for (int i = pList.Count - 1; i >= 0; i--) {
+				pList[i].ParentNode.RemoveChild(pList[i]);
+			}
+		}
+
+		pDoc.Save (filepath);
+	}
+```
