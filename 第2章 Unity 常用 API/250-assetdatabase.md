@@ -22,9 +22,9 @@
 |LoadAssetAtPath|Object |指定路径加载资源|返回在指定位置assetPath下第一个类型是type的资源对象。|参数assetPaht不需要区分大小写。在Unity中所有的资源名称和路径都需要斜杠/。|  
 |LoadMainAssetAtPath|Object|指定路径加载主资源|返回指定路径assetPath下的主资源。| |
 |LoadAllAssetRepresentationsAtPath|Object[]|加载所在路径所有资源说明|返回assetPath所在路径的所有资源说明。|资源说明是资源在项目视图可见的物体。|
-LoadAllAssetsAtPath     Object\[\]    指定路径加载所有资源    返回指定路径assetPath下的所有资源对象数组。    有些资源文件可能包含许多对象。\(例如一个maya文件可能包含许多个网格和游戏物体\)。  
-Refresh     void    刷新    重新导入有更新的资源。  
-OpenAsset     bool    打开资源    用关联的程序打开资源文件。    使用外部编辑器。纹理引用程序或者模型工具来打开不同资源类型的资源，如果是文本文件，行编号会指引文本编辑器找到对应行。  
+|LoadAllAssetsAtPath|Object[]|指定路径加载所有资源|返回指定路径assetPath下的所有资源对象数组。|有些资源文件可能包含许多对象。(例如一个maya文件可能包含许多个网格和游戏物体)。|  
+|Refresh|void|刷新|重新导入有更新的资源。|| 
+|OpenAsset|bool|打开资源|用关联的程序打开资源文件。|使用外部编辑器。纹理引用程序或者模型工具来打开不同资源类型的资源，如果是文本文件，行编号会指引文本编辑器找到对应行。| 
 AssetPathToGUID    string    资源路径转GUID    返回指定路径path下资源的GUID\(全局唯一标识符\)。  
 SaveAssets     void    保存资源    将所有未保存的资源更改写入磁盘。  
 GetCachedIcon     Texture    获取缓存的图标    为指定路径的资源检索一个图标。  
