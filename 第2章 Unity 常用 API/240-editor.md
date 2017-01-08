@@ -37,7 +37,7 @@
 
 | Messages | 说明 |
 | :--- | :--- |
-| OnSceneGUI | Enables the Editor to handle an event in the scene view. |
+| **OnSceneGUI** | Enables the Editor to handle an event in the scene view. |
 
 #### 示例：
 
