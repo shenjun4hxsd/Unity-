@@ -228,7 +228,8 @@ idnode.Attributes["修改"].InnerText = "完成";
 XmlDocument类是.NET框架的DOC解析器。XmlDocument将XML视为树状结构，它装载XML文档，并在内存中构建该文档的树状结构。下面来看下XmlDocument提供了哪些功能。
  
 一、属性：
- 
+
+```
 Attributes　　　　　 获取一个 XmlAttributeCollection，它包含该节点的属性。 （继承自 XmlNode。） 
 BaseURI 　　  　  　 获取当前节点的基 URI。 （重写 XmlNode..::.BaseURI。） 
 ChildNodes 　　　　　获取节点的所有子节点。 （继承自 XmlNode。） 
@@ -258,7 +259,9 @@ SchemaInfo 　　　　  返回节点的后架构验证信息集 (PSVI)。 （�
 Schemas 　　　　　　 获取或设置与此 XmlDocument 关联的 XmlSchemaSet 对象。 
 Value 　　　　　　　 获取或设置节点的值。 （继承自 XmlNode。） 
 XmlResolver 　　　　 设置 XmlResolver 以用于解析外部资源。
- 
+
+```
+
 二、方法
 
 ```
