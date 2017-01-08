@@ -34,21 +34,22 @@
 
 &emsp;
 
-|方法|解释|
+|方法|解释|
 |:--|:--|
-|Next|	移动到下一个属性。|
-|NextVisible|	移动到下一个可见属性。Reset	 移动到对象的第一个属性。|
-|CountRemaining|	 计算余下的可见属性。
-|Copy|	复制SerializedProperty。|
-|DuplicateCommand|	复制命令。|
-|DeleteCommand|	删除命令。|
-|FindPropertyRelative|	检索当前序列化属性相关的属性|
-|ClearArray|	删除所有元素的数组。|
-|CountInProperty|	计算该属性的所有子属性的数量,包括这个属性本身。|
-|GetArrayElementAtIndex	|返回指定索引数组中的元素。|
-|GetEndProperty|	检索SerializedProperty,定义了该属性的范围|
+|Next|移动到下一个属性。|
+|NextVisible|移动到下一个可见属性。|
+|Reset|移动到对象的第一个属性。|
+|CountRemaining|计算余下的可见属性。|
+|Copy|复制SerializedProperty。|
+|DuplicateCommand|复制命令。|
+|DeleteCommand|	删除命令。|
+|FindPropertyRelative|检索当前序列化属性相关的属性|
+|ClearArray|删除所有元素的数组。|
+|CountInProperty|计算该属性的所有子属性的数量,包括这个属性本身。|
+|GetArrayElementAtIndex	|返回指定索引数组中的元素。|
+|GetEndProperty|检索SerializedProperty,定义了该属性的范围|
 |GetEnumerator|	检索一个迭代器,允许您在当前的迭代器的下一个序列化的属性。|
-|InsertArrayElementAtIndex|	插入一个空元素指定数组中的索引。|
-|MoveArrayElement|	将一个数组元素从srcIndex dstIndex。|
-|DeleteArrayElementAtIndex|	删除数组中的指定索引元素。|
+|InsertArrayElementAtIndex|插入一个空元素指定数组中的索引。|
+|MoveArrayElement|将一个数组元素从srcIndex dstIndex。|
+|DeleteArrayElementAtIndex|删除数组中的指定索引元素。|
 
