@@ -73,6 +73,7 @@
     * [2.40 Editor](第2章 Unity 常用 API/240-editor.md)
     * [2.41 GUILayoutUtility](第2章 Unity 常用 API/241-guilayoututility.md)
     * [2.42 EditorGUI](第2章 Unity 常用 API/242-editorgui.md)
+    * [2.43 SerializedObject](第2章 Unity 常用 API/243-serializedobject.md)
 * [第1天](第1天/1.0 第1天.md)
     * [1.1 向量](第1天/11-向量.md)
         * [1.11 向量的数学运算](第1天/111-向量的数学运算.md)
