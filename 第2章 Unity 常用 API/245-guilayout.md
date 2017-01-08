@@ -26,13 +26,13 @@
 |EndArea|关闭由BeginArea开始GUILayout布局块。|void|
 |BeginScrollView|开始一个自动布局滚动视图。|Vector2|
 |EndScrollView|结束一个由BeginScrollView开始的滚动视图。|void|
-|Window|创建一个弹出窗口，它的内容是自动布局的。|GUILayoutOption|
-|Width|传递给控件一个绝对的宽度。|GUILayoutOption|
-|MinWidth|传递给控件指定一个最小宽度的选项。|GUILayoutOption|
-|MaxWidth|传递给控件指定一个最大宽度的选项。|GUILayoutOption|
-|Height|传递给控件一个绝对的高度。|GUILayoutOption|
-|MinHeight|传递给控件指定一个最小高度的选项。|GUILayoutOption|
-|MaxHeight|传递给控件指定一个最大高度的选项。|GUILayoutOption|
-|ExpandWidth|传递给控件是否允许水平液态方向的选项。|GUILayoutOption|
-|ExpandHeight|传递给控件是否允许垂直液态方向的选项。|GUILayoutOption|
+|**Window**|创建一个弹出窗口，它的内容是自动布局的。|GUILayoutOption|
+|**Width**|传递给控件一个绝对的宽度。|GUILayoutOption|
+|**MinWidth**|传递给控件指定一个最小宽度的选项。|GUILayoutOption|
+|**MaxWidth**|传递给控件指定一个最大宽度的选项。|GUILayoutOption|
+|**Height**|传递给控件一个绝对的高度。|GUILayoutOption|
+|**MinHeight**|传递给控件指定一个最小高度的选项。|GUILayoutOption|
+|**MaxHeight**|传递给控件指定一个最大高度的选项。|GUILayoutOption|
+|**ExpandWidth**|传递给控件是否允许水平液态方向的选项。|GUILayoutOption|
+|**ExpandHeight**|传递给控件是否允许垂直液态方向的选项。|GUILayoutOption|
 
