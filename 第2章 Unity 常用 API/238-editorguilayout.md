@@ -41,16 +41,16 @@
 |PasswordField|做一个文本字段,用户可以输入一个密码。|
 |Popup|做一个通用弹出选择字段。|
 |PrefixLabel|标签的一些控制。|
-PropertyField	属性字段。
-RectField	做一个X,Y,W & H字段输入一个矩形。
-SelectableLabel	做一个可选择的标签字段。 (用于显示只读信息,可以充满。)
-Slider	做一个滑动条,用户可以拖动改变之间的最小和最大价值。
-Space	使小空间之间之前的控制和以下。
-TagField	做一个标记选择字段。
-TextArea	让一个文本区域。
-TextField	制作一个文本字段。
-Toggle	切换。
-ToggleLeft	做一个切换开关领域是左边和右边的标签立即。
+|PropertyField|属性字段。|
+|RectField|做一个X,Y,W & H字段输入一个矩形。|
+|SelectableLabel|做一个可选择的标签字段。 (用于显示只读信息,可以充满。)|
+|Slider|做一个滑动条,用户可以拖动改变之间的最小和最大价值。|
+|Space|使小空间之间之前的控制和以下。|
+|TagField|做一个标记选择字段。|
+|TextArea|让一个文本区域。|
+|TextField|制作一个文本字段。|
+|Toggle|切换。|
+|ToggleLeft|做一个切换开关领域是左边和右边的标签立即。|
 Vector2Field	做一个X和Y字段输入一个Vector2。
 Vector3Field	让一个X,Y和Z字段输入一个Vector3。
 Vector4Field	使X,Y,Z和W字段输入一个Vector4。
