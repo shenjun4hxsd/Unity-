@@ -8,13 +8,10 @@
 
  &emsp;
 
-|函数\|返回类型\|解释\|描述\|  
-\|:--\|:--\|:--\|:--\|  
-\|  
-Update \|void\|更新\|更新序列化物体。\|
-
-\|  
-GetIterator\|SerializedProperty\|获取迭代器\|得到第一个被序列化属性。\|你可以用这个来遍历所有属性的目标对象。\|  
+|函数|返回类型|解释|描述|  
+|:--|:--|:--|:--|  
+|Update|void|更新|更新序列化物体。|
+|GetIterator\|SerializedProperty\|获取迭代器\|得到第一个被序列化属性。\|你可以用这个来遍历所有属性的目标对象。\|  
 \|  
 FindProperty\|     SerializedProperty\|查找属性\|通过名字查找被序列化属性。\|  
 \|  
