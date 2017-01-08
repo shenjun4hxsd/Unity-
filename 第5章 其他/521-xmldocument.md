@@ -233,31 +233,31 @@ XmlDocument类是.NET框架的DOC解析器。XmlDocument将XML视为树状结构
 Attributes        获取一个 XmlAttributeCollection，它包含该节点的属性。 （继承自 XmlNode。） 
 BaseURI           获取当前节点的基 URI。 （重写 XmlNode..::.BaseURI。） 
 ChildNodes 　　　　 获取节点的所有子节点。 （继承自 XmlNode。） 
-DocumentElement 　   获取文档的根 XmlElement。 
-DocumentType 　　　  获取包含 DOCTYPE 声明的节点。 
-FirstChild 　　　　　获取节点的第一个子级。 （继承自 XmlNode。） 
-HasChildNodes 　　　 获取一个值，该值指示节点是否有任何子节点。 （继承自 XmlNode。） 
-Implementation 　　  获取当前文档的 XmlImplementation 对象。 
+DocumentElement 　 获取文档的根 XmlElement。 
+DocumentType 　　　 获取包含 DOCTYPE 声明的节点。 
+FirstChild 　　　　 获取节点的第一个子级。 （继承自 XmlNode。） 
+HasChildNodes 　　　获取一个值，该值指示节点是否有任何子节点。 （继承自 XmlNode。） 
+Implementation 　　 获取当前文档的 XmlImplementation 对象。 
 InnerText 　　　　　 获取或设置节点及其所有子节点的串联值。 （继承自 XmlNode。） 
 InnerXml 　　　　　　获取或设置表示当前节点子级的标记。 （重写 XmlNode..::.InnerXml。） 
 IsReadOnly 　　　　　获取一个值，该值指示当前节点是否是只读的。 （重写 XmlNode..::.IsReadOnly。） 
 Item 　　　　　　　　已重载。 
 LastChild 　　　　　 获取节点的最后一个子级。 （继承自 XmlNode。） 
 LocalName 　　　　　 获取节点的本地名称。 （重写 XmlNode..::.LocalName。） 
-Name 　　　　　　　　获取节点的限定名。 （重写 XmlNode..::.Name。） 
-NamespaceURI 　　　  获取该节点的命名空间 URI。 （继承自 XmlNode。） 
+Name 　　　　　　　　 获取节点的限定名。 （重写 XmlNode..::.Name。） 
+NamespaceURI 　　　 获取该节点的命名空间 URI。 （继承自 XmlNode。） 
 NameTable 　　　　　 获取与此实现关联的 XmlNameTable。 
 NextSibling 　　　　 获取紧接在该节点之后的节点。 （继承自 XmlNode。） 
 NodeType 　　　　　  获取当前节点的类型。 （重写 XmlNode..::.NodeType。） 
 OuterXml 　　　　　  获取表示此节点及其所有子节点的标记。 （继承自 XmlNode。） 
 OwnerDocument 　　   获取当前节点所属的 XmlDocument。 （重写 XmlNode..::.OwnerDocument。） 
 ParentNode 　　　　  已重载。 
-Prefix 　　　　　　　获取或设置该节点的命名空间前缀。 （继承自 XmlNode。） 
-PreserveWhitespace   获取或设置一个值，该值指示是否在元素内容中保留空白。 
+Prefix 　　　　　　　 获取或设置该节点的命名空间前缀。 （继承自 XmlNode。） 
+PreserveWhitespace  获取或设置一个值，该值指示是否在元素内容中保留空白。 
 PreviousSibling 　　 获取紧接在该节点之前的节点。 （继承自 XmlNode。） 
 SchemaInfo 　　　　  返回节点的后架构验证信息集 (PSVI)。 （重写 XmlNode..::.SchemaInfo。） 
 Schemas 　　　　　　 获取或设置与此 XmlDocument 关联的 XmlSchemaSet 对象。 
-Value 　　　　　　　 获取或设置节点的值。 （继承自 XmlNode。） 
+Value 　　　　　　　  获取或设置节点的值。 （继承自 XmlNode。） 
 XmlResolver 　　　　 设置 XmlResolver 以用于解析外部资源。
 
 ```
