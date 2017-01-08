@@ -54,16 +54,16 @@ Static Variables
 |PasswordField|Make a text field where the user can enter a password.|
 |Popup|Make a generic popup selection field.|
 |PrefixLabel|Make a label in front of some control.|
-ProgressBar	Make a progress bar.
-PropertyField	Make a field for SerializedProperty.
-RectField	Make an X, Y, W & H field for entering a Rect.
-SelectableLabel	Make a selectable label field. (Useful for showing read-only info that can be copy-pasted.)
-Slider	Make a slider the user can drag to change a value between a min and a max.
-TagField	Make a tag selection field.
-TextArea	Make a text area.
-TextField	Make a text field.
-Toggle	Make a toggle.
-ToggleLeft	Make a toggle field where the toggle is to the left and the label immediately to the right of it.
-Vector2Field	Make an X & Y field for entering a Vector2.
-Vector3Field	Make an X, Y & Z field for entering a Vector3.
-Vector4Field	Make an X, Y, Z & W field for entering a Vector4.
+|ProgressBar|Make a progress bar.|
+|PropertyField|Make a field for SerializedProperty.|
+|RectField|Make an X, Y, W & H field for entering a Rect.|
+|SelectableLabel|Make a selectable label field. (Useful for showing read-only info that can be copy-pasted.)|
+|Slider|Make a slider the user can drag to change a value between a min and a max.|
+|TagField|Make a tag selection field.|
+|TextArea|Make a text area.|
+|TextField|Make a text field.|
+|Toggle|Make a toggle.|
+|ToggleLeft|Make a toggle field where the toggle is to the left and the label immediately to the right of it.|
+|Vector2Field|Make an X & Y field for entering a Vector2.|
+|Vector3Field|Make an X, Y & Z field for entering a Vector3.|
+|Vector4Field|Make an X, Y, Z & W field for entering a Vector4.|
