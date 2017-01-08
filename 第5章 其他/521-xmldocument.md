@@ -51,7 +51,7 @@ XMLDocument 在C\#中用于表示 XML 文档。
 **XmlDocument 为元素加入属性**
 
 ```
-subChild.SetAttribute("属性B", "子元素B");
+    subChild.SetAttribute("属性B", "子元素B");
     subChild.SetAttribute("属性A", "子元素A");
     //后添加的属性将显示在前面
 ```
@@ -59,7 +59,7 @@ subChild.SetAttribute("属性B", "子元素B");
 **XmlDocument 创建XML 节点**
 
 ```
-CreateElement创建 xml元素对象，并通过AppendChild方法附加xml元素 为节点。
+    CreateElement创建 xml元素对象，并通过AppendChild方法附加xml元素 为节点。
 
     CreateAttribute方法创建属性，通过AppendAttribute附加Attribute到节点的属性集合。
 ```
@@ -69,7 +69,7 @@ CreateElement创建 xml元素对象，并通过AppendChild方法附加xml元素 
 **XmlDocument 读取XML**
 
 ```javascript
-xmlDoc.Load(@“d:\xml.xml”); 
+        xmlDoc.Load(@“d:\xml.xml”); 
         //读取一个外部XML
         XmlNode node = xmlDoc.SelectSingleNode(“root”);
          //查找单一的XML节点
