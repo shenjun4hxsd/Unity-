@@ -18,3 +18,4 @@
 |CopyFromSerializedProperty|void|Copies a value from a SerializedProperty to the same serialized property on this serialized object.||
 |SetIsDifferentCacheDirty|void|Update hasMultipleDifferentValues cache on the next Update() call.||
 
+🔚
