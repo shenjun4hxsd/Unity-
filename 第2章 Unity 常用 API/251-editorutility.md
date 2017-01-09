@@ -26,7 +26,7 @@ Static Functions
 |OpenFilePanel|	Displays the "open file" dialog and returns the selected path name.选择/保存一个文件的文件摄取窗口。|
 |OpenFilePanelWithFilters|	Displays the "open file" dialog and returns the selected path name.|
 |**OpenFolderPanel**|	Displays the "open folder" dialog and returns the selected path name.|
-|SaveFilePanel|	Displays the "save file" dialog and returns the selected path name.|
+|SaveFilePanel|	Displays the "save file" dialog and returns the selected path name.选择/保存一个文件的文件摄取窗口。|
 |SaveFilePanelInProject|	Displays the "save file" dialog in the Assets folder of the project and returns the selected path name.|
 |SaveFolderPanel|	Displays the "save folder" dialog and returns the selected path name.|
 |SetDirty|	Marks target object as dirty. (Only suitable for non-scene objects).这个函数告诉引擎，相关对象所属于的Prefab已经发生了更改。方便，当我们更改了自定义对象的属性的时候，自动更新到所属的Prefab中。|
