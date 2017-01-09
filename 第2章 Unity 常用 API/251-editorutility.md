@@ -12,7 +12,7 @@ Static Functions
 |CopySerializedIfDifferent|	Copy all settings of a Unity Object to a second Object if they differ.|
 |CreateGameObjectWithHideFlags|	Creates a game object with HideFlags and specified components.|
 |DisplayCancelableProgressBar|	Displays or updates a progress bar that has a cancel button.|
-|DisplayDialog|	Displays a modal dialog.|
+|**DisplayDialog**|	Displays a modal dialog.|
 |DisplayDialogComplex|	Displays a modal dialog with three buttons.|
 |DisplayPopupMenu|	Displays a popup menu.|
 |DisplayProgressBar|	Displays or updates a progress bar.|
