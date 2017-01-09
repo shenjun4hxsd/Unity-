@@ -21,7 +21,7 @@ Static Functions
 |FormatBytes|	Returns a text for a number of bytes.|
 |GetObjectEnabled|	Is the object enabled (0 disabled, 1 enabled, -1 has no enabled button).|
 |InstanceIDToObject|	Translates an instance ID to a reference to an object.|
-|IsPersistent|	Determines if an object is stored on disk.|
+|IsPersistent|	Determines if an object is stored on disk.这个函数用于判定是否对象是被保存到硬盘中的。|
 |NaturalCompare|	Human-like sorting.|
 |OpenFilePanel|	Displays the "open file" dialog and returns the selected path name.|
 |OpenFilePanelWithFilters|	Displays the "open file" dialog and returns the selected path name.|
