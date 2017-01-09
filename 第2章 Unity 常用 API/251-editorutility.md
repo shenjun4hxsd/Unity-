@@ -7,7 +7,7 @@ Static Functions
 |ClearProgressBar|	Removes progress bar.|
 |CollectDeepHierarchy|	Collect all objects in the hierarchy rooted at each of the given objects.|
 |CollectDependencies|	Calculates and returns a list of all assets the assets listed in roots depend on.|
-|CompressTexture|	Compress a texture.|
+|CompressTexture|	Compress a texture.压缩图片到相应格式|
 |CopySerialized	|Copy all settings of a Unity Object.|
 |CopySerializedIfDifferent|	Copy all settings of a Unity Object to a second Object if they differ.|
 |CreateGameObjectWithHideFlags|	Creates a game object with HideFlags and specified components.|
