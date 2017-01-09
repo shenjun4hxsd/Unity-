@@ -23,7 +23,7 @@ Static Functions
 |InstanceIDToObject|	Translates an instance ID to a reference to an object.|
 |IsPersistent|	Determines if an object is stored on disk.这个函数用于判定是否对象是被保存到硬盘中的。|
 |NaturalCompare|	Human-like sorting.|
-|OpenFilePanel|	Displays the "open file" dialog and returns the selected path name.|
+|OpenFilePanel|	Displays the "open file" dialog and returns the selected path name.选择/保存一个文件的文件摄取窗口。|
 |OpenFilePanelWithFilters|	Displays the "open file" dialog and returns the selected path name.|
 |**OpenFolderPanel**|	Displays the "open folder" dialog and returns the selected path name.|
 |SaveFilePanel|	Displays the "save file" dialog and returns the selected path name.|
