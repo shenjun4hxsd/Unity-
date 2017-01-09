@@ -25,7 +25,7 @@ Static Functions
 |NaturalCompare|	Human-like sorting.|
 |OpenFilePanel|	Displays the "open file" dialog and returns the selected path name.|
 |OpenFilePanelWithFilters|	Displays the "open file" dialog and returns the selected path name.|
-|OpenFolderPanel|	Displays the "open folder" dialog and returns the selected path name.|
+|**OpenFolderPanel**|	Displays the "open folder" dialog and returns the selected path name.|
 |SaveFilePanel|	Displays the "save file" dialog and returns the selected path name.|
 |SaveFilePanelInProject|	Displays the "save file" dialog in the Assets folder of the project and returns the selected path name.|
 |SaveFolderPanel|	Displays the "save folder" dialog and returns the selected path name.|
