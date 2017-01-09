@@ -8,7 +8,7 @@ Static Functions
 |CollectDeepHierarchy|	Collect all objects in the hierarchy rooted at each of the given objects.|
 |CollectDependencies|	Calculates and returns a list of all assets the assets listed in roots depend on.|
 |CompressTexture|	Compress a texture.压缩图片到相应格式|
-|CopySerialized	|Copy all settings of a Unity Object.|
+|CopySerialized	|Copy all settings of a Unity Object.拷贝一个Object所有的属性设置等到另外一个Object|
 |CopySerializedIfDifferent|	Copy all settings of a Unity Object to a second Object if they differ.|
 |CreateGameObjectWithHideFlags|	Creates a game object with HideFlags and specified components.|
 |DisplayCancelableProgressBar|	Displays or updates a progress bar that has a cancel button.|
