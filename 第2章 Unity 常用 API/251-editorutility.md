@@ -1,0 +1,35 @@
+##EditorUtility
+
+Static Functions
+
+|静态方法|说明|
+|:--|:--|
+|ClearProgressBar|	Removes progress bar.|
+|CollectDeepHierarchy|	Collect all objects in the hierarchy rooted at each of the given objects.|
+|CollectDependencies|	Calculates and returns a list of all assets the assets listed in roots depend on.|
+|CompressTexture|	Compress a texture.|
+|CopySerialized	|Copy all settings of a Unity Object.|
+|CopySerializedIfDifferent|	Copy all settings of a Unity Object to a second Object if they differ.|
+|CreateGameObjectWithHideFlags|	Creates a game object with HideFlags and specified components.|
+|DisplayCancelableProgressBar|	Displays or updates a progress bar that has a cancel button.|
+|DisplayDialog|	Displays a modal dialog.|
+|DisplayDialogComplex|	Displays a modal dialog with three buttons.|
+|DisplayPopupMenu|	Displays a popup menu.|
+|DisplayProgressBar|	Displays or updates a progress bar.|
+|ExtractOggFile|	Saves an AudioClip or MovieTexture to a file.|
+|FocusProjectWindow|	Brings the project window to the front and focuses it.|
+|FormatBytes|	Returns a text for a number of bytes.|
+|GetObjectEnabled|	Is the object enabled (0 disabled, 1 enabled, -1 has no enabled button).|
+|InstanceIDToObject|	Translates an instance ID to a reference to an object.|
+|IsPersistent|	Determines if an object is stored on disk.|
+|NaturalCompare|	Human-like sorting.|
+|OpenFilePanel|	Displays the "open file" dialog and returns the selected path name.|
+|OpenFilePanelWithFilters|	Displays the "open file" dialog and returns the selected path name.|
+|OpenFolderPanel|	Displays the "open folder" dialog and returns the selected path name.|
+|SaveFilePanel|	Displays the "save file" dialog and returns the selected path name.|
+|SaveFilePanelInProject|	Displays the "save file" dialog in the Assets folder of the project and returns the selected path name.|
+|SaveFolderPanel|	Displays the "save folder" dialog and returns the selected path name.|
+|SetDirty|	Marks target object as dirty. (Only suitable for non-scene objects).|
+|SetObjectEnabled|	Set the enabled state of the object.|
+|SetSelectedRenderState|	Set the Scene View selected display mode for this Renderer.|
+|UnloadUnusedAssetsImmediate|	Unloads assets that are not used.|

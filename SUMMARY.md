@@ -81,6 +81,7 @@
     * [2.48 EditorStyle](第2章 Unity 常用 API/248-editorstyle.md)
     * [2.49 FileUtil](第2章 Unity 常用 API/249-fileutil.md)
     * [2.50 AssetDatabase](第2章 Unity 常用 API/250-assetdatabase.md)
+    * [2.51 EditorUtility](第2章 Unity 常用 API/251-editorutility.md)
 * [第1天](第1天/1.0 第1天.md)
     * [1.1 向量](第1天/11-向量.md)
         * [1.11 向量的数学运算](第1天/111-向量的数学运算.md)
