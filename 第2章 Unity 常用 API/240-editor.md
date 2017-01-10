@@ -159,5 +159,26 @@ using UnityEditor;
     }
 ```
 
+
+```javascript
+void OnSceneGUI()
+	{
+		m_pEvent = Event.current;
+		if (m_pEvent.type == EventType.mouseDown && m_pEvent.button == 1) {
+			Ray ray = HandleUtility.GUIPointToWorldRay(m_pEvent.mousePosition);
+			if(isAddNode && Physics.Raycast(ray, out hit))
+			{
+				GameObject go = GameObject.CreatePrimitive(PrimitiveType.Cube);
+				go.transform.position = hit.point;
+				go.transform.SetParent(emiter.transform);
+			}
+		}
+
+		GUILayout.BeginArea (new Rect (Screen.width - 200, Screen.height - 100, 100, 50));
+		isAddNode = GUILayout.Toggle (isAddNode, "isAddNode");
+		GUILayout.EndArea ();
+	}
+```
+
 🔚
 
