@@ -34,7 +34,7 @@ Unload	Unloads all assets in the bundle.
 
 Static Functions
 
-LoadFromFile	Synchronously loads an AssetBundle from a file on disk.
+LoadFromFile	Synchronously loads an AssetBundle from a file on disk. 必须有UncompressedAssetBundle
 LoadFromFileAsync	Asynchronously loads an AssetBundle from a file on disk.
 LoadFromMemory	Synchronously create an AssetBundle from a memory region.
 LoadFromMemoryAsync	Asynchronously create an AssetBundle from a memory region.
