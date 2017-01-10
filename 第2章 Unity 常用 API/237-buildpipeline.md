@@ -270,18 +270,11 @@ StrictMode	Do not allow the build to succeed if any errors are reporting during 
 DryRunBuild	Do a dry run build.
 ```
 
-
-CollectDependencies
-Includes all dependencies. // 包含所有依赖关系。
-CompleteAssets
-Forces inclusion of the entire asset.
-强制包括整个资源。
-DisableWriteTypeTree
-Do not include type information within the AssetBundle.
-在资源包不包含类型信息。
-DeterministicAssetBundle
-Builds an asset bundle using a hash for the id of the object stored in the asset bundle.
-编译资源包使用一个哈希表储存对象ID在资源包中。
-
+```
+CollectDependencies 包含所有依赖关系。
+CompleteAssets 强制包括整个资源。
+DisableWriteTypeTree 在资源包不包含类型信息。
+DeterministicAssetBundle 编译资源包使用一个哈希表储存对象ID在资源包中。
+```
 
 🔚
