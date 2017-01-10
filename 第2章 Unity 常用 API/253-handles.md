@@ -60,7 +60,7 @@ FreeRotateHandle	Make an unconstrained rotation handle.
 GetMainGameViewSize	Get the width and height of the main Game view.
 Label	Make a text label positioned in 3D space.
 MakeBezierPoints	Retuns an array of points to representing the bezier curve. See Handles.DrawBezier.
-PositionHandle	Make a 3D Scene view position handle.
+##PositionHandle	Make a 3D Scene view position handle.
 RadiusHandle	Make a Scene view radius handle.
 RectangleHandleCap	Draw a rectangle handle. Pass this into handle functions.
 RotationHandle	Make a Scene view rotation handle.
