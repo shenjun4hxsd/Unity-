@@ -84,6 +84,7 @@
     * [2.51 EditorUtility](第2章 Unity 常用 API/251-editorutility.md)
     * [2.52 Event](第2章 Unity 常用 API/252-event.md)
     * [2.53 Handles](第2章 Unity 常用 API/253-handles.md)
+    * [2.54 HandleUtility](第2章 Unity 常用 API/254-handleutility.md)
 * [第1天](第1天/1.0 第1天.md)
     * [1.1 向量](第1天/11-向量.md)
         * [1.11 向量的数学运算](第1天/111-向量的数学运算.md)
