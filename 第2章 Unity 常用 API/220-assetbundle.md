@@ -29,6 +29,8 @@ LoadAssetAsync	Asynchronously loads asset with name from the bundle.
 LoadAssetWithSubAssets	Loads asset and sub assets with name from the bundle.
 LoadAssetWithSubAssetsAsync	Loads asset with sub assets with name from the bundle asynchronously.
 Unload	Unloads all assets in the bundle.
+        false 仅删除没有引用的资源
+        true 不管bundle中的资源是否在引用，全部删除
 
 
 
