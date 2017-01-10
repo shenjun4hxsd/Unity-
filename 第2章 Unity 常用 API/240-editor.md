@@ -161,7 +161,7 @@ using UnityEditor;
 
 
 ```javascript
-void OnSceneGUI()
+    void OnSceneGUI()
 	{
 		m_pEvent = Event.current;
 		if (m_pEvent.type == EventType.mouseDown && m_pEvent.button == 1) {
