@@ -253,10 +253,22 @@ Assetbundle是可以同时放在服务器或者本地的，无论放在哪里两
 
 
 
+---
 
+###BuildAssetBundleOptions
 
-
-
+```
+None	Build assetBundle without any special option.
+UncompressedAssetBundle	Don't compress the data when creating the asset bundle.
+DisableWriteTypeTree	Do not include type information within the AssetBundle.
+DeterministicAssetBundle	Builds an asset bundle using a hash for the id of the object stored in the asset bundle.
+ForceRebuildAssetBundle	Force rebuild the assetBundles.
+IgnoreTypeTreeChanges	Ignore the type tree changes when doing the incremental build check.
+AppendHashToAssetBundleName	Append the hash to the assetBundle name.
+ChunkBasedCompression	Use chunk-based LZ4 compression when creating the AssetBundle.
+StrictMode	Do not allow the build to succeed if any errors are reporting during it.
+DryRunBuild	Do a dry run build.
+```
 
 
 
