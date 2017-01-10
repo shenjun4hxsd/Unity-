@@ -29,7 +29,7 @@ DistanceToLine	Pixel distance from mouse pointer to line.
 DistanceToPolyLine	Pixel distance from mouse pointer to a polyline.
 DistanceToRectangle	Pixel distance from mouse pointer to a rectangle on screen.
 GetHandleSize	Get world space size of a manipulator handle at given position.
-##GUIPointToWorldRay	Convert 2D GUI position to a world space ray.
+##GUIPointToWorldRay	Convert 2D GUI position to a world space ray.   Ray ray = HandleUtilty.GUIPointToWolrdRay(Event.current.mousePosition);
 PickGameObject	Pick game object closest to specified position.
 PickRectObjects	Pick GameObjects that lie within a specified screen rectangle.
 PointOnLineParameter	Returns the parameter for the projection of the point on the given line.
