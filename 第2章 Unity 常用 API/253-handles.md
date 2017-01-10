@@ -25,7 +25,7 @@ Static Functions
 ArrowCap	Draw an arrow like those used by the move tool.
 ArrowHandleCap	Draw an arrow like those used by the move tool.
 BeginGUI	Begin a 2D GUI block inside the 3D handle GUI.
-Button	Make a 3D button.
+##Button	Make a 3D button.
 CircleCap	Draw a camera-facing Circle. Pass this into handle functions.
 CircleHandleCap	Draw a circle handle. Pass this into handle functions.
 ClearCamera	Clears the camera.
@@ -44,7 +44,7 @@ DrawBezier	Draw textured bezier line through start and end points with the given
 DrawCamera	Draws a camera inside a rectangle.
 DrawDottedLine	Draw a dotted line from p1 to p2.
 DrawDottedLines	Draw a list of dotted line segments.
-DrawLine	Draw a line from p1 to p2.
+##DrawLine	Draw a line from p1 to p2.
 DrawLines	Draw a list of line segments.
 DrawPolyLine	Draw a line going through the list of all points.
 DrawSelectionFrame	Draw a camera facing selection frame.
@@ -58,7 +58,7 @@ EndGUI	End a 2D GUI block and get back to the 3D handle GUI.
 FreeMoveHandle	Make an unconstrained movement handle.
 FreeRotateHandle	Make an unconstrained rotation handle.
 GetMainGameViewSize	Get the width and height of the main Game view.
-Label	Make a text label positioned in 3D space.
+##Label	Make a text label positioned in 3D space.
 MakeBezierPoints	Retuns an array of points to representing the bezier curve. See Handles.DrawBezier.
 ##PositionHandle	Make a 3D Scene view position handle.
 RadiusHandle	Make a Scene view radius handle.
