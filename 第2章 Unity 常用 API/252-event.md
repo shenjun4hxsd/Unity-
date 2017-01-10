@@ -22,6 +22,8 @@ Static Variables 静态变量
 
 current	The current event that's being processed right now.
 目前正在处理的事件。
+
+```
 Variables 变量
 
 alt	Is Alt/Option key held down? (Read Only)
@@ -62,12 +64,19 @@ shift	Is Shift held down? (Read Only)
 Shift键按住了么（只读）？
 type	The type of event.
 事件的类型。
+```
+
+
+```
 Public Functions 共有函数
 
 GetTypeForControl	Get a filtered event type for a given control ID.
 获取一个给定controlID的事件类型。
 Use	Use this event.
 使用这个事件。
+```
+
+```
 Static Functions 静态函数
 
 GetEventCount	Returns the current number of events that are stored in the event queue.
@@ -76,3 +85,5 @@ KeyboardEvent	Create a keyboard event.
 创建一个键盘事件。
 PopEvent	Get the next queued [Event] from the event system.
 从事件系统获取下个队列的事件。
+```
+🔚
