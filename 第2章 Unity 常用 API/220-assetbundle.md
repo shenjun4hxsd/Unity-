@@ -1,5 +1,16 @@
 ##AssetBundle
 
+```javascript
+	IEnumerator Start () {
+		WWW www = new WWW("http://myserver/myBundle.unity3d");
+		yield return www;
+	
+		// Get the designated main asset and instantiate it.
+		Instantiate(www.assetBundle.mainAsset);
+	}
+```
+
+
 ```
 isStreamedSceneAssetBundle	Return true if the AssetBundle is a streamed scene AssetBundle.
 mainAsset	Main asset that was supplied when building the asset bundle (Read Only).
