@@ -193,5 +193,5 @@
         * [5.21 XMLDocument](第5章 其他/521-xmldocument.md)
         * [5.22 XMLWrite和XMLReader](第5章 其他/522-xmlwrite和xmlreader.md)
         * [5.23 XPath详解](第5章 其他/523-xpath详解.md)
-    * 5.3 视频播放
+    * [5.3 视频播放](第5章 其他/53-视频播放.md)
 
