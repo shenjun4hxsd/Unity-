@@ -80,7 +80,7 @@
 ```
 
 **示例3：**
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
 
@@ -95,7 +95,7 @@
 ```
 
 **示例4：**
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
 
