@@ -17,7 +17,7 @@ XMLReader表示提供对 XML 数据进行快速、非缓存、只进访问的读
 
 **XMLWriter 创建 XML 声明**
 
-```javascript
+```csharp
 //引入命名空间
     using System.Xml;
 
@@ -27,7 +27,7 @@ XMLReader表示提供对 XML 数据进行快速、非缓存、只进访问的读
 
 **XMLWriter 创建节点**
 
-```javascript
+```csharp
 textWriter.WriteStartElement(“root"); 
     textWriter.WriteStartElement(“Child");
     // 为元素加入属性
@@ -38,7 +38,7 @@ textWriter.WriteStartElement(“root");
 
 **XMLWriter为元素加入属性**
 
-```javascript
+```csharp
 textWriter.WriteStartElement("Child");
     textWriter.WriteAttributeString("属性A","A");
     textWriter.WriteAttributeString("属性B","B");
@@ -47,14 +47,14 @@ textWriter.WriteStartElement("Child");
 
 **XMLWrite写入注释**
 
-```javascript
+```csharp
 textWriter.WriteComment(“注释内容");
  textWriter.WriteCData(“<strong>CData 内容</strong>");
 ```
 
 **XMLWrite创建XML 要点**
 
-```javascript
+```csharp
 XMLWrite 子节点 和属性 必须在WriteEndElement()方法前。
     开始写入，调用WriteStartDocument方法。
     写入结束，调用WriteEndDocument方法，和Close方法，关闭流。
@@ -64,14 +64,14 @@ XMLWrite 子节点 和属性 必须在WriteEndElement()方法前。
 
 **XmlReader读取XML**
 
-```javascript
+```csharp
 //读取一个外部XML
     XmlTextReader textReader = new XmlTextReader(@"d:\xmlRead.xml");
 ```
 
 **XmlReader读取节点信息**
 
-```javascript
+```csharp
 while (textReader.Read())
     {
         if (textReader.NodeType == XmlNodeType.Element)
@@ -84,7 +84,7 @@ while (textReader.Read())
 
 **XmlReader读取属性**
 
-```javascript
+```csharp
 //方式一：取得当前Reader元素的指定名称的属性值；
     textReader.GetAttribute(“属性A”);
 
