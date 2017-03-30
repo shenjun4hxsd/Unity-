@@ -62,7 +62,7 @@
 在窗口内回调绘制GUI(和GUI.Window一起使用)。|
 
 ###示例：
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
 
@@ -83,7 +83,7 @@
     }
 ```
 
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
 
