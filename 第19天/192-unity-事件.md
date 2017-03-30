@@ -57,7 +57,7 @@ UnityEvent本质上是继承自UnityEventBase的类，它的AddListener()方法�
 
 
 
-```javascript
+```csharp
 //使用UnityEvent 和 UnityAction：
 using UnityEngine;
 using System.Collections;
@@ -97,7 +97,7 @@ public class UnityActionAndEvent : MonoBehaviour {
 ```
 
 
-```javascript
+```csharp
 // 使用带参数的UnityEvent
 using UnityEngine;
 using System.Collections;
@@ -143,7 +143,7 @@ public class UnityActionWithParameter : MonoBehaviour {
 >2、在Inspector中添加的则是永久性的Listener（persistent listener)。他们需要指定GameObject、方法以及方法需要的参数。他们是序列化的，用脚本是无法访问到的。
 
 
-```javascript
+```csharp
 // 另外在脚本中使用lamda表达式来添加listener是非常方便的，可以添加任意多个参数的函数。
 using UnityEngine;
 using System.Collections;
