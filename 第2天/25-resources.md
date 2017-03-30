@@ -15,7 +15,7 @@ Resources类允许你从指定的路径查找或访问资源。
 
 示例：
 
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
  
