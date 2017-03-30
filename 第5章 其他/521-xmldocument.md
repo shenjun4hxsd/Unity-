@@ -14,7 +14,7 @@ XMLDocument 在C\#中用于表示 XML 文档。
 
 **XmlDocument 创建 XML 声明**
 
-```javascript
+```csharp
         using System.Xml;//引入命名空间
 
         XmlDocument xmldoc ;//声明 XML文档 对象
@@ -27,7 +27,7 @@ XMLDocument 在C\#中用于表示 XML 文档。
 
 **XmlDocument 创建根节点**
 
-```javascript
+```csharp
         XmlElement xmlelem;//声明 XML元素对象
 
         xmlelem = xmldoc.CreateElement ( "" , “root" , "" ) ;
@@ -37,7 +37,7 @@ XMLDocument 在C\#中用于表示 XML 文档。
 
 **XmlDocument 加入XML元素**
 
-```javascript
+```csharp
         for (int i = 0; i < 3; i++)
         {
                 XmlElement child = xmldoc.CreateElement("child");
@@ -68,7 +68,7 @@ XMLDocument 在C\#中用于表示 XML 文档。
 
 **XmlDocument 读取XML**
 
-```javascript
+```csharp
         xmlDoc.Load(@“d:\xml.xml”); 
         //读取一个外部XML
         XmlNode node = xmlDoc.SelectSingleNode(“root”);
@@ -79,7 +79,7 @@ XMLDocument 在C\#中用于表示 XML 文档。
 
 **XmlDocument 使用XmlReader忽略文档里面的注释**
 
-```javascript
+```csharp
         XmlDocument xmlDoc = new XmlDocument();
         XmlReaderSettings settings = new XmlReaderSettings();
         settings.IgnoreComments = true;//忽略文档里面的注释
@@ -90,7 +90,7 @@ XMLDocument 在C\#中用于表示 XML 文档。
 
 **XmlDocument 为NodeList增加元素**
 
-```javascript
+```csharp
         // 为列表中所有节点加入ID子节点： 
         for (int i = 0; i < nodeList.Count; i++)
         {
@@ -102,7 +102,7 @@ XMLDocument 在C\#中用于表示 XML 文档。
 
 **XmlDocument 使用Xpath查找节点**
 
-```javascript
+```csharp
         // 查找ID为2的子节点，增加name节点(使用Xpath)
         XmlNode idnode = xmlDoc.SelectSingleNode("/root/newChild[id=2]");
         XmlNode id2Name = xmlDoc.CreateNode(XmlNodeType.Element, "name", null);
@@ -112,7 +112,7 @@ XMLDocument 在C\#中用于表示 XML 文档。
 
 **XPath**
 
-```javascript
+```csharp
         // path为 root，子节点为id元素内容为2，名为newChild的节点；
         (“/root/newChild[id=2]”)
 
@@ -138,7 +138,7 @@ idnode.Attributes["修改"].InnerText = "完成";
 
 **XmlDocument 为节点删除属性**
 
-```javascript
+```csharp
         XmlNode id1node = xmlDoc.SelectSingleNode("root/newChild[id=1]");
         XmlNodeList id1NodeChildNodes = id1node.ChildNodes;
         for (int i = 0; i < id1NodeChildNodes.Count; i++)
@@ -150,7 +150,7 @@ idnode.Attributes["修改"].InnerText = "完成";
 
 **XmlDocument 删除节点**
 
-```javascript
+```csharp
         //父节点删除子节点
         node.RemoveChild(idnode);
         id2node.ParentNode.RemoveChild(id2node);
@@ -158,7 +158,7 @@ idnode.Attributes["修改"].InnerText = "完成";
 
 **XmlDocument 通过名字查找节点**
 
-```javascript
+```csharp
         //查找某一节点下所有名为 (“newSubChild”)的节点，返回为XMLNODELIST;
         GetElementsByTagName("newSubChild")
 ```
@@ -168,7 +168,7 @@ idnode.Attributes["修改"].InnerText = "完成";
 
 ###示例：
 
-```javascript
+```csharp
 	void OperateXml()
 	{
 		XmlDocument pDoc = new XmlDocument ();

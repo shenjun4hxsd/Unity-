@@ -35,7 +35,7 @@ XML 声明通常在 XML 文档的第一行出现。XML 声明不是必选项，�
 
 由根元素开始 扩展到叶 的结构
 
-```javascript
+```csharp
     <root   property = “属性”>
         <child>
             <subchild>    这里是元素内容 </subchild>
@@ -75,7 +75,7 @@ XML 元素指的是从（且包括）开始标签直到（且包括）结束标�
 
 **属性到元素的转换**
 
-```javascript
+```csharp
     <note date="08/08/2008">
     
     <note><date>08/08/2008</date> </note>
