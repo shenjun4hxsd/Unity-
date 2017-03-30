@@ -6,7 +6,7 @@ NGUI事件的种类很多，比如点击、双击、拖动、滑动等等，他�
 
 把下面脚本直接绑定在按钮上，当按钮点击时就可以监听到，这种方法很不灵活。
 
-```javascript
+```csharp
 	void OnClick()
 	{
 		Debug.Log("Button is Click!!!");
@@ -30,7 +30,7 @@ Include Children ：是否让该对象的所有子对象也发送这个点击事
 
 到UIButtonMessage.cs这个脚本中看看，其实很简单就是调用Unity自身的SendMessage而已。
 
-```javascript
+```csharp
 	void Send ()
 	{
 		if (string.IsNullOrEmpty(functionName)) return;
@@ -59,7 +59,7 @@ Include Children ：是否让该对象的所有子对象也发送这个点击事
 
 在任何一个脚本或者类中即可得到按钮的点击事件、把如下代码放在任意类中或者脚本中。
 
-```javascript
+```csharp
 	void Awake () 
 	{	
                 // 获取需要监听的按钮对象
