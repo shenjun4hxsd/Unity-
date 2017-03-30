@@ -35,7 +35,7 @@ JSON 语法是JavaScript对象表示法语法的子集。
         
 值的类型可以是:
 
-```javascript
+```csharp
         public enum JsonType
         {
                 None,
@@ -62,7 +62,7 @@ JSON 对象在花括号中书写，对象可以包含多个名称／值对：
 
 JSON 对象
 
-```javascript
+```csharp
         {
                 "china": {
                         "hangzhou":{"item":"1"},
@@ -80,7 +80,7 @@ JSON 数组
 
         JSON数组在方括号中书写，数组可包含多个对象：
 
-```javascript
+```csharp
 {
     "people": [
              { "firstName" : "Brett", "lastName" : "McLaughlin" },
@@ -109,7 +109,7 @@ JSON 数组
 
 例如，可以创建一个新的字符串变量，然后将 JSON 格式的数据字符串直接赋值给它：
 
-```javascript
+```csharp
         string str = @"
         {
         ""Name"":""shenjun"",
@@ -135,7 +135,7 @@ JSON 数组
 
 使用JsonData，JsonMapper来处理Json的编码和解析
 
-```javascript
+```csharp
         JsonData jd = JsonMapper.ToObject(str);
                 Debug.Log("name = " + (string)jd["Name"]);
         Debug.Log("Age = " + (int)jd["Age"]);
@@ -149,7 +149,7 @@ JSON 数组
         }
 ```
 
-```javascript
+```csharp
 	void StreamWriteJson<T>(string path, T o)
 	{
 		using (FileStream fsWrite = File.Open (path, FileMode.OpenOrCreate)) {
@@ -178,7 +178,7 @@ JSON 数组
 
 **使用JsonWriter原始方式生成Json**
 
-```javascript
+```csharp
         将数组转换成json:["one","two","three","four"]
         
         JsonWriter writer = new JsonWriter();
@@ -192,7 +192,7 @@ JSON 数组
 
 **将复合对象转换成json字符串**
 
-```javascript
+```csharp
 {"book":{"title":"android game!","author":"pei","bookdetail":{"pages":429,"about":null}}}JsonWriter writer2 = new JsonWriter();writer2.WriteObjectStart();        writer2.WritePropertyName("book");         writer2.WriteObjectStart();        writer2.WritePropertyName("title");        writer2.Write("android game!");        writer2.WritePropertyName("author");writer2.Write("pei");        writer2.WritePropertyName("bookdetail");writer2.WriteObjectStart();        writer2.WritePropertyName("pages");        writer2.Write(429);        writer2.WritePropertyName("about");        writer2.Write(null);        writer2.WriteObjectEnd();         writer2.WriteObjectEnd();        writer2.WriteObjectEnd();       Debug.Log(writer2.ToString());
 
 ```
