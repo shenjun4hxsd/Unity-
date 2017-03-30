@@ -34,7 +34,7 @@
 
 **实例：**
 
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
  
