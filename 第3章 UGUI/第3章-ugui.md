@@ -94,7 +94,7 @@
         
 ###背包系统的物体拖拽
 
-```javascript
+```csharp
     using UnityEngine.EventSystem;
     public class Item : MonoBehaviour , IPointDownHandler, IPointUpHandler, IDragHandler
     {
