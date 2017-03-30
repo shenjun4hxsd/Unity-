@@ -10,7 +10,7 @@
 球形插值，通过t值from向to之间插值。参数取值范围[0,1]。
 
 **实例：**
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
  
