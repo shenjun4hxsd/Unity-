@@ -41,7 +41,7 @@ Exit：表示退出当前的状态机，如果有任意状态指向该出口，�
 
 ![](/assets/newAnimator01.png)
 
-```javascript
+```csharp
 using UnityEngine;  
 using System.Collections;  
   
@@ -58,7 +58,7 @@ public class Idle : StateMachineBehaviour {
 }  
 ```
 
-```javascript
+```csharp
 using UnityEngine;  
 using System.Collections;  
   
@@ -75,7 +75,7 @@ public class Attack1 : StateMachineBehaviour {
 }  
 ```
 
-```javascript
+```csharp
 using UnityEngine;  
 using System.Collections;  
   
@@ -92,7 +92,7 @@ public class Attack2 : StateMachineBehaviour {
 }  
 ```
 
-```javascript
+```csharp
 using UnityEngine;  
 using System.Collections;  
   
@@ -107,7 +107,7 @@ public class Attack3 : StateMachineBehaviour {
 }  
 ```
 
-```javascript
+```csharp
 using UnityEngine;  
 using System.Collections;  
   
@@ -126,7 +126,7 @@ public class Run : StateMachineBehaviour {
 ###● 自定义编辑器
 另外，可以用代码来创建AnimatorController。
 
-```javascript
+```csharp
 using UnityEngine;  
 using UnityEditor;  
 using UnityEditor.Animations;  
