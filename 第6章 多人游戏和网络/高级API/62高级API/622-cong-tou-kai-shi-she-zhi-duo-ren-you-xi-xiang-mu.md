@@ -28,7 +28,7 @@
 &emsp;&emsp;• 将`NetworkManager`组件上的`Spawn Info`中的`Player Prefab`设置为玩家预制体。
 
 
-
+&emsp;&emsp;• 可以将当前场景保存为“offlineScene”。
 
 
 
