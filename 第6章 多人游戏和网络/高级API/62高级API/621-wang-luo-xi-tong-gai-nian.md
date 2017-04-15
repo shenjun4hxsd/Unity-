@@ -46,12 +46,12 @@
 下面的示例产生一个对象，并将权限分配给生成它的玩家的客户端。
 
 ```csharp
-[Command]
-void CmdSpawn()
-{
-    var go = (GameObject)Instantiate(otherPrefab, transform.position + new Vector3(0,1,0), Quaternion.identity);
-    NetworkServer.SpawnWithClientAuthority(go, connectionToClient);
-}
+    [Command]
+    void CmdSpawn()
+    {
+        var go = (GameObject)Instantiate(otherPrefab, transform.position + new Vector3(0,1,0), Quaternion.identity);
+        NetworkServer.SpawnWithClientAuthority(go, connectionToClient);
+    }
 ```
 
 
