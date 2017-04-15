@@ -24,3 +24,5 @@
 ###3、注册玩家预制体
 
 一旦玩家预制体已创建，它必须向网络系统注册。
+
+&emsp;&emsp;• 将`NetworkManager`组件上的`Spawn Info`中的`Player Prefab`设置为玩家预制体。
