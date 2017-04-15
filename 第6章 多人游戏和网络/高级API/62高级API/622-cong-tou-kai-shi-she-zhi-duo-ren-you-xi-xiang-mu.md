@@ -20,3 +20,7 @@
 &emsp;&emsp;• 给玩家的预制体添加NetworkIdentity组件。此组件用于标识服务器和客户端之间的对象。
 
 &emsp;&emsp;• 将`NetworkIdentity`上的“`Local Player Authority`”复选框设置为`true`。这将允许客户端控制玩家的移动。
+
+###3、注册玩家预制体
+
+一旦玩家预制体已创建，它必须向网络系统注册。
