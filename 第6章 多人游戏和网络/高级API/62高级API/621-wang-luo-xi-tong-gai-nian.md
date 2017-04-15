@@ -59,10 +59,10 @@ void CmdSpawn()
 
 `NetworkBehaviour`类中有一些属性，允许脚本随时知道网络对象的网络上下文。
 
-isServer - 如果对象位于服务器（或主机）上并已生成，则为true。
-isClient - 如果对象在客户端上，并且由服务器创建，则为true。
-isLocalPlayer - 如果对象是此客户端的播放器对象，则为true。
-hasAuthority - 如果对象由本地进程拥有，则为true
+`isServer` - 如果对象位于服务器（或主机）上并已生成，则为true。
+`isClient` - 如果对象在客户端上，并且由服务器创建，则为true。
+`isLocalPlayer` - 如果对象是此客户端的玩家对象，则为true。
+`hasAuthority` - 如果对象由本地进程拥有，则为true
 这些属性可以在编辑器的“检查器”窗口中的对象的预览窗口中看到。
 
 
