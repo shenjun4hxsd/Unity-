@@ -6,3 +6,4 @@
 
 ###1、NetworkManager设置
 
+第一步是在项目中创建一个`NetworkManager`对象：
