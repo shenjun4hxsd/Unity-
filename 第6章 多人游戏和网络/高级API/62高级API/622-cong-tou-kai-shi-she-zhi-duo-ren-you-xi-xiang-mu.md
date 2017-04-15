@@ -9,3 +9,5 @@
 第一步是在项目中创建一个`NetworkManager`对象：
 
 &emsp;&emsp;• 创建一个空物体并添加NetworkManager组件。该组件管理游戏的网络状态。
+
+&emsp;&emsp;• 继续添加NetworkManagerHUD组件。该组件在您的游戏中提供了一个简单的用户界面来控制网络状态。
