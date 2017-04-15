@@ -55,7 +55,9 @@
 
 ###5、测试托管游戏
 
+运行游戏，此时应该显示NetworkMangerHUD默认用户界面：
 
+![](/assets/LocalConnectionCallBack.png)
 
-
+&emsp;&emsp;• 选择“LAN Host(H)”。这会创建玩家对象，并且HUD将更改以显示服务器处于活动状态。这个游戏作为一个“主机”运行。（这是同一个进程中一个服务器和一个客户端。）
 
