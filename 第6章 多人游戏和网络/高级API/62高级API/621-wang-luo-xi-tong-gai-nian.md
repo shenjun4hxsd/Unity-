@@ -35,21 +35,35 @@
 `NetworkBehaviour`上有一个属性“`hasAuthority`”，可以用来判断对象是否具有权限。因此，非玩家对象在服务器上具有权限，并且具有`localPlayerAuthority`集合的玩家对象对其所有者的客户端具有权限。
 
 
-###非玩家对象的客户端权限
+###4、非玩家对象的客户端权限
 
 从Unity版本5.2开始，可以对非玩家对象有客户端权限。有两种方法可以做到这一点。一个是使用`NetworkServer.SpawnWithClientAuthority`产生对象，并传递客户端的网络连接以获取所有权。另一个是使用`NetworkIdentity.AssignClientAuthority`与客户端的网络连接来取得所有权。
 
-向客户端分配权限会导致在对象上的NetworkBehaviours上调用OnStartAuthority（），并且hasAuthority属性将为true。在其他客户端上，hasAuthority属性仍将为false。具有客户授权的非玩家对象可以发送命令，就像玩家可以一样。这些命令在对象的服务器实例上运行，而不是在与连接相关联的播放器上运行。
+向客户端分配权限会导致在对象上的`NetworkBehaviours`上调用`OnStartAuthority()`，并且`hasAuthority`属性将为`true`。在其他客户端上，`hasAuthority`属性仍将为`false`。具有客户授权的非玩家对象可以发送命令，就像玩家可以一样。这些命令在对象的服务器实例上运行，而不是在与连接相关联的玩家上运行。
 
-具有客户端权限的非玩家对象必须在其NetworkIdentity中检查LocalPlayerAuthority。
+具有客户端权限的非玩家对象必须在其`NetworkIdentity`中检查`LocalPlayerAuthority`。
 
-下面的示例产生一个对象，并将权限分配给生成它的播放器的客户端。
+下面的示例产生一个对象，并将权限分配给生成它的玩家的客户端。
+
+```csharp
+[Command]
+void CmdSpawn()
+{
+    var go = (GameObject)Instantiate(otherPrefab, transform.position + new Vector3(0,1,0), Quaternion.identity);
+    NetworkServer.SpawnWithClientAuthority(go, connectionToClient);
+}
+```
 
 
+###5、网络上下文属性
 
+`NetworkBehaviour`类中有一些属性，允许脚本随时知道网络对象的网络上下文。
 
-
-
+isServer - 如果对象位于服务器（或主机）上并已生成，则为true。
+isClient - 如果对象在客户端上，并且由服务器创建，则为true。
+isLocalPlayer - 如果对象是此客户端的播放器对象，则为true。
+hasAuthority - 如果对象由本地进程拥有，则为true
+这些属性可以在编辑器的“检查器”窗口中的对象的预览窗口中看到。
 
 
 
