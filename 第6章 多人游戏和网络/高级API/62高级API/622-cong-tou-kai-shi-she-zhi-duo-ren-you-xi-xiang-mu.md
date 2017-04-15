@@ -36,8 +36,22 @@
 
 第一个游戏功能是移动玩家对象。这将首先在没有任何网络的情况下完成，因此它只能在单人模式下工作。
 
+编写玩家移动脚本：
 
+```csharp
+using UnityEngine;
 
+public class PlayerMove : MonoBehaviour
+{
+    void Update()
+    {
+        var x = Input.GetAxis("Horizontal")*0.1f;
+        var z = Input.GetAxis("Vertical")*0.1f;
+
+        transform.Translate(x, 0, z);
+    }
+}
+```
 
 
 
