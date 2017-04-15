@@ -18,3 +18,5 @@
 下一步是设置代表游戏中玩家的预制体。默认情况下，`NetworkManager`通过克隆玩家预制体来为每个玩家实例化一个对象。在这个例子中，玩家对象将是一个简单的立方体。
 
 &emsp;&emsp;• 给玩家的预制体添加NetworkIdentity组件。此组件用于标识服务器和客户端之间的对象。
+
+&emsp;&emsp;• 将`NetworkIdentity`上的“`Local Player Authority`”复选框设置为`true`。这将允许客户端控制玩家的移动。
