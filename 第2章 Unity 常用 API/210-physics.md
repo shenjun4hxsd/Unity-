@@ -47,7 +47,7 @@
 
 public static bool **Raycast**(**Vector3** origin, **Vector3** direction, **float** maxDistance = Mathf.Infinity, **int** layerMask = DefaultRaycastLayers, **QueryTriggerInteraction** queryTriggerInteraction = QueryTriggerInteraction.UseGlobal);
 
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
  
@@ -62,7 +62,7 @@ public static bool **Raycast**(**Vector3** origin, **Vector3** direction, **floa
 ```
 注意：如果射线从碰撞体的内部或者背面打，Raycast不检测碰撞。如果你用脚本或动画移动碰撞器，需要至少一个在FixedUpdate执行，因为物理库能更新它的数据结构，因此一条射线在它的新位置之前打到碰撞器。
 
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
  
@@ -76,7 +76,7 @@ public static bool **Raycast**(**Vector3** origin, **Vector3** direction, **floa
     }
 ```
 
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
  
@@ -90,7 +90,7 @@ public static bool **Raycast**(**Vector3** origin, **Vector3** direction, **floa
     }
 ```
 
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
  
@@ -104,7 +104,7 @@ public static bool **Raycast**(**Vector3** origin, **Vector3** direction, **floa
     }
 ```
 
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
  
@@ -142,7 +142,7 @@ public static bool **CapsuleCast**(**Vector3** point1, **Vector3** point2, **flo
 
 注意，胶囊投射不检测胶囊重叠的碰撞器。如果从脚本或动画移动碰撞器，需要有至少一个在FixedUpdate中执行，使得物理库可以更新它的数据结构，在CapsuleCast碰到碰撞器之前是在它的新位置。
 
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
  
