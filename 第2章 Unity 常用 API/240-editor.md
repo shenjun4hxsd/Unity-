@@ -41,8 +41,8 @@
 
 #### 示例：
 
-```javascript
-using UnityEngine;
+```csharp
+    using UnityEngine;
     using System.Collections;
 
     // This is not an editor script.
@@ -59,8 +59,8 @@ using UnityEngine;
 
 ![](/assets/CustomEditor.png)
 
-```javascript
-using UnityEditor;
+```csharp
+    using UnityEditor;
     using UnityEngine;
     using System.Collections;
 
@@ -115,8 +115,8 @@ using UnityEditor;
 
 另外，如果自动处理多对象编辑、撤销、和预制重写是不需要的，脚本变量可以直接修改由编辑器不使用serializedobject和serializedproperty系统，如下面的例子。
 
-```javascript
-using UnityEditor;
+```csharp
+    using UnityEditor;
     using UnityEngine;
     using System.Collections;
 
@@ -160,7 +160,7 @@ using UnityEditor;
 ```
 
 
-```javascript
+```csharp
     void OnSceneGUI()
 	{
 		m_pEvent = Event.current;
