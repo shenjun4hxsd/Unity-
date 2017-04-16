@@ -4,18 +4,18 @@
 
 描述 ： 添加一个指定名称的动画剪辑。
 
-```javascript
-using UnityEngine;
-using System.Collections;
- 
-public class ExampleClass : MonoBehaviour {
-    public AnimationClip walkClip;
-    public Animation anim;
-    void Start() {
-        anim = GetComponent<Animation>();
-        anim.AddClip(walkClip, "walk");
+```csharp
+    using UnityEngine;
+    using System.Collections;
+     
+    public class ExampleClass : MonoBehaviour {
+        public AnimationClip walkClip;
+        public Animation anim;
+        void Start() {
+            anim = GetComponent<Animation>();
+            anim.AddClip(walkClip, "walk");
+        }
     }
-}
 ```
 
 
@@ -27,19 +27,19 @@ public class ExampleClass : MonoBehaviour {
 
 描述 : 在firstFrame和lastFrame之间添加动画剪辑，新的动画剪辑也会被添加到名称为newName的动画中。如果已存在具有相同名称的剪辑，会被替换为新剪辑。
 
-```javascript
-using UnityEngine;
-using System.Collections;
- 
-public class ExampleClass : MonoBehaviour {
-    public Animation anim;
-    void Start() {
-        anim = GetComponent<Animation>();
-        anim.AddClip(anim.clip, "shoot", 0, 10);
-        anim.AddClip(anim.clip, "walk", 11, 20, true);
-        anim.AddClip(anim.clip, "idle", 21, 30, true);
+```csharp
+    using UnityEngine;
+    using System.Collections;
+     
+    public class ExampleClass : MonoBehaviour {
+        public Animation anim;
+        void Start() {
+            anim = GetComponent<Animation>();
+            anim.AddClip(anim.clip, "shoot", 0, 10);
+            anim.AddClip(anim.clip, "walk", 11, 20, true);
+            anim.AddClip(anim.clip, "idle", 21, 30, true);
+        }
     }
-}
 ```
 
 🔚

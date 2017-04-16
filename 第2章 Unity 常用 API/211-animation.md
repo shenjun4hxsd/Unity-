@@ -8,7 +8,7 @@ AnimationState可以用于改变动画的层、修改播放速度以及直接控
 
 动画也支持枚举，所以你可以像这样在AnimationStates之间循环：
 
-```javascript
+```csharp
 using UnityEngine;
     using System.Collections;
  
