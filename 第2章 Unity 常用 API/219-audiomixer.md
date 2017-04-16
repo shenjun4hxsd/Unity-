@@ -44,5 +44,11 @@ Transitions to a weighted mixture of the snapshots specified. This can be used f
 |方法|说明|
 |:--|:--|
 |TransitionTo|在指定的时间间隔内执行对该快照的内插转换。|
-
+```csharp
 public void TransitionTo(float timeToReach);
+```
+
+
+
+
+
