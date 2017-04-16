@@ -18,21 +18,21 @@
 
 动画播放完成后它将自动清除它自己。在它播放完成后使用赋值的动画将导致一个异常。
 
-```javascript
-using UnityEngine;
-using System.Collections;
- 
-public class ExampleClass : MonoBehaviour {
-    public Animation anim;
-    void Start() {
-        anim = GetComponent<Animation>();
+```csharp
+    using UnityEngine;
+    using System.Collections;
+     
+    public class ExampleClass : MonoBehaviour {
+        public Animation anim;
+        void Start() {
+            anim = GetComponent<Animation>();
+        }
+        void Update() {
+            if (Input.GetButtonDown("Fire1"))
+                anim.CrossFadeQueued("shoot", 0.3F, QueueMode.PlayNow);
+     
+        }
     }
-    void Update() {
-        if (Input.GetButtonDown("Fire1"))
-            anim.CrossFadeQueued("shoot", 0.3F, QueueMode.PlayNow);
- 
-    }
-}
 ```
 
 🔚
