@@ -27,11 +27,11 @@ public bool GetFloat(string name, out float value);
 ```
 
 ```csharp
-public Audio.AudioMixerSnapshot FindSnapshot(string name);
+    public Audio.AudioMixerSnapshot FindSnapshot(string name);
 ```
 
 ```csharp
-public void TransitionToSnapshots(AudioMixerSnapshot[] snapshots, float[] weights, float timeToReach);
+    public void TransitionToSnapshots(AudioMixerSnapshot[] snapshots, float[] weights, float timeToReach);
 
 Transitions to a weighted mixture of the snapshots specified. This can be used for games that specify the game state as a continuum between states or for interpolating snapshots from a triangulated map location.
 转换为指定快照的加权混合。这可以用于游戏，指定游戏状态之间的状态或快照从三角插值地图位置连续。
@@ -45,7 +45,7 @@ Transitions to a weighted mixture of the snapshots specified. This can be used f
 |:--|:--|
 |TransitionTo|在指定的时间间隔内执行对该快照的内插转换。|
 ```csharp
-public void TransitionTo(float timeToReach);
+    public void TransitionTo(float timeToReach);
 ```
 
 
