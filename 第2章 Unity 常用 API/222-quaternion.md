@@ -14,7 +14,7 @@
 
 **实例：**
 
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
 
@@ -43,7 +43,7 @@
 
 **实例：**
 
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
 
