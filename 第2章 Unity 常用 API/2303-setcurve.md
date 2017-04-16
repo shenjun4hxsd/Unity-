@@ -18,23 +18,23 @@
 通常的名称是: “localPosition.x”, “localPosition.y”, “localPosition.z”, “localRotation.x”, “localRotation.y”, “localRotation.z”, “localRotation.w” “localScale.x”, “localScale.y”, “localScale.z”.
 
 
-```javascript
-using UnityEngine;
-using System.Collections;
- 
-[RequireComponent(typeof(Animation))]
-public class ExampleClass : MonoBehaviour {
-    public Animation anim;
-    void Start() {
-        anim = GetComponent<Animation>();
-        AnimationCurve curve = AnimationCurve.Linear(0, 1, 2, 3);
-        AnimationClip clip = new AnimationClip();
-        clip.legacy = true;
-        clip.SetCurve("", typeof(Transform), "localPosition.x", curve);
-        anim.AddClip(clip, "test");
-        anim.Play("test");
+```csharp
+    using UnityEngine;
+    using System.Collections;
+     
+    [RequireComponent(typeof(Animation))]
+    public class ExampleClass : MonoBehaviour {
+        public Animation anim;
+        void Start() {
+            anim = GetComponent<Animation>();
+            AnimationCurve curve = AnimationCurve.Linear(0, 1, 2, 3);
+            AnimationClip clip = new AnimationClip();
+            clip.legacy = true;
+            clip.SetCurve("", typeof(Transform), "localPosition.x", curve);
+            anim.AddClip(clip, "test");
+            anim.Play("test");
+        }
     }
-}
 ```
 
 ---
@@ -47,30 +47,30 @@ Color 属性： “PropertyName.r”, “PropertyName.g”, “PropertyName.b”
 UV 旋转属性：“PropertyName.rotation” UV 偏移和缩放： “PropertyName.offset.x”, “PropertyName.offset.y”, “PropertyName.scale.x”, “PropertyName.scale.y” 
 对于在同一renderer的多个索引材质，你能想这样添加前缀：“[1]._MainTex.offset.y”
 
-```javascript
-using UnityEngine;
-using System.Collections;
- 
-[RequireComponent(typeof(Animation))]
-public class ExampleClass : MonoBehaviour {
-    public Animation anim;
-    void Start() {
-        anim = GetComponent<Animation>();
-        AnimationClip clip = new AnimationClip();
-        clip.legacy = true;
-        clip.SetCurve("", typeof(Material), "_Color.a", new AnimationCurve(new Keyframe(0, 0, 0, 0), new Keyframe(1, 1, 0, 0)));
-        clip.SetCurve("", typeof(Material), "_MainTex.offset.x", AnimationCurve.Linear(0, 1, 2, 3));
-        anim.AddClip(clip, clip.name);
-        anim.Play(clip.name);
+```csharp
+    using UnityEngine;
+    using System.Collections;
+     
+    [RequireComponent(typeof(Animation))]
+    public class ExampleClass : MonoBehaviour {
+        public Animation anim;
+        void Start() {
+            anim = GetComponent<Animation>();
+            AnimationClip clip = new AnimationClip();
+            clip.legacy = true;
+            clip.SetCurve("", typeof(Material), "_Color.a", new AnimationCurve(new Keyframe(0, 0, 0, 0), new Keyframe(1, 1, 0, 0)));
+            clip.SetCurve("", typeof(Material), "_MainTex.offset.x", AnimationCurve.Linear(0, 1, 2, 3));
+            anim.AddClip(clip, clip.name);
+            anim.Play(clip.name);
+        }
     }
-}
 ```
 
 ---
 
 属性名可以通过设置资源序列化，可以在编辑器中设置强制文本模式进行查找。该文本文件由编辑器写入，将包含属性名。例如，yaml文件写入的场景对象将包含相机设置。看下面的yaml文件。
 
-```javascript
+```csharp
 m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
 m_NormalizedViewPortRect:
 serializedVersion: 2
