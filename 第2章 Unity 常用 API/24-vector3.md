@@ -63,7 +63,7 @@
 也就是说，限制向量长度到一个特定的长度。
 
 **示例：**
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
 
@@ -87,7 +87,7 @@
 对于normalized向量，如果他们指向在完全相同的方向，Dot返回1。如果他们指向完全相反的方向，返回-1。对于其他的情况返回一个数（例如：如果是垂直的Dot返回0）。
 
 **示例：**
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
 
@@ -113,7 +113,7 @@
 
 ![](/assets/屏幕快照 2016-11-27 下午9.07.24.png)
 **示例：**
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
 
@@ -133,7 +133,7 @@
 按照分数t在from到to之间插值。这是最常用的寻找一点沿一条线的两个端点之间一些分数的方式（例如，在那些点之间逐渐移动一个对象）。这分数是在范围[ 0…1]。t是夹在 [0…1]之间，当t = 0时，返回from，当t = 1时，返回to。当t = 0.5 返回from和to的中间点。
 
 **示例：**
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
 
@@ -166,7 +166,7 @@
 
 **示例：**
 
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
 
@@ -200,7 +200,7 @@
 
 **示例：**
 
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
 
@@ -222,7 +222,7 @@
 
 **示例：**
 
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
 
@@ -247,7 +247,7 @@
 
 **示例：**
 
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
 
