@@ -49,7 +49,7 @@
 ###Transform.Translate 移动
 
 **示例1：**
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
 
@@ -63,7 +63,7 @@
 ```
 
 **示例2：**
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
 
@@ -77,7 +77,7 @@
 ```
 
 **示例3：**
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
 
@@ -89,7 +89,7 @@
 ```
 
 **示例4：**
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
 
@@ -106,7 +106,7 @@
 ###Transform.Rotate 绕着通过物体中心点的某个轴旋转
 
 **示例1：**
-```javascript
+```csharp
     using UnityEngine;
 
     public class ExampleClass : MonoBehaviour 
@@ -123,7 +123,7 @@
 ```
 
 **示例2：**
-```javascript
+```csharp
     using UnityEngine;
 
     public class ExampleClass : MonoBehaviour 
@@ -140,7 +140,7 @@
 ```
 
 **示例3：**
-```javascript
+```csharp
     using UnityEngine;
 
     public class ExampleClass : MonoBehaviour 
@@ -159,7 +159,7 @@
 ---
 
 ###Transform.RotateAround 绕着任意轴旋转
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
 
@@ -176,7 +176,7 @@
 ###Transform.LookAt 使物体的Z轴指向目标
 
 **实例1：**
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
 
@@ -192,7 +192,7 @@
 ```
 
 **实例2：**
-```javascript
+```csharp
 	transform.LookAt(Vector3.zero);
 ```
 
@@ -200,7 +200,7 @@
 
 ###Transform.TransformPoint
 **实例1：**
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
 
@@ -216,7 +216,7 @@
     }
 ```
 **实例2：**
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
 
