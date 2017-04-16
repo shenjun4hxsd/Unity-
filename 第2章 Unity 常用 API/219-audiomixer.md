@@ -22,7 +22,7 @@ This is a singleton representing a specific audio mixer asset in the project.
 |TransitionToSnapshots|Transitions to a weighted mixture of the snapshots specified. This can be used for games that specify the game state as a continuum between states or for interpolating snapshots from a triangulated map location.|
 
 ```csharp
-public bool GetFloat(string name, out float value);
+    public bool GetFloat(string name, out float value);
 如果暴露的参数不存在，则返回false。
 ```
 
