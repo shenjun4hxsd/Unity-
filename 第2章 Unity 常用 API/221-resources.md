@@ -16,7 +16,7 @@ Resources类允许你从指定的路径查找或访问资源。
 
 示例：
 
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
 
@@ -51,7 +51,7 @@ Resources类允许你从指定的路径查找或访问资源。
 如果发现，返回所在path处的资源，否则返回null。如果有type参数，只有type类型的物体将被返回。 Path相对于Resources文件夹，忽略扩展名。Resouces文件夹可以在Assets文件夹中的任何位置。
 
 **示例1：**
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
  
@@ -65,7 +65,7 @@ Resources类允许你从指定的路径查找或访问资源。
 ```
 
 **示例2：**
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
  
@@ -112,7 +112,7 @@ public static ResourceRequest LoadAsync(string path);
 
 **示例1：**
 
-```javascript
+```csharp
 
     using UnityEngine;
     using System.Collections;
