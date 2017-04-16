@@ -36,7 +36,7 @@ UnityEngine.Object
 
 会在 Update 之后，渲染之前执行销毁操作。
 
-```javascript
+```csharp
     public static void Destroy(Object obj, float t = 0.0f);
 
 
@@ -57,7 +57,7 @@ UnityEngine.Object
 ---
 
 **Object.Instance**
-```javascript
+```csharp
     public static Object Instantiate(Object original);
     public static Object Instantiate(Object original, Transform parent);
     public static Object Instantiate(Object original, Transform parent, bool worldPositionStays);
@@ -74,7 +74,7 @@ worldPositionStays：当指定父物体以后仍保持原始的世界坐标
 
 ```
 
-```javascript
+```csharp
     using UnityEngine; 
 
     public class InstantiateExample : MonoBehaviour
@@ -93,7 +93,7 @@ worldPositionStays：当指定父物体以后仍保持原始的世界坐标
 
 **使用泛型的方式：**
 
-```javascript
+```csharp
     using UnityEngine; 
 
     public class InstantiateGenericsExample : MonoBehaviour
