@@ -26,7 +26,7 @@ Joint是所有关节的基类。
 
 >注意：OnJointBreak 通过unity被调用，他不是一个函数，你可以从关节中调用。
 
-```javascript
+```csharp
 using UnityEngine;
     using System.Collections;
  
