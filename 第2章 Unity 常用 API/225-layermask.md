@@ -18,7 +18,7 @@ layermask允许你在检视面板中显示layermask弹出菜单。
 
 转换层蒙版的值为整数值。
 
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
  
@@ -41,7 +41,7 @@ public static int **GetMask**(**params** **string[]** layerNames);
 
 无论是内置的层名称集或是由用户在“标签和层管理器”中定义的层，返回与它们相等的层蒙版。
 
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
  
@@ -58,7 +58,7 @@ public static int **GetMask**(**params** **string[]** layerNames);
 
 给定一个层名称，返回内置的或在Tags and Layers manager中定义的层索引。
 
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
  
@@ -75,7 +75,7 @@ public static int **GetMask**(**params** **string[]** layerNames);
 
 隐式转换整数为层蒙版。
 
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
  
