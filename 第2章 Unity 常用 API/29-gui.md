@@ -66,7 +66,7 @@
 
 ###示例：
 
-```javascript
+```csharp
 
     using UnityEngine;
     using System.Collections;
@@ -90,7 +90,7 @@
 
 
 
-```javascript
+```csharp
 
     using UnityEngine;
     using System.Collections;
