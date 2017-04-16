@@ -26,7 +26,7 @@
 当你乘以Time.deltaTime实际表示：每秒移动物体10米，而不是每帧10米。
 
 **示例：**
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
  
