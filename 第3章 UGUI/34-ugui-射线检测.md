@@ -43,7 +43,7 @@ Selectable的意思是可选择的，它是UGUI中很多交互控件(Button/ Sli
 5.判断鼠标或者手指是否点击在UI上
 对于EventSystem.current.IsPointerOverGameObject这个函数，因为EventSystem是UI的事件系统，所以IsPointerOverGameObject中的GameObject是针对UI的，而不是普遍意义上的GameObject
 
-```javascript
+```csharp
     using UnityEngine;  
     using UnityEngine.UI;  
     using UnityEngine.EventSystems;  
@@ -77,7 +77,7 @@ Selectable的意思是可选择的，它是UGUI中很多交互控件(Button/ Sli
 
 ##世界坐标转UGUI坐标
 
-```javascript
+```csharp
     public static Vector3 WorldToUI(Camera camera,Vector3 pos){  
             CanvasScaler scaler = GameObject.Find("UIRoot").GetComponent<CanvasScaler>();  
       

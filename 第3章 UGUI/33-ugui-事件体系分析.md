@@ -166,7 +166,7 @@ StandaloneInputModule和TouchInputModule两个组件会检测一些输入操作�
 
 Ex：
 
-```
+```csharp
      public void OnPointerClick (PointerEventData eventData )
     {
 
