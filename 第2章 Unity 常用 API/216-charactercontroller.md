@@ -38,7 +38,7 @@ public **CollisionFlags** **Move**(**Vector3** motion);
 
 尝试着通过motion移动控制器，motion只受限制于碰撞。它将沿着碰撞器滑动。CollisionFlags 是发生于Move的碰撞的概要。这个函数不应用任何重力。
 
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
  
@@ -74,7 +74,7 @@ public bool SimpleMove(Vector3 speed);
 
 Y 轴上速度被忽略。速度以米/秒为单位。重力被自动应用。如果角色着地返回 true。建议每帧只调用一次 Move 或者 SimpleMove。
 
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
  
@@ -105,7 +105,7 @@ CollisionFlags是CharacterController.Move返回的位掩码。
 |Above|角色控制器的上部与其他碰撞框发生碰撞|
 |Below|角色控制器的下部与其他碰撞框发生碰撞|
 
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
  
@@ -121,7 +121,7 @@ CollisionFlags是CharacterController.Move返回的位掩码。
 
 
 
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
  
