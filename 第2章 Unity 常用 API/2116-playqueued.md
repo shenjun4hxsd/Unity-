@@ -18,21 +18,21 @@
 
 当动画完成播放之后，它会自动清理。在一个动画状态结束之后使用它，将会导致一个异常。
 
-```javascript
-using UnityEngine;
-using System.Collections;
- 
-public class ExampleClass : MonoBehaviour {
-    public Animation anim;
-    void Start() {
-        anim = GetComponent<Animation>();
+```csharp
+    using UnityEngine;
+    using System.Collections;
+     
+    public class ExampleClass : MonoBehaviour {
+        public Animation anim;
+        void Start() {
+            anim = GetComponent<Animation>();
+        }
+        void Update() {
+            if (Input.GetButtonDown("Fire1"))
+                anim.PlayQueued("shoot", QueueMode.PlayNow);
+     
+        }
     }
-    void Update() {
-        if (Input.GetButtonDown("Fire1"))
-            anim.PlayQueued("shoot", QueueMode.PlayNow);
- 
-    }
-}
 ```
 
 🔚
