@@ -104,8 +104,8 @@ HorizontalOrVerticalLayoutGroup是布局组控制器的具体实现类，包含�
 
 HorizontalOrVerticalLayoutGroup.cs
 
-```javascript
-protected void SetChildrenAlongAxis(int axis, bool isVertical)
+```csharp
+        protected void SetChildrenAlongAxis(int axis, bool isVertical)
         {
             float size = rectTransform.rect.size[axis];
 
@@ -206,7 +206,7 @@ protected void SetChildrenAlongAxis(int axis, bool isVertical)
 
 这是为什么呢，uGUI的官方文档又不说清楚，真是无比坑。好在现在uGUI的源码了，回到上文的HorizontalOrVerticalLayoutGroup.SetChildrenAlongAxis方法。
 
-```javascript
+```csharp
     //axis是一个标志位，0表示宽度，1表示高度；size是实际的尺寸
     float minMaxLerp = Mathf.Clamp01((size - GetTotalMinSize(axis)) / (GetTotalPreferredSize(axis) - GetTotalMinSize(axis)));
     float itemFlexibleMultiplier = (size - GetTotalPreferredSize(axis)) / GetTotalFlexibleSize(axis);
@@ -260,7 +260,7 @@ protected void SetChildrenAlongAxis(int axis, bool isVertical)
 
 理论上只要给王三分80，给王一和王二flexible设为1，即可。但实际结果又不并不是所期望的样子，为什么呢？其实这种情况下需要老王把childForceExpandWidth设为false，因为在uGUI处理中，如果childForceExpandWidth设为了true，即使王三没有设置flexible，也会被强制设为1。
 
-```javascript
+```csharp
     if ((axis == 0 ? childForceExpandWidth : childForceExpandHeight))
         flexible = Mathf.Max(flexible, 1);
 ```
