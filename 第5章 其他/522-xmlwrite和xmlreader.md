@@ -18,7 +18,7 @@ XMLReader表示提供对 XML 数据进行快速、非缓存、只进访问的读
 **XMLWriter 创建 XML 声明**
 
 ```csharp
-//引入命名空间
+    //引入命名空间
     using System.Xml;
 
     XmlTextWriter textWriter = new XmlTextWriter(@"d:\xmlRead.xml",Encoding.UTF8);
@@ -28,7 +28,7 @@ XMLReader表示提供对 XML 数据进行快速、非缓存、只进访问的读
 **XMLWriter 创建节点**
 
 ```csharp
-textWriter.WriteStartElement(“root"); 
+    textWriter.WriteStartElement(“root"); 
     textWriter.WriteStartElement(“Child");
     // 为元素加入属性
     textWriter.WriteElementString(“SubChild”, “这是元素内容");
@@ -39,7 +39,7 @@ textWriter.WriteStartElement(“root");
 **XMLWriter为元素加入属性**
 
 ```csharp
-textWriter.WriteStartElement("Child");
+    textWriter.WriteStartElement("Child");
     textWriter.WriteAttributeString("属性A","A");
     textWriter.WriteAttributeString("属性B","B");
     textWriter.WriteEndElement();
@@ -48,14 +48,14 @@ textWriter.WriteStartElement("Child");
 **XMLWrite写入注释**
 
 ```csharp
-textWriter.WriteComment(“注释内容");
- textWriter.WriteCData(“<strong>CData 内容</strong>");
+    textWriter.WriteComment(“注释内容");
+    textWriter.WriteCData(“<strong>CData 内容</strong>");
 ```
 
 **XMLWrite创建XML 要点**
 
 ```csharp
-XMLWrite 子节点 和属性 必须在WriteEndElement()方法前。
+    XMLWrite 子节点 和属性 必须在WriteEndElement()方法前。
     开始写入，调用WriteStartDocument方法。
     写入结束，调用WriteEndDocument方法，和Close方法，关闭流。
 ```
@@ -65,14 +65,14 @@ XMLWrite 子节点 和属性 必须在WriteEndElement()方法前。
 **XmlReader读取XML**
 
 ```csharp
-//读取一个外部XML
+    //读取一个外部XML
     XmlTextReader textReader = new XmlTextReader(@"d:\xmlRead.xml");
 ```
 
 **XmlReader读取节点信息**
 
 ```csharp
-while (textReader.Read())
+    while (textReader.Read())
     {
         if (textReader.NodeType == XmlNodeType.Element)
         {
@@ -85,7 +85,7 @@ while (textReader.Read())
 **XmlReader读取属性**
 
 ```csharp
-//方式一：取得当前Reader元素的指定名称的属性值；
+    //方式一：取得当前Reader元素的指定名称的属性值；
     textReader.GetAttribute(“属性A”);
 
     //方式二，获取当前Reader元素的属性，将Reader移动到当前属性；    
