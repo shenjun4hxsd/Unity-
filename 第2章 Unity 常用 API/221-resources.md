@@ -143,7 +143,7 @@ public static ResourceRequest LoadAsync(string path);
 
 **示例2：**
 
-```javascript
+```csharp
 
     using UnityEngine;
     using System.Collections;
