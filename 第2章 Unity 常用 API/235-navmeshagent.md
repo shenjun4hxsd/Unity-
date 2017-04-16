@@ -61,7 +61,7 @@
 ---
 
 
-```javascript
+```csharp
         NavMeshPath path = new NavMeshPath ();
 		bool havePath = m_pNavAgent.CalculatePath (m_pTarget.position, path);
 
@@ -72,7 +72,7 @@
 
 		m_pNavAgent.SetLayerCost(3, 10);
 ```
-```javascript
+```csharp
         if (m_pNavAgent.isOnOffMeshLink) { // 判断是否到达起点
 			m_fTimeCount += Time.deltaTime;
 
