@@ -49,7 +49,7 @@ AnimationState 接口允许您在的任何动画播放时修改速度、 权值�
 如果recursive 是true 所有子物体的混合transform将会被逼真。如果你调用AddMixingTransform，所有动画曲线被使用。
 
 
-```javascript
+```csharp
 using UnityEngine;
 using System.Collections;
  
