@@ -21,7 +21,7 @@
 
 物理引擎生成的碰撞点集。
 
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
  
@@ -35,7 +35,7 @@
     }
 ```
 
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
  
