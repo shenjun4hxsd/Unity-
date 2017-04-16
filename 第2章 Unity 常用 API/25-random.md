@@ -18,7 +18,7 @@
 |Range|在最大值（包括）和最小值（包括）范围内返回一个随机数（只读）|
 
 ###示例：
-```javascript
+```csharp
 
     using UnityEngine;
     using System.Collections;
