@@ -7,7 +7,7 @@
 |asset|正被加载的资源对象。（只读）|
 
 
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
 
