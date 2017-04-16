@@ -1,6 +1,6 @@
 ##AssetBundle
 
-```javascript
+```csharp
 	IEnumerator Start () {
 		WWW www = new WWW("http://myserver/myBundle.unity3d");
 		yield return www;
