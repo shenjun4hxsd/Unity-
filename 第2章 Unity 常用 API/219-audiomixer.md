@@ -23,7 +23,7 @@ This is a singleton representing a specific audio mixer asset in the project.
 
 ```csharp
     public bool GetFloat(string name, out float value);
-如果暴露的参数不存在，则返回false。
+    如果暴露的参数不存在，则返回false。
 ```
 
 ```csharp
