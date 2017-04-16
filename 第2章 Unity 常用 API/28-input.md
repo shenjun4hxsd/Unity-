@@ -15,7 +15,7 @@ Input 这个类给我们提供的属性和方法全是静态的。
 |GetKeyUp|在用户释放给定名字的按键的那一帧返回 true。|
 
 **示例1:**
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
 
@@ -33,7 +33,7 @@ Input 这个类给我们提供的属性和方法全是静态的。
 ```
 
 **示例2:**
-```javascript
+```csharp
 
     using UnityEngine;
     using System.Collections;
@@ -62,7 +62,7 @@ Input 这个类给我们提供的属性和方法全是静态的。
 >数字键 0 表示鼠标左键；数字键 1 表示鼠标右键；数字键 2 表示鼠标中键。
 
 示例：
-```javascript
+```csharp
 
     using UnityEngine;
     using System.Collections;
@@ -94,7 +94,7 @@ Input 这个类给我们提供的属性和方法全是静态的。
 >`Mouse X` 和 `Mouse Y` 映射于鼠标。
 
 **示例1:**
-```javascript
+```csharp
 
     using UnityEngine;
     using System.Collections;
@@ -116,7 +116,7 @@ Input 这个类给我们提供的属性和方法全是静态的。
 ```
 
 **示例2:**
-```javascript
+```csharp
 
     using UnityEngine;
     using System.Collections;
@@ -145,7 +145,7 @@ Input 这个类给我们提供的属性和方法全是静态的。
 |GetButtonUp|在用户释放根据 `buttonName` 名称的虚拟按钮时返回 true。|
 
 **示例：**
-```javascript
+```csharp
 
     using UnityEngine;
     using System.Collections;
