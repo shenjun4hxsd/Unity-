@@ -21,16 +21,16 @@ This is a singleton representing a specific audio mixer asset in the project.
 |**SetFloat**|Sets the value of the exposed parameter specified. When a parameter is exposed, it is not controlled by mixer snapshots and can therefore only be changed via this function.|
 |TransitionToSnapshots|Transitions to a weighted mixture of the snapshots specified. This can be used for games that specify the game state as a continuum between states or for interpolating snapshots from a triangulated map location.|
 
-```
+```csharp
 public bool GetFloat(string name, out float value);
 如果暴露的参数不存在，则返回false。
 ```
 
-```
+```csharp
 public Audio.AudioMixerSnapshot FindSnapshot(string name);
 ```
 
-```
+```csharp
 public void TransitionToSnapshots(AudioMixerSnapshot[] snapshots, float[] weights, float timeToReach);
 
 Transitions to a weighted mixture of the snapshots specified. This can be used for games that specify the game state as a continuum between states or for interpolating snapshots from a triangulated map location.
