@@ -48,7 +48,7 @@
 ###Transform.Translate 移动
 
 **示例1：**
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
 
@@ -64,7 +64,7 @@
 ```
 
 **示例2：**
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
 
