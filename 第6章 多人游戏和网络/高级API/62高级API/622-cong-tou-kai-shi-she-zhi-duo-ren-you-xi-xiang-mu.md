@@ -223,4 +223,4 @@
 
 &emsp;&emsp;• 通过添加[Command]自定义属性和“Cmd”前缀，将Fire函数更改为联网命令。
 
-&emsp;&emsp;• 在子弹对象上使用Network.Spawn()。
+&emsp;&emsp;• 在子弹对象上使用NetworkServer.Spawn()。
