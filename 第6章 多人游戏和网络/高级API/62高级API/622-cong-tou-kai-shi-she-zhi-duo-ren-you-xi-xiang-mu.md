@@ -228,6 +228,7 @@
 
 
 ```csharp
+
     using System.Collections;
     using System.Collections.Generic;
     using UnityEngine;
@@ -256,7 +257,6 @@
     
         void Update()
         {
-    
             if (!isLocalPlayer)
                 return;
             
