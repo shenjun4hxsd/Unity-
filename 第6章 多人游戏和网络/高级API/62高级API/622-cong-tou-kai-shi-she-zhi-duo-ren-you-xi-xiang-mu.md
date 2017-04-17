@@ -218,3 +218,9 @@
 &emsp;&emsp;• 将子弹预设拖到新生成的预制插槽中。
 
 ![](/assets/UNetTut12.png)
+
+&emsp;&emsp;• 更新TankMove脚本以连接子弹：
+
+&emsp;&emsp;• 通过添加[Command]自定义属性和“Cmd”前缀，将Fire函数更改为联网命令。
+
+&emsp;&emsp;• 在子弹对象上使用Network.Spawn()。
