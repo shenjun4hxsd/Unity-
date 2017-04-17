@@ -111,7 +111,7 @@
 
 游戏中的多个玩家的颜色一样，因此用户无法辨认其中的哪一个是自己。要识别玩家，我们将使本地玩家的颜色变红。
 
-&emsp;&emsp;• 添加`OnStartLocalPlayer`函数的实现来更改播放器对象的颜色。
+&emsp;&emsp;• 添加`OnStartLocalPlayer`函数的实现来更改玩家对象的颜色。
 
 ```csharp
     public override void OnStartLocalPlayer()
