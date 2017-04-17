@@ -123,6 +123,82 @@
     }
 ```
 
-###10、射击子弹
+###10、射击子弹（不联网）
+
+```csharp
+    using System.Collections;
+    using System.Collections.Generic;
+    using UnityEngine;
+    using UnityEngine.Networking;
+    
+    public class TankMove : NetworkBehaviour
+    {
+    
+        public GameObject bulletPrefab;
+    
+        Camera m_LocalCamera;
+        public Vector3 m_CameraPosOffset = new Vector3(0, 4.5f, -6f);
+        public Vector3 m_CameraLookOffset = new Vector3(0, 2f, 0);
+    
+        public float m_RotSpeed = 15;
+    
+        Transform firePos;
+    
+        float mouseX = 0;
+    
+        void Awake()
+        {
+            firePos = transform.Find("FirePos");
+            m_LocalCamera = Camera.main;
+        }
+    
+        void Update()
+        {
+    
+            if (!isLocalPlayer)
+                return;
+            
+            var x = Input.GetAxis("Horizontal1") * 0.1f;
+            var z = Input.GetAxis("Vertical1") * 0.1f;
+    
+            transform.Translate(x, 0, z);
+            if (Input.GetMouseButton(0))
+            {
+                mouseX += Input.GetAxis("Mouse X");
+            }
+    
+            transform.rotation = Quaternion.Euler(0, mouseX * m_RotSpeed, 0);
+    
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Fire();
+            }
+        }
+    
+        void LateUpdate()
+        {
+            m_LocalCamera.transform.position = transform.TransformPoint(m_CameraPosOffset);
+            m_LocalCamera.transform.LookAt(transform.position + m_CameraLookOffset);
+        }
+    
+        /// <summary>
+        /// 创建本地玩家时调用
+        /// </summary>
+        public override void OnStartLocalPlayer()
+        {
+            MeshRenderer render = transform.Find("TankTurret").GetComponent<MeshRenderer>();
+            Material[] materials = render.materials;
+            if (materials.Length > 0)
+                materials[0].SetColor("_Color", Color.red);
+        }
+    
+        void Fire()
+        {
+            var bullet = Instantiate<GameObject>(bulletPrefab, firePos.position, firePos.rotation);
+            bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 1500);
+            Destroy(bullet, 2f);
+        }
+    }
+```
 
 
