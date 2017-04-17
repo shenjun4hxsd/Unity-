@@ -41,7 +41,7 @@
 ```csharp
     using UnityEngine;
     
-    public class PlayerMove : MonoBehaviour
+    public class TankMove : MonoBehaviour
     {
         void Update()
         {
