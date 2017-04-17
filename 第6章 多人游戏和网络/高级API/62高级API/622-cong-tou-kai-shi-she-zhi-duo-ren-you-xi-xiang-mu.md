@@ -75,7 +75,9 @@
 
 ###7、使玩家移动联网
 
-修改玩家移动脚本：
+&emsp;&emsp;• 给玩家预设添加`NetworkTransform`组件。
+
+&emsp;&emsp;• 修改玩家移动脚本：
 
 ```csharp
     using UnityEngine;
