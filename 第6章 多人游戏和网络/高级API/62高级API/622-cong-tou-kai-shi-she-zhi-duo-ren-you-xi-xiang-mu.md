@@ -205,4 +205,14 @@
     }
 ```
 
+###11、子弹射击（联网）
 
+&emsp;&emsp;• 给子弹预设添加NetworkIdentity组件。
+
+&emsp;&emsp;• 给子弹预设添加NetworkTransform组件。
+
+&emsp;&emsp;• 选择NetworkManager并打开“Spawn Info”折叠。
+
+&emsp;&emsp;• 用加号按钮添加新的生成预制。
+
+&emsp;&emsp;• 将子弹预设拖到新生成的预制插槽中。
