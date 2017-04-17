@@ -127,7 +127,7 @@
 
 &emsp;&emsp;• 制作子弹预制，并添加Rigidbody组件。
 
-&emsp;&emsp;• 修改玩家移动脚本：
+&emsp;&emsp;• 修改玩家移动脚本，并为子弹预设赋值：
 
 ```csharp
     using System.Collections;
