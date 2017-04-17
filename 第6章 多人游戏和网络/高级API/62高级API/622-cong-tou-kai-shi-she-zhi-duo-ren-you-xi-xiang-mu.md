@@ -113,8 +113,15 @@
 
 &emsp;&emsp;• 添加`OnStartLocalPlayer`函数的实现来更改播放器对象的颜色。
 
-
-
+```csharp
+    public override void OnStartLocalPlayer()
+    {
+        MeshRenderer render = transform.Find("TankTurret").GetComponent<MeshRenderer>();
+        Material[] materials = render.materials;
+        if (materials.Length > 0)
+            materials[0].SetColor("_Color", Color.red);
+    }
+```
 
 
 
