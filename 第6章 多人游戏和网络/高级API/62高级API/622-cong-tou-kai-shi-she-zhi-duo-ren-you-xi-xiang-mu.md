@@ -83,7 +83,7 @@
     using UnityEngine;
     using UnityEngine.Networking;
     
-    public class PlayerMove : NetworkBehaviour
+    public class TankMove : NetworkBehaviour
     {
         void Update()
         {
