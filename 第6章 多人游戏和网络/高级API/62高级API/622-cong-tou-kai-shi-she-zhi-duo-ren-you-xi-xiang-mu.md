@@ -227,82 +227,82 @@
 
 
 ```csharp
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Networking;
-
-public class TankMove : NetworkBehaviour
-{
-
-    public GameObject bulletPrefab;
-
-    Camera m_LocalCamera;
-    public Vector3 m_CameraPosOffset = new Vector3(0, 4.5f, -6f);
-    public Vector3 m_CameraLookOffset = new Vector3(0, 2f, 0);
-
-    public float m_RotSpeed = 15;
-
-    Transform firePos;
-
-    float mouseX = 0;
-
-    void Awake()
+    using System.Collections;
+    using System.Collections.Generic;
+    using UnityEngine;
+    using UnityEngine.Networking;
+    
+    public class TankMove : NetworkBehaviour
     {
-        firePos = transform.Find("FirePos");
-        m_LocalCamera = Camera.main;
-    }
-
-    void Update()
-    {
-
-        if (!isLocalPlayer)
-            return;
-        
-        var x = Input.GetAxis("Horizontal1") * 0.1f;
-        var z = Input.GetAxis("Vertical1") * 0.1f;
-
-        transform.Translate(x, 0, z);
-        if (Input.GetMouseButton(0))
+    
+        public GameObject bulletPrefab;
+    
+        Camera m_LocalCamera;
+        public Vector3 m_CameraPosOffset = new Vector3(0, 4.5f, -6f);
+        public Vector3 m_CameraLookOffset = new Vector3(0, 2f, 0);
+    
+        public float m_RotSpeed = 15;
+    
+        Transform firePos;
+    
+        float mouseX = 0;
+    
+        void Awake()
         {
-            mouseX += Input.GetAxis("Mouse X");
+            firePos = transform.Find("FirePos");
+            m_LocalCamera = Camera.main;
         }
-
-        transform.rotation = Quaternion.Euler(0, mouseX * m_RotSpeed, 0);
-
-        if (Input.GetKeyDown(KeyCode.Space))
+    
+        void Update()
         {
-            // 本地调用 服务器执行
-            CmdFire();
+    
+            if (!isLocalPlayer)
+                return;
+            
+            var x = Input.GetAxis("Horizontal1") * 0.1f;
+            var z = Input.GetAxis("Vertical1") * 0.1f;
+    
+            transform.Translate(x, 0, z);
+            if (Input.GetMouseButton(0))
+            {
+                mouseX += Input.GetAxis("Mouse X");
+            }
+    
+            transform.rotation = Quaternion.Euler(0, mouseX * m_RotSpeed, 0);
+    
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                // 本地调用 服务器执行
+                CmdFire();
+            }
+        }
+    
+        void LateUpdate()
+        {
+            m_LocalCamera.transform.position = transform.TransformPoint(m_CameraPosOffset);
+            m_LocalCamera.transform.LookAt(transform.position + m_CameraLookOffset);
+        }
+    
+        /// <summary>
+        /// 创建本地玩家时调用
+        /// </summary>
+        public override void OnStartLocalPlayer()
+        {
+            MeshRenderer render = transform.Find("TankTurret").GetComponent<MeshRenderer>();
+            Material[] materials = render.materials;
+            if (materials.Length > 0)
+                materials[0].SetColor("_Color", Color.red);
+        }
+    
+        // 设置为本地调用 服务器执行的命令
+        [Command]
+        void CmdFire()
+        {
+            var bullet = Instantiate<GameObject>(bulletPrefab, firePos.position, firePos.rotation);
+            bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 1500);
+    
+            NetworkServer.Spawn(bullet);
+            Destroy(bullet, 2f);
         }
     }
-
-    void LateUpdate()
-    {
-        m_LocalCamera.transform.position = transform.TransformPoint(m_CameraPosOffset);
-        m_LocalCamera.transform.LookAt(transform.position + m_CameraLookOffset);
-    }
-
-    /// <summary>
-    /// 创建本地玩家时调用
-    /// </summary>
-    public override void OnStartLocalPlayer()
-    {
-        MeshRenderer render = transform.Find("TankTurret").GetComponent<MeshRenderer>();
-        Material[] materials = render.materials;
-        if (materials.Length > 0)
-            materials[0].SetColor("_Color", Color.red);
-    }
-
-    // 设置为本地调用 服务器执行的命令
-    [Command]
-    void CmdFire()
-    {
-        var bullet = Instantiate<GameObject>(bulletPrefab, firePos.position, firePos.rotation);
-        bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 1500);
-
-        NetworkServer.Spawn(bullet);
-        Destroy(bullet, 2f);
-    }
-}
 ```
