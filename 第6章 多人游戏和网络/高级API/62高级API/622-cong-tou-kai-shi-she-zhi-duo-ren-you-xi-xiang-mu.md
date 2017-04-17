@@ -125,6 +125,10 @@
 
 ###10、射击子弹（不联网）
 
+&emsp;&emsp;• 制作子弹预制，并添加Rigidbody组件。
+
+&emsp;&emsp;• 修改玩家移动脚本：
+
 ```csharp
     using System.Collections;
     using System.Collections.Generic;
