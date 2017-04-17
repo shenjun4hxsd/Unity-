@@ -216,3 +216,5 @@
 &emsp;&emsp;• 用加号按钮添加新的生成预制。
 
 &emsp;&emsp;• 将子弹预设拖到新生成的预制插槽中。
+
+![](/assets/UNetTut12.png)
