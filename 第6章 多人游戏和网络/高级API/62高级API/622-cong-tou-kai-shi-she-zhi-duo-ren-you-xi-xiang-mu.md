@@ -475,7 +475,7 @@
         public int m_Health = k_MaxHealth;
     
         /// <summary>
-        /// 只在服务上应用
+        /// 只在服务器上应用
         /// </summary>
         /// <param name="amount">Amount.</param>
         public void TakeDamage(int amount)
