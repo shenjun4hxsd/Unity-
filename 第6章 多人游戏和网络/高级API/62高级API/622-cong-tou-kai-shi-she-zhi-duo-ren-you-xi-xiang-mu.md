@@ -543,3 +543,20 @@
 ```
 
 &emsp;&emsp;• 在这个游戏中，客户端控制玩家对象的位置 - 玩家对象在客户端上具有“本地权限”。如果服务器只是将玩家的位置设置为起始位置，那么客户端将被覆盖，因为客户端有权限。为了避免这种情况，服务器告诉拥有的客户端将玩家对象移到起始位置。
+
+
+
+
+###16、非玩家对象
+
+当玩家对象在客户端连接到主机时产生，大多数游戏具有游戏世界中存在的非玩家对象，例如敌人。在本节中，添加了一个spawner，创建可以被拍摄和杀死的非玩家对象。
+
+&emsp;&emsp;• 创建一个空物体，重命名为“EnemeySpawner”。
+
+&emsp;&emsp;• 添加组件NetworkIdentity。
+
+&emsp;&emsp;• 在NetworkIdentity中选择“Server Only”复选框。这使得spawner不会被发送到客户端。
+
+&emsp;&emsp;• 添加“EnemySpawner”脚本。
+
+&emsp;&emsp;• 实现虚函数OnStartServer来创建敌人。
