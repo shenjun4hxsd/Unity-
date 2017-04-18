@@ -340,3 +340,23 @@
 &emsp;&emsp;• 玩家被子弹攻击后，血量减少。
 
 &emsp;&emsp;• 给玩家添加脚本，添加血量属性及受伤害函数。
+
+```csharp
+    using UnityEngine;
+    
+    public class Combat : MonoBehaviour {
+    
+        public const int k_MaxHealth = 100;
+        public int m_Health = k_MaxHealth;
+    
+        public void TakeDamage(int amount)
+        {
+            m_Health -= amount;
+            if(m_Health < 0)
+            {
+                m_Health = 0;
+                Debug.Log("Dead!");
+            }
+        }
+    }
+```
