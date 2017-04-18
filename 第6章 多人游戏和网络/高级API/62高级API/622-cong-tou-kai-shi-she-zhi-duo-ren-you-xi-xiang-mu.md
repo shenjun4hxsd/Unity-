@@ -679,6 +679,17 @@
 ```
 
 
+###18、玩家生成的位置
+
+目前创建玩家的位置全部在零点。这可能会造成玩家之间相互重叠。为了使玩家在不同的出生地点，可以使用NetworkStartPosition组件来实现。
+
+&emsp;&emsp;• 创建一个空物体，并添加NetworkStartPosition组件。调整其位置。
+
+&emsp;&emsp;• 用以上方法创建多个。
+
+&emsp;&emsp;• 在NetworkManager组件上打开“Spawn Info”折叠。
+
+&emsp;&emsp;• 将“Player Spawn Method”改为“Round Robin”（依次循环）。
 
 
 
