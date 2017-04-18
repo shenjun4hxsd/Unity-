@@ -565,7 +565,7 @@
     using UnityEngine;
     using UnityEngine.Networking;
     
-    public class SpawnEnemy : NetworkBehaviour
+    public class EnemeySpawner : NetworkBehaviour
     {
         public GameObject enemyPrefab;
         public int numEnemies;
