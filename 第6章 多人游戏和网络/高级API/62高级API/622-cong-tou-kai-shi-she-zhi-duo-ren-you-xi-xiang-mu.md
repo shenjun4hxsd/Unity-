@@ -597,6 +597,8 @@
 
 &emsp;&emsp;• 为敌人预制添加Combat脚本。
 
+&emsp;&emsp;• 为敌人预制添加HealthBar脚本。
+
 &emsp;&emsp;• 修改Bullet脚本的碰撞检测。
 
 ```csharp
