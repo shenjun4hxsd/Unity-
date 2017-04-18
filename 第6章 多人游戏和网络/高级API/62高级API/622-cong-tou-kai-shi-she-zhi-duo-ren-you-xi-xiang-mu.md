@@ -534,7 +534,7 @@
         [ClientRpc]
         void RpcReSpawn()
         {
-            if(isLocalPlayer)
+            if(isLocalPlayer)   // hasAuthority
             {
                 transform.position = Vector3.zero;
             }
