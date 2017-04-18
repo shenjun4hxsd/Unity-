@@ -311,7 +311,7 @@
 
 ###12、子弹碰撞
 
-&emsp;&emsp;• 为子弹预设添加Collider组件。
+&emsp;&emsp;• 为子弹预设及玩家预设添加Collider组件。
 
 &emsp;&emsp;• 为子弹预设添加脚本“Bullet”。
 
