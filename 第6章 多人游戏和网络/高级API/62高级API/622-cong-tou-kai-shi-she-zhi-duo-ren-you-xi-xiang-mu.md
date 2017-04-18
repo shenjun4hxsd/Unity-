@@ -560,3 +560,29 @@
 &emsp;&emsp;• 添加“EnemySpawner”脚本。
 
 &emsp;&emsp;• 实现虚函数OnStartServer来创建敌人。
+
+```csharp
+    using UnityEngine;
+    using UnityEngine.Networking;
+    
+    public class SpawnEnemy : NetworkBehaviour
+    {
+        public GameObject enemyPrefab;
+        public int numEnemies;
+    
+        public override void OnStartServer()
+        {
+            for (int i = 0; i < numEnemies; i++)
+            {
+                var pos = new Vector3(Random.Range(-8.0f, 8.0f), 
+                              0.2f, 
+                              Random.Range(-8.0f, 8.0f));
+    
+                var rotation = Quaternion.Euler(0, Random.Range(0, 180), 0);
+    
+                var enemy = Instantiate<GameObject>(enemyPrefab, pos, rotation);
+                NetworkServer.Spawn(enemy);
+            }
+        }
+    }
+```
