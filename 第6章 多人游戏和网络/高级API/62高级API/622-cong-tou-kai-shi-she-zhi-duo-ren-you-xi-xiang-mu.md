@@ -360,3 +360,5 @@
         }
     }
 ```
+
+&emsp;&emsp;• 更新Bullet脚本，玩家被子弹击中后调用TakeDamage函数。
