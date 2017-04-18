@@ -419,9 +419,12 @@
             GUI.Box(new Rect(pos.x - 26, Screen.height - pos.y + 20, Combat.k_MaxHealth/2, 7), ".", backStyle);
     
             // 绘制血条
-            GUI.color = Color.green;
-            GUI.backgroundColor = Color.green;
-            GUI.Box(new Rect(pos.x - 25, Screen.height - pos.y + 21, combat.m_Health / 2, 5), ".", healthStyle);
+            if (combat.m_Health != 0)
+            {
+                GUI.color = Color.green;
+                GUI.backgroundColor = Color.green;
+                GUI.Box(new Rect(pos.x - 25, Screen.height - pos.y + 21, combat.m_Health / 2, 5), ".", healthStyle);
+            }
         }
     
         void InitStyle()
