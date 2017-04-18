@@ -314,3 +314,20 @@
 &emsp;&emsp;• 为子弹预设添加Collider组件。
 
 &emsp;&emsp;• 为子弹预设添加脚本“Bullet”。
+
+```csharp
+    using UnityEngine;
+    
+    public class Bullet : MonoBehaviour
+    {
+        void OnCollisionEnter(Collision col)
+        {
+            var hit = col.gameObject;
+            var hitPlayer = hit.GetComponent<TankMove>();
+            if (hitPlayer != null)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
+```
