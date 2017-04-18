@@ -245,18 +245,18 @@
     
         public float m_RotSpeed = 15;
     
-        Transform firePos;
+        public Transform firePos;
     
         float mouseX = 0;
     
         void Awake()
         {
             firePos = transform.Find("FirePos");
-            m_LocalCamera = Camera.main;
         }
     
         void Update()
         {
+    
             if (!isLocalPlayer)
                 return;
             
@@ -280,8 +280,11 @@
     
         void LateUpdate()
         {
-            m_LocalCamera.transform.position = transform.TransformPoint(m_CameraPosOffset);
-            m_LocalCamera.transform.LookAt(transform.position + m_CameraLookOffset);
+            if (m_LocalCamera && isLocalPlayer)
+            {
+                m_LocalCamera.transform.position = transform.TransformPoint(m_CameraPosOffset);
+                m_LocalCamera.transform.LookAt(transform.position + m_CameraLookOffset);
+            }
         }
     
         /// <summary>
@@ -289,6 +292,8 @@
         /// </summary>
         public override void OnStartLocalPlayer()
         {
+            m_LocalCamera = Camera.main;
+    
             MeshRenderer render = transform.Find("TankTurret").GetComponent<MeshRenderer>();
             Material[] materials = render.materials;
             if (materials.Length > 0)
