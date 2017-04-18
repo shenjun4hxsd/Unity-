@@ -629,7 +629,54 @@
 
 &emsp;&emsp;• 添加“destroyOnDeath”变量。
 
-
+```csharp
+    using UnityEngine;
+    using UnityEngine.Networking;
+    
+    public class Combat : NetworkBehaviour {
+    
+        public const int k_MaxHealth = 100;
+    
+        public bool m_DestroyOnDeath;
+    
+        [SyncVar]    // 同步变量
+        public int m_Health = k_MaxHealth;
+    
+        /// <summary>
+        /// 只在服务器上应用
+        /// </summary>
+        /// <param name="amount">Amount.</param>
+        public void TakeDamage(int amount)
+        {
+            if (!isServer)
+                return;
+    
+            m_Health -= amount;
+            if(m_Health <= 0)
+            {
+                if (m_DestroyOnDeath)
+                {
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    m_Health = k_MaxHealth;
+                    RpcReSpawn();
+                }
+            }
+        }
+    
+        [ClientRpc]
+        void RpcReSpawn()
+        {
+            
+            if(isLocalPlayer)  // hasAuthority
+            {
+                transform.position = Vector3.zero;
+            }
+        }
+    }
+```
 
 
 
