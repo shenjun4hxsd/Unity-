@@ -586,3 +586,11 @@
         }
     }
 ```
+
+现在创建一个敌人预制：
+
+&emsp;&emsp;• 为敌人预制添加NetworkIdentity组件。
+
+&emsp;&emsp;• 为敌人预制添加NetworkTransform组件。
+
+&emsp;&emsp;• 在NetworkManager的Spawn Info中添加一个新的可生成的预制。
