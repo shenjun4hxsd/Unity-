@@ -503,4 +503,41 @@
 
 &emsp;&emsp;• 修改Combat脚本：
 
-
+```csharp
+    using UnityEngine;
+    using UnityEngine.Networking;
+    
+    public class Combat : NetworkBehaviour {
+    
+        public const int k_MaxHealth = 100;
+    
+        [SyncVar]    // 同步变量
+        public int m_Health = k_MaxHealth;
+    
+        /// <summary>
+        /// 只在服务器上应用
+        /// </summary>
+        /// <param name="amount">Amount.</param>
+        public void TakeDamage(int amount)
+        {
+            if (!isServer)
+                return;
+    
+            m_Health -= amount;
+            if(m_Health <= 0)
+            {
+                m_Health = k_MaxHealth;
+                RpcReSpawn();
+            }
+        }
+    
+        [ClientRpc]
+        void RpcReSpawn()
+        {
+            if(isLocalPlayer)
+            {
+                transform.position = Vector3.zero;
+            }
+        }
+    }
+```
