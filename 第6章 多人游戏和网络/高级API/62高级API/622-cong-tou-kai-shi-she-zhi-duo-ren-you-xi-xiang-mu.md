@@ -383,3 +383,65 @@
 
 
 &emsp;&emsp;• 为了使玩家被子弹击中后能观察到血量的变化，给玩家添加血条（使用OnGUI）。
+
+```csharp
+    using UnityEngine;
+    
+    public class HealthBar : MonoBehaviour {
+    
+        GUIStyle healthStyle;
+        GUIStyle backStyle;
+        Combat combat;
+    
+        void Awake()
+        {
+            combat = GetComponent<Combat>();
+        }
+       
+        void OnGUI()
+        {
+            InitStyle();
+    
+            var pos = Camera.main.WorldToScreenPoint(transform.position);
+    
+            // 绘制血条背景
+            GUI.color = Color.grey;
+            GUI.backgroundColor = Color.grey;
+            GUI.Box(new Rect(pos.x - 26, Screen.height - pos.y + 20, Combat.k_MaxHealth/2, 7), ".", backStyle);
+    
+            // 绘制血条
+            GUI.color = Color.green;
+            GUI.backgroundColor = Color.green;
+            GUI.Box(new Rect(pos.x - 25, Screen.height - pos.y + 21, combat.m_Health / 2, 5), ".", healthStyle);
+        }
+    
+        void InitStyle()
+        {
+            if (healthStyle == null)
+            {
+                healthStyle = new GUIStyle(GUI.skin.box);
+                healthStyle.normal.background = MakeTex(2, 2, new Color(0, 1, 0, 1));
+            }
+    
+            if (backStyle == null)
+            {
+                backStyle = new GUIStyle(GUI.skin.box);
+                backStyle.normal.background = MakeTex(2, 2, new Color(0, 0, 0, 1));
+            }
+        }
+    
+        Texture2D MakeTex(int width, int height, Color col)
+        {
+            Color[] pix = new Color[width * height];
+            for (int i = 0; i < pix.Length; i++)
+            {
+                pix[i] = col;
+            }
+    
+            Texture2D tex = new Texture2D(width, height);
+            tex.SetPixels(pix);
+            tex.Apply();
+            return tex;
+        }
+    }
+```
