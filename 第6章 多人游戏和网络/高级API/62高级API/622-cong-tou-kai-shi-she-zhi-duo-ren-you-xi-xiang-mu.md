@@ -594,3 +594,9 @@
 &emsp;&emsp;• 为敌人预制添加NetworkTransform组件。
 
 &emsp;&emsp;• 在NetworkManager的Spawn Info中添加一个新的可生成的预制。
+
+&emsp;&emsp;• 为敌人预制添加Combat脚本。
+
+&emsp;&emsp;• 修改Bullet脚本的碰撞检测。
+
+
