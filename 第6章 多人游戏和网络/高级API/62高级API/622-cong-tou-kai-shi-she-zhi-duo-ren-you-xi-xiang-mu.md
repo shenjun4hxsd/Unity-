@@ -362,3 +362,21 @@
 ```
 
 &emsp;&emsp;• 更新Bullet脚本，玩家被子弹击中后调用TakeDamage函数。
+
+```csharp
+    using UnityEngine;
+    
+    public class Bullet : MonoBehaviour
+    {
+        void OnCollisionEnter(Collision col)
+        {
+            var hit = col.gameObject;
+            var hitPlayer = hit.GetComponent<TankMove>();
+            if (hitPlayer != null)
+            {
+                hit.GetComponent<Combat>().TakeDamage(10);
+                Destroy(gameObject);
+            }
+        }
+    }
+```
