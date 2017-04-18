@@ -500,3 +500,7 @@
 &emsp;&emsp;• 添加一个[ClientRpc]函数来重生玩家对象。
 
 &emsp;&emsp;• 当血量为零时，调用服务器上的重生功能。
+
+&emsp;&emsp;• 修改Combat脚本：
+
+
