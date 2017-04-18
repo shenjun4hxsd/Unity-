@@ -461,7 +461,7 @@
 
 ###14、玩家状态（联网血量）
 
-&emsp;&emsp;• 修改Combat脚本
+&emsp;&emsp;• 修改Combat脚本。
 
 ```csharp
     using UnityEngine;
