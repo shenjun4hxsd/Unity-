@@ -44,7 +44,14 @@ SteamVR提供了一个特定的渲染目标大小，以减轻失真，然而，�
 
 ####• Assets/SteamVR/Scripts/SteamVR_TrackedObject.cs
 
+将其添加到要使用跟踪的任何对象。
 
+```
+该 HMD有一个设置为自动。
+对于控制器，选择要映射到的对象的索引。
+一般来说， 您应该将这些对象加载到相机的“origin”对象，以便它们在相同的空间中跟踪。
+但是，如果不方便，您可以在TrackedObject本身中指定“origin”。
+```
 
 
 
