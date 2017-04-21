@@ -170,17 +170,7 @@ Device.Update():做两件事
 1. GetControllerStateWithPose（）调用OpenVR中的函数获取手柄状态和姿态。结果存在这两个变量State（VRControllerState_t）和Pose（TrackedDevicePose_t）中，由GetState()和GetPose()获取并由此返回一系列的可查询参数及各种Get函数。
 
 各可查询参数说明如下（相当于对TrackedDevicePose_t中的参数翻译了下）
-
-valid：GetControllerStateWithPose（）函数调用是否成功；
-connected：判断设备是否连接；
-hasTracking：判断设备是否跟踪正常；
- 根据ETrackingResult的结果得到下面三个参数：
-outOfRange：判断设备是否超出范围；
-calibrating：判断设备是否正在校正；
-uninitialized：判断设备是否未初始化；
- transform：获取的结果是包含12个元素的一维数组，通过SteamVR_Utils.RigidTransform函数将12个元素重组为3X4矩阵并针对Unity的坐标系进行修正，同时添加了对position和rotation方便的引用。
-velocity和angularVelocity：这两个速度也针对Unity的坐标系进行修正，lighthouse跟踪的空间轴方向与Unity存在偏差。
-
+ 
 
 ####•
 
