@@ -1,5 +1,13 @@
 ##SteamVR Plugin脚本分析
 
+
+|脚本|说明|
+|:--|:--|
+|openvr_api.cs|这直接封装了steamvr SDK的支持。<br>是必须的脚本。它提供的所有steamvr暴露功能。不建议你更改此文件。应与相关的openvr_api DLL同步。|
+|SteamVR.cs|系统的初始化和关闭。使用SteamVR.instance 访问。<br>由于任何原因，如果初始化失败，则可能返回null。|
+|SteamVR_Camera.cs|VR摄像机，主要功能是将Unity摄像机的画面进行变化，形成Vive中的成像画面|
+
+
 ####• openvr_api.cs 
 
 ```
