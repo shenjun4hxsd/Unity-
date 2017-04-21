@@ -42,7 +42,7 @@ SteamVR提供了一个特定的渲染目标大小，以减轻失真，然而，�
 ```
 
 
-####• Assets/ SteamVR / Scripts / SteamVR_TrackedObject.cs
+####• Assets/SteamVR/Scripts/SteamVR_TrackedObject.cs
 
 
 
