@@ -65,7 +65,7 @@ SteamVR提供了一个特定的渲染目标大小，以减轻失真，然而，�
 
 用于显示玩家可游玩区域。使用方法，在Origin物体上添加该脚本即可
 
-####SteamVR_ControllerManager和SteamVR_TrackedObject
+###SteamVR_ControllerManager和SteamVR_TrackedObject
 
 
 ####•
