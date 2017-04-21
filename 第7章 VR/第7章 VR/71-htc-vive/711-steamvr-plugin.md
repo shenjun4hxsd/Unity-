@@ -143,7 +143,15 @@ DeviceRelation和GetDeviceIndex()结合获取特定的设备Index，如leftmost�
 |GetTouch|按下按键一直触发|
 |GetTouchDown|按下按键只触发一次|
 |GetTouchUp|松开按键只触发一次|
-  
+
+
+GetAxis()
+
+获取Touchpad圆盘坐标或Trigger的行程值（0-1），函数默认参数是手柄上的Touchpad。共有5个AxisId参数可选，0是TouchPad，1是Trigger，2,3,4应该是没有用的，且此函数只接受EVRButtonId类参数而不接受ButtonMask。
+
+**手柄震动**
+
+手柄震动控制函数，参数名称解释的是时间，默认500,但实际上控制的是震动的强度。默认AxisId是EVRButtonId_touchpad，选择其他EVRButtonId没用（等价参数axis0可以）,其会调用OpenVR中的同名函数。参数超过4000会无效，导致震动不触发。可以通过协程的while（true）+waitforsecond控制震动间隔，通过stop协程控制震动结束。
 
 ####•
 
