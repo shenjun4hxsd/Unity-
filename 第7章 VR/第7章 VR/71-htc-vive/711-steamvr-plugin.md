@@ -69,6 +69,16 @@ SteamVR提供了一个特定的渲染目标大小，以减轻失真，然而，�
 
 ##SteamVR_ControllerManager和SteamVR_TrackedObject
 
+控制器，主要用于设置和检测Vive控制器。
+
+Vive控制器由菜单键(ApplicationMenu)，触摸板(Touchpad)，系统键/电源键(System)，扳机键(Trigger)，侧柄键(Grip)，组成
+
+使用方法：
+
+在Origin物体上添加2个子物体代表Vive的2个手柄，增加SteamVR_TrackedObject，Index设置为None
+
+在Origin物体上添加SteamVR_ControllerManager，设置左右手柄
+
 
 ####•
 
