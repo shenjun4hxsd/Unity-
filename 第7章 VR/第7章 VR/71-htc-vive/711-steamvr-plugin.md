@@ -79,6 +79,15 @@ Vive控制器由菜单键(ApplicationMenu)，触摸板(Touchpad)，系统键/电
 
 在Origin物体上添加SteamVR_ControllerManager，设置左右手柄
 
+![](/assets/977418-20170410133419376-1614339157.png)
+
+![](/assets/977418-20170410133443626-1429910370.png)
+
+
+在origin上再加一个子对象主相机作为head如图，加上steam vr_tracked object
+
+![](/assets/977418-20170410133812751-943762245.png)
+
 
 ####•
 
