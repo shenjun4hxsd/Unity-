@@ -9,7 +9,8 @@
 |SteamVR_Overlay.cs|1、此组件用于协助在VR中呈现2D内容。<br>2、使用特殊的渲染路径将指定的texture合成到虚拟曲面上的场景中，以提高保真度。|
 |SteamVR_TrackedObject.cs|1、将其添加到要使用跟踪的任何对象。该 HMD有一个设置为自动。<br>2、对于控制器，选择要映射到的对象的索引。<br>3、一般来说，您应该将这些对象加载到相机的“origin”对象，以便它们在相同的空间中跟踪。<br>4、但是，如果不方便，您可以在TrackedObject本身中指定“origin”。|
 |SteamVR_RenderModel.cs|1、该组件用于渲染手柄的模型，并且跟踪手柄的位置。|
-|SteamVR_Utils.cs|用于在Unity中使用SteamVR API的各种位，包括一个简单的事件系统，用于处理向量/四元数对的RigidTransform类，矩阵转换和其他有用的功能。|
+|SteamVR_Utils.cs|1、用于在Unity中使用SteamVR API的各种位，包括一个简单的事件系统，用于处理向量/四元数对的RigidTransform类，矩阵转换和其他有用的功能。|
+|||
 
 
 
