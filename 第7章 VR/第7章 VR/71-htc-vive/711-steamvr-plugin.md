@@ -19,8 +19,19 @@
 
 ```
 VR摄像机，主要功能是将Unity摄像机的画面进行变化，形成Vive中的成像画面
+
+为了对抗畸变校正引起的拉伸，以更高的分辨率渲染场景。 
+由于Unity中的所有相机都是顺序渲染的，所以在每个眼睛相机之间共享一个静态渲染纹理。
+
+SteamVR提供了一个特定的渲染目标大小，以减轻失真，然而，渲染到更高的分辨率会在相关费用下提供额外的多采样优势。
+这可以通过SteamVR_Camera.sceneResolutionScale控制。
+
+注意：GUILayer和FlareLayer与SteamVR_Camera不兼容，因为它们在屏幕空间，而不是世界空间中渲染。
+
+这些将自动移动SteamVR_GameView对象，该对象本身将自动添加到SteamVR_Camera的父'head'对象。AudioListener也被转移到头部，以便音频被适当的空间化。
+
 ```
 
-####•
+####• Assets/ SteamVR / Scripts / SteamVR_Overlay.cs
 ####•
 ####•
