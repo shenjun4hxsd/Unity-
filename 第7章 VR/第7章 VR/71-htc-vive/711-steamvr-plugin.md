@@ -198,12 +198,11 @@ velocity和angularVelocity：这两个速度也针对Unity的坐标系进行修�
 2. UpdateHairTrigger（）。检测自定义的一种操作：轻按Trigger。 
 
 
+关于DeviceRelation和GetDeviceIndex()没有太多解释，可以深入挖一挖如何使用。
 
-- > 关于DeviceRelation和GetDeviceIndex()没有太多解释，可以深入挖一挖如何使用。
+ButtonMusk及其他地方有用到很多按位进行的操作，可以补充一下相关知识。
 
-- > ButtonMusk及其他地方有用到很多按位进行的操作，可以补充一下相关知识。
-
-- > Unity环境下空间坐标轴的修正原理没有研究：Unity使用的是左手坐标系，lighthouse的结果应该是右手坐标系，所以才会有速度的z分量相反和角速度x、y分量相反的结果。
+Unity环境下空间坐标轴的修正原理没有研究：Unity使用的是左手坐标系，lighthouse的结果应该是右手坐标系，所以才会有速度的z分量相反和角速度x、y分量相反的结果。
 
 ####•
 
