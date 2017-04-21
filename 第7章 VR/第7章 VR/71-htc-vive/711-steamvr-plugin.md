@@ -7,7 +7,7 @@
 ```
 
 
-####•Assets/SteamVR/Scripts/SteamVR.cs 
+####• SteamVR.cs 
 
 ```
 系统的初始化和关闭。使用SteamVR.instance 访问。
@@ -15,7 +15,7 @@
 ```
 
 
-####• Assets/SteamVR/Scripts/SteamVR_Camera.cs
+####• SteamVR_Camera.cs
 
 VR摄像机，主要功能是将Unity摄像机的画面进行变化，形成Vive中的成像画面
 
@@ -33,7 +33,7 @@ SteamVR提供了一个特定的渲染目标大小，以减轻失真，然而，�
 
 ```
 
-####• Assets/SteamVR/Scripts/SteamVR_Overlay.cs
+####• SteamVR_Overlay.cs
 
 此组件用于协助在VR中呈现2D内容。
 
@@ -42,7 +42,7 @@ SteamVR提供了一个特定的渲染目标大小，以减轻失真，然而，�
 ```
 
 
-####• Assets/SteamVR/Scripts/SteamVR_TrackedObject.cs
+####• SteamVR_TrackedObject.cs
 
 将其添加到要使用跟踪的任何对象。
 
@@ -53,15 +53,15 @@ SteamVR提供了一个特定的渲染目标大小，以减轻失真，然而，�
 但是，如果不方便，您可以在TrackedObject本身中指定“origin”。
 ```
 
-####• Assets/SteamVR/Scripts/SteamVR_RenderModel.cs
+####• SteamVR_RenderModel.cs
 
 该组件用于渲染手柄的模型，并且跟踪手柄的位置。
 
-####• Assets/SteamVR/Scripts/SteamVR_Utils.cs
+####• SteamVR_Utils.cs
 
 用于在Unity中使用SteamVR API的各种位，包括一个简单的事件系统，用于处理向量/四元数对的RigidTransform类，矩阵转换和其他有用的功能。
 
-####•
+####• SteamVR_PlayArea
 
 
 ####•
