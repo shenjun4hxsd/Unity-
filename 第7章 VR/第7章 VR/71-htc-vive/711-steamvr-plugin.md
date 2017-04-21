@@ -57,6 +57,7 @@ SteamVR提供了一个特定的渲染目标大小，以减轻失真，然而，�
 
 ####• Assets/SteamVR/Scripts/SteamVR_RenderModel.cs
 
+该组件用于渲染手柄的模型，并且跟踪手柄的位置。
 
 ####•
 
