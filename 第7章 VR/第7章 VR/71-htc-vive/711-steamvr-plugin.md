@@ -33,7 +33,7 @@ SteamVR提供了一个特定的渲染目标大小，以减轻失真，然而，�
 
 ```
 
-####• Assets/ SteamVR / Scripts / SteamVR_Overlay.cs
+####• Assets/SteamVR/Scripts/SteamVR_Overlay.cs
 
 此组件用于协助在VR中呈现2D内容。
 
