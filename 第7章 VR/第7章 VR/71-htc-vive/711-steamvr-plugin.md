@@ -93,7 +93,8 @@ Vive控制器由菜单键(ApplicationMenu)，触摸板(Touchpad)，系统键/电
 
 ####• SteamVR_Controller  控制器的相关信息
 
-关于控制器的相关信息都包含在SteamVR_Controller这个脚本之中。注意：SteamVR_Controller是非Monobehavior的脚本，并没有挂在场景下，其运行是通过SteamVR_Render脚本对于其中Update（）函数的调用从而一直循环获取手柄相关信息。
+关于控制器的相关信息都包含在SteamVR_Controller这个脚本之中。
+注意：SteamVR_Controller是非Monobehavior的脚本，并没有挂在场景下，其运行是通过SteamVR_Render脚本对于其中Update（）函数的调用从而一直循环获取手柄相关信息。
 
 而SteamVR_Render脚本是在程序运行时自动加载至场景。
 
@@ -101,10 +102,32 @@ ButtonMask类：手柄各按键的名称。
 
 Device类：最重要的类，封装了跟踪设备的全部信息。
 
-Update（）函数：被SteamVR_Render脚本调用，更新各跟踪设备的信息。
+Update()函数：被SteamVR_Render脚本调用，更新各跟踪设备的信息。
 
-Input（）函数：根据Index初始化Device[]数组，并实例化所有16个Device。
+Input()函数：根据Index初始化Device[]数组，并实例化所有16个Device。
 
+![](/assets/977418-20170410101623344-1408084167.png)
+
+DeviceRelation和GetDeviceIndex()结合获取特定的设备Index，如leftmost、rightmost。在SteamVR_TestController脚本中有使用到该函数获取用户的左右手手柄的Index。用该方法应该可以识别出用户所拿的手柄是哪一个。
+
+下面着重分析Device类：
+
+|方法|说明|
+|:--|:--|
+|GetPress|按下按键一直触发|
+|GetPressDown|按下按键只触发一次|
+|GetPressUp|松开按键只触发一次|
+
+针对按键的三个函数，每种函数有两个重载，参数为ButtonMask或EVRButtonId类，第二种形式会将EVRButtonId转换为ButtonMask后调用第一种得到结果。
+
+针对Touchpad的三个函数，一样的两种形式。
+
+|方法|说明|
+|:--|:--|
+|GetTouch|按下按键一直触发|
+|GetTouchDown|按下按键只触发一次|
+|GetTouchUp|松开按键只触发一次|
+  
 
 ####•
 
