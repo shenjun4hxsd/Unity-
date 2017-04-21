@@ -153,6 +153,13 @@ GetAxis()
 
 手柄震动控制函数，参数名称解释的是时间，默认500,但实际上控制的是震动的强度。默认AxisId是EVRButtonId_touchpad，选择其他EVRButtonId没用（等价参数axis0可以）,其会调用OpenVR中的同名函数。参数超过4000会无效，导致震动不触发。可以通过协程的while（true）+waitforsecond控制震动间隔，通过stop协程控制震动结束。
 
+
+GetHairTrigger
+GetHairTriggerDown定义为有false转至true的过程，判断先前状态和当前状态。
+GetHairTriggerUp 定义为有true转至false的过程，判断先前状态和当前状态。
+
+这三个函数获取HairTrigger的状态，其值对应rAxis1.x的值。But什么是HairTrigger？形象点说就是像头发般轻轻的触发。HairTrigger是检测当你握住扳手超过一个固定值（0.1，可调）时即触发的状态。相当于利用Trigger的变化量来做一个功能的触发，很棒不是吗。轻轻碰一下Trigger使得行程大于0.1即可触发一个功能。
+
 ####•
 
 
