@@ -1,4 +1,4 @@
-####• Assets/Plugins/openvr_api.cs 
+####• openvr_api.cs 
 
 ```
 这直接封装了steamvr SDK的支持。
