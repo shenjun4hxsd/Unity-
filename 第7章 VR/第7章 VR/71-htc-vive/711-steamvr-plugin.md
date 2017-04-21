@@ -160,6 +160,15 @@ GetHairTriggerUp 定义为有true转至false的过程，判断先前状态和当
 
 这三个函数获取HairTrigger的状态，其值对应rAxis1.x的值。But什么是HairTrigger？形象点说就是像头发般轻轻的触发。HairTrigger是检测当你握住扳手超过一个固定值（0.1，可调）时即触发的状态。相当于利用Trigger的变化量来做一个功能的触发，很棒不是吗。轻轻碰一下Trigger使得行程大于0.1即可触发一个功能。
 
+
+**整个脚本的执行顺序如下：**
+
+Update（）；
+Input()初始化16个设备的信息存储空间，并返回某个设备；
+Device.Update():做两件事
+
+1. GetControllerStateWithPose（）调用OpenVR中的函数获取手柄状态和姿态。结果存在这两个变量State（VRControllerState_t）和Pose（TrackedDevicePose_t）中，由GetState()和GetPose()获取并由此返回一系列的可查询参数及各种Get函数。
+
 ####•
 
 
