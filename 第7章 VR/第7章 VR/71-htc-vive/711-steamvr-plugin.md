@@ -93,6 +93,18 @@ Vive控制器由菜单键(ApplicationMenu)，触摸板(Touchpad)，系统键/电
 
 ####• SteamVR_Controller  控制器的相关信息
 
+关于控制器的相关信息都包含在SteamVR_Controller这个脚本之中。注意：SteamVR_Controller是非Monobehavior的脚本，并没有挂在场景下，其运行是通过SteamVR_Render脚本对于其中Update（）函数的调用从而一直循环获取手柄相关信息。
+
+而SteamVR_Render脚本是在程序运行时自动加载至场景。
+
+ButtonMask类：手柄各按键的名称。
+
+Device类：最重要的类，封装了跟踪设备的全部信息。
+
+Update（）函数：被SteamVR_Render脚本调用，更新各跟踪设备的信息。
+
+Input（）函数：根据Index初始化Device[]数组，并实例化所有16个Device。
+
 
 ####•
 
