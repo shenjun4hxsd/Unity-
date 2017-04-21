@@ -111,6 +111,8 @@ Input()函数：根据Index初始化Device[]数组，并实例化所有16个Devi
 DeviceRelation和GetDeviceIndex()结合获取特定的设备Index，如leftmost、rightmost。在SteamVR_TestController脚本中有使用到该函数获取用户的左右手手柄的Index。用该方法应该可以识别出用户所拿的手柄是哪一个。
 
 下面着重分析Device类：
+针对按键的三个函数，每种函数有两个重载，参数为ButtonMask或EVRButtonId类，第二种形式会将EVRButtonId转换为ButtonMask后调用第一种得到结果。
+
 
 |方法|说明|
 |:--|:--|
@@ -118,7 +120,7 @@ DeviceRelation和GetDeviceIndex()结合获取特定的设备Index，如leftmost�
 |GetPressDown|按下按键只触发一次|
 |GetPressUp|松开按键只触发一次|
 
-针对按键的三个函数，每种函数有两个重载，参数为ButtonMask或EVRButtonId类，第二种形式会将EVRButtonId转换为ButtonMask后调用第一种得到结果。
+
 
 针对Touchpad的三个函数，一样的两种形式。
 
