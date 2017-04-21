@@ -15,7 +15,7 @@
 ```
 
 
-####• Assets/ SteamVR / Scripts / SteamVR_Camera.cs
+####• Assets/SteamVR/Scripts/SteamVR_Camera.cs
 
 ```
 VR摄像机，主要功能是将Unity摄像机的画面进行变化，形成Vive中的成像画面
