@@ -89,7 +89,7 @@ Vive控制器由菜单键(ApplicationMenu)，触摸板(Touchpad)，系统键/电
 ![](/assets/977418-20170410133812751-943762245.png)
 
 
-####•
+####• SteamVR_Controller  控制器的相关信息
 
 
 ####•
