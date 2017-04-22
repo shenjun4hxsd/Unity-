@@ -126,6 +126,8 @@ StandaloneInputModule和TouchInputModule两个组件会检测一些输入操作�
 
 ![](/assets/屏幕快照 2017-01-01 下午6.27.52.png)
 
+正常情况下，我得用手点击它才会进入我的监听方法。假如我不想点击触发，我就想在某个时间点自动触发怎么办？ 其实还有个方法就是自己去调用点击监听的方法，但是有个问题，比如按钮点击的时候自身会按下 抬起 会有颜色的变化。还有就是如果 多个按钮 监听方法写了多个方法里 也就不好调用了。
+
 ```csharp
     using System.Collections.Generic;
     using UnityEngine;
