@@ -131,45 +131,45 @@ StandaloneInputModule和TouchInputModule两个组件会检测一些输入操作�
 但是这种通过配置的方式，一旦项目多人协作，项目的复杂度起来，这种拖来拽去的配置终究是会有很多问题的，比如某个组件删除，比如响应接口改了个名字~~都会导致配置丢失，而问题又不能及时发现。又或者程序的监听接口因为某些条件而不同。所以也许你会需要第三种方式。
 
 ```csharp
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.EventSystems;
-
-public class TestImage : MonoBehaviour
-{
-
-    public Button uiButton;
-    public Image uiImage;
-
-    public void Click(GameObject go)
+    using System.Collections.Generic;
+    using UnityEngine;
+    using UnityEngine.UI;
+    using UnityEngine.EventSystems;
+    
+    public class TestImage : MonoBehaviour
     {
-        Debug.Log(go.name);
-    }
-
-    void OnGUI()
-    {
-        if (GUILayout.Button("Auto Button"))
+    
+        public Button uiButton;
+        public Image uiImage;
+    
+        public void Click(GameObject go)
         {
-            ExecuteEvents.Execute<IPointerClickHandler>(
-                uiButton.gameObject, 
-                new PointerEventData(EventSystem.current), 
-                ExecuteEvents.pointerClickHandler);
-            ExecuteEvents.Execute<ISubmitHandler>(
-                uiButton.gameObject, 
-                new PointerEventData(EventSystem.current), 
-                ExecuteEvents.submitHandler);
+            Debug.Log(go.name);
         }
-
-        if (GUILayout.Button("Auto Image"))
+    
+        void OnGUI()
         {
-            ExecuteEvents.Execute<IPointerClickHandler>(
-                uiImage.gameObject,
-                new PointerEventData(EventSystem.current),
-                ExecuteEvents.pointerClickHandler);
+            if (GUILayout.Button("Auto Button"))
+            {
+                ExecuteEvents.Execute<IPointerClickHandler>(
+                    uiButton.gameObject, 
+                    new PointerEventData(EventSystem.current), 
+                    ExecuteEvents.pointerClickHandler);
+                ExecuteEvents.Execute<ISubmitHandler>(
+                    uiButton.gameObject, 
+                    new PointerEventData(EventSystem.current), 
+                    ExecuteEvents.submitHandler);
+            }
+    
+            if (GUILayout.Button("Auto Image"))
+            {
+                ExecuteEvents.Execute<IPointerClickHandler>(
+                    uiImage.gameObject,
+                    new PointerEventData(EventSystem.current),
+                    ExecuteEvents.pointerClickHandler);
+            }
         }
     }
-}
 ```
 
 3）、动态添加EventTrigger组件或者修改组件
