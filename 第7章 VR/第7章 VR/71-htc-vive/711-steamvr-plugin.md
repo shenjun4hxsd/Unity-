@@ -105,7 +105,7 @@ Vive控制器由菜单键(ApplicationMenu)，触摸板(Touchpad)，系统键/电
 ![](/assets/977418-20170410133812751-943762245.png)
 
 
-####• SteamVR_Controller  控制器的相关信息
+###• SteamVR_Controller  控制器的相关信息
 
 关于控制器的相关信息都包含在SteamVR_Controller这个脚本之中。
 注意：SteamVR_Controller是非Monobehavior的脚本，并没有挂在场景下，其运行是通过SteamVR_Render脚本对于其中Update（）函数的调用从而一直循环获取手柄相关信息。
