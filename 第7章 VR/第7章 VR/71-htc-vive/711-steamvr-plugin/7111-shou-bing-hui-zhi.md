@@ -2,19 +2,19 @@
 
 
 ```csharp
-    /*
- * Author : shenjun
- */
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-    using Valve.VR;
-
-/// <summary>
-    /// 实现手柄的绘制
-    /// </summary>
-[RequireComponent(typeof(SteamVR_RenderModel))]
-public class HandTest : MonoBehaviour {
+        /*
+         * Author : shenjun
+         */
+        using System.Collections;
+        using System.Collections.Generic;
+        using UnityEngine;
+        using Valve.VR;
+    
+        /// <summary>
+        /// 实现手柄的绘制
+        /// </summary>
+        [RequireComponent(typeof(SteamVR_RenderModel))]
+        public class HandTest : MonoBehaviour {
     
         public enum HandType
         {
@@ -31,7 +31,7 @@ public class HandTest : MonoBehaviour {
     
 
 
-    void Awake()
+        void Awake()
         {
             newPosAction = SteamVR_Events.NewPosesAction(OnNewPos); // 创建位置更新对象
         }
@@ -77,11 +77,11 @@ public class HandTest : MonoBehaviour {
         }
 
 
-    /// <summary>
+        /// <summary>
         /// 设置设备的索引
         /// </summary>
         /// <param name="index"></param>
-    private void SetDeviceIndex(int index)
+        private void SetDeviceIndex(int index)
         {
             if (controller == null)
             {
