@@ -251,4 +251,6 @@
     * [7.11 SteamVR Plugin](第7章 VR/第7章 VR/71-htc-vive/711-steamvr-plugin.md)
       * [7.111 手柄绘制](第7章 VR/第7章 VR/71-htc-vive/711-steamvr-plugin/7111-shou-bing-hui-zhi.md)
   * 7.2 Oculus Rift CV1
+  * [7.3 UnityEngine.VR](第7章 VR/第7章 VR/73-unityenginevr.md)
+    * [7.31 VRSettings](第7章 VR/第7章 VR/73-unityenginevr/731-vrsettings.md)
 
