@@ -254,4 +254,5 @@
   * [7.3 UnityEngine.VR](第7章 VR/第7章 VR/73-unityenginevr.md)
     * [7.31 VRSettings](第7章 VR/第7章 VR/73-unityenginevr/731-vrsettings.md)
     * [7.32 VRDevice](第7章 VR/第7章 VR/73-unityenginevr/732-vrdevice.md)
+    * [7.33 InputTracking](第7章 VR/第7章 VR/73-unityenginevr/733-inputtracking.md)
 
