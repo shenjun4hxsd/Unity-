@@ -67,7 +67,7 @@
 ###6、Widiget
 
         Pivot 中心点
-        Depth 深度，用来控制绘制循序，数值小的先绘制
+        Depth 深度，用来控制绘制顺序，数值小的先绘制
         Size 图片尺寸
         Aspect 比例 Free/BasedOnWidth/BasedOnHeight
         Anchors 锚点设置**
@@ -86,7 +86,7 @@
             From/To
             PlayStyle : Once/Loop/PingPang
             Duration : 持续时间
-            StartDelay : 多少事件后开始
+            StartDelay : 多少时间后开始
             TweenGroup
             Ignore TimeScale
             
