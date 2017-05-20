@@ -193,6 +193,7 @@
     * [5.21 XMLDocument](第5章 其他/521-xmldocument.md)
     * [5.22 XMLWrite和XMLReader](第5章 其他/522-xmlwrite和xmlreader.md)
     * [5.23 XPath详解](第5章 其他/523-xpath详解.md)
+    * [5.24 XML示例](第5章 其他/524-xmlshi-li.md)
   * [5.3 视频播放](第5章 其他/53-视频播放.md)
 * [第6章 多人游戏和网络](第6章 多人游戏和网络/第6章 多人游戏和网络.md)
   * [6.1 网络概述](第6章 多人游戏和网络/网络概述/61-wang-luo-gai-shu.md)
