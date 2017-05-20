@@ -140,7 +140,7 @@
     //        AppendTest();
     //        RemoveTest();
     //        ModifyTest();
-            GetXMLNodeTest();
+    //        GetXMLNodeTest();
         }
     
     
