@@ -85,6 +85,7 @@ Resources类允许你从指定的路径查找或访问资源。
 异步加载Resources文件夹中的资源。
 
 public static ResourceRequest LoadAsync(string path);
+目标文件夹的路径名。当使用空字符串（即“”）时，该函数将加载资源文件夹的全部内容。
 
 ---
 
