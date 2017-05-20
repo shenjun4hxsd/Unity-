@@ -1,5 +1,9 @@
 ##XML示例
 
+![](/assets/XML02.png)
+
+![](/assets/XML01.png)
+
 ```csharp
 
     /*
