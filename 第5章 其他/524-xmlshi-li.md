@@ -17,6 +17,10 @@
     public class XML_Operation : MonoBehaviour
     {
     
+        private static XML_Operation instance;
+    
+        public static XML_Operation Instance { get { return instance; } }
+    
         string fileName = "Items.xml";
     
         public string FilePath { get { return Application.streamingAssetsPath + "/" + fileName; } }
@@ -90,9 +94,10 @@
             // 11. 选取所有道具节点下 具有id属性 并且id属性等于12的节点
             //        bool flag = AppendXML("//道具/*[@id=12]", new PackageItem(){ id = "4", name = "铁剑", price = 500 });
     
-            //        bool flag = AppendXML("大还丹", new PackageItem(){ id = "4", name = "铁剑", price = 500 }, true);
-            //        if (!flag)
-            //            Debug.Log("插入失败");
+            // 12. 通过节点名查找
+            bool flag = AppendXML("大还丹", new PackageItem(){ id = "4", name = "铁剑", price = 500 }, true);
+            if (!flag)
+                Debug.Log("插入失败");
         }
     
         void RemoveTest()
@@ -103,16 +108,16 @@
     
             //        bool flag = RemoveXML("/道具列表/装备/*[价格=1000]");
     
-            //        bool flag = RemoveXML("屠龙刀", true);
-            //        if (!flag)
-            //            Debug.Log("删除失败");
+            bool flag = RemoveXML("屠龙刀", true);
+            if (!flag)
+                Debug.Log("删除失败");
         }
     
         void ModifyTest()
         {
             bool flag = ModifyXML("//*[@id=12]/价格", "2000");
     
-            if(!flag)
+            if (!flag)
             {
                 Debug.Log("修改失败");
             }
@@ -135,6 +140,11 @@
         #endregion
     
     
+        void Awake()
+        {
+            instance = this;
+        }
+    
         void Start()
         {
     //        AppendTest();
@@ -145,15 +155,16 @@
     
     
     
-        List<PackageItem> GetXMLNode(string xpath, bool byTag = false)
+        public List<PackageItem> GetXMLNode(string xpath, bool byTag = false)
         {
-            if (!System.IO.File.Exists(FilePath)) return null;
+            if (!System.IO.File.Exists(FilePath))
+                return null;
     
             List<PackageItem> nodesList = new List<PackageItem>();
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.Load(FilePath);
             XmlNodeList nodes;
-            if(byTag)
+            if (byTag)
             {
                 nodes = xmlDoc.GetElementsByTagName(xpath);
             }
@@ -165,11 +176,11 @@
             {
                 PackageItem item = new PackageItem();
                 item.name = n.Name;
-                if(n.HasAttribute("id"))
+                if (n.HasAttribute("id"))
                 {
                     item.id = n.GetAttribute("id");
                 }
-                if(n.HasChildNodes)
+                if (n.HasChildNodes)
                 {
                     int.TryParse(n.FirstChild.InnerText, out item.price);
                 }
@@ -285,7 +296,7 @@
             }
         }
     
-        bool AppendXML(string xpath, PackageItem item, bool byTag = false)
+        public bool AppendXML(string xpath, PackageItem item, bool byTag = false)
         {
             if (!System.IO.File.Exists(FilePath))
                 return false;
@@ -328,7 +339,7 @@
             return true;
         }
     
-        bool RemoveXML(string xpath, bool byTag = false)
+        public bool RemoveXML(string xpath, bool byTag = false)
         {
             if (!System.IO.File.Exists(FilePath))
                 return false;
@@ -359,16 +370,18 @@
             return true;
         }
     
-        bool ModifyXML(string xpath, string value)
+        public bool ModifyXML(string xpath, string value)
         {
-            if (!System.IO.File.Exists(FilePath)) return false;
+            if (!System.IO.File.Exists(FilePath))
+                return false;
     
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.Load(FilePath);
     
             XmlNodeList nodes = xmlDoc.SelectNodes(xpath);
     
-            if (nodes == null || nodes.Count == 0) return false;
+            if (nodes == null || nodes.Count == 0)
+                return false;
     
             foreach (XmlElement n in nodes)
             {
@@ -388,5 +401,6 @@
         public string name;
         public int price;
     }
+    
     
 ```
