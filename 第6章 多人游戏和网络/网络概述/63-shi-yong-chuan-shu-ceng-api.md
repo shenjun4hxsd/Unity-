@@ -303,6 +303,26 @@ Socket通信的基本流程具体步骤如下所示：
 
 
 
+ProtocolType用于指明协议
+
+
+
+| 常用的协议       | 含义                    |
+| ----------- | --------------------- |
+| Ggp         | 网关到网关协议               |
+| Icmp        | 网际消息控制协议              |
+| IcmpV6      | 用于IPv6的Internet控制消息协议 |
+| Idp         | Internet数据报协议         |
+| Igmp        | Internet组管理协议         |
+| IP          | Internet协议            |
+| Internet    | 数据包交换协议               |
+| PARC        | 通用数据包协议               |
+| Raw         | 原始IP数据包协议             |
+| Tcp         | 传输控制协议                |
+| Udp         | 用户数据报协议               |
+| UnKnown     | 未知协议                  |
+| Unspecified | 未指定的协议                |
+
 
 
 
