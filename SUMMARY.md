@@ -200,8 +200,8 @@
   * [6.2 高级API](第6章 多人游戏和网络/高级API/62高级API.md)
     * [6.21 网络系统概念](第6章 多人游戏和网络/高级API/62高级API/621-wang-luo-xi-tong-gai-nian.md)
     * [6.22 从头开始设置多人游戏项目](第6章 多人游戏和网络/高级API/62高级API/622-cong-tou-kai-shi-she-zhi-duo-ren-you-xi-xiang-mu.md)
-    * 6.23 使用网络管理器
-    * 6.24 生成对象
+    * [6.23 使用网络管理器](第6章 多人游戏和网络/高级API/62高级API/623-shi-yong-wang-luo-guan-li-qi.md)
+    * [6.24 生成对象](第6章 多人游戏和网络/高级API/62高级API/624-sheng-cheng-dui-xiang.md)
     * [6.25 自定义生成函数](第6章 多人游戏和网络/高级API/62高级API/625-zi-ding-yi-sheng-cheng-han-shu.md)
     * 6.26 状态同步
     * 6.27 远程操作
