@@ -82,6 +82,21 @@ IP协议用于将多个包的交换网络连接起来，它在源地址和目的
 
 >我们在浏览器中输入一个网址（网址通过域名系统转换为IP地址）时不必指定端口号，因为在默认情况下WWW服务的端口是80。
 
+---
 
+####C#中的相关类型
 
+C#的System.Net命名空间提供了两个IP和端口相关的类IPAddress和IPEndPoint。
 
+IPAddress ： 指示IP地址，如“127.0.0.1”。
+IPEndPoint ： 指示IP地址和端口对的组合，如“127.0.0.1:80”。
+
+|IPAddress的常用属性|说明|
+|:--|:--|
+|IPAddress.Any|使用机器上一个可用的IP来初始化这个IP地址对象|
+|IPAddress.Parse|根据IP地址创建IPAddress对象，如IPAddress.Parse("192.168.0.1")|
+
+|IPEndPoint的常用构造函数|说明|
+|:--|:--|
+|IPEndPoint(Int64, Int32)|用指定的地址和端口号初始化|
+|IPEndPoint(IPAddress, Int32)|用IPAddress指定的地址和端口号初始化|
