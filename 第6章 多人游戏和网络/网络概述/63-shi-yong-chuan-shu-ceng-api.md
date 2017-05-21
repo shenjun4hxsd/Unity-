@@ -176,6 +176,8 @@ Socket通信的基本流程具体步骤如下所示：
 |EndConnect|结束挂起的异步连接请求|
 |BeginDisconnect|开始异步请求从远程终结点断开连接|
 |EndDisconnect|结束挂起的异步断来连接请求|
+|BeginReceive|开始从连接的Socket中异步接收数据|
+|EndReceive|将数据异步发送到连接的Socket|
 |||
 
 
