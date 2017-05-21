@@ -324,7 +324,93 @@ ProtocolType用于指明协议
 
 
 
+#####客户端程序
 
+```csharp
+    /*
+     * Author: shenjun
+     */
+    
+    using System.Collections;
+    using System.Collections.Generic;
+    using UnityEngine;
+    using UnityEngine.UI;
+    
+    using System.Net;
+    using System.Net.Sockets;
+    
+    public class ChatRoomClient : MonoBehaviour {
+    
+        Socket client;
+    
+        public InputField hostInput;
+        public InputField portInput;
+    
+        public Button connectBtn;
+        public Button clearBtn;
+    
+        // 聊天文本
+        public Text recvText;
+        // 客户端IP地址
+        public Text clientText;
+        // 客户端输入
+        public InputField input;
+    
+        const int BUFFER_SIZE = 1024;
+        byte[] buffer = new byte[BUFFER_SIZE];
+    
+        bool isLink = false;
+    
+    	void Start () {
+            connectBtn.onClick.AddListener(Connect);
+            input.onEndEdit.AddListener(OnChat);
+            clearBtn.onClick.AddListener(OnClear);
+    	}
+    	
+        void Connect()
+        {
+            // 创建套接字
+            client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            string host = hostInput.text;
+            int port = int.Parse(portInput.text);
+    
+            // 连接服务器（ 阻塞方法 ）
+            client.Connect(host, port);
+    
+            // 发送消息给服务器
+            clientText.text = "客户端地址 ：" + client.LocalEndPoint.ToString();
+            byte[] bytes = System.Text.Encoding.UTF8.GetBytes(clientText.text);
+            client.Send(bytes);
+    
+            // 接收服务器消息
+            int count = client.Receive(buffer);
+            string result = System.Text.Encoding.UTF8.GetString(buffer, 0, count);
+            recvText.text += "\r\n" + result;
+    
+            isLink = true;
+        }
+    
+        void OnChat(string msg)
+        {
+            if(!isLink) return;
+    
+            byte[] bytes = System.Text.Encoding.UTF8.GetBytes(msg);
+            client.Send(bytes);
+    
+            int count = client.Receive(buffer);
+            string result = System.Text.Encoding.UTF8.GetString(buffer, 0, count);
+            recvText.text += "\r\n" + result;
+    
+            input.text = "";
+        }
+    
+        void OnClear()
+        {
+            recvText.text = "";
+        }
+    }
+    
+```
 
 
 
