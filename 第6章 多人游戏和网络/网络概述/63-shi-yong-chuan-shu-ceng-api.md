@@ -167,7 +167,8 @@ Socket通信的基本流程具体步骤如下所示：
 |Connect|建立与远程主机的连接|
 |Send|将数据发送到连接的Socket|
 |Receive|接收来自绑定的Socket的数据|
-|||
+|Close|关闭Socket连接并释放所有关联的资源|
+|Shutdown|禁用某Socket上的发送和接收功能|
 
 
 
