@@ -250,36 +250,35 @@ Socket通信的基本流程具体步骤如下所示：
                 {
                     // 4. 接收客户端的请求
                     Console.WriteLine("正在接收客户端的请求。。。");
-                    Socket client = server_socket.Accept();
+                    Socket client = server_socket.Accept();  // 阻塞方法 会返回连接的客户端的套接字
     
                     Console.WriteLine("[服务器]Accept");
-                    IPEndPoint clientIP = (IPEndPoint)client.RemoteEndPoint;
+                    IPEndPoint clientIP = (IPEndPoint)client.RemoteEndPoint;  // 获取客户端的端点信息
                     Console.WriteLine("connect with client:" + clientIP.Address + ", at port:" + clientIP.Port);
     
                     // 5. 给客户端发送信息
-                    string welcome = "welcome connect";
-                    byte[] data = Encoding.ASCII.GetBytes(welcome);
-                    client.Send(data, data.Length, SocketFlags.None);
+                    //string welcome = "welcome connect";
+                    //byte[] data = Encoding.ASCII.GetBytes(welcome);
+                    //client.Send(data, data.Length, SocketFlags.None);
     
+                    // 6. 接收客户端的消息
+                    byte[] data = new byte[1024];
                     while (true)
                     {
-                        data = new byte[1024];
                         int recv = client.Receive(data);
-                        string receive_str = Encoding.ASCII.GetString(data, 0, recv);
-                        Console.WriteLine("receive :" + receive_str);
-                        if (receive_str == "exit")
+                        string recvStr = Encoding.UTF8.GetString(data, 0, recv);
+                        Console.WriteLine("接收到消息：" + recvStr);
+                        if(recvStr.ToLower() == "exit")
                         {
                             break;
                         }
-                        Console.WriteLine("请输入：");
-                        string msg = Console.ReadLine();
-                        byte[] dataSend = Encoding.UTF8.GetBytes(msg);
-                        client.Send(dataSend, 0, SocketFlags.None);
-    
+                        data = Encoding.UTF8.GetBytes(clientIP.ToString() + " : " + recvStr);
+                        client.Send(data);
                     }
-                    client.Close();
+    				client.Close();
+                    Console.WriteLine("客户端：" + clientIP + " 断来连接");
+    
                 }
-                //server_socket.Close();
             }
         }
     }
