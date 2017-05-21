@@ -174,7 +174,7 @@ Socket通信的基本流程具体步骤如下所示：
 |EndAccept|结束异步接受传入的连接尝试|
 |BeginConnect|开始一个对远程主机连接的异步请求|
 |EndConnect|结束挂起的异步连接请求|
-
+|BeginDisconnect|开始异步请求从远程终结点断开连接|
 
 
 
