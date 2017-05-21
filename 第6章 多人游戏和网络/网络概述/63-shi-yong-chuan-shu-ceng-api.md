@@ -287,7 +287,7 @@ Socket通信的基本流程具体步骤如下所示：
 
 
 ```csharp
-Socket server_socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+    Socket server_socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 ```
 
 
