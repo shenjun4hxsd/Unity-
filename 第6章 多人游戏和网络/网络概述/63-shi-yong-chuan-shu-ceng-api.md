@@ -157,7 +157,17 @@ Socket通信的基本流程具体步骤如下所示：
 
 #####&emsp;&emsp;Socket类
 
+&emsp;&emsp;System.Net.Sockets命名空间的Socket类为网络通信提供了一套丰富的方法和属性。
 
+|Socket类的一些常用方法|说明|
+|:--|:--|
+|Bind|使Socket与一个本地终结点相关联|
+|Listen|将Socket置于侦听状态|
+|Accept|为新建连接创建新的Socket|
+|Connect|建立与远程主机的连接|
+|Send|将数据发送到连接的Socket|
+|Receive|接收来自绑定的Socket的数据|
+|||
 
 
 
