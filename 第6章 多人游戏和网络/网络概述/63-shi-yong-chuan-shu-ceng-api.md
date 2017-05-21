@@ -179,6 +179,7 @@ Socket通信的基本流程具体步骤如下所示：
 |BeginReceive|开始从连接的Socket中异步接收数据|
 |EndReceive|将数据异步发送到连接的Socket|
 |BeginSend|开始异步发送数据|
+|EndSend|结束挂起的异步发送|
 |||
 
 
