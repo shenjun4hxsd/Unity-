@@ -186,7 +186,20 @@ Socket通信的基本流程具体步骤如下所示：
 |Select|确定一个或多个套接字的状态|
 
 
-
+| Socket类的一些常用属性    | 说明                                      |
+| ----------------- | --------------------------------------- |
+| AddressFamily     | 获取Socket的地址族                            |
+| Available         | 获取已经从网络接收且可供读取的数据量                      |
+| Blocking          | 获取或设置一个值，该值指示Socket是否处于阻止模式             |
+| Connected         | 获取一个值，该值指示Socket是否连接                    |
+| IsBound           | 指示Socket是否绑定到特定的本地端口                    |
+| OSSupportsIPv6    | 指示操作系统和网络适配器是否支持Internet协议第6版（IPv6）     |
+| ProtocolType      | 获取Socket的协议类型                           |
+| SendBufferSize    | 指定Socket发送缓冲区的大小                        |
+| SendTimeout       | 发送数据（Send）的超时时间                         |
+| ReceiveBufferSize | 指定Socket接收缓冲区的大小                        |
+| ReceiveTimeout    | 接收数据（Receive）的超时时间                      |
+| Ttl               | 指定Socket发送的Internet协议（IP）数据包的生存时间（TTL）值 |
 
 
 
