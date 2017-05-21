@@ -286,7 +286,18 @@ Socket通信的基本流程具体步骤如下所示：
 ```
 
 
+```csharp
+Socket server_socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+```
 
+
+
+| SocketType的值 | 含义                                       |
+| ------------ | ---------------------------------------- |
+| Dgram        | 支持数据报，即最大长度固定（通常很小）的无连接、不可靠消息。消息可能会丢失或重复并可能在到达时不按顺序排列。Dgram类型的Socket在发送和接收数据之前不需要任何连接，并且可以与多个对方主机进行通信。Dgram使用数据报协议（UDP）和InterNetworkAddressFamily |
+| Raw          | 支持对基础传输协议的访问。通过使用SocketTypeRaw，可以使用Internet控制消息协议（ICMP）和Internet组管理协议（IGMP）这样的协议来进行通信。在发送时，应用程序必须提供完整的IP标头。所接收的数据报在返回时会保持其IP标头和选项不变 |
+| Rdm          | 支持无连接、面向消息、以可靠方式发送的消息，并保留数据中的消息边界。RDM（以可靠方式发送的消息）消息会依次到达，不会重复。此外，如果消息丢失，则会通知发送方。如果使用Rdm初始化Socket，则在发送和接收数据之前无须建立远程主机连接。利用Rdm，可以与多个对方主机进行通信 |
+| Seqpacket    | 在网络上提供排序字节流的面向连接且可靠的双向传输。Seqpacket不重复数据，它在数据流中保留边界。Seqpacket类型的Socket只与对方的单个主机进行通信，并且在通信开始之前需要建立远程主机连接 |
 
 
 
