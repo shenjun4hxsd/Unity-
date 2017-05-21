@@ -414,6 +414,7 @@ ProtocolType用于指明协议
 
 ![](/assets/Socket_Client.png)
 
+>注意：以上示例每次服务器只能处理一个客户端的请求。
 
 ---
 
