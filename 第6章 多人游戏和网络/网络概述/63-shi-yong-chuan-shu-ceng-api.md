@@ -218,7 +218,72 @@ Socket通信的基本流程具体步骤如下所示：
 &emsp;&emsp;服务器遵照Socket通信的基本流程，先创建Socket，再调用Bind绑定IP地址和端口号，之后调用 Listen等待客户端连接。最后在while循环中调用Accept接收客户端的连接，并回应消息。
 
 
+```csharp
+using System;
+using System.Net;
+using System.Net.Sockets;
+using System.Text;
 
+namespace SocketServer
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+			// 1. 创建服务器端Socket实例   (AddressFamily.InterNetwork : 使用IPv4 / AddressFamily.InterNetworkV6 : 使用IPv6)
+			Socket server_socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+
+            // 2. 绑定IP地址和端口号
+            IPAddress ipAddr = IPAddress.Parse("127.0.0.1");
+            IPEndPoint ipEndPoint = new IPEndPoint(ipAddr, 1234);
+
+            //IPAddress[] ips = Dns.GetHostAddresses(Dns.GetHostName());
+            //Console.WriteLine("ipaddress length : " + ips.Length + ", ip :" + ips[0]);
+            //IPEndPoint ipEndPoint = new IPEndPoint(ips[0], 22222);
+            server_socket.Bind(ipEndPoint);
+
+            // 3. 开始监听
+            server_socket.Listen(0);
+            Console.WriteLine("服务器启动成功");
+
+            while (true)
+            {
+                // 4. 接收客户端的请求
+                Console.WriteLine("正在接收客户端的请求。。。");
+                Socket client = server_socket.Accept();
+
+                Console.WriteLine("[服务器]Accept");
+                IPEndPoint clientIP = (IPEndPoint)client.RemoteEndPoint;
+                Console.WriteLine("connect with client:" + clientIP.Address + ", at port:" + clientIP.Port);
+
+                // 5. 给客户端发送信息
+                string welcome = "welcome connect";
+                byte[] data = Encoding.ASCII.GetBytes(welcome);
+                client.Send(data, data.Length, SocketFlags.None);
+
+                while (true)
+                {
+                    data = new byte[1024];
+                    int recv = client.Receive(data);
+                    string receive_str = Encoding.ASCII.GetString(data, 0, recv);
+                    Console.WriteLine("receive :" + receive_str);
+                    if (receive_str == "exit")
+                    {
+                        break;
+                    }
+                    Console.WriteLine("请输入：");
+                    string msg = Console.ReadLine();
+                    byte[] dataSend = Encoding.UTF8.GetBytes(msg);
+                    client.Send(dataSend, 0, SocketFlags.None);
+
+                }
+                client.Close();
+            }
+            //server_socket.Close();
+        }
+    }
+}
+```
 
 
 
