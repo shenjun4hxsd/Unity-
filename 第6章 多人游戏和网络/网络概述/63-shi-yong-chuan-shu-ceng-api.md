@@ -181,7 +181,9 @@ Socket通信的基本流程具体步骤如下所示：
 |BeginSend|开始异步发送数据|
 |EndSend|结束挂起的异步发送|
 |GetSocketOption|返回Socket选项的值|
-|||
+|SetSocketOption|设置Socket选项|
+|Poll|确定Socket的状态|
+|Select|确定一个或多个套接字的状态|
 
 
 
