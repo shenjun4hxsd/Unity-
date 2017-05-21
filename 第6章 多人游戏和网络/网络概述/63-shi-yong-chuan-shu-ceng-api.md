@@ -100,3 +100,8 @@ IPEndPoint ： 指示IP地址和端口对的组合，如“127.0.0.1:80”。
 |:--|:--|
 |IPEndPoint(Int64, Int32)|用指定的地址和端口号初始化|
 |IPEndPoint(IPAddress, Int32)|用IPAddress指定的地址和端口号初始化|
+
+|IPEndPoint的常用属性|说明|
+|:--|:--|
+|Address|获取或设置终结点的IP地址|
+|Port|获取或设置终结点的端口号|
