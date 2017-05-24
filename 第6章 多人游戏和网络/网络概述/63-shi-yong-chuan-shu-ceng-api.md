@@ -631,4 +631,37 @@ ProtocolType用于指明协议
     
 ```
 
+```csharp
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Net;
+    using System.Net.Sockets;
+    
+    namespace _1_服务端
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                Server server = new Server();
+                server.Start("127.0.0.1", 8888);
+    
+    
+                while (true)
+                {
+                    string result = Console.ReadLine();
+                    if (result.ToLower() == "quit")
+                    {
+                        return;
+                    }
+                }
+            }
+        }
+    }
+    
+```
+
 
