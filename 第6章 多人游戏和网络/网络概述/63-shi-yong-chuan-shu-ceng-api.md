@@ -420,8 +420,215 @@ ProtocolType用于指明协议
 
 ####异步Socket程序
 
+**服务端**
 
+```csharp
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Net;
+    using System.Net.Sockets;
+    
+    namespace _1_服务端
+    {
+        class Conn
+        {
+            const int BUFFER_SIZE = 1024;
+    
+            public Socket socket;
+    
+            public bool isUse = false;
+            public byte[] buffer;
+            public int position;
+    
+            public Conn()
+            {
+                buffer = new byte[BUFFER_SIZE];
+                position = 0;
+                isUse = false;
+            }
+    
+            public void Init(Socket socket)
+            {
+                this.socket = socket;
+                isUse = true;
+            }
+    
+            public int BufferRemainSize
+            {
+                get
+                {
+                    return BUFFER_SIZE - position;
+                }
+            }
+    
+            public string GetAddress()
+            {
+                return socket.LocalEndPoint.ToString();
+            }
+    
+            public void Close()
+            {
+                if(!isUse) return;
+    
+                Console.WriteLine("断开连接：" + GetAddress());
+                socket.Close();
+                isUse = false;
+            }
+        }
+    }
+    
+```
 
-
+```csharp
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Net;
+    using System.Net.Sockets;
+    
+    namespace _1_服务端
+    {
+        class Server
+        {
+            Socket serverSocket;
+            const int MAX_CLIENT_NUM = 50;
+            // 客户端连接
+            Conn[] conns;
+    
+            public Server()
+            {
+                conns = new Conn[MAX_CLIENT_NUM];
+                for (int i = 0; i < conns.Length; i++)
+                {
+                    conns[i] = new Conn();
+                }
+            }
+    
+            // 获取可用的客户端
+            public int GetNewIndex()
+            {
+                if (conns == null) return -1;
+                for (int i = 0; i < conns.Length; i++)
+                {
+                    if(conns[i] == null)
+                    {
+                        conns[i] = new Conn();
+                        return i;
+                    }
+                    else if(conns[i].isUse == false)
+                    {
+                        return i;
+                    }
+                }
+                return -1;
+            }
+    
+            public void Start(string host, int port)
+            {
+                // 创建服务端套接字
+                serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+    
+                // 绑定端点
+                IPAddress ipAddress = IPAddress.Parse(host);
+                IPEndPoint ipEndPoint = new IPEndPoint(ipAddress, port);
+                serverSocket.Bind(ipEndPoint);
+    
+                // 监听
+                serverSocket.Listen(MAX_CLIENT_NUM);
+    
+                // 接收
+                Console.WriteLine("服务器开始接收");
+                // 开始一个异步操作来接受一个传入的连接尝试
+                serverSocket.BeginAccept(AsyncCb, null);
+                
+            }
+    
+            // 接收回调
+            private void AsyncCb(IAsyncResult ar)
+            {
+                try
+                {
+                    Console.WriteLine("服务器接收异步调用");
+                    // 异步接受传入的连接尝试，并创建新的socket来处理远程主机的通信
+                    Socket clientSocket = serverSocket.EndAccept(ar);
+    
+                    int index = GetNewIndex();
+    
+                    // 连接已满
+                    if (index < 0)
+                    {
+                        clientSocket.Close();
+                        Console.WriteLine("连接已满");
+                    }
+                    else
+                    {
+                        Conn conn = conns[index];
+                        conn.Init(clientSocket);
+    
+                        string adr = conn.GetAddress();
+                        Console.WriteLine("客户端 [" + adr + "] 对象池 id ：" + index);
+    
+                        // 开始从连接的socket异步接收数据
+                        conn.socket.BeginReceive(conn.buffer, conn.position, conn.BufferRemainSize, SocketFlags.None, AsyncRecv, conn);
+                    }
+    
+                    // 再次调用 BeginAccept 实现循环
+                    serverSocket.BeginAccept(AsyncCb, null);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("接收数据失败 :" + e.Message);
+                }
+            }
+    
+            private void AsyncRecv(IAsyncResult ar)
+            {
+                Conn conn = (Conn)ar.AsyncState;
+    
+                try
+                {
+                    // 获取接收的字节数
+                    int count = conn.socket.EndReceive(ar);
+    
+                    // 关闭信号
+                    if(count <= 0)
+                    {
+                        Console.WriteLine("收到 [" + conn.GetAddress() + "] 断开连接");
+                        conn.Close();
+                        return;
+                    }
+    
+                    // 数据处理
+                    string result = System.Text.Encoding.UTF8.GetString(conn.buffer, 0, count);
+                    Console.WriteLine("收到 [" + conn.GetAddress() + "] 数据: " + result);
+                    result = conn.GetAddress() + ":" + result;
+                    byte[] bytes = System.Text.Encoding.UTF8.GetBytes(result);
+    
+                    // 广播
+                    for (int i = 0; i < MAX_CLIENT_NUM; i++)
+                    {
+                        if (conns[i] == null) continue;
+                        if (conns[i].isUse == false) continue;
+                        Console.WriteLine("将消息转播给 :" + conns[i].GetAddress());
+                        conns[i].socket.Send(bytes);
+                    }
+    
+                    conn.socket.BeginReceive(conn.buffer, conn.position, conn.BufferRemainSize, SocketFlags.None, AsyncRecv, conn);
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("收到 [" + conn.GetAddress() + "] 断开连接");
+                    conn.Close();
+                }
+            }
+        }
+    }
+    
+```
 
 
