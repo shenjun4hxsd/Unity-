@@ -173,13 +173,13 @@ Socket通信的基本流程具体步骤如下所示：
 |BeginAccept|开始一个异步操作来接受一个传入的连接尝试|
 |EndAccept|异步接受传入的连接尝试|
 |BeginConnect|开始一个对远程主机连接的异步请求|
-|EndConnect|结束挂起的异步连接请求|
+|EndConnect|挂起的异步连接请求|
 |BeginDisconnect|开始异步请求从远程终结点断开连接|
-|EndDisconnect|结束挂起的异步断来连接请求|
+|EndDisconnect|挂起的异步断开连接请求|
 |BeginReceive|开始从连接的Socket中异步接收数据|
 |EndReceive|将数据异步发送到连接的Socket|
 |BeginSend|开始异步发送数据|
-|EndSend|结束挂起的异步发送|
+|EndSend|挂起的异步发送|
 |GetSocketOption|返回Socket选项的值|
 |SetSocketOption|设置Socket选项|
 |Poll|确定Socket的状态|
