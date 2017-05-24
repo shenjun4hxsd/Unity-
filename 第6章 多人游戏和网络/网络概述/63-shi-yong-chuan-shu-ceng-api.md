@@ -665,3 +665,73 @@ ProtocolType用于指明协议
 ```
 
 
+
+**客户端**
+
+```csharp
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Net;
+    using System.Net.Sockets;
+    
+    namespace _2_客户端
+    {
+        class Program
+        {
+            public static byte[] buffer = new byte[1024];
+    
+            public static Socket client;
+            static void Main(string[] args)
+            {
+                client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+    
+                IPAddress ipAddress = IPAddress.Parse("127.0.0.1");
+                IPEndPoint ipEndPoint = new IPEndPoint(ipAddress, 8888);
+                client.Connect(ipEndPoint);
+                Console.WriteLine("客户端连接完成");
+                client.BeginReceive(buffer, 0, buffer.Length, SocketFlags.None, AsyncRecv, null);
+    
+                while(true)
+                {
+                    string result = Console.ReadLine();
+                    if(result.ToLower() == "quit")
+                    {
+                        Console.WriteLine("断开连接");
+                        client.Close();
+                        return;
+                    }
+    
+                    byte[] bytes = Encoding.UTF8.GetBytes(result);
+                    client.Send(bytes);
+                }
+            }
+    
+            /// <summary>
+            /// 接收回调
+            /// </summary>
+            /// <param name="ar"></param>
+            private static void AsyncRecv(IAsyncResult ar)
+            {
+                try
+                {
+                    int count = client.EndReceive(ar);
+    
+                    // 数据处理
+                    string result = Encoding.UTF8.GetString(buffer, 0, count);
+                    Console.WriteLine(result);
+    
+                    client.BeginReceive(buffer, 0, buffer.Length, SocketFlags.None, AsyncRecv, null);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("断开连接");
+                    client.Close();
+                }
+            }
+        }
+    }
+    
+```
