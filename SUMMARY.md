@@ -222,7 +222,7 @@
     * 6.41 集成多人服务
     * 6.42 使用HUD集成
     * 6.43 使用Unity的高级API集成
-    * 6.44 使用NetworkTransport集成
+    * [6.44 使用NetworkTransport集成](第6章 多人游戏和网络/网络概述/644-shi-yong-networktransport-ji-cheng.md)
     * 6.45 常见错误
   * 6.5 移动设备的网络技巧
   * 6.6 UnityWebRequest
