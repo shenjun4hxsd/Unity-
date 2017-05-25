@@ -6,11 +6,11 @@
 传输层支持网络通信的基础服务。这些基础服务包括：
 
 ```
-    建立连接
-    沟通使用各种“服务质量”
-    流量控制
-    基本统计
-    附加服务，如通过中继服务器进行通信或本地发现
+    1、建立连接
+    2、沟通使用各种“服务质量”
+    3、流量控制
+    4、基本统计
+    5、附加服务，如通过中继服务器进行通信或本地发现
 ```
 
 传输层可以使用两种协议：用于通用通信的`UDP`和`WebGL`的`WebSockets`。
@@ -27,13 +27,18 @@
 
 初始化网络传输层时，您可以选择默认的初始化，没有参数，也可以提供控制网络层整体行为的参数，例如最大数据包大小和线程超时限制。
 
+```csharp
     // Initializing the Transport Layer with no arguments (default settings)
     NetworkTransport.Init();
+```
+```csharp
     // An example of initializing the Transport Layer with custom settings
     GlobalConfig gConfig = new GlobalConfig();
     gConfig.MaxPacketSize = 500;
     NetworkTransport.Init(gConfig);
-在上面的第二个示例中，传输层使用指定为500的自定义“MaxPacketSize”值进行初始化。只有在具有异常网络环境并熟悉所需的特定设置时，才应使用自定义初始值。作为一个经验法则，如果您正在开发一个典型的多人游戏，旨在通过互联网播放，默认的Init（）设置，无参数应该是适当的。
+```
+
+在上面的第二个示例中，传输层使用指定为500的自定义`“MaxPacketSize”`值进行初始化。只有在具有异常网络环境并熟悉所需的特定设置时，才应使用自定义初始值。作为一个经验法则，如果您正在开发一个典型的多人游戏，旨在通过互联网播放，默认的`Init（）`设置，无参数应该是适当的。
 
 组态
 
