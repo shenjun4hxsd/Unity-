@@ -40,13 +40,16 @@
 
 在上面的第二个示例中，传输层使用指定为500的自定义`“MaxPacketSize”`值进行初始化。只有在具有异常网络环境并熟悉所需的特定设置时，才应使用自定义初始值。作为一个经验法则，如果您正在开发一个典型的多人游戏，旨在通过互联网播放，默认的`Init（）`设置，无参数应该是适当的。
 
-组态
+###组态
 
 下一步是配置对等体之间的连接。您可能需要定义几个通信通道，每个通道具有指定的不同服务质量级别，以适应您要发送的特定消息类型，以及它们在游戏中的相对重要性。
 
+```csharp
     ConnectionConfig config = new ConnectionConfig();
     int myReiliableChannelId  = config.AddChannel(QosType.Reliable);
     int myUnreliableChannelId = config.AddChannel(QosType.Unreliable);
+```
+
 在上面的例子中，我们定义了两个具有不同服务质量值的通信通道。“QosType.Reliable”将传递消息并确保消息被传递，而“QosType.Unreliable”将发送消息没有任何保证，但会更快地做到这一点。
 
 还可以通过调整ConnectionConfig对象上的属性来为每个连接指定特定的配置设置。但是，当从一个客户端到另一个客户端进行连接时，两个连接的对等体的设置应该相同，否则连接将失败并出现CRCMismatch错误。
