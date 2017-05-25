@@ -64,11 +64,14 @@
 
 这里我们创建了最多可以连接10个的拓扑，每个连接将通过上一步中定义的参数进行配置。
 
-主机创建
+###主机创建
 
 正如所有初步步骤所做，我们可以创建主机（开放套接字）：
 
-int hostId = NetworkTransport.AddHost(topology, 8888);
+```csharp
+    int hostId = NetworkTransport.AddHost(topology, 8888);
+```
+
 这里我们在端口8888和任何IP地址上添加新主机。该主机最多支持10个连接，每个连接将具有我们在config对象中定义的参数。
 
 通讯
