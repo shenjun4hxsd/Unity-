@@ -137,8 +137,8 @@
         //...   
     }
 ```
-要点3：收到数据。在这种情况下recHostId将定义主机，connectionId将定义连接，channelId将定义通道; dataSize将定义接收到的数据的大小。如果recBuffer足够大以容纳数据，数据将被复制到缓冲区中。如果没有，error将包含MessageToLong错误，您将需要重新分配缓冲区并再次调用此函数。
-点4：断线信号进入，可能是建立连接断开或连接请求失败的信号。
+• 要点3：收到数据。在这种情况下recHostId将定义主机，connectionId将定义连接，channelId将定义通道; dataSize将定义接收到的数据的大小。如果recBuffer足够大以容纳数据，数据将被复制到缓冲区中。如果没有，error将包含MessageToLong错误，您将需要重新分配缓冲区并再次调用此函数。
+• 要点4：断线信号进入，可能是建立连接断开或连接请求失败的信号。
 myConnectionId = NetworkTransport.Connect(hostId, "192.16.7.21", 8888, 0, out error);
 NetworkEventType recData = NetworkTransport.Receive(out recHostId, out connectionId, out channelId, recBuffer, bufferSize, out dataSize, out error);
 switch (recData)
