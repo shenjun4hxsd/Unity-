@@ -140,19 +140,23 @@
 • 要点3：收到数据。在这种情况下`recHostId`将定义主机，`connectionId`将定义连接，`channelId`将定义通道; `dataSize`将定义接收到的数据的大小。如果`recBuffer`足够大以容纳数据，数据将被复制到缓冲区中。如果没有，`error`将包含`MessageToLong`错误，您将需要重新分配缓冲区并再次调用此函数。
 
 • 要点4：断线信号进入，可能是建立连接断开或连接请求失败的信号。
-myConnectionId = NetworkTransport.Connect(hostId, "192.16.7.21", 8888, 0, out error);
-NetworkEventType recData = NetworkTransport.Receive(out recHostId, out connectionId, out channelId, recBuffer, bufferSize, out dataSize, out error);
-switch (recData)
-{
-    case NetworkEventType. DisconnectEvent: 
-        if(myConnectionId == connectionId)
-            //cannot connect by some reason see error
-        else
-            //one of the established connection has been disconnected
-        break;
-    \\...   
-}
-WebGL支持
+
+```csharp
+    myConnectionId = NetworkTransport.Connect(hostId, "192.16.7.21", 8888, 0, out error);
+    NetworkEventType recData = NetworkTransport.Receive(out recHostId, out connectionId, out channelId, recBuffer, bufferSize, out dataSize, out error);
+    switch (recData)
+    {
+        case NetworkEventType. DisconnectEvent: 
+            if(myConnectionId == connectionId)
+                //cannot connect by some reason see error
+            else
+                //one of the established connection has been disconnected
+            break;
+        \\...   
+    }
+```
+
+###WebGL支持
 
 客户端上的WebSocket已被支持。对于客户端，上述所有步骤（包括拓扑和配置）应该相同。Web客户端只能连接到服务器，其中服务器是独立播放器（仅限Win，Mac或Linux）。在服务器上，你应该打电话
 
