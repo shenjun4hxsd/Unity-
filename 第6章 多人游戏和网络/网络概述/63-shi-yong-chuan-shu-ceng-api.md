@@ -50,15 +50,18 @@
     int myUnreliableChannelId = config.AddChannel(QosType.Unreliable);
 ```
 
-在上面的例子中，我们定义了两个具有不同服务质量值的通信通道。“QosType.Reliable”将传递消息并确保消息被传递，而“QosType.Unreliable”将发送消息没有任何保证，但会更快地做到这一点。
+在上面的例子中，我们定义了两个具有不同服务质量值的通信通道。`“QosType.Reliable”`将传递消息并确保消息被传递，而`“QosType.Unreliable”`将发送消息没有任何保证，但会更快地做到这一点。
 
-还可以通过调整ConnectionConfig对象上的属性来为每个连接指定特定的配置设置。但是，当从一个客户端到另一个客户端进行连接时，两个连接的对等体的设置应该相同，否则连接将失败并出现CRCMismatch错误。
+还可以通过调整`ConnectionConfig`对象上的属性来为每个连接指定特定的配置设置。但是，当从一个客户端到另一个客户端进行连接时，两个连接的对等体的设置应该相同，否则连接将失败并出现`CRCMismatch`错误。
 
-拓扑
+###拓扑
 
 网络配置的最后一步是拓扑定义。网络拓扑定义允许多少连接以及使用什么连接配置：
 
-HostTopology topology = new HostTopology(config, 10);
+```csharp
+    HostTopology topology = new HostTopology(config, 10);
+```
+
 这里我们创建了最多可以连接10个的拓扑，每个连接将通过上一步中定义的参数进行配置。
 
 主机创建
