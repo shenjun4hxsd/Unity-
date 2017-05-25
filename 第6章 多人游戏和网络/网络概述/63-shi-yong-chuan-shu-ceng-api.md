@@ -78,9 +78,11 @@
 
 作为主持人，我们可以开始我们的沟通。为了做到这一点，我们发送不同的命令给主机并检查其状态。有3个主要命令可以发送：
 
-connectionId = NetworkTransport.Connect(hostId, "192.16.7.21", 8888, 0, out error);
-NetworkTransport.Disconnect(hostId, connectionId, out error);
-NetworkTransport.Send(hostId, connectionId, myReiliableChannelId, buffer, bufferLength,  out error);
+```csharp
+    connectionId = NetworkTransport.Connect(hostId, "192.16.7.21", 8888, 0, out error);
+    NetworkTransport.Disconnect(hostId, connectionId, out error);
+    NetworkTransport.Send(hostId, connectionId, myReiliableChannelId, buffer, bufferLength,  out error);
+```
 第一个命令将使用ip“192.16.7.21”和端口8888向对等体发送连接请求。它将返回分配给此连接的ID。
 第二个将发送断开连接请求，
 第三个将发送消息，与id相等的连接connectionId，使用id相等的可靠信道myReiliableChannelId，消息应存储在buffer[]该消息的长度上，由消息的长度定义bufferLength。
