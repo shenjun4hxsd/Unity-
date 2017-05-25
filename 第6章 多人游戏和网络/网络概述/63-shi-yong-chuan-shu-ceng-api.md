@@ -95,28 +95,30 @@
 ```
 他们都返回事件，第一个函数将从任何主机返回事件（并返回主机ID `recHostId`）第二个表单检查主机与id `recHostId`。你可以使用任何这些功能里面的`Update()`方法：
 
-void Update()
-{
-    int recHostId; 
-    int connectionId; 
-    int channelId; 
-    byte[] recBuffer = new byte[1024]; 
-    int bufferSize = 1024;
-    int dataSize;
-    byte error;
-    NetworkEventType recData = NetworkTransport.Receive(out recHostId, out connectionId, out channelId, recBuffer, bufferSize, out dataSize, out error);
-    switch (recData)
+```csharp
+    void Update()
     {
-        case NetworkEventType.Nothing:         //1
-            break;
-        case NetworkEventType.ConnectEvent:    //2
-            break;
-        case NetworkEventType.DataEvent:       //3
-            break;
-        case NetworkEventType.DisconnectEvent: //4
-            break;
+        int recHostId; 
+        int connectionId; 
+        int channelId; 
+        byte[] recBuffer = new byte[1024]; 
+        int bufferSize = 1024;
+        int dataSize;
+        byte error;
+        NetworkEventType recData = NetworkTransport.Receive(out recHostId, out connectionId, out channelId, recBuffer, bufferSize, out dataSize, out error);
+        switch (recData)
+        {
+            case NetworkEventType.Nothing:         //1
+                break;
+            case NetworkEventType.ConnectEvent:    //2
+                break;
+            case NetworkEventType.DataEvent:       //3
+                break;
+            case NetworkEventType.DisconnectEvent: //4
+                break;
+        }
     }
-}
+```
 要点1：没有返回任何有趣的事件。
 点2：连接事件进来，它可以是新的连接，也可以是以前的连接命令响应：
 myConnectionId = NetworkTransport.Connect(hostId, "192.16.7.21", 8888, 0, out error);
