@@ -86,11 +86,14 @@
 1、第一个命令将使用ip“192.16.7.21”和端口8888向对等体发送连接请求。它将返回分配给此连接的ID。
 2、第二个将发送断开连接请求，
 3、第三个将发送消息，与id相等的连接connectionId，使用id相等的可靠信道myReiliableChannelId，消息应存储在buffer[]该消息的长度上，由消息的长度定义bufferLength。
-要检查主机状态，您可以使用两个功能：
 
-NetworkTransport.Receive(out recHostId, out connectionId, out channelId, recBuffer, bufferSize, out dataSize, out error);
-NetworkTransport.ReceiveFromHost(recHostId, out connectionId, out channelId, recBuffer, bufferSize, out dataSize, out error);
-他们都返回事件，第一个函数将从任何主机返回事件（并返回主机ID recHostId）第二个表单检查主机与id recHostId。你可以使用任何这些功能里面的Update()方法：
+**要检查主机状态，您可以使用两个功能：**
+
+```csharp
+    NetworkTransport.Receive(out recHostId, out connectionId, out channelId, recBuffer, bufferSize, out dataSize, out error);
+    NetworkTransport.ReceiveFromHost(recHostId, out connectionId, out channelId, recBuffer, bufferSize, out dataSize, out error);
+```
+他们都返回事件，第一个函数将从任何主机返回事件（并返回主机ID `recHostId`）第二个表单检查主机与id `recHostId`。你可以使用任何这些功能里面的`Update()`方法：
 
 void Update()
 {
