@@ -119,20 +119,24 @@
         }
     }
 ```
-要点1：没有返回任何有趣的事件。
-点2：连接事件进来，它可以是新的连接，也可以是以前的连接命令响应：
-myConnectionId = NetworkTransport.Connect(hostId, "192.16.7.21", 8888, 0, out error);
-NetworkEventType recData = NetworkTransport.Receive(out recHostId, out connectionId, out channelId, recBuffer, bufferSize, out dataSize, out error);
-switch (recData)
-{
-    case NetworkEventType.ConnectEvent: 
-        if(myConnectionId == connectionId)
-            //my active connect request approved
-        else
-            //somebody else connect to me
-        break;
-    //...   
-}
+
+• 要点1：没有返回任何有趣的事件。
+• 要点2：连接事件进来，它可以是新的连接，也可以是以前的连接命令响应：
+
+```csharp
+    myConnectionId = NetworkTransport.Connect(hostId, "192.16.7.21", 8888, 0, out error);
+    NetworkEventType recData = NetworkTransport.Receive(out recHostId, out connectionId, out channelId, recBuffer, bufferSize, out dataSize, out error);
+    switch (recData)
+    {
+        case NetworkEventType.ConnectEvent: 
+            if(myConnectionId == connectionId)
+                //my active connect request approved
+            else
+                //somebody else connect to me
+            break;
+        //...   
+    }
+```
 要点3：收到数据。在这种情况下recHostId将定义主机，connectionId将定义连接，channelId将定义通道; dataSize将定义接收到的数据的大小。如果recBuffer足够大以容纳数据，数据将被复制到缓冲区中。如果没有，error将包含MessageToLong错误，您将需要重新分配缓冲区并再次调用此函数。
 点4：断线信号进入，可能是建立连接断开或连接请求失败的信号。
 myConnectionId = NetworkTransport.Connect(hostId, "192.16.7.21", 8888, 0, out error);
