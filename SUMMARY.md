@@ -229,7 +229,7 @@
     * 6.61 常用操作：使用HLAPI
     * 6.62 高级操作：使用LLAPI
   * [6.7 网络参考](第6章 多人游戏和网络/网络概述/67-wang-luo-can-kao.md)
-    * 6.71 NetworkAnimator
+    * [6.71 NetworkAnimator](第6章 多人游戏和网络/网络概述/67-wang-luo-can-kao/671-networkanimator.md)
     * 6.72 NetworkBehaviour
     * 6.73 NetworkClient
     * 6.74 NetworkConnection
@@ -240,7 +240,7 @@
     * 6.79 NetworkManager
     * 6.710 NetworkManagerHUD
     * 6.711 NetworkProximityChecker
-    * 6.712 NetworkReader
+    * [6.712 NetworkReader](第6章 多人游戏和网络/网络概述/67-wang-luo-can-kao/6712-networkreader.md)
     * 6.713 NetworkServer
     * 6.714 NetworkStartPosition
     * 6.715 NetworkTransform
