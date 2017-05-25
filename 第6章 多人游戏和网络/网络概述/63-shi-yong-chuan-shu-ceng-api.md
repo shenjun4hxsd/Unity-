@@ -160,9 +160,15 @@
 
 客户端上的WebSocket已被支持。对于客户端，上述所有步骤（包括拓扑和配置）应该相同。Web客户端只能连接到服务器，其中服务器是独立播放器（仅限Win，Mac或Linux）。在服务器上，你应该打电话
 
-NetworkTransport.AddWebsocketHost(topology, port, ip);
+```csharp
+    NetworkTransport.AddWebsocketHost(topology, port, ip);
+```
+
 在ip地址是侦听地址的地方，你可以通过null作为ip地址，在这种情况下主机将监听所有的网络接口。服务器只能支持一个Websocket主机，同时也可以处理通用主机：
 
-NetworkTransport.AddWebsocketHost(topology, 8887, null);
-NetworkTransport.AddHost(topology, 8888);
+```csharp
+    NetworkTransport.AddWebsocketHost(topology, 8887, null);
+    NetworkTransport.AddHost(topology, 8888);
+```
+
 将打开tcp套接字处理端口8887上的Web套接字协议和udp套接字处理端口8888上的基因协议。
