@@ -290,7 +290,7 @@ Socket通信的基本流程具体步骤如下所示：
     Socket server_socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 ```
 
-
+AddressFamily ： 指定Socket用来解析地址的寻址方案。
 
 | SocketType的值 | 含义                                       |
 | ------------ | ---------------------------------------- |
