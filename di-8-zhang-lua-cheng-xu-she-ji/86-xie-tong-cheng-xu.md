@@ -23,5 +23,11 @@
 
 ```lua
     coroutine.resume( co )             -- hi
+```
+
+&emsp;&emsp;在本例中，协同程序的内容只是简单地打印了“hi”后便终止了，然后它就处于死亡状态，也就再也无法返回了：
+
+```lua
     print( coroutine.status( co ) )    -- dead
 ```
+
