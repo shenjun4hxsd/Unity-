@@ -108,7 +108,10 @@
 &emsp;&emsp;最后，当一个协同程序结束时，它的主函数所返回的值都将作为对应resume的返回值：
 
 ```lua
-
+    co = coroutine.create( function ( )
+	return 6, 7
+    end )
+    print( coroutine.resume( co ) )		-- true 6 7
 ```
 
 
