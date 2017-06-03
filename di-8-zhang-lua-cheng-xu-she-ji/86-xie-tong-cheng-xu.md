@@ -69,3 +69,17 @@
 ```lua
     print(coroutine.resume( co ))    -- false cannot resume dead coroutine
 ```
+
+&emsp;&emsp;
+
+
+
+
+
+
+
+
+
+
+
+
