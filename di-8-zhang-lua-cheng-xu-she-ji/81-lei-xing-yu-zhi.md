@@ -200,3 +200,13 @@ Lua对于诸如a["name"]的写法提供了一种更简便的“语法糖（synta
                 for i=1,#a do
                     print(a[i])
                 end
+                
+                print(a[#a])            -- 打印列表a的最后一个值
+                a[#a] = nil             -- 删除最后一个值
+                a[#a+1] = v             -- 将v添加到列表末尾
+                
+                -- 读取一个文件的前10行
+                a = { }
+                for i=1,10 do
+                    a[#a+1] = io.read()
+                end
