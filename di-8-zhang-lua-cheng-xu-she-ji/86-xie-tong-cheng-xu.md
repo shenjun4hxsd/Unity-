@@ -93,6 +93,10 @@
     print( coroutine.resume( co, 20, 10 ) )    -- true 30 10
 ```
 
+&emsp;&emsp;与此对应的是，yield返回的额外值就是对应resume传入的参数：
 
+```lua
+
+```
 
 
