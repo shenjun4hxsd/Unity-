@@ -96,7 +96,13 @@
 &emsp;&emsp;与此对应的是，yield返回的额外值就是对应resume传入的参数：
 
 ```lua
-
+    co = coroutine.create( function ( )
+	print( "co", coroutine.yield( ) )
+    end )
+    
+    print(coroutine.resume( co, "a" ))  -- true
+    print(coroutine.resume( co, 4, 5, 6 )) -- co 4 5 6  -- true
+    print(coroutine.resume( co, 4, 5)) -- false cannot resume dead coroutine
 ```
 
 
