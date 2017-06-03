@@ -27,17 +27,17 @@
 
 ####Mac下环境配置
 
-&emsp;&emsp;下载Lua：
+&emsp;&emsp;**下载Lua：**
 
         www.lua.org
         
-&emsp;&emsp;终端：
+&emsp;&emsp;**终端：**
 
         make macosx
         sudo make install
         lua -v        （测试是否安装成功）
         
-&emsp;&emsp;sublime 设置：
+&emsp;&emsp;**sublime 设置：**
 
 方法1:
 
