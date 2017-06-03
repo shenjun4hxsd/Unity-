@@ -97,7 +97,7 @@
 
 ```lua
     co = coroutine.create( function ( )
-	print( "co", coroutine.yield( ) )
+        print( "co", coroutine.yield( ) )
     end )
     
     print(coroutine.resume( co, "a" ))  -- true
