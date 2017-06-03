@@ -53,3 +53,9 @@
 ```lua
     print( coroutine.status( co ) )    -- suspended
 ```
+
+&emsp;&emsp;从协同程序的角度看，所有在它挂起时发生的活动都发生在yield调用中。当恢复协同程序的执行时，对于yield的调用才最终返回。然后协同程序继续它的执行，直到下一个yield调用或执行结束：
+
+```lua
+
+```
