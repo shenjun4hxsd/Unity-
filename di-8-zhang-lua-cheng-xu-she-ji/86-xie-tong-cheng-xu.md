@@ -12,3 +12,5 @@
     co = coroutine.create( function () print( "hi" ) end )
     print( co )    -- thread: 0x7fe2f1506218
 ```
+
+&emsp;&emsp;一个协同程序可以处于4种不同的状态：挂起（suspended）、运行（running）、死亡（dead）和正常（normal）。
