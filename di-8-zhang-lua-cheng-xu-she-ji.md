@@ -26,7 +26,7 @@
         
 ---
 
-####Mac下环境配置
+###Mac下环境配置
 
 &emsp;&emsp;**下载Lua：**
 
@@ -105,7 +105,7 @@ import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d
         
 ---
 
-####语法规范
+###语法规范
 
 标识符可以是字母、数字和下划线，但不能以数字开头
 
