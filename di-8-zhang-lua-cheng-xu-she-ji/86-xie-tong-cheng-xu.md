@@ -10,5 +10,5 @@
 
 ```lua
     co = coroutine.create( function () print( "hi" ) end )
-    print( co )
+    print( co )    -- thread: 0x7fe2f1506218
 ```
