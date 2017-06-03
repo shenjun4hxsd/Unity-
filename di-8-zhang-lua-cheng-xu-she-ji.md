@@ -144,7 +144,7 @@ import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d
                 b = 10
                 print(b) --> 10
                 
-                b=nil        删除一个全局变量
+                b=nil                   删除一个全局变量
                 print(b) --> nil        如果存在一个全局变量，那么它必定具有一个非nil的值。
 
 
