@@ -15,3 +15,11 @@ Lua是一种动态类型的语言。在语言中没有类型定义的语法，�
 
 
 变量没有预定义的类型，任何变量都可以包含任何类型的值
+
+                print(type(a))                -- nil （a尚未初始化）
+                a = 10
+                print(type(a))                -- number
+                a = "a string!!"
+                print(type(a))                -- string
+                a = print                     -- 是的，这是合法的！
+                a(type(a))                    -- function
