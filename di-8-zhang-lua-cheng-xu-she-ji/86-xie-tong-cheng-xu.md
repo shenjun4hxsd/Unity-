@@ -15,3 +15,6 @@
 
 &emsp;&emsp;一个协同程序可以处于4种不同的状态：挂起（suspended）、运行（running）、死亡（dead）和正常（normal）。当创建一个协同程序时，它处于挂起状态。也就是说，协同程序不会在创建它时自动执行其内容。可以通过函数status来检查协同程序的状态：
 
+```lua
+    print( coroutine.status( co ) )
+```
