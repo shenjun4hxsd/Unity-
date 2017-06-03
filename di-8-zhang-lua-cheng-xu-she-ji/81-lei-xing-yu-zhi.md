@@ -152,4 +152,16 @@ table永远是“匿名的”，一个持有table的变量与table自身之间�
                 print(a["x"])       -- 20
                 a = nil             -- 现在只有b还在引用table
                 b = nil             -- 再也没有对table的引用了
-                当一个程序再也没有对一个table的引用时，Lua的垃圾收集器最终会删除该table，并复用它的内存。
+                -- 当一个程序再也没有对一个table的引用时，Lua的垃圾收集器最终会删除该table，并复用它的内存。
+                
+所有table都可以用不同类型的索引来访问value（值），当需要容纳新条目时，table会自动增长。
+
+                a = { }
+                
+                -- 创建1000个新条目
+                for i=1, 1000 do a[i] = i*2 end
+                print(a[9])         -- 18
+                a["x"] = 10
+                print(a["x"])       -- 10
+                print(a["y"])       -- nil 该元素没有初始化
+                -- 可以将nil赋予table的某个元素来删除该元素。
