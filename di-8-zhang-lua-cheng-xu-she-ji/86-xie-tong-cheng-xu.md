@@ -63,3 +63,9 @@
     coroutine.resume( co )    -- co 10
     coroutine.resume( co )    -- 什么都不打印
 ```
+
+&emsp;&emsp;在最后一次调用resume时，协同程序的内容已经执行完毕，并已经返回。因此，这时协同程序处于死亡状态。如果试图再次恢复它的执行，resume将返回false及一条错误消息：
+
+```lua
+    print(coroutine.resume( co ))    -- false cannot resume dead coroutine
+```
