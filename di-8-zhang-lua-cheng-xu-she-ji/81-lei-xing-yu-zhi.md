@@ -66,3 +66,18 @@ Lua是一种动态类型的语言。在语言中没有类型定义的语法，�
 |\'|单引号|
 
 另外，还可以用一对匹配的双方括号来界定一个字母字符串，就像写“块注释”那样。以这种形式书写的字符串可以延伸多行，Lua不会解释其中的转义序列。
+
+例如：
+
+                page = [[
+                <html>
+                <head>
+                <title>An HTML Page</title>
+                </head>
+                <body>
+                <a href="http://www.lua.org">Lua</a>
+                </body>
+                </html>
+                ]]
+                
+                write(page)
