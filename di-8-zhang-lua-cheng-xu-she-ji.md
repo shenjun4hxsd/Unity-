@@ -29,13 +29,13 @@
 
 &emsp;&emsp;**下载Lua：**
 
-        www.lua.org
+                www.lua.org
         
 &emsp;&emsp;**终端：**
 
-        make macosx
-        sudo make install
-        lua -v        （测试是否安装成功）
+                make macosx
+                sudo make install
+                lua -v        （测试是否安装成功）
         
 &emsp;&emsp;**sublime 设置：**
 
