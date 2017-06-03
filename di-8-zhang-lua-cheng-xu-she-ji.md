@@ -133,4 +133,21 @@ import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d
                 print(10)
                 --]]
 
+全局变量
+
+        不需要声明。只需将一个值赋予一个全局变量就可以创建了。
+
+        例如：
+                print(b) --> nil
+                访问一个未初始化的变量不会引发错误，访问结果是一个特殊的值nil。
+                
+                b = 10
+                print(b) --> 10
+                
+                b=nil        删除一个全局变量
+                print(b) --> nil        如果存在一个全局变量，那么它必定具有一个非nil的值。
+
+
+
+
 🔚
