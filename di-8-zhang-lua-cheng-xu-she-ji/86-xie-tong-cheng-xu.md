@@ -76,7 +76,12 @@
 
 &emsp;&emsp;Lua的协同程序还具有一项有用的机制，就是可以通过一对resume-yield来交换数据。在第一次调用resume时，并没有对应的yield在等待它，因此所有传递给resume的额外参数都将视为协同程序主函数的参数：
 
-
+```lua
+    co = coroutine.create( function ( a, b, c )
+	print( "co", a, b, c )
+    end )
+    coroutine.resume( co, 1, 2, 3 )    -- co 1 2 3
+```
 
 
 
