@@ -41,13 +41,13 @@
 
 方法1:
 
-        Tools -> Build System -> New Build System
-        
-        {  
-         "cmd": ["/usr/local/bin/lua", "$file"],  
-         "file_regex": "^(...*?):([0-9]*):?([0-9]*)",  
-         "selector": "source.lua"  
-        }  
+                Tools -> Build System -> New Build System
+                
+                {  
+                 "cmd": ["/usr/local/bin/lua", "$file"],  
+                 "file_regex": "^(...*?):([0-9]*):?([0-9]*)",  
+                 "selector": "source.lua"  
+                }  
 
 方法2:
 
