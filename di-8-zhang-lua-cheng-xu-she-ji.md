@@ -38,3 +38,7 @@ sublime 设置：
          "file_regex": "^(...*?):([0-9]*):?([0-9]*)",  
          "selector": "source.lua"  
         }  
+        
+运行：
+
+        command + b
