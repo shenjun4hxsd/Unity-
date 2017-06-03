@@ -222,3 +222,12 @@ Lua对于诸如a["name"]的写法提供了一种更简便的“语法糖（synta
                 print(a[k]) --> yet another value
                 print(a[tonumber(j)]) --> one value
                 print(a[tonumber(k)]) --> one value
+
+
+--
+
+• function（函数）
+
+--
+
+• userdata（自定义类型）和 thread（线程）
