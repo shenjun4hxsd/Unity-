@@ -165,3 +165,21 @@ table永远是“匿名的”，一个持有table的变量与table自身之间�
                 print(a["x"])       -- 10
                 print(a["y"])       -- nil 该元素没有初始化
                 -- 可以将nil赋予table的某个元素来删除该元素。
+
+Lua对于诸如a["name"]的写法提供了一种更简便的“语法糖（syntactic sugar）”，可以直接输入a.name。
+
+                a.x = 10            -- 等同于a["x"] = 10
+                print(a.x)          -- 等同于print(a["x"])
+                print(a.y)          -- 等同于print(a["y"])
+                
+                -- 对于Lua来说，这两种形式是等价的，可供自由选择使用。
+                a.x                 -- 等同于a["x"]
+                a[x]                -- 以变量x的值来索引table
+                
+                ----------
+                a = { }
+                x = "y"
+                a[x] = 10           -- 将10放入字段“y”
+                print(a[x])         -- 10 字段“y”的值
+                print(a.x)          -- nil 字段“x”（未定义）的值
+                print(a.y)          -- 10 字段“y”的值
