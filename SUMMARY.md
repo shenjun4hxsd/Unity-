@@ -258,4 +258,16 @@
     * [7.31 VRSettings](第7章 VR/第7章 VR/73-unityenginevr/731-vrsettings.md)
     * [7.32 VRDevice](第7章 VR/第7章 VR/73-unityenginevr/732-vrdevice.md)
     * [7.33 InputTracking](第7章 VR/第7章 VR/73-unityenginevr/733-inputtracking.md)
+* [第8章 Lua程序设计](di-8-zhang-lua-cheng-xu-she-ji.md)
+  * 8.1 类型与值
+  * 8.2 表达式
+  * 8.3 语句
+  * 8.4 函数
+  * 8.5 迭代器与范型for
+  * 8.6 协同程序
+  * 8.7 数据结构
+  * 8.8 数据文件与持久性
+  * 8.9 元表与元方法
+  * 8.10 模块与包
+  * 8.11 面向对象编程
 
