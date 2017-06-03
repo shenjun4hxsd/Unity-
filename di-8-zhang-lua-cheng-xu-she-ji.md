@@ -28,3 +28,13 @@
         make macosx
         sudo make install
         lua -v        （测试是否安装成功）
+        
+sublime 设置：
+
+        Tools -> Build System -> New Build System
+        
+        {  
+         "cmd": ["/usr/local/bin/lua", "$file"],  
+         "file_regex": "^(...*?):([0-9]*):?([0-9]*)",  
+         "selector": "source.lua"  
+        }  
