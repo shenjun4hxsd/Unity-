@@ -47,3 +47,9 @@
 ```lua
     coroutine.resume( co )    -- co 1
 ```
+
+&emsp;&emsp;如果此时检查其状态，会发现协同程序处于挂起状态，因此可以再次恢复其运行：
+
+```lua
+    print( coroutine.status( co ) )    -- suspended
+```
