@@ -70,7 +70,7 @@
     print(coroutine.resume( co ))    -- false cannot resume dead coroutine
 ```
 
-&emsp;&emsp;
+&emsp;&emsp;请注意，resume是在保护模式中运行的。因此，如果在一个协同程序的执行中发生任何错误，Lua是不会显示错误消息的，而是将执行权返回给resume调用。
 
 
 
