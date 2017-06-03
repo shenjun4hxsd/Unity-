@@ -210,3 +210,15 @@ Lua对于诸如a["name"]的写法提供了一种更简便的“语法糖（synta
                 for i=1,10 do
                     a[#a+1] = io.read()
                 end
+                
+当对索引的实际类型不是很确定时，可以明确地使用一个显式转换
+
+                i = 10; j = "10"; k = "+10"
+                a = { }
+                a[i] = "one value"
+                a[j] = "another value"
+                a[k] = "yet another value"
+                print(a[j])  --> another value
+                print(a[k]) --> yet another value
+                print(a[tonumber(j)]) --> one value
+                print(a[tonumber(k)]) --> one value
