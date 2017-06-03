@@ -85,7 +85,13 @@
 
 &emsp;&emsp;在resume调用返回的内容中，第一个值为true则表示没有错误，而后面所有的值都是对应yield传入的参数：
 
+```lua
+    co = coroutine.create( function ( a, b )
+	coroutine.yield( a + b, a - b )
+    end )
 
+    print( coroutine.resume( co, 20, 10 ) )
+```
 
 
 
