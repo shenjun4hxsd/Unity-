@@ -262,7 +262,7 @@
   * [8.1 类型与值](di-8-zhang-lua-cheng-xu-she-ji/81-lei-xing-yu-zhi.md)
   * 8.2 表达式
   * 8.3 语句
-  * 8.4 函数
+  * [8.4 函数](di-8-zhang-lua-cheng-xu-she-ji/84-han-shu.md)
   * 8.5 迭代器与范型for
   * [8.6 协同程序](di-8-zhang-lua-cheng-xu-she-ji/86-xie-tong-cheng-xu.md)
   * 8.7 数据结构
