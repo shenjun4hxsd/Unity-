@@ -9,7 +9,7 @@ Lua中的函数可以接受不同数量的实参。
 ```lua
     function add( ... )
 	local s = 0
-	for i, v in ipairs( ... ) do
+	for i, v in ipairs( ... ) do  -- 表达式{...}表示一个由所有变长参数构成的数组。
 		s = s + v
 	end
 	return s
