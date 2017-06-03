@@ -141,3 +141,15 @@ table的创建是通过“构造表达式”完成的，最简单的构造表达
                 print(a[k])         -- “great"
                 a["x"] = a["x"] + 1 -- 递增条目"x"
                 print(a["x"])       -- 11
+
+table永远是“匿名的”，一个持有table的变量与table自身之间没有固定的关联性。
+
+                a = { }
+                a["x"] = 10
+                b = a               -- b与a引用了同一个table
+                print(b["x"])       -- 10
+                b["x"] = 20
+                print(a["x"])       -- 20
+                a = nil             -- 现在只有b还在引用table
+                b = nil             -- 再也没有对table的引用了
+                当一个程序再也没有对一个table的引用时，Lua的垃圾收集器最终会删除该table，并复用它的内存。
