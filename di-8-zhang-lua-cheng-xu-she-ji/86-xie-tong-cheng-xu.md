@@ -83,7 +83,7 @@
     coroutine.resume( co, 1, 2, 3 )    -- co 1 2 3
 ```
 
-
+&emsp;&emsp;在resume调用返回的内容中，第一个值为true则表示没有错误，而后面所有的值都是对应yield传入的参数：
 
 
 
