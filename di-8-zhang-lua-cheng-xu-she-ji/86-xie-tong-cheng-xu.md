@@ -41,3 +41,9 @@
 	end
     end )
 ```
+
+&emsp;&emsp;现在当唤醒这个协同程序时，它就会开始执行，直到第一个yield：
+
+```lua
+    coroutine.resume( co )    -- co 1
+```
