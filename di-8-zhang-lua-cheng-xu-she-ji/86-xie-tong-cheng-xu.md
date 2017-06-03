@@ -33,3 +33,11 @@
 
 &emsp;&emsp;到目前为止，协同程序看上去还只是像一种复杂的函数调用方法。其实协同程序的真正强大之处在于函数yield的使用上，该函数可以让一个运行中的协同程序挂起，而之后可以再恢复它的运行。
 
+```lua
+    co = coroutine.create( function ( )
+	for i = 1, 10 do
+		print( "co", i )
+		coroutine.yield( )
+	end
+    end )
+```
