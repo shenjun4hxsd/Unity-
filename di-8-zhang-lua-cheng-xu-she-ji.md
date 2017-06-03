@@ -86,7 +86,7 @@ import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d
         command + b
         
 
-&emsp;&emsp;Sublime激活码
+&emsp;&emsp;**Sublime激活码：**
 
         —– BEGIN LICENSE —–
         Michael Barnes
