@@ -18,3 +18,6 @@
 ```lua
     print( coroutine.status( co ) )    -- suspended
 ```
+
+&emsp;&emsp;函数coroutine.resume用于启动或再次启动一个协同程序的执行，并将其状态由挂起改为运行：
+
