@@ -5,10 +5,13 @@ Lua是一种动态类型的语言。在语言中没有类型定义的语法，�
 
 函数type可根据一个值返回其类型名称。type函数总是返回一个字符串
 
-        print(type("Hello wold"))        -- string
-        print(type(10.4*3))              -- number
-        print(type(print))               -- function
-        print(type(type))                -- function
-        print(type(true))                -- boolean
-        print(type(nil))                 -- nil
-        print(type(type(X)))             -- string
+                print(type("Hello wold"))        -- string
+                print(type(10.4*3))              -- number
+                print(type(print))               -- function
+                print(type(type))                -- function
+                print(type(true))                -- boolean
+                print(type(nil))                 -- nil
+                print(type(type(X)))             -- string
+
+
+变量没有预定义的类型，任何变量都可以包含任何类型的值
