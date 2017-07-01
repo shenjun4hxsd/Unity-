@@ -69,7 +69,7 @@ DQL:对数据库进行查询操作
 DCL:查看所有库、表结构等
 	show databases	看所有库
 	show tables	看所有表
-	decs 表名		看表结构
+	decs 表名	看表结构
 	show variables	配置文件变量
 
 	\s	看状态
