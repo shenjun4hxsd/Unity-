@@ -89,6 +89,7 @@ use game_data;
 -- 创建表
 create table tbl_enemy (id int(3), name varchar(20), movespeed int(4), atk int(4)) character set = utf8;
 
+-- 删除表
 drop table tbl_enemy;
 
 -- 查看表
