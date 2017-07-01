@@ -28,4 +28,22 @@ MonoBehaviour 是默认创建出来的每个脚本派生自的基类。
 
 ![](/assets/MonoBehaviour生命周期.png)
 
+**OnPreCull:** 在相机剔除场景之前调用此函数。相机可见的对象取决于剔除。OnPreCull 函数调用发生在剔除之前。
+
+**OnBecameVisible/OnBecameInvisible:** 在对象对于相机可见/不可见时调用此函数。
+
+**OnWillRenderObject: **如果对象可见，则为每个相机调用一次此函数。
+
+**OnPreRender:** 在相机开始渲染场景之前调用此函数。
+
+**OnRenderObject:** 在完成所有常规场景渲染后调用此函数。此时，可使用 GL 类或 Graphics.DrawMeshNow 绘制自定义几何图形。
+
+**OnPostRender:** 在相机完成场景渲染后调用此函数。
+
+**OnRenderImage（仅限专业版）：** 在完成场景渲染后调用此函数，以便对屏幕图像进行后处理。
+
+**OnGUI: **在每帧上多次调用此函数，以响应 GUI 事件。程序首先将处理 Layout 和 Repaint 事件，然后再处理每个输入事件的 Layout 和 keyboard/鼠标事件。
+
+**OnDrawGizmos:** 用于在场景视图中绘制小图示 (Gizmos)，以实现可视化目的。
+
 🔚
