@@ -45,6 +45,93 @@ MySQL是一个关系型数据库管理系统，由瑞典MySQL AB公司开发，�
 
 
 
+####SQL语句：
+
+```
+mysql -h localhost -u 用户名 -p密码
+use 库名；	// 切换默认库
+
+DDL：对数据库和表进行操作
+	create database 库名	// create database if not exists 库名
+	create table [苦命.]表名   //use 库名
+
+	drop database 库名
+	drop table 表名
+
+DML：对数据库表进行增删改
+	insert into users(id,name) values('1','zhangsan');
+	update users set name='lili',age='18' where id='1';   // 更新
+	delete from name where id='1';
+
+DQL:对数据库进行查询操作
+	select * from name
+
+DCL:查看所有库、表结构等
+	show databases	看所有库
+	show tables	看所有表
+	decs 表名		看表结构
+	show variables	配置文件变量
+
+	\s	看状态
+
+帮助的使用
+	？ contents	看帮助内容
+	? int
+	? show
+	? create table
+
+-- 创建数据库
+create database game_data;
+
+-- 切换默认表
+use game_data;
+
+-- 创建表
+create table tbl_enemy (id int(3), name varchar(20), movespeed int(4), atk int(4)) character set = utf8;
+
+drop table tbl_enemy;
+
+-- 查看表
+select * from tbl_enemy;
+
+-- 添加数据
+insert into tbl_enemy values(1, '近战兵', 10, 10);
+insert into tbl_enemy values(2, '弓箭手', 10, 10);
+insert into tbl_enemy values(1, '法师', 10, 10, 1, 100);
+
+-- 修改字段值
+update tbl_enemy set id=3 where name='法师';
+update tbl_enemy set move_speed=8, atk_interval=1 where id=1;
+update tbl_enemy set move_speed = 12 where id=2;
+update tbl_enemy set atk=20, atk_interval=1 where id=3;
+update tbl_enemy set atk = 8, atk_interval=1 where id=2;
+
+update tbl_enemy set atk_interval=2;
+
+update tbl_enemy set atk_interval=1 where id=1;
+
+update tbl_enemy set hp=100;
+
+-- 增加字段
+alter table tbl_enemy add atkinterval int(4);
+alter table tbl_enemy add hp int(4) not null;
+alter table tbl_enemy add email varchar(20);
+
+-- 删除字段
+alter table tbl_enemy drop email;
+
+-- 删除行
+delete from tbl_enemy where hp=100;
+
+-- 字段改名(改数据类型)
+alter table tbl_enemy change movespeed move_speed int(4);
+alter table tbl_enemy change atkinterval atk_interval int(4);
+
+alter table tbl_enemy rename table_enemy;
+alter table table_enemy rename tbl_enemy;
+
+```
+
 
 
 
