@@ -82,6 +82,11 @@
     function foo2() return "a", "b" end    -- 返回2个结果
 ```
 
+```lua
+    x,y = foo2()                           -- x="a", y="b"
+    x = foo2()                             -- x="a", "b"被丢弃
+    x,y,z = 10, foo2()                     -- x=10, y="a", z="b"
+```
 
 
 
