@@ -31,5 +31,5 @@
     a, b = a+1, b+1, b+2      -- 其中b+2会被忽略
     print(a, b)               --> 1 2
     a, b, c = 0
-    print(a, b, c)            --> 0 nil nil
+    print(a, b, c)            --> 0 nil nil  ⚠️
 ```
