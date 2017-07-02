@@ -229,6 +229,12 @@ Lua对于诸如a["name"]的写法提供了一种更简便的“语法糖（synta
 
 ###• function（函数）
 
+```lua
+    function function_name( )
+        -- body
+    end
+```
+
 ---
 
 ###• userdata（自定义类型）和 thread（线程）
