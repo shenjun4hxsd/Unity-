@@ -171,3 +171,5 @@
     -- 打印数组a的所有值
     for i,v in ipairs(a) do print(v) end
 ```
+
+&emsp;&emsp;Lua的基础库提供了ipairs，这是一个用于遍历数组的迭代器函数。
