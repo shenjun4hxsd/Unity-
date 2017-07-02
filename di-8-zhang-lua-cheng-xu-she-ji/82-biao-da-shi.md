@@ -141,7 +141,7 @@
 
 &emsp;&emsp;构造式是用于创建和初始化table的表达式。这是Lua特有的一种表达式，并且也是Lua中最有用、最通用的机制之一。
 
-&emsp;&emsp;最简单的构造式就是一个空构造式{}，用于创建一个空table。构造式还可以用于初始化数组。
+&emsp;&emsp;最简单的构造式就是一个空构造式{}，用于创建一个空table。构造式还可以用于初始化数组。元素之间可以用逗号也可以用分号，最后一个元素后面写逗号也是合法的。
 
 ```lua
     days = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"}
