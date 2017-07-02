@@ -56,7 +56,20 @@
 
 &emsp;&emsp;以Lua编写的函数同样可以返回多个结果，只需在return关键字后列出所有的返回值即可。
 
-
+```lua
+    -- 查找数组中的最大元素，并返回该元素的位置：
+    
+    function maximum(a)
+        local index = 1         -- 最大值的索引
+        local max = a[index]    -- 最大值
+        for i,val in ipairs(a) do
+            if val > max then
+                max = val; index = i
+            end
+        end
+        return max, index
+    end    
+```
 
 
 
