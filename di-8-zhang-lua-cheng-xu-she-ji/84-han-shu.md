@@ -188,6 +188,18 @@
     a = {"hello", "ll"}
 ```
 
+f(unpack(a))将返回3和4，这与直接调用string.find("hello", "ll") 所返回的结果一摸一样。
+虽然这个预定义函数unpack是用C语言直接编写的，但是仍可以在Lua中通过递归实现一样效果：
+
+```lua
+	function unpack(t, i)
+		i = i or 1
+		if t[i] then
+			return t[i], unpack(t, i+1)
+		end
+	end
+```
+
 &emsp;&emsp;函数可以存储到变量中（无论全局变量还是局部变量）或table中，可以作为实参传递给其他函数，还可以作为其他函数的返回值。
 
 &emsp;&emsp;一个函数可以嵌套在另一个函数中，内部的函数可以访问外部函数中的变量。
