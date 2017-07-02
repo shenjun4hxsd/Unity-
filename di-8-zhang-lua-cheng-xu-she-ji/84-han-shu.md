@@ -1,5 +1,17 @@
 ##函数
 
+>一个函数若只有一个参数，并且此参数是一个字面字符串或table构造式，那么圆括号便是可有可无的。
+
+```lua
+    -- 例如：
+    
+    print "Hello World"    <-->    print("Hello World")
+    dofile 'a.lua'         <-->    dofile('a.lua')
+    print [[a multi-line   <-->    print([[a multi-line
+      message]]                      message]]
+    f{x=10, y=20}          <-->    f({x=10, y=20})
+```
+
 函数可以存储到变量中（无论全局变量还是局部变量）或table中，可以作为实参传递给其他函数，还可以作为其他函数的返回值。
 
 一个函数可以嵌套在另一个函数中，内部的函数可以访问外部函数中的变量。
