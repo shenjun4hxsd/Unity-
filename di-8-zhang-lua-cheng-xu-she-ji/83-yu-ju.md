@@ -208,4 +208,10 @@
     
     -- 需要创建如下talbe
     revDays = {["Sunday"] = 1, ["Monday"] = 2, ["Tuesday"] = 3, ["Wednesday"] = 4, ["Thursday"] = 5, ["Friday"] = 6, ["Saturday"] = 7}
+    
+    -- 则可以按如下实现
+    revDays = {}
+    for k, v in pairs(day) do
+        revDays[v] = k
+    end
 ```
