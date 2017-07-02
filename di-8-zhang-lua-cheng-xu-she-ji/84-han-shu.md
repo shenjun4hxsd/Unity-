@@ -236,6 +236,11 @@ Lua中的函数可以接受不同数量的实参。
 
 &emsp;&emsp;变长参数中可能会包含一些故意传入的nil，那么此时就需要用函数select来访问变长参数了。调用select时，必须传入一个固定实参selector(选择开关)和一系列变长参数。如果selector为数字n，那么select返回它的第n个可变实参；否则，selector只能为字符串“#”，这样select会返回变长参数的总数。
 
-
+```lua
+    for i=1, select('#', ...) do
+        local arg = select(i, ...)		-- 得到第i个参数
+        <循环体>
+    end
+```
 
 🔚
