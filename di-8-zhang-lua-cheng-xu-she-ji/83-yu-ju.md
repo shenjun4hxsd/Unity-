@@ -179,4 +179,4 @@
     for k in pairs(t) do print(k) end
 ```
 
-&emsp;&emsp;迭代table元素的（pairs）、迭代数组元素的（ipairs）、
+>&emsp;&emsp;迭代table元素的（pairs）、迭代数组元素的（ipairs）、迭代字符串中单词的（string.gmatch）等。
