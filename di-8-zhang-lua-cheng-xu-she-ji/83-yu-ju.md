@@ -115,5 +115,18 @@
 &emsp;&emsp;一条repeat-until语句重复执行其循环体直到条件为真时结束。循环体至少会执行一次。
 
 ```lua
-    
+    repeat
+        line = io.read()
+    until line ~= ""
+    print(line)
+```
+
+>&emsp;&emsp;与其他大多数语言不同的是，在Lua中，一个声明在循环体中的局部变量的作用域包括了条件测试：
+
+```lua
+    local sqr = x/2
+    repeat
+        sqr = (sqr + x/sqr)/2
+        local error = math.abs(sqr^2 - x)
+    until error < x/10000        -- 在此仍可以访问error
 ```
