@@ -181,7 +181,7 @@
     
     list = nil
     for line in io.lines() do            -- 从标准输入读取每行的内容
-        list = {next=list, value=line}
+        list = {next=list, value=line}   -- 按相反的次序存储到一个链表中
     end
 ```
 
