@@ -79,3 +79,21 @@
 &emsp;&emsp;控制结构中的条件表达式可以是任何值，Lua将所有不是false和nil的值视为“真”。
 
 #### if then else
+
+```lua
+    if a < 0 then a = 0 end
+    
+    if a < b then return a else return b end
+    
+    if op == "+" then
+        r = a + b
+    elseif op == "-" then
+        r = a - b
+    elseif op == "*" then
+        r = a * b
+    elseif op == "\" then
+        r = a / b
+    else
+        error("invalid operation")
+    end
+```
