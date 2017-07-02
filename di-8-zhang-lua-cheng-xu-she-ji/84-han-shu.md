@@ -289,11 +289,11 @@ Lua中的函数可以接受不同数量的实参。
 
     -- 其他参数都是可选的
     _Window(options.title,
-            options.x or 0,		-- 默认值
-            options.y or 0,		-- 默认值
+            options.x or 0,            -- 默认值
+            options.y or 0,            -- 默认值
             options.width, options.height,
-            options.backgournd or "white",		-- 默认值
-            options.border		-- 默认值为false(nil)
+            options.backgournd or "white",        -- 默认值
+            options.border            -- 默认值为false(nil)
     )
     end
 ```
