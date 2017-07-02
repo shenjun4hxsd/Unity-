@@ -163,7 +163,11 @@
 
 &emsp;&emsp;无论使用哪种方式来创建table，都可以在table创建之后添加或删除其中的某些字段：
 
-
+```lua
+    w = {x=0, y=0, label="console"}
+    x = {math.sin(0), math.sin(1), math.sin(2)}
+    w[1] = "another field"        -- 添加key 1到table w
+```
 
 
 
