@@ -174,7 +174,16 @@
     w.x = nil                     -- 删除字段"x"
 ```
 
+&emsp;&emsp;每当Lua评估一个构造式时，都会先创建一个新table，然后初始化它。
 
+```lua
+    用table实现链表：
+    
+    list = nil
+    for line in io.lines() do            -- 从标准输入读取每行的内容
+        list = {next=list, value=line}
+    end
+```
 
 
 
