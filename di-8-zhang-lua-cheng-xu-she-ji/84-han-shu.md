@@ -302,6 +302,13 @@ Lua中的函数可以接受不同数量的实参。
 
 &emsp;&emsp;函数与其他值一样都是匿名的。当讨论一个函数名时（例如print），实际上是在讨论一个持有某函数的变量。
 
-
+```lua
+    a = {p = print}
+    a.p("Hello World")		--> Hello World
+    print = math.sin        --> 'print'现在引用了正弦函数
+    a.p(print(1))			--> 0.841470
+    sin = a.p 				--> 'sin'现在引用了print函数
+    sin(10, 20)				--> 10  20
+```
 
 🔚
