@@ -229,6 +229,8 @@ Lua对于诸如a["name"]的写法提供了一种更简便的“语法糖（synta
 
 ###• function（函数）
 
+&emsp;&emsp;Lua既可以调用以自身Lua语言编写的函数，又可以调用以C语言编写的函数。Lua所有的标准库都是用C语言写的，标准库中包括对字符串的操作、table的操作、I／O、操作系统的功能调用、数学函数和调试函数。同样，应用程序也可以用C语言来定义其他函数。
+
 ```lua
     function function_name( )
         -- body
