@@ -2,6 +2,8 @@
 
 &emsp;&emsp;Lua支持的常规语句基本上与C语言或Pascal语言中所支持的那些语句差不多。这些语句包括赋值、控制结构和过程调用。另外，Lua还支持一些不太常见的语句，例如多重赋值和局部变量声明。
 
+&emsp;&emsp;
+
 ###• 赋值
 
 ```lua
@@ -200,3 +202,10 @@
 
         循环变量是循环体的局部变量；
         绝不应该对循环变量作任何赋值。
+        
+```lua
+    days = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"}
+    
+    -- 需要创建如下talbe
+    revDays = {["Sunday"] = 1, ["Monday"] = 2, ["Tuesday"] = 3, ["Wednesday"] = 4, ["Thursday"] = 5, ["Friday"] = 6, ["Saturday"] = 7}
+```
