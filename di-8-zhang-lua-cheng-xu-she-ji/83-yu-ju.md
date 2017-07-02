@@ -100,6 +100,8 @@
 
 >&emsp;&emsp;Lua不支持switch语句。
 
+&emsp;&emsp;
+
 ####while
 
 ```lua
@@ -109,6 +111,8 @@
         i = i + 1
     end
 ```
+
+&emsp;&emsp;
 
 ####repeat
 
