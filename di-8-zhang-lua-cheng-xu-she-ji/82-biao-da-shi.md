@@ -96,3 +96,11 @@
     print("Hello" .. "World")    --> Hello World
     print(0 .. 1)                --> 01
 ```
+
+&emsp;&emsp;请记住，Lua中的字符串是不可变的值。连接操作符只会创建一个新字符串，而不会对其原操作数进行任何修改：
+
+```lua
+    a = "Hello"
+    print(a .. "World")    --> Hello World
+    print(a)               --> Hello
+```
