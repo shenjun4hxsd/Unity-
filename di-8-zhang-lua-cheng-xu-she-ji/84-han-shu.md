@@ -276,4 +276,26 @@ Lua中的函数可以接受不同数量的实参。
               }
 ```
 
+&emsp;&emsp;Window函数可以根据要求检查一些必填参数，或者为某些参数添加默认值。假设“_Window”才是真正用于创建新窗口的函数，它要求所有参数以正确的次序传入，那么Window函数可以这么写：
+
+```lua
+    function Window(options)
+        -- 检查必要的参数
+        if type(options.title) ~= "string" then
+            error("no tile")
+        elseif type(options.width) ~= "number" then
+            error("no width")
+    end
+
+    -- 其他参数都是可选的
+    _Window(options.title,
+            options.x or 0,		-- 默认值
+            options.y or 0,		-- 默认值
+            options.width, options.height,
+            options.backgournd or "white",		-- 默认值
+            options.border		-- 默认值为false(nil)
+    )
+    end
+```
+
 🔚
