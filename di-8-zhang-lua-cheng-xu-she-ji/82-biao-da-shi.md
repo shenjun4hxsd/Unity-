@@ -185,5 +185,15 @@
     end
 ```
 
+```lua
+    遍历该链表
+    
+    local l = list
+    while l do
+        print(l.value)
+        l = l.next
+    end
+```
+
 
 
