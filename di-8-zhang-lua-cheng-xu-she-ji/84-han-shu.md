@@ -68,7 +68,9 @@
             end
         end
         return max, index
-    end    
+    end
+    
+    print(maximum{8, 10, 23, 12, 5})    --> 23   3
 ```
 
 
