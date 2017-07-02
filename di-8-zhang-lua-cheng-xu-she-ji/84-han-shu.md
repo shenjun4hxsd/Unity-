@@ -47,7 +47,11 @@
 
 ####多重返回值
 
-&emsp;&emsp;Lua允许函数返回多个结果。
+&emsp;&emsp;Lua允许函数返回多个结果。例如，用于字符串中定位一个模式的函数string.find。该函数若在字符串中找到了指定的模式，将返回匹配的起始字符和结尾字符的索引。
+
+```lua
+    startIndex, endIndex = string.find("hello Lua users", "Lua")
+```
 
 &emsp;&emsp;函数可以存储到变量中（无论全局变量还是局部变量）或table中，可以作为实参传递给其他函数，还可以作为其他函数的返回值。
 
