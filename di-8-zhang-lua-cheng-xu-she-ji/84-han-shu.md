@@ -86,6 +86,14 @@
     x,y = foo2()                           -- x="a", y="b"
     x = foo2()                             -- x="a", "b"被丢弃
     x,y,z = 10, foo2()                     -- x=10, y="a", z="b"
+    
+    x,y = foo0()                           -- x=nil, y=nil
+    x,y = foo1()                           -- x="a", y=nil
+    x,y,z = foo2()                         -- x="a", y="b", z=nil
+    
+    -- 函数调用不是表达式最后一个元素，将只产生一个值：
+    x,y = foo2(), 20                       -- x="a", y=20
+    x,y = foo0(), 20, 30                   -- x=nil, y=20, 30被丢弃
 ```
 
 
