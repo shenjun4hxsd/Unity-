@@ -259,5 +259,12 @@ Lua中的函数可以接受不同数量的实参。
     rename{old="temp.lua", new="temp1.lua"}
 ```
 
+&emsp;&emsp;另一方面，将rename改为只接受一个参数，并从这个参数中获取实际的参数：
+
+```lua
+    function rename(arg)
+        return os.rename(arg.old, arg.new)
+    end
+```
 
 🔚
