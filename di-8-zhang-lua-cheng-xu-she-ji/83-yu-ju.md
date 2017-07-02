@@ -73,3 +73,7 @@
 ```
 
 ###• 控制结构
+
+&emsp;&emsp;Lua提供了一组传统的、小巧的控制结构，包括用于条件执行的if，用于迭代的while、repeat和for。所有的控制结构都有一个显式的终止符：if、for和while以end作为结尾，repeat以until作为结尾。
+
+&emsp;&emsp;控制结构中的条件表达式可以是任何值，Lua将所有不是false和nil的值视为“真”。
