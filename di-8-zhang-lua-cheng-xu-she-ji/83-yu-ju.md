@@ -204,6 +204,8 @@
         绝不应该对循环变量作任何赋值。
         
 ```lua
+    -- 例：
+    
     days = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"}
     
     -- 需要创建如下talbe
