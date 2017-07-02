@@ -167,6 +167,22 @@
     print(arg[1])
 ```
 
+>提供一种兼容的方法
+```lua
+    function test(...)
+	if arg ~= nil then
+		arg = {...}
+	end
+
+	if unpack != nil then		-- 5.1及之前的版本
+		print(unpack(arg))
+	else						-- 之后的版本
+		local arg = {...}
+		print(table.unpack(arg))
+	end
+end
+```
+
 &emsp;&emsp;函数可以存储到变量中（无论全局变量还是局部变量）或table中，可以作为实参传递给其他函数，还可以作为其他函数的返回值。
 
 &emsp;&emsp;一个函数可以嵌套在另一个函数中，内部的函数可以访问外部函数中的变量。
