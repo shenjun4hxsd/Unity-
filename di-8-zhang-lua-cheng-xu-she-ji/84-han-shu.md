@@ -211,6 +211,7 @@ f(unpack(a))将返回3和4，这与直接调用string.find("hello", "ll") 所返
 Lua中的函数可以接受不同数量的实参。
 
 ```lua
+    -- 这个函数返回了所有参数的总和：
     function add( ... )
 	local s = 0
 	for i, v in ipairs( ... ) do  -- 表达式{...}表示一个由所有变长参数构成的数组。
