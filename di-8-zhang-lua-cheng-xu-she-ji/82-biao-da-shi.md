@@ -195,5 +195,17 @@
     end
 ```
 
+&emsp;&emsp;将记录风格的初始化与列表风格的初始化混合在一个构造式中使用：
+
+```lua
+    polyline = {
+        color = "blue", thickness = 2, npoints = 4,
+        {x = 0, y = 0},
+        {x = -1, y = 0},
+        {x = -10, y = 1},
+        {x = 0, y = 1}
+    }
+```
+
 
 
