@@ -10,6 +10,7 @@
     print [[a multi-line   <-->    print([[a multi-line
       message]]                      message]]
     f{x=10, y=20}          <-->    f({x=10, y=20})
+    type{}                 <-->    type({})
 ```
 
 函数可以存储到变量中（无论全局变量还是局部变量）或table中，可以作为实参传递给其他函数，还可以作为其他函数的返回值。
