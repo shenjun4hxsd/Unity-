@@ -104,3 +104,6 @@
     print(a .. "World")    --> Hello World
     print(a)               --> Hello
 ```
+
+
+###• 优先级
