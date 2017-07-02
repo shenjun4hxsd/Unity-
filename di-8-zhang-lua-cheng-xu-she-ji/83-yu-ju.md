@@ -172,4 +172,9 @@
     for i,v in ipairs(a) do print(v) end
 ```
 
-&emsp;&emsp;Lua的基础库提供了ipairs，这是一个用于遍历数组的迭代器函数。
+&emsp;&emsp;Lua的基础库提供了ipairs，这是一个用于遍历数组的迭代器函数。在每次循环中，i会被赋予一个索引值，同时v被赋予一个对应于该索引的数组元素值。
+
+```lua
+    -- 打印table t中所有的key
+    for k in pairs(t) do print(k) end
+```
