@@ -169,4 +169,5 @@
 
 ```lua
     -- 打印数组a的所有值
+    for i,v in ipairs(a) do print(v) end
 ```
