@@ -130,3 +130,7 @@
         local error = math.abs(sqr^2 - x)
     until error < x/10000        -- 在此仍可以访问error
 ```
+
+####数字型for
+
+&emsp;&emsp;for语句有两种形式：数字型for和泛型for。
