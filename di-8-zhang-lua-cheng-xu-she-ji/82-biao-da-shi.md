@@ -149,7 +149,17 @@
 
 &emsp;&emsp;会将days[1]初始化为字符串“Sunday”、days[2]初始化为“Monday”，以此类推。
 
-&emsp;&emsp;Lua还提供了一种特殊的语法用于
+&emsp;&emsp;Lua还提供了一种特殊的语法用于初始化记录风格的table：
+
+```lua
+    a = {x=10, y=20}
+```
+
+&emsp;&emsp;以上这行代码等价于这些语句：
+
+```lua
+    a = {}; a.x = 10; a.y = 20
+```
 
 
 
