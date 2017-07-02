@@ -99,3 +99,5 @@
 ```
 
 >&emsp;&emsp;Lua不支持switch语句。
+
+####while
