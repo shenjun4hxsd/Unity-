@@ -51,6 +51,7 @@
 
 ```lua
     startIndex, endIndex = string.find("hello Lua users", "Lua")
+    print(startIndex, endIndex)        --> 7   9
 ```
 
 &emsp;&emsp;函数可以存储到变量中（无论全局变量还是局部变量）或table中，可以作为实参传递给其他函数，还可以作为其他函数的返回值。
