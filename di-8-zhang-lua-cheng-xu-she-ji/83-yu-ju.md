@@ -229,3 +229,11 @@
 &emsp;&emsp;由于语法构造的原因，break或return只能是一个块的最后一条语句。或者是end、else或until前的一条语句。
 
 例如，准备调试一个函数，但又不想执行该函数的内容。在这种情况下，可以使用一个显式的do块来包住一条return语句：
+
+```lua
+    funtion foo()
+    return     --<< 语法错误
+	-- 在以下个块中return就是最后一条语句
+	do return end   	-- OK
+	<其他语句>
+```
