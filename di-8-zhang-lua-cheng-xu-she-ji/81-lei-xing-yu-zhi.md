@@ -239,7 +239,7 @@ Lua对于诸如a["name"]的写法提供了一种更简便的“语法糖（synta
 
 ###• userdata（自定义类型）和 thread（线程）
 
-
+&emsp;&emsp;由于userdata类型可以将任意的C语言数据存储到Lua变量中。在Lua中，这种类型没有太多的预定义操作，只能进行赋值和相等性测试。userdata用于表示一种由应用程序或C语言库所创建的新类型，例如标准的I／O库就用userdata来表示文件。稍后将在CAPI中详细讨论这种类型。
 
 
 🔚
