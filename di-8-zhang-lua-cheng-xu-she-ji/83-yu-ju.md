@@ -181,6 +181,7 @@
 
 >&emsp;&emsp;迭代table元素的（pairs）、迭代数组元素的（ipairs）、迭代字符串中单词的（string.gmatch）等。
 
+&emsp;&emsp;
 
 **泛型for循环与数字型for循环有两个相同点：**
 
