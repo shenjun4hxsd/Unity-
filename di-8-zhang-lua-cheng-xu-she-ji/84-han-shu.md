@@ -120,6 +120,20 @@
 
 &emsp;&emsp;最后一种情况是return语句，诸如return f()这样的语句将返回f的所有返回值：
 
+```lua
+    function foo(i)
+        if i==0 then return foo0();
+        elseif i==1 then return foo1();
+        elseif i==2 then return foo2()
+        end
+    end
+    
+    print(foo(1))        -- a
+    print(foo(2))        -- a  b
+    print(foo(0))        -- (无返回值)
+    print(foo(3))        -- (无返回值)
+```
+
 
 
 
