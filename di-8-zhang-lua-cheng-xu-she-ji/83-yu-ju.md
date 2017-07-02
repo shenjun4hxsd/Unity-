@@ -134,3 +134,11 @@
 ####数字型for
 
 &emsp;&emsp;for语句有两种形式：数字型for和泛型for。
+
+&emsp;&emsp;数字型for的语法如下：
+
+```lua
+    for var=exp1, exp2,exp3 do
+        <执行体>
+    end
+```
