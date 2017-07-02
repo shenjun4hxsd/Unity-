@@ -70,10 +70,20 @@
     and和or都是用“短路求值”，也就是说，它们只会在需要时才去评估第二个操作数。
     短路求值可以确保像（type(v)=="table" and v.tag == "h1"）这样的表达式不会导致运行时错误。
 
-    有一种常用的Lua习惯写法“x=x or v”，它等价于：
+    有一种常用的Lua习惯写法“x = x or v”，它等价于：
     if not x then x = v end
+    
+    另外，还有一种习惯写法是“（a and b）or c”，这类似于C语言中的表达式a?b:c，但前提是b不为假。
+    例如，为了选出数字x和y中的较大者，可以使用以下语句：
+    max = (x > y) and x or y
 
-
+```lua
+    操作符not永远只返回true或false：
+        print(not nil)        --> true
+        print(not false)      --> true
+        print(not 0)          --> false
+        print(not not nil)    --> false
+```
 
 
 
