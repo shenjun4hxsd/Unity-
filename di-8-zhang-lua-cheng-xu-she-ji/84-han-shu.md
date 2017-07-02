@@ -224,8 +224,14 @@ Lua中的函数可以接受不同数量的实参。
     print(add(3, 4, 10, 25, 12))        --> 54
 ```
 
-参数中的3个点（...）表示该函数可接受不同数量的实参。
+&emsp;&emsp;参数中的3个点（...）表示该函数可接受不同数量的实参。
 
+&emsp;&emsp;Lua提供了专门用于格式化文本（string.format）和输出文本（io.write）的函数。
 
+```lua
+    function fwrite(fmt, ...)
+    return io.write(string.format(fmt, ...))
+```
+&emsp;&emsp;注意在3个点前有一个固定参数fmt。具有变长参数的函数同样也可以拥有任意数量的固定参数，但固定参数必须放在变长参数之前。
 
 🔚
