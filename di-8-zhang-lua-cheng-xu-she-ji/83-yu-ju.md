@@ -144,3 +144,19 @@
 ```
 
 &emsp;&emsp;var从exp1变化到exp2，每次变化都以exp3作为步长（step）递增var，并执行一次“执行体”。第三个表达式是可选的，若不指定的话，Lua会将步长默认为1。
+
+```lua
+    for i=1, f(x) do print(i) end
+    for i=10, 1, -1 do print(i) end
+```
+
+&emsp;&emsp;如果不想给循环设置上限的话，可以使用常量math.huge：
+
+```lua
+    for i=1, math.huge do
+        if(0.3*i^3 - 20*i^2 - 500 >= 0) then
+            print(i)
+            break
+        end
+    end
+```
