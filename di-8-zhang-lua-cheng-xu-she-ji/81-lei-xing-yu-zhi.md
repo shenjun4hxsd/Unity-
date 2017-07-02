@@ -24,14 +24,15 @@
                 a = print                     -- 是的，这是合法的！
                 a(type(a))                    -- function
 
----
+&emsp;&emsp;
 
 ###• nil（空）
 
                 “无效值“
                 将nil赋予一个全局变量等同于删除它。
 
----                
+&emsp;&emsp;
+               
 ###• boolean（布尔）
 
                 有两个可选值：false和true
@@ -40,10 +41,12 @@
                 在Lua中任何值都可以表示一个条件。Lua将值false和nil视为“假”，而除此之外的其他值视为“真”。
                 请注意，Lua在条件测试中，将数字零和空字符串也都视为“真”。
        
----         
+&emsp;&emsp;
+        
 ###• number（数字）
 
----
+&emsp;&emsp;
+
 ###• string（字符串）
 
                 不可变性。
@@ -89,7 +92,7 @@
 
 &emsp;&emsp;这套机制同样适用于注释。例如，以“--[=[”开始的一个块注释将延伸至“]=]”结束。如此便简化了注释那些“已经包含了注释块”的代码。
 
----
+&emsp;&emsp;
 
 &emsp;&emsp;**Lua提供了运行时的数字与字符串的自动转换。**
 
@@ -119,7 +122,7 @@
                 print(#a)                 -- 5
                 print(#"good\0bye")       -- 8
 
----
+&emsp;&emsp;
 
 ###• table
 
@@ -225,7 +228,7 @@ Lua对于诸如a["name"]的写法提供了一种更简便的“语法糖（synta
                 print(a[tonumber(k)]) --> one value
 
 
----
+&emsp;&emsp;
 
 ###• function（函数）
 
@@ -237,7 +240,7 @@ Lua对于诸如a["name"]的写法提供了一种更简便的“语法糖（synta
     end
 ```
 
----
+&emsp;&emsp;
 
 ###• userdata（自定义类型）和 thread（线程）
 
