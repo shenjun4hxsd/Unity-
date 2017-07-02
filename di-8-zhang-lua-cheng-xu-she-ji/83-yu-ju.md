@@ -97,3 +97,5 @@
         error("invalid operation")
     end
 ```
+
+>&emsp;&emsp;Lua不支持switch语句。
