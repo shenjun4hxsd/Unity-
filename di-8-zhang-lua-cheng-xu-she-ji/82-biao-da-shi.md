@@ -149,7 +149,7 @@
 
 &emsp;&emsp;会将days[1]初始化为字符串“Sunday”、days[2]初始化为“Monday”，以此类推。
 
-
+&emsp;&emsp;Lua还提供了一种特殊的语法用于
 
 
 
