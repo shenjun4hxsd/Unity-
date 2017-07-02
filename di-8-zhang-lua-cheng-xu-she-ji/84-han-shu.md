@@ -168,12 +168,12 @@
 ```
 
 >提供一种兼容的方法
+
 >```lua
     function test(...)
         if arg ~= nil then
             arg = {...}
         end
-
         if unpack != nil then		-- 5.1及之前的版本
             print(unpack(arg))
         else						-- 之后的版本
