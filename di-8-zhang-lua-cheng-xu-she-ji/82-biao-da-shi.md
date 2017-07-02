@@ -146,3 +146,12 @@
 ```lua
     days = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"}
 ```
+
+&emsp;&emsp;会将days[1]初始化为字符串“Sunday”、days[2]初始化为“Monday”，以此类推。
+
+
+
+
+
+
+
