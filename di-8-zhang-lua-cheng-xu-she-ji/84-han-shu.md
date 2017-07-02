@@ -168,7 +168,7 @@
 ```
 
 >提供一种兼容的方法
-```lua
+>```lua
     function test(...)
         if arg ~= nil then
             arg = {...}
