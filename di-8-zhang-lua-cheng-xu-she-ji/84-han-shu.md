@@ -312,9 +312,14 @@ Lua中的函数可以接受不同数量的实参。
 ```
 
 ```lua
+    -- Lua中最常见的是函数编写方式，诸如：
     function foo(x) return 2*x end
-    
-    -- 
+```
+
+&emsp;&emsp;只是一种所谓的“语法糖”而已。也就是说，这只是以下代码的一种简化书写形式：
+
+```lua
+foo = function(x) return 2*x end
 ```
 
 🔚
