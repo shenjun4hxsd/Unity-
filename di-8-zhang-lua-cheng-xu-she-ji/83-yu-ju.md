@@ -101,3 +101,11 @@
 >&emsp;&emsp;Lua不支持switch语句。
 
 ####while
+
+```lua
+    local i = 1
+    while a[i] do
+        print(a[i])
+        i = i + 1
+    end
+```
