@@ -233,7 +233,8 @@
 ```lua
     funtion foo()
     return     --<< 语法错误
-	-- 在以下个块中return就是最后一条语句
-	do return end   	-- OK
-	<其他语句>
+        -- 在以下个块中return就是最后一条语句
+        do return end   	-- OK
+        <其他语句>
+    end
 ```
