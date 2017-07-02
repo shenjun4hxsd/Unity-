@@ -207,5 +207,14 @@
     }
 ```
 
+上例演示了如何通过嵌套的构造式来表示复杂的数据结构。每个polyline[i]元素都是一个table，表示一条记录：
 
+
+```lua
+    
+    print(polyline[2].x)		--> -1
+    
+    print(polyline[4].y)		--> 1
+
+```
 
