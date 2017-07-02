@@ -250,7 +250,7 @@ Lua中的函数可以接受不同数量的实参。
 
 ```lua
     -- 无效的演示代码
-    rename(old="temp.lua", new="temp1.lua")   -- Lua并步直接支持这种语法。
+    rename(old="temp.lua", new="temp1.lua")   -- Lua并不直接支持这种语法。
 ```
 
 🔚
