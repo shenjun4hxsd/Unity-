@@ -134,7 +134,13 @@
     print(foo(3))        -- (无返回值)
 ```
 
+&emsp;&emsp;也可以将一个函数调用放入一对圆括号中，从而迫使它只返回一个结果：
 
+```lua
+    print((foo0()))      -- nil
+    print((foo1()))      -- a
+    print((foo2()))      -- a
+```
 
 
 
