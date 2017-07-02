@@ -178,3 +178,5 @@
     -- 打印table t中所有的key
     for k in pairs(t) do print(k) end
 ```
+
+&emsp;&emsp;迭代table元素的（pairs）、迭代数组元素的（ipairs）、
