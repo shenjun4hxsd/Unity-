@@ -211,10 +211,7 @@
 
 
 ```lua
-    
     print(polyline[2].x)		--> -1
-    
     print(polyline[4].y)		--> 1
-
 ```
 
