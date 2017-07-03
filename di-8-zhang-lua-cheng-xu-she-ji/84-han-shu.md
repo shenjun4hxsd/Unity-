@@ -416,46 +416,46 @@ Lua中的函数可以接受不同数量的实参。
 
 &emsp;&emsp;从技术上讲，Lua中只有closure，而不存在“函数”。因为，函数本身就是一种特殊的closure。不过只要不会引起混淆，仍将采用术语“函数”来指代closure。
 
-closure在另一种情况中也非常有用。例如在Lua中函数是存储在普通变量中的，因此可以轻易地重新定义某些函数，甚至是重新定义那些预定义的函数。这也正是Lua相当灵活的原因之一。通常当重新定义一个函数的时候，需要在新的实现中调用原来的那个函数。举例来说，假设要重新定义函数sin，使其参数能使用角度来代替原来的弧度。那么这个新函数就必须得转换它的实参，并调用原来的sin函数完成真正的计算。这段代码可能是这样的：
+&emsp;&emsp;closure在另一种情况中也非常有用。例如在Lua中函数是存储在普通变量中的，因此可以轻易地重新定义某些函数，甚至是重新定义那些预定义的函数。这也正是Lua相当灵活的原因之一。通常当重新定义一个函数的时候，需要在新的实现中调用原来的那个函数。举例来说，假设要重新定义函数sin，使其参数能使用角度来代替原来的弧度。那么这个新函数就必须得转换它的实参，并调用原来的sin函数完成真正的计算。这段代码可能是这样的：
 
 ```lua
-oldSin = math.sin
-math.sin = function(x)
-	return oldSin(x*math.pi/180)
-end
+    oldSin = math.sin
+    math.sin = function(x)
+        return oldSin(x*math.pi/180)
+    end
 ```
 
 还有一种更彻底的做法是这样的：
 
 ```lua
-do
-	local oldSin = math.sin
-	local k = math.pi/180
-	math.sin=function(x)
-		return oldSin(x*k)
-	end
-end
+    do
+        local oldSin = math.sin
+        local k = math.pi/180
+        math.sin=function(x)
+            return oldSin(x*k)
+        end
+    end
 ```
 
-将老版本的sin保存到了一个私有变量中，现在只有通过新版本的sin才能访问到它了。
-可以使用同样的技术来创建一个安全的运行环境，即所谓的“沙盒”。当执行一些未受信任的代码时就需要一个安全的运行环境，例如在服务器中执行那些从Internet上接收到的代码。举例来说，如果要限制一个程序访问文件的话，只需使用closure来重新定义函数io.open就可以了。
+&emsp;&emsp;将老版本的sin保存到了一个私有变量中，现在只有通过新版本的sin才能访问到它了。
+&emsp;&emsp;可以使用同样的技术来创建一个安全的运行环境，即所谓的“沙盒”。当执行一些未受信任的代码时就需要一个安全的运行环境，例如在服务器中执行那些从Internet上接收到的代码。举例来说，如果要限制一个程序访问文件的话，只需使用closure来重新定义函数io.open就可以了。
 
 ```lua
-do
-	local oldOpen = io.open
-	local access_OK = function(filename, mode)
-		<检查访问权限>
-	end
-	io.open = function(filename, mode)
-		if access_OK(filename, mode) then
-			return oldOpen(filename, mode)
-		else
-			return nil, "access denied"
-		end
-	end
-end
+    do
+        local oldOpen = io.open
+        local access_OK = function(filename, mode)
+            <检查访问权限>
+        end
+        io.open = function(filename, mode)
+            if access_OK(filename, mode) then
+                return oldOpen(filename, mode)
+            else
+                return nil, "access denied"
+            end
+        end
+    end
 ```
 
-这个示例的精彩之处在于，经过重新定义后，一个程序就只能通过新的受限版本来调用原来那个未受限的open函数了。示例将原来不安全的版本保存到了closure的一个私有变量中，从而使得外部再也无法直接访问到原来的版本了。通过这种技术，可以在Lua的语言层面上就构建出一个安全的运行环境，且不失简易性和灵活性。相对于提供一套大而全的解决方案，Lua提供的则是一套“元机制”，因此可以根据特定的安全需要来创建一个安全的运行环境。
+&emsp;&emsp;这个示例的精彩之处在于，经过重新定义后，一个程序就只能通过新的受限版本来调用原来那个未受限的open函数了。示例将原来不安全的版本保存到了closure的一个私有变量中，从而使得外部再也无法直接访问到原来的版本了。通过这种技术，可以在Lua的语言层面上就构建出一个安全的运行环境，且不失简易性和灵活性。相对于提供一套大而全的解决方案，Lua提供的则是一套“元机制”，因此可以根据特定的安全需要来创建一个安全的运行环境。
 
 🔚
