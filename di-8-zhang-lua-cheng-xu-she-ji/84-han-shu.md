@@ -380,9 +380,11 @@ Lua中的函数可以接受不同数量的实参。
 
 &emsp;&emsp;现在假设要单独创建一个函数来做这项工作：
 
-function sortbygrade(names, grades)
-	table.sort(names, function(n1, n2) return grades[n1] > grades[n2] end)
-end
+```lua
+    function sortbygrade(names, grades)
+        table.sort(names, function(n1, n2) return grades[n1] > grades[n2] end)
+    end
+```
 
 &emsp;&emsp;在上例中有一点很有趣，传递给sort的匿名函数可以访问参数grades，而grades是外部函数sortbygrade的局部变量。在这个匿名函数内部，grades既不是全局变量也不是局部变量，将其称为一个“非局部的变量”。
 
