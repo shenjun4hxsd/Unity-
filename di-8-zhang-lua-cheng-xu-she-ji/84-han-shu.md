@@ -389,16 +389,18 @@ Lua中的函数可以接受不同数量的实参。
 &emsp;&emsp;在上例中有一点很有趣，传递给sort的匿名函数可以访问参数grades，而grades是外部函数sortbygrade的局部变量。在这个匿名函数内部，grades既不是全局变量也不是局部变量，将其称为一个“非局部的变量”。
 
 
-为什么在Lua中允许这种访问呢？原因在于函数是“第一类值”。考虑以下代码：
+&emsp;&emsp;为什么在Lua中允许这种访问呢？原因在于函数是“第一类值”。考虑以下代码：
 
-function newCounter()
-	local i = 0
-	return function() i = i + 1 return i; end
-end
+```lua
+    function newCounter()
+        local i = 0
+        return function() i = i + 1 return i; end
+    end
 
-c1 = newCounter()
-print(c1())		-->  1
-print(c2())		-->  2
+    c1 = newCounter()
+    print(c1())		-->  1
+    print(c2())		-->  2
+```
 
 在这段代码中，匿名函数访问了一个“非局部的变量”i，该变量用于保持一个计数器。
 初看上去，由于创建变量i的函数（newCounter）已经返回，所以之后每次调用匿名函数时，i都应是已超出了作用范围的。但其实不然，Lua会以closure的概念来正确地处理这种情况。简单地讲，一个closure就是一个函数加上该函数所需访问的所有“非局部的变量”。如果再次调用newCounter，那么它会创建一个新的局部变量i，从而也将得到一个新的closure：
