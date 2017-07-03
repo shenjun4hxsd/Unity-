@@ -462,73 +462,73 @@ Lua中的函数可以接受不同数量的实参。
 
 ####非全局的函数
 
-由于函数是一种“第一类值”，因此一个显而易见的推论就是，函数不仅可以存储在全局变量中，还可以存储在table的字段中和局部变量中。
+&emsp;&emsp;由于函数是一种“第一类值”，因此一个显而易见的推论就是，函数不仅可以存储在全局变量中，还可以存储在table的字段中和局部变量中。
 前面讲到了几个将函数存储在table字段中的示例，大部分Lua库也采用了这种机制（例如io.read、math.sin）。若要在Lua中创建这种函数，只需将常规的函数语法与table语法结合起来使用即可：
 
 ```lua
-Lib = {}
-Lib.foo = function(x, y) return x + y end
-Lib.goo = function(x, y) return x - y end
+    Lib = {}
+    Lib.foo = function(x, y) return x + y end
+    Lib.goo = function(x, y) return x - y end
 ```
 
 当然，还可以使用构造式：
 
 ```lua
-Lib = {
-foo = function(x, y) return x + y end,
-goo = function(x, y) return x - y end
-}
+    Lib = {
+        foo = function(x, y) return x + y end,
+        goo = function(x, y) return x - y end
+    }
 ```
 
-除了这些之外，Lua还提供了另一种语法来定义这类函数：
+&emsp;&emsp;除了这些之外，Lua还提供了另一种语法来定义这类函数：
 
 ```lua
-Lib = {}
-function Lib.foo(x, y) return x + y end
-function Lib.goo(x, y) return x - y end
+    Lib = {}
+    function Lib.foo(x, y) return x + y end
+    function Lib.goo(x, y) return x - y end
 ```
 
-只要将一个函数存储到一个局部变量中，即得到了一个“局部函数”，也就是说该函数只能在某个特定的作用域中使用。对于“程序包”而言，这种函数定义是非常有用的。因为Lua是将每个程序块作为一个函数来处理的，所以在一个程序块中声明的函数就是局部函数，这些局部函数只在该程序块中可见。词法域确保了程序包中的其他函数可以使用这些局部函数：
+&emsp;&emsp;只要将一个函数存储到一个局部变量中，即得到了一个“局部函数”，也就是说该函数只能在某个特定的作用域中使用。对于“程序包”而言，这种函数定义是非常有用的。因为Lua是将每个程序块作为一个函数来处理的，所以在一个程序块中声明的函数就是局部函数，这些局部函数只在该程序块中可见。词法域确保了程序包中的其他函数可以使用这些局部函数：
 
 ```lua
-local f = function(<参数>)
-	<函数体>
-end
+    local f = function(<参数>)
+        <函数体>
+    end
 
-local g = function(<参数>)
-	<一些代码>
-f()				-- 'f' 在这里是可见的
-	<一些代码>
-end
+    local g = function(<参数>)
+        <一些代码>
+        f()
+        <一些代码>
+    end
 ```
 
-对于这种局部函数的定义，Lua还支持一种特殊的“语法糖”：
+&emsp;&emsp;对于这种局部函数的定义，Lua还支持一种特殊的“语法糖”：
 
 ```lua
-local function f(<参数>)
-	<函数体>
-end
+    local function f(<参数>)
+        <函数体>
+    end
 ```
 
-在定义递归的局部函数时，还有一个特别之处需要注意。像下面这种采用了基本函数定义语法的代码多数是错误的：
+&emsp;&emsp;在定义递归的局部函数时，还有一个特别之处需要注意。像下面这种采用了基本函数定义语法的代码多数是错误的：
 
 ```lua
-local fact = function(n)
-if n == 0 then return 1
-else return n * fact(n-1)		-- 错误
-end
-end
+    local fact = function(n)
+        if n == 0 then return 1
+        else return n * fact(n-1)		-- 错误
+        end
+    end
 ```
 
-当Lua编译到函数体中调用fact(n-1)的地方时，由于局部的fact尚未定义完毕，因此这句表达式其实是调用了一个全局的fact，而非此函数自身。为了解决这个问题，可以先定义一个局部变量，然后再定义函数本身：
+&emsp;&emsp;当Lua编译到函数体中调用fact(n-1)的地方时，由于局部的fact尚未定义完毕，因此这句表达式其实是调用了一个全局的fact，而非此函数自身。为了解决这个问题，可以先定义一个局部变量，然后再定义函数本身：
 
 ```lua
-local fact
-fact = function(n)
-if n == 0 then return 1
-else return n * fact(n-1)
-end
-end
+    local fact
+    fact = function(n)
+        if n == 0 then return 1
+        else return n * fact(n-1)
+        end
+    end
 ```
 
 🔚
