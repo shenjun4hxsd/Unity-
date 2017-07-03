@@ -330,9 +330,9 @@ Lua中的函数可以接受不同数量的实参。
 
 &emsp;&emsp;table库提供了一个函数table.sort，它接受一个table并对其中的元素排序。像这种函数就必须支持各种各样可能的排序准则，例如升序还是降序、按数字顺序还是按字符顺序或者按table中key的顺序等。sort函数并没有提供所有这些排序准则，而是提供了一个可选的参数，所谓“次序函数”。这个函数接受两个元素，并返回在有序情况下第一个元素是否应排在第二个元素之前。举例来说，假设有一个table内容如下：
 
-```lua
-    -- 假设有一个table内容如下：
+&emsp;&emsp;假设有一个table内容如下：
 
+```lua
     network = {
         {name = "grauna", IP = "210.26.30.34"},
         {name = "arraial", IP = "210.26.30.23"},
@@ -341,13 +341,17 @@ Lua中的函数可以接受不同数量的实参。
     }
 ```
 
-如果想以name字段、按反向的字符顺序来对这个table排序的话，只需这么写：
+&emsp;&emsp;如果想以name字段、按反向的字符顺序来对这个table排序的话，只需这么写：
 
-table.sort(network, function(a,b) return (a.name > b.name) end)
+```lua
+    table.sort(network, function(a,b) return (a.name > b.name) end)
+```
 
-for i, v in ipairs( network ) do
-	print( v["name"] )
-end
+```lua
+    for i, v in ipairs( network ) do
+        print( v["name"] )
+    end
+```
 
 可见匿名函数在这条语句中酒显示出了极好的便捷性。
 
