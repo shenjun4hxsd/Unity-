@@ -531,43 +531,43 @@ Lua中的函数可以接受不同数量的实参。
     end
 ```
 
-现在函数中的fact调用就表示了局部变量。即使在函数定义时，这个局部变量的值尚未完成定义，但之后在函数执行时，fact则肯定已经拥有了正确的值。
+&emsp;&emsp;现在函数中的fact调用就表示了局部变量。即使在函数定义时，这个局部变量的值尚未完成定义，但之后在函数执行时，fact则肯定已经拥有了正确的值。
 
-当Lua展开局部函数定义的“语法糖”时，并不是使用基本函数定义语法。而是对于局部函数定义：
+&emsp;&emsp;当Lua展开局部函数定义的“语法糖”时，并不是使用基本函数定义语法。而是对于局部函数定义：
 
 ```lua
-local funciton foo(<参数>) <函数体> end
+    local funciton foo(<参数>) <函数体> end
 ```
 
-Lua将其展开为：
+&emsp;&emsp;Lua将其展开为：
 
 ```lua
-local foo
-foo = function(<参数>) <函数体> end
+    local foo
+    foo = function(<参数>) <函数体> end
 ```
 
-因此，使用这种语法来定义递归函数不会产生错误：
+&emsp;&emsp;因此，使用这种语法来定义递归函数不会产生错误：
 
 ```lua
-local function fact(n)
-if n == 0 then return 1
-else return n * fact(n-1)
-end
-end
+    local function fact(n)
+        if n == 0 then return 1
+        else return n * fact(n-1)
+        end
+    end
 ```
 
-当然，这个技巧对于间接递归的函数而言是无效的。在间接递归的情况中，必须使用一个明确的前向声明：
+&emsp;&emsp;当然，这个技巧对于间接递归的函数而言是无效的。在间接递归的情况中，必须使用一个明确的前向声明：
 
 ```lua
-local f, g 		-- 前向声明
+    local f, g 		-- 前向声明
 
-function g()
-<一些代码> f() <一些代码>
-end
+    function g()
+        <一些代码> f() <一些代码>
+    end
 
-function f()
-<一些代码> g() <一些代码>
-end
+    function f()
+        <一些代码> g() <一些代码>
+    end
 ```
 
 🔚
