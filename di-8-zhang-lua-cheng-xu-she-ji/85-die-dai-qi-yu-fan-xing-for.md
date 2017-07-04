@@ -164,6 +164,33 @@
 
 ####无状态的迭代器
 
+所谓“无状态的迭代器”，正如其名所暗示的那样，就是一种自身不保存任何状态的迭代器。因此，我们可以在多个循环中使用同一个无状态的迭代器，避免创建新的closure开销。
 
+在每次迭代中，for循环都会用恒定状态和控制变量来调用迭代器函数。一个无状态的迭代器可以根据这两个值来为下次迭代生成下一个元素。这类迭代器的一个典型例子就是ipairs，它可以用来迭代一个数组的所有元素：
+
+```lua
+a = {"one", "two", "three"}
+for i, v in ipairs(a) do
+print(i, v)
+end
+```
+
+在这里，迭代的状态就是需要遍历的table（一个恒定状态，它不会在循环中改变）及当前的索引值（控制变量）。ipairs（工厂）和迭代器都非常简单，在Lua中就可以编写出来：
+
+```lua
+local function iter(a, i)
+i = i + 1
+local v = a[i]
+if v then
+return i, v
+end
+end
+
+function ipairs(a)
+return iter, a, 0
+end
+```
+
+在Lua调用for循环中的ipairs(a)时，它会获得3个值：迭代器函数iter、恒定状态a和控制变量的初值0。然后Lua调用iter(a, 0)，得到1，a[1]。在第二次迭代中，继续调用iter(a,1)，得到2，a[2]，以此类推，直至得到第一个nil元素为止。
 
 🔚
