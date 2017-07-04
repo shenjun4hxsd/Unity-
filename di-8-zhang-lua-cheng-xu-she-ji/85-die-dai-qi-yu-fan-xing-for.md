@@ -32,3 +32,14 @@
 		print( element )
 	end
 ```
+
+&emsp;&emsp;作为示例，来为列表编写一个简单的迭代器。与ipairs不同的是该迭代器并不是返回每个元素的索引，而是返回元素的值：
+
+```lua
+    function values(t)
+        local i = 0
+        return function() i = i + 1; return t[i] end
+    end
+```
+
+&emsp;&emsp;在本例中，values就是一个工厂。每当调用这个工厂时，它就创建一个新的closure（即迭代器本身）。这个closure将它的状态保存在其外部变量t和i中。每当调用这个迭代器时，它就从列表t中返回下一个值。直到最后一个元素返回后，迭代器就会返回nil，以此表示迭代的结束。
