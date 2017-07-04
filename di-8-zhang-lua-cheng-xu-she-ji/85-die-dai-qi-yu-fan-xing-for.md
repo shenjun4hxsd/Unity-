@@ -99,3 +99,8 @@
         end
     end
 ```
+
+&emsp;&emsp;
+
+####泛型for的语义
+
