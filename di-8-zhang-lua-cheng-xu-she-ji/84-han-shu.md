@@ -616,56 +616,59 @@ Lua中的函数可以接受不同数量的实参。
     return (g(x))					-- 必须调整为一个返回值
 ```
 
-在Lua中，只有“return <func>(<args>)”这样的调用形式才算是一条“尾调用”。Lua会在调用前对<func>及其参数求值，所以它们可以是任意复杂的表达式。
+&emsp;&emsp;在Lua中，只有“`return <func>(<args>)`”这样的调用形式才算是一条“尾调用”。Lua会在调用前对`<func>`及其参数求值，所以它们可以是任意复杂的表达式。
 
-举例来说，下面的调用就是一条“尾调用”：
+&emsp;&emsp;举例来说，下面的调用就是一条“尾调用”：
 
 ```lua
-return x[i].foo(x[j] + a * b, i + j)
+    return x[i].foo(x[j] + a * b, i + j)
 ```
-在之前提到了，一条“尾调用”就好比是一条goto语句。因此，在Lua中“尾调用”的一大应用就是编写“状态机”。这种程序通常以一个函数来表示一个的状态，改变状态就是goto（或调用）到另一个特定的函数。举一个简单的迷宫游戏的例子来说明这个问题。
+&emsp;&emsp;在之前提到了，一条“尾调用”就好比是一条goto语句。因此，在Lua中“尾调用”的一大应用就是编写“状态机”。这种程序通常以一个函数来表示一个的状态，改变状态就是goto（或调用）到另一个特定的函数。举一个简单的迷宫游戏的例子来说明这个问题。
 
-例如，一个迷宫有几间房间，每间房间中最多有东南西北4扇门。用户在每一步移动中都需要输入一个移动的方向。如果在某个方向上有门，那么用户可以进入相应的房间；不然，程序就打印一条警告。游戏目标就是让用户从最初的房间走到最终的房间。
+&emsp;&emsp;例如，一个迷宫有几间房间，每间房间中最多有东南西北4扇门。用户在每一步移动中都需要输入一个移动的方向。如果在某个方向上有门，那么用户可以进入相应的房间；不然，程序就打印一条警告。游戏目标就是让用户从最初的房间走到最终的房间。
 
-这个游戏就是一种典型的状态机，其中当前房间就是一个状态。可以将迷宫中的每间房间实现为一个函数，并使用“尾调用”来实现从一间房间移动到另一间房间。在以下代码中，实现一个具有4间房间的迷宫：
+&emsp;&emsp;这个游戏就是一种典型的状态机，其中当前房间就是一个状态。可以将迷宫中的每间房间实现为一个函数，并使用“尾调用”来实现从一间房间移动到另一间房间。在以下代码中，实现一个具有4间房间的迷宫：
 
 ```lua
-function room1()
-local move = io.read()
-if move == "south" then return room3()
-elseif move == "east" then return room2()
-else print("invalid move")
-return room1()			-- stay in the same room
-end
-end
+    function room1()
+        local move = io.read()
+        if move == "south" then return room3()
+        elseif move == "east" then return room2()
+        else 
+            print("invalid move")
+            return room1()			-- stay in the same room
+        end
+    end
 
-function room2()
-local move = io.read()
-if move == "south" then return room4()
-elseif move == "west" then return room1()
-else print("invalid move")
-return room2()			-- stay in the same room
-end
-end
+    function room2()
+        local move = io.read()
+        if move == "south" then return room4()
+        elseif move == "west" then return room1()
+        else 
+            print("invalid move")
+            return room2()			-- stay in the same room
+        end
+    end
 
-function room3()
-local move = io.read()
-if move == "north" then return room1()
-elseif move == "east" then return room4()
-else print("invalid move")
-return room3()			-- stay in the same room
-end
-end
+    function room3()
+        local move = io.read()
+        if move == "north" then return room1()
+        elseif move == "east" then return room4()
+        else 
+            print("invalid move")
+            return room3()			-- stay in the same room
+        end
+    end
 
-function room4()
-print("congratulations!")
-end
+    function room4()
+        print("congratulations!")
+    end
 ```
 
-通过调用初始房间来开始这个游戏：
+&emsp;&emsp;通过调用初始房间来开始这个游戏：
 
 ```lua
-room1()
+    room1()
 ```
 
 
