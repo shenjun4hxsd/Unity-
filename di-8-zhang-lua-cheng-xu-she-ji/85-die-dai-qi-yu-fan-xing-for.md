@@ -247,7 +247,7 @@
 >```lua
     -- 链表的实现
 
->    node = {}
+>     node = {}
     head = node
 
 >-- 初始化
@@ -261,7 +261,7 @@
         node = node.next
     end
 
->    init(10)
+>     init(10)
     push_back(8)
     push_back(6)
 
