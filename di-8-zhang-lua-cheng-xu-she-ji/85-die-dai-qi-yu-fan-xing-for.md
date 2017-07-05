@@ -194,7 +194,7 @@
 &emsp;&emsp;在Lua调用for循环中的ipairs(a)时，它会获得3个值：迭代器函数iter、恒定状态a和控制变量的初值0。然后Lua调用iter(a, 0)，得到1，a[1]。在第二次迭代中，继续调用iter(a,1)，得到2，a[2]，以此类推，直至得到第一个nil元素为止。
 
 
-&emsp;&emsp;函数pairs与ipairs类似，也是用于遍历一个table中的所有元素。不同的是，它的迭代器函数是Lua中的一个基本函数next。
+&emsp;&emsp;**函数pairs与ipairs类似，也是用于遍历一个table中的所有元素。不同的是，它的迭代器函数是Lua中的一个基本函数next。**
 
 ```lua
     function pairs(t)
