@@ -202,7 +202,7 @@
     end
 ```
 
-&emsp;&emsp;在调用next(t,k)时，k是table t的一个key。此调用会以table中的任意次序返回一组值：此table的下一个key，及这个key所对应的值。而调用next(t,nil)时，返回table的第一组值。而调用next(t,nil)时，返回table的第一组值。若没有下一组值时，next返回nil。
+&emsp;&emsp;在调用next(t,k)时，k是table t的一个key。此调用会以table中的任意次序返回一组值：此table的下一个key，及这个key所对应的值。而调用next(t,nil)时，返回table的第一组值。若没有下一组值时，next返回nil。
 
 &emsp;&emsp;有些用户喜欢不通过pairs调用而直接使用next:
 
