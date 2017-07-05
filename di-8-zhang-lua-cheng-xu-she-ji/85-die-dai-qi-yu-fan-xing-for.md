@@ -265,6 +265,7 @@
     push_back(8)
     push_back(6)
 
+>    -- 迭代器函数
 >    local function getnext(list, node)
         if node then
             return node.next
