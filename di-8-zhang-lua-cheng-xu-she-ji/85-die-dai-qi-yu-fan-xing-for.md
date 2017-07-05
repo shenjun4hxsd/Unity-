@@ -244,6 +244,44 @@
     end
 ```
 
+>```lua
+    -- 链表的实现
+
+>    node = {}
+    head = node
+
+>-- 初始化
+    function init(v)
+        node.val = v
+    end
+
+>-- 在尾部插入
+    function push_back(v)
+        node.next = {val = v}
+        node = node.next
+    end
+
+>    init(10)
+    push_back(8)
+    push_back(6)
+
+>    local function getnext(list, node)
+        if node then
+            return node.next
+        else
+            return list
+        end
+    end
+
+>    function traverse( list )
+        return getnext, list, nil
+    end
+
+>    for v in traverse(head) do
+        print( v.val )
+    end
+```
+
 &emsp;&emsp;
 
 ####具有复杂状态的迭代器
