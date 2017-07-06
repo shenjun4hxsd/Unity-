@@ -265,8 +265,8 @@
     push_back(8)
     push_back(6)
 
->    -- 迭代器函数
->    local function getnext(list, node)
+>     -- 迭代器函数
+>     local function getnext(list, node)
         if node then
             return node.next
         else
@@ -274,11 +274,11 @@
         end
     end
 
->    function traverse( list )
+>     function traverse( list )
         return getnext, list, nil
     end
 
->    for v in traverse(head) do
+>     for v in traverse(head) do
         print( v.val )
     end
 ```
