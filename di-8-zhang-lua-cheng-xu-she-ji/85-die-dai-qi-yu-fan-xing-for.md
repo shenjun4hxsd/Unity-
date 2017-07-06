@@ -303,7 +303,7 @@
     end
 ```
 
-&emsp;&emsp;iterator函数菜开始真正的工作：
+&emsp;&emsp;iterator函数才开始真正的工作：
 
 
 ```lua
