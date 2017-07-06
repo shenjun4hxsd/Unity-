@@ -291,4 +291,38 @@
 
 &emsp;&emsp;作为该技术的一个示例，将重写allwords迭代器，这个迭代器可以遍历当前输入文件中的所有单词。这次将它的状态保存到一个table中，这个table具有两个字段：line和pos。
 
+
+&emsp;&emsp;迭代的起始函数比较简单，它只需返回迭代器函数和初始状态：
+
+```lua
+    local iterator		-- 在后面定义
+
+    function  allwords()
+        local state = {line = io.read(), pos = 1}
+        return iterator, state
+    end
+```
+
+&emsp;&emsp;iterator函数菜开始真正的工作：
+
+
+```lua
+    function iterator(state)
+        while state.line do 		-- 若为有效的行内容就进入循环
+            -- 搜索下一个单词
+            local s, e = string.find(state.line, "%w+", state.pos)
+            if s then 			-- 找到了一个单词？
+                -- 更新下一个位置（到这个单词之后）
+                state.pos = e + 1
+                return string.sub(state.line, s, e)
+            else 		-- 没有找到单词
+                state.line = io.read()		-- 尝试下一行...
+                state.pos = 1		-- 从第一个位置开始
+            end
+        end
+        return nil 			-- 没有更多行了，结束循环
+    end
+```
+
+
 🔚
