@@ -347,4 +347,21 @@
     end
 ```
 
+
+&emsp;&emsp;使用这个迭代器时，需要传入一个描述循环体的函数。例如，只想打印每个单词，那么可以使用print：
+
+```lua
+    allwords(print)
+```
+
+&emsp;&emsp;通常，还可以使用一个匿名函数作为循环体。例如，以下代码计算了单词“hello”在输入文件中出现的次数：
+
+```lua
+    local count = 0
+    allwords(function(w)
+    if w == "hello" then count = count + 1 end
+    end)
+    print(count)
+```
+
 🔚
