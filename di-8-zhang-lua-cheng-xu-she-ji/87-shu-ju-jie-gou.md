@@ -50,4 +50,18 @@
 
 &emsp;&emsp;
 
-####
+####矩阵与多维数组
+
+&emsp;&emsp;在Lua中，有两种方式来表示矩阵。第一种是使用一个“数组的数组”，也就是说，一个table中的每个元素是另一个table。例如，使用以下代码来创建N×M的零矩阵：
+
+```lua
+    mt = {}                -- 创建矩阵
+    for i = 1, N do
+        mt[i] = {}             -- 创建一个新行
+        for j = 1, M do
+            mt[i][j] = 0
+        end
+    end
+```
+
+&emsp;&emsp;由于在Lua中table是一种对象，
