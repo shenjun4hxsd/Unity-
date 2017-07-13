@@ -282,49 +282,50 @@
 ```
 
 
-然后，定义主机和下载的文件。本例，将从World Wide Consortium（环球网协会）下载《HTML 3.2参考规范》。
+&emsp;&emsp;然后，定义主机和下载的文件。本例，将从World Wide Consortium（环球网协会）下载《HTML 3.2参考规范》。
 
 ```lua
-host = "www.w3.org"
-file = "/TR/REC-html32.html"
-```
-接下来，打开一个TCP连接，连接到该站点的80端口。
-
-```lua
-c = assert(socket.connect(host, 80))
+    host = "www.w3.org"
+    file = "/TR/REC-html32.html"
 ```
 
-这步操作将返回一个连接对象，可以用它来发送文件请求。
+&emsp;&emsp;接下来，打开一个TCP连接，连接到该站点的80端口。
 
 ```lua
-c:send("GET" .. file .. "HTTP/1.0\r\n\r\n")
+    c = assert(socket.connect(host, 80))
 ```
 
-下一步，按1K的字节块来接收文件，并将每块写到标准输出：
+&emsp;&emsp;这步操作将返回一个连接对象，可以用它来发送文件请求。
 
 ```lua
-while true do
-	local s, status, partial = c:receive(2^10)
-	io.write(s or partial)
-if status == "closed" then break end
-end
+    c:send("GET" .. file .. "HTTP/1.0\r\n\r\n")
+```
+
+&emsp;&emsp;下一步，按1K的字节块来接收文件，并将每块写到标准输出：
+
+```lua
+    while true do
+        local s, status, partial = c:receive(2^10)
+        io.write(s or partial)
+        if status == "closed" then break end
+    end
 ```
 
 
-在正常情况下receive函数会返回一个字符串。若发生错误，则会返回nil，并且附加错误代码（status）及出错前读取到的内容（partial）。当主机关闭连接时，就将其余接收到的内容打印出来，然后退出接收循环。
+&emsp;&emsp;在正常情况下receive函数会返回一个字符串。若发生错误，则会返回nil，并且附加错误代码（status）及出错前读取到的内容（partial）。当主机关闭连接时，就将其余接收到的内容打印出来，然后退出接收循环。
 
-下载完文件后，关闭连接。
+&emsp;&emsp;下载完文件后，关闭连接。
 
 ```lua
-c:close()
+    c:close()
 ```
 
-现在已经掌握了如何下载一个文件，那么再回到下载几个文件的问题上。最繁琐的做法是逐个地下载文件。因为，这种顺序的做法太慢了，它只能在下载完一个文件后才开始读取该文件。当接收一个远程文件时，程序将大部分的时间花费在等待数据接收上。更明确地说，是将时间用在了对receive阻塞调用上。因此，如果一个程序可以同时下载所有文件的话，那么它的运行速度就可以快很多了。当一个连接没有可用数据时，程序便可以从其他连接处读取数据。很明显协同程序提供了一种简便的方式来构建这种并发下载的结构。可以为每个下载任务创建一个新的线程，只要一个线程无可用数据，它就可以将控制权转让给一个简单的调度程序，而这个调度程序则会去调用其他的下载线程。
+&emsp;&emsp;现在已经掌握了如何下载一个文件，那么再回到下载几个文件的问题上。最繁琐的做法是逐个地下载文件。因为，这种顺序的做法太慢了，它只能在下载完一个文件后才开始读取该文件。当接收一个远程文件时，程序将大部分的时间花费在等待数据接收上。更明确地说，是将时间用在了对receive阻塞调用上。因此，如果一个程序可以同时下载所有文件的话，那么它的运行速度就可以快很多了。当一个连接没有可用数据时，程序便可以从其他连接处读取数据。很明显协同程序提供了一种简便的方式来构建这种并发下载的结构。可以为每个下载任务创建一个新的线程，只要一个线程无可用数据，它就可以将控制权转让给一个简单的调度程序，而这个调度程序则会去调用其他的下载线程。
 
-在以协同程序来重写程序前，先将前面的下载代码重新写为一个函数。代码如下：
+&emsp;&emsp;在以协同程序来重写程序前，先将前面的下载代码重新写为一个函数。代码如下：
 
 ```lua
-function download(host, file)
+    function download(host, file)
 	local c = assert(socket.connect(host, 80))
 	local count = 0 		-- 记录接收到的字节数
 	c:send("GET " .. file .. "HTTP/1.0\r\n\r\n")
