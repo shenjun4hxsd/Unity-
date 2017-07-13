@@ -347,17 +347,17 @@
     end
 ```
 
-而在并发的实现中，这个函数在接收数据时绝对不能阻塞。因此，它需要在没有足够的可用数据时挂起执行。新代码如下：
+&emsp;&emsp;而在并发的实现中，这个函数在接收数据时绝对不能阻塞。因此，它需要在没有足够的可用数据时挂起执行。新代码如下：
 
 ```lua
-function receive(connection)
-connection.settimeout(0) 	-- 使recevie调用不会阻塞
-local s, status, partial = connection:receive(2^20)
-if status == "timeout" then
-coroutine.yield(connection)
-end
-return s or partial, status
-end
+    function receive(connection)
+        connection.settimeout(0) 	-- 使recevie调用不会阻塞
+        local s, status, partial = connection:receive(2^20)
+        if status == "timeout" then
+            coroutine.yield(connection)
+        end
+        return s or partial, status
+    end
 ```
 
 对settimeout(0)的调用可使以后所有对此连接进行的操作不会阻塞。若一个操作返回的status为“timeout（超时）”，就表示该操作在返回时还未完成。此时，线程就会挂起执行。而以非假的参数来调用yield，可以告诉调度程序线程仍在执行任务中。注意，即使在超时的情况下，连接也是会返回已经读取到的内容，即记录在partial变量中的值。
