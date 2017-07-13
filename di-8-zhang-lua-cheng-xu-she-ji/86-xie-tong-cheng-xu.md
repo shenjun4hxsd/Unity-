@@ -233,7 +233,7 @@
 
 ```lua
     function permutations(a)
-        local co = coroutine.create(function() permgen end)
+        local co = coroutine.create(function() permgen(a) end)
         return function()  -- 迭代器
             local code, res = coroutine.resume(co)
             return res
