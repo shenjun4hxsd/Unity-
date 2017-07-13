@@ -227,3 +227,33 @@
         end
     end
 ```
+
+
+然后，定义一个工厂函数，用于将生成函数放到一个协同程序中运行，并创建迭代器函数。迭代器只是简单地唤醒协同程序，让其产生下一种排列：
+
+function permutations(a)
+	local co = coroutine.create(function() permgen end)
+	return function()  -- 迭代器
+		local code, res = coroutine.resume(co)
+		return res
+	end
+end
+
+有了上面的函数，在for语句中遍历一个数组的所有排列就非常简单了：
+for p in permutations{"a", "b", "c"} do
+	printResult
+end
+
+--> b c a
+--> c a b
+--> a c b
+--> b a c
+--> a b c
+
+permutations函数使用了一种在Lua中比较常见的模式，就是将一条唤醒协同程序的调用包装在一个函数中。由于这种模式比较常见，所以Lua专门提供了一个函数coroutine.wrap来完成这个功能。类似于create，wrap创建了一个新的协同程序。但不同的是，wrap并不是返回协同程序本身，而是返回一个函数。每当调用这个函数，即可唤醒一次协同程序。但这个函数与resume的不同之处在于，它不会返回错误代码。当遇到错误时，它会引发错误。若使用wrap，可以这么写permutations：
+
+```lua
+function permutations(a)
+return coroutine.wrap(function() permgen(a) end)
+end
+```
