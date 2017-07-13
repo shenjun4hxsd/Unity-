@@ -169,3 +169,56 @@
 
 
 &emsp;&emsp;为了说明这类应用，下面来写一个迭代器，使其可以遍历某个数组的所有排列组合形式。若直接编写这种迭代器可能不太容易，但若编写一个递归函数来产生所有的排列组合则不会很困难。想法很简单，只要将每个数组元素都依次放在最后一个位置，然后递归地生成其余元素的排列。代码如下：
+
+
+function permgen(a, n)
+	n = n or #a 		-- 默认n为a的大小
+	if n <= 1 then
+		printResult(a)
+	else
+		for i = 1, n do
+			-- 将第i个元素放到数组末尾
+			a[n], a[i] = a[i], a[n]
+			-- 生成其余元素的排列
+			permgen(a, n - 1)
+			-- 恢复第i个元素
+			a[n], a[i] = a[i], a[n]
+		end
+	end
+end
+
+然后，还需要定义其中调用到的打印函数printResult，并以适当的参数来调用permgen：
+
+function printResult(a)
+	for i = 1, #a do
+		io.write(a[i], " ")
+	end
+	io.write("\n")
+end
+
+permgen({1, 2, 3, 4})
+
+--> 2 3 4 1
+--> 3 2 4 1
+--> 3 4 2 1
+...
+--> 2 1 3 4
+--> 1 2 3 4
+
+当生成函数完成后，将其转换为一个迭代器就非常容易了。首先，将printResult改为yield：
+
+function permgen(a, n)
+	n = n or #a
+	if n <= 1 then
+		coroutine.yield(a)
+	else
+		for i = 1, n do
+			-- 将第i个元素放到数组末尾
+			a[n], a[i] = a[i], a[n]
+			-- 生成其余元素的排列
+			permgen(a, n - 1)
+			-- 恢复第i个元素
+			a[n], a[i] = a[i], a[n]
+		end
+	end
+end
