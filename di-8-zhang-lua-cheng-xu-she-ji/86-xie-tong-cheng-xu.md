@@ -245,7 +245,7 @@
 
 ```
     for p in permutations{"a", "b", "c"} do
-        printResult
+        printResult(p)
     end
 
     --> b c a
