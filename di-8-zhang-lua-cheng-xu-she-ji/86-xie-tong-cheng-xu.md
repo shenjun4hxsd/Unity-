@@ -346,3 +346,49 @@
         return connection:receive(2^10)
     end
 ```
+
+而在并发的实现中，这个函数在接收数据时绝对不能阻塞。因此，它需要在没有足够的可用数据时挂起执行。新代码如下：
+
+```lua
+function receive(connection)
+connection.settimeout(0) 	-- 使recevie调用不会阻塞
+local s, status, partial = connection:receive(2^20)
+if status == "timeout" then
+coroutine.yield(connection)
+end
+return s or partial, status
+end
+```
+
+对settimeout(0)的调用可使以后所有对此连接进行的操作不会阻塞。若一个操作返回的status为“timeout（超时）”，就表示该操作在返回时还未完成。此时，线程就会挂起执行。而以非假的参数来调用yield，可以告诉调度程序线程仍在执行任务中。注意，即使在超时的情况下，连接也是会返回已经读取到的内容，即记录在partial变量中的值。
+
+以下这段代码展示了调度程序及一些辅助代码。table threads为调度程序保存着所有正在运行中的线程。函数get确保每个下载任务都在一个独立的线程中执行。调度程序本身主要就是一个循环，它遍历所有的线程，逐个唤醒它们的执行。并且当线程完成任务时，将该线程从列表中删除。在所有线程都完成运行后，停止循环。
+
+```lua
+threads = {}  	-- 用于记录所有正在运行的线程
+
+function get(host, file)
+-- 创建协同程序
+local co = coroutine.create(function()
+	download(host, file)
+end)
+-- 将其插入记录表中
+table.insert(threads, co)
+end
+
+function dispatch()
+local i = 1
+while true do
+if threads[i] == nil then 		-- 还有线程吗？
+if threads[1] == nil then break end 	-- 列表是否为空？
+i = 1 			-- 重新开始循环
+end
+local status, res = coroutine.resume(threads[i])
+if not res then 				-- 线程是否已经完成了任务？
+table.remove(threads, i)
+else
+i = i + 1
+end
+end
+end
+```
