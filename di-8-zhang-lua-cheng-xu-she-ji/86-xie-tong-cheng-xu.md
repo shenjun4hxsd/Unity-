@@ -188,23 +188,25 @@
     end
 ```
 
-然后，还需要定义其中调用到的打印函数printResult，并以适当的参数来调用permgen：
+&emsp;&emsp;然后，还需要定义其中调用到的打印函数printResult，并以适当的参数来调用permgen：
 
-function printResult(a)
-	for i = 1, #a do
-		io.write(a[i], " ")
-	end
-	io.write("\n")
-end
+```lua
+    function printResult(a)
+        for i = 1, #a do
+            io.write(a[i], " ")
+        end
+        io.write("\n")
+    end
 
-permgen({1, 2, 3, 4})
+    permgen({1, 2, 3, 4})
 
---> 2 3 4 1
---> 3 2 4 1
---> 3 4 2 1
-...
---> 2 1 3 4
---> 1 2 3 4
+    --> 2 3 4 1
+    --> 3 2 4 1
+    --> 3 4 2 1
+    ...
+    --> 2 1 3 4
+    --> 1 2 3 4
+```
 
 当生成函数完成后，将其转换为一个迭代器就非常容易了。首先，将printResult改为yield：
 
