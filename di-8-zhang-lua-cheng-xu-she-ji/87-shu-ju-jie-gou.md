@@ -138,3 +138,6 @@
         return {first = 0, last = -1}
     end
 ```
+
+&emsp;&emsp;为了避免污染全局名称空间，将在一个table内部定义所有的队列操作，这个table且称为List。这样，将上例重新写为：
+
