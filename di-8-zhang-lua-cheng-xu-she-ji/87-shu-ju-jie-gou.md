@@ -214,21 +214,21 @@
     reserved = Set {"while", "end", "function", "local"}
 ```
 
-包，有时也称为“多重集合（Multiset）”，与普通的集合的不同之处在于其每个元素可以出现多次。在Lua中包的表示类似于上面的集合表示，只不过包需要将一个计数器与table的key关联。若要插入一个元素，则需要递增其计数器：
+&emsp;&emsp;包，有时也称为“多重集合（Multiset）”，与普通的集合的不同之处在于其每个元素可以出现多次。在Lua中包的表示类似于上面的集合表示，只不过包需要将一个计数器与table的key关联。若要插入一个元素，则需要递增其计数器：
 
 ```lua
-function insert(bag, element)
-bag[element] = (bag[element] or 0) + 1
-end
+    function insert(bag, element)
+        bag[element] = (bag[element] or 0) + 1
+    end
 ```
 
-若要删除一个元素，则需要递减其计数器：
+&emsp;&emsp;若要删除一个元素，则需要递减其计数器：
 
 ```lua
-function remove(bag, element)
-local count = bag[element]
-bag[element] = (count and count > 1) and count - 1 or nil
-end
+    function remove(bag, element)
+        local count = bag[element]
+        bag[element] = (count and count > 1) and count - 1 or nil
+    end
 ```
 
-只有当计数器已存在或大于0时，才保留它。
+&emsp;&emsp;只有当计数器已存在或大于0时，才保留它。
