@@ -114,3 +114,18 @@
 ```lua
     list = {next = list, value = v}
 ```
+
+&emsp;&emsp;遍历此列表：
+
+```lua
+    local l = list
+    while l do
+        <访问l.value>
+        l = l.next
+    end
+```
+
+&emsp;&emsp;至于其他类型的列表，例如双向链表或环形表，都可以使用相同的方法实现。然而，在Lua中很少需要这类结构，因为通常存在着一些更简单的方式来表示数据。例如，可以通过一个（几乎无限大的）数组来表示一个栈。
+
+&emsp;&emsp;
+
