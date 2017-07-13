@@ -188,28 +188,28 @@
 
 ####集合与无序组（bag）
 
-假设列一份程序代码中的所有标识符，并且过滤掉其中所有的保留字。一些C程序员会倾向于使用字符串的数组来表示保留字集合，然后搜索这个数组来查看一个单词是否属于该集合。为了提高搜索的速度，他们可能还会使用二叉树来表示该集合。
+&emsp;&emsp;假设列一份程序代码中的所有标识符，并且过滤掉其中所有的保留字。一些C程序员会倾向于使用字符串的数组来表示保留字集合，然后搜索这个数组来查看一个单词是否属于该集合。为了提高搜索的速度，他们可能还会使用二叉树来表示该集合。
 
-在Lua中有一种高效且简单的方式来表示这类集合，就是将集合元素作为索引放入一个table中。那么对于任意值都无须搜索table，只需用该值来索引table，并查看结果是否为nil。在当前假设的示例中，可如下：
+&emsp;&emsp;在Lua中有一种高效且简单的方式来表示这类集合，就是将集合元素作为索引放入一个table中。那么对于任意值都无须搜索table，只需用该值来索引table，并查看结果是否为nil。在当前假设的示例中，可如下：
 
 ```lua
-reserved = {["while"] = true, ["end"] = true, ["function"] = true, ["local"] = true, }
+    reserved = {["while"] = true, ["end"] = true, ["function"] = true, ["local"] = true, }
 
-for w in allwords() do
-if not reserved[w] then
-<对'w'作任意处理>  		-- 'w'不是保留字
-end
-end
+    for w in allwords() do
+        if not reserved[w] then
+            <对'w'作任意处理>  		-- 'w'不是保留字
+        end
+    end
 ```
 
-若要使初始化过程变得更清晰，可以借助一个辅助函数来创建集合：
+&emsp;&emsp;若要使初始化过程变得更清晰，可以借助一个辅助函数来创建集合：
 
 ```lua
-function Set(list)
-local set = {}
-for _, l in ipairs(list) do set[l] = true end
-return set
-end
+    function Set(list)
+        local set = {}
+        for _, l in ipairs(list) do set[l] = true end
+        return set
+    end
 
-reserved = Set {"while", "end", "function", "local"}
+    reserved = Set {"while", "end", "function", "local"}
 ```
