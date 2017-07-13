@@ -208,20 +208,22 @@
     --> 1 2 3 4
 ```
 
-当生成函数完成后，将其转换为一个迭代器就非常容易了。首先，将printResult改为yield：
+&emsp;&emsp;当生成函数完成后，将其转换为一个迭代器就非常容易了。首先，将printResult改为yield：
 
-function permgen(a, n)
-	n = n or #a
-	if n <= 1 then
-		coroutine.yield(a)
+```lua
+    function permgen(a, n)
+        n = n or #a
+        if n <= 1 then
+            coroutine.yield(a)
 	else
-		for i = 1, n do
-			-- 将第i个元素放到数组末尾
-			a[n], a[i] = a[i], a[n]
-			-- 生成其余元素的排列
-			permgen(a, n - 1)
-			-- 恢复第i个元素
-			a[n], a[i] = a[i], a[n]
-		end
-	end
-end
+            for i = 1, n do
+                -- 将第i个元素放到数组末尾
+                a[n], a[i] = a[i], a[n]
+                -- 生成其余元素的排列
+                permgen(a, n - 1)
+                -- 恢复第i个元素
+                a[n], a[i] = a[i], a[n]
+            end
+        end
+    end
+```
