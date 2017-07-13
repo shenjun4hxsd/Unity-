@@ -105,3 +105,12 @@
 
 &emsp;&emsp;例如，要实现一个基础的列表，其中每个结点具有两个字段：next和value，先创建一个用作列表头结点的变量：
 
+```lua
+    list = nil
+```
+
+&emsp;&emsp;在表头插入一个元素，元素值为v：
+
+```lua
+    list = {next = list, value = v}
+```
