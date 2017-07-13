@@ -339,10 +339,10 @@
     end
 ```
 
-由于对远程文件的内容并不感兴趣，所以不需要将文件内容写到标准输出中，只需计算并打印出文件大小即可。在上述代码中，还使用了一个辅助函数receive来从连接接收数据。在顺序下载的方法中，receive的代码可以是这样的：
+&emsp;&emsp;由于对远程文件的内容并不感兴趣，所以不需要将文件内容写到标准输出中，只需计算并打印出文件大小即可。在上述代码中，还使用了一个辅助函数receive来从连接接收数据。在顺序下载的方法中，receive的代码可以是这样的：
 
 ```lua
-function receive(connection)
-	return connection:receive(2^10)
-end
+    function receive(connection)
+        return connection:receive(2^10)
+    end
 ```
