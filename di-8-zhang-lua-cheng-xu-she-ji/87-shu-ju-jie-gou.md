@@ -364,5 +364,19 @@
     end
 ```
 
+&emsp;&emsp;为了测试上述代码，首先编写一个函数来打印一条路径，然后再编写一些代码来使其运行。
 
+```lua
+    function printpath(path)
+        for i = 1, #path do
+            print(path[i].name)
+        end
+    end
+
+    g = readgraph()
+    a = name2node(g, "a")
+    b = name2node(g, "b")
+    p = findpath(a, b)
+    if p then printpath(p) end
+```
 
