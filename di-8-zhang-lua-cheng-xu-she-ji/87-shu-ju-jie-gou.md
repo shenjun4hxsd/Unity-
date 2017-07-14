@@ -322,22 +322,22 @@
 ```
 
 
-以下这个函数用于构造一个图。它逐行地读取一个文件，文件中的每行都有两个结点名称，表示了在两个结点之间有一条边，边的方向从第一个结点到第二个结点。函数对于每行都使用string.match来切分一行中的两个名称，然后根据名称查找结点（如果需要还会创建结点），最后连接结点。
+&emsp;&emsp;以下这个函数用于构造一个图。它逐行地读取一个文件，文件中的每行都有两个结点名称，表示了在两个结点之间有一条边，边的方向从第一个结点到第二个结点。函数对于每行都使用string.match来切分一行中的两个名称，然后根据名称查找结点（如果需要还会创建结点），最后连接结点。
 
 ```lua
-function readgraph()
-local graph = {}
-for line in io.lines() do
--- 切分行中的两个名称
-local namefrom, nameto = string.match(line, "(%S+)%s+(%S+)")
--- 查找相应的结点
-local from = name2node(graph, namefrom)
-local to = name2node(graph, nameto)
--- 将'to'添加到'from'的邻接集合
-from.adj[to] = true
-end
-return graph
-end
+    function readgraph()
+        local graph = {}
+        for line in io.lines() do
+            -- 切分行中的两个名称
+            local namefrom, nameto = string.match(line, "(%S+)%s+(%S+)")
+            -- 查找相应的结点
+            local from = name2node(graph, namefrom)
+            local to = name2node(graph, nameto)
+            -- 将'to'添加到'from'的邻接集合
+            from.adj[to] = true
+        end
+        return graph
+    end
 ```
 
 
