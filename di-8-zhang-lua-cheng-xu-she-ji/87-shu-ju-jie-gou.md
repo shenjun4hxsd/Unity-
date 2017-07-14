@@ -341,5 +341,28 @@
 ```
 
 
+以下这个函数展示了一个使用图的算法。函数findpath采用深度优先的遍历，在两个结点间搜索一条路径。它的第一个参数是当前结点，第二个参数是其目标结点，第三个参数用于保存从起点到当前结点的路径，最后一个参数是所有已访问过结点的集合（用于避免回路）。注意，该算法直接对结点进行操作，而不是它们的名称。例如，visited是一个结点集合，而不是结点名称的集合。path也一样是一个结点的列表。
+
+```lua
+function findpath(curr, to, path, visited)
+path = path or {}
+visited = visited or {}
+if visited[curr] then 		-- 结点是否已访问过？
+return nil 					-- 这里没有路径
+end
+visited[curr] = true 		-- 将结点标记为已访问过
+path[#path + 1] = curr 		-- 将其加到路径中
+if curr == to then
+return path
+end
+-- 尝试所有的邻接结点
+for node in pairs(curr.adj) do
+local p = findpath(node, to, path, visited)
+if p then return p end
+end
+path[#path] = nil 			-- 从路径中删除结点
+end
+```
+
 
 
