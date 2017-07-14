@@ -12,4 +12,28 @@
 
 &emsp;&emsp;下面通过一个示例来更清楚地理解这种做法。如果数据文件是一种预定义的格式，例如CSV（Comma-Separated Values，逗号分隔值）或XML，那么可以选择的做法很少。不过，如果是为了应用而创建数据文件的话，那么就可以使用Lua的构造式作为格式。在这种格式中，每条数据记录表示为一个Lua构造式。这样，原来以这种形式书写的数据文件：
 
+```lua
+    Donald E. Knuth, Literate Programming, CSLI, 1992
+    Jon Bentley, More Programming Pearls, Addison-Wesley, 1990
+```
 
+&emsp;&emsp;现在可以改为：
+
+```lua
+    Entry{ "Donald E. Knuth",
+           "Literate Programming",
+           "CSLI",
+           1992}
+           
+    Entry{ "Jon Bentley",
+           "More Programming Pearls",
+           "Addison-Wesley",
+           1990}
+```
+
+&emsp;&emsp;记住，`Entry{<code>}`与`Entry{<code>}`是完全等价的，都是以一个table作为参数来调用函数Entry。因此，上面这段数据也是一个Lua程序。为了读取该文件，我们只需定义一个合适的Entry，然后运行此程序就可以了。例如，以下程序计算了数据文件中条目的数量：
+
+```lua
+       local count = 0
+       
+```
