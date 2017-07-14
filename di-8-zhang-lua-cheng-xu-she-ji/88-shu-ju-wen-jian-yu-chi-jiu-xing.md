@@ -39,3 +39,12 @@
     dofile("data")
     print("number of entries: " .. count)
 ```
+
+&emsp;&emsp;下一个程序则可用于收集数据文件中所有作者的姓名，然后打印出这些姓名（不需要与文件中的次序相同）：
+
+```lua
+    local authors = {}            -- 作者姓名的集合
+    function Entry(b) authors[b[1]] = true end
+    dofile("data")
+    for name in pairs(authors) do print(name) end
+```
