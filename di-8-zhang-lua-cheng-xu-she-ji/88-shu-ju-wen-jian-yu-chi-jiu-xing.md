@@ -34,6 +34,8 @@
 &emsp;&emsp;记住，`Entry{<code>}`与`Entry{<code>}`是完全等价的，都是以一个table作为参数来调用函数Entry。因此，上面这段数据也是一个Lua程序。为了读取该文件，我们只需定义一个合适的Entry，然后运行此程序就可以了。例如，以下程序计算了数据文件中条目的数量：
 
 ```lua
-       local count = 0
-       
+    local count = 0
+    function Entry(_) count = count + 1 end
+    dofile("data")
+    print("number of entries: " .. count)
 ```
