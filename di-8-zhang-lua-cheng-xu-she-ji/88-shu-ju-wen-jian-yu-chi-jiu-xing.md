@@ -48,3 +48,23 @@
     dofile("data")
     for name in pairs(authors) do print(name) end
 ```
+
+&emsp;&emsp;可以看到这些代码片段都采用了事件驱动的做法。Entry函数作为一个回调函数，在dofile时为数据文件中的每个条目所调用。
+
+&emsp;&emsp;若文件不是非常大，可以使用名值对来表示每个字段：
+
+```lua
+    Entry{
+        author = "Donald E. Knuth",
+        title = "Literate Programming",
+        publicsher = "CSLI",
+        year = 1992
+    }
+    
+    Entry{
+        author = "Jon Bentley",
+        title = "More Programming Pearls",
+        publicsher = "Addison-Wesley",
+        year = 1990
+    }
+```
