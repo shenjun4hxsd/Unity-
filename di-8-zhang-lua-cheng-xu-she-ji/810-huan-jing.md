@@ -52,3 +52,19 @@
     local temp = a.b.c
     temp.d = v
 ```
+
+&emsp;&emsp;也就是说，必须一直检索到最后一个名称，然后分别进行操作。下面这个函数setfield就完成了这项任务，并且创建路径中间那些不存在的table。
+
+```lua
+    function setfield(f, v)
+        local t = _G            -- 从全局变量的table开始
+        for w, d in string.gmatch(f, "([%w_]+)(%.?)" do
+            if d == "." then    -- 是最后一个字段吗？
+                t[w] = t[w] or {}    -- 如果不存在就创建table
+                t = t[w]        -- 获取该table
+            else                -- 最后的字段
+                t[w] = v        -- 完成赋值
+            end
+        end
+    end
+```
