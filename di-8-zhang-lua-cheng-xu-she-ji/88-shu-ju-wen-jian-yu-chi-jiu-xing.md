@@ -70,3 +70,20 @@
 ```
 
 &emsp;&emsp;这种格式就是“自描述的数据（self-describing data）”格式，其中每项数据都伴随一个表示其含义的简短描述。自描述的数据比CSV或其他紧缩格式更具可读性。当需要修改时，也易于手工编辑，可以在基本格式中作出一个细小的改动，而不需要同时改变数据文件。例如，如果要新增一个字段，只需修改读取程序中的一小块就可以了，内容就是当该字段不存在时提供一个默认值。
+
+&emsp;&emsp;使用名值对格式后，那个收集作者姓名的程序改为：
+
+```lua
+    local authors = {}         -- 作者姓名的集合
+    function Entry(b) authors[b.author] = true end
+    dofile("data")
+    for name in pairs(authors) do print(name) end
+```
+
+&emsp;&emsp;现在字段的次序就不重要了，即使有些条目没有作者字段，也只需要修改Entry函数：
+
+```lua
+    function Entry(b)
+        if b.author then authers[b.author] = true end
+    end
+```
