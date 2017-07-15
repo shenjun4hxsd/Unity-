@@ -74,3 +74,14 @@
 ```lua
     setfield("t.x.y", 10)
 ```
+
+&emsp;&emsp;便创建了两个table：全局t和t.x，并将10赋予t.x.y：
+
+```lua
+    print(t.x.y)                --> 10
+    print(getfield("t.x.y"))    --> 10
+```
+
+&emsp;&emsp;
+
+####全局变量声明
