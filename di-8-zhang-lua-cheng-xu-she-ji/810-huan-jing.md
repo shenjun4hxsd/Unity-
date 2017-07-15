@@ -17,3 +17,19 @@
 ```lua
     value = loadstring("return " .. varname)()
 ```
+
+&emsp;&emsp;如果varname是x，那么连接操作的结果就是字符串“return x”。这段代码就执行了这个字符串，并得到了x的值。然而，在这段代码中包含了一个新程序块的创建和编译。因此可以使用以下代码来完成相同的效果，但效率却比上例高出一个数量级：
+
+```lua
+    value = _G[varname]
+```
+
+&emsp;&emsp;正因为环境是一个常规的table，才可以使用一个key（变量名）去直接索引它。类似地，还可以动态地计算出一个名称，然后将一个值赋予具有该名称的全局变量：
+
+```lua
+    _G[varname] = value
+```
+
+&emsp;&emsp;不过注意，有些程序员对于该技能的运用就有些过度了，他们写出的`_G["a"] = _G["var1"]`，其实就是简单的一句`a=var1`。
+
+&emsp;&emsp;上面问题的一般化形式是，允许使用动态的字段名，如“io.read”或“a.b.c.d”。如果直接写_G["io.read"]则不会从table io中得到字段read。
