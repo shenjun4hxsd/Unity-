@@ -206,34 +206,34 @@ mt.__le = function(a, b)		-- 集合包含
 
 &emsp;&emsp;各种程序库在元表中定义它们自己的字段是很普通的方法。到目前为止介绍的所有元方法都只针对于Lua的核心，也就是一个虚拟机（virtual machine）。它会检测一个操作中的值是否有元表，这些元表中是否定义了关于此操作的元方法。从另一方面说，由于元表也是一种常规的table，所以任何人、任何函数都可以使用它们。
 
-&emsp;&emsp;函数tostring就是一个典型的实例。在前面已介绍过tostring了，它能将各种类型的值表示为一种简单的文本格式：
+&emsp;&emsp;函数`tostring`就是一个典型的实例。在前面已介绍过`tostring`了，它能将各种类型的值表示为一种简单的文本格式：
 
 ```lua
-print({})			--> table: 0x8062ac0
+    print({})			--> table: 0x8062ac0
 ```
 
-&emsp;&emsp;函数print总是调用tostring来格式化其输出。当格式化任意值时，tostring会检查该值是否有一个__tostring的元方法。如果有这个元方法，tostring就用该值作为参数来调用这个元方法。接下来由这个元方法完成实现的工作，它返回的结果也就是tostring的结果。
+&emsp;&emsp;函数`print`总是调用`tostring`来格式化其输出。当格式化任意值时，`tostring`会检查该值是否有一个`__tostring`的元方法。如果有这个元方法，`tostring`就用该值作为参数来调用这个元方法。接下来由这个元方法完成实现的工作，它返回的结果也就是`tostring`的结果。
 
-&emsp;&emsp;在集合的示例中，已定义了一个将集合表示为字符串的函数。接下来要做的就是设置元表的__tostring字段：
+&emsp;&emsp;在集合的示例中，已定义了一个将集合表示为字符串的函数。接下来要做的就是设置元表的`__tostring`字段：
 
 ```lua
     mt.__tostring = Set.tostring
 ```
 
-&emsp;&emsp;此后只要调用print来打印集合，print就会调用tostring函数，进而调用到Set.tostring：
+&emsp;&emsp;此后只要调用`print`来打印集合，`print`就会调用`tostring`函数，进而调用到`Set.tostring`：
 
 ```lua
     s1 = Set.new{10, 4, 5}
     print(s1)				--> {4, 5, 10}
 ```
 
-&emsp;&emsp;函数setmetatable和getmetatable也会用到元表中的一个字段，用于保护元表。假设想要保护集合的元表，使用户既不能看也不能修改集合的元表。那么就需要用到字段__metatable。当设置了该字段时，getmetatable就会返回这个字段的值，而setmetatable则会引发一个错误：
+&emsp;&emsp;函数`setmetatable`和`getmetatable`也会用到元表中的一个字段，用于保护元表。假设想要保护集合的元表，使用户既不能看也不能修改集合的元表。那么就需要用到字段`__metatable`。当设置了该字段时，`getmetatable`就会返回这个字段的值，而`setmetatable`则会引发一个错误：
 
 ```lua
-mt.__metatable = "not your business"
+    mt.__metatable = "not your business"
 
-s1 = Set.new{}
-print(getmetatable(s1))		--> not your business
-setmetatable(s1, {})
-stdin:1: cannot change protected metatable
+    s1 = Set.new{}
+    print(getmetatable(s1))		--> not your business
+    setmetatable(s1, {})
+    stdin:1: cannot change protected metatable
 ```
