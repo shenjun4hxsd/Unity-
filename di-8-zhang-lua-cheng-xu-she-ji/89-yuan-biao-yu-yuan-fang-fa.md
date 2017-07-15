@@ -136,5 +136,7 @@
 &emsp;&emsp;Lua可以包含这些混合类型，但实现需要注意如果执行了s=s+8，那么在Set.union内部就会发生错误：
 
 ```lua
-    
+    bad argument $1 to 'pairs' (table expected, got number)
 ```
+
+&emsp;&emsp;如果
