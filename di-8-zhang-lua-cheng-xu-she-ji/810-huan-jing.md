@@ -100,3 +100,24 @@
         end
     })
 ```
+
+&emsp;&emsp;执行过这段代码后，所有对全局table中不存在key的访问都将引发一个错误：
+
+```lua
+    >print(a)
+    stdin:1: attempt to read undeclared variable a
+```
+
+&emsp;&emsp;但是该如何声明一个新的变量呢？其一是使用rawset，它可以绕过元表：
+
+```lua
+    function declare(name, initval)
+        rawset(_G, name, initval or false)
+    end
+```
+
+&emsp;&emsp;另外一种更简单的方法就是只允许在主程序块中对全局变量进行赋值，那么当声明以下变量时：
+
+```lua
+    a = 1
+```
