@@ -349,5 +349,71 @@ mt.__le = function(a, b)		-- 集合包含
 &emsp;&emsp;
 
 
+#####● 跟踪table的访问
 
+&emsp;&emsp;`__index`和`__newindex`都是在table中没有所需访问的index时才发挥作用的。因此，只有将一个table保持为空，才有可能捕捉到所有对它的访问。为了监视一个table的所有访问，就应该为真正的table创建一个代理。这个代理就是一个空的table，其中`__index`和`__newindex`元方法可用于跟踪所有的访问，并将访问重定向到原来的table上。假设，我们想跟踪table t的访问。那么可以这么做：
+
+```lua
+    t = {} 				-- 原来的table(在其他地方创建的)
+
+    -- 保持对原table的一个私有访问
+    local _t = t
+
+    -- 创建代理
+    t = {}
+
+    -- 创建元表
+    local mt = {
+        __index = function(t, k)
+            print("*access to element " .. tostring(k))
+            return _t[k]		-- 访问原来的table
+        end,
+
+        __newindex = function(t, k, v)
+            print("*update of element " .. tostring(k) .. " to " .. tostring(v))
+            _t[k] = v 			-- 更新原来的table
+    }
+    setmetatable(t, mt)
+```
+
+&emsp;&emsp;这段代码跟踪了所有对t的访问：
+
+```lua
+    >t[2] = "hello"
+    *update of element 2 to hello
+    >print(t[2])
+    *access to element 2
+    hello
+```
+
+&emsp;&emsp;但上例中的方法存在一个问题，就是无法遍历原来的table。函数pairs只能操作代理table，而无法访问原来的table。
+
+&emsp;&emsp;如果想要同时监视几个table，无须为每个table创建不同的元表。相反，只要以某种形式将每个代理与原来table关联起来，并且所有代理都共享一个公共的元表。这个问题与上节所讨论的将table与其默认值相关联的问题类似。例如将原来的table保存在代理table的一个特殊的字段中。代码如下：
+
+```lua
+    local index = {}			-- 创建私有索引
+
+    local mt = {
+        __index = function(t, k)
+            print("*access to element " .. tostring(k))
+            return t[index][k]	-- 访问原来的table
+        end,
+
+        __newindex = function(t, k, v)
+            print("*update of element " .. tostring(k) .. " to " .. tostring(v))
+            t[index][k] = v 	-- 更新原来的table
+        end
+    }
+
+    function track(t)
+        local proxy = {}
+        proxy[index] = t
+        setmetatable(proxy, mt)
+        return proxy
+    end
+```
+
+&emsp;&emsp;现在，若要监视table t，唯一要做的就是执行：t = track(t)。
+
+&emsp;&emsp;
 
