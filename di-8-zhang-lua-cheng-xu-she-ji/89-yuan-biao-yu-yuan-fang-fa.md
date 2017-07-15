@@ -164,35 +164,35 @@
 
 ```lua
 mt.__le = function(a, b)		-- 集合包含
-for k in pairs(a) do
-if not b[k] then return false end
-end
-return true
-end
+              for k in pairs(a) do
+                  if not b[k] then return false end
+              end
+              return true
+           end
 
-mt.__lt = function(a, b)
-return a<=b and not (b<=a)
-end
+    mt.__lt = function(a, b)
+                  return a<=b and not (b<=a)
+              end
 ```
 
 &emsp;&emsp;最后，还可以定义集合的相等性判断：
 
 ```lua
-mt.__eq = function(a, b)
-return a <= b and b <= a
-end
+    mt.__eq = function(a, b)
+                  return a <= b and b <= a
+              end
 ```
 
 &emsp;&emsp;有了这些定义后，就可以比较集合了：
 
 ```lua
-s1 = Set.new{2, 4}
-s2 = Set.new{4, 10, 2}
-print(s1 <= s2)			-- true
-print(s1 < s2)			-- true
-print(s1 >= s1)			-- true
-print(s1 > s1)			-- false
-print(s1 == s2 * s1)	-- true
+    s1 = Set.new{2, 4}
+    s2 = Set.new{4, 10, 2}
+    print(s1 <= s2)			-- true
+    print(s1 < s2)			-- true
+    print(s1 >= s1)			-- true
+    print(s1 > s1)			-- false
+    print(s1 == s2 * s1)	-- true
 ```
 
 &emsp;&emsp;与算术类的元方法不同的是，关系类的元方法不能应用于混合的类型。对于混合类型而言，关系类元方法的行为就模拟这些操作符在Lua中普通的行为。如果试图将一个字符串与一个数字作顺序性比较，Lua会引发一个错误。同样，如果试图比较两个具有不同元方法的对象，Lua也会引发一个错误。
