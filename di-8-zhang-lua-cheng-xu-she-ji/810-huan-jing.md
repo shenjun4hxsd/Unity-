@@ -37,7 +37,7 @@
 ```lua
     function getfield(f)
         local v = _G        -- 从全局变量的table开始
-        for v in string.gmatch(f, "[%w_]+") do
+        for w in string.gmatch(f, "[%w_]+") do
             v = v[w]
         end
         return v
