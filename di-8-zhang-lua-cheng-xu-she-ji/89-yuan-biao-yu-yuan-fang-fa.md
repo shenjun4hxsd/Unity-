@@ -92,3 +92,12 @@
         return set
     end
 ```
+
+&emsp;&emsp;在此之后，所有由Set.new创建的集合都具有一个相同的元表：
+
+```lua
+    s1 = Set.new{10, 20, 30, 50}
+    s2 = Set.new{30, 1}
+    print(getmetatable(s1))    --> table: 00672B60
+    print(getmetatable(s2))    --> table: 00672B60
+```
