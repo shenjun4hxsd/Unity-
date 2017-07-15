@@ -86,4 +86,17 @@
 
 ####全局变量声明
 
-&emsp;&emsp;Lua中的全局变量不需要声明就可以使用。对于小型程序来说较为方便，但在大型程序中，一处简单的笔误就有可能造成难以发现的错误。
+&emsp;&emsp;Lua中的全局变量不需要声明就可以使用。对于小型程序来说较为方便，但在大型程序中，一处简单的笔误就有可能造成难以发现的错误。不过这种性能可以改变。由于Lua将全局变量存放在一个普通的table中，则可以通过元表来改变其访问全局变量时的行为。
+
+&emsp;&emsp;一种方法是简单地检测所有对全局table中不存在key的访问：
+
+```lua
+    setmetatable(_G, {
+        __newindex = function(_, n)
+            error("attemp to write to undeclared variable " .. n, 2)
+        end,
+        __index = function(_, n)
+            error("attempt to read undeclared variable " .. n, 2)
+        end
+    })
+```
