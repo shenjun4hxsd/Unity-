@@ -59,3 +59,19 @@
         return res
     end
 ```
+
+&emsp;&emsp;为了帮助检查此示例，还定义了一个用于打印集合的函数：
+
+```lua
+    function Set.tostring(set)
+        local l = {}        -- 用于存放集合中所有元素的列表
+        for e in pairs(set) do
+            l[#l + 1] = e
+        end
+        return "{" .. table.concat(l, ", " .. "}"
+    end
+    
+    function Set.print(s)
+        print(Set.tostring(s))
+    end
+```
