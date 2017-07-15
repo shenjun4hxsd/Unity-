@@ -184,26 +184,26 @@
 
 ####保存无环的table
 
-下一个任务是保存table。保存table有几种方法，选用哪种方法取决于对table的结构作出了哪些限制性的假设。没有一种算法适用于所有的情况。简单的table不仅需要更简单的算法，而且需要更完美地输出结果。
+&emsp;&emsp;下一个任务是保存table。保存table有几种方法，选用哪种方法取决于对table的结构作出了哪些限制性的假设。没有一种算法适用于所有的情况。简单的table不仅需要更简单的算法，而且需要更完美地输出结果。
 
 第一个算法如下：
 
 ```lua
-function serialize(o)
-if type(o) == "number" then
-io.write(o)
-elseif type(o) == "string" then
-io.write(string.format("%q", o)) then
-elseif type(o) == "table" then
-io.write("{\n")
-for k, v in pairs(o) do
-io.write(" ", k, " = ")
-serialize(v)
-io.write(",\n")
-end
-io.write("}\n")
-else
-error("cannot serialize a " .. type(o))
-end
-end
+    function serialize(o)
+        if type(o) == "number" then
+            io.write(o)
+        elseif type(o) == "string" then
+            io.write(string.format("%q", o)) then
+        elseif type(o) == "table" then
+            io.write("{\n")
+            for k, v in pairs(o) do
+                io.write(" ", k, " = ")
+                serialize(v)
+                io.write(",\n")
+            end
+            io.write("}\n")
+        else
+            error("cannot serialize a " .. type(o))
+        end
+    end
 ```
