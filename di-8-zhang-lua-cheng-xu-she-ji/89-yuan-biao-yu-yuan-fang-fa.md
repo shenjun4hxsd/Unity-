@@ -139,4 +139,18 @@
     bad argument $1 to 'pairs' (table expected, got number)
 ```
 
-&emsp;&emsp;如果
+&emsp;&emsp;如果想要得到更清楚的错误消息，则必须在实际操作前显式地检查操作数的类型：
+
+```lua
+    function Set.union(a, b)
+        if getmetatable(a) ~= mt or getmetatable(b) ~= mt then
+            error("attempt to 'add' a set with a non-set value", 2)
+        end
+        <与前例相同的内容>
+```
+
+&emsp;&emsp;注意，error的第二个参数（上例中的2）用于指示哪个函数调用造成了该错误消息。
+
+&emsp;&emsp;
+
+####
