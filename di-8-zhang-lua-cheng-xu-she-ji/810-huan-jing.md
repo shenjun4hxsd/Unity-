@@ -47,3 +47,8 @@
 &emsp;&emsp;依靠string库中的gmatch来遍历f中所有的单词。
 
 &emsp;&emsp;与之对应的设置字段的函数则稍显复杂。像`a.b.c.d = v`这样的赋值等价于以下代码：
+
+```lua
+    local temp = a.b.c
+    temp.d = v
+```
