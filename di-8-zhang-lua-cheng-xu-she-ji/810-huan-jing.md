@@ -123,3 +123,13 @@
 ```
 
 &emsp;&emsp;就只需检查此赋值是否在主程序块中。这可以使用`debug`库，调用`debug.getinfo(2, "S")`将返回一个`table`，其中的字段`what`表示了调用元方法的函数是主程序块还是普通的Lua函数，又或是C函数。可以通过该函数将`__newindex`元方法重写为：
+
+```lua
+    __newindex = function(t, n, v)
+        local w = debug.getinfo(2, "S").what
+        if w ~= "main" and w ~= "C" then
+            error("attempt to write to undeclared variable " .. n, 2)
+        end
+        rawset(t, n, v)
+    end
+```
