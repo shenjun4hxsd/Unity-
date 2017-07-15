@@ -121,3 +121,5 @@
 ```lua
     a = 1
 ```
+
+&emsp;&emsp;就只需检查此赋值是否在主程序块中。这可以使用`debug`库，调用`debug.getinfo(2, "S")`将返回一个table
