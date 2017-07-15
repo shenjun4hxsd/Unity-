@@ -92,4 +92,63 @@
 
 &emsp;&emsp;
 
-####
+####串行化（Serialization）
+
+&emsp;&emsp;通常需要串行化一些数据，也就是将数据转换为一个字节流或字符流。然后就可以将其存储到一个文件中，或者通过网络连接发送出去了。串行化后的数据可以用Lua代码来表示，这样当运行这些代码时，存储的数据就可以在读取程序中得到重构了。
+
+&emsp;&emsp;如果想要恢复一个全局变量的值，那么串行化的结果或许可以是“`varname = <exp>`”，其中`<exp>`是一段用于创建该值的代码。例如，对于一个数字值，方法如下：
+
+```lua
+    function serialize(o)
+        if type(o) == "number" then
+            io.write(o)
+        else 
+            <其他情况>
+        end
+    end
+```
+
+&emsp;&emsp;对于一个字符串值，方法如下：
+
+```lua
+    if type(o) == "string" then
+        io.write("'", o, "'")
+```
+
+&emsp;&emsp;然而，如果字符串中包含特殊字符（例如引号、换行），那么最终代码就不是一段有效的Lua程序了。
+
+&emsp;&emsp;也可以使用另一种字符串字面表示方法，如下所示：
+
+```lua
+    if type(o) == "string" then
+        io.write("[[", o "]]")
+```
+
+&emsp;&emsp;注意，如果有用户故意使其字符串为 “]]..os.execute('rm *')..[[”，那么最终保存下来的结果将变成：
+
+```lua
+    varname = [[]]..os.execute('rm *')..[[]]
+```
+
+&emsp;&emsp;若加载这个“数据”将会出现不可估量的后果。
+
+&emsp;&emsp;可以使用一种简单且安全的方法来扩住一个字符串，那就是以“%q”来使用string.format函数。这样它就会用双引号来括住字符串，并且正确地转移其中的双引号和换行符等其他特殊字符。
+
+```lua
+    a = 'a "problematic"\\string'
+    print(string.format("%q", a))        --> "a \"problematic\" \\string"
+```
+
+&emsp;&emsp;通过使用这个特性，serialize函数可以改为：
+
+```lua
+    function serialize(o)
+        if type(o) == "number" then
+            io.write(o)
+        elseif type(o) == "string" then
+            io.write(string.format("%q", o))
+        else
+            <其他情况>
+        end
+    end
+```
