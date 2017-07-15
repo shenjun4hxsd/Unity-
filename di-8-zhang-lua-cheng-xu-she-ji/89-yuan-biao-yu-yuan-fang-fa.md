@@ -31,3 +31,16 @@
 &emsp;&emsp;
 
 ####算术类的元方法
+
+&emsp;&emsp;在本节中，会引入一个简单的示例，以说明如何使用元表。假设用table来表示集合，并且有一些函数用来计算集合的并集和交集等。为了保持名称空间的整齐，则将这些函数存入一个名为Set的table中。
+
+```lua
+    Set = {}
+    
+    -- 根据参数列表中的值创建一个新的集合
+    function Set.new(l)
+        local set = {}
+        for _, v in ipairs(l) do set[v] = true end
+        return set
+    end
+```
