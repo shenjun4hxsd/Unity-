@@ -253,3 +253,38 @@
 
 &emsp;&emsp;
 
+####保存有环的table
+
+若要处理具有任意拓扑结构（带环的table或共享子table）的table，就需要采用另外一种方法了，table构造式是无法表示这类table的。所以为了表示“环”，则需要引入名称，接下来这个保存函数要求将待保存的值及其名称一起作为参数传入。此外，还必须持有一份所有已保持过的table的名称记录，以此来检测环并复用其中的table。使用一个额外的table用作此项纪录，这个table以其他table作为key，并以其他table的名称作为value。代码如下：
+
+```lua
+function basicSerialize(o)
+if type(o) == "number" then
+return tostring(o)
+else 			-- assume it is a string
+return string.format("%q", o)
+end
+end
+
+function save(name, value, saved)
+saved = saved or {} 		-- 初始值
+io.write(name, " = ")
+if type(value) == "number" or type(value) == "string" then
+io.write(basicSerialize(value), "\n")
+elseif type(value) == "table" then
+if saved[value] then 		-- 该value是否已保存过？
+io.write(saved[value], "\n") 		-- 使用先前的名字
+else
+saved[value] = name 		-- 为下次使用保持名字
+io.write("{}\n") 			-- 创建一个新的table
+for k, v in pairs(value) do
+k = basicSerialize(k)
+local fname = string.format("%s[%s]", name, k)
+save(fname, v, saved)
+end
+end
+else
+error("cannot save a " .. type(value))
+end
+end
+```
