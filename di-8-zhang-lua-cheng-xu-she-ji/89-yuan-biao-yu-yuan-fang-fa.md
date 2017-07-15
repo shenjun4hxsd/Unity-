@@ -239,3 +239,66 @@ mt.__le = function(a, b)		-- 集合包含
 ```
 
 &emsp;&emsp;
+
+####table访问的元方法
+
+&emsp;&emsp;算术类和关系类元算符的元方法都为各种错误情况定义了行为，它们不会改变语言的常规行为。但是Lua还提供了一种可以改变table行为的方法。有两种可以改变的table行为：查询table及修改table中不存在的字段。
+
+#####__index元方法
+
+当访问一个table中不存在的字段时，得到的结果为nil。这是对的，但并非完全正确。实际上，这些访问会促使解释器去查找一个叫__index的元方法。如果没有这个元方法，那么访问结果如前述的为nil。否则，就由这个元方法来提供最终结果。
+
+&emsp;&emsp;下面将介绍一个有关继承的典型示例。假设要创建一些描述窗口的table，每个table中必须描述一些窗口参数，例如位置、大小及主题颜色等。所有这些参数都有默认值，因此希望在创建窗口对象时可以仅指定那些不同于默认值的参数。第一种方法是使用一个构造式，在其中填写那些不存在的字段。第二种方法是让新窗口从一个原型窗口处继承所有不存在的字段。首先，声明一个原型和一个构造函数，构造函数创建新的窗口，并使它们共享同一个元表：
+
+```lua
+Window = {} 		-- 创建一个名字空间
+-- 使用默认值来创建一个原型
+Window.prototype = {x=0, y=0, width=100, height=100}
+Window.mt = {} 		-- 创建元表
+-- 声明构造函数
+function Window.new(o)
+    setmetatable(o, Window.mt)
+    return o
+end
+```
+
+&emsp;&emsp;现在，来定义`__index`元方法：
+
+```lua
+    Window.mt.__index = function(table, key)
+        return Window.prototype[key]
+    end
+```
+
+&emsp;&emsp;在这段代码之后，创建一个新窗口，并查询一个它没有的字段：
+
+```lua
+    w = Window.new{x=10, y=20}
+    print(w.width)			--> 100
+```
+
+&emsp;&emsp;若Lua检测到`w`中没有某字段，但在其元表中却有一个`__index`字段，那么Lua就会以`w(table)`和“`width`”（不存在的key）来调用这个`__index`元方法。随后元方法用这个key来索引原型table，并返回结果。
+
+&emsp;&emsp;在Lua中，将`__index`元方法用于继承是很普通的方法，因此Lua还提供了一种更便捷的方式来实现此功能。`__index`元方法不必一定是一个函数，它还可以是一个table。当它是一个函数时，Lua以table和不存在的key作为参数来调用该函数，这就如同上述内容。而当它是一个table时，Lua就以相同的方式来重新访问这个table。因此，前例中`__index`的声明可以简单地写为：
+
+```lua
+    Window.mt.__index = Window.prototype
+```
+
+&emsp;&emsp;现在，当Lua查找到元表的`__index`字段时，发现`__index`字段的值是一个table，那么Lua就会在Window.prototype中继续查找。也就是说，Lua会在这个table中重复这个访问过程，类似于执行这样的代码：
+
+```lua
+    Window.prototype["width"]
+```
+
+&emsp;&emsp;然后由这次访问给出想要的结果。
+
+&emsp;&emsp;将一个table作为`__index`元方法是一种快捷的、实现单一继承的方式。虽然将函数作为`__index`来实现相同功能的开销较大，但函数更加灵活。可以通过函数来实现多重继承、缓存及其他一些功能。
+
+&emsp;&emsp;如果不想在访问一个table时涉及到它的`__index`元方法，可以使用函数`rawget`。调用`rawget(t, i)`就是对table t进行了一个“原始的(raw)”访问，也就是一次不考虑元表的简单访问。一次原始访问并不会加速代码执行，但有时会用到它。
+
+#####__newindex元方法
+
+&emsp;&emsp;`__newindex`元方法与`__index`类似，不同之处在于前者用于table的更新，而后者用于table的查询。当对一个table中不存在的索引赋值时，解释器就会查找`__newindex`元方法。如果有这个元方法，解释器就调用它，而不是执行赋值。如果这个元方法是一个table，解释器就在此table中执行赋值，而不是对原来的table。此外，还有一个原始函数允许绕过元方法：调用`rawset(t,k,v)`就可以不涉及任何元方法而直接设置table t中与key k相关联的value v。
+
+&emsp;&emsp;组合使用`__index`和`__newindex`元方法就可以实现出Lua中的一些强大功能，例如，只读的table、具有默认值的table和面向对象编程中的继承。
