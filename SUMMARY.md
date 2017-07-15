@@ -267,7 +267,7 @@
   * [8.6 协同程序](di-8-zhang-lua-cheng-xu-she-ji/86-xie-tong-cheng-xu.md)
   * [8.7 数据结构](di-8-zhang-lua-cheng-xu-she-ji/87-shu-ju-jie-gou.md)
   * [8.8 数据文件与持久性](di-8-zhang-lua-cheng-xu-she-ji/88-shu-ju-wen-jian-yu-chi-jiu-xing.md)
-  * 8.9 元表与元方法
+  * [8.9 元表与元方法](di-8-zhang-lua-cheng-xu-she-ji/89-yuan-biao-yu-yuan-fang-fa.md)
   * 8.10 模块与包
   * 8.11 面向对象编程
 
