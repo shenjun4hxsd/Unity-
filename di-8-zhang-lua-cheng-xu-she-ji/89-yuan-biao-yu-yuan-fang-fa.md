@@ -417,3 +417,30 @@ mt.__le = function(a, b)		-- 集合包含
 
 &emsp;&emsp;
 
+#####● 只读的table
+
+&emsp;&emsp;通过代理的概念，可以很容易地实现出只读的table。只需跟踪所有对table的更新操作，并引发一个错误就可以了。由于无须跟踪查询访问，所以对于`__index`元方法可以直接使用原table来代替函数。这也更简单，并且在重定向所有查询到原table时效率也更高。不过，这种做法要求为每个只读代理创建一个新的元表，其中`__index`指向原来的table。
+
+```lua
+    function readOnly(t)
+        local proxy = {}
+        local mt = {  			-- 创建元表
+            __index = t,
+            __nexindex = function(t, k, v)
+                error("attempt to update a read-only table", 2)
+            end
+        }
+        setmetatable(proxy, mt)
+        return proxy
+    end
+```
+
+&emsp;&emsp;下面是一个使用的示例，创建了一个表示星期的只读table：
+
+```lua
+    days = readOnly{"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"}
+
+    print(days[1])				-- Sunday
+    days[2] = "Noday"
+    stdin:1: attempt to update a read-only table
+```
