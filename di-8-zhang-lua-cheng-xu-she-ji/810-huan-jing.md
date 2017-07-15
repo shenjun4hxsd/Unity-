@@ -37,9 +37,13 @@
 ```lua
     function getfield(f)
         local v = _G        -- 从全局变量的table开始
-        for v in string.gmatch(f, "[%w_]+" do
+        for v in string.gmatch(f, "[%w_]+") do
             v = v[w]
         end
         return v
     end
 ```
+
+&emsp;&emsp;依靠string库中的gmatch来遍历f中所有的单词。
+
+&emsp;&emsp;与之对应的设置字段的函数则稍显复杂。像`a.b.c.d = v`这样的赋值等价于以下代码：
