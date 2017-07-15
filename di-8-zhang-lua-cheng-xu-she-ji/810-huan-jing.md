@@ -5,3 +5,15 @@
 ```lua
     for n in pairs(_G) do print(n) end
 ```
+
+&emsp;&emsp;在本章中，将看到几种关于环境操作的实用技术。
+
+&emsp;&emsp;
+
+####具有动态名字的全局变量
+
+&emsp;&emsp;对于访问和设置全局变量，通常赋值操作就可以了。不过，有时也会用到一些元编程（meta-programming）的形式。例如，当操作一个全局变量时，而它的名称却存储在另一个变量中，或者需要通过运行时的计算才能得到。为了获取这个变量的值，许多程序员都试图写出这样的代码：
+
+```lua
+    value = loadstring("return " .. varname)()
+```
