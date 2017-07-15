@@ -122,4 +122,4 @@
     a = 1
 ```
 
-&emsp;&emsp;就只需检查此赋值是否在主程序块中。这可以使用`debug`库，调用`debug.getinfo(2, "S")`将返回一个table
+&emsp;&emsp;就只需检查此赋值是否在主程序块中。这可以使用`debug`库，调用`debug.getinfo(2, "S")`将返回一个`table`，其中的字段`what`表示了调用元方法的函数是主程序块还是普通的Lua函数，又或是C函数。可以通过该函数将`__newindex`元方法重写为：
