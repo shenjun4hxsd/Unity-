@@ -244,7 +244,7 @@ mt.__le = function(a, b)		-- 集合包含
 
 &emsp;&emsp;算术类和关系类元算符的元方法都为各种错误情况定义了行为，它们不会改变语言的常规行为。但是Lua还提供了一种可以改变table行为的方法。有两种可以改变的table行为：查询table及修改table中不存在的字段。
 
-#####__index元方法
+#####● __index元方法
 
 当访问一个table中不存在的字段时，得到的结果为nil。这是对的，但并非完全正确。实际上，这些访问会促使解释器去查找一个叫__index的元方法。如果没有这个元方法，那么访问结果如前述的为nil。否则，就由这个元方法来提供最终结果。
 
@@ -297,7 +297,7 @@ mt.__le = function(a, b)		-- 集合包含
 
 &emsp;&emsp;如果不想在访问一个table时涉及到它的`__index`元方法，可以使用函数`rawget`。调用`rawget(t, i)`就是对table t进行了一个“原始的(raw)”访问，也就是一次不考虑元表的简单访问。一次原始访问并不会加速代码执行，但有时会用到它。
 
-#####__newindex元方法
+#####● __newindex元方法
 
 &emsp;&emsp;**`__newindex`元方法与`__index`类似，不同之处在于前者用于table的更新，而后者用于table的查询**。当对一个table中不存在的索引赋值时，解释器就会查找`__newindex`元方法。如果有这个元方法，解释器就调用它，而不是执行赋值。如果这个元方法是一个table，解释器就在此table中执行赋值，而不是对原来的table。此外，还有一个原始函数允许绕过元方法：调用`rawset(t,k,v)`就可以不涉及任何元方法而直接设置table t中与key k相关联的value v。
 
@@ -305,4 +305,43 @@ mt.__le = function(a, b)		-- 集合包含
 
 &emsp;&emsp;
 
+#####● 具有默认值的table
 
+&emsp;&emsp;常规table中的任何字段默认都是nil。通过元表就可以很容易地修改这个默认值：
+
+```lua
+    function setDefault(t, d)
+        local mt = {__index = function() return d end}
+        setmetatable(t, mt)
+    end
+
+    tab = {x=10, y=20}
+    print(tab.x, tab.z)			--> 10 nil
+    setDefault(tab, 0)
+    print(tab.x, tab.z)			--> 10 0
+```
+
+&emsp;&emsp;在调用`setDefault`后，任何对tab中存在字段的访问都将调用它的`__index`元方法，而这个元方法会返回0（这个元方法中d的值）。
+
+&emsp;&emsp;`setDefault`函数为所有需要默认值的table创建了一个新的元表。如果准备创建很多需要默认值的table，这种方法的开销或许就比较大了。由于在元表中默认值d是与元方法关联在一起的，所以`setDefault`无法为所有table都使用同一个元表。若要让具有不同默认值的table都使用同一个元表，那么就需要将每个元表的默认值都存放到table本身中。可以使用额外的字段来保持默认值。如果不担心名字冲突的话，可以使用“`___`”这样的key作为这个额外的字段：
+
+```lua
+    local mt = {__index = function(t) return t.___ end}
+    function setDefault(t, d)
+        t.___ = d
+        setmetatable(t, mt)
+    end
+```
+
+&emsp;&emsp;如果担心名称冲突，那么要确保这个特殊key的唯一性也很容易。只需创建一个新的table，并用它作为key即可：
+
+```lua
+    local key = {} 			-- 唯一的key
+    local mt = {__index = function(t) return t[key] end}
+    function setDefault(t, d)
+        t[key] = d
+        setmetatable(t, mt)
+    end
+```
+
+&emsp;&emsp;还有一种方法可以将table与其默认值关联起来：使用一个独立的table，它的key为各种table，value就是各种table的默认值。不过，为了正确地实现这种做法，我们还需要一种特殊性质的table，就是“弱引用table(Weak Table)”。在这里我们就不使用它了。将在后续章节中详细讨论。
