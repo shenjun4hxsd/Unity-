@@ -302,3 +302,7 @@ mt.__le = function(a, b)		-- 集合包含
 &emsp;&emsp;**`__newindex`元方法与`__index`类似，不同之处在于前者用于table的更新，而后者用于table的查询**。当对一个table中不存在的索引赋值时，解释器就会查找`__newindex`元方法。如果有这个元方法，解释器就调用它，而不是执行赋值。如果这个元方法是一个table，解释器就在此table中执行赋值，而不是对原来的table。此外，还有一个原始函数允许绕过元方法：调用`rawset(t,k,v)`就可以不涉及任何元方法而直接设置table t中与key k相关联的value v。
 
 &emsp;&emsp;组合使用`__index`和`__newindex`元方法就可以实现出Lua中的一些强大功能，例如，只读的table、具有默认值的table和面向对象编程中的继承。
+
+&emsp;&emsp;
+
+
