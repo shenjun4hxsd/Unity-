@@ -102,7 +102,7 @@
     print(getmetatable(s2))    --> table: 00672B60
 ```
 
-&emsp;&emsp;最后，将元方法加入元表中。在本例中，这个元方法就是用于描述如何完成加法的__add字段。
+&emsp;&emsp;最后，将元方法加入元表中。在本例中，这个元方法就是用于描述如何完成加法的`__add`字段。
 
 ```lua
     mt.__add = Set.union
