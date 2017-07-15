@@ -344,4 +344,4 @@ mt.__le = function(a, b)		-- 集合包含
     end
 ```
 
-&emsp;&emsp;还有一种方法可以将table与其默认值关联起来：使用一个独立的table，它的key为各种table，value就是各种table的默认值。不过，为了正确地实现这种做法，我们还需要一种特殊性质的table，就是“弱引用table(Weak Table)”。在这里我们就不使用它了。将在后续章节中详细讨论。
+&emsp;&emsp;还有一种方法可以将table与其默认值关联起来：使用一个独立的table，它的key为各种table，value就是各种table的默认值。不过，为了正确地实现这种做法，我们还需要一种特殊性质的table，就是“`弱引用table(Weak Table)`”。在这里我们就不使用它了。将在后续章节中详细讨论。
