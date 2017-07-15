@@ -32,4 +32,14 @@
 
 &emsp;&emsp;不过注意，有些程序员对于该技能的运用就有些过度了，他们写出的`_G["a"] = _G["var1"]`，其实就是简单的一句`a=var1`。
 
-&emsp;&emsp;上面问题的一般化形式是，允许使用动态的字段名，如“io.read”或“a.b.c.d”。如果直接写_G["io.read"]则不会从table io中得到字段read。
+&emsp;&emsp;上面问题的一般化形式是，允许使用动态的字段名，如“io.read”或“a.b.c.d”。如果直接写_G["io.read"]则不会从table io中得到字段read。但可以写一个函数`getfield`来实现这个效果，即通过调用`getfield("io.read")`返回所要求的结果。这个函数是一个循环，从`_G`开始逐个字段地深入求值：
+
+```lua
+    function getfield(f)
+        local v = _G        -- 从全局变量的table开始
+        for v in string.gmatch(f, "[%w_]+" do
+            v = v[w]
+        end
+        return v
+    end
+```
