@@ -251,15 +251,15 @@ mt.__le = function(a, b)		-- 集合包含
 &emsp;&emsp;下面将介绍一个有关继承的典型示例。假设要创建一些描述窗口的table，每个table中必须描述一些窗口参数，例如位置、大小及主题颜色等。所有这些参数都有默认值，因此希望在创建窗口对象时可以仅指定那些不同于默认值的参数。第一种方法是使用一个构造式，在其中填写那些不存在的字段。第二种方法是让新窗口从一个原型窗口处继承所有不存在的字段。首先，声明一个原型和一个构造函数，构造函数创建新的窗口，并使它们共享同一个元表：
 
 ```lua
-Window = {} 		-- 创建一个名字空间
--- 使用默认值来创建一个原型
-Window.prototype = {x=0, y=0, width=100, height=100}
-Window.mt = {} 		-- 创建元表
--- 声明构造函数
-function Window.new(o)
-    setmetatable(o, Window.mt)
-    return o
-end
+    Window = {} 		-- 创建一个名字空间
+    -- 使用默认值来创建一个原型
+    Window.prototype = {x=0, y=0, width=100, height=100}
+    Window.mt = {} 		-- 创建元表
+    -- 声明构造函数
+    function Window.new(o)
+        setmetatable(o, Window.mt)
+        return o
+    end
 ```
 
 &emsp;&emsp;现在，来定义`__index`元方法：
