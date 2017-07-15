@@ -76,8 +76,19 @@
     end
 ```
 
-&emsp;&emsp;假设使用加号（+）来计算两个集合的并集，那么就需要让所有用于表示集合的table共享一个元表，并且在该元表中定义如何执行一个加法操作。第一步是创建一个常规的table，准备用作集合的元表：
+&emsp;&emsp;假设使用加号（`+`）来计算两个集合的并集，那么就需要让所有用于表示集合的table共享一个元表，并且在该元表中定义如何执行一个加法操作。第一步是创建一个常规的table，准备用作集合的元表：
 
 ```lua
     local mt = {}        -- 集合的元表
+```
+
+&emsp;&emsp;下一步是修改Set.new函数。这个函数是用于创建集合的，在新版本中只加了一行，即将mt设置为当前所创建table的元表：
+
+```lua
+    function Set.new(l)        -- 第2版
+        local set = {}
+        setmetatable(set, mt)
+        for _, v in ipairs(l) do set[v] = true end
+        return set
+    end
 ```
