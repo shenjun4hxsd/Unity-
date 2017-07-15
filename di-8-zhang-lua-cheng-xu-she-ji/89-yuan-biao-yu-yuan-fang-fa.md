@@ -413,7 +413,7 @@ mt.__le = function(a, b)		-- 集合包含
     end
 ```
 
-&emsp;&emsp;现在，若要监视table t，唯一要做的就是执行：t = track(t)。
+&emsp;&emsp;现在，若要监视table t，唯一要做的就是执行：`t = track(t)`。
 
 &emsp;&emsp;
 
