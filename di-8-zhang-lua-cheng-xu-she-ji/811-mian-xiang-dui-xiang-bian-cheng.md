@@ -140,5 +140,10 @@
 &emsp;&emsp;在b上调用deposit方法时，self就是b，就相当于执行了：
 
 ```lua
-
+    b.balance = b.balance + v
 ```
+
+&emsp;&emsp;在第一次调用deposit时，对表达式b.balance的求值结果为0，然后一个初值被赋予了b.balance。后续对b.balance的访问就不会再涉及到__index元方法了，因为此时b已有自己的balance字段。
+
+&emsp;&emsp;
+
