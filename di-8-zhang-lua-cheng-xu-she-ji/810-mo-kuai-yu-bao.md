@@ -115,3 +115,6 @@
     c:\windows\sql
     /usr/local/lua/sql/sql.lua
 ```
+
+
+&emsp;&emsp;require函数只处理了分号（作为各项之间的分隔符）和问号。其他例如目录分隔符或文件扩展名，都由路径自己定义。
