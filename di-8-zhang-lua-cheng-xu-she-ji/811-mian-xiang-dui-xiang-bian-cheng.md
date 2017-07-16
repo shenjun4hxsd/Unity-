@@ -63,3 +63,12 @@
 ```lua
     a:withdraw(100.00)
 ```
+
+&emsp;&emsp;冒号的作用是在一个方法定义中添加一个额外的隐藏参数，以及在一个方法调用中添加一个额外的实参。冒号只是一种语法便利，并没有引入任何新的东西。例如，用点语法来定义一个函数，并用冒号语法调用它。反之，只要能正确地处理那个额外参数即可：
+
+```lua
+    Account = {balance=0, withdraw=function(self, v)
+                                       self.balance = self.balance - v
+                                   end
+    }
+```
