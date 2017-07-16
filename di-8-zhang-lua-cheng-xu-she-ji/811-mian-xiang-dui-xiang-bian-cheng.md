@@ -147,5 +147,78 @@
 
 &emsp;&emsp;
 
+####继承
 
+&emsp;&emsp;由于类也是对象，它们也可以从其他类获得方法。这种行为就是一种继承，可以很容易地在Lua中。
+
+&emsp;&emsp;假设有一个基类Account：
+
+```lua
+    Account = {}
+
+    function Account:new(o)
+        o = o or {}
+        setmetatable(o, self)
+        self.__index = self
+        return o
+    end
+
+    function Account:deposit(v)
+        self.balance = self.balance + v
+    end
+
+    function Account:withdraw(v)
+        if v > self.balance then error "insufficient funds" end
+        self.balance = self.balance - v
+    end
+```
+
+&emsp;&emsp;若想从这个类派生出一个子类SpecialAccount，以使客户能够透支。则先需要创建一个空的类，从基类继承所有的操作：
+
+```lua
+    SpecialAccount = Account:new()
+```
+
+&emsp;&emsp;直到现在，SpecialAccount还只是Account的一个实例。如下所示：
+
+```lua
+    s = SpecialAccount:new{limit=1000.00}
+```
+
+&emsp;&emsp;SpecialAccount从Account继承了new，就像继承其他方法一样。不过这次new在执行时，它的self参数表示为SpecialAccount。因此，s的元表为SpecialAccount，SpecialAccount中字段__index的值也是SpecialAccount。s继承自SpecialAccount，而SpecialAccount又继承自Account。当执行：
+
+```lua
+    s:deposit(100.00)
+```
+
+&emsp;&emsp;Lua在s中找不到deposit字段时，就会查找SpecialAccount。如果仍找不到deposit字段，就查找Account。最终会在那里找到deposit的原始实现。
+
+&emsp;&emsp;SpecialAccount之所以特殊是因为可以重定义那些从基类继承的方法。编写一个方法的新实现只需：
+
+```lua
+    function SpecialAccount:withdraw(v)
+        if v - self.balance >= self:getLimit() then
+            error "insufficient funds"
+        end
+        self.balane = self.balance - v
+    end
+
+    function SpecialAccount:getLimit()
+        return self.limit or 0
+    end
+```
+
+&emsp;&emsp;现在，当调用s:withdraw(200.00)时，Lua就不会在Account中查找了。因为Lua会在SpecialAccount中先找到withdraw方法。由于s.limit为1000.00，程序会执行取款，并使s变成一个负的余额。
+
+&emsp;&emsp;Lua中的对象有一个特殊现象，就是无须为指定一种新行为而创建一个新类。如果只有一个对象需要某种特殊的行为，那么可以直接在该对象中实现这个行为。例如，账户s表示一个特殊的客户，这个客户的透支额度总是其余额的10%。那么可以只修改这个对象：
+
+```lua
+    function s:getLimit()
+        return self.balance * 0.10
+    end
+```
+
+&emsp;&emsp;在这段代码后，调用s:withdraw(200.00)还是会执行SpecialAccount的withdraw。但withdraw所调用的self:getLimit则是上面这个定义。
+
+&emsp;&emsp;
 
