@@ -10,3 +10,9 @@
         Account.balance = Account.balance - v
     end
 ```
+
+&emsp;&emsp;上面的代码创建了一个新函数，并将该函数存入`Account`对象的`withdraw`字段中。则可进行如下调用：
+
+```lua
+
+```
