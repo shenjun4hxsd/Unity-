@@ -122,4 +122,8 @@
 
 &emsp;&emsp;`require`用于搜索Lua文件的路径存放在变量`package.path`中。当Lua启动后，便以环境变量`LUA_PATH`的值来初始化这个变量。如果没有找到该环境变量，则使用一个编译时定义的默认路径来初始化。在使用`LUA_PATH`时，Lua会将其中所有的子串“;;”替换成默认路径。例如，假设`LUA_PATH`为“`mydir/?.lua;;`”，那么最终路径就是“`mydir/?.lua`”，并紧随默认路径。
 
-&emsp;&emsp;如果`require`无法找到与模块名相符的Lua文件，它就会找C程序库。这类搜索会从变量package.cpath（相对于package.path）获取路径。
+&emsp;&emsp;如果`require`无法找到与模块名相符的Lua文件，它就会找C程序库。这类搜索会从变量`package.cpath`（相对于`package.path`）获取路径。而这个变量则是通过环境变量`LUA_CPATH`（相对于`LUA_PATH`）来初始化。在UNIX中，它的值一般是这样的：
+
+```lua
+    ./?.so;/usr/local/lib/lua/5.1/?.so
+```
