@@ -83,4 +83,7 @@
 &emsp;&emsp;首先，它在`table package.loaded`中检查模块是否已加载。如果是的话，`require`就返回相应的值。因此，只要一个模块已加载过，后续的`require`调用都将返回同一个值，不会再次加载它。
 
 
-&emsp;&emsp;如果模块尚未加载，`require`就试着为该模块找一个加载器（`loader`），会先在`table package.preload`中查询传入的模块名。如果在其中找到了一个函数，就以该函数作为模块的加载器。
+&emsp;&emsp;如果模块尚未加载，`require`就试着为该模块找一个加载器（`loader`），会先在`table package.preload`中查询传入的模块名。如果在其中找到了一个函数，就以该函数作为模块的加载器。通过这个`preload table`，就有了一种通用的方法来处理各种不同的情况。通常这个`table`中不会找到有关指定模块的条目，那么`require`就会尝试从Lua文件或C程序库中加载模块。
+
+
+&emsp;&emsp;如果require为指定模块找到了一个Lua文件，它就通过loadfile来加载该文件。而如果找到的是一个C程序库，就通过loadlib来加载。注意，loadfile和loadlib都只是加载了代码，并没有运行它们。为了运行代码，require会以模块名作为参数来调用这些代码。如果加载器有返回值，require就将这个返回值存储到table package.loaded
