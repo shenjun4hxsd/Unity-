@@ -104,5 +104,8 @@
     function Account:new(o)
         o = o or {}        -- 如果用户没有提供table，则创建一个
         setmetatable(o, self)
+        self.__index = self
+        return o
+    end
 ```
 
