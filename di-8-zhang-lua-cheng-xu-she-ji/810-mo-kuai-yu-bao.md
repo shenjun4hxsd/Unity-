@@ -78,3 +78,6 @@
         return package.loaded[name]
     end
 ```
+
+
+&emsp;&emsp;首先，它在`table package.loaded`中检查模块是否已加载。如果是的话，`require`就返回相应的值。因此，只要一个模块已加载过，后续的`require`调用都将返回同一个值，不会再次加载它。
