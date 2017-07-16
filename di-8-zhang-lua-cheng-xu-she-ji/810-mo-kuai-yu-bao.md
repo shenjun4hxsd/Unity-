@@ -336,3 +336,34 @@
 &emsp;&emsp;
 
 
+####子模块与包
+
+&emsp;&emsp;Lua支持具有层级性的模块名，可以用一个点来分隔名称中的层级。假设，一个模块名为mod.sub，那么它就是mod的一个子模块。因此，可以认为模块mod.sub会将其所有值都定义在table mod.sub中，也就是一个存储在table mod中且key为sub的table。一个“包（Package）”就是一个完整的模块树，它是Lua中发行的单位。
+
+&emsp;&emsp;当require一个模块mod.sub时，require会用原始的模块名“mod.sub”作为key来查询table package.loaded和package.preload，其中，模块名中的点在搜索中没有任何含义。
+
+&emsp;&emsp;然而，当搜索一个定义子模块的文件时，require会将点转换为另一个字符，通常就是系统的目录分隔符。转换之后require就像搜索其他名称一样来搜索这个名称。例如，假设路径为：
+
+```lua
+    ./?.lua;/usr/local/lua/?.lua;/usr/local/lua/?/init.lua
+```
+
+&emsp;&emsp;并且目录分隔符为“/”，那么调用require "a.b"就会尝试打开以下文件：
+
+```lua
+    ./a/b.lua
+    /usr/local/lua/a/b.lua
+    /usr/local/lua/a/b/init.lua
+```
+
+&emsp;&emsp;通过这样的加载策略，就可以将一个包中的所有模块组织到一个目录中。例如，一个包中有模块p、p.a和p.b，那么它们对应的文件名就分别为p/init.lua，p/a.lua和p/b.lua，它们都是目录p下的文件。
+
+&emsp;&emsp;Lua使用的目录分隔符是编译时配置的，可以是任意的字符串。例如，在没有目录层级的系统中，就可以使用“_”作为“目录分隔符”。那么require "a.b"就会搜索到文件a_b.lua。
+
+&emsp;&emsp;C函数名中不能包含点，因此一个用C编写的子模块a.b无法导出函数luaopen_a.b。所以，require会将点转换为下划线。例如，一个名为a.b的C程序库就应将其初始化函数命名为luaopen_a_b。在此又可以巧用连字符，来实现一些特殊的效果。例如，有一个C程序库a，现在想将它作为mod的一个子模块，那么就可以将文件名改为mod/-a。当执行require "mod.-a"时，require就会找到改名后的文件mod/-a及其中的函数luaopen_a。
+
+&emsp;&emsp;作为一项扩展功能，require在加载C子模块时还有一些选项。当require加载子模块时，无法找到对应的Lua文件或C程序库。它就会再次搜索C路径，不过这次将以包的名称来查找。例如，一个程序require子模块a.b.c，当无法找到文件a/b/c时，再次搜索就会找到文件a。如果找到了C程序库a，require就查看该程序库中是否有open函数luaopen_a_b_c。这项功能使得一个发行包可以将几个子模块组织到一个单一C程序库中，并且具有各自的open函数。
+
+&emsp;&emsp;module函数也为子模块提供了显式的支持。当我们创建一个子模块时，调用module ("a.b.c")，module就会将环境table放入变量a.b.c，也就是“table a中的table b中的table c”。如果这些中间的table不存在，module就会创建它们。否则，就复用它们。
+
+&emsp;&emsp;从Lua的观点看，同一个包中的子模块除了它们的环境table是嵌套的之外，它们之间并没有显式的关联性。require模块a并不会自动地加载它的任何子模块。同样，require子模块a.b也并不会自动地加载a。当然只要愿意，包的实现者完全可以实现这种关联。例如，模块a的一个子模块在加载时会显式地加载a。
