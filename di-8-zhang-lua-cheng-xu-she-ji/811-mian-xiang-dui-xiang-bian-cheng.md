@@ -222,3 +222,84 @@
 
 &emsp;&emsp;
 
+####多重继承
+
+&emsp;&emsp;由于Lua中的对象不是原生的（Primitive），因此在Lua中进行面向对象编程时有几种方法。上面介绍了一种使用__index元方法的做法，这是集简易、性能和灵活性于一体的做法。另外还有一些其他的做法，可能更适用于某些特殊的情况。在此将介绍另一种做法，可以在Lua中实现多重继承。
+
+&emsp;&emsp;这种做法的关键在于同一个函数作为__index元字段。例如，若在一个table的元表中，__index字段为一个函数。那么只要Lua在原来的table中找不到一个key，就会调用这个函数。基于这点，就可以让__index函数在其他地方查找缺失的key。
+
+&emsp;&emsp;多重继承意味着一个类可以具有多个基类。因此无法使用一个类中的方法来创建子类，而是需要定义一个特殊的函数来创建。下面的createClass就是这样的函数，它会创建一个table表示新类，其中一个参数表示新类的所有基类。创建时它会设置元表中的__index元方法，而多重继承正是在这个__index元方法中完成的。虽然是多重继承，但每个对象实例仍属于单个类，并且都在这个类中查找所有的方法。因此，类和基类之间的关系不同于类和实例之间的关系。尤其是一个类不能同时作为其实例和子类的元表。在以下代码中，将类作为其实例的元表，并创建了另一个table作为类的元表。
+
+```lua
+    -- 在table 'plist'中查找'k'
+    local function search(k, plist)
+        for i=1, #plist do
+            local v = plist[i][k]		-- 尝试第i个基类
+            if v then return v end
+        end
+    end
+
+    function createClass(...)
+        local c = {}					-- 新类
+        local parents = {...}
+
+        -- 类在其父类列表中的搜索方法
+        setmetatable(c, {__index = function(t, k)
+            return search(k, parents)
+        end})
+
+        -- 将'c'作为其实例的元表
+        c.__index = c
+
+        -- 为这个新类定义一个新的构造函数（construction）
+        function c:new(o)
+            o = o or {}
+            setmetatable(o, c)
+            return o
+        end
+
+        return c 				-- 返回新类
+    end
+```
+
+&emsp;&emsp;接下来是一个使用createClass的例子。假设有两个类，一个是前面提到的Account类；另一个是Named类，它有两个方法setname和getname：
+
+```lua
+    Named = {}
+    function Named:getname()
+        return self.name
+    end
+
+    function Named:setname(n)
+        self.name = n
+    end
+```
+
+&emsp;&emsp;要创建一个新类NamedAccount，同时从Account和Named派生，那么只需调用createClass：
+
+```lua
+    NamedAccount = createClass(Account, Named)
+```
+
+&emsp;&emsp;如下要创建并使用实例：
+
+```lua
+    account = NamedAccount:new{name = "Paul"}
+    print(account:getname())		--> Paul
+```
+
+&emsp;&emsp;现在，来研究最后代码是如何工作的。首先，Lua在account中无法找到字段“getname”。因此，就查找account元表中的__index字段，该字段为NamedAccount。由于在NamedAccount也无法提供字段“getname”。因此，Lua查找NamedAccount元表中的__index字段。由于这个字段也是一个函数，Lua就调用了它。该函数则先在Account中查找“getname”。未找到后，继而查找Named。最终在Named中找到了一个非nil的值，即为搜索的最终结果。
+
+&emsp;&emsp;由于这项搜索具有一定的复杂性，则多重继承的性能不如单一继承。有一种改进性能的简单做法是将继承的方法复制到子类中。通过这种技术，类的__index元方法如下所示：
+
+```lua
+    setmetatable(c, {__index = function(t, k)
+        local v = search(k, parents)
+        t[k] = v 				-- 保存下来，以备下次访问
+        return v
+    end})
+```
+
+&emsp;&emsp;用了这种技术后，访问继承的方法就能像访问局部方法一样快了。但缺点是当系统运行后就较难修改方法的定义，因为这些修改不会沿着继承体系向下传播。
+
+&emsp;&emsp;
