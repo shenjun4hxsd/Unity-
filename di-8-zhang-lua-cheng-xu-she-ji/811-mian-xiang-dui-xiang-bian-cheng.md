@@ -116,5 +116,9 @@
     a:deposit(100.00)
 ```
 
-&emsp;&emsp;当创建新账户时，a会将Account(Account::new调用中的self)作为其元表。而当调用a:deposit(100.00)时，就是调用了a.deposit(a, 100.00)。
+&emsp;&emsp;当创建新账户时，a会将`Account`(`Account:new`调用中的`self`)作为其元表。而当调用`a:deposit(100.00)`时，就是调用了`a.deposit(a, 100.00)`。因此冒号只不过是一个“语法糖”。当Lua无法在`table a`中找到条目“`deposit`”时，它会进一步搜索元表的`__index`条目。最终的调用情况为：
+
+```lua
+    getmetatable(a).__index.deposit(a, 100.00)
+```
 
