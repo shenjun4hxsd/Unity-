@@ -20,3 +20,23 @@
     mod.foo()
 ```
 
+
+&emsp;&emsp;如果希望使用较短的模块名称，则可以为模块设置一个局部名称：
+
+```lua
+    local m = require "mod"
+    m.foo()
+```
+
+
+&emsp;&emsp;还可以为个别函数提供不同的名称：
+
+```lua
+    require "mod"
+    local f = mod.foo
+    f()
+```
+
+
+&emsp;&emsp;上述这些方法，都不需要来自于语言的显式支持，只需使用语言现有的内容。
+
