@@ -112,6 +112,9 @@
 &emsp;&emsp;当调用`Account:new`时，`self`就等于`Account`。因此可以直接使用`Account`来代替`self`。不过，当引入类继承时，使用`self`则会更为准确。在这段代码之后，创建一个新账户或调用一个方法时会发生什么呢？
 
 ```lua
-
+    a = Account:new{balance = 0}
+    a:deposit(100.00)
 ```
+
+&emsp;&emsp;当创建新账户时，a会将Account(Account::new调用中的self)作为其元表。而当调用a:deposit(100.00)时，就是调用了a.deposit(a, 100.00)。
 
