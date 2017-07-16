@@ -141,3 +141,79 @@
 
 &emsp;&emsp;
 
+####编写模块的基本方法
+
+&emsp;&emsp;在Lua中创建一个模块最简单的方法是：创建一个table，并将所有需要导出的函数放入其中，最后返回这个table。以下代码演示这种方法。注意，将inv声明为程序块的局部变量，就是将其定义成一个私有的名称。
+
+```lua
+    complex = {}
+
+    function complex.new(r, i) return {r=r, i=i} end
+
+    -- 定义一个常量'i'
+    complex.i = complex.new(0, 1)
+
+    function complex.add(c1, c2)
+        return complex.new(c1.r  c2.r, c1.i + c2.i)
+    end
+
+    function complex.sub(c1, c2)
+        return complex.new(c1.r - c2.r, c1.i - c2.i)
+    end
+
+    function complex.mul(c1, c2)
+        return complex.new(c1.r*c2.r - c1.i*c2.i,
+                           c1.r*c2.i + c1.i*c2.r)
+    end
+
+    local function inv(c)
+        local n = c.r^2 + c.i^2
+        return complex.new(c.r/n, -c.i/n)
+    end
+
+    function complex.div(c1, c2)
+        return complex.mul(c1, inv(c2))
+    end
+
+    return complex
+```
+
+&emsp;&emsp;上例中使用table编写模块时，没有提供与真正模块完全一致的功能性，首先，必须显式地将模块名放到每个函数定义中。其次，一个函数在调用同一模块中的另一个函数时，必须限定被调用函数的名称。可以使用一个固定的局部名称（例如M）来定义和调用模块内的函数，然后将这个局部名称赋予模块的最终名称。通过这种方法，可以将上例改写为：
+
+```lua
+    local M = {}
+    complex = M 					-- 模块名
+
+    M.i = {r=0, i=1}
+    function M.new(r, i) return {r=r, i=i} end
+
+    function M.add(c1, c2)
+        return M.new(c1.r + c2.r, c1.i + c2.i)
+    end
+    <如前>
+```
+
+&emsp;&emsp;只要一个函数调用了同一模块中另一个函数（或者递归地调用自己），就仍需要一个前缀名称。但至少两个函数之间的连接不再需要依赖模块名，并且也只需在整个模块中的一处写出模块名。实际上，可以完全避免写模块名，因为require会将模块名作为参数传给模块：
+
+```lua
+    local modname = ...
+    local M = {}
+    _G[modname] = M
+
+    M.i = {r=0, i=1}
+    <如前>
+```
+
+&emsp;&emsp;经过这样的修改，若需要重命名一个模块，只需重命名并定义它的文件就可以了。
+
+&emsp;&emsp;另一项小改进与结尾的return语句有关。若能将所有与模块相关的设置任务集中在模块开头，会更好。消除return语句的一种方法是，将模块table直接赋予package.loaded：
+
+```lua
+    local modname = ...
+    local M = {}
+    _G[modname] = M
+    package.loaded[modname] = M
+    <如前>
+```
+
+&emsp;&emsp;通过这样的赋值，就不需要在模块结尾返回M了。注意，如果一个模块无返回值的话，require就会返回package.loaded[modname]的当前值。
