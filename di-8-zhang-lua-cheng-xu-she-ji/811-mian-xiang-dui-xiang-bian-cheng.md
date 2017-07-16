@@ -67,8 +67,21 @@
 &emsp;&emsp;冒号的作用是在一个方法定义中添加一个额外的隐藏参数，以及在一个方法调用中添加一个额外的实参。冒号只是一种语法便利，并没有引入任何新的东西。例如，用点语法来定义一个函数，并用冒号语法调用它。反之，只要能正确地处理那个额外参数即可：
 
 ```lua
-    Account = {balance=0, withdraw=function(self, v)
-                                       self.balance = self.balance - v
-                                   end
-    }
+    Account = {balance=0, 
+               withdraw=function(self, v)
+                            self.balance = self.balance - v
+                        end
+              }
+              
+    function Account:deposit(v)
+        self.balance = self.balance + v
+    end
+    
+    Account.deposit(Account, 200.00)
+    Account.withdraw(100.00)
 ```
+
+&emsp;&emsp;现在的对象已有一个标识、一个状态和状态之上的操作。不过还缺乏一个类（class）系统、继承和私密性（privacy）。首先解决第一个问题，如何创建多个具有类似行为的对象？更准确地说，如何创建多个account账户对象？
+
+&emsp;&emsp;
+
