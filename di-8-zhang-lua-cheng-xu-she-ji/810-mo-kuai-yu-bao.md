@@ -296,4 +296,39 @@
 
 &emsp;&emsp;
 
+####module函数
 
+&emsp;&emsp;读者或许注意到了，前面几个示例中的代码形式。它们都以相同的模式开始：
+
+```lua
+    local modname = ...
+    local M = {}
+    _G[modname] = M
+    package.loaded[modname] = M
+    <setup for external access>
+    setfenv(1, M)
+```
+
+&emsp;&emsp;Lua5.1提供了一个新函数module，它囊括了以上这些功能。在开始编写一个模块时，可以直接用以下代码来取代前面的设置代码：
+
+```lua
+    module(...)
+```
+
+&emsp;&emsp;这句调用会创建一个新的`table`，并将其赋予适当的全局变量和`loaded table`，最后还会将这个`table`设为主程序块的环境。
+
+&emsp;&emsp;默认情况下，`module`不提供外部访问。必须在调用它前，为需要访问的外部函数或模块声明适当的局部变量。也可以通过继承来实现外部访问，只需在调用`module`时加一个选项`package.seeall`。这个选项等价于以下代码：
+
+```lua
+    setmetatable(M, {__index = _G})
+```
+
+&emsp;&emsp;因而只需这么做：
+
+```lua
+    module(..., package.seeall)
+```
+
+&emsp;&emsp;在一个模块文件的开头有了这句调用后，后续所有的代码都可以像普通的Lua代码那样编写了。不需要限定模块名和外部名字，同样也不需要返回模块table。要做的只是加上这么一句调用。
+
+&emsp;&emsp;module函数还提供了一些额外的功能。虽然大部分模块不需要这些功能，但有些发行模块可能需要一些特殊处理（例如，一个模块中同时包含C函数和Lua函数）。module在创建模块table之前，会先检查package.loaded是否已包含了这个模块，或者是否已存在与模块同名的变量。如果module由此找到了这个table，它就会复用该table作为模块。也就是说，可以用module来打开一个已创建的模块。如果没有找到模块table，module就会创建一个模块table。然后在这个table中设置一些预定义的变量，包括：_M，包含了模块table自身（类似于_G）；_NAME，包含了模块名（传给module的第一个参数）；_PACKAGE，包含了包（package）的名称。
