@@ -220,4 +220,76 @@
 
 &emsp;&emsp;
 
+####使用环境
 
+&emsp;&emsp;创建模块的基本方法的缺点在于，它要求程序员投入一些额外的关注。当访问同一模块中的其他公共实体时，必须限定其名称。并且，只要一个函数的状态从私有改为公有（或从公有改为私有），就必须修改调用。另外，在私有声明中也很容易忘记关键字local。
+
+&emsp;&emsp;“函数环境”是一种有趣的技术，它能够解决所有上述创建模块时遇到的问题。基本想法就是让模块的主程序块有一个独占的环境。这样不仅它的所有函数都可共享这个`table`，而且它的所有全局变量也都记录在这个`table`中。还可以将所有公有函数声明为全局变量，这样它们就都自动地记录在一个独立的`table`中了。模块所要做的就是将这个`table`赋予模块名和`package.loaded`。以下代码片段演示了这种技术：
+
+```lua
+    local modname = ...
+    local M = {}
+    _G[modname] = M
+    package.loaded[modname] = M
+    setfenv(1, M)
+```
+
+&emsp;&emsp;此时，当声明函数`add`时，它就称为了`complex.add`：
+
+```lua
+    function add(c1, c2)
+        return new(c1.r + c2.r, c1.i + c2.i)
+    end
+```
+
+&emsp;&emsp;此外，在调用同一模块的其他函数时，也不再需要前缀。例如，`add`会从其环境中得到`new`，也就是`complex.new`。
+
+&emsp;&emsp;这种方法为模块提供了一种良好的支持，并且只引入了一点额外的工作。此时完全不需要前缀，并且调用一个导出的函数与调用一个私有函数没有什么区别。如果程序员忘记了写local关键字，那么也不会污染全局名称空间。只会将一个私有函数变成了公有而已。
+
+&emsp;&emsp;还缺少什么？是的，那就是访问其他模块。当创建了一个空`table M`作为环境后，就无法访问前一个环境中全局变量了。以下提出几种重获访问的方法，每种方法各有其优缺点。
+
+&emsp;&emsp;最简单的方法是继承，就像之前看到的那样：
+
+```lua
+    local modname = ...
+    local M = {}
+    _G[modname] = M
+    package.loaded[modname] = M
+    setmetatable(M, {__index = _G})
+    setfenv(1, M)
+```
+
+&emsp;&emsp;必须先调用setmetatable再调用setfenv，因为通过这种方法，模块就能直接访问任何全局标识了，每次访问只需付出很小的开销。这种方法导致了一个后果，即从概念上说，此时的模块中包含了所有的全局变量。例如，某人可以通过你的模块来调用标准的正弦函数：`complex.math.sin(x)`。
+
+&emsp;&emsp;还有一种更便捷的方法来访问其他模块，即声明一个局部变量，用以保存对旧环境的访问：
+
+```lua
+    local modname = ...
+    local M = {}
+    _G[modname] = M
+    package.loaded[modname] = M
+    local _G = _G
+    setfenv(1, M)
+```
+
+&emsp;&emsp;此时必须在所有全局变量的名称前加“`_G.`”。由于没有涉及到元方法，这种访问会比前面的方法略快。
+
+&emsp;&emsp;一种更正规的方法是将那些需要用到的函数或模块声明为局部变量：
+
+```lua
+    -- 模块设置
+    local modname = ...
+    local M = {}
+    _G[modname] = M
+    package.loaded[modname] = M
+
+    -- 导入段：
+    -- 声明这个模块从外界所需的所有东西
+    local sqrt = math.sqrt
+    local io = io
+
+    -- 在这句之后就不再需要外部访问了
+    setfenv(1, M)
+```
+
+&emsp;&emsp;这种技术要求做更多的工作，但是它能清晰地说明模块的依赖性。同时，较之前面的两种方法，它的运行速度也更快。
