@@ -88,3 +88,13 @@
 
 &emsp;&emsp;如果`require`为指定模块找到了一个Lua文件，它就通过`loadfile`来加载该文件。而如果找到的是一个C程序库，就通过`loadlib`来加载。注意，`loadfile`和`loadlib`都只是加载了代码，并没有运行它们。为了运行代码，`require`会以模块名作为参数来调用这些代码。如果加载器有返回值，`require`就将这个返回值存储到`table package.loaded`中，以此作为将来对同一模块调用的返回值。如果加载器没有返回值，`require`就会返回`table package.loaded`中的值。在本章后面会看到，一个模块还可以将返回给`require`的值直接放入`package.loaded`中。
 
+
+&emsp;&emsp;上述代码中还有一个重要的细节，就是在调用加载器前，`require`先将`true`赋予了`package.loaded`中的对应字段，以此将模块标记为已加载。这是因为如果一个模块要求加载另一个模块，而后者又要递归地加载前者。那么后者的`require`调用就会马上返回，从而避免了无限循环。
+
+
+&emsp;&emsp;若要强制使`require`对用一个库加载两次的话，可以简单地删除`package.loaded`中的模块条目。例如，在成功地`require "foo"`后，`package.loaded["foo"]`就不为`nil`了。下面代码就可以再次加载该模块：
+
+```lua
+    package.loaded["foo"] = nil
+    require "foo"
+```
