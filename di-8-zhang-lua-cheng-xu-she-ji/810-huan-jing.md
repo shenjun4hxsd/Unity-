@@ -147,4 +147,28 @@
 
 &emsp;&emsp;正如前面提到的，不允许全局变量具有`nil`值，因为具有`nil`的全局变量都会被自动地认为是未声明的。但要纠正这个问题并不难，只需引入一个辅助`table`用于保存已声明变量的名称。一旦调用了元方法，元方法就检查该`table`，以确定变量是否已声明过，代码如下所示：
 
+```lua
+    local declaredNames = {}
+
+    setmetatable(_G, {
+        __newindex = function(t, n, v)
+            if not declaredNames[n] then
+                local w = debug.getinfo(2, "S").what
+                if w ~= "main" and w ~= "C" then
+                    error("attempt to write to undeclared variable " .. n, 2)
+                end
+                declaredNames[n] = true
+            end
+            rawset(t, n, v)					-- 完成实际的设置
+        end,
+
+        __index = function(_n, n)
+            if not declaredNames[n] then
+                error("attempt to read undeclared variable " .. n, 2)
+            else
+                return nil
+            end
+        end,
+    })
+```
 
