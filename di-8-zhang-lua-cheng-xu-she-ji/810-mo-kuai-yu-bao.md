@@ -58,3 +58,23 @@
     local m = require "io"
     m.write("hello world\n")
 ```
+
+
+&emsp;&emsp;以下代码详细说明了`require`的行为：
+
+```lua
+    function require(name)
+        if not packag.loaded[name] then        -- 模块是否已加载？
+            local loader = findloader(name)
+            if loader == nil then
+                error("unable to load module " .. name)
+            end
+            package.loaded[name] = true        -- 将模块标记为已加载
+            local res = loader(name)        -- 初始化模块
+            if res ~= nil then
+                package.loaded[name] = res
+            end
+        end
+        return package.loaded[name]
+    end
+```
