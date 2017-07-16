@@ -78,7 +78,7 @@
     end
     
     Account.deposit(Account, 200.00)
-    Account.withdraw(100.00)
+    Account:withdraw(100.00)
 ```
 
 &emsp;&emsp;现在的对象已有一个标识、一个状态和状态之上的操作。不过还缺乏一个类（class）系统、继承和私密性（privacy）。首先解决第一个问题，如何创建多个具有类似行为的对象？更准确地说，如何创建多个account账户对象？
