@@ -122,3 +122,10 @@
     getmetatable(a).__index.deposit(a, 100.00)
 ```
 
+&emsp;&emsp;a的元表是Account，Account.__index也是Account。因此，上面这个表达式可以简化为：
+
+```lua
+    Account.deposit(a, 100.00)
+```
+
+&emsp;&emsp;结果为Lua调用了原来的deposit函数，但传入a作为self参数。因此新账户a从Account继承了deposit函数。同样
