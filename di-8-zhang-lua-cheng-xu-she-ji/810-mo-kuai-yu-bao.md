@@ -70,7 +70,7 @@
                 error("unable to load module " .. name)
             end
             package.loaded[name] = true        -- 将模块标记为已加载
-            local res = loader(name)        -- 初始化模块
+            local res = loader(name)           -- 初始化模块
             if res ~= nil then
                 package.loaded[name] = res
             end
