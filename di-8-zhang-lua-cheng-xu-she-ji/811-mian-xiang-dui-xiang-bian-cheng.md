@@ -128,4 +128,17 @@
     Account.deposit(a, 100.00)
 ```
 
-&emsp;&emsp;结果为Lua调用了原来的deposit函数，但传入a作为self参数。因此新账户a从Account继承了deposit函数。同样
+&emsp;&emsp;结果为Lua调用了原来的deposit函数，但传入a作为self参数。因此新账户a从Account继承了deposit函数。同样，它还能从Account继承所有的字段。
+
+&emsp;&emsp;继承不仅可以作用于方法，还可以作用于所有其他在新账户中没有的字段。因此，一个类不仅可以提供方法，还可以为实例中的字段提供默认值。回忆一下，在第一个Account定义中，有一个balance字段为0。如果在创建新账户时没有提供balance的初值，那么它就会继承这个默认值：
+
+```lua
+    b = Account:new()
+    print(b.balance)            --> 0
+```
+
+&emsp;&emsp;在b上调用deposit方法时，self就是b，就相当于执行了：
+
+```lua
+
+```
