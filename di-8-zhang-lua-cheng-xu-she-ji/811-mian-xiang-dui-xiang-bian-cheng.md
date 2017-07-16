@@ -42,10 +42,18 @@
     a1.withdraw(a1, 100.00)        -- OK
 ```
 
-&emsp;&emsp;通过对self参数的使用，还可以针对多个对象使用同样的方法：
+&emsp;&emsp;通过对`self`参数的使用，还可以针对多个对象使用同样的方法：
 
 ```lua
     a2 = {balance=0, withdraw=Account.withdraw}
     ...
     a2.withdraw(a2, 260.00)
+```
+
+&emsp;&emsp;使用`self`参数是所有面向对象语言的一个核心。大多数面向对象语言都能对程序员隐藏部分`self`参数，从而使得程序员不必显式地声明这个参数。Lua只需使用冒号，则能隐藏该参数。即可将上例重写为：
+
+```lua
+    function Account:withdraw(v)
+        self.balance = self.balance - v
+    end
 ```
