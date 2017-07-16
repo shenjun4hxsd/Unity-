@@ -122,28 +122,28 @@
     getmetatable(a).__index.deposit(a, 100.00)
 ```
 
-&emsp;&emsp;a的元表是Account，Account.__index也是Account。因此，上面这个表达式可以简化为：
+&emsp;&emsp;`a`的元表是`Account`，`Account.__index`也是`Account`。因此，上面这个表达式可以简化为：
 
 ```lua
     Account.deposit(a, 100.00)
 ```
 
-&emsp;&emsp;结果为Lua调用了原来的deposit函数，但传入a作为self参数。因此新账户a从Account继承了deposit函数。同样，它还能从Account继承所有的字段。
+&emsp;&emsp;结果为Lua调用了原来的`deposit`函数，但传入`a`作为`self`参数。因此新账户`a`从`Account`继承了`deposit`函数。同样，它还能从`Account`继承所有的字段。
 
-&emsp;&emsp;继承不仅可以作用于方法，还可以作用于所有其他在新账户中没有的字段。因此，一个类不仅可以提供方法，还可以为实例中的字段提供默认值。回忆一下，在第一个Account定义中，有一个balance字段为0。如果在创建新账户时没有提供balance的初值，那么它就会继承这个默认值：
+&emsp;&emsp;继承不仅可以作用于方法，还可以作用于所有其他在新账户中没有的字段。因此，一个类不仅可以提供方法，还可以为实例中的字段提供默认值。回忆一下，在第一个`Account`定义中，有一个`balance`字段为0。如果在创建新账户时没有提供`balance`的初值，那么它就会继承这个默认值：
 
 ```lua
     b = Account:new()
     print(b.balance)            --> 0
 ```
 
-&emsp;&emsp;在b上调用deposit方法时，self就是b，就相当于执行了：
+&emsp;&emsp;在`b`上调用`deposit`方法时，`self`就是`b`，就相当于执行了：
 
 ```lua
     b.balance = b.balance + v
 ```
 
-&emsp;&emsp;在第一次调用deposit时，对表达式b.balance的求值结果为0，然后一个初值被赋予了b.balance。后续对b.balance的访问就不会再涉及到__index元方法了，因为此时b已有自己的balance字段。
+&emsp;&emsp;在第一次调用`deposit`时，对表达式`b.balance`的求值结果为0，然后一个初值被赋予了`b.balance`。后续对`b.balance`的访问就不会再涉及到`__index`元方法了，因为此时`b`已有自己的`balance`字段。
 
 &emsp;&emsp;
 
