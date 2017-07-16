@@ -107,4 +107,11 @@
 ```
 
 
-&emsp;&emsp;
+&emsp;&emsp;那么，调用`require "sql"`就会试着打开以下文件：
+
+```lua
+    sql
+    sql.lua
+    c:\windows\sql
+    /usr/local/lua/sql/sql.lua
+```
