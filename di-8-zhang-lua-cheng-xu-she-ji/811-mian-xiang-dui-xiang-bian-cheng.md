@@ -96,3 +96,13 @@
     setmetatable(a, {__index = b})
 ```
 
+&emsp;&emsp;在此之后，a就会在b中查找所有它没有的操作。若将b称为是对象a的类，只不过是术语上的一个变化。
+
+&emsp;&emsp;回到先前银行账号的示例。为了创建更多与`Account`行为类似的账号，可以让这些新对象从`Account`行为中继承这些操作。具体做法就是使用`__index`元方法。可以应用一项小优化，则无须创建一个额外的`table`作为账户对象的元表。而是使用`Account table`自身作为元表：
+
+```lua
+    function Account:new(o)
+        o = o or {}        -- 如果用户没有提供table，则创建一个
+        setmetatable(o, self)
+```
+
