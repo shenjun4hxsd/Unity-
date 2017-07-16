@@ -371,3 +371,37 @@
 &emsp;&emsp;与前一个示例一样，任何用户都无法直接访问`extra`函数。
 
 &emsp;&emsp;
+
+
+####单一方法（single-method）做法
+
+&emsp;&emsp;上述面向对象编程的做法有一种特殊情况，就是当一个对象只有一个方法时，可以不用创建接口table，但要将这个单独的方法作为对象表示来返回。如果无法理解，请参阅前面章节。前面章节介绍了如何构造一个迭代器函数，那个函数将状态保存为closure。一个具有状态的迭代器是一个单一方法对象。
+
+&emsp;&emsp;单一方法对象还有一种情况，若这个方法是一个调度（dispatch）方法，它根据某个参数来完成不同的操作。则可以这样来实现一个对象：
+
+```lua
+    function newObject(value)
+        return function(action, v)
+            if action == "get" then return value
+            elseif action == "set" then value = v
+            else error "invalid action"
+            end
+        end
+    end
+```
+
+&emsp;&emsp;如下所示：
+
+```lua
+    d = newObject(0)
+    print(d("get"))				--> 0
+    d("set", 10)
+    print(d("get"))				--> 10
+```
+
+&emsp;&emsp;这种非传统的对象实现方式是很高效的。语句d("set", 10)虽然有些奇特，但只比传统的d:set(10)多出两个字符。每个对象都用一个closure，这比都用一个table更高效。虽然无法实现继承，却拥有了完全的私密性控制。访问一个对象状态只有一个方式，那就是通过它的单一方法。
+
+&emsp;&emsp;Tcl/Tk对它的窗口部件使用了类似的做法。在Tk中，一个窗口部件的名称就是一个函数名，通过这个函数就可以完成所有针对该部件的操作。
+
+
+🔚
