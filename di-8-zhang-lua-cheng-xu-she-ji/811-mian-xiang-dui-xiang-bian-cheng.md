@@ -57,3 +57,9 @@
         self.balance = self.balance - v
     end
 ```
+
+&emsp;&emsp;调用时可写为：
+
+```lua
+    a:withdraw(100.00)
+```
