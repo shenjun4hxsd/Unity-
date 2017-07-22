@@ -48,7 +48,7 @@
         local res = results[s]
         if res == nil then        -- 是否已记录过？
             res = assert(loadstring(s))        -- 计算新结果
-            results[s] = res
+            results[s] = res        -- 存下以备之后复用
         end
         return res
     end
