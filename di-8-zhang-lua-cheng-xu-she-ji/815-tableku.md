@@ -44,3 +44,11 @@
     table.sort(a)
     for i,n in ipairs(a) do print(n) end
 ```
+
+&emsp;&emsp;注意，对于Lua来说，数组也是无序的，它们本质上是`table`。然而由于用户知道如何计算索引，因此在访问数组时，只要使用有序的索引，就可以顺序地访问数组。这就是为什么必须用`ipairs`而不是`pairs`来遍历数组的原因。前者使`key`为`1、2、......`的顺序，而后者采用`table`的原始顺序。
+
+&emsp;&emsp;另外还有一个更高级的方法，就是写一个迭代器，使它根据table key的次序来进行遍历。同时，还有一个可选参数f，用于指定某种特殊次序。以下函数先将key排序到一个数组中，然后迭代这个数组，且每步都返回原table中key和value。
+
+```lua
+    function pairsByKeys(t, f)
+```
