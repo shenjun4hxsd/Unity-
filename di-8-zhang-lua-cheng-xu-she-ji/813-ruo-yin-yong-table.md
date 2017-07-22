@@ -16,5 +16,14 @@
 &emsp;&emsp;一个table的弱引用类型是通过其元表中的`__mode`字段来决定的。这个字段的值应为一个字符串，如果这个字符串中包含字母‘`k`’，那么这个table的key是弱引用的；如果这个字符串中包含字母‘`v`’，那么这个`table`的`value`是弱引用的。下面这个示例虽然是人为制造的，但演示了弱引用`table`的一些基本行为：
 
 ```lua
-
+    a = {}
+    b = {__mode = 'k'}
+    setmetatable(a, b)    -- 现在'a'的key就是弱引用
+    key = {}              -- 创建第一个key
+    a[key] = 1
+    key = {}              -- 创建第二个key
+    a[key] = 2
+    collectgarbage()      -- 强制进行一次垃圾收集
+    for k, v in pairs(a) do print(v) end
+    --> 2
 ```
