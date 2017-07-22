@@ -61,3 +61,11 @@
         end
     end
 ```
+
+&emsp;&emsp;通过这个函数就可以很容易地按字母次序来打印那些函数名了：
+
+```lua
+    for name, line in pairsByKeys(line) do
+        print(name, line)
+    end
+```
