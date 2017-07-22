@@ -379,12 +379,12 @@
     function dispatch()
         local i = 1
         while true do
-            if threads[i] == nil then 		        -- 还有线程吗？
-                if threads[1] == nil then break end 	-- 列表是否为空？
-                i = 1 			                -- 重新开始循环
+            if threads[i] == nil then                    -- 还有线程吗？
+                if threads[1] == nil then break end      -- 列表是否为空？
+                i = 1                                    -- 重新开始循环
             end
             local status, res = coroutine.resume(threads[i])
-            if not res then 				-- 线程是否已经完成了任务？
+            if not res then                              -- 线程是否已经完成了任务？
                 table.remove(threads, i)
             else
                 i = i + 1
