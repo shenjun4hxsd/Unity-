@@ -74,4 +74,17 @@
 
 ####连接
 
-&emsp;&emsp;
+&emsp;&emsp;在数据结构章节中已经看到过table.concat。它接受一个字符串数组，并返回这些字符串连接后的结果。它有一个可选参数，用于指定插到字符串之间的分隔符。这个函数另外还接受两个可选参数，用于指定第一个和最后一个要连接的字符串索引。
+
+&emsp;&emsp;下面这个函数是table.concat的一个扩展，它能处理嵌套的字符串数组：
+
+```lua
+    function rconcat(l)
+        if type(l) ~= "table" then return l end
+        local res = {}
+        for i=1, #l do
+            res[i] = rconcat(l[i])
+        end
+        return table.concat(res)
+    end
+```
