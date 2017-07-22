@@ -215,7 +215,7 @@
         n = n or #a
         if n <= 1 then
             coroutine.yield(a)
-	else
+        else
             for i = 1, n do
                 -- 将第i个元素放到数组末尾
                 a[n], a[i] = a[i], a[n]
