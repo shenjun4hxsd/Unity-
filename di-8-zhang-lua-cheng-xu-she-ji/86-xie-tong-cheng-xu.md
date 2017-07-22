@@ -409,27 +409,27 @@
 
 &emsp;&emsp;通过协同程序，计算机只需要6秒便可下载完成这4个文件。但若使用顺序下载的话，则需要多耗费两倍的时间（15秒左右）。
 
-&emsp;&emsp;除了速度有所提高外，上面这个实现还不够完美。只要有一个线程在读取数据，就不会有问题。但若所有线程都没有数据可读，调度程序就会执行一个“忙碌等待（Busy Wait）”，不断地从一个线程切换到另一个线程，仅仅是为了检测是否还有数据可读。这样便导致了这个协同程序的实现会比顺序下载多耗费将近30倍的CPU时间。
+&emsp;&emsp;除了速度有所提高外，上面这个实现还不够完美。只要有一个线程在读取数据，就不会有问题。但若所有线程都没有数据可读，调度程序就会执行一个“忙碌等待（`Busy Wait`）”，不断地从一个线程切换到另一个线程，仅仅是为了检测是否还有数据可读。这样便导致了这个协同程序的实现会比顺序下载多耗费将近30倍的CPU时间。
 
-&emsp;&emsp;为了避免这样的情况，可以使用LuaSocket中的select函数。这个函数可以用于等待一组socket的状态改变，在等待时程序陷入阻塞（block）状态。若要在当前实现中应用这个函数，只需要修改调度程序即可，新版本如下：
+&emsp;&emsp;为了避免这样的情况，可以使用`LuaSocket`中的`select`函数。这个函数可以用于等待一组`socket`的状态改变，在等待时程序陷入阻塞（`block`）状态。若要在当前实现中应用这个函数，只需要修改调度程序即可，新版本如下：
 
 ```lua
     function dispatch()
         local i = 1
         local connections = {}
         while true do
-            if threads[i] == nil then 		-- 还有线程吗？
+            if threads[i] == nil then                    -- 还有线程吗？
                 if threads[1] == nil then break end
-                i = 1							-- 重新开始循环
+                i = 1                                    -- 重新开始循环
                 connections = {}
             end
             local status, res = coroutine.resume(threads[i])
-            if not res then 				-- 线程是否已经完成了任务？
+            if not res then                              -- 线程是否已经完成了任务？
                 table.remove(threads, i)
             else 				-- 超时
                 i = i + 1
                 connections[#connections + 1] = res
-                if #connections == #threads then 		-- 所有线程都阻塞了吗？
+                if #connections == #threads then         -- 所有线程都阻塞了吗？
                     socket.select(connections)
                 end
             end
