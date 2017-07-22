@@ -241,9 +241,9 @@
     end
 ```
 
-&emsp;&emsp;有了上面的函数，在for语句中遍历一个数组的所有排列就非常简单了：
+&emsp;&emsp;有了上面的函数，在`for`语句中遍历一个数组的所有排列就非常简单了：
 
-```
+```lua
     for p in permutations{"a", "b", "c"} do
         printResult(p)
     end
