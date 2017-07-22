@@ -4,4 +4,12 @@
 
 &emsp;&emsp;`math`（数学）库由一组标准的数学函数构成，包括三角函数（`sin`、`cos`、`tan`、`asin`、`acos`等）、指数和对数函数（`exp`、`log`、`log10`）、取整函数（`floor`、`ceil`）、`max`和`min`、生成伪随机数的函数（`random`、`randomseed`）以及变量`pi`和`huge`。其中`huge`为Lua可以表示的最大数字。
 
-&emsp;&emsp;
+&emsp;&emsp;所有的三角函数都使用弧度单位，可以用函数deg和rad来转换角度和弧度。如果使用角度单位，可以像这样重新定义三角函数：
+
+```lua
+    local sin,asin, ... = math.sin, math.asin, ...
+    local deg, rad = math.deg, math.rad
+    math.sin = function(x) return sin(rad(x)) end
+    math.asin = function(x) return deg(asin(x)) end
+    ...
+```
