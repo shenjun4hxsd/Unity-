@@ -105,7 +105,7 @@
     print(coroutine.resume( co, 4, 5))      -- false cannot resume dead coroutine
 ```
 
-&emsp;&emsp;最后，当一个协同程序结束时，它的主函数所返回的值都将作为对应resume的返回值：
+&emsp;&emsp;最后，当一个协同程序结束时，它的主函数所返回的值都将作为对应`resume`的返回值：
 
 ```lua
     co = coroutine.create( function ( )
@@ -158,7 +158,7 @@
     consumer(filter(producer()))
 ```
 
-&emsp;&emsp;通常，coroutine.wrap比coroutine.create更易于使用。它提供了一个对于协同程序编程实际所需的功能，即一个可以唤醒协同程序的函数。但也缺乏灵活性。无法检查wrap所创建的协同程序的状态，此外，也无法检测出运行时的错误。
+&emsp;&emsp;通常，`coroutine.wrap`比`coroutine.create`更易于使用。它提供了一个对于协同程序编程实际所需的功能，即一个可以唤醒协同程序的函数。但也缺乏灵活性。无法检查`wrap`所创建的协同程序的状态，此外，也无法检测出运行时的错误。
 
 
 &emsp;&emsp;
@@ -188,7 +188,7 @@
     end
 ```
 
-&emsp;&emsp;然后，还需要定义其中调用到的打印函数printResult，并以适当的参数来调用permgen：
+&emsp;&emsp;然后，还需要定义其中调用到的打印函数`printResult`，并以适当的参数来调用`permgen`：
 
 ```lua
     function printResult(a)
