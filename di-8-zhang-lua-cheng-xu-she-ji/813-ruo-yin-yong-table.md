@@ -82,7 +82,18 @@
 &emsp;&emsp;通过备忘录技术，可以复用具有相同颜色的table。备忘录table的key可以根据颜色分量来生成，本例中是将颜色分量以分隔符连接起来：
 
 ```lua
-
+    local results = {}
+    setmetatable(result, {__mode='v'})        -- 使用value成为弱引用
+    function createRGB(r, g, b)
+        local key = r .. "-" .. g .. "-" .. b
+        local color = results[key]
+        if color == nil then
+            color = {red=r, green=g, blue=b}
+            results[key] = color
+        end
+        return color
+    end
+    
 ```
 
 
