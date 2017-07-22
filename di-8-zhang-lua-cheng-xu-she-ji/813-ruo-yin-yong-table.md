@@ -71,7 +71,13 @@
 
 &emsp;&emsp;则最终效果完全一样。
 
+&emsp;&emsp;“备忘录”技术还可以用于确保某类对象的唯一性。假设一个系统用`table`来表示颜色，其中3个字段`red`、`green`和`blue`都具有相同的取值范围。最简单的颜色生成函数是：
 
+```lua
+    function createRGB(r, g, b)
+        return {red=r, green=g, blue=b}
+    end
+```
 
 
 
