@@ -10,4 +10,7 @@
 
 &emsp;&emsp;弱引用`table`（`weak table`）就是这样一种机制，用户能用它来告诉Lua一个引用不应该阻碍一个对象的回收。所谓“弱引用（`weak reference`）”就是一种会被垃圾收集器忽视的对象引用。如果一个对象的所有引用都是弱引用，那么Lua就可以回收这个对象了，并且还可以以某种形式来删除这些弱引用本身。Lua用“`弱引用table`”来实现“弱引用”，一个弱引用`table`就是一个具有弱引用条目的`table`。如果一个对象只被一个弱引用`table`所持有，那么最终Lua是会回收这个对象的。
 
-&emsp;&emsp;table中有key和value，这两者都可以包含任意类型的对象。通常，垃圾收集器不会回收一个可访问table中作为key或value的对象。
+&emsp;&emsp;`table`中有`key`和`value`，这两者都可以包含任意类型的对象。通常，垃圾收集器不会回收一个可访问`table`中作为`key`或`value`的对象。也就是说，这些`key`和`value`都是强引用（`strong reference`），它们会阻止对其所引用对象的回收。在一个弱引用`table`中，`key`和`value`是可以回收的。有3种弱引用`table`：具有弱引用`key`的`table`、具有弱引用`value`的`table`、同时具有两种弱引用`table`。不论是哪种类型的弱引用`table`，只要有一个`key`或`value`被回收了，那么它们所在的整个条目都会从`table`中删除。
+
+
+&emsp;&emsp;
