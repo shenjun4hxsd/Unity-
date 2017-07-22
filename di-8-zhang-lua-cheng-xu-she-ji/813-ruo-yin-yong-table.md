@@ -63,7 +63,7 @@
         <如前>
 ```
 
-&emsp;&emsp;实际上，由于key总是字符串，则可以使这个table编程完全弱引用。若这么做：
+&emsp;&emsp;实际上，由于`key`总是字符串，则可以使这个`table`编程完全弱引用。若这么做：
 
 ```lua
     setmetatable(results, {__mode = 'kv'})
