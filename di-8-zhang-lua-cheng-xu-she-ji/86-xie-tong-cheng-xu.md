@@ -158,7 +158,7 @@
     consumer(filter(producer()))
 ```
 
-&emsp;&emsp;通常，`coroutine.wrap`比`coroutine.create`更易于使用。它提供了一个对于协同程序编程实际所需的功能，即一个可以唤醒协同程序的函数。但也缺乏灵活性。无法检查`wrap`所创建的协同程序的状态，此外，也无法检测出运行时的错误。
+
 
 
 &emsp;&emsp;
@@ -262,6 +262,9 @@
         return coroutine.wrap(function() permgen(a) end)
     end
 ```
+
+&emsp;&emsp;通常，`coroutine.wrap`比`coroutine.create`更易于使用。它提供了一个对于协同程序编程实际所需的功能，即一个可以唤醒协同程序的函数。但也缺乏灵活性。无法检查`wrap`所创建的协同程序的状态，此外，也无法检测出运行时的错误。
+
 
 
 
