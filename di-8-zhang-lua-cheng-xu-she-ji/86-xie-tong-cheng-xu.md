@@ -208,7 +208,7 @@
     --> 1 2 3 4
 ```
 
-&emsp;&emsp;当生成函数完成后，将其转换为一个迭代器就非常容易了。首先，将printResult改为yield：
+&emsp;&emsp;当生成函数完成后，将其转换为一个迭代器就非常容易了。首先，将`printResult`改为`yield`：
 
 ```lua
     function permgen(a, n)
