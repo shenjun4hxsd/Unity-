@@ -27,3 +27,5 @@
     for k, v in pairs(a) do print(v) end
     --> 2
 ```
+
+&emsp;&emsp;在本例中，第二句赋值`key = {}`会覆盖第一个`key`。当收集器运行时，由于没有其他地方在引用第一个`key`，因此第一个`key`就被回收了，并且`table`中的相应条目
