@@ -272,7 +272,7 @@
   * [8.11 模块与包](di-8-zhang-lua-cheng-xu-she-ji/810-mo-kuai-yu-bao.md)
   * [8.12 面向对象编程](di-8-zhang-lua-cheng-xu-she-ji/811-mian-xiang-dui-xiang-bian-cheng.md)
   * [8.13 弱引用table](di-8-zhang-lua-cheng-xu-she-ji/813-ruo-yin-yong-table.md)
-  * 8.14 数学库
+  * [8.14 数学库](di-8-zhang-lua-cheng-xu-she-ji/814-shu-xue-ku.md)
   * 8.15 table库
   * 8.16 字符串库
   * 8.17 I／O库
