@@ -65,8 +65,16 @@
     io.write(t)
 ```
 
-&emsp;&emsp;gsub中使用的模式可以捕获所有编码为128～255的字符及等号字符。
+&emsp;&emsp;`gsub`中使用的模式可以捕获所有编码为`128～255`的字符及等号字符。
 
 &emsp;&emsp;调用`io.read("*line")`会返回当前文件的下一行，但不包括换行字符。当到达文件末尾时，该调用会返回`nil`，以表示无后续行可返回。它也是`read`的默认模式。通常，我只在需要逐行处理的算法中使用这种模式。另外，建议使用`*all`一次性读取整个文件，或者像后面介绍的按块来读取。
 
-&emsp;&emsp;
+&emsp;&emsp;作为使用该模式的一个简单示例，下面这个程序将当前输入中的内容复制到当前输出中，并对每行进行编号：
+
+```lua
+    for count = 1, math.huge do
+        local line = io.read()
+        if line == nil then break end
+        io.write(string.format("%6d ", count), line, "\n")
+    end
+```
