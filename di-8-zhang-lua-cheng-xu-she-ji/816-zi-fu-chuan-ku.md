@@ -79,4 +79,17 @@
 
 &emsp;&emsp;
 
-&emsp;&emsp;##### string.find函数
+#####&emsp;&emsp;● string.find函数
+
+&emsp;&emsp;`string.find`函数用于在一个给定的目标字符串中搜索一个模式。最简单的模式就是一个单词，它只会匹配与自己完全相同的拷贝。例如，模式“`hello`”会搜索目标字符串中的子串“`hello`”。当`find`找到一个模式后，它会返回两个值：匹配到的起始索引和结尾索引。如果没有找到任何匹配，它就返回`nil`。
+
+```lua
+    s = "hello world"
+    i, j = string.find(s, "hello")
+    print(i, j)            --> 1 5
+    print(string.sub(s, i, j))    --> hello
+    print(string.fin(s, "world")    --> 7 11
+    i, j = string.find(s, "l")
+    print(i, j)            --> 3 3
+    print(string.find(s, "llll"))        --> nil
+```
