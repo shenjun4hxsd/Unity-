@@ -93,3 +93,74 @@
     print(i, j)            --> 3 3
     print(string.find(s, "llll"))        --> nil
 ```
+
+
+&emsp;&emsp;如果匹配成功，就可以用string.find的返回值来调用string.sub，以此提取出目标字符串中匹配于该模式的那部分子串。
+
+&emsp;&emsp;string.find函数还具有一个可选的第三个参数，它是一个索引，告诉函数应从目标字符串的哪个位置开始搜索。当处理所有与给定模式相匹配的部分时，这个参数就很有用。可以重复搜索新的匹配，且每次搜索都从上一次找到的位置开始。下面这个示例用字符串中所有换行符的位置创建了一个table：
+
+```lua
+    local t = {}		-- 存储索引的table
+    local i = 0
+    while true do
+        i = string.find(s, "\n", i+1)		-- 查找下一个换行符
+        if i == nil then break end
+        t[#t + 1] = i
+    end
+```
+
+&emsp;&emsp;接下来将介绍一种更简单的方法来编写这个循环，其中用到了string.gmatch迭代器。
+
+&emsp;&emsp;
+
+&emsp;&emsp;#####● string.match函数
+
+&emsp;&emsp;从某种意义上说，函数string.match与string.find非常相似，它也是用于在一个字符串中搜索一种模式。不同之处在于，string.match返回的是目标字符串中与模式相匹配的那部分子串，而非该模式所在的位置。
+
+```lua
+    print(string.match("hello world", "hello"))		--> hello
+```
+
+&emsp;&emsp;对于固定的模式，例如“hello”，使用这个函数就没有什么意义了。但当使用变量模式（Variable Pattern）时，它的特性就显现出来了，如下示例：
+
+```lua
+    date = "Today is 17/7/1990"
+    d = string.match(date, "%d+/%d+/%d+")
+    print(d)		--> 17/7/1990
+```
+
+&emsp;&emsp;在后面将会讨论模式“%d+/%d+/%d+”的含义及string.match的高级用法。
+
+&emsp;&emsp;
+
+&emsp;&emsp;#####● string.gsub函数
+
+&emsp;&emsp;string.gsub有3个参数：目标字符串、模式和替换字符串。它的基本用法是将目标字符串中所有出现模式的地方替换为替换字符串（最后一个参数）：
+
+```lua
+    s = string.gsub("Lua is cute", "cute", "great")
+    print(s)			--> Lua s great
+    s = string.gsub("all lii", "l", "x")
+    print(s)			--> axx xii
+    s = string.gsub("Lua is great", "Sol", "Son")
+    print(s)			--> Lua is great
+```
+
+&emsp;&emsp;另外还有可选的第四个参数，可以限制替换的次数：
+
+```lua
+    s = string.gsub("all lii", "l", "x", 1)
+    print(s)			--> axl lii
+    s = string.gsub("all lii", "l", "x", 2)
+    print(s)			--> axx lii
+```
+
+&emsp;&emsp;函数string.gsub还有另一个结果，即实际替换的次数。例如，以下代码就是一种统计字符串中空格数量的简单方法：
+
+```lua
+    count = select(2, string.gsub(str, " ", " "))
+```
+
+&emsp;&emsp;
+
+&emsp;&emsp;#####● string.gmatch函数
