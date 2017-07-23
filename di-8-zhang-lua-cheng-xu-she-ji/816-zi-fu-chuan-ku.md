@@ -15,3 +15,8 @@
         return string.lower(a) < string.lower(b)
     end)
 ```
+
+&emsp;&emsp;函数string.upper和string.lower都遵循当前的区域设置（local）。因此，如果在EuropeanLatin-1区域工作，那么表达式string.upper("acao")的结果就是“ACAO”。
+
+&emsp;&emsp;函数string.sub(s,i,j)可以从字符串s中提取第i个到第j个字符。在Lua中，字符串的第一个字符的索引是1。还可以用负数索引，这样会从字符串的尾部开始计数，索引-1代表字符串的最后一个字符，-2代表倒数第二个字符，以此类推。这样，调用函数string.sub(s,1,j)或s:sub(1,j)，就可以得到字符串s中长度为j的前缀。调用string.sub(s,j,-1)或s:sub(j)，就可以得到字符串中从第j个字符开始的一个后缀。调用string.sub(s,2,-2)可以返回去掉字符串s的第一个和最后一个字符后的复制。
+
