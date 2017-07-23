@@ -73,6 +73,10 @@
 
 ####模式匹配（pattern-matching）函数
 
-&emsp;&emsp;字符串库中最强大的函数是find、match、gsub（global substitution，全局替换）和gmatch（global match，全局匹配），它们都是基于“模式（pattern）”的。
+&emsp;&emsp;字符串库中最强大的函数是`find`、`match`、`gsub`（global substitution，全局替换）和`gmatch`（global match，全局匹配），它们都是基于“模式（pattern）”的。
+
+&emsp;&emsp;不同于其他脚本语言，Lua既没有使用POSIX（regexp），也没有使用Perl正则表达式来进行模式匹配。其原因主要是考虑到Lua的大小。一个典型的POSIX正则表达式实现需要超过4000行代码，这相当于所有Lua标准库加在一起的大小。而相比之下，Lua采用的模式匹配实现的代码只有500行不到。当然，Lua的模式匹配所能达到的功能不及完整的POSIX实现。但是，Lua的模式匹配仍是一个强大的工具，并且它还具有一些特性，能在进行某些匹配时，比标准POSIX实现更为方便。
 
 &emsp;&emsp;
+
+
