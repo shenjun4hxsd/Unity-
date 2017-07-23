@@ -72,3 +72,7 @@
 &emsp;&emsp;
 
 ####模式匹配（pattern-matching）函数
+
+&emsp;&emsp;字符串库中最强大的函数是find、match、gsub（global substitution，全局替换）和gmatch（global match，全局匹配），它们都是基于“模式（pattern）”的。
+
+&emsp;&emsp;
