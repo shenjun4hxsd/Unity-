@@ -113,15 +113,15 @@
 
 &emsp;&emsp;
 
-&emsp;&emsp;#####● string.match函数
+#####&emsp;&emsp;● string.match函数
 
-&emsp;&emsp;从某种意义上说，函数string.match与string.find非常相似，它也是用于在一个字符串中搜索一种模式。不同之处在于，string.match返回的是目标字符串中与模式相匹配的那部分子串，而非该模式所在的位置。
+&emsp;&emsp;从某种意义上说，函数`string.match`与`string.find`非常相似，它也是用于在一个字符串中搜索一种模式。不同之处在于，`string.match`返回的是目标字符串中与模式相匹配的那部分子串，而非该模式所在的位置。
 
 ```lua
     print(string.match("hello world", "hello"))		--> hello
 ```
 
-&emsp;&emsp;对于固定的模式，例如“hello”，使用这个函数就没有什么意义了。但当使用变量模式（Variable Pattern）时，它的特性就显现出来了，如下示例：
+&emsp;&emsp;对于固定的模式，例如“`hello`”，使用这个函数就没有什么意义了。但当使用变量模式（`Variable Pattern`）时，它的特性就显现出来了，如下示例：
 
 ```lua
     date = "Today is 17/7/1990"
@@ -129,13 +129,13 @@
     print(d)		--> 17/7/1990
 ```
 
-&emsp;&emsp;在后面将会讨论模式“%d+/%d+/%d+”的含义及string.match的高级用法。
+&emsp;&emsp;在后面将会讨论模式“`%d+/%d+/%d+`”的含义及`string.match`的高级用法。
 
 &emsp;&emsp;
 
-&emsp;&emsp;#####● string.gsub函数
+#####&emsp;&emsp;● string.gsub函数
 
-&emsp;&emsp;string.gsub有3个参数：目标字符串、模式和替换字符串。它的基本用法是将目标字符串中所有出现模式的地方替换为替换字符串（最后一个参数）：
+&emsp;&emsp;`string.gsub`有3个参数：目标字符串、模式和替换字符串。它的基本用法是将目标字符串中所有出现模式的地方替换为替换字符串（最后一个参数）：
 
 ```lua
     s = string.gsub("Lua is cute", "cute", "great")
@@ -155,7 +155,7 @@
     print(s)			--> axx lii
 ```
 
-&emsp;&emsp;函数string.gsub还有另一个结果，即实际替换的次数。例如，以下代码就是一种统计字符串中空格数量的简单方法：
+&emsp;&emsp;函数`string.gsub`还有另一个结果，即实际替换的次数。例如，以下代码就是一种统计字符串中空格数量的简单方法：
 
 ```lua
     count = select(2, string.gsub(str, " ", " "))
