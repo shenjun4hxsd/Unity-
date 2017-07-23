@@ -637,3 +637,4 @@
 ```lua
     pattern = string.rep("[^\n]", 70) .. "[^\n]*"
 ```
+
