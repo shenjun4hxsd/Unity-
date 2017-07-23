@@ -47,4 +47,10 @@
     print(string.byte("abc", -1))        --> 99
 ```
 
+&emsp;&emsp;最后一行用了一个负数索引来访问字符串的最后一个字符。
 
+&emsp;&emsp;在Lua5.1中，`string.byte`还可以接受可选的第三个参数。调用`string.byte(s,i,j)`可以返回索引`i`到`j`之间（包括`i`和`j`）的所有字符的内部表示值。
+
+```lua
+    print(string.byte("abc", 1, 2))        --> 97 98
+```
