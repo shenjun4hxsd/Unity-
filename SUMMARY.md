@@ -275,6 +275,6 @@
   * [8.14 数学库](di-8-zhang-lua-cheng-xu-she-ji/814-shu-xue-ku.md)
   * [8.15 table库](di-8-zhang-lua-cheng-xu-she-ji/815-tableku.md)
   * [8.16 字符串库](di-8-zhang-lua-cheng-xu-she-ji/816-zi-fu-chuan-ku.md)
-  * 8.17 I／O库
+  * [8.17 I／O库](di-8-zhang-lua-cheng-xu-she-ji/817-ioku.md)
   * 8.18 用户自定义类型
 
