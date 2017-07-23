@@ -78,3 +78,15 @@
         io.write(string.format("%6d ", count), line, "\n")
     end
 ```
+
+&emsp;&emsp;如果只为了迭代文件中的所有行，那么io.lines迭代器更为合适。例如，下面这个程序可以对文件中的所有行进行排序：
+
+```lua
+    local lines = {}
+    -- 读取table 'lines'中所有行
+    for line in io.lines() do lines[#lines + 1] = line end
+    -- 排序
+    table.sort(lines)
+    -- 输出所有行
+    for _, l in ipairs(lines) do io.write(l "\n") end
+```
