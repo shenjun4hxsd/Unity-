@@ -164,3 +164,62 @@
 &emsp;&emsp;
 
 #####&emsp;&emsp;● string.gmatch函数
+
+
+&emsp;&emsp;string.gmatch会返回一个函数，通过这个函数可以遍历到一个字符串中所有出现指定模式的地方。例如，以下示例找出了给定字符串s中所有的单词：
+
+```lua
+    words = {}
+    for w in string.gmatch(s, "%a+") do
+        words[#words + 1] = w
+    end
+```
+
+&emsp;&emsp;其中模式“%a+”表示匹配一个或多个字母字符的序列（也就是单词）。在本例中，for循环会遍历目标字符串中所有的单词，并且将它们储存到列表words中。
+
+&emsp;&emsp;通过gmatch和gsub可以模拟出Lua中的require在寻找模块时所用的搜索策略，如下：
+
+```lua
+    function search(modname, path)
+        modname = string.gsub(modname, "%.", "/")
+        for c in string.gmatch(path, "[^;]+") do
+            local fname = string.gsub(c, "?", modname)
+            local f = io.open(fname)
+            if f then
+                f:close()
+                return fname
+            end
+        end
+        return nil		-- 未找到
+    end
+```
+
+&emsp;&emsp;首先，用点符号来替换所有的目录分隔符，示例假设目录分隔符未‘/’。接下去我们就会看到，在模式中“点”具有特殊的含义，因此若要表示一个点必须写为“%.”。其次，函数遍历路径中的所有组成部分，这里所谓的组成部分是指那些不包含分号的最长子串。对于每个组成部分，都用模块名来替换其中的问号，以此获得最终的文件名。最后，检查该文件是否存在。如果存在，则关闭该文件，并返回它的名称。
+
+&emsp;&emsp;
+
+#####&emsp;&emsp;● 模式
+
+&emsp;&emsp;可以用字符分类（character class）创建更多有用的模式。字符分类就是模式中的一项，可以与一个特定集合中的任意字符相匹配。例如，分类%d可匹配任意数字。如下例可以用模式“%d%d/%d%d/%d%d%d%d”搜索符合“dd/mm/yyyy”格式的日期：
+
+```lua
+    s = "Deadline is 30/05/1999, firm"
+    date = "%d%d/%d%d/%d%d%d%d"
+    print(string.sub(s, string.find(s, data)))		--> 30/05/1999
+```
+
+&emsp;&emsp;下表列出了所有的字符分类：
+
+|||
+|:--|:--|
+|.|所有字符|
+|%a|字母|
+|%c|控制字符|
+|%d|数字|
+|%l|小写字母|
+|%p|标点符号|
+|%s|空白字符|
+|%u|大写字母|
+|%w|字母和数字字符|
+|%x|十六进制数字|
+|%z|内部表示为0的字符|
