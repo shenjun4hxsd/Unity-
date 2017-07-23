@@ -37,7 +37,7 @@
     s = string.sub(s, 2, -2)
 ```
 
-&emsp;&emsp;函数string.char和string.byte用于转换字符及其内部数值表示。string.char函数接受零个或多个整数，并将每个整数转换成对应的字符，然后返回一个由这些字符连接而成的字符串。string.byte(s,i)返回字符串s中第i个字符的内部数值表示，它的第二个参数是可选的，调用string.byte(s)可返回字符串s中第一个字符的内部数值表示。在下例中，假定字符是用ASCII表示的：
+&emsp;&emsp;函数`string.char`和`string.byte`用于转换字符及其内部数值表示。`string.char`函数接受零个或多个整数，并将每个整数转换成对应的字符，然后返回一个由这些字符连接而成的字符串。`string.byte(s,i)`返回字符串`s`中第`i`个字符的内部数值表示，它的第二个参数是可选的，调用`string.byte(s)`可返回字符串s中第一个字符的内部数值表示。在下例中，假定字符是用ASCII表示的：
 
 ```lua
     print(string.char(97))        --> a
