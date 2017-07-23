@@ -234,6 +234,7 @@ Lua对于诸如a["name"]的写法提供了一种更简便的“语法糖（synta
 
 在Lua5.1中，长度操作符“#”用于返回一个数组或线性表的最后一个索引值（或为其大小）。
 
+```lua
                 for i=1,#a do
                     print(a[i])
                 end
@@ -247,9 +248,11 @@ Lua对于诸如a["name"]的写法提供了一种更简便的“语法糖（synta
                 for i=1,10 do
                     a[#a+1] = io.read()
                 end
+```
                 
 当对索引的实际类型不是很确定时，可以明确地使用一个显式转换
 
+```lua
                 i = 10; j = "10"; k = "+10"
                 a = { }
                 a[i] = "one value"
@@ -259,7 +262,7 @@ Lua对于诸如a["name"]的写法提供了一种更简便的“语法糖（synta
                 print(a[k]) --> yet another value
                 print(a[tonumber(j)]) --> one value
                 print(a[tonumber(k)]) --> one value
-
+```
 
 &emsp;&emsp;
 
