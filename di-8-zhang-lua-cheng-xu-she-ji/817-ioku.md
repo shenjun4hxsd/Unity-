@@ -20,3 +20,29 @@
     >io.write(string.format("sin (3) = %.4f\n", math.sin(3)))
     --> sin (3) = 0.1411
 ```
+
+&emsp;&emsp;在实际操作中应当避免写出`io.write(a..b..c)`这样的代码，而是应该调用`io.write(a,b,c)`，它能达到与`io.write(a..b..c)`相同的效果，并且可以避免连接操作，因此效率更高。
+
+&emsp;&emsp;无论使用`print`还是`io.write`都有一个原则。即在随意编写（quick-and-dirty）的程序中，或者为调试目的而编写的代码中，提倡使用`print`；而在其他需要完全控制输出的地方使用`write`。
+
+```lua
+    >print("hello", "Lua");print("Hi")
+    --> hello Lua
+    --> Hi
+    
+    >io.write("hello", "Lua");io.write("Hi", "\n")
+    --> helloLuaHi
+```
+
+&emsp;&emsp;`write`与`print`有几点不同。首先，`write`在输出时不会添加像制表符或回车这样的额外字符。其次，`write`使用当前输出文件，而`print`总是使用标准输出。最后，`print`会自动调用其参数的`tostring()`方法，因此它还能显示`table`、函数和`nil`。
+
+&emsp;&emsp;函数io.read从当前输入文件中读取字符串，它的参数决定了要读取的数据：
+
+|||
+|:--|:--|
+|`"*all"`|读取整个文件|
+|`"*line"`|读取下一行|
+|`"*number"`|读取一个整数|
+|`<num>`|读取一个不超过`<num>`个字符的字符串|
+
+&emsp;&emsp;
