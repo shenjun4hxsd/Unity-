@@ -427,3 +427,213 @@
 &emsp;&emsp;注意，模式中某些部分的作用，两个定位标记（`'^'和'$'`）表示在操作整个字符串；而“`.-`”会试图匹配尽可能少的内容，所以首尾两处的“`%s*`”便可匹配到两端所有的空格。其次，`gsub`会返回两个值，并用一对额外的括号来丢弃多余的结果，即丢弃“匹配的总数”。
 
 &emsp;&emsp;
+
+####&emsp;&emsp; 替换
+
+&emsp;&emsp;string.gsub函数的第三个参数不仅是一个字符串，还可以是一个函数或table。当用一个函数来调用时，string.gsub会在每次找到匹配时调用该函数，调用时的参数就是捕获到的内容，而该函数的返回值则作为要替换的字符串。当用一个table来调用时，string.gsub会用每次捕获到的内容作为key，在table中进行查找，并将对应的value作为要替换的字符串。如果table中不包含这个key，那么string.gsub不改变这个匹配。
+
+&emsp;&emsp;例如，以下函数将完成一次变量展开。它对字符串中所有格式为$varname的部分，替换为对应全局变量varname的值：
+
+```lua
+    function expand(s)
+        return (string.gsub(s, "$(%w+)", _G))
+    end
+
+    name = "Lua"; status = "great"
+    print(expand("$name is $status, isn't it?"))
+    --> Lua is great, isn't it?
+```
+
+&emsp;&emsp;对每处与“$(%w+)”相匹配的地方，string.gsub都会在table _G中查找捕获到的名称，并用找到的名称替换字符串中的匹配部分。如果table中没有这个key，则不尽兴替换。
+
+```lua
+    print(expand("$othername is $status, isn't it?"))
+    --> $othername is great, isn't it?
+```
+
+&emsp;&emsp;如果不确定所有的变量都有一个对应的字符串值，则可以对它们的值应用tostring。在这种情况下，可以用一个函数来提供要替换的值：
+
+```lua
+    function expand(s)
+        return (string.gsub(s, "$(%w+)", function(n)
+            return tostring(_G[n])
+        end))
+    end
+
+    print(expand("print = $print; a = $a"))
+    --> print = function: 0x8050ce0; a = nil
+```
+
+&emsp;&emsp;现在，对于所有匹配“$(%w+)”的地方，string.gsub都会调用给定的函数，并传入捕获到的名称。如果函数返回nil，则不作替换。在本例中不会出现这种情况，因为tostring不会返回nil。
+
+&emsp;&emsp;最后一个示例则继续回到上一节中提及的格式转换器。本例仍然是将LaTex风格的命令（\example{text}）转换成XML风格（<example>text</example>），但是允许嵌套的命令。以下函数用递归的方式完成了这项任务：
+
+```lua
+    function toxml(s)
+        s = string.gsub(s, "\\(%a+)(%b{})", function(tag, body)
+            body = string.sub(body, 2, -2)          -- 删除花括号
+            body = toxml(body)                      -- 处理嵌套的命令
+            return string.format("<%s>%s<%s>", tag, body, tag)
+            end)
+        return s
+    end
+
+    print(toxml("\\title{The \\bold{big} example}"))
+    --> <title>The <bold>big</bold> example</title>
+```
+
+&emsp;&emsp;
+
+#####&emsp;&emsp;● URL 编码
+
+&emsp;&emsp;下一个示例是关于URL编码，这是HTTP所使用的一种编码方式，用于在一个URL中传送各种参数。这种编码方式会将特殊字符（如‘=’、‘&’、‘+’）编码为“%<xx>”的形式，其中<xx>是字符的十六进制表示。此外，它还会将空格转换为“+”。例如，它会将字符串“a+b = c”编码为“a%2Bb+%3D+c”。最后，它会将每对参数名及其值用“=”连接起来，并将每对结果name=value用“&”连接起来。例如，对于值：
+
+```lua
+    name = "a1"; query = "a+b = c"; q="yes or no"
+`` `
+
+&emsp;&emsp;会被编码为：
+
+```lua
+    "name=a1&query=a%2Bb+%3D+c&q=yes+or+no"
+```
+
+&emsp;&emsp;现在，假设要对这个URL进行解码。要求对编码中的每个值，以其名称作为key，保存到一个table内。以下函数完成一次基本的解码：
+
+```lua
+    function unescape(s)
+        s = string.gsub(s, "+", " ")
+        s = string.gsub(s, "%%(%x%x)", function(h)
+            return string.char(tonumber(h, 16))
+        end)
+        return s
+    end
+```
+
+&emsp;&emsp;第一条语句将字符串中的所有的“+”改为空格，第二句gsub则匹配所有以“%”为前缀的两位十六位数字，并对每处匹配调用一个匿名函数。这个函数会将十六进制数转换成一个数字，然后调用string.char返回相应的字符。如下所示：
+
+```lua
+    print(unescape("a%2Bb+%eD+c"))      --> a+b = c
+```
+
+&emsp;&emsp;用gmatch来对name=value进行解码。由于名称和值都不能包含“&”和“=”，所以可以用模式“[^&=]+”来匹配它们：
+
+```lua
+    cgi = {}
+    function decode(s)
+        for name, value in string.gmatch(s, "([^&=]+)=([^&=]+)") do
+            name = unescape(name)
+            value = unescape(value)
+            cgi[name] = value
+        end
+    end
+```
+
+&emsp;&emsp;调用gmatch会匹配所有格式为name=value的部分。对于每组参数，迭代器都会将捕获到的内容作为变量name和value的值。循环体只是对两个字符串调用unescape，然后将结果保存到table cgi中。
+
+&emsp;&emsp;另一方面，编码函数也很容易编写。首先，写一个escape函数，它会将所有的特殊字符编码为“%”并伴随该字符的十六进制码。另外，它还会将空格转换为“+”。
+
+```lua
+    function escape(s)
+        s = string.gsub(s, "[&=+%%%c]", function(c)
+            return string.format("%%%02X", string.byte(c))
+        end)
+        s = string.gsub(s, " ", "+")
+        return s
+    end
+```
+
+&emsp;&emsp;encode函数会遍历整个待编码的table，构建出最终的结果字符串：
+
+```lua
+    function encode(t)
+        local b = {}
+        for k,v in pairs(t) do
+            b[#b + 1] = (escape(k) .. "=" .. escape(v))
+        end
+        return table.concat(b, "&")
+    end
+
+    t = {name = "a1", query = "a+b = c", q = "yes or no"}
+    print(encode(t))        --> q=yes+or+no&query=a%2Bb+%3D+c&name=a1
+```
+
+&emsp;&emsp;
+
+#####&emsp;&emsp;● tab扩展
+
+&emsp;&emsp;在Lua中，像“()”这样的空白捕获具有特殊的含义。这个模式不是代表捕获空内容，而是捕获它在目标字符串中的位置，返回的是一个数字：
+
+```lua
+    print(string.match("hello", "()ll()"))      --> 3 5
+```
+
+&emsp;&emsp;注意，这个示例的结果与调用string.find得到的结果并不一样，因为第二个空捕获的位置是在匹配之后的。
+
+&emsp;&emsp;这里有一个关于空捕获应用的示例，在一个字符串中扩展tab（制表符）：
+
+```lua
+    function expandTabs(s, tab)
+        tab = tab or 8              -- 制表符的“大小”（默认为8）
+        local corr = 0
+        s = string.gsub(s, "()\t", function(p)
+            local sp = tab - (p - 1 + corr)%tab
+            corr = corr - 1 + sp
+            return string.rep(" ", sp)
+        end)
+        return s
+    end
+```
+
+&emsp;&emsp;gsub会匹配字符串中所有的tab，捕获它们的位置。内嵌函数会根据每个tab的位置，计算出还需多少空格才能达到整数倍tab的列。它先对位置减一，使其从0开始计数，然后加上corr以补偿前面的tab。并且，它还会更新这个补偿值，用于在一个tab的修正，减一以去掉当前tab，再加上要添加的空格数sp。最后这个函数返回正确数量的空格。
+
+&emsp;&emsp;为了完整起见，再看一下如何实现逆向的操作，即将空格转换为tab。第一种方法可以考虑通过空捕获来对位置进行操作。还有一种更简单的方法即可以在字符串中每8个字符后插入一个标记。无论该标记是否位于空格前，都用tab替换它。
+
+```lua
+    function unexpandTabs(s, tab)
+        tab = tab or 8
+        s = expandTabs(s)
+        local pat = string.rep(".", tab)
+        s = string.gsub(s, pat, "%0\1")
+        s = string.gsub(s, " +\1", "\t")
+        s = string.gsub(s, "\1", "")
+        return s
+    end
+```
+
+&emsp;&emsp;这个函数首先对字符串中所有的tab进行了扩展。然后计算出一个辅助模式，用于匹配所有的tab字符序列，并通过这个模式在每个tab字符后添加一个标记（控制字符“\1”）。之后，它将所有以此标记结尾的空格序列都替换为tab。最后，删除剩下的标记，即那些没有位于空格后的标记。
+
+&emsp;&emsp;
+
+#### 技巧
+
+&emsp;&emsp;模式匹配是一种操作字符串的强大工具。通过很少的string.gsub调用就可以完成许多复杂的操作，但是应该谨慎使用。
+
+&emsp;&emsp;模式匹配不能代替传统的分析器。对于某些要求并不严格的程序来说，可以在源代码中做一些有用的匹配操作，但很难构建出高质量的产品。例如，之前曾用一个模式来匹配C代码中的注释。如果C代码中有一个字符串常量含有“/*”，就会得到一个错误的结果：
+
+```lua
+    test = [[char s[] = "a /* here"; /* a tricky string */]]
+    print(string.gsub(test, "/%*.-%*/", "<COMMENT>"))
+    --> char s[] = "a <COMMENT>"
+```
+
+&emsp;&emsp;含有注释标记的字符串并不常见，所以对于自用的程序而言，这个模式足以达到要求。但是，不应该将这个有问题的程序发布出去。
+
+&emsp;&emsp;通常，在Lua程序中使用模式匹配时非常有效。一台奔腾333MHz计算机可以在不到十分之一秒的时间内，匹配一个具有20万个字符的文本中所有的单词，但需要注意的是，应该提供尽可能精确的模式，宽泛的模式会比精确的模式慢许多。一个较极端的示例就是模式“(.-)%$”，它可以获取一个单元符号中不存在美元符号，这个算法就会试着从字符串起始位置开始匹配此模式，为了搜索美元符号，它会遍历整个字符串。当到达字符串结尾时，这次模式匹配就会失败，但此失败仅意味着从字符串起始位置开始的匹配失败了。然后，这个算法还会从字符串的第二个位置开始第二次搜索，其结果仍是无法匹配这个模式。这样的匹配过程以此类推，从而表现为二次方的时间复杂度。但在一台奔腾333MHz的计算机上，搜索20万个字符需要执行超过3小时的时间。要解决这个问题，只需将模式限定为仅匹配字符串的起始部分，也就是将模式指定为“^(.-)%$”。这样便告诉了算法，如果不能在起始位置上找到匹配，就停止搜索。有了这种位置限定后，再运行该模式就只需要不到十分之一秒的时间了。
+
+&emsp;&emsp;此外还要小心“空模式”的使用，也就是那些会匹配空字符串的模式。例如，如果准备用模式“%a*”来匹配名称，那么会发现到处都是名称：
+
+```lua
+    i, j = string.find(";$% **#$hello13", "%a*")
+    print(i,j)          --> 1 0
+```
+
+&emsp;&emsp;在这个示例中，string.find调用会成功地在字符串起始处找到一个空的字母序列。
+
+&emsp;&emsp;在模式的开始或结束处使用修饰符“-”是没有意义的，因此这样总会匹配到空字符串。此修饰符总是需要有些东西在它周围以限制它的扩展范围。同样，使用含有“.*”的模式也需要注意，因为这种指示可能会扩展到预期的范围之外。
+
+&emsp;&emsp;有时用Lua自身来构造一个模式也是很有用的。在前面的空格转换为tab的程序中，已用到了这个技巧。接下来再看另外一个示例，如何找出一个文本中较长的行，这里的“较长”是指超过70个字符的行。起始，一个长行就是一个具有70个或更多个字符的序列，其中每个字符都不为换行符。可以用字符分类“[^\n]”来匹配除换行符以外的其他单个字符。因此，可以将这个匹配耽搁字符的模式重复70此来匹配一个长行。在这里，可以用string.rep代替手写来创建这个模式：
+
+```lua
+    pattern = string.rep("[^\n]", 70) .. "[^\n]*"
+```
