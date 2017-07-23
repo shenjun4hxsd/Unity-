@@ -101,12 +101,21 @@
     ...
 ```
 
-&emsp;&emsp;现在要打印出每一行中最大的数字。可以用一次read函数调用来读取每行的3个数字：
+&emsp;&emsp;现在要打印出每一行中最大的数字。可以用一次`read`函数调用来读取每行的3个数字：
 
 ```lua
     while true do
         local n1, n2, n3 = io.read("*number", "*number", "*number")
         if not nil then break end
         print(math.max(n1, n2, n3))
+    end
+```
+
+&emsp;&emsp;对于这类问题，还可以采用“*all”读取整个文件，然后再用gmath来提取其中内容：
+
+```lua
+    local pat = "(%S+)%s+(%S+)%s+(%S+)%s+"
+    for n1, n2, n3 in string.gmatch(io.read("*all"), pat) do
+        print(math.max(tonumber(n1), tonumber(n2), tonumber(n3)))
     end
 ```
