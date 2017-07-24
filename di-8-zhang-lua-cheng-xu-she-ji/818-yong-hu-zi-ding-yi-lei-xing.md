@@ -44,3 +44,17 @@
 ```lua
     void *lua_newuserdata(lua_State *L, size_t size);
 ```
+
+&emsp;&emsp;如果由于某些原因，需要通过其他机制来分配内存。那么可以创建只有一个指针大小的userdata，然后将指向真正内存块的指针存入其中。在下一章中就有这样的例子。
+
+&emsp;&emsp;以下函数就用lua_newuserdata创建了一个新的布尔数组：
+
+```lua
+    static int newarray(lua_State *L) {
+        int i, n;
+        size_t nbytes;
+        NumArray *a;
+        
+        n = luaL_checkint(L, 1);
+    }
+```
