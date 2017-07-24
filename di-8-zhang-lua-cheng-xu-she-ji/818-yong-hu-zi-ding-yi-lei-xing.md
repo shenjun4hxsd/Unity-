@@ -37,6 +37,10 @@
 
 ####userdata
 
-&emsp;&emsp;首先要面临的问题是如何在Lua中表示这个NumArray结构。Lua为此提供了一种基本类型userdata。userdata提供了一块原始的内存区域，可以用来存储任何东西。并且，在Lua中userdata没有任何预定义的操作。
+&emsp;&emsp;首先要面临的问题是如何在Lua中表示这个NumArray结构。Lua为此提供了一种基本类型`userdata`。`userdata`提供了一块原始的内存区域，可以用来存储任何东西。并且，在Lua中`userdata`没有任何预定义的操作。
 
-&emsp;&emsp;函数lua_newuserdata会根据指定的大小分配一块内存，并将对应的userdata压入栈中，
+&emsp;&emsp;函数`lua_newuserdata`会根据指定的大小分配一块内存，并将对应的userdata压入栈中，最后返回这个内存块的地址：
+
+```lua
+    void *lua_newuserdata(lua_State *L, size_t size);
+```
