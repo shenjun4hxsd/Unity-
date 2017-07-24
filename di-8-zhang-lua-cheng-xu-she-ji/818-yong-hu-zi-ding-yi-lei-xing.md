@@ -123,3 +123,14 @@
         return 1;
     }
 ```
+
+&emsp;&emsp;最后，需要一些代码来初始化这个库：
+
+```lua
+    static const struct luaL_Reg arraylib [] = {
+        {"new", newarray},
+        {"set", setarray},
+        {"get", getarray},
+        {"size", getsize},
+    }
+```
