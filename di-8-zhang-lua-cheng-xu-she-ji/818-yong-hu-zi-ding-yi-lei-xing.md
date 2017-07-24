@@ -35,7 +35,7 @@
 
 &emsp;&emsp;
 
-####userdata
+####&emsp;&emsp;userdata
 
 &emsp;&emsp;首先要面临的问题是如何在Lua中表示这个NumArray结构。Lua为此提供了一种基本类型`userdata`。`userdata`提供了一块原始的内存区域，可以用来存储任何东西。并且，在Lua中`userdata`没有任何预定义的操作。
 
@@ -45,9 +45,9 @@
     void *lua_newuserdata(lua_State *L, size_t size);
 ```
 
-&emsp;&emsp;如果由于某些原因，需要通过其他机制来分配内存。那么可以创建只有一个指针大小的userdata，然后将指向真正内存块的指针存入其中。在下一章中就有这样的例子。
+&emsp;&emsp;如果由于某些原因，需要通过其他机制来分配内存。那么可以创建只有一个指针大小的`userdata`，然后将指向真正内存块的指针存入其中。在下一章中就有这样的例子。
 
-&emsp;&emsp;以下函数就用lua_newuserdata创建了一个新的布尔数组：
+&emsp;&emsp;以下函数就用`lua_newuserdata`创建了一个新的布尔数组：
 
 ```lua
     static int newarray(lua_State *L) {
@@ -67,9 +67,9 @@
     }
 ```
 
-&emsp;&emsp;其中，宏`luaL_checkint`只是在调用`luaL_checkinteger`后进行了一个类型转换。只要在Lua中注册好newarray，就可以通过语句a=array.new(1000)来创建一个新数组。
+&emsp;&emsp;其中，宏`luaL_checkint`只是在调用`luaL_checkinteger`后进行了一个类型转换。只要在Lua中注册好`newarray`，就可以通过语句`a=array.new(1000)`来创建一个新数组。
 
-&emsp;&emsp;可以通过这样的调用array.set(array, index, value)，在数组中存储元素。后面的内容会介绍如何使用元表来实现更传统的语法array[index]=value。无论哪种写法，底层函数都是相同的。
+&emsp;&emsp;可以通过这样的调用`array.set(array, index, value)`，在数组中存储元素。后面的内容会介绍如何使用元表来实现更传统的语法`array[index]=value`。无论哪种写法，底层函数都是相同的。
 
 &emsp;&emsp;下面将遵循Lua惯例，假设索引从1开始。
 
@@ -90,7 +90,7 @@
         return 0;
 ```
 
-&emsp;&emsp;由于Lua中任何值都可以转换为布尔，所以这里对第3个参数使用luaL_checkany，它只确保了在这个参数位置上有一个值。如果用错误的参数调用了setarray，就会得到这样的错误消息：
+&emsp;&emsp;由于Lua中任何值都可以转换为布尔，所以这里对第3个参数使用`luaL_checkany`，它只确保了在这个参数位置上有一个值。如果用错误的参数调用了`setarray`，就会得到这样的错误消息：
 
 ```lua
     array.set(0, 11, 0)
@@ -153,4 +153,22 @@
         array.set(a, i, i%5 == 0)
     end
     print(array.get(a, 10))		--> true
+```
+
+&emsp;&emsp;
+
+####&emsp;&emsp;元表
+
+&emsp;&emsp;当前的实现有一个重大的安全漏洞，假定用户写了这样的语句`array.set(io.stdin, 1, false)`。`io.stdin`的值是一个`userdata`，是一个文件流指针（FILE *）。由于这是一个`userdata`，`array.set`会认为它是一个合法的参数，结果就使内存遭到破坏（如果幸运的话，可能会得到一个索引超出范围的错误）。但对于有些Lua库来说，这种行为是不可接受的。问题的原因不在于如何使用一个C程序库，而在于程序库不应破坏C数据或在Lua中导致核心转储（Core Dump）。
+
+&emsp;&emsp;一种辨别不同类型的`userdata`的方法是，为每种类型创建一个唯一的元表。每当创建了一个`userdata`后，就用相应的元表来标记它。而每当得到一个`userdata`后，就检查它是否拥有正确的元表。由于Lua代码不能改变`userdata`的元表，因此也就无法欺骗代码了。
+
+&emsp;&emsp;另外还需要有个地方来存储这个新的元表，然后才能用它来创建新的`userdata`，并检查给定的`userdata`是否具有正确的类型。在前面已提到过，有三个候选地可用于存储元表：注册表、环境或程序库中函数的`upvalue`。在Lua中，通常习惯是将所有新的C类型注册到注册表中，以一个类型名作为`key`，元表作为`value`。由于注册表中还有其他的内容，所以必须小心地选择类型名，以避免与`key`冲突。在示例中，将使用“`LuaBook.array`”作为其新类型的名称。
+
+&emsp;&emsp;通常，辅助库中提供了一些函数来帮助实现这些内容。可以使用的辅助库函数有：
+
+```lua
+    int luaL_newmetatable(lua_State *L, const char *tname);
+    void luaL_getmetatable(lua_State *L, const char *tname);
+    void *luaL_checkudata(lua_State *L, int index, const char *tname);
 ```
