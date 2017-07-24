@@ -56,5 +56,6 @@
         NumArray *a;
         
         n = luaL_checkint(L, 1);
+        luaL_argcheck(L, n >= 1, 1, "invalid size")
     }
 ```
