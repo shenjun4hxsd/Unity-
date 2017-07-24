@@ -57,5 +57,12 @@
         
         n = luaL_checkint(L, 1);
         luaL_argcheck(L, n >= 1, 1, "invalid size")
+        nbytes = sizeof(NumArray) + I_WORD(n - 1)*sizeof(unsigned int);
+        a = (NumArray *)lua_newuserdata(L, nbytes);
+        
+        a->size = n;
+        for(i = 0; i <= I_WORD(n-1); i++)
+            a->values[i] = 0;        /* 初始化数组 */
+        return 1;        /* 新的userdata已在栈上 */
     }
 ```
