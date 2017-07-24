@@ -30,3 +30,11 @@
 ```lua
     sizeof(NumArray) + I_WORD(n - 1)*sizeof(unsigned int)
 ```
+
+&emsp;&emsp;注意，这里无须对I_WORD加1，因为原来的结构中已经包含了一个元素的空间。
+
+&emsp;&emsp;
+
+####userdata
+
+&emsp;&emsp;
