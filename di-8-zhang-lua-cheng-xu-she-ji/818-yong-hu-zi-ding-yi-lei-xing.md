@@ -89,3 +89,26 @@
             a->values[I_WORD(index)] &= ~I_BIT(index);    /* 重置bit */
         return 0;
 ```
+
+&emsp;&emsp;由于Lua中任何值都可以转换为布尔，所以这里对第3个参数使用luaL_checkany，它只确保了在这个参数位置上有一个值。如果用错误的参数调用了setarray，就会得到这样的错误消息：
+
+```lua
+    array.set(0, 11, 0)
+    --> stdin:1: bad argument #1 to 'set' ('array' expected)
+    array.set(a, 0)
+    --> stdin:1: bad argument #3 to 'set' (value expected)
+```
+
+&emsp;&emsp;下一个函数用于检索元素：
+
+```lua
+    static int getarray(lua_State *L) {
+        NumArray *a = (NumArray *)lua_touserdata(L, 1);
+        int index = luaL_checkint(L, 2) - 1;
+        
+        luaL_argcheck(L, a != NULL, 1, "'array' expected");
+        
+        lua_pushboolean(L, a->values[I_WORD(index)] & I_BIT(index));
+        return 1;
+    }
+```
