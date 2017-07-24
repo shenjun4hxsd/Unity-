@@ -66,3 +66,16 @@
         return 1;        /* 新的userdata已在栈上 */
     }
 ```
+
+&emsp;&emsp;其中，宏`luaL_checkint`只是在调用`luaL_checkinteger`后进行了一个类型转换。只要在Lua中注册好newarray，就可以通过语句a=array.new(1000)来创建一个新数组。
+
+&emsp;&emsp;可以通过这样的调用array.set(array, index, value)，在数组中存储元素。后面的内容会介绍如何使用元表来实现更传统的语法array[index]=value。无论哪种写法，底层函数都是相同的。
+
+&emsp;&emsp;下面将遵循Lua惯例，假设索引从1开始。
+
+```lua
+    static int setarray(lua_State *L)
+        NumArray *a = (NumArray *)lua_touserdata(L, 1);
+        int index = luaL_checkint(L, 2) - 1;
+        luaL_checkany(L, 3);
+```
