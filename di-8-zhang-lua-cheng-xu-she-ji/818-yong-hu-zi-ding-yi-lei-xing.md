@@ -133,5 +133,10 @@
         {"get", getarray},
         {"size", getsize},
         {NULL, NULL}
+    };
+    
+    int luaopen_array(lua_State *L) {
+        luaL_register(L, "array", arraylib);
+        return 1;
     }
 ```
