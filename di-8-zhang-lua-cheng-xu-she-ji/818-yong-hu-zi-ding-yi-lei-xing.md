@@ -14,7 +14,7 @@
     #define I_BIT(i)    (1 << ((unsigned int)(i) % BITS_PER_WORD))
 ```
 
-&emsp;&emsp;BITS_PER_WORD是一个无符号整型的bit数量。宏I_WORD根据给定的索引来计算对应的bit位所存放的word（字），I_BIT计算出一个掩码，用于访问这个word中的正确bit。
+&emsp;&emsp;`BITS_PER_WORD`是一个无符号整型的`bit`数量。宏`I_WORD`根据给定的索引来计算对应的`bit`位所存放的`word`（字），`I_BIT`计算出一个掩码，用于访问这个`word`中的正确`bit`。
 
 &emsp;&emsp;可以使用以下结构来表示数组：
 
