@@ -78,4 +78,14 @@
         NumArray *a = (NumArray *)lua_touserdata(L, 1);
         int index = luaL_checkint(L, 2) - 1;
         luaL_checkany(L, 3);
+        
+        luaL_argcheck(L, a != NULL, 1, "'array' expected");
+        
+        luaL_argcheck(L, 0 <= index && index < a->size, 2, "index out of range");
+        
+        if(lua_toboolean(L, 3))
+            a->values[I_WORD(index)] |= I_BIT(index);    /* 设置bit */
+        else
+            a->values[I_WORD(index)] &= ~I_BIT(index);    /* 重置bit */
+        return 0;
 ```
