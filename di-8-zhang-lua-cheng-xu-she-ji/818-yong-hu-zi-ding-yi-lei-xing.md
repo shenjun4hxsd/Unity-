@@ -112,3 +112,14 @@
         return 1;
     }
 ```
+
+&emsp;&emsp;下面还定义了一个函数用于检索一个数组的大小：
+
+```lua
+    static int getsize(lua_State *L) {
+        NumArray *a = (NumArray *)lua_touserdata(L, 1);
+        luaL_argcheck(L, a != NULL, 1, "'array' expected");
+        lua_pushinteger(L, a->size);
+        return 1;
+    }
+```
