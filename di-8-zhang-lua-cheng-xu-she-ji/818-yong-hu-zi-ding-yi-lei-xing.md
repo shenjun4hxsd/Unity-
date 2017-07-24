@@ -37,4 +37,4 @@
 
 ####userdata
 
-&emsp;&emsp;
+&emsp;&emsp;首先要面临的问题是如何在Lua中表示这个NumArray结构。Lua为此提供了一种基本类型userdata。
