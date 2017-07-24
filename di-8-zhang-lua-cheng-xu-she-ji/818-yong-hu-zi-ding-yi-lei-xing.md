@@ -132,5 +132,6 @@
         {"set", setarray},
         {"get", getarray},
         {"size", getsize},
+        {NULL, NULL}
     }
 ```
