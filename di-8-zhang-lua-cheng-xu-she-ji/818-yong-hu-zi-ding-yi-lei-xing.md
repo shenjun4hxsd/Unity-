@@ -347,7 +347,7 @@
 
 ####&emsp;&emsp;数组访问
 
-&emsp;&emsp;另一种面向对象写法是使用常规的数组访问写法。相对于a:get(i)，可以简单地写为a[i]。对于上面的示例，很容易可以做到这点。由于函数setarray和getarray所接受的参数次序暗合相关元方法的参数次序，因此在Lua代码中可以快速地将这些元方法定义为：
+&emsp;&emsp;另一种面向对象写法是使用常规的数组访问写法。相对于`a:get(i)`，可以简单地写为`a[i]`。对于上面的示例，很容易可以做到这点。由于函数`setarray`和`getarray`所接受的参数次序暗合相关元方法的参数次序，因此在Lua代码中可以快速地将这些元方法定义为：
 
 ```lua
     local metaarray = getmetatable(array.new(1))
@@ -389,26 +389,26 @@
     }
 ```
 
-&emsp;&emsp;在这个新版本中，仍只有一个公共函数new。所有其他函数都作为特定操作的元方法。
+&emsp;&emsp;在这个新版本中，仍只有一个公共函数`new`。所有其他函数都作为特定操作的元方法。
 
 &emsp;&emsp;
 
 ####&emsp;&emsp; 轻量级userdata（light userdata）
 
-&emsp;&emsp;到现在为止所使用的userdata都称为“完全userdata(full userdata)”。Lua还提供另一种“轻量级userdata(light userdata)”。
+&emsp;&emsp;到现在为止所使用的`userdata`都称为“完全`userdata(full userdata)`”。Lua还提供另一种“轻量级`userdata(light userdata)`”。
 
-&emsp;&emsp;轻量级userdata是一种表示C指针的值（即void *）。由于它是一个值，所以不用创建它。要将一个轻量级userdata放入栈中，只需调用lua_pushlightuserdata即可：
+&emsp;&emsp;轻量级`userdata`是一种表示C指针的值（即`void *`）。由于它是一个值，所以不用创建它。要将一个轻量级`userdata`放入栈中，只需调用`lua_pushlightuserdata`即可：
 
 ```lua
     void lua_pushlightuserdata(lua_State *L, void *p);
 ```
 
-&emsp;&emsp;尽管两种userdata在名称上差不多，但它们之间还是存在很大不同的。轻量级userdata不是缓冲，只是一个指针而已。它也没有元表，就像数字一样，轻量级userdata无须受垃圾收集器的管理。
+&emsp;&emsp;尽管两种`userdata`在名称上差不多，但它们之间还是存在很大不同的。轻量级`userdata`不是缓冲，只是一个指针而已。它也没有元表，就像数字一样，轻量级`userdata`无须受垃圾收集器的管理。
 
-&emsp;&emsp;有时会将轻量级userdata当作一种廉价的完全userdata来使用。但这种用法并没有太大意义。首先，使用轻量级userdata时用户必须自己管理内存，因为轻量级userdata不属于垃圾收集的范畴。其次，不要被“完全”二字所迷惑，完全userdata的开销并不比轻量级userdata大多少。它们只为分配内存增加了一些malloc的开销。
+&emsp;&emsp;有时会将轻量级`userdata`当作一种廉价的完全`userdata`来使用。但这种用法并没有太大意义。首先，使用轻量级`userdata`时用户必须自己管理内存，因为轻量级`userdata`不属于垃圾收集的范畴。其次，不要被“完全”二字所迷惑，完全`userdata`的开销并不比轻量级`userdata`大多少。它们只为分配内存增加了一些`malloc`的开销。
 
-&emsp;&emsp;轻量级userdata的真正用途是相等性判断。一个完全userdata是一个对象，它只与自身相等。而一个轻量级userdata则表示了一个C指针的值。因此，它与所有表示同一个指针的轻量级userdata相等。可以将轻量级userdata用于查找Lua中的C对象。
+&emsp;&emsp;轻量级`userdata`的真正用途是相等性判断。一个完全`userdata`是一个对象，它只与自身相等。而一个轻量级`userdata`则表示了一个C指针的值。因此，它与所有表示同一个指针的轻量级`userdata`相等。可以将轻量级`userdata`用于查找Lua中的C对象。
 
-&emsp;&emsp;以下是一种比较典型的情况，假设正在实现一种Lua与某个窗口系统的绑定。在这种绑定中，用完全userdata表示窗口。每个userdata可以包含整个窗口的数据结构，也可以只包含一个指向系统所创建窗口的指针。当在一个窗口中发生了一个事件时（例如单击鼠标），系统要调用对应于该窗口的回调函数。而窗口是通过其地址来识别的。为了调用Lua中实现的回调函数，必须先找到表示指定窗口的userdata。若要寻找这个userdata，可以用一个table来保存窗口的信息，它的key是表示窗口地址的轻量级userdata，而value则是表示窗口本身的完全userdata。当得到一个窗口地址时，就可以把它作为一个轻量级userdata压入栈中，并用这个userdata来索引table。从而得到那个表示窗口本身的完全userdata，并由此调用回调函数。
+&emsp;&emsp;以下是一种比较典型的情况，假设正在实现一种Lua与某个窗口系统的绑定。在这种绑定中，用完全`userdata`表示窗口。每个`userdata`可以包含整个窗口的数据结构，也可以只包含一个指向系统所创建窗口的指针。当在一个窗口中发生了一个事件时（例如单击鼠标），系统要调用对应于该窗口的回调函数。而窗口是通过其地址来识别的。为了调用Lua中实现的回调函数，必须先找到表示指定窗口的`userdata`。若要寻找这个`userdata`，可以用一个`table`来保存窗口的信息，它的`key`是表示窗口地址的轻量级`userdata`，而`value`则是表示窗口本身的完全`userdata`。当得到一个窗口地址时，就可以把它作为一个轻量级`userdata`压入栈中，并用这个`userdata`来索引`table`。从而得到那个表示窗口本身的完全`userdata`，并由此调用回调函数。
 
 🔚
