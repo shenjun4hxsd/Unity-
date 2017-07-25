@@ -173,3 +173,174 @@
     void *luaL_checkudata(lua_State *L, int index, const char *tname);
 ```
 
+&emsp;&emsp;luaL_newmetatable函数会创建一个新的table用作元表，并将其压入栈顶，然后将这个table与注册表中的指定名称关联起来。luaL_getmetatable函数可以在注册表中检索与tname关联的元表。luaL_checkudata可以检查栈中指定位置上是否为一个userdata，并且是否具有与给定名称相匹配的元表。如果该对象不是一个userdata，或者它不具有正确的元表，就会引发一个错误；否则，它就返回这个userdata的地址。
+
+&emsp;&emsp;现在可以修改前面的实现了。第一步是修改打开库的函数。新版本必须为数组创建一个元表：
+
+```lua
+    int luaopen_array(lua_State *L) {
+        luaL_newmetatable(L, "LuaBook.array");
+        luaL_register(L, "array", arraylib);
+        return 1;
+    }
+```
+
+&emsp;&emsp;下一步是修改newarray，使其能为所有新建的数组设置这个元表：
+
+```lua
+    static int newarray(lua_State *L) {
+        <如前>
+
+        luaL_getmetatable(L, "LuaBook.array");
+        lua_setmetatable(L, -2);
+
+        return 1; 		/* 新的userdata已在栈中 */
+    }
+```
+
+&emsp;&emsp;lua_setmetatable函数会从栈中弹出一个table，并将其设为指定索引上对象的元表。在本例中，这个对象就是一个新建的userdata。
+
+&emsp;&emsp;最后，setarray、getarray和getsize必须检查其第一个参数是否为一个合法的数组。为了简化这样的任务，定义了以下宏：
+
+```lua
+    #define checkarray(L) \
+        (NumArray *)luaL_checkudata(L, 1, "LuaBook.array")
+```
+
+&emsp;&emsp;使用这个宏getsize同样简单：
+
+```lua
+    static int getsize(lua_State *L)
+        NumArray *a = checkarray(L);
+        lua_pushinteger(L, a->size);
+        return 1;
+```
+
+&emsp;&emsp;由于setarray和getarray使用了一段相同的代码来检查第二个索引参数，所以将这段公共部分单独组成以下函数：
+
+```lua
+    static unsigned int *getindex(lua_State *L, unsigned int *mask)
+    {
+        NumArray *a = checkarray(L);
+        int index = luaL_checkint(L, 2) - 1;
+
+        luaL_argcheck(L, 0 <= index && index < a->size, 2, 
+                 "index out of range");
+
+        /* 返回元素地址 */
+        *mask = I_BIT(index);
+        return &a->values[I_WORD(index)];
+    }
+```
+
+&emsp;&emsp;使用了getindex的setarray和getarray也同样简单明了：
+
+```lua
+    static int getarray(lua_State *L) {
+        unsigned int mask;
+        unsigned int *entry = getindex(L, &mask);
+        luaL_checkany(L, 3);
+        if(lua_toboolean(L, 3))
+            *entry |= mask;
+        else
+            *entry &= ~mask;
+        return 0;
+    }
+
+    static int getarray(lua_State *L) {
+        unsigned int mask;
+        unsigned int *entry = getindex(L, &mask);
+        lua_pushboolean(L, *entry & mask);
+        return 1;
+    }
+```
+
+&emsp;&emsp;现在，如果试图这样调用array.get(io.stdin, 10)，就会得到一个正确的错误消息：
+
+```lua
+    error: bad argument #1 to 'get' ('array' expected)
+```
+
+&emsp;&emsp;
+
+####&emsp;&emsp; 面向对象的访问
+
+&emsp;&emsp;下一步是将这种类型变换成一个对象，然后就可以用普通的面向对象语法来操作它的实例了。例如：
+
+```lua
+    a = array.new(1000)
+    print(a:size())  		--> 1000
+    a:set(10, true)
+    print(a:get(10))		--> true
+```
+
+&emsp;&emsp;注意，a:size()等价于a.size(a)。因此，必须使表达式a.size返回前面定义的函数getsize。实现这点的关键是使用__index元方法。对于table而言，Lua会在找不到指定key时调用这个元方法。对于userdata，则会在每次访问时都调用它，因为userdata根本没有key。
+
+&emsp;&emsp;假设，运行了以下代码：
+
+```lua
+    local metaarray = getmetatable(array.new(1))
+    metaarray.__index = metaarray
+    metaarray.set = array.set
+    metaarray.get = array.get
+    metaarray.size = array.size
+```
+
+&emsp;&emsp;第一行创建了一个数组，并将它的元表赋予了metaarray。然后将metaarray.__index设为metaarray。当对a.size求值时，由于a是一个userdata，所以Lua无法在对象a中找到key "size"。因此，Lua会尝试通过a的元表的__index字段来查找这个值，而这个字段也就是metaarray自身。由于metaarray.size为array.size，因此a.size(a)的结果就是array.size(a)。
+
+&emsp;&emsp;其实，在C中也可以达到相同的效果，甚至还可以做得更好。现在的数组是一种具有操作的对象，可以无须在table array中保存这些操作。程序库只要导出一个用于创建新数组的函数new就可以了，所有其他操作都可作为对象的方法。C代码同样可以直接注册这些方法。
+
+&emsp;&emsp;操作getsize、getarray和setarray无须作任何改变，唯一需要改变的是注册它们的方式。现在，需要修改打开程序库的函数。首先，需要设置两个独立的函数列表，一个用于常规的函数，另一个用于方法：
+
+```lua
+    static const struct luaL_Reg arraylib_f[] = {
+        {"new", newarray},
+        {NULL, NULL}
+    };
+
+    static const struct luaL_Reg arraylib_m[] = {
+        {"set", setarray},
+        {"get", getarray},
+        {"size", getsize},
+        {NULL, NULL}
+    };
+```
+
+&emsp;&emsp;新的打开函数luaopen_array必须创建元表，并将它赋予__index字段，然后在元表中注册所有的方法，最后创建并填充array table：
+
+```lua
+    int luaopen_array(lua_State *L) {
+        luaL_newmetatable(L, "LuaBook.array");
+
+        /* 元表.__index = 元表 */
+        lua_pushvalue(L, -1);	/* 复制元表 */
+
+        luaL_register(L, NULL, arraylib_m);
+
+        luaL_register(L, "array", arraylib_f);
+        return 1;
+    }
+```
+
+&emsp;&emsp;其中用到了luaL_register的另一个特性。在第一次调用中，以NULL作为库名，luaL_register不会创建任何用于存储函数的table，而是以栈顶的table作为存储函数的table。在本例中，栈顶table就是元表本身，因此luaL_register会将所有的方法放入其中。第二次调用luaL_register则提供了一个库名，它就根据此名（array）创建了一个新table，并将指定的函数注册在这个table中（也就是本例中唯一的new函数）。
+
+&emsp;&emsp;最后，给这个数组类型添加一个__tostring方法。使print(a)可以打印出“array”以及数组的大小，就像“array(1000)”。这个函数如下：
+
+```lua
+    int array2string(lua_State *L) {
+        NumArray *a = checkarray(L);
+        lua_pushfstring(L, "array(%d)", a->size);
+        return 1;
+    }
+```
+
+&emsp;&emsp;lua_pushfstring可以在栈顶创建并格式化一个字符串。另外，还需要将array2string加到列表arraylib_m中，从而将这个函数加入数组对象的元表。
+
+```lua
+    static const struct luaL_Reg arraylib_m[] = {
+        {"__tostring", array2string},
+        <其他方法>
+    };
+```
+
+&emsp;&emsp;
