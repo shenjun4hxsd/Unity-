@@ -121,7 +121,7 @@
 
 &emsp;&emsp;泛型`for`在循环过程内部保存了迭代器函数。实际上它保存着3个值：一个迭代器函数、一个恒定状态和一个控制变量。接下来将对此进行详细说明。
 
-&emsp;&emsp;泛型`for`的语法如下：
+&emsp;&emsp;**泛型`for`的语法如下**：
 
 ```lua
     for <var-list> in <exp-list> do
