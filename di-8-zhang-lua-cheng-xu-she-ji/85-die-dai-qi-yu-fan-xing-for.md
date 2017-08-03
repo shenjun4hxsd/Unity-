@@ -151,15 +151,15 @@
 
 &emsp;&emsp;在初始化步骤之后，`for`会以恒定状态和控制变量来调用迭代器函数。然后`for`将迭代器函数的返回值赋予变量列表中的变量。如果第一个返回值为`nil`，那么循环终止。否则，`for`执行它的循环体，随后再次调用迭代器函数，并重复这个过程。
 
-&emsp;&emsp;更明确地说，以下语句：
+>&emsp;&emsp;更明确地说，以下语句：
 
-```lua
+>```lua
     for var_1, ..., var_n in <explist> do <block> end
 ```
 
-&emsp;&emsp;等价于以下代码：
+>&emsp;&emsp;等价于以下代码：
 
-```lua
+>```lua
     do
         local _f, _s, _var = <explist>
         while true do
