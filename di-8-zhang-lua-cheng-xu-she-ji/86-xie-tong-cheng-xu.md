@@ -81,7 +81,7 @@
     print(coroutine.resume( co ))    -- false cannot resume dead coroutine
 ```
 
-&emsp;&emsp;请注意，`resume`是在保护模式中运行的。因此，如果在一个协同程序的执行中发生任何错误，Lua是不会显示错误消息的，而是将执行权返回给`resume`调用。
+>&emsp;&emsp;请注意，`resume`是在保护模式中运行的。因此，如果在一个协同程序的执行中发生任何错误，Lua是不会显示错误消息的，而是将执行权返回给`resume`调用。
 
 &emsp;&emsp;当一个协同程序A唤醒一个协同程序B时，协同程序A就处于一个特殊状态，既不是挂起状态（无法继续A的执行），也不是运行状态（是B在运行）。所以将这时的状态称为“正常”状态。
 
