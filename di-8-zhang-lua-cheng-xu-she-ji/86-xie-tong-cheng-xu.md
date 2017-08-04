@@ -89,8 +89,8 @@
 
 ```lua
     co = coroutine.create( function ( a, b, c )
-            print( "co", a, b, c )
-        end )
+        print( "co", a, b, c )
+    end )
     coroutine.resume( co, 1, 2, 3 )    -- co 1 2 3
 ```
 
@@ -98,8 +98,8 @@
 
 ```lua
     co = coroutine.create( function ( a, b )
-            coroutine.yield( a + b, a - b )
-        end )
+        coroutine.yield( a + b, a - b )
+    end )
 
     print( coroutine.resume( co, 20, 10 ) )    -- true 30 10
 ```
@@ -107,9 +107,9 @@
 &emsp;&emsp;与此对应的是，`yield`返回的额外值就是对应`resume`传入的参数：
 
 ```lua
-    co = coroutine.create( function ( )
-            print( "co", coroutine.yield( ) )
-        end )
+    co = coroutine.create( function ()
+        print( "co", coroutine.yield() )
+    end )
     
     print(coroutine.resume( co, "a" ))      -- true
     print(coroutine.resume( co, 4, 5, 6 ))  -- co 4 5 6  -- true
@@ -119,7 +119,7 @@
 &emsp;&emsp;最后，当一个协同程序结束时，它的主函数所返回的值都将作为对应`resume`的返回值：
 
 ```lua
-    co = coroutine.create( function ( )
+    co = coroutine.create( function ()
         return 6, 7
     end )
     print( coroutine.resume( co ) )		-- true 6 7
