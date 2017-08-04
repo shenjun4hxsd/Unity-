@@ -45,11 +45,11 @@
 &emsp;&emsp;到目前为止，协同程序看上去还只是像一种复杂的函数调用方法。其实协同程序的真正强大之处在于函数`yield`的使用上，该函数可以让一个运行中的协同程序挂起，而之后可以再恢复它的运行。
 
 ```lua
-    co = coroutine.create( function ( )
-	for i = 1, 10 do
-		print( "co", i )
-		coroutine.yield( )
-	end
+    co = coroutine.create( function ()
+        for i = 1, 10 do
+            print( "co", i )
+            coroutine.yield()
+        end
     end )
 ```
 
@@ -89,8 +89,8 @@
 
 ```lua
     co = coroutine.create( function ( a, b, c )
-	print( "co", a, b, c )
-    end )
+            print( "co", a, b, c )
+        end )
     coroutine.resume( co, 1, 2, 3 )    -- co 1 2 3
 ```
 
@@ -98,8 +98,8 @@
 
 ```lua
     co = coroutine.create( function ( a, b )
-	coroutine.yield( a + b, a - b )
-    end )
+            coroutine.yield( a + b, a - b )
+        end )
 
     print( coroutine.resume( co, 20, 10 ) )    -- true 30 10
 ```
@@ -108,8 +108,8 @@
 
 ```lua
     co = coroutine.create( function ( )
-        print( "co", coroutine.yield( ) )
-    end )
+            print( "co", coroutine.yield( ) )
+        end )
     
     print(coroutine.resume( co, "a" ))      -- true
     print(coroutine.resume( co, 4, 5, 6 ))  -- co 4 5 6  -- true
