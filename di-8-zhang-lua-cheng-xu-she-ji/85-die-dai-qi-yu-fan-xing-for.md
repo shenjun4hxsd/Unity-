@@ -263,12 +263,12 @@
 >     node = {}
     head = node
 
->-- 初始化
+>    -- 初始化
     function init(v)
         node.val = v
     end
 
->-- 在尾部插入
+>    -- 在尾部插入
     function push_back(v)
         node.next = {val = v}
         node = node.next
