@@ -372,7 +372,7 @@
 ```lua
     local count = 0
     allwords(function(w)
-    if w == "hello" then count = count + 1 end
+        if w == "hello" then count = count + 1 end
     end)
     print(count)
 ```
