@@ -188,7 +188,7 @@
     end
 ```
 
-&emsp;&emsp;在这里，迭代的状态就是需要遍历的table（一个恒定状态，它不会在循环中改变）及当前的索引值（控制变量）。ipairs（工厂）和迭代器都非常简单，在Lua中就可以编写出来：
+&emsp;&emsp;在这里，迭代的状态就是需要遍历的`table`（一个恒定状态，它不会在循环中改变）及当前的索引值（控制变量）。`ipairs`（工厂）和迭代器都非常简单，在Lua中就可以编写出来：
 
 ```lua
     local function iter(a, i)
@@ -204,10 +204,10 @@
     end
 ```
 
-&emsp;&emsp;在Lua调用for循环中的ipairs(a)时，它会获得3个值：迭代器函数iter、恒定状态a和控制变量的初值0。然后Lua调用iter(a, 0)，得到1，a[1]。在第二次迭代中，继续调用iter(a,1)，得到2，a[2]，以此类推，直至得到第一个nil元素为止。
+&emsp;&emsp;在Lua调用`for`循环中的`ipairs(a)`时，它会获得3个值：迭代器函数`iter`、恒定状态`a`和控制变量的初值0。然后Lua调用`iter(a, 0)`，得到1，`a[1]`。在第二次迭代中，继续调用`iter(a,1)`，得到2，`a[2]`，以此类推，直至得到第一个nil元素为止。
 
 
-&emsp;&emsp;**函数pairs与ipairs类似，也是用于遍历一个table中的所有元素。不同的是，它的迭代器函数是Lua中的一个基本函数next。**
+&emsp;&emsp;**函数`pairs`与`ipairs`类似，也是用于遍历一个`table`中的所有元素。不同的是，它的迭代器函数是Lua中的一个基本函数`next`。**
 
 ```lua
     function pairs(t)
@@ -215,16 +215,16 @@
     end
 ```
 
->&emsp;&emsp;在调用next(t,k)时，k是table t的一个key。此调用会以table中的任意次序返回一组值：此table的下一个key，及这个key所对应的值。而调用next(t,nil)时，返回table的第一组值。若没有下一组值时，next返回nil。
+>&emsp;&emsp;在调用`next(t,k)`时，`k`是`table t`的一个`key`。此调用会以`table`中的任意次序返回一组值：此`table`的下一个`key`，及这个`key`所对应的值。而调用`next(t,nil)`时，返回`table`的第一组值。若没有下一组值时，`next`返回`nil`。
 
-&emsp;&emsp;有些用户喜欢不通过pairs调用而直接使用next:
+&emsp;&emsp;有些用户喜欢不通过`pairs`调用而直接使用`next`:
 
 ```lua
     for k, v in next, t do
         <loop body>
     end
 ```
-&emsp;&emsp;记住，Lua会自动将for循环中表达式列表的结果调整为3个值。因此上例中得到了next、t和nil，这也正与调用pairs(t)的结果完全一致。
+&emsp;&emsp;记住，Lua会自动将`for`循环中表达式列表的结果调整为3个值。因此上例中得到了`next`、`t`和`nil`，这也正与调用`pairs(t)`的结果完全一致。
 
 &emsp;&emsp;关于无状态迭代器的另一个有趣例子是一种可以遍历链表的迭代器。
 
@@ -242,7 +242,7 @@
     end
 ```
 
-&emsp;&emsp;这里使用了一个技巧就是将链表的头节点作为恒定状态（traverse返回的第二个值），而将当前节点作为控制变量。第一次调用迭代器函数getnext时，node为nil，因此函数返回list作为第一个结点。在后续调用中node不再为nil了，所以迭代器如期望的那样返回node.next。
+&emsp;&emsp;这里使用了一个技巧就是将链表的头节点作为恒定状态（`traverse`返回的第二个值），而将当前节点作为控制变量。第一次调用迭代器函数`getnext`时，`node`为`nil`，因此函数返回`list`作为第一个结点。在后续调用中`node`不再为`nil`了，所以迭代器如期望的那样返回`node.next`。
 
 &emsp;&emsp;对于此迭代器的使用则非常简单：
 
