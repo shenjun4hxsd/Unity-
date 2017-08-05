@@ -246,9 +246,9 @@
     function fwrite(fmt, ...)
     return io.write(string.format(fmt, ...))
 ```
-&emsp;&emsp;注意在3个点前有一个固定参数fmt。具有变长参数的函数同样也可以拥有任意数量的固定参数，但固定参数必须放在变长参数之前。
-
-&emsp;&emsp;变长参数中可能会包含一些故意传入的nil，那么此时就需要用函数select来访问变长参数了。调用select时，必须传入一个固定实参selector(选择开关)和一系列变长参数。如果selector为数字n，那么select返回它的第n个可变实参；否则，selector只能为字符串“#”，这样select会返回变长参数的总数。
+&emsp;&emsp;注意在3个点前有一个固定参数`fmt`。具有变长参数的函数同样也可以拥有任意数量的固定参数，但固定参数必须放在变长参数之前。
+&emsp;&emsp;
+&emsp;&emsp;变长参数中可能会包含一些故意传入的`nil`，那么此时就需要用函数`select`来访问变长参数了。调用`select`时，必须传入一个固定实参`selector`(选择开关)和一系列变长参数。如果`selector`为数字`n`，那么`select`返回它的第`n`个可变实参；否则，`selector`只能为字符串“`#`”，这样`select`会返回变长参数的总数。
 
 ```lua
     for i=1, select('#', ...) do
@@ -257,11 +257,11 @@
     end
 ```
 
-&emsp;&emsp;特别需要指出的是，select('#', ...)会返回所有变长参数的总数，其中包括nil。
+&emsp;&emsp;特别需要指出的是，`select('#', ...)`会返回所有变长参数的总数，其中包括`nil`。
 
 &emsp;&emsp;
 
-####具名实参
+###&emsp;&emsp;• 具名实参
 
 ```lua
     -- 无效的演示代码
