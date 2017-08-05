@@ -69,8 +69,8 @@
     startIndex, endIndex = string.find("hello Lua users", "Lua")
     print(startIndex, endIndex)        --> 7   9
 ```
-
-&emsp;&emsp;以Lua编写的函数同样可以返回多个结果，只需在return关键字后列出所有的返回值即可。
+&emsp;&emsp;
+&emsp;&emsp;以Lua编写的函数同样可以返回多个结果，只需在`return`关键字后列出所有的返回值即可。
 
 ```lua
     -- 查找数组中的最大元素，并返回该元素的位置：
@@ -89,8 +89,9 @@
     print(maximum{8, 10, 23, 12, 5})    --> 23   3
 ```
 
-&emsp;&emsp;Lua会调整一个函数的返回值数量以适应不同的调用情况。若将函数调用作为一条单独语句时，Lua会丢弃函数的所有返回值。若将函数作为表达式的一部分来调用时，Lua只保留函数的第一个返回值。只有当一个函数调用是一系列表达式中的最后一个元素（或仅有一个元素）时，才能获得它的所有返回值。
-&emsp;&emsp;这里所谓的“一系列表达式”在Lua中表现为4种情况：多重赋值、函数调用时传入的实参列表、table的构造式和return语句。
+&emsp;&emsp;Lua会调整一个函数的返回值数量以适应不同的调用情况。若将函数调用作为一条单独语句时，Lua会丢弃函数的所有返回值。若将函数作为表达式的一部分来调用时，Lua只保留函数的第一个返回值。**只有当一个函数调用是一系列表达式中的最后一个元素（或仅有一个元素）时，才能获得它的所有返回值。**
+&emsp;&emsp;
+&emsp;&emsp;这里所谓的“一系列表达式”在Lua中表现为4种情况：多重赋值、函数调用时传入的实参列表、`table`的构造式和`return`语句。
 
 ```lua
     function foo0() end                    -- 无返回值
@@ -120,7 +121,7 @@
     print(foo2() .. "x")     --> ax
 ```
 
-&emsp;&emsp;table构造式可以完整地接收一个函数调用的所有结果：
+&emsp;&emsp;`table`构造式可以完整地接收一个函数调用的所有结果：
 
 ```lua
     t = {foo0()}            -- t = {}  (一个空的table)
@@ -134,7 +135,7 @@
     t = {foo0(), foo2(), 4}        -- t[1] = nil, t[2] = "a", t[3] = 4
 ```
 
-&emsp;&emsp;最后一种情况是return语句，诸如return f()这样的语句将返回f的所有返回值：
+&emsp;&emsp;最后一种情况是`return`语句，诸如`return f()`这样的语句将返回`f`的所有返回值：
 
 ```lua
     function foo(i)
@@ -158,19 +159,19 @@
     print((foo2()))      -- a
 ```
 
-&emsp;&emsp;请注意return语句后面的内容是不需要圆括号的。例如return (f(x))，将只返回一个值，而无关乎f返回了几个值。
+&emsp;&emsp;请注意`return`语句后面的内容是不需要圆括号的。例如`return (f(x))`，将只返回一个值，而无关乎`f`返回了几个值。
 
-&emsp;&emsp;关于多重返回值还要介绍一个特殊函数 --unpack。它接受一个数组作为参数，并从下标1开始返回该数组的所有元素：
+&emsp;&emsp;关于多重返回值还要介绍一个特殊函数 --`unpack`。它接受一个数组作为参数，并从下标1开始返回该数组的所有元素：
 
 ```lua
     print(unpack{10, 20, 30})            --> 10  20  30
     a,b = unpack{10, 20, 30}             --> a=10, b=20, 30被丢弃
 ```
->Lua5.1及之前的版本中，unpack作为全局函数使用，可以直接
+>Lua5.1及之前的版本中，`unpack`作为全局函数使用，可以直接
 >```lua
     unpack(arg)
 ```
->而5.2之后，unpack被移到了table下面，于是直接unpack就会导致报错，新的调用应该为：
+>而5.2之后，`unpack`被移到了`table`下面，于是直接`unpack`就会导致报错，新的调用应该为：
 >```lua
     table.unpack(arg)
 ```
@@ -204,9 +205,9 @@
     a = {"hello", "ll"}
 ```
 
-f(unpack(a))将返回3和4，这与直接调用string.find("hello", "ll") 所返回的结果一摸一样。
+&emsp;&emsp;`f(unpack(a))`将返回3和4，这与直接调用`string.find("hello", "ll")` 所返回的结果一摸一样。
 
-虽然这个预定义函数unpack是用C语言直接编写的，但是仍可以在Lua中通过递归实现一样效果：
+虽然这个预定义函数`unpack`是用C语言直接编写的，但是仍可以在Lua中通过递归实现一样效果：
 
 ```lua
     function unpack(t, i)
