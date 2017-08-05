@@ -93,7 +93,7 @@
 &emsp;&emsp;
 
 ###Mac下环境配置
-
+&emsp;&emsp;
 &emsp;&emsp;**下载Lua：**
 
                 www.lua.org
@@ -178,7 +178,7 @@ import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d
         0FEC1CEF D9DCECEC D3A5DAD1 01316C36
         —— END LICENSE ——
         
----
+
 
 
 
