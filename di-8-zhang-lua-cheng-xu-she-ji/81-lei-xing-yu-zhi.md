@@ -1,6 +1,6 @@
 ##类型与值
 
-```
+```lua
     • nil（空）
     • boolean（布尔）
     • number（数字）
