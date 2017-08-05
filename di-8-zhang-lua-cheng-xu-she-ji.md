@@ -98,7 +98,7 @@
 
                 www.lua.org
         
-&emsp;&emsp;**终端：**
+&emsp;&emsp;**终端安装：**
 
                 make macosx
                 sudo make install
