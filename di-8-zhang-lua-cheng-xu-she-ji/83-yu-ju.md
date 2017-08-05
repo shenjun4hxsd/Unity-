@@ -39,7 +39,7 @@
     a[i], a[j] = a[j], a[i]        -- 交换a[i]与a[j]
 ```
 
-&emsp;&emsp;Lua总是会将等号右边值的个数调整到与左边变量的个数相一致。规则是：若值的个数少于变量的个数，那么多余的变量会被赋予nil；若值的个数更多的话，那么多余的值会被“静悄悄”丢弃掉：
+&emsp;&emsp;Lua总是会将等号右边值的个数调整到与左边变量的个数相一致。规则是：若值的个数少于变量的个数，那么多余的变量会被赋予`nil`；若值的个数更多的话，那么多余的值会被“静悄悄”丢弃掉：
 
 ```lua
     a, b, c = 0, 1
@@ -53,9 +53,9 @@
 
 &emsp;&emsp;
 
-###• 局部变量与块（block）
+###&emsp;&emsp;• 局部变量与块（block）
 
-&emsp;&emsp;相对于全局变量，Lua还提供了局部变量。通过local语句来创建局部变量：
+&emsp;&emsp;相对于全局变量，Lua还提供了局部变量。通过`local`语句来创建局部变量：
 
 ```lua
     x = 10                -- 全局变量
@@ -77,10 +77,10 @@
     
     print(x)              --> 10 （全局变量）
 ```
+&emsp;&emsp;
+&emsp;&emsp;在交互模式中每行输入内容自身就形成了一个程序块。为了解决这个问题，可以显式地界定一个块，只需将这些内容放入一对关键字`do-end`中即可。每当输入了`do`时，Lua就不会单独地执行后面每行的内容，而是直至遇到一个相应的`end`时，才会执行整个块的内容。
 
-&emsp;&emsp;在交互模式中每行输入内容自身就形成了一个程序块。为了解决这个问题，可以显式地界定一个块，只需将这些内容放入一对关键字do-end中即可。每当输入了do时，Lua就不会单独地执行后面每行的内容，而是直至遇到一个相应的end时，才会执行整个块的内容。
-
-&emsp;&emsp;如果需要更严格地控制某些局部变量的作用域时，这些do块也会有所帮助：
+&emsp;&emsp;如果需要更严格地控制某些局部变量的作用域时，这些`do`块也会有所帮助：
 
 ```lua
     do
@@ -91,15 +91,15 @@
 
 &emsp;&emsp;
 
-###• 控制结构
+###&emsp;&emsp;• 控制结构
 
-&emsp;&emsp;Lua提供了一组传统的、小巧的控制结构，包括用于条件执行的if，用于迭代的while、repeat和for。所有的控制结构都有一个显式的终止符：if、for和while以end作为结尾，repeat以until作为结尾。
+&emsp;&emsp;Lua提供了一组传统的、小巧的控制结构，包括用于条件执行的`if`，用于迭代的`while`、`repeat`和`for`。所有的控制结构都有一个显式的终止符：`if`、`for`和`while`以`end`作为结尾，`repeat`以`until`作为结尾。
 
-&emsp;&emsp;控制结构中的条件表达式可以是任何值，Lua将所有不是false和nil的值视为“真”。
+&emsp;&emsp;控制结构中的条件表达式可以是任何值，Lua将所有不是`false`和`nil`的值视为“真”。
 
 &emsp;&emsp;
 
-#### if then else
+####&emsp;&emsp; if then else
 
 ```lua
     if a < 0 then a = 0 end
@@ -119,11 +119,11 @@
     end
 ```
 
->&emsp;&emsp;Lua不支持switch语句。
+>&emsp;&emsp;Lua不支持`switch`语句。
 
 &emsp;&emsp;
 
-####while
+####&emsp;&emsp; while
 
 ```lua
     local i = 1
@@ -135,9 +135,9 @@
 
 &emsp;&emsp;
 
-####repeat
+####&emsp;&emsp; repeat
 
-&emsp;&emsp;一条repeat-until语句重复执行其循环体直到条件为真时结束。循环体至少会执行一次。
+&emsp;&emsp;一条`repeat-until`语句重复执行其循环体直到条件为真时结束。循环体至少会执行一次。
 
 ```lua
     repeat
@@ -158,11 +158,11 @@
 
 &emsp;&emsp;
 
-####数字型for
+####&emsp;&emsp; 数字型 for
 
-&emsp;&emsp;for语句有两种形式：数字型for和泛型for。
+&emsp;&emsp;`for`语句有两种形式：数字型`for`和泛型`for`。
 
-&emsp;&emsp;数字型for的语法如下：
+&emsp;&emsp;数字型`for`的语法如下：
 
 ```lua
     for var=exp1, exp2,exp3 do
@@ -170,14 +170,14 @@
     end
 ```
 
-&emsp;&emsp;var从exp1变化到exp2，每次变化都以exp3作为步长（step）递增var，并执行一次“执行体”。第三个表达式是可选的，若不指定的话，Lua会将步长默认为1。
+&emsp;&emsp;`var`从`exp1`变化到`exp2`，每次变化都以`exp3`作为步长（`step`）递增`var`，并执行一次“执行体”。第三个表达式是可选的，若不指定的话，Lua会将步长默认为1。
 
 ```lua
     for i=1, f(x) do print(i) end
     for i=10, 1, -1 do print(i) end
 ```
 
-&emsp;&emsp;如果不想给循环设置上限的话，可以使用常量math.huge：
+&emsp;&emsp;如果不想给循环设置上限的话，可以使用常量`math.huge`：
 
 ```lua
     for i=1, math.huge do
@@ -188,20 +188,20 @@
     end
 ```
 
-&emsp;&emsp;首先，for的3个表达式是在循环开始前一次性求值的。例如，上例中的f(x)只会执行一次。其次，控制变量会被自动地声明为for语句的局部变量，并且仅在循环体内可见。
+&emsp;&emsp;首先，`for`的3个表达式是在循环开始前一次性求值的。例如，上例中的`f(x)`只会执行一次。其次，控制变量会被自动地声明为`for`语句的局部变量，并且仅在循环体内可见。
 
 &emsp;&emsp;
 
-####泛型for
+####&emsp;&emsp; 泛型for
 
-&emsp;&emsp;泛型for循环通过一个迭代器函数来遍历所有值：
+&emsp;&emsp;泛型`for`循环通过一个迭代器函数来遍历所有值：
 
 ```lua
     -- 打印数组a的所有值
     for i,v in ipairs(a) do print(v) end
 ```
 
-&emsp;&emsp;Lua的基础库提供了ipairs，这是一个用于遍历数组的迭代器函数。在每次循环中，i会被赋予一个索引值，同时v被赋予一个对应于该索引的数组元素值。
+&emsp;&emsp;Lua的基础库提供了`ipairs`，这是一个用于遍历数组的迭代器函数。在每次循环中，`i`会被赋予一个索引值，同时`v`被赋予一个对应于该索引的数组元素值。
 
 ```lua
     -- 打印table t中所有的key
@@ -234,15 +234,15 @@
 
 &emsp;&emsp;
 
-####break与return
+####&emsp;&emsp; break与return
 
-&emsp;&emsp;break和return语句用于跳出当前的块。
-&emsp;&emsp;break语句用于结束一个循环，它只会跳出包含它的那个内部循环（for、repeat或while），而不会改变外层的循环。在执行了break后，程序会在那个被跳出的循环之后继续执行。
+&emsp;&emsp;`break`和`return`语句用于跳出当前的块。
+&emsp;&emsp;`break`语句用于结束一个循环，它只会跳出包含它的那个内部循环（`for`、`repeat`或`while`），而不会改变外层的循环。在执行了`break`后，程序会在那个被跳出的循环之后继续执行。
 
-&emsp;&emsp;return语句用于从一个函数中返回结果，或者用于简单地结束一个函数的执行。任何函数的结尾处都有一句隐式的return。所以如果一个函数，它没有值需要返回，那么就无须在其结尾处添加return语句。
-&emsp;&emsp;由于语法构造的原因，break或return只能是一个块的最后一条语句。或者是end、else或until前的一条语句。
+&emsp;&emsp;`return`语句用于从一个函数中返回结果，或者用于简单地结束一个函数的执行。任何函数的结尾处都有一句隐式的`return`。所以如果一个函数，它没有值需要返回，那么就无须在其结尾处添加`return`语句。
+&emsp;&emsp;由于语法构造的原因，`break`或`return`只能是一个块的最后一条语句。或者是`end`、`else`或`until`前的一条语句。
 
-例如，准备调试一个函数，但又不想执行该函数的内容。在这种情况下，可以使用一个显式的do块来包住一条return语句：
+例如，准备调试一个函数，但又不想执行该函数的内容。在这种情况下，可以使用一个显式的`do`块来包住一条`return`语句：
 
 ```lua
     funtion foo()
