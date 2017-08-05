@@ -1,5 +1,15 @@
 ##类型与值
 
+```
+    • nil（空）
+    • boolean（布尔）
+    • number（数字）
+    • string（字符串）
+    • table
+    • function（函数）
+    • userdata（自定义类型）和 thread（线程）
+```
+
 &emsp;&emsp;Lua是一种动态类型的语言。在语言中没有类型定义的语法，每个值都“携带”了它自身的类型信息。
 
 
