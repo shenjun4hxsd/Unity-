@@ -4,11 +4,11 @@
     • 赋值
     • 局部变量与块（block）
     • 控制结构
-    • if then else
-    • while
-    • repeat
-    • 数字型for
-    • 泛型for
+        • if then else
+        • while
+        • repeat
+        • 数字型for
+        • 泛型for
     • break与return
 ```
 
