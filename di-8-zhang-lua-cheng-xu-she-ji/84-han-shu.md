@@ -238,9 +238,9 @@
     print(add(3, 4, 10, 25, 12))        --> 54
 ```
 
-&emsp;&emsp;参数中的3个点（...）表示该函数可接受不同数量的实参。
-
-&emsp;&emsp;Lua提供了专门用于格式化文本（string.format）和输出文本（io.write）的函数。
+&emsp;&emsp;参数中的3个点（`...`）表示该函数可接受不同数量的实参。
+&emsp;&emsp;
+&emsp;&emsp;Lua提供了专门用于格式化文本（`string.format`）和输出文本（`io.write`）的函数。
 
 ```lua
     function fwrite(fmt, ...)
