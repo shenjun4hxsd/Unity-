@@ -110,7 +110,7 @@
 
 &emsp;&emsp;方法1:
 
-                Tools -> Build System -> New Build System
+                菜单 Tools -> Build System -> New Build System
                 
                 {  
                  "cmd": ["/usr/local/bin/lua", "$file"],  
