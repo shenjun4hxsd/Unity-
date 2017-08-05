@@ -268,13 +268,13 @@
     rename(old="temp.lua", new="temp1.lua")   
 ```
 
-&emsp;&emsp;Lua并不直接支持这种语法，但可以通过一种细微的改变来获得相同的效果。主要是将所有实参组织到一个table中，并将这个table作为唯一的实参传给函数。另外，还需要用到一种Lua中特殊的函数调用语法，就是当实参只有一个table构造式时，函数调用中的圆括号是可有可无的：
+&emsp;&emsp;Lua并不直接支持这种语法，但可以通过一种细微的改变来获得相同的效果。主要是将所有实参组织到一个`table`中，并将这个`table`作为唯一的实参传给函数。另外，还需要用到一种Lua中特殊的函数调用语法，就是当实参只有一个`table`构造式时，函数调用中的圆括号是可有可无的：
 
 ```lua
     rename{old="temp.lua", new="temp1.lua"}
 ```
 
-&emsp;&emsp;另一方面，将rename改为只接受一个参数，并从这个参数中获取实际的参数：
+&emsp;&emsp;另一方面，将`rename`改为只接受一个参数，并从这个参数中获取实际的参数：
 
 ```lua
     function rename(arg)
@@ -291,7 +291,7 @@
               }
 ```
 
-&emsp;&emsp;Window函数可以根据要求检查一些必填参数，或者为某些参数添加默认值。假设“_Window”才是真正用于创建新窗口的函数，它要求所有参数以正确的次序传入，那么Window函数可以这么写：
+&emsp;&emsp;`Window`函数可以根据要求检查一些必填参数，或者为某些参数添加默认值。假设“`_Window`”才是真正用于创建新窗口的函数，它要求所有参数以正确的次序传入，那么`Window`函数可以这么写：
 
 ```lua
     function Window(options)
@@ -300,16 +300,16 @@
             error("no tile")
         elseif type(options.width) ~= "number" then
             error("no width")
-    end
+        end
 
-    -- 其他参数都是可选的
-    _Window(options.title,
-            options.x or 0,            -- 默认值
-            options.y or 0,            -- 默认值
-            options.width, options.height,
-            options.backgournd or "white",        -- 默认值
-            options.border            -- 默认值为false(nil)
-    )
+        -- 其他参数都是可选的
+        _Window(options.title,
+                options.x or 0,            -- 默认值
+                options.y or 0,            -- 默认值
+                options.width, options.height,
+                options.backgournd or "white",        -- 默认值
+                options.border            -- 默认值为false(nil)
+        )
     end
 ```
 
