@@ -94,11 +94,11 @@
 
 ###Mac下环境配置
 &emsp;&emsp;
-&emsp;&emsp;**下载Lua：**
+&emsp;&emsp;**● 下载Lua：**
 
                 www.lua.org
         
-&emsp;&emsp;**终端安装：**
+&emsp;&emsp;**● 终端安装：**
 
                 make macosx
                 sudo make install
@@ -106,7 +106,7 @@
  
 &emsp;&emsp;
        
-&emsp;&emsp;**sublime 设置：**
+&emsp;&emsp;**● sublime 设置：**
 
 &emsp;&emsp;方法1:
 
@@ -129,7 +129,7 @@ import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d
 
 &emsp;&emsp;
 
-&emsp;&emsp;插件安装：
+&emsp;&emsp;**● 插件安装：**
 
 ```
         Tools -> Command Palette ...
@@ -157,12 +157,13 @@ import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d
         LuaExtended
 ```        
         
-&emsp;&emsp;**运行：**
+&emsp;&emsp;
+&emsp;&emsp;**● 运行：**
 
         command + b
         
-
-&emsp;&emsp;**Sublime激活码：**
+&emsp;&emsp;
+&emsp;&emsp;**● Sublime激活码：**
 
         —– BEGIN LICENSE —–
         Michael Barnes
