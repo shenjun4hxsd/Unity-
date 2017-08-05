@@ -234,7 +234,7 @@
 
 &emsp;&emsp;
 
-####&emsp;&emsp; break与return
+###&emsp;&emsp;• break与return
 
 &emsp;&emsp;`break`和`return`语句用于跳出当前的块。
 &emsp;&emsp;`break`语句用于结束一个循环，它只会跳出包含它的那个内部循环（`for`、`repeat`或`while`），而不会改变外层的循环。在执行了`break`后，程序会在那个被跳出的循环之后继续执行。
