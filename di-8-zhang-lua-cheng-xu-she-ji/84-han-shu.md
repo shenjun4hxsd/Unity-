@@ -200,16 +200,16 @@
     end
 ```
 
-```lua
+>```lua
     f = string.find
     a = {"hello", "ll"}
 ```
 
-&emsp;&emsp;`f(unpack(a))`将返回3和4，这与直接调用`string.find("hello", "ll")` 所返回的结果一摸一样。
+>&emsp;&emsp;`f(unpack(a))`将返回3和4，这与直接调用`string.find("hello", "ll")` 所返回的结果一摸一样。
 
-虽然这个预定义函数`unpack`是用C语言直接编写的，但是仍可以在Lua中通过递归实现一样效果：
+>&emsp;&emsp;虽然这个预定义函数`unpack`是用C语言直接编写的，但是仍可以在Lua中通过递归实现一样效果：
 
-```lua
+>```lua
     function unpack(t, i)
         i = i or 1
         if t[i] then
@@ -220,9 +220,9 @@
 
 &emsp;&emsp;
 
-####变长参数
+###&emsp;&emsp;• 变长参数
 
-Lua中的函数可以接受不同数量的实参。
+&emsp;&emsp;Lua中的函数可以接受不同数量的实参。
 
 ```lua
     -- 这个函数返回了所有参数的总和：
