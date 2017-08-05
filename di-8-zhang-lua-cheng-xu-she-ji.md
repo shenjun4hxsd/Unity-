@@ -79,7 +79,14 @@
                 print(b) --> nil        如果存在一个全局变量，那么它必定具有一个非nil的值。
 ```
 
----
+
+
+
+&emsp;&emsp;
+
+&emsp;&emsp;
+
+&emsp;&emsp;
 
 ###Mac下环境配置
 
