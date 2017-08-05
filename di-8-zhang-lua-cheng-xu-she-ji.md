@@ -1,5 +1,8 @@
 ##Lua 程序设计
 
+
+&emsp;&emsp;
+
 &emsp;&emsp;1、C语言高超的性能、对底层操作的能力及第三方软件间的接口。
 
 &emsp;&emsp;2、Lua擅长相对于硬件的高层抽象、动态结构、无冗余（No Redundancy）、简易的测试和调试。
