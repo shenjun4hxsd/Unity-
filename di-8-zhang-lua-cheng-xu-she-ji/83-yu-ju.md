@@ -1,5 +1,19 @@
 ##语句
 
+```
+    • 赋值
+    • 局部变量与块（block）
+    • 控制结构
+    • if then else
+    • while
+    • repeat
+    • 数字型for
+    • 泛型for
+    • break与return
+```
+
+&emsp;&emsp;
+
 &emsp;&emsp;Lua支持的常规语句基本上与C语言或Pascal语言中所支持的那些语句差不多。这些语句包括赋值、控制结构和过程调用。另外，Lua还支持一些不太常见的语句，例如多重赋值和局部变量声明。
 
 &emsp;&emsp;
