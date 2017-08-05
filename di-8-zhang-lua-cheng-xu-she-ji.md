@@ -103,10 +103,12 @@
                 make macosx
                 sudo make install
                 lua -v        （测试是否安装成功）
-        
+ 
+&emsp;&emsp;
+       
 &emsp;&emsp;**sublime 设置：**
 
-方法1:
+&emsp;&emsp;方法1:
 
                 Tools -> Build System -> New Build System
                 
@@ -116,12 +118,18 @@
                  "selector": "source.lua"  
                 }  
 
-方法2:
+&emsp;&emsp;方法2:
 
         View -> Show Console
         在控制台输入以下代码：
-        
+
+```        
 import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
+```
+
+&emsp;&emsp;
+
+&emsp;&emsp;插件安装：
 
 ```
         Tools -> Command Palette ...
