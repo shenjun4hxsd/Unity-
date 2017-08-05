@@ -183,7 +183,7 @@
     a = {}; a.x = 10; a.y = 20
 ```
 
-&emsp;&emsp;无论使用哪种方式来创建table，都可以在table创建之后添加或删除其中的某些字段：
+&emsp;&emsp;无论使用哪种方式来创建`table`，都可以在`table`创建之后添加或删除其中的某些字段：
 
 ```lua
     w = {x=0, y=0, label="console"}
@@ -196,7 +196,7 @@
     w.x = nil                     -- 删除字段"x"
 ```
 
-&emsp;&emsp;每当Lua评估一个构造式时，都会先创建一个新table，然后初始化它。
+&emsp;&emsp;每当Lua评估一个构造式时，都会先创建一个新`table`，然后初始化它。
 
 ```lua
     用table实现链表：
