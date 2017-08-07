@@ -297,7 +297,7 @@
   * [9.17 Inherit](第9章 LuaFramework/第9章 LuaFramework/917-inherit.md)
   * [9.18 Bundle](第9章 LuaFramework/第9章 LuaFramework/918-bundle.md)
   * [9.19 cjson](第9章 LuaFramework/第9章 LuaFramework/919-cjson.md)
-  * 9.20 utf8
+  * [9.20 utf8](第9章 LuaFramework/第9章 LuaFramework/920-utf8.md)
   * 9.21 String
   * 9.22 Reflection
   * 9.23 List
