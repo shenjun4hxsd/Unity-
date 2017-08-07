@@ -7,9 +7,9 @@
 
 &emsp;&emsp;**3rd**：里面是第三方的一些插件lua、实例源码文件，比如：`cjson`、`pbc`、`pblua`、`sproto`等。
 
-&emsp;&emsp;**Common**：公用的lua文件目录，如`define.lua`文件，一些变量声明，全局配置等，`functions.lua`常用函数库，通讯的`protocal.lua`协议文件。
+&emsp;&emsp;**Common**：公用的`lua`文件目录，如`define.lua`文件，一些变量声明，全局配置等，`functions.lua`常用函数库，通讯的`protocal.lua`协议文件。
 
-&emsp;&emsp;**Controller**：控制器目录，它不依赖于某一个Lua面板，它是独立存活在Luavm中的一个操作类，操作数据、控制面板显示而已。
+&emsp;&emsp;**Controller**：控制器目录，它不依赖于某一个`Lua`面板，它是独立存活在`Luavm`中的一个操作类，操作数据、控制面板显示而已。
 
 &emsp;&emsp;**Logic**：目录里面存放的是一些管理器类，比如`GameManager`游戏管理器、`NetworkManager`网络管理器，如果你有新的管理器可以放到里面。
 
