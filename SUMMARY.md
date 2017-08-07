@@ -279,7 +279,7 @@
   * [8.18 用户自定义类型](第8章 Lua程序设计/818-yong-hu-zi-ding-yi-lei-xing.md)
 * [第9章 LuaFramework](第9章 LuaFramework/第9章 LuaFramework.md)
   * [9.1 HelloWorld](第9章 LuaFramework/第9章 LuaFramework/91-helloworld.md)
-  * 9.2 ScriptsFromFile
+  * [9.2 ScriptsFromFile](第9章 LuaFramework/第9章 LuaFramework/92-scriptsfromfile.md)
   * 9.3 CallLuaFunction
   * 9.4 AccessingLuaVariables
   * 9.5 LuaCoroutine
