@@ -302,6 +302,6 @@
   * [9.22 Reflection](第9章 LuaFramework/第9章 LuaFramework/922-reflection.md)
   * [9.23 List](第9章 LuaFramework/第9章 LuaFramework/923-list.md)
   * [9.24 Performance](第9章 LuaFramework/第9章 LuaFramework/924-performance.md)
-  * 9.25 TestErrorStack
+  * [9.25 TestErrorStack](第9章 LuaFramework/第9章 LuaFramework/925-testerrorstack.md)
   * 9.26 TestOverload
 
