@@ -258,7 +258,7 @@
     * [7.31 VRSettings](第7章 VR/第7章 VR/73-unityenginevr/731-vrsettings.md)
     * [7.32 VRDevice](第7章 VR/第7章 VR/73-unityenginevr/732-vrdevice.md)
     * [7.33 InputTracking](第7章 VR/第7章 VR/73-unityenginevr/733-inputtracking.md)
-* [第8章 Lua程序设计](di-8-zhang-lua-cheng-xu-she-ji.md)
+* [第8章 Lua程序设计](第8章 Lua程序设计/di-8-zhang-lua-cheng-xu-she-ji.md)
   * [8.1 类型与值](di-8-zhang-lua-cheng-xu-she-ji/81-lei-xing-yu-zhi.md)
   * [8.2 表达式](di-8-zhang-lua-cheng-xu-she-ji/82-biao-da-shi.md)
   * [8.3 语句](di-8-zhang-lua-cheng-xu-she-ji/83-yu-ju.md)
