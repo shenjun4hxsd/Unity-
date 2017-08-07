@@ -277,4 +277,5 @@
   * [8.16 字符串库](di-8-zhang-lua-cheng-xu-she-ji/816-zi-fu-chuan-ku.md)
   * [8.17 I／O库](di-8-zhang-lua-cheng-xu-she-ji/817-ioku.md)
   * [8.18 用户自定义类型](di-8-zhang-lua-cheng-xu-she-ji/818-yong-hu-zi-ding-yi-lei-xing.md)
+* [第9章 LuaFramework](第9章 LuaFramework/第9章 LuaFramework.md)
 
