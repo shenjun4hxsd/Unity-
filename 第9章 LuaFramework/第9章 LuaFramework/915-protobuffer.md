@@ -212,22 +212,23 @@
 ####person.proto
 
 ```lua
-message Person {
-  required int32 id = 1;
-  required string name = 2;
-  optional string email = 3;
-
-  extensions 10 to max;
-}
-
-message Phone {
-    extend Person { repeated Phone phones = 10;}
-    enum PHONE_TYPE{
-        MOBILE = 1;
-        HOME = 2;
+    message Person {
+      required int32 id = 1;
+      required string name = 2;
+      optional string email = 3;
+    
+      extensions 10 to max;
     }
-    optional string num = 1;
-    optional PHONE_TYPE type = 2;
-}
-
+    
+    message Phone {
+        extend Person { repeated Phone phones = 10;}
+        enum PHONE_TYPE{
+            MOBILE = 1;
+            HOME = 2;
+        }
+        optional string num = 1;
+        optional PHONE_TYPE type = 2;
+    }
 ```
+
+🔚
