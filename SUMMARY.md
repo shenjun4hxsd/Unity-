@@ -287,7 +287,7 @@
   * [9.7 LuaThread](第9章 LuaFramework/第9章 LuaFramework/97-luathread.md)
   * [9.8 AccessingArray](第9章 LuaFramework/第9章 LuaFramework/98-accessingarray.md)
   * [9.9 Dictionary](第9章 LuaFramework/第9章 LuaFramework/99-dictionary.md)
-  * 9.10 Enum
+  * [9.10 Enum](第9章 LuaFramework/第9章 LuaFramework/910-enum.md)
   * 9.11 Delegate
   * 9.12 GameObject
   * 9.13 CustomLoader
