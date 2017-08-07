@@ -293,7 +293,7 @@
   * [9.13 CustomLoader](第9章 LuaFramework/第9章 LuaFramework/913-customloader.md)
   * [9.14 Out](第9章 LuaFramework/第9章 LuaFramework/914-out.md)
   * [9.15 ProtoBuffer](第9章 LuaFramework/第9章 LuaFramework/915-protobuffer.md)
-  * 9.16 Int64
+  * [9.16 Int64](第9章 LuaFramework/第9章 LuaFramework/916-int64.md)
   * 9.17 Inherit
   * 9.18 Bundle
   * 9.19 cjson
