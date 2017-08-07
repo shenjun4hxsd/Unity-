@@ -289,7 +289,7 @@
   * [9.9 Dictionary](第9章 LuaFramework/第9章 LuaFramework/99-dictionary.md)
   * [9.10 Enum](第9章 LuaFramework/第9章 LuaFramework/910-enum.md)
   * [9.11 Delegate](第9章 LuaFramework/第9章 LuaFramework/911-delegate.md)
-  * 9.12 GameObject
+  * [9.12 GameObject](第9章 LuaFramework/第9章 LuaFramework/912-gameobject.md)
   * 9.13 CustomLoader
   * 9.14 Out
   * 9.15 ProtoBuffer
