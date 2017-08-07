@@ -284,7 +284,7 @@
   * [9.4 AccessingLuaVariables](第9章 LuaFramework/第9章 LuaFramework/94-accessingluavariables.md)
   * [9.5 LuaCoroutine](第9章 LuaFramework/第9章 LuaFramework/95-luacoroutine.md)
   * [9.6 LuaCoroutine2](第9章 LuaFramework/第9章 LuaFramework/96-luacoroutine2.md)
-  * 9.7 LuaThread
+  * [9.7 LuaThread](第9章 LuaFramework/第9章 LuaFramework/97-luathread.md)
   * 9.8 AccessingArray
   * 9.9 Dictionary
   * 9.10 Enum
