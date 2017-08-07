@@ -294,7 +294,7 @@
   * [9.14 Out](第9章 LuaFramework/第9章 LuaFramework/914-out.md)
   * [9.15 ProtoBuffer](第9章 LuaFramework/第9章 LuaFramework/915-protobuffer.md)
   * [9.16 Int64](第9章 LuaFramework/第9章 LuaFramework/916-int64.md)
-  * 9.17 Inherit
+  * [9.17 Inherit](第9章 LuaFramework/第9章 LuaFramework/917-inherit.md)
   * 9.18 Bundle
   * 9.19 cjson
   * 9.20 utf8
