@@ -279,4 +279,29 @@
   * [8.18 用户自定义类型](第8章 Lua程序设计/818-yong-hu-zi-ding-yi-lei-xing.md)
 * [第9章 LuaFramework](第9章 LuaFramework/第9章 LuaFramework.md)
   * [9.1 HelloWorld](第9章 LuaFramework/第9章 LuaFramework/91-helloworld.md)
+  * 9.2 ScriptsFromFile
+  * 9.3 CallLuaFunction
+  * 9.4 AccessingLuaVariables
+  * 9.5 LuaCoroutine
+  * 9.6 LuaCoroutine2
+  * 9.7 LuaThread
+  * 9.8 AccessingArray
+  * 9.9 Dictionary
+  * 9.10 Enum
+  * 9.11 Delegate
+  * 9.12 GameObject
+  * 9.13 CustomLoader
+  * 9.14 Out
+  * 9.15 ProtoBuffer
+  * 9.16 Int64
+  * 9.17 Inherit
+  * 9.18 Bundle
+  * 9.19 cjson
+  * 9.20 utf8
+  * 9.21 String
+  * 9.22 Reflection
+  * 9.23 List
+  * 9.24 Performance
+  * 9.25 TestErrorStack
+  * 9.26 TestOverload
 
